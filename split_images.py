@@ -6,10 +6,36 @@ import shutil
 import random
 from PIL import Image, ImageDraw
 from dotenv import load_dotenv
+from matplotlib import pyplot as plt
 
 load_dotenv()
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+colors = [
+    (255, 0, 0),  # Red
+    (0, 255, 0),  # Lime
+    (0, 0, 255),  # Blue
+    (255, 255, 0),  # Yellow
+    (255, 0, 255),  # Magenta
+    (0, 255, 255),  # Cyan
+    (255, 165, 0),  # Orange
+    (128, 0, 128),  # Purple
+    (255, 192, 203),  # Pink
+    (255, 105, 180),  # Hot Pink
+    (173, 255, 47),  # Green Yellow
+    (0, 128, 128),  # Teal
+    (0, 0, 128),  # Navy
+    (128, 128, 0),  # Olive
+    (255, 69, 0),  # Orange Red
+    (154, 205, 50),  # Yellow Green
+    (138, 43, 226),  # Blue Violet
+]
+random.shuffle(colors)
+colors_normalized = [(r / 255, g / 255, b / 255) for r, g, b in colors]
+
+# Keep track of used colors to avoid duplication
+used_colors = []
 
 
 # Function to encode the image to base64
@@ -28,26 +54,22 @@ def crop_and_save_components(image_path, components, segments_dir):
         component_name = component["component_name"]
         x, y, w, h = component["coordinates"]
 
-        # Validate and adjust coordinates
-        x = max(0, x)
-        y = max(0, y)
-        w = max(0, w)
-        h = max(0, h)
+        # Add a 50px buffer around the cropped image
+        buffer = 25
+        x = max(0, x - buffer)
+        y = max(0, y - buffer)
+        w = min(width - x, w + 2 * buffer)
+        h = min(height - y, h + 2 * buffer)
 
         if w == 0 or h == 0:
             print(f"Skipping {component_name} due to zero width or height.")
             continue
 
-        if x + w > width:
-            w = width - x
-        if y + h > height:
-            h = height - y
-
         # Crop the image
         cropped_image = image.crop((x, y, x + w, y + h))
 
         # Save the cropped image into the segments directory
-        filename = f"{component_name}_{idx}.png"
+        filename = f"{idx}_{component_name}.png"
         filepath = os.path.join(segments_dir, filename)
         cropped_image.save(filepath)
         print(f"Saved {filepath}")
@@ -80,12 +102,12 @@ def create_segmented_image(image_path, components, output_path):
         if y + h > height:
             h = height - y
 
-        # Generate a random vibrant color
-        color = (
-            random.randint(128, 255),  # Red
-            random.randint(128, 255),  # Green
-            random.randint(128, 255),  # Blue
-        )
+        # Assign a color from the list without duplication
+        if idx < len(colors):
+            color = colors[idx]
+        else:
+            # If we run out of colors, reuse colors starting from the beginning
+            color = colors[idx % len(colors)]
 
         # Draw a solid rectangle over the segment
         draw.rectangle([x, y, x + w, y + h], fill=color)
@@ -95,25 +117,87 @@ def create_segmented_image(image_path, components, output_path):
     print(f"Saved segmented image with boxes: {output_path}")
 
 
+def display_image_with_bounding_boxes(image_path, components):
+    import matplotlib.patches as patches
+
+    # Open the image
+    image = Image.open(image_path).convert("RGB")
+    width, height = image.size
+
+    # Create a figure and axis
+    fig, ax = plt.subplots(1, figsize=(12, 8))
+
+    print(f"Identified {len(components)} components.")
+    # Display the image
+    ax.imshow(image)
+
+    # Add bounding boxes
+    for component in components:
+        x, y, w, h = component["coordinates"]
+
+        # Validate and adjust coordinates
+        x = max(0, x)
+        y = max(0, y)
+        w = max(0, w)
+        h = max(0, h)
+
+        if w == 0 or h == 0:
+            continue
+
+        if x + w > width:
+            w = width - x
+        if y + h > height:
+            h = height - y
+
+        # Assign a color from the list without duplication
+        if idx < len(colors_normalized):
+            color = colors_normalized[idx]
+        else:
+            # If we run out of colors, reuse colors starting from the beginning
+            color = colors_normalized[idx % len(colors_normalized)]
+
+        # Create a rectangle patch with transparent fill
+        rect = patches.Rectangle(
+            (x, y),
+            w,
+            h,
+            linewidth=4,
+            edgecolor=color,
+            facecolor="none",  # Transparent fill
+        )
+
+        # Add the rectangle to the plot
+        ax.add_patch(rect)
+
+    # Hide axes
+    plt.axis("off")
+
+    # Display the image
+    plt.show()
+
+
 def split_image(image_path):
     if not os.path.exists(image_path):
         print(f"Image file '{image_path}' not found.")
         return
-    
+
     # Get the base name without extension
     base_name = os.path.splitext(os.path.basename(image_path))[0]
 
     # Create the output directory named after the input file
     output_dir = "img/" + base_name
 
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    if os.path.exists(output_dir):
+        shutil.rmtree(output_dir)
+        print(f"Deleted existing directory: {output_dir}")
+
+    os.makedirs(output_dir)
 
     # Move the input file into the output directory
     new_image_path = os.path.join(output_dir, os.path.basename(image_path))
     if not os.path.exists(new_image_path):
-        shutil.move(image_path, new_image_path)
-        print(f"Moved {image_path} to {new_image_path}")
+        shutil.copy2(image_path, new_image_path)
+        print(f"Copied {image_path} to {new_image_path}")
         image_path = new_image_path  # Update image_path to new location
     else:
         print(f"{new_image_path} already exists.")
@@ -127,6 +211,9 @@ def split_image(image_path):
     # Encode the image (now from the new location)
     base64_image = encode_image(image_path)
 
+    image = Image.open(image_path).convert("RGB")
+    width, height = image.size
+
     # Craft the prompt
     prompt = [
         {
@@ -135,10 +222,14 @@ def split_image(image_path):
                 {
                     "type": "text",
                     "text": (
-                        "Identify the UI components in the provided webpage image. "
+                        "Identify the major UI components in the provided webpage image. "
+                        "Do not include any text or logos in the components. "
+                        f"The image has the dimensions {width}x{height} pixels.\n"
                         "For each component (e.g., menubar, sub-navigation bar, main content area, footer), "
                         "provide the bounding box coordinates in pixels as integers in the format:\n"
                         '{"component_name": "menubar", "coordinates": [x, y, width, height]}.\n'
+                        "There does not need to be each type of component if the website is very simple. "
+                        "There may only be a main content component. "
                         "Return the results as a JSON array."
                     ),
                 },
@@ -175,14 +266,42 @@ def split_image(image_path):
         print(assistant_reply)
         exit(1)
 
+    display_image_with_bounding_boxes(image_path, components)
+
     # Proceed to crop and save components
     crop_and_save_components(image_path, components, segments_dir)
 
     # Create an image with solid boxes over segments
-    segmented_image_path = os.path.join(segments_dir, "segments_overlay.png")
+    segmented_image_path = os.path.join(output_dir, base_name + "_segments_overlay.png")
     create_segmented_image(image_path, components, segmented_image_path)
 
     print("Components extracted and segmented image saved.")
 
 
-split_image("webflow-full.png")
+# List image files in the current directory
+image_extensions = (".png", ".jpg", ".jpeg", ".bmp", ".gif")
+files_in_directory = os.listdir("./full_images")
+image_files = [f for f in files_in_directory if f.lower().endswith(image_extensions)]
+
+if not image_files:
+    print("No image files found in the current directory.")
+    exit(1)
+
+print("Image files found:")
+for idx, filename in enumerate(image_files):
+    print(f"{idx}: {filename}")
+
+# Prompt the user to select an image file
+while True:
+    try:
+        selection = int(input("Enter the number of the image you want to process: "))
+        if 0 <= selection < len(image_files):
+            image_path = "full_images/" + image_files[selection]
+            break
+        else:
+            print("Invalid selection. Please enter a number from the list.")
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+
+
+split_image(image_path)
