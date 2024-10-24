@@ -5,10 +5,11 @@ import os
 import shutil
 import random
 from PIL import Image, ImageDraw
+from dotenv import load_dotenv
 
-client = OpenAI(
-    api_key=""
-)
+load_dotenv()
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 # Function to encode the image to base64
@@ -95,6 +96,10 @@ def create_segmented_image(image_path, components, output_path):
 
 
 def split_image(image_path):
+    if not os.path.exists(image_path):
+        print(f"Image file '{image_path}' not found.")
+        return
+    
     # Get the base name without extension
     base_name = os.path.splitext(os.path.basename(image_path))[0]
 
