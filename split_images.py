@@ -118,66 +118,6 @@ def create_segmented_image(image_path, components, output_path):
     print(f"Saved segmented image with boxes: {output_path}")
 
 
-# def display_image_with_bounding_boxes(image_path, components):
-#     import matplotlib.patches as patches
-
-#     # Open the image
-#     image = Image.open(image_path).convert("RGB")
-#     width, height = image.size
-
-#     # Create a figure and axis
-#     fig, ax = plt.subplots(1, figsize=(12, 8))
-
-#     print(f"Identified {len(components)} components.")
-#     # Display the image
-#     ax.imshow(image)
-
-#     # Add bounding boxes
-#     for component in components:
-#         x, y, w, h = component["coordinates"]
-
-#         # Validate and adjust coordinates
-#         x = max(0, x)
-#         y = max(0, y)
-#         w = max(0, w)
-#         h = max(0, h)
-
-#         if w == 0 or h == 0:
-#             continue
-
-#         if x + w > width:
-#             w = width - x
-#         if y + h > height:
-#             h = height - y
-
-#         # Assign a color from the list without duplication
-#         if idx < len(colors_normalized):
-#             color = colors_normalized[idx]
-#         else:
-#             # If we run out of colors, reuse colors starting from the beginning
-#             color = colors_normalized[idx % len(colors_normalized)]
-
-#         # Create a rectangle patch with transparent fill
-#         rect = patches.Rectangle(
-#             (x, y),
-#             w,
-#             h,
-#             linewidth=4,
-#             edgecolor=color,
-#             facecolor="none",  # Transparent fill
-#         )
-
-#         # Add the rectangle to the plot
-#         ax.add_patch(rect)
-
-#     # Hide axes
-#     plt.axis("off")
-
-#     # Display the image
-#     plt.show()
-
-
-
 # Function to create an image with transparent bounding boxes
 def create_bounding_boxes_image(image_path, components, output_path):
     # Open the image
@@ -246,7 +186,7 @@ def encode_pil_image(image):
     return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
 
-def split_image(image_path):
+def split_image(image_path, critique=False):
     if not os.path.exists(image_path):
         print(f"Image file '{image_path}' not found.")
         return
@@ -346,8 +286,11 @@ def split_image(image_path):
             exit(1)
 
         # Create an image with bounding boxes
-        bounding_boxes_image_path = os.path.join(segments_dir, "bounding_boxes.png")
+        bounding_boxes_image_path = os.path.join(output_dir, base_name + "_bounding_boxes.png")
         create_bounding_boxes_image(image_path, components, bounding_boxes_image_path)
+
+        if not critique:
+            break
 
         # Encode the image with bounding boxes to base64
         base64_bounding_boxes_image = encode_image(bounding_boxes_image_path)
@@ -435,4 +378,4 @@ while True:
         print("Invalid input. Please enter a number.")
 
 
-split_image(image_path)
+split_image(image_path, critique=False)
