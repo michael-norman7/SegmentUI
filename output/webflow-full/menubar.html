@@ -1,0 +1,103 @@
+Certainly! Below is the HTML and CSS code needed to create a menubar similar to the one in the image. You can integrate this into your existing HTML structure.
+
+### HTML
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Website with Menubar</title>
+</head>
+<body>
+    <nav class="menubar">
+        <div class="logo">
+            <a href="#">webflow</a>
+        </div>
+        <ul class="menu-items">
+            <li><a href="#">Showcase</a></li>
+            <li><a href="#">Designers</a></li>
+            <li><a href="#">Learn & Support</a></li>
+        </ul>
+        <div class="auth-links">
+            <a href="#">Log In</a>
+            <a href="#" class="sign-up">Sign Up for Free</a>
+        </div>
+    </nav>
+</body>
+</html>
+```
+
+### CSS (styles.css)
+```css
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.menubar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu-items {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-items li {
+    margin: 0 15px;
+}
+
+.menu-items a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu-items a:hover {
+    color: #fff;
+}
+
+.auth-links a {
+    margin-left: 20px;
+    color: #999;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.auth-links a:hover {
+    color: #fff;
+}
+
+.auth-links .sign-up {
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.auth-links .sign-up:hover {
+    background-color: #2563eb;
+}
+```
+
+### Explanation:
+- The **HTML** defines the structure with a navigation bar containing a logo, menu items, and authentication links.
+- The **CSS** styles the menubar to match the layout seen in the image with appropriate colors, spacing, and hover effects.

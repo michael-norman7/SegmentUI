@@ -86,7 +86,7 @@ def create_segmented_image(image_path, components, output_path):
     draw_image = image.copy()
     draw = ImageDraw.Draw(draw_image)
 
-    for component in components:
+    for idx, component in enumerate(components):
         x, y, w, h = component["coordinates"]
 
         # Validate and adjust coordinates
@@ -104,14 +104,14 @@ def create_segmented_image(image_path, components, output_path):
             h = height - y
 
         # Assign a color from the list without duplication
-        if idx < len(colors):
-            color = colors[idx]
+        if idx < len(colors_normalized):
+            color = colors_normalized[idx]
         else:
             # If we run out of colors, reuse colors starting from the beginning
-            color = colors[idx % len(colors)]
+            color = colors_normalized[idx % len(colors_normalized)]
 
         # Draw a solid rectangle over the segment
-        draw.rectangle([x, y, x + w, y + h], fill=color)
+        draw.rectangle([x, y, x + w, y + h], fill=tuple(int(c * 255) for c in color))
 
     # Save the image with segments marked
     draw_image.save(output_path)
@@ -311,7 +311,7 @@ def split_image(image_path, critique=False):
                         "type": "text",
                         "text": (
                             "Please review the bounding boxes overlaid on the webpage image. "
-                            "Do the bounding boxes accurately enclose the major UI components without including text or logos? "
+                            "Do the bounding boxes accurately enclose the major UI components? "
                             "If not, please explain what needs to be corrected. If they are correct, simply respond 'The bounding boxes are correct.'"
                         ),
                     },
@@ -378,4 +378,4 @@ while True:
         print("Invalid input. Please enter a number.")
 
 
-split_image(image_path, critique=False)
+split_image(image_path, critique=True)
