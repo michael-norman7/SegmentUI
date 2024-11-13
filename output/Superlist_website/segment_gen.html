@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #e74c3c;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header {
+            background-color: #e57373;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .header button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .signup-button {
+            background-color: #ff6433;
+            color: white;
+        }
+
+        .signin-button {
+            background-color: #eeeeff;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .signin-button span {
+            margin-left: 5px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .main {
+            flex: 3;
+        }
+
+        .sidebar {
+            background-color: #64b5f6;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .main-content h1 {
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.2;
+            color: #333;
+        }
+
+        .main-content h1 span {
+            color: #ff6433;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .nav-button.selected {
+            border-color: #ff6433;
+            color: #ff6433;
+        }
+
+        .footer {
+            background-color: #ffd54f;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <!-- Insert logo and menu items here if needed -->
+    </div>
+    <div class="header">
+        <button class="signup-button">Sign Up</button>
+        <button class="signin-button">
+            Sign in <span>→</span>
+        </button>
+    </div>
+    <div class="content">
+        <div class="main">
+            <div class="main-content">
+                <h1>Home to <br> all your <span>lists</span></h1>
+                <div class="nav-buttons">
+                    <div class="nav-button">Teamwork</div>
+                    <div class="nav-button selected">Personal projects</div>
+                    <div class="nav-button">Everything in between</div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            Sidebar
+        </div>
+    </div>
+    <div class="footer">
+        Footer
+    </div>
+</body>
+</html>

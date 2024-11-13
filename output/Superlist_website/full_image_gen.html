@@ -1,0 +1,101 @@
+l
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5F5FA;
+            color: #333;
+        }
+        .header {
+            background-color: #FF6B6B;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .download-banner {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            top: -30px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+        }
+        .sign-up {
+            background-color: #FF6B6B;
+        }
+        .sign-in {
+            background-color: #FFE6E6;
+            color: #FF6B6B;
+        }
+        .intro {
+            text-align: center;
+            margin: 100px 20px;
+        }
+        .intro h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .intro span {
+            color: #FF6B6B;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 15px;
+        }
+        .category {
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+            color: #777;
+        }
+        .category.active {
+            border: 2px solid #FF6B6B;
+            color: #FF6B6B;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div></div>
+        <div class="buttons">
+            <a href="#" class="sign-up">Sign Up</a>
+            <a href="#" class="sign-in">Sign in</a>
+        </div>
+    </div>
+    <div class="download-banner">
+        <p>Free forever for individuals</p>
+        <button>Download Superlist</button>
+    </div>
+    <div class="intro">
+        <h1>Home to <span>all your</span> lists</h1>
+    </div>
+    <div class="categories">
+        <div class="category">Teamwork</div>
+        <div class="category active">Personal projects</div>
+        <div class="category">Everything in between</div>
+    </div>
+</body>
+</html>

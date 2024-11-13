@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header"
+                "main"
+                "sidebar"
+                "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr auto auto;
+            height: 100vh;
+        }
+        .header {
+            grid-area: header;
+            background-color: #4CAF50;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        .main {
+            grid-area: main;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #ccc;
+            padding: 20px;
+        }
+        .footer {
+            grid-area: footer;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .main-content {
+            text-align: left;
+        }
+
+        .main-content h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .main-content p {
+            margin: 10px 0 20px;
+            font-size: 1.2rem;
+        }
+
+        .menu {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .menu a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="main">
+            <div class="main-content">
+                <div class="intro">
+                    <h1>Hello!<br>I'm Crypton</h1>
+                    <p>A cryptocurrency trading bot based on machine learning.</p>
+                </div>
+                <div class="menu">
+                    <a href="#">Technology</a>
+                    <a href="#">Team lookup</a>
+                    <a href="#">Contacts</a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">Sidebar</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>

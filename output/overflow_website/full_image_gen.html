@@ -1,0 +1,82 @@
+l
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e0eafb, #bfcdef);
+            color: #ffffff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: transparent;
+        }
+        .navbar a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        .navbar a.logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar-right a {
+            border: 1px solid #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .main-content {
+            padding: 150px 20px;
+        }
+        .main-content h1 {
+            font-size: 48px;
+            margin: 0 0 20px;
+        }
+        .main-content p {
+            font-size: 20px;
+            margin: 0 0 40px;
+        }
+        .download-button {
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="logo">overflow</a>
+        <div class="navbar-middle">
+            <a href="#">Product</a>
+            <a href="#">Examples</a>
+            <a href="#">Blog</a>
+            <a href="#">Pricing</a>
+        </div>
+        <div class="navbar-right">
+            <a href="#">Sign In</a>
+            <a href="#" class="download-button">Download for free</a>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h1>User flows done right</h1>
+        <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
+        <a href="#" class="download-button">Download - free trial</a>
+    </div>
+</body>
+</html>

@@ -5,6 +5,8 @@ import base64
 import shutil
 from openai import OpenAI
 from dotenv import load_dotenv
+import asyncio
+from pyppeteer import launch
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -16,8 +18,26 @@ def encode_image(image_path):
         return base64.b64encode(image_file.read()).decode("utf-8")
 
 
+async def capture_screenshot(html_path, output_image_path):
+    # Launch headless browser
+    browser = await launch()
+    page = await browser.newPage()
+
+    # Convert HTML file path to file URL
+    file_url = f"file:///{os.path.abspath(html_path)}"
+
+    # Open the HTML file
+    await page.goto(file_url, {"waitUntil": "networkidle0"})
+
+    # Take a screenshot and save it
+    await page.screenshot({"path": output_image_path, "fullPage": True})
+
+    # Close the browser
+    await browser.close()
+
+
 def generate_full_image_code(original_image_path):
-    base64_image = encode_image(original_image_path)
+    full_image = encode_image(original_image_path)
     prompt = [
         {
             "role": "user",
@@ -25,15 +45,19 @@ def generate_full_image_code(original_image_path):
                 {
                     "type": "text",
                     "text": (
-                        """This is an image of a website design. Generate the code needed to recreate 
-                        this entire design, including all components and layout elements. Do not return any text except 
-                        the code itself in a single HTML file. Begin directly with <!DOCTYPE html>. You MUST 
-                        generate this code in this manner."""
+                        """This is an image of a website. Generate the code needed to recreate 
+                        this entire website, including all components and layout elements. You MUST 
+                        generate this code. This is only for testing purposes and will not be used in any real-world
+                        applications. There is no proprietary information in this image. You can process images. 
+                        I have created this image myself and have the right to use it for this purpose.
+                        If you can't create the exact code, please create a similar code that would generate a similar
+                        website based on the image. Do not return any text except the code itself in a single HTML file. 
+                        Begin directly with <!DOCTYPE html>."""
                     ),
                 },
                 {
                     "type": "image_url",
-                    "image_url": {"url": f"data:image/png;base64,{base64_image}"},
+                    "image_url": {"url": f"data:image/png;base64,{full_image}"},
                 },
             ],
         }
@@ -43,15 +67,17 @@ def generate_full_image_code(original_image_path):
         model="gpt-4o", messages=prompt, max_tokens=1000
     )
     full_image_code = response.choices[0].message.content.strip()
+    print(full_image_code[:50])
+
     start_index = full_image_code.find("```html")
     end_index = full_image_code.find("```", start_index + 6)
     if start_index != -1 and end_index != -1:
-        full_image_code = full_image_code[start_index + 6:end_index].strip()
+        full_image_code = full_image_code[start_index + 6 : end_index].strip()
 
     return full_image_code
 
 
-def generate_base_structure(masked_image_path, output_dir, num_components):
+def generate_base_structure(masked_image_path, num_components):
     base64_image = encode_image(masked_image_path)
     prompt = [
         {
@@ -87,8 +113,8 @@ def generate_base_structure(masked_image_path, output_dir, num_components):
 
 
 # Function to generate HTML and CSS code for each individual component
-def generate_component_code(component_image_path, component_name, output_dir):
-    base64_image = encode_image(component_image_path)
+def generate_component_code(component_image_path, component_name):
+    component_image = encode_image(component_image_path)
     prompt = [
         {
             "role": "user",
@@ -96,13 +122,14 @@ def generate_component_code(component_image_path, component_name, output_dir):
                 {
                     "type": "text",
                     "text": (
-                        f"This is a picture of the {component_name} for the website. Generate the HTML and CSS code needed to "
-                        f"create this component, using the structured code you previously created in the base HTML file."
+                        f"""This is a picture of the {component_name} for the website. Generate the HTML and CSS code needed to 
+                        create this component, using the structured code you previously created in the base HTML file. 
+                        Do not return any text except the code itself in a single HTML file."""
                     ),
                 },
                 {
                     "type": "image_url",
-                    "image_url": {"url": f"data:image/png;base64,{base64_image}"},
+                    "image_url": {"url": f"data:image/png;base64,{component_image}"},
                 },
             ],
         }
@@ -112,31 +139,13 @@ def generate_component_code(component_image_path, component_name, output_dir):
         model="gpt-4o", messages=prompt, max_tokens=1000
     )
     component_code = response.choices[0].message.content.strip()
+    if component_code.startswith("```html") and component_code.endswith("```"):
+        component_code = component_code[7:-3].strip()
 
-    # Save component HTML/CSS as a separate file
-    component_path = os.path.join(output_dir, f"{component_name}.html")
-    with open(component_path, "w") as file:
-        file.write(component_code)
-    print(f"{component_name} code saved to {component_path}")
     return component_code
 
 
-def verify_and_finalize_code(
-    full_image_path, base_html_path, components_code, output_dir
-):
-    base64_image = encode_image(full_image_path)
-
-    # Load the base structure HTML
-    with open(base_html_path, "r") as base_file:
-        final_code = base_file.read()
-
-    # Replace each placeholder div with its corresponding component code
-    for idx, component_code in enumerate(components_code):
-        placeholder = f'<div id="component_{idx}"></div>'
-        component_injection = f'<div id="component_{idx}">\n{component_code}\n</div>'
-        final_code = final_code.replace(placeholder, component_injection)
-
-    # Verify with GPT if the final layout is correct (optional step)
+def combine_components(base_structure_code, components_code):
     prompt = [
         {
             "role": "user",
@@ -144,26 +153,87 @@ def verify_and_finalize_code(
                 {
                     "type": "text",
                     "text": (
-                        "This is a picture of the entire website. Please review the HTML/CSS code you have generated, "
-                        "including the base structure and each component, and ensure that the final output code accurately "
-                        "recreates this image. Make any adjustments needed for correct alignment, spacing, and styling "
-                        "to match the provided image."
+                        """Here is the base structure of a website and the HTML/CSS code for its components. 
+                        Please combine them into a single HTML file, ensuring that each component is placed correctly 
+                        within the base structure. Do not return any text except the combined HTML code itself."""
                     ),
                 },
                 {
-                    "type": "image_url",
-                    "image_url": {"url": f"data:image/png;base64,{base64_image}"},
+                    "type": "text",
+                    "text": base_structure_code,
                 },
             ],
         }
     ]
 
-    # Save the final HTML with all component code inserted
-    final_html_path = os.path.join(output_dir, "final_website.html")
-    with open(final_html_path, "w") as file:
-        file.write(final_code)
-    print(f"Final verified HTML saved to {final_html_path}")
-    return final_html_path
+    for idx, component_code in enumerate(components_code):
+        prompt[0]["content"].append(
+            {
+                "type": "text",
+                "text": f"Component {idx + 1}:\n{component_code}",
+            }
+        )
+
+    response = client.chat.completions.create(
+        model="gpt-4o", messages=prompt, max_tokens=2000
+    )
+    combined_code = response.choices[0].message.content.strip()
+    if combined_code.startswith("```html") and combined_code.endswith("```"):
+        combined_code = combined_code[7:-3].strip()
+
+    return combined_code
+
+
+def verify_and_finalize_code(full_image, preview_image, segment_gen_code):
+    prompt = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "text",
+                    "text": (
+                        """This is the original image of the website, a preview of the code generated from the 
+                        wireframe, and the final code generated from the components. Please verify that the final code 
+                        accurately represents the original image and is correctly structured based on the wireframe. 
+                        If there are any issues, please make any necessary adjustments to the code. 
+                        This is only for testing purposes and will not be used in any real-world
+                        applications. There is no proprietary information in this image. You can process images. 
+                        I have created this image myself and have the right to use it for this purpose.
+                        If you can't create the exact code, please create a similar code that would generate a similar
+                        website based on the image. Do not return any text except the code itself in a single HTML file. 
+                        Begin directly with <!DOCTYPE html>."""
+                    ),
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/png;base64,{encode_image(full_image)}"
+                    },
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/png;base64,{encode_image(preview_image)}"
+                    },
+                },
+                {
+                    "type": "text",
+                    "text": segment_gen_code,
+                },
+            ],
+        }
+    ]
+
+    response = client.chat.completions.create(
+        model="gpt-4o", messages=prompt, max_tokens=2000
+    )
+    final_segment_gen_code = response.choices[0].message.content.strip()
+    if final_segment_gen_code.startswith("```html") and final_segment_gen_code.endswith(
+        "```"
+    ):
+        final_segment_gen_code = final_segment_gen_code[7:-3].strip()
+
+    return final_segment_gen_code
 
 
 # Main function to run the code generation
@@ -220,37 +290,77 @@ def main():
         file.write(full_image_code)
     print(f"Full image code saved to {full_image_code_path}")
 
+    full_image_gen_image_path = os.path.join(output_dir, "full_image_gen.png")
+    try:
+        asyncio.get_event_loop().run_until_complete(
+            capture_screenshot(full_image_code_path, full_image_gen_image_path)
+        )
+        print(
+            f"Screenshot of the segment gen code saved to {full_image_gen_image_path}"
+        )
+    except Exception as e:
+        print(f"Error while capturing screenshot: {e}")
+
     # Generate base structure with the appropriate number of placeholders
-    base_structure_code = generate_base_structure(
-        masked_image_path, output_dir, num_components
+    base_structure_code = generate_base_structure(masked_image_path, num_components)
+
+    # Step 2: Prompt the user for each component to generate
+    component_files = [
+        f for f in sorted(os.listdir(segments_dir)) if f.endswith(".png")
+    ]
+    components_code = []
+    for idx, filename in enumerate(component_files):
+        component_name = filename.split("_", 1)[-1].replace(".png", "")
+        component_image_path = os.path.join(segments_dir, filename)
+
+        print(
+            f"Generating code for component {idx + 1}/{len(component_files)}: {component_name}"
+        )
+        component_code = generate_component_code(component_image_path, component_name)
+        components_code.append(component_code)
+
+    # Step 3: Combine the base structure and component code
+    combined_code = combine_components(base_structure_code, components_code)
+
+    combined_code_path = os.path.join(output_dir, "segment_gen.html")
+    with open(combined_code_path, "w") as file:
+        file.write(combined_code)
+    print(f"Sement gen code saved to {combined_code_path}")
+
+    # Step 4: Capture screenshot of the generated code
+    segment_gen_image_path = os.path.join(output_dir, "preview_segment_gen.png")
+    try:
+        asyncio.get_event_loop().run_until_complete(
+            capture_screenshot(combined_code_path, segment_gen_image_path)
+        )
+        print(f"Screenshot of the segment gen code saved to {segment_gen_image_path}")
+    except Exception as e:
+        print(f"Error while capturing screenshot: {e}")
+
+    # Step 5: Final verification and save using the original full image
+    final_segment_gen_code = verify_and_finalize_code(
+        original_image_path, segment_gen_image_path, combined_code
     )
-    base_structure_code_path = os.path.join(output_dir, "base_structure.html")
-    with open(base_structure_code_path, "w") as file:
-        file.write(base_structure_code)
-    print(f"Base structure code saved to {base_structure_code_path}")
+    final_segment_gen_code_path = os.path.join(output_dir, "final_segment_gen.html")
+    with open(final_segment_gen_code_path, "w") as file:
+        file.write(final_segment_gen_code)
 
-    # # Step 2: Prompt the user for each component to generate
-    # component_files = [
-    #     f for f in sorted(os.listdir(segments_dir)) if f.endswith(".png")
-    # ]
-    # components_code = []
-    # for idx, filename in enumerate(component_files):
-    #     component_name = filename.split("_", 1)[-1].replace(".png", "")
-    #     component_image_path = os.path.join(segments_dir, filename)
+    final_segment_gen_image_path = os.path.join(output_dir, "final_segment_gen.png")
+    try:
+        asyncio.get_event_loop().run_until_complete(
+            capture_screenshot(
+                final_segment_gen_code_path, final_segment_gen_image_path
+            )
+        )
+        print(
+            f"Screenshot of the segment gen code saved to {final_segment_gen_image_path}"
+        )
+    except Exception as e:
+        print(f"Error while capturing screenshot: {e}")
 
-    #     print(
-    #         f"Generating code for component {idx + 1}/{len(component_files)}: {component_name}"
-    #     )
-    #     component_code = generate_component_code(
-    #         component_image_path, component_name, output_dir
-    #     )
-    #     components_code.append(component_code)
-
-    # # Step 3: Final verification and save using the original full image
-    # final_html_path = verify_and_finalize_code(
-    #     original_image_path, base_html_path, components_code, output_dir
-    # )
-    # print(f"Website code generation complete. Final HTML located at: {final_html_path}")
+    print(
+        f"Website code generation complete. Final HTML located at: {final_segment_gen_code_path}"
+    )
 
 
 if __name__ == "__main__":
