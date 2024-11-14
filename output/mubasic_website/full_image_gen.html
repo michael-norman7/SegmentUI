@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mubasic - Children's Music</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            color: black;
+        }
+        .left-panel {
+            background-color: #F1C290;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+        .right-panel {
+            background-color: #292929;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 3em;
+            line-height: 1.2;
+            margin: 0;
+        }
+        h1 span {
+            color: #F28E41;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1em;
+        }
+        .logo {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .bars {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .bar {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding-left: 15px;
+            color: #333;
+            font-size: 1.5em;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .bar div {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+            margin-right: 10px;
+            width: 30px;
+            text-align: center;
+        }
+        .bar.m { background-color: #A9C9D2; }
+        .bar.b { background-color: #FAC98A; }
+        .bar.a { background-color: #F8DEBA; }
+        .bar.i { background-color: #CB775F; }
+        .bar.c { background-color: #C8B4DA; }
+    </style>
+</head>
+<body>
+    <div class="left-panel">
+        <div class="logo">mubasic</div>
+        <h1>The <span>#1</span> source for children's music.</h1>
+        <p>An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.</p>
+    </div>
+    <div class="right-panel">
+        <div class="bars">
+            <div class="bar m"><div>M</div></div>
+            <div class="bar b"><div>U</div></div>
+            <div class="bar a"><div>B</div></div>
+            <div class="bar i"><div>A</div></div>
+            <div class="bar c"><div>S</div></div>
+        </div>
+    </div>
+</body>
+</html>

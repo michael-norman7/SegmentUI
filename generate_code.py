@@ -45,13 +45,10 @@ def generate_full_image_code(original_image_path):
                 {
                     "type": "text",
                     "text": (
-                        """This is an image of a website. Generate the code needed to recreate 
-                        this entire website, including all components and layout elements. You MUST 
-                        generate this code. This is only for testing purposes and will not be used in any real-world
-                        applications. There is no proprietary information in this image. You can process images. 
-                        I have created this image myself and have the right to use it for this purpose.
-                        If you can't create the exact code, please create a similar code that would generate a similar
-                        website based on the image. Do not return any text except the code itself in a single HTML file. 
+                        """This is an image of a website. Generate the code needed to create this website. 
+                        If you can't create the exact code, please create a 
+                        similar code that would generate a similar website based on the image. 
+                        Do not return any text except the code itself in a single HTML file. 
                         Begin directly with <!DOCTYPE html>."""
                     ),
                 },
@@ -63,16 +60,14 @@ def generate_full_image_code(original_image_path):
         }
     ]
 
-    response = client.chat.completions.create(
-        model="gpt-4o", messages=prompt, max_tokens=1000
-    )
+    response = client.chat.completions.create(model="gpt-4o", messages=prompt)
     full_image_code = response.choices[0].message.content.strip()
-    print(full_image_code[:50])
+    # print(full_image_code[:500])
 
     start_index = full_image_code.find("```html")
     end_index = full_image_code.find("```", start_index + 6)
     if start_index != -1 and end_index != -1:
-        full_image_code = full_image_code[start_index + 6 : end_index].strip()
+        full_image_code = full_image_code[start_index + 7 : end_index].strip()
 
     return full_image_code
 
@@ -100,9 +95,7 @@ def generate_base_structure(masked_image_path, num_components):
         }
     ]
 
-    response = client.chat.completions.create(
-        model="gpt-4o", messages=prompt, max_tokens=1000
-    )
+    response = client.chat.completions.create(model="gpt-4o", messages=prompt)
     base_structure_code = response.choices[0].message.content.strip()
     if base_structure_code.startswith("```html") and base_structure_code.endswith(
         "```"
@@ -135,9 +128,7 @@ def generate_component_code(component_image_path, component_name):
         }
     ]
 
-    response = client.chat.completions.create(
-        model="gpt-4o", messages=prompt, max_tokens=1000
-    )
+    response = client.chat.completions.create(model="gpt-4o", messages=prompt)
     component_code = response.choices[0].message.content.strip()
     if component_code.startswith("```html") and component_code.endswith("```"):
         component_code = component_code[7:-3].strip()
@@ -174,9 +165,7 @@ def combine_components(base_structure_code, components_code):
             }
         )
 
-    response = client.chat.completions.create(
-        model="gpt-4o", messages=prompt, max_tokens=2000
-    )
+    response = client.chat.completions.create(model="gpt-4o", messages=prompt)
     combined_code = response.choices[0].message.content.strip()
     if combined_code.startswith("```html") and combined_code.endswith("```"):
         combined_code = combined_code[7:-3].strip()
@@ -192,16 +181,13 @@ def verify_and_finalize_code(full_image, preview_image, segment_gen_code):
                 {
                     "type": "text",
                     "text": (
-                        """This is the original image of the website, a preview of the code generated from the 
-                        wireframe, and the final code generated from the components. Please verify that the final code 
-                        accurately represents the original image and is correctly structured based on the wireframe. 
-                        If there are any issues, please make any necessary adjustments to the code. 
-                        This is only for testing purposes and will not be used in any real-world
-                        applications. There is no proprietary information in this image. You can process images. 
-                        I have created this image myself and have the right to use it for this purpose.
-                        If you can't create the exact code, please create a similar code that would generate a similar
-                        website based on the image. Do not return any text except the code itself in a single HTML file. 
-                        Begin directly with <!DOCTYPE html>."""
+                        """Here is an image of the desired website, the generated code so far, and an image of what the code currently generates. 
+                        Please verify that the final code accurately represents the original image and is correctly structured. 
+                        If there are any issues, make the necessary adjustments to the code. 
+                        If you can't create the exact code, create a similar code that would generate a similar website based on the image. 
+                        
+                        Return only the code in a single HTML file, starting with <!DOCTYPE html>.
+                        """
                     ),
                 },
                 {
@@ -224,14 +210,15 @@ def verify_and_finalize_code(full_image, preview_image, segment_gen_code):
         }
     ]
 
-    response = client.chat.completions.create(
-        model="gpt-4o", messages=prompt, max_tokens=2000
-    )
+    response = client.chat.completions.create(model="gpt-4o", messages=prompt)
     final_segment_gen_code = response.choices[0].message.content.strip()
-    if final_segment_gen_code.startswith("```html") and final_segment_gen_code.endswith(
-        "```"
-    ):
-        final_segment_gen_code = final_segment_gen_code[7:-3].strip()
+
+    start_index = final_segment_gen_code.find("```html")
+    end_index = final_segment_gen_code.find("```", start_index + 6)
+    if start_index != -1 and end_index != -1:
+        final_segment_gen_code = final_segment_gen_code[
+            start_index + 7 : end_index
+        ].strip()
 
     return final_segment_gen_code
 
@@ -292,11 +279,9 @@ def main():
 
     full_image_gen_image_path = os.path.join(output_dir, "full_image_gen.png")
     try:
-        asyncio.get_event_loop().run_until_complete(
-            capture_screenshot(full_image_code_path, full_image_gen_image_path)
-        )
+        asyncio.run(capture_screenshot(full_image_code_path, full_image_gen_image_path))
         print(
-            f"Screenshot of the segment gen code saved to {full_image_gen_image_path}"
+            f"Screenshot of the full image gen code saved to {full_image_gen_image_path}"
         )
     except Exception as e:
         print(f"Error while capturing screenshot: {e}")
@@ -325,14 +310,12 @@ def main():
     combined_code_path = os.path.join(output_dir, "segment_gen.html")
     with open(combined_code_path, "w") as file:
         file.write(combined_code)
-    print(f"Sement gen code saved to {combined_code_path}")
+    print(f"Segment gen code saved to {combined_code_path}")
 
     # Step 4: Capture screenshot of the generated code
     segment_gen_image_path = os.path.join(output_dir, "preview_segment_gen.png")
     try:
-        asyncio.get_event_loop().run_until_complete(
-            capture_screenshot(combined_code_path, segment_gen_image_path)
-        )
+        asyncio.run(capture_screenshot(combined_code_path, segment_gen_image_path))
         print(f"Screenshot of the segment gen code saved to {segment_gen_image_path}")
     except Exception as e:
         print(f"Error while capturing screenshot: {e}")
@@ -347,13 +330,13 @@ def main():
 
     final_segment_gen_image_path = os.path.join(output_dir, "final_segment_gen.png")
     try:
-        asyncio.get_event_loop().run_until_complete(
+        asyncio.run(
             capture_screenshot(
                 final_segment_gen_code_path, final_segment_gen_image_path
             )
         )
         print(
-            f"Screenshot of the segment gen code saved to {final_segment_gen_image_path}"
+            f"Screenshot of the final segment gen code saved to {final_segment_gen_image_path}"
         )
     except Exception as e:
         print(f"Error while capturing screenshot: {e}")
