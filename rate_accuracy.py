@@ -73,8 +73,7 @@ def get_accuracy_score(original_image_path, generated_image_path):
     accuracy_score = chat_completion.choices[0].message.content
     return accuracy_score
 
-
-def update_excel_with_scores(folder_path, excel_path):
+def update_excel_with_scores(folder_path, excel_path, tests):
     # Initialize data structures for each sheet
     overall_scores = []
     visual_scores = []
@@ -86,28 +85,61 @@ def update_excel_with_scores(folder_path, excel_path):
     image_names = [os.path.basename(path).replace(".png", "") for path in image_paths]
 
     for image_name in image_names:
-        original_image_path = f"output/{image_name}/final_segment_gen.png"
-        generated_image_path = f"output/{image_name}/{image_name}.png"
+        # Initialize dictionaries to hold scores for each test
+        overall_score_row = {'': image_name}
+        visual_score_row = {'': image_name}
+        content_score_row = {'': image_name}
+        functional_score_row = {'': image_name}
 
-        accuracy_score = get_accuracy_score(original_image_path, generated_image_path)
-        scores = accuracy_score.split(", ")
-        visual_score = int(scores[0].split(": ")[1])
-        content_score = int(scores[1].split(": ")[1])
-        functional_score = int(scores[2].split(": ")[1])
-        overall_score = int(scores[3].split(": ")[1])
+        original_image_path = f"output/{image_name}/{image_name}.png"
 
-        # Append scores to respective lists
-        overall_scores.append([image_name, overall_score])
-        visual_scores.append([image_name, visual_score])
-        content_scores.append([image_name, content_score])
-        functional_scores.append([image_name, functional_score])
+        for test in tests:
+            print(f"Getting scores for {image_name} on test {test}...")
+            if test == "Full Image Gen":
+                generated_image_path = f"output/{image_name}/full_image_gen.png"
+            elif test == "Segment Gen":
+                generated_image_path = f"output/{image_name}/final_segment_gen.png"
+            else:
+                continue
+
+            cnt = 0
+            while True:
+                try:
+                    accuracy_score = get_accuracy_score(original_image_path, generated_image_path)
+                    scores = accuracy_score.split(", ")
+                    visual_score = int(scores[0].split(": ")[1])
+                    content_score = int(scores[1].split(": ")[1])
+                    functional_score = int(scores[2].split(": ")[1])
+                    overall_score = int(scores[3].split(": ")[1])
+
+                    overall_score_row[test] = overall_score
+                    visual_score_row[test] = visual_score
+                    content_score_row[test] = content_score
+                    functional_score_row[test] = functional_score
+                    break
+                except Exception as e:
+                    print(f"Error: {e}")
+                    print(f"Retrying {image_name} for test {test}...")
+                    cnt += 1
+                    if cnt == 3:
+                        print(f"Failed to get scores for {image_name} on test {test}")
+                        overall_score_row[test] = None
+                        visual_score_row[test] = None
+                        content_score_row[test] = None
+                        functional_score_row[test] = None
+                        break
+
+        # Append score dictionaries to respective lists
+        overall_scores.append(overall_score_row)
+        visual_scores.append(visual_score_row)
+        content_scores.append(content_score_row)
+        functional_scores.append(functional_score_row)
 
     # Create dataframes for each sheet
-    columns = ["", "Full Image Gen", "Segment Gen"]
-    overall_df = pd.DataFrame(overall_scores, columns=columns)
-    visual_df = pd.DataFrame(visual_scores, columns=columns)
-    content_df = pd.DataFrame(content_scores, columns=columns)
-    functional_df = pd.DataFrame(functional_scores, columns=columns)
+    overall_df = pd.DataFrame(overall_scores)
+    visual_df = pd.DataFrame(visual_scores)
+    content_df = pd.DataFrame(content_scores)
+    functional_df = pd.DataFrame(functional_scores)
 
     # Write dataframes to Excel file
     with pd.ExcelWriter(excel_path) as writer:
@@ -118,16 +150,17 @@ def update_excel_with_scores(folder_path, excel_path):
 
 
 def main():
-    image_name = "webflow-full"
-    original_image_path = f"output/{image_name}/final_segment_gen.png"
-    generated_image_path = f"output/{image_name}/{image_name}.png"
+    # image_name = "webflow-full"
+    # original_image_path = f"output/{image_name}/final_segment_gen.png"
+    # generated_image_path = f"output/{image_name}/{image_name}.png"
 
-    accuracy_score = get_accuracy_score(original_image_path, generated_image_path)
-    print(f"Accuracy Score: {accuracy_score}")
+    # accuracy_score = get_accuracy_score(original_image_path, generated_image_path)
+    # print(f"{image_name} Accuracy Score: {accuracy_score}")
 
     folder_path = "full_images"
     excel_path = "accuracy_scores.xlsx"
-    update_excel_with_scores(folder_path, excel_path)
+    tests = ["Full Image Gen", "Segment Gen"]
+    update_excel_with_scores(folder_path, excel_path, tests)
     print(f"Accuracy scores have been updated in {excel_path}")
 
 
