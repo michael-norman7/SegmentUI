@@ -3,77 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyer - Personalised Aviation</title>
+    <title>Hyer Aviation</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #aad1f1, #ffffff);
-            overflow: hidden;
+            background: #e0e3e7;
+            color: #000;
         }
-        nav {
+        .navbar {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             padding: 20px;
-            gap: 20px;
+            background-color: transparent;
         }
-        nav a {
+        .navbar a {
+            margin: 0 10px;
+            color: #000;
             text-decoration: none;
-            color: black;
             font-weight: bold;
         }
-        .container {
-            max-width: 1200px;
-            margin: auto;
+        .content {
             text-align: center;
+            padding: 50px;
         }
-        .container img {
-            width: 50%;
-        }
-        .title {
-            font-size: 70px;
+        h1 {
+            font-size: 80px;
             margin: 0;
-            padding: 0;
-            font-weight: bold;
         }
-        .subtitle {
-            font-size: 24px;
-            margin: 10px 0;
+        h2 {
+            font-size: 40px;
         }
-        .description {
-            margin: 20px 0;
-            font-size: 20px;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .buttons {
+            margin-top: 30px;
         }
         .button {
-            padding: 15px 30px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
             border-radius: 25px;
-            background-color: black;
-            color: white;
+            cursor: pointer;
             text-decoration: none;
-            font-weight: bold;
+        }
+        .background {
+            background-image: url('https://via.placeholder.com/1500');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            position: relative;
+        }
+        .tagline {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#">Solutions</a>
-        <a href="#">About us</a>
-        <a href="#">Contact</a>
-    </nav>
-    <div class="container">
-        <div class="title">Hyer<sup>®</sup></div>
-        <div class="subtitle">Personalised Aviation</div>
-        <img src="jet.png" alt="Jet" />
-        <div class="description">More flexibility, freedom and choice!</div>
-        <div class="button-container">
-            <a href="#" class="button">Book an Aircraft</a>
-            <a href="#" class="button">Book a Shared Flight</a>
+    <div class="navbar">
+        <div>
+            <a href="#">Solutions</a>
+            <a href="#">About us</a>
+            <a href="#">Contact</a>
         </div>
+        <div>
+            <a href="#">❖</a>
+            <a href="#">⏀</a>
+        </div>
+    </div>
+    <div class="background">
+        <div class="content">
+            <h1>Hyer<sup>®</sup></h1>
+            <h2>Personalised Aviation</h2>
+            <div class="buttons">
+                <a href="#" class="button">Book an Aircraft</a>
+                <a href="#" class="button">Book a Shared Flight</a>
+            </div>
+        </div>
+        <p class="tagline">More flexibility, freedom and choice!</p>
     </div>
 </body>
 </html>

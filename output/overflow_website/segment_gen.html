@@ -3,155 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe Website</title>
+    <title>Website Wireframe</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
+        header, nav, main, aside, footer {
+            padding: 20px;
+            color: white;
+        }
+        header {
+            background-color: #FFEB3B;
+            height: 100px;
+        }
+        nav {
+            background-color: #4CAF50;
+            height: 50px;
+        }
+        main {
+            background-color: #2196F3;
+            min-height: 400px;
+            padding: 20px;
+        }
+        aside {
+            background-color: #FFC107;
+            height: 400px;
+        }
+        footer {
+            background-color: #9C27B0;
+            height: 80px;
+        }
         .container {
             display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-        .header {
-            background-color: #FFDD57;
-            padding: 20px;
-            text-align: center;
-            flex: 0 1 60px;
+            flex-wrap: wrap;
         }
         .content {
-            display: flex;
             flex: 1;
+            min-width: 200px;
+            margin: 20px;
         }
-        .sidebar {
-            background-color: #FFAB57;
-            width: 20%;
-            padding: 20px;
-        }
-        .main-content {
-            background-color: #FF8557;
-            width: 80%;
-            padding: 20px;
-        }
-        .footer {
-            background-color: #FFD457;
-            padding: 20px;
-            text-align: center;
-            flex: 0 1 40px;
-        }
-        .menubar {
+
+        .navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(to right, #f0f0f0, #e0e0e0);
             padding: 10px 20px;
+            background-color: #f2f2f2;
         }
-        .logo {
+        .navbar-logo {
             display: flex;
             align-items: center;
         }
-        .logo img {
-            height: 40px;
+        .navbar-logo img {
+            height: 30px;
             margin-right: 10px;
         }
-        .nav-links {
+        .navbar-menu {
             display: flex;
             align-items: center;
-            gap: 20px;
         }
-        .nav-links a {
+        .navbar-menu a {
+            margin: 0 15px;
             text-decoration: none;
             color: #333;
-            font-weight: 500;
+            font-size: 14px;
         }
-        .auth-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .navbar-menu .dropdown {
+            position: relative;
         }
-        .auth-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
+        .navbar-menu .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 5px 0;
+            min-width: 100px;
+            z-index: 1;
         }
-        .button {
+        .navbar-menu .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar-menu .dropdown-content a {
+            color: black;
             padding: 8px 16px;
-            background-color: #333;
+            display: block;
+        }
+        .navbar-menu .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-actions a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        .navbar-actions .download-btn {
+            background-color: black;
             color: white;
+            padding: 8px 16px;
             border: none;
             border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
         }
+
         .main-content {
-            max-width: 800px;
-            padding: 1em;
-            background: linear-gradient(to bottom right, #e6e9fc, #a1a3f5);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 50px 20px;
             text-align: center;
+            color: #fff;
         }
         .main-content h1 {
             font-size: 3em;
             font-weight: bold;
-            margin: 0.5em 0;
         }
         .main-content p {
-            font-size: 1.25em;
-            margin: 0.5em 0;
+            font-size: 1.2em;
+            margin-top: 20px;
+            line-height: 1.5em;
         }
-        .download-button {
+        .main-content .button {
+            margin-top: 30px;
             background-color: #000;
             color: #fff;
+            padding: 10px 20px;
             text-decoration: none;
-            padding: 0.75em 1.5em;
             border-radius: 5px;
-            display: inline-block;
-            margin-top: 1em;
             font-weight: bold;
-        }
-        .download-button:hover {
-            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="menubar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <span>overflow</span>
-        </div>
-        <div class="nav-links">
-            <a href="#">Product ▼</a>
-            <a href="#">Examples</a>
-            <a href="#">Blog</a>
-            <a href="#">Pricing</a>
-        </div>
-        <div class="auth-links">
-            <a href="#">Sign In</a>
-            <a href="#" class="button">Download for free</a>
-        </div>
-    </div>
-    <div class="container">
-        <div class="header">
-            Header
-        </div>
-        <div class="content">
-            <div class="sidebar">
-                Sidebar
+    <header>
+        Header
+    </header>
+    <nav>
+        <div class="navbar">
+            <div class="navbar-logo">
+                <img src="logo.png" alt="Logo">
+                <span>overflow</span>
             </div>
+            <div class="navbar-menu">
+                <div class="dropdown">
+                    <a href="#">Product ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#">Option 1</a>
+                        <a href="#">Option 2</a>
+                    </div>
+                </div>
+                <a href="#">Examples</a>
+                <a href="#">Blog</a>
+                <a href="#">Pricing</a>
+            </div>
+            <div class="navbar-actions">
+                <a href="#">Sign In</a>
+                <a href="#" class="download-btn">Download for free</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <main class="content">
             <div class="main-content">
                 <h1>User flows done right</h1>
                 <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
-                <a href="#" class="download-button">Download - free trial</a>
+                <a href="#" class="button">Download - free trial</a>
             </div>
-        </div>
-        <div class="footer">
-            Footer
-        </div>
+        </main>
+        <aside class="content">
+            Sidebar
+        </aside>
     </div>
+    <footer>
+        Footer
+    </footer>
 </body>
 </html>

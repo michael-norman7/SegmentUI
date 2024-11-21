@@ -3,75 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Children's Music</title>
+    <title>Mubasic</title>
     <style>
         body {
-            display: flex;
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
         }
         .left {
-            background-color: #f3c37f;
-            color: black;
             width: 50%;
-            padding: 30px;
+            background-color: #f2d28f;
+            color: #000;
+            padding: 40px;
             box-sizing: border-box;
-        }
-        .left h1 {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-        .left h1 span {
-            color: #f18c4d;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .right {
-            background-color: black;
-            color: white;
             width: 50%;
+            background-color: #1c1c1c;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-        }
-        .box {
-            width: 80%;
-            margin-bottom: 10px;
+            color: #fff;
             padding: 20px;
+            box-sizing: border-box;
+        }
+        .title {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .highlight {
+            color: #F28E59;
+        }
+        .text {
+            font-size: 14px;
+        }
+        .brand, .icon {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .bar {
             display: flex;
             align-items: center;
-            color: black;
+            padding: 10px;
+            margin: 5px 0;
+            color: #1c1c1c;
+            font-weight: bold;
         }
-        .box span {
-            width: 40px;
-            height: 40px;
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 10px;
+        .bar-text {
+            margin-left: auto;
+            padding: 5px 10px;
+            background-color: #1c1c1c;
+            color: #fff;
         }
-        .box:nth-child(1) { background-color: #b2cbd9; }
-        .box:nth-child(2) { background-color: #e5c79e; }
-        .box:nth-child(3) { background-color: #eee6d2; }
-        .box:nth-child(4) { background-color: #ef9f7f; }
-        .box:nth-child(5) { background-color: #c6b2d9; }
+        .bar1 { background-color: #aac6d1; }
+        .bar2 { background-color: #f2d28f; }
+        .bar3 { background-color: #e6dcc7; }
+        .bar4 { background-color: #da7c4e; }
+        .bar5 { background-color: #b295de; }
     </style>
 </head>
 <body>
     <div class="left">
-        <div style="margin-bottom: 20px;">
-            <strong>mubasic</strong>
+        <div>
+            <div class="brand">mubasic</div>
+            <div class="title">The <span class="highlight">#1</span> source for children’s music.</div>
         </div>
-        <h1>The <span>#1</span><br>source for<br>children's<br>music.</h1>
-        <p>An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.</p>
+        <div class="text">An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.</div>
     </div>
     <div class="right">
-        <div class="box"><span>M</span>usic</div>
-        <div class="box"><span>B</span>rowse</div>
-        <div class="box"><span>A</span>ccess</div>
-        <div class="box"><span>I</span>nspire</div>
-        <div class="box"><span>C</span>reate</div>
+        <div class="bar bar1">M<div class="bar-text">U</div></div>
+        <div class="bar bar2">B</div>
+        <div class="bar bar3">A</div>
+        <div class="bar bar4">I<div class="bar-text">S</div></div>
+        <div class="bar bar5">C</div>
     </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Showcase</title>
+    <title>Showcase</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,121 +22,135 @@
         .navbar a {
             color: #fff;
             text-decoration: none;
-            margin-left: 20px;
+            margin: 0 15px;
         }
-        .navbar .right a {
-            background-color: #4a53ff;
-            padding: 10px 20px;
-            border-radius: 5px;
+        .navbar button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
         }
-        .header {
-            background-color: #fff;
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
-            border-bottom: 1px solid #ccc;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
-        .header h1 {
-            margin: 0;
+        h1 {
             font-size: 24px;
+            margin-bottom: 10px;
         }
         .tabs {
             display: flex;
+            border-bottom: 1px solid #ccc;
         }
         .tabs div {
-            margin-left: 20px;
-            padding: 10px;
+            padding: 10px 20px;
             cursor: pointer;
         }
         .tabs .active {
             border-bottom: 2px solid #000;
+            font-weight: bold;
         }
-        .content {
-            padding: 20px;
+        .grid {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            gap: 20px;
         }
         .card {
             background-color: #fff;
-            margin: 20px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .card img {
             width: 100%;
+            height: auto;
         }
-        .card-body {
+        .card-info {
             padding: 10px;
         }
-        .card-footer {
-            padding: 10px;
-            border-top: 1px solid #eee;
+        .card-info h3 {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .card-info small {
+            color: #666;
+        }
+        .stats {
             display: flex;
             justify-content: space-between;
-            color: #777;
-            font-size: 12px;
+            padding: 5px 10px;
+            font-size: 14px;
+            color: #666;
         }
     </style>
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="left">
-            <span>webflow</span>
-            <a href="#">Showcase</a>
-            <a href="#">Designers</a>
-            <a href="#">Learn & Support</a>
-        </div>
-        <div class="right">
-            <a href="#">Log In</a>
-            <a href="#">Sign Up for Free</a>
-        </div>
+<div class="navbar">
+    <div>
+        <a href="#">webflow</a>
+        <a href="#">Showcase</a>
+        <a href="#">Designers</a>
+        <a href="#">Learn & Support</a>
+    </div>
+    <div>
+        <a href="#">Log In</a>
+        <button>Sign Up for Free</button>
+    </div>
+</div>
+
+<div class="content">
+    <h1>Explore the Showcase</h1>
+    <div class="tabs">
+        <div class="active">Popular</div>
+        <div>Recent</div>
+        <div>Cloneable</div>
     </div>
 
-    <div class="header">
-        <h1>Explore the Showcase</h1>
-        <div class="tabs">
-            <div class="active">Popular</div>
-            <div>Recent</div>
-            <div>Cloneable</div>
+    <div class="grid">
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200" alt="Project Image">
+            <div class="card-info">
+                <h3>Project Title</h3>
+                <small>by Username</small>
+            </div>
+            <div class="stats">
+                <span>22204 ♥</span>
+                <span>28 🗨</span>
+                <span>562</span>
+            </div>
         </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200" alt="Project Image">
+            <div class="card-info">
+                <h3>New Concept</h3>
+                <small>by Username</small>
+            </div>
+            <div class="stats">
+                <span>27628 ♥</span>
+                <span>37 🗨</span>
+                <span>540</span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/400x200" alt="Project Image">
+            <div class="card-info">
+                <h3>Cards - Webflow UI Kit</h3>
+                <small>by Username</small>
+            </div>
+            <div class="stats">
+                <span>19195 ♥</span>
+                <span>31 🗨</span>
+                <span>538</span>
+            </div>
+        </div>
+        <!-- Additional card elements can go here -->
     </div>
-
-    <div class="content">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Project Image">
-            <div class="card-body">
-                <p>Heco by jthelms</p>
-            </div>
-            <div class="card-footer">
-                <span>22204 👍</span> <span>28 💬</span> <span>562 👁️</span>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Project Image">
-            <div class="card-body">
-                <p>New concept for IMDB by joaopaulots</p>
-            </div>
-            <div class="card-footer">
-                <span>27628 👍</span> <span>37 💬</span> <span>540 👁️</span>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Project Image">
-            <div class="card-body">
-                <p>Cards - Webflow UI Kit by janlosert</p>
-            </div>
-            <div class="card-footer">
-                <span>19195 👍</span> <span>31 💬</span> <span>2808 👁️</span>
-            </div>
-        </div>
-        <!-- Add more cards as needed -->
-    </div>
+</div>
 
 </body>
 </html>

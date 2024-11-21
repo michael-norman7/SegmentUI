@@ -3,113 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe Website</title>
+    <title>Overflow Website</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, rgba(242,242,242,1) 0%, rgba(191,204,255,1) 50%, rgba(169,238,255,1) 100%);
         }
-        .menubar {
+        .navbar {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            background: linear-gradient(to right, #f0f0f0, #e0e0e0);
-            padding: 10px 20px;
+            align-items: center;
+            padding: 20px;
+            background: none;
         }
-        .logo {
+        .navbar-logo {
             display: flex;
             align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
         }
-        .logo img {
-            height: 40px;
-            margin-right: 10px;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .nav-links a {
+        .navbar-menu a {
+            margin: 0 15px;
             text-decoration: none;
             color: #333;
-            font-weight: 500;
+            font-size: 16px;
         }
-        .auth-links {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .auth-links a {
+        .navbar-actions a {
+            margin-left: 15px;
             text-decoration: none;
             color: #333;
-            font-weight: 500;
+            font-size: 16px;
         }
-        .button {
-            padding: 8px 16px;
-            background-color: #333;
+        .navbar-actions .download-btn {
+            background-color: black;
             color: white;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .main-content {
-            height: calc(100vh - 60px);
-            padding: 1em;
-            background: linear-gradient(to bottom right, #e6e9fc, #a1a3f5);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .main-content h1 {
-            font-size: 3em;
-            font-weight: bold;
-            margin: 0.5em 0;
-        }
-        .main-content p {
-            font-size: 1.25em;
-            margin: 0.5em 0;
-            max-width: 600px;
-        }
-        .download-button {
-            background-color: #000;
-            color: #fff;
-            text-decoration: none;
-            padding: 0.75em 1.5em;
+            padding: 10px 20px;
             border-radius: 5px;
-            display: inline-block;
-            margin-top: 1em;
+            text-decoration: none;
             font-weight: bold;
         }
-        .download-button:hover {
-            background-color: #333;
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero .button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="menubar">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
+    <div class="navbar">
+        <div class="navbar-logo">
             <span>overflow</span>
         </div>
-        <div class="nav-links">
-            <a href="#">Product ▼</a>
+        <div class="navbar-menu">
+            <a href="#">Product</a>
             <a href="#">Examples</a>
             <a href="#">Blog</a>
             <a href="#">Pricing</a>
         </div>
-        <div class="auth-links">
+        <div class="navbar-actions">
             <a href="#">Sign In</a>
-            <a href="#" class="button">Download for free</a>
+            <a href="#" class="download-btn">Download for free</a>
         </div>
     </div>
-    <div class="main-content">
+    <div class="hero">
         <h1>User flows done right</h1>
         <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
-        <a href="#" class="download-button">Download - free trial</a>
+        <a href="#" class="button">Download - free trial</a>
     </div>
 </body>
 </html>

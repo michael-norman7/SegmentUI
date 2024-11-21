@@ -8,68 +8,74 @@
         body, html {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            width: 100%;
+            height: 100%;
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
-        .container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background-image: url('https://via.placeholder.com/1600x900');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .logo {
+        .header {
             position: absolute;
             top: 20px;
             left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .header .logo {
             font-size: 24px;
             font-weight: bold;
         }
-        .menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .header .links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
-        .menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        .menu a.listen {
+        .header .links a {
             color: pink;
+            text-decoration: none;
+            font-weight: bold;
         }
-        .main-title {
-            font-size: 128px;
-            font-family: 'Times New Roman', serif;
+        .content {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://via.placeholder.com/1500x800');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
         }
-        .subtitle {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
+        .content .title {
+            font-size: 100px;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
+        }
+        .content .button {
+            margin-top: 20px;
+            background: yellow;
+            border-radius: 20px;
             padding: 10px 20px;
-            border-radius: 15px;
-            color: lime;
-            font-size: 24px;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
         <div class="logo">RCA</div>
-        <div class="menu">
-            <a href="#" class="listen">Listen</a>
+        <div class="links">
+            <a href="#">Listen</a>
             <a href="#">Menu</a>
         </div>
-        <div class="main-title">ART</div>
-        <div class="subtitle">MAKE NOISE</div>
+    </div>
+    <div class="content">
+        <div class="title">ART</div>
+        <div class="button">Make Noise</div>
     </div>
 </body>
 </html>

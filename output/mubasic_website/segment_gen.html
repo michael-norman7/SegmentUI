@@ -5,146 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireframe Layout</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "nav content sidebar"
+                "footer footer footer";
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+            gap: 10px;
+            padding: 10px;
         }
         header {
-            background-color: #ff9999;
-            padding: 20px;
-            text-align: center;
+            grid-area: header;
+            background-color: #f8b400;
         }
         nav {
-            background-color: #99ccff;
-            padding: 10px;
-        }
-        main {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            margin: 10px;
-        }
-        .sidebar {
-            background-color: #ffcc99;
-            width: 20%;
-            padding: 10px;
+            grid-area: nav;
+            background-color: #5aa469;
         }
         .content {
-            background-color: #ccffcc;
-            width: 75%;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
+            grid-area: content;
+            background-color: #58a4b0;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #ff6b6b;
         }
         footer {
-            background-color: #cccccc;
-            text-align: center;
-            padding: 10px;
+            grid-area: footer;
+            background-color: #4d4d4d;
         }
         .main-content-left {
-            background-color: #f8d99c;
-            padding: 40px;
-            box-sizing: border-box;
+            background-color: #f3c487;
+            color: #000;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: space-between;
+            height: 100vh;
+            box-sizing: border-box;
         }
         .logo {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .headline {
+        .brand-name {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .tagline {
             font-size: 48px;
             font-weight: bold;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin: 0;
         }
-        .headline span {
-            color: #e87d2e;
+        .tagline span {
+            color: #e86f1d;
         }
         .description {
             font-size: 16px;
-            line-height: 1.5;
-            color: #333;
+            margin-top: auto;
         }
-        .icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
+        .main-content-right {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-        .main_content_right {
-            width: 300px;
-        }
-        .block {
+        .bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            color: #fff;
             padding: 10px;
-            margin-bottom: 5px;
-            font-family: Arial, sans-serif;
+            color: #fff;
             font-weight: bold;
         }
-        .block div {
+        .bar span {
+            width: 30px;
+            height: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 30px;
-            height: 30px;
-            background-color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(255, 255, 255, 0.2);
             margin-right: 10px;
         }
-        .block.m { background-color: #a2c4c9; }
-        .block.b { background-color: #e7b676; }
-        .block.a { background-color: #eddbc2; }
-        .block.i { background-color: #d4876d; }
-        .block.c { background-color: #c5a4d6; }
+        .bar-long {
+            flex: 1;
+            height: 30px;
+            background-color: #000;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bar:nth-child(1) { background-color: #86BBD8; }
+        .bar:nth-child(2) { background-color: #F4A261; }
+        .bar:nth-child(3) { background-color: #E2C495; }
+        .bar:nth-child(4) { background-color: #E76F51; }
+        .bar:nth-child(5) { background-color: #C5B4E3; }
     </style>
 </head>
 <body>
-    <header>Header</header>
-    <nav>Navigation</nav>
-    <main>
-        <div class="sidebar">Sidebar</div>
+    <div class="container">
+        <header></header>
+        <nav></nav>
         <div class="content">
             <div class="main-content-left">
-                <div class="logo">mubasic</div>
-                <div class="headline">
-                    The <span>#1</span> source for <br> children's music.
+                <div class="logo">
+                    <div class="brand-name">mubasic</div>
+                    <div class="icon">+</div>
                 </div>
-                <div class="description">
-                    An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.
-                </div>
-                <div class="icon">🎵</div>
-            </div>
-            <div class="main_content_right">
-                <div class="block m">
-                    <div>M</div>
-                    <div>U</div>
-                </div>
-                <div class="block b">
-                    <div>B</div>
-                    <div></div>
-                </div>
-                <div class="block a">
-                    <div>A</div>
-                    <div>S</div>
-                </div>
-                <div class="block i">
-                    <div>I</div>
-                    <div></div>
-                </div>
-                <div class="block c">
-                    <div>C</div>
-                    <div></div>
-                </div>
+                <h1 class="tagline">The <span>#1</span> source for children's music.</h1>
+                <p class="description">An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.</p>
             </div>
         </div>
-    </main>
-    <footer>Footer</footer>
+        <aside class="sidebar">
+            <div class="main-content-right">
+                <div class="bar">
+                    <span>M</span>
+                    <div class="bar-long">U</div>
+                </div>
+                <div class="bar">
+                    <span>B</span>
+                    <div class="bar-long"></div>
+                </div>
+                <div class="bar">
+                    <span>A</span>
+                    <div class="bar-long">S</div>
+                </div>
+                <div class="bar">
+                    <span>I</span>
+                    <div class="bar-long"></div>
+                </div>
+                <div class="bar">
+                    <span>C</span>
+                    <div class="bar-long"></div>
+                </div>
+            </div>
+        </aside>
+        <footer></footer>
+    </div>
 </body>
 </html>

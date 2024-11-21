@@ -1,5 +1,3 @@
-# code_generation.py
-
 import os
 import base64
 import shutil
@@ -223,37 +221,8 @@ def verify_and_finalize_code(full_image, preview_image, segment_gen_code):
     return final_segment_gen_code
 
 
-# Main function to run the code generation
-def main():
-    # List image project directories in the "img" folder
+def process_project(project_name):
     img_dir = "img"
-    image_projects = [
-        d for d in os.listdir(img_dir) if os.path.isdir(os.path.join(img_dir, d))
-    ]
-
-    if not image_projects:
-        print("No image projects found in the 'img' directory.")
-        return
-
-    print("Image projects found:")
-    for idx, project in enumerate(image_projects):
-        print(f"{idx}: {project}")
-
-    # Prompt user to select an image project
-    while True:
-        try:
-            selection = int(
-                input("Enter the number of the image project you want to process: ")
-            )
-            if 0 <= selection < len(image_projects):
-                project_name = image_projects[selection]
-                break
-            else:
-                print("Invalid selection. Please enter a number from the list.")
-        except ValueError:
-            print("Invalid input. Please enter a number.")
-
-    # Define paths based on selected project
     base_dir = os.path.join(img_dir, project_name)
     original_image_path = os.path.join(base_dir, f"{project_name}.png")
     masked_image_path = os.path.join(base_dir, f"{project_name}_segments_overlay.png")
@@ -345,6 +314,42 @@ def main():
     print(
         f"Website code generation complete. Final HTML located at: {final_segment_gen_code_path}"
     )
+
+
+# Main function to run the code generation
+def main():
+    # List image project directories in the "img" folder
+    img_dir = "img"
+    image_projects = [
+        d for d in os.listdir(img_dir) if os.path.isdir(os.path.join(img_dir, d))
+    ]
+
+    if not image_projects:
+        print("No image projects found in the 'img' directory.")
+        return
+
+    print("Image projects found:")
+    for idx, project in enumerate(image_projects):
+        print(f"{idx}: {project}")
+
+    # Prompt user to select an image project
+    while True:
+        try:
+            selection = input(
+                "Enter the number of the image project you want to process of 'all': "
+            )
+            if selection == "all":
+                for project_name in image_projects:
+                    print(f"Processing project: {project_name}")
+                    process_project(project_name)
+                break
+            elif 0 <= int(selection) < len(image_projects):
+                process_project(image_projects[selection])
+                break
+            else:
+                print("Invalid selection. Please enter a number from the list.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
 
 if __name__ == "__main__":

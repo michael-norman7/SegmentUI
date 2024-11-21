@@ -8,89 +8,102 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            color: #333;
         }
         header {
-            background-color: #ffd063;
-            height: 70vh;
+            background-color: #FBE5C0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        header .left {
+            display: flex;
+            align-items: center;
+        }
+        header .left img {
+            margin-right: 10px;
+        }
+        header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 50px;
-            position: relative;
+            padding: 50px;
+            background-color: #FBD3D3;
         }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        nav {
-            position: absolute;
-            top: 20px;
-            right: 50px;
-        }
-        nav a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #333;
-            font-size: 0.9rem;
-        }
-        .intro-text {
+        .hero .text {
             max-width: 50%;
+            font-size: 24px;
+            color: #333;
         }
-        .intro-text h1 {
-            font-size: 3rem;
-            margin: 0;
+        .hero .image {
+            width: 40%;
+            display: flex;
+            justify-content: center;
         }
-        .intro-text p {
-            font-size: 1.2rem;
+        .hero .image img {
+            max-width: 100%;
+            height: auto;
         }
-        .abstract-art {
-            background-color: #ff6eb0;
-            width: 300px;
-            height: 300px;
+        .scroll-down {
             position: absolute;
-            right: 10%;
-            top: 20%;
+            bottom: 10px;
+            right: 10px;
+            font-size: 12px;
+            color: #333;
         }
-        .scroll-note {
-            position: absolute;
-            bottom: 20px;
-            right: 50px;
-            font-size: 0.8rem;
+        h2 {
+            margin: 20px;
+            color: #333;
         }
         .new-releases {
-            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
         }
-        .release-item {
-            display: inline-block;
-            width: 23%;
-            margin: 1%;
-            background-color: #eee;
-            text-align: center;
+        .new-releases img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Spotify Design</div>
+        <div class="left">
+            <img src="logo.png" alt="Logo" width="50">
+            <span>Spotify Design</span>
+        </div>
         <nav>
             <a href="#">Stories</a>
-            <a href="#">Labs</a>
+            <a href="#">Latino</a>
             <a href="#">Team</a>
             <a href="#">Tools</a>
         </nav>
-        <div class="intro-text">
-            <h1>We’re Spilling the Tea: Spotify UX Writing Questions Answered</h1>
-        </div>
-        <div class="abstract-art"></div>
-        <div class="scroll-note">SCROLL DOWN</div>
     </header>
-    <section class="new-releases">
+    <section class="hero">
+        <div class="text">
+            <h1>We're Spilling the Tea: Spotify UX Writing Questions Answered</h1>
+        </div>
+        <div class="image">
+            <img src="abstract-art.png" alt="Abstract Art">
+        </div>
+        <div class="scroll-down">SCROLL DOWN</div>
+    </section>
+    <section>
         <h2>New Releases</h2>
-        <div class="release-item">Release 1</div>
-        <div class="release-item">Release 2</div>
-        <div class="release-item">Release 3</div>
-        <div class="release-item">Release 4</div>
+        <div class="new-releases">
+            <img src="album1.png" alt="Album 1">
+            <img src="album2.png" alt="Album 2">
+            <img src="album3.png" alt="Album 3">
+            <img src="album4.png" alt="Album 4">
+        </div>
     </section>
 </body>
 </html>

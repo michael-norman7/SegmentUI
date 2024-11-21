@@ -5,132 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireframe Layout</title>
     <style>
-        /* Base styles */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
+
         .header {
-            background-color: #8b8b00; /* Olive */
-            height: 60px;
-        }
-        .navbar {
-            background-color: #e377c2; /* Pink */
-            height: 40px;
-        }
-        .main-content {
-            background-color: #8c019b; /* Purple */
-            height: calc(100vh - 100px);
+            background-color: #7c6d19;
+            height: 50px;
         }
 
-        /* Component 1 styles */
-        .top-bar {
-            background-color: #007cc3;
-            color: white;
+        .nav {
+            background-color: #f186ae;
+            height: 50px;
+        }
+
+        .main-content {
+            background-color: #7b3486;
+            height: calc(100vh - 100px);
+        }
+        .announcement-bar {
+            background-color: #0072bc;
+            color: #ffffff;
             text-align: center;
             padding: 5px 0;
             font-size: 14px;
         }
-        .navbar {
+        .menubar {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            background-color: white;
-            border-bottom: 2px solid #ccc;
-        }
-        .navbar a {
-            text-decoration: none;
-            color: black;
-            padding: 0 15px;
-            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .logo {
-            font-size: 32px;
-            color: #007cc3;
-            margin-right: auto;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0072bc;
+            margin-right: 20px;
         }
-        .icon {
+        .nav-links {
+            list-style: none;
             display: flex;
-            align-items: center;
+            margin: 0;
+            padding: 0;
         }
-        .icon img {
-            width: 20px;
-            height: 20px;
-            margin-right: 15px;
+        .nav-links li {
+            margin: 0 10px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 14px;
         }
         .order-button {
-            background-color: #007cc3;
-            color: white;
-            padding: 10px 15px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-right: 15px;
-        }
-
-        /* Component 2 styles */
-        .subnav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #fff;
+            background-color: #0072bc;
+            color: #ffffff;
             padding: 10px 20px;
-        }
-        .menu {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .menu li {
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        .menu li a {
             text-decoration: none;
-            color: #000;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
         }
         .icons {
             display: flex;
             align-items: center;
         }
-        .icons span {
-            margin: 0 10px;
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 15px;
+            color: black;
         }
-
-        /* Component 3 styles */
-        .main-content {
+        .cart-count {
+            position: absolute;
+            background-color: #ff0000;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 16px;
+            transform: translate(-50%, -50%);
+            margin-top: -8px;
+            margin-left: -8px;
+        }
+        .content-area {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 20px;
-            background-color: #fafafa;
+            background-color: #ffffff;
         }
         .text-content {
             max-width: 300px;
         }
-        .text-content h2 {
-            font-size: 28px;
-            margin: 10px 0;
+        .heading {
+            font-size: 2em;
             font-weight: bold;
-            color: #000;
+            margin: 0;
         }
-        .text-content p {
-            margin: 0 0 10px;
-            color: #555;
+        .subheading {
+            font-weight: normal;
+            margin: 10px 0;
+            color: #666;
         }
         .button {
-            display: inline-block;
-            padding: 10px 20px;
             background-color: #007bff;
-            color: #fff;
+            color: white;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            font-weight: bold;
-        }
-        .image-content {
-            max-width: 500px;
+            display: inline-block;
+            margin-top: 20px;
         }
         .image-content img {
             max-width: 100%;
@@ -139,55 +128,44 @@
     </style>
 </head>
 <body>
-    <div class="header"></div>
-    
-    <div class="top-bar">
-        Free UPS Shipping on All U.S. Orders Over $40! Subscriptions Always Ship Free.
-    </div>
-
-    <div class="navbar">
-        <div class="logo">JoeCoffee</div>
-        <a href="#">SHOP</a>
-        <a href="#">THE WORKSHOP</a>
-        <a href="#">DISCOVER</a>
-        <a href="#">CATERING</a>
-        <a href="#">CAREERS</a>
-        <a href="#">LOCATIONS</a>
-        <a href="#">WHOLESALE</a>
-        <a href="#" class="order-button">ORDER ONLINE</a>
-        <div class="icon">
-            <img src="user-icon.png" alt="User Icon">
-            <img src="search-icon.png" alt="Search Icon">
-            <img src="cart-icon.png" alt="Cart Icon">
+    <div class="header">
+        <div class="announcement-bar">
+            Free UPS Shipping on All U.S. Orders Over $40! Subscriptions Always Ship Free.
         </div>
     </div>
-
-    <div class="subnav">
-        <div class="logo">JoeCoffee</div>
-        <ul class="menu">
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#the-workshop">The Workshop</a></li>
-            <li><a href="#discover">Discover</a></li>
-            <li><a href="#catering">Catering</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#locations">Locations</a></li>
-            <li><a href="#wholesale">Wholesale</a></li>
-        </ul>
-        <a href="#order-online" class="order-button">Order Online</a>
-        <div class="icons">
-            <span>&#128100;</span>
-            <span>&#128722;<sup><span style="color: red;">1</span></sup></span>
+    <div class="nav">
+        <div class="menubar">
+            <div class="logo">JoeCoffee</div>
+            <ul class="nav-links">
+                <li><a href="#">SHOP</a></li>
+                <li><a href="#">THE WORKSHOP</a></li>
+                <li><a href="#">DISCOVER</a></li>
+                <li><a href="#">CATERING</a></li>
+                <li><a href="#">CAREERS</a></li>
+                <li><a href="#">LOCATIONS</a></li>
+                <li><a href="#">WHOLESALE</a></li>
+            </ul>
+            <a href="#" class="order-button">ORDER ONLINE</a>
+            <div class="icons">
+                <div class="icon">🙍‍♂️</div>
+                <div class="icon">🔍</div>
+                <div class="icon">
+                    🛒
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
         </div>
     </div>
-
     <div class="main-content">
-        <div class="text-content">
-            <p>ORDER AHEAD IS HERE!</p>
-            <h2>Download the <br>Joe Coffee App</h2>
-            <a href="#" class="button">DOWNLOAD NOW</a>
-        </div>
-        <div class="image-content">
-            <img src="path-to-your-image.jpg" alt="A table with coffee and pastries">
+        <div class="content-area">
+            <div class="text-content">
+                <div class="subheading">Order ahead is here!</div>
+                <div class="heading">Download the Joe Coffee App</div>
+                <a href="#" class="button">Download Now</a>
+            </div>
+            <div class="image-content">
+                <img src="https://via.placeholder.com/600x200" alt="Coffee and pastries">
+            </div>
         </div>
     </div>
 </body>

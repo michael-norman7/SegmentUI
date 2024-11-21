@@ -6,112 +6,135 @@
     <title>Wireframe Layout</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
             margin: 0;
-            height: 100vh;
             font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-areas: 
+                "header"
+                "nav"
+                "main"
+                "sidebar"
+                "footer";
+            grid-template-rows: 50px 50px 1fr 100px 50px;
+            grid-gap: 10px;
+            height: 100vh;
         }
-        header, footer {
+        
+        header {
+            grid-area: header;
             background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 15px;
         }
-        main {
-            display: flex;
-            flex: 1;
-        }
-        .sidebar {
-            flex: 1;
+        
+        nav {
+            grid-area: nav;
             background-color: #2196F3;
-            color: white;
-            padding: 20px;
         }
-        .content {
-            flex: 2;
-            background-color: #f0f0f0;
-            padding: 20px;
+        
+        main {
+            grid-area: main;
+            background-color: #f3f3f3;
         }
+        
+        aside {
+            grid-area: sidebar;
+            background-color: #FF9800;
+        }
+        
+        footer {
+            grid-area: footer;
+            background-color: #607D8B;
+        }
+        
         .menubar {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             background-color: #333;
-            padding: 10px 20px;
+            padding: 10px;
         }
+
         .logo {
-            color: white;
             font-size: 24px;
-            font-weight: bold;
-            margin-right: auto;
-        }
-        .menu-item {
-            color: pink;
-            font-size: 18px;
-            margin-left: 20px;
-            text-decoration: none;
-        }
-        .menu-item:hover {
             color: white;
         }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu-item {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .menu-item:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: pink;
+            bottom: -3px;
+            left: 0;
+        }
+        
         .main-content {
             position: relative;
             width: 100%;
             height: 100vh;
-            background-image: url('https://example.com/image.jpg'); /* Add your own image URL */
+            background-image: url('https://via.placeholder.com/1500x800');
             background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            background-position: center;
         }
-        .main-content h1 {
-            font-size: 5rem;
-            color: white;
-            text-transform: uppercase;
-            text-shadow: 1px 1px 2px black;
-            position: relative;
-        }
-        .make-noise {
-            font-size: 1.5rem;
-            color: #b4ff00;
-            border: 2px solid #b4ff00;
-            border-radius: 50%;
-            padding: 5px 10px;
+
+        .text-overlay {
             position: absolute;
-            right: 20%;
             bottom: 20%;
-            transform: rotate(-15deg);
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            font-size: 5rem;
             font-weight: bold;
+            font-family: 'Georgia', serif;
+            letter-spacing: 10px;
+        }
+
+        .button {
+            position: absolute;
+            bottom: 10%;
+            right: 5%;
+            background-color: transparent;
+            border: 2px solid #ADFF2F;
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: #ADFF2F;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
-
-<header>
-    Header
-</header>
-
-<main>
-    <div class="sidebar">
-        Sidebar
-    </div>
-    <div class="content">
+    <header></header>
+    <nav>
         <div class="menubar">
             <div class="logo">RCA</div>
-            <a href="#" class="menu-item">Listen</a>
-            <a href="#" class="menu-item">Menu</a>
+            <div class="menu">
+                <a href="#" class="menu-item">Listen</a>
+                <a href="#" class="menu-item">Menu</a>
+            </div>
         </div>
+    </nav>
+    <main>
         <div class="main-content">
-            <h1>ARI</h1>
-            <div class="make-noise">MAKE NOISE</div>
+            <div class="text-overlay">ART</div>
+            <div class="button">MAKE NOISE</div>
         </div>
-    </div>
-</main>
-
-<footer>
-    Footer
-</footer>
-
+    </main>
+    <aside></aside>
+    <footer></footer>
 </body>
 </html>

@@ -8,108 +8,53 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #FFD279;
+            color: #333;
         }
         .header {
-            background-color: #FEC8DC;
-            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px;
+            background: linear-gradient(90deg, #f8b195, #f67280);
         }
         .logo {
             display: flex;
             align-items: center;
         }
         .logo img {
-            height: 30px;
+            height: 25px;
             margin-right: 10px;
         }
-        .nav-links {
-            list-style-type: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-        .nav-links li {
-            margin-left: 20px;
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
             color: black;
             font-weight: bold;
         }
-        .main {
+        .main-content {
+            background-color: #f5c76f;
             display: flex;
-            height: calc(100vh - 70px);
-            align-items: center;
             justify-content: space-between;
-            padding: 0 50px;
+            padding: 40px;
         }
-        .text-section {
-            max-width: 45%;
+        .text-content {
+            max-width: 40%;
         }
-        .text-section p {
-            font-weight: bold;
-            text-transform: uppercase;
+        .text-content h2 {
+            font-size: 2.5rem;
             margin: 0;
-        }
-        .text-section h2 {
-            font-size: 40px;
-            margin: 10px 0 0;
-        }
-        .image-section {
-            background-color: #E76F51;
-            width: 300px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        .image-section::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 300px;
-            height: 300px;
-            background-color: #FFB6B9;
-            z-index: -1;
-        }
-        .image {
-            width: 250px;
-            height: 250px;
-            background-color: #FFE8D6;
-        }
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            font-size: 12px;
-            color: black;
-        }
-        .footer {
-            background-color: #fff;
-            padding: 20px 50px;
-        }
-        .footer h2 {
-            margin: 0 0 20px;
-            font-size: 24px;
-        }
-        .new-releases {
-            display: flex;
-            overflow-x: auto;
-            gap: 10px;
-        }
-        .release-item {
-            flex: none;
-            width: 200px;
-            height: 200px;
-            background-color: #EAEAEA;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             color: #333;
-            font-weight: bold;
-            font-size: 18px;
+        }
+        .text-content p {
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
+            color: #555;
+        }
+        .graphic-content {
+            background: url('abstract-shapes.png') no-repeat center/cover;
+            width: 350px;
+            height: 350px;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -119,31 +64,19 @@
             <img src="spotify-logo.png" alt="Spotify Logo">
             <span>Spotify Design</span>
         </div>
-        <ul class="nav-links">
-            <li>Stories</li>
-            <li>Labs</li>
-            <li>Team</li>
-            <li>Tools</li>
-        </ul>
+        <div class="nav-links">
+            <a href="#">Stories</a>
+            <a href="#">Labs</a>
+            <a href="#">Team</a>
+            <a href="#">Tools</a>
+        </div>
     </div>
-    <div class="main">
-        <div class="text-section">
-            <p>UX Writing</p>
-            <h2>We’re Spilling the Tea:<br>Spotify UX Writing<br>Questions Answered</h2>
+    <div class="main-content">
+        <div class="text-content">
+            <p>UX WRITING</p>
+            <h2>We’re Spilling the Tea:<br>Spotify UX Writing Questions Answered</h2>
         </div>
-        <div class="image-section">
-            <div class="image"></div>
-        </div>
-        <div class="scroll-down">SCROLL DOWN &#709;</div>
-    </div>
-    <div class="footer">
-        <h2>New Releases</h2>
-        <div class="new-releases">
-            <div class="release-item">1</div>
-            <div class="release-item">2</div>
-            <div class="release-item">3</div>
-            <div class="release-item">4</div>
-        </div>
+        <div class="graphic-content"></div>
     </div>
 </body>
 </html>

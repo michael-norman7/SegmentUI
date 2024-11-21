@@ -3,94 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Superlist</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f6f6fc;
+            background-color: #f7f7fc;
             color: #333;
         }
-        header {
-            background-color: #f4503e;
+        .header {
+            background-color: #ff5b5b;
             padding: 10px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .header-left {
-            float: left;
-        }
-        .header-right {
-            float: right;
-        }
-        .header-right button {
-            margin: 0 5px;
-            padding: 10px 20px;
+        .header button {
+            background-color: white;
+            color: #ff5b5b;
             border: none;
             border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
             cursor: pointer;
         }
-        .header-right .sign-up {
-            background-color: #f4503e;
+        .header button:first-child {
+            background-color: #ff5b5b;
             color: white;
-        }
-        .header-right .sign-in {
-            background-color: #e9e9f3;
-            color: #333;
         }
         .main-content {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
         .main-content h1 {
-            font-size: 3em;
-            margin: 0;
-            color: #333;
-        }
-        .main-content p {
-            font-size: 1.5em;
-            margin: 10px 0;
-            color: #f4503e;
-        }
-        .tab-container {
-            display: flex;
-            justify-content: center;
+            font-size: 48px;
             margin: 20px 0;
         }
-        .tab {
-            background: #e9e9f3;
+        .main-content h1 span {
+            color: #ff5b5b;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .tabs button {
+            background-color: white;
+            color: #666;
+            border: 1px solid #ddd;
             padding: 10px 20px;
-            margin: 0 10px;
             border-radius: 20px;
             cursor: pointer;
         }
-        .tab.active {
-            background: #f4503e;
-            color: white;
+        .tabs button.active {
+            border-color: #ff5b5b;
+            color: #ff5b5b;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-left">
-            <a href="#" class="download-superlist">
-                <img src="placeholder_img_qr.png" alt="QR code" style="height:50px;">
-            </a>
+    <div class="header">
+        <div class="promo">
+            <span>Free forever for individuals</span>
         </div>
-        <div class="header-right">
-            <button class="sign-up">Sign Up</button>
-            <button class="sign-in">Sign in ↗</button>
+        <button>Download Superlist</button>
+        <div>
+            <button>Sign Up</button>
+            <button>Sign in &#8594;</button>
         </div>
-        <div style="clear: both;"></div>
-    </header>
+    </div>
 
     <div class="main-content">
-        <h1>Home to <br> all your <span style="color: #f4503e;">&#x2713; lists</span></h1>
-        <p>Superlist</p>
-        <div class="tab-container">
-            <div class="tab">Teamwork</div>
-            <div class="tab active">Personal projects</div>
-            <div class="tab">Everything in between</div>
+        <img src="logo.png" alt="Superlist Logo" width="150">
+        <h1>Home to <span>all your</span> <span>lists</span></h1>
+        <div class="tabs">
+            <button>Teamwork</button>
+            <button class="active">Personal projects</button>
+            <button>Everything in between</button>
         </div>
     </div>
 

@@ -3,239 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe Layout</title>
+    <title>Website Layout</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-        .container {
             display: grid;
             grid-template-areas: 
-                "header header"
-                "nav main"
-                "footer footer";
-            grid-template-columns: 1fr 3fr;
-            grid-template-rows: auto 1fr auto;
+                "header header header"
+                "nav content sidebar"
+                "footer footer footer";
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-columns: 1fr 3fr 1fr;
             height: 100vh;
         }
-        .header {
+        #header {
             grid-area: header;
             background-color: #8e44ad;
-            color: white;
-            padding: 20px;
-            text-align: center;
         }
-        .nav {
+        #nav {
             grid-area: nav;
             background-color: #3498db;
-            padding: 20px;
         }
-        .main {
-            grid-area: main;
+        #content {
+            grid-area: content;
             background-color: #2ecc71;
-            padding: 20px;
         }
-        .footer {
-            grid-area: footer;
+        #sidebar {
+            grid-area: sidebar;
             background-color: #e74c3c;
-            color: white;
-            padding: 20px;
-            text-align: center;
         }
-        .menubar {
+        #footer {
+            grid-area: footer;
+            background-color: #f1c40f;
+        }
+        .navbar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #FEC868;
+            background: linear-gradient(to right, pink, lightyellow);
             padding: 10px 20px;
         }
-        .logo-container {
+        .navbar-logo {
             display: flex;
             align-items: center;
-            background-color: #FEC8DC;
-            padding: 10px;
-            border-radius: 0 5px 5px 0;
         }
-        .logo {
-            display: flex;
-            align-items: center;
+        .navbar-logo img {
+            height: 25px;
+            width: auto;
             margin-right: 10px;
         }
-        .logo img {
-            height: 30px;
-            width: 30px;
-            margin-right: 10px;
-        }
-        .logo-text {
-            font-weight: bold;
-            color: black;
-        }
-        .nav-links {
+        .navbar-links {
             display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            gap: 20px;
         }
-        .nav-links li {
-            margin-right: 20px;
-            font-weight: bold;
+        .navbar-links a {
+            text-decoration: none;
             color: black;
-        }
-        .nav-links li:last-child {
-            margin-right: 0;
+            font-weight: bold;
         }
         .main-content {
             display: flex;
-            align-items: center;
-            height: 100vh;
-            padding: 0 50px;
-        }
-        .text-section {
-            flex: 1;
-        }
-        .text-section h2 {
-            color: #000;
-            font-size: 40px;
-            font-weight: bold;
-            margin: 0;
-        }
-        .text-section p {
-            color: #000;
-            font-size: 16px;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-        .image-section {
-            flex: 1;
-            position: relative;
-        }
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 200px;
-            height: 200px;
-            background-color: #e76f51;
-            z-index: 1;
-        }
-        .image {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 200px;
-            height: 200px;
-            background-color: #ffe8d6;
-            z-index: 2;
-        }
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            font-size: 12px;
-            color: #000;
-        }
-        .footer-component {
-            padding: 20px;
-            background-color: #f4f4f4;
-            border-top: 1px solid #ccc;
-            display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100%;
+            background: #f5c76f;
+            padding: 20px;
         }
-        .footer-component .content {
-            display: flex;
-            align-items: center;
+        .text-content {
+            max-width: 50%;
         }
-        .footer-component h2 {
+        .text-content h2 {
+            font-size: 3rem;
+            color: #211c1b;
+            font-weight: bold;
             margin: 0;
-            font-size: 1.5em;
         }
-        .footer-component .view-all {
-            text-decoration: none;
-            color: #000;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
+        .text-content p {
+            font-size: 1rem;
+            color: #211c1b;
+            margin: 20px 0;
         }
-        .footer-component .view-all svg {
-            margin-left: 5px;
-            width: 16px;
-            height: 16px;
-        }
-        .new-releases {
-            display: flex;
-            overflow-x: auto;
-            padding-top: 20px;
-        }
-        .release-item {
-            flex: 0 0 auto;
-            margin-right: 10px;
-            background-color: #eaeaea;
-            width: 200px;
-            height: 200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
+        .graphic-content {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background: url('abstract-shapes.png') no-repeat center/cover;
+            border-radius: 8px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="menubar">
-                <div class="logo-container">
-                    <div class="logo">
-                        <img src="spotify-logo.png" alt="Spotify Logo">
-                        <span class="logo-text">Spotify Design</span>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li>Stories</li>
-                    <li>Labs</li>
-                    <li>Team</li>
-                    <li>Tools</li>
-                </ul>
+    <div id="header">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <img src="spotify-logo.png" alt="Spotify Logo">
+                <span>Spotify Design</span>
             </div>
-        </div>
-        <div class="nav">
-            Navigation
-        </div>
-        <div class="main">
-            <div class="main-content">
-                <div class="text-section">
-                    <p>UX Writing</p>
-                    <h2>We’re Spilling the Tea:<br>Spotify UX Writing<br>Questions Answered</h2>
-                </div>
-                <div class="image-section">
-                    <div class="image-overlay"></div>
-                    <div class="image"></div>
-                </div>
-            </div>
-            <div class="scroll-down">SCROLL DOWN &#709;</div>
-        </div>
-        <div class="footer">
-            <div class="footer-component">
-                <div class="content">
-                    <h2>New Releases</h2>
-                </div>
-                <a href="#" class="view-all">
-                    VIEW ALL STORIES 
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </a>
-            </div>
-            <div class="new-releases">
-                <div class="release-item">1</div>
-                <div class="release-item">2</div>
-                <div class="release-item">3</div>
-                <div class="release-item">4</div>
+            <div class="navbar-links">
+                <a href="#">Stories</a>
+                <a href="#">Events</a>
+                <a href="#">Team</a>
+                <a href="#">Tools</a>
             </div>
         </div>
     </div>
+    <div id="nav"></div>
+    <div id="content">
+        <div class="main-content">
+            <div class="text-content">
+                <p>UX WRITING</p>
+                <h2>We’re Spilling the Tea: <br> Spotify UX Writing Questions Answered</h2>
+            </div>
+            <div class="graphic-content"></div>
+        </div>
+    </div>
+    <div id="sidebar"></div>
+    <div id="footer"></div>
 </body>
 </html>

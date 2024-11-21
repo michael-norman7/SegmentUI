@@ -3,171 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webflow Showcase</title>
+    <title>Website Wireframe</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #000;
-            padding: 10px 20px;
-            color: #fff;
-        }
-        .navbar .logo {
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .navbar .menu {
-            display: flex;
-            gap: 20px;
-        }
-        .navbar .menu a {
-            color: #ccc;
-            text-decoration: none;
-        }
-        .navbar .auth-links {
-            display: flex;
-            gap: 10px;
-        }
-        .navbar .auth-links a {
-            color: #aaa;
-            text-decoration: none;
-        }
-        .navbar .auth-links .signup-button {
-            background-color: #4A56E2;
-            padding: 5px 10px;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .sub-nav {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            border-bottom: 1px solid #ddd;
-            background-color: #fff;
-        }
-        .sub-nav .title {
-            margin-right: auto;
-            font-size: 24px;
-            font-weight: 500;
+            background-color: #f5f5f5;
             color: #333;
         }
-        .sub-nav .links {
+        .navbar {
+            background-color: #000;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+        .navbar-logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .navbar-menu {
             display: flex;
             gap: 20px;
         }
-        .sub-nav .links a {
+        .navbar-menu a, .navbar-auth a {
+            color: white;
             text-decoration: none;
-            font-size: 16px;
-            color: #999;
+            transition: opacity 0.3s;
         }
-        .content {
+        .navbar-menu a:hover, .navbar-auth a:hover {
+            opacity: 0.8;
+        }
+        .navbar-auth {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+        }
+        .signup-button {
+            background-color: #4263EB;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .signup-button:hover {
+            background-color: #2f50c9;
+        }
+        .sub-nav-bar {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 20px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+        .sub-nav-bar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+        .sub-nav-bar li {
+            font-size: 14px;
+            color: #555;
+            cursor: pointer;
+        }
+        .sub-nav-bar li.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+        }
+        .main-content .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
         }
+        .tabs {
+            display: flex;
+            justify-content: flex-start;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            gap: 20px;
+        }
+        .tab {
+            color: #555;
+            cursor: pointer;
+        }
+        .tab.active {
+            color: #000;
+            border-bottom: 2px solid #000;
+            padding-bottom: 5px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
         .card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            width: 30%;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
         }
         .card img {
             width: 100%;
-            border-bottom: 1px solid #ddd;
+            height: auto;
         }
         .card-content {
             padding: 15px;
         }
-        .card-content h3 {
-            margin: 0;
+        .card-title {
             font-size: 18px;
-            color: #333;
+            font-weight: bold;
+            margin: 0;
         }
-        .card-footer {
+        .card-subtitle {
+            font-size: 14px;
+            color: #999;
+            margin-top: 5px;
+        }
+        .card-stats {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 10px 15px;
-        }
-        .card-footer span {
-            display: flex;
-            align-items: center;
+            margin-top: 10px;
             font-size: 14px;
-            color: #777;
-        }
-        .card-footer img {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
-        .author {
-            color: #0073e6;
-            text-decoration: none;
+            color: #999;
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">webflow</div>
-        <div class="menu">
+        <div class="navbar-logo">webflow</div>
+        <div class="navbar-menu">
             <a href="#">Showcase</a>
             <a href="#">Designers</a>
             <a href="#">Learn & Support</a>
         </div>
-        <div class="auth-links">
+        <div class="navbar-auth">
             <a href="#">Log In</a>
             <a href="#" class="signup-button">Sign Up for Free</a>
         </div>
     </div>
-    <div class="sub-nav">
-        <div class="title">Explore the Showcase</div>
-        <div class="links">
-            <a href="#">Popular</a>
-            <a href="#">Recent</a>
-            <a href="#">Cloneable</a>
-        </div>
+    <div class="sub-nav-bar">
+        <h2>Explore the Showcase</h2>
+        <ul>
+            <li class="active">Popular</li>
+            <li>Recent</li>
+            <li>Cloneable</li>
+        </ul>
     </div>
-    <div class="content">
-        <div class="card">
-            <img src="https://placehold.co/600x400" alt="Heco">
-            <div class="card-content">
-                <h3>Heco</h3>
-                <p>We turn information into experiences people care about.</p>
+    <div class="main-content">
+        <div class="container">
+            <div class="tabs">
+                <div class="tab">Recent</div>
+                <div class="tab active">Most Liked</div>
+                <div class="tab">Most Viewed</div>
             </div>
-            <div class="card-footer">
-                <span><img src="https://placehold.co/50x50" alt="jthelms">by <a href="#" class="author">jthelms</a></span>
-                <span>❤️ 28 · 562</span>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://placehold.co/600x400" alt="IMDB Concept">
-            <div class="card-content">
-                <h3>New concept for IMDB</h3>
-            </div>
-            <div class="card-footer">
-                <span><img src="https://placehold.co/50x50" alt="joaopaulots">by <a href="#" class="author">joaopaulots</a></span>
-                <span>❤️ 37 · 540</span>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://placehold.co/600x400" alt="Webflow UI Kit">
-            <div class="card-content">
-                <h3>Cards - Webflow UI Kit</h3>
-            </div>
-            <div class="card-footer">
-                <span><img src="https://placehold.co/50x50" alt="janlosert">by <a href="#" class="author">janlosert</a></span>
-                <span>❤️ 31 · 538</span>
+            <div class="grid">
+                <div class="card">
+                    <img src="image1.jpg" alt="Project 1">
+                    <div class="card-content">
+                        <p class="card-title">Heco</p>
+                        <p class="card-subtitle">by jthelms</p>
+                        <div class="card-stats">
+                            <span>❤️ 22204</span>
+                            <span>💬 28</span>
+                            <span>👁 562</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="image2.jpg" alt="Project 2">
+                    <div class="card-content">
+                        <p class="card-title">New concept for IMDB</p>
+                        <p class="card-subtitle">by joaopaulots</p>
+                        <div class="card-stats">
+                            <span>❤️ 27628</span>
+                            <span>💬 37</span>
+                            <span>👁 540</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="image3.jpg" alt="Project 3">
+                    <div class="card-content">
+                        <p class="card-title">Cards - Webflow UI Kit</p>
+                        <p class="card-subtitle">by janlosert</p>
+                        <div class="card-stats">
+                            <span>❤️ 19195</span>
+                            <span>💬 31</span>
+                            <span>👁 538</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional cards can be added here in the same format -->
             </div>
         </div>
     </div>

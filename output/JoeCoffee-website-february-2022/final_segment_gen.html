@@ -8,115 +8,165 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background-color: #ffffff;
         }
-        .top-bar {
-            background-color: #007cc3;
-            color: white;
+
+        .announcement-bar {
+            background-color: #0072bc;
+            color: #ffffff;
             text-align: center;
             padding: 5px 0;
             font-size: 14px;
         }
-        .navbar {
+
+        .nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 20px;
-            background-color: white;
+            padding: 15px 20px;
+            background-color: #ffffff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .navbar a {
-            text-decoration: none;
-            color: black;
-            padding: 0 15px;
-            font-weight: bold;
-        }
+
         .logo {
-            font-size: 32px;
-            color: #007cc3;
-            margin-right: auto;
+            font-size: 28px;
+            font-weight: bold;
+            color: #0072bc;
         }
-        .icon {
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .order-button {
+            background-color: #0072bc;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .icons {
             display: flex;
             align-items: center;
         }
-        .icon img {
-            width: 20px;
-            height: 20px;
-            margin-right: 15px;
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-left: 15px;
+            position: relative;
+            color: black;
         }
-        .order-button {
-            background-color: #007cc3;
-            color: white;
-            padding: 10px 15px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-right: 15px;
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background-color: #ff0000;
+            color: #ffffff;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 12px;
+            text-align: center;
+            line-height: 16px;
         }
-        .main-content {
+
+        .content-area {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 40px 20px;
-            background-color: #fafafa;
+            padding: 50px 20px;
         }
+
         .text-content {
             max-width: 300px;
         }
-        .text-content h2 {
-            font-size: 28px;
-            margin: 10px 0;
+
+        .heading {
+            font-size: 2.5em;
             font-weight: bold;
-            color: #000;
+            margin: 0;
+            color: #000000;
         }
+
+        .subheading {
+            font-weight: normal;
+            margin: 10px 0;
+            color: #666666;
+        }
+
         .button {
-            display: inline-block;
+            background-color: #0072bc;
+            color: white;
             padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
         }
+
         .image-content {
-            max-width: 500px;
+            max-width: 600px;
         }
+
         .image-content img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
+            border-radius: 5px;
         }
+
     </style>
 </head>
 <body>
-    <div class="top-bar">
+    <div class="announcement-bar">
         Free UPS Shipping on All U.S. Orders Over $40! Subscriptions Always Ship Free.
     </div>
-
-    <div class="navbar">
+    <div class="nav">
         <div class="logo">JoeCoffee</div>
-        <a href="#">SHOP</a>
-        <a href="#">THE WORKSHOP</a>
-        <a href="#">DISCOVER</a>
-        <a href="#">CATERING</a>
-        <a href="#">CAREERS</a>
-        <a href="#">LOCATIONS</a>
-        <a href="#">WHOLESALE</a>
+        <ul class="nav-links">
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">THE WORKSHOP</a></li>
+            <li><a href="#">DISCOVER</a></li>
+            <li><a href="#">CATERING</a></li>
+            <li><a href="#">CAREERS</a></li>
+            <li><a href="#">LOCATIONS</a></li>
+            <li><a href="#">WHOLESALE</a></li>
+        </ul>
         <a href="#" class="order-button">ORDER ONLINE</a>
-        <div class="icon">
-            <img src="user-icon.png" alt="User Icon">
-            <img src="search-icon.png" alt="Search Icon">
-            <img src="cart-icon.png" alt="Cart Icon">
+        <div class="icons">
+            <div class="icon">🙍‍♂️</div>
+            <div class="icon">🔍</div>
+            <div class="icon">
+                🛒
+                <span class="cart-count">0</span>
+            </div>
         </div>
     </div>
-
-    <div class="main-content">
+    <div class="content-area">
         <div class="text-content">
-            <p>ORDER AHEAD IS HERE!</p>
-            <h2>Download the <br>Joe Coffee App</h2>
-            <a href="#" class="button">DOWNLOAD NOW</a>
+            <div class="subheading">Order ahead is here!</div>
+            <div class="heading">Download the Joe Coffee App</div>
+            <a href="#" class="button">Download Now</a>
         </div>
         <div class="image-content">
-            <img src="path-to-your-image.jpg" alt="A table with coffee and pastries">
+            <img src="https://via.placeholder.com/600x300" alt="Coffee and pastries">
         </div>
     </div>
 </body>

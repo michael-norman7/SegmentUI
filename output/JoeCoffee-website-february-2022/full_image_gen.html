@@ -10,116 +10,89 @@
             margin: 0;
             padding: 0;
         }
-        .top-bar {
-            background-color: #1073cf;
+        .header {
+            background-color: #0066cc;
             color: white;
-            padding: 10px 0;
             text-align: center;
-            font-size: 14px;
+            padding: 10px;
         }
-        .navbar {
+        .nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
+            justify-content: center;
             background-color: white;
-            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
         }
-        .logo {
-            font-size: 24px;
-            color: #1073cf;
-            font-weight: bold;
-        }
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .nav-menu li {
-            margin-left: 20px;
-        }
-        .nav-menu a {
+        .nav a {
+            margin: 0 15px;
+            color: black;
             text-decoration: none;
-            color: black;
-            font-size: 16px;
         }
-        .nav-icons {
-            display: flex;
-            align-items: center;
+        .nav a.order-online {
+            background-color: #0066cc;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
         }
-        .nav-icons img {
-            width: 24px;
-            height: 24px;
-            margin-left: 10px;
-        }
-        .hero {
+        .banner {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #f9f9f9;
             position: relative;
-            text-align: left;
-            color: black;
         }
-        .hero img {
-            width: 100%;
+        .banner img {
+            max-width: 100%;
             height: auto;
         }
-        .hero-text {
+        .banner-text {
             position: absolute;
-            top: 20%;
-            left: 10%;
-            transform: translate(-10%, -20%);
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            max-width: 500px;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            text-shadow: 1px 1px 4px rgba(255,255,255,0.8);
         }
-        .hero-text h1 {
-            font-size: 36px;
-            margin: 0;
+        .banner-text h2 {
+            font-size: 32px;
+            margin: 10px 0;
         }
-        .hero-text p {
+        .banner-text p {
             font-size: 18px;
+            margin: 10px 0;
         }
-        .hero-text button {
-            background-color: #1073cf;
+        .banner-text a {
+            background-color: #0066cc;
             color: white;
-            border: none;
             padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-
-    <div class="top-bar">
+    <div class="header">
         Free UPS Shipping on All U.S. Orders Over $40! Subscriptions Always Ship Free.
     </div>
-
-    <div class="navbar">
-        <div class="logo">JoeCoffee</div>
-        <ul class="nav-menu">
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#workshop">The Workshop</a></li>
-            <li><a href="#discover">Discover</a></li>
-            <li><a href="#catering">Catering</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#locations">Locations</a></li>
-            <li><a href="#wholesale">Wholesale</a></li>
-        </ul>
-        <div class="nav-icons">
-            <a href="#order-online" style="background-color: #1073cf; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">ORDER ONLINE</a>
-            <img src="user-icon.png" alt="User Icon">
-            <img src="cart-icon.png" alt="Cart Icon">
+    <div class="nav">
+        <a href="#">JoeCoffee</a>
+        <a href="#">SHOP</a>
+        <a href="#">THE WORKSHOP</a>
+        <a href="#">DISCOVER</a>
+        <a href="#">CATERING</a>
+        <a href="#">CAREERS</a>
+        <a href="#">LOCATIONS</a>
+        <a href="#">WHOLESALE</a>
+        <a href="#" class="order-online">ORDER ONLINE</a>
+    </div>
+    <div class="banner">
+        <img src="https://via.placeholder.com/1364x600" alt="Coffee and Croissant">
+        <div class="banner-text">
+            <h2>ORDER AHEAD IS HERE!</h2>
+            <p><strong>Download the Joe Coffee App</strong></p>
+            <a href="#">DOWNLOAD NOW</a>
         </div>
     </div>
-
-    <div class="hero">
-        <img src="coffee-table.jpg" alt="Coffee Table">
-        <div class="hero-text">
-            <h4>ORDER AHEAD IS HERE!</h4>
-            <h1>Download the Joe Coffee App</h1>
-            <button>DOWNLOAD NOW</button>
-        </div>
-    </div>
-
 </body>
 </html>
