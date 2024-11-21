@@ -3,178 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Wireframe</title>
+    <title>Wireframe Website</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
         }
-
         .container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: auto 1fr auto;
-            grid-template-areas: 
-                "header header"
-                "sidebar main"
-                "footer footer";
+            display: flex;
+            flex-direction: column;
             height: 100vh;
         }
-
-        header {
-            grid-area: header;
-        }
-
-        .sidebar {
-            grid-area: sidebar;
-            background-color: #B3E5FC;
-            padding: 20px;
-        }
-
-        .main {
-            grid-area: main;
-            background-color: #C8E6C9;
-            padding: 20px;
-        }
-
-        footer {
-            grid-area: footer;
-            background-color: #FFCDD2;
+        .header {
+            background-color: #FFDD57;
             padding: 20px;
             text-align: center;
+            flex: 0 1 60px;
         }
-        
+        .content {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            background-color: #FFAB57;
+            width: 20%;
+            padding: 20px;
+        }
+        .main-content {
+            background-color: #FF8557;
+            width: 80%;
+            padding: 20px;
+        }
+        .footer {
+            background-color: #FFD457;
+            padding: 20px;
+            text-align: center;
+            flex: 0 1 40px;
+        }
         .menubar {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to right, #f0f0f0, #e0e0e0);
             padding: 10px 20px;
-            background-color: #f9f9fb;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
         .logo {
             display: flex;
             align-items: center;
         }
-
         .logo img {
-            height: 30px;
-            margin-right: 8px;
+            height: 40px;
+            margin-right: 10px;
         }
-
         .nav-links {
             display: flex;
+            align-items: center;
             gap: 20px;
         }
-
         .nav-links a {
             text-decoration: none;
             color: #333;
-            font-size: 14px;
+            font-weight: 500;
         }
-
-        .signin {
-            margin-right: 20px;
+        .auth-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .auth-links a {
             text-decoration: none;
             color: #333;
-            font-size: 14px;
+            font-weight: 500;
         }
-
-        .download-button {
-            padding: 8px 12px;
-            background-color: #000;
-            color: #fff;
+        .button {
+            padding: 8px 16px;
+            background-color: #333;
+            color: white;
             border: none;
             border-radius: 4px;
             text-decoration: none;
-            font-size: 14px;
-        }
-
-        .content-header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .content-header a {
-            color: #000;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        .content-logo {
             font-weight: bold;
-            font-size: 24px;
-            color: #000;
         }
-
-        main {
-            max-width: 600px;
-            padding: 20px;
-            margin: auto;
+        .main-content {
+            max-width: 800px;
+            padding: 1em;
+            background: linear-gradient(to bottom right, #e6e9fc, #a1a3f5);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
-
-        h1 {
-            font-size: 48px;
+        .main-content h1 {
+            font-size: 3em;
             font-weight: bold;
-            margin: 0;
+            margin: 0.5em 0;
         }
-
-        p {
-            font-size: 18px;
-            margin: 20px 0;
+        .main-content p {
+            font-size: 1.25em;
+            margin: 0.5em 0;
         }
-
-        .button {
+        .download-button {
             background-color: #000;
             color: #fff;
-            padding: 15px 30px;
-            border-radius: 5px;
             text-decoration: none;
+            padding: 0.75em 1.5em;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 1em;
             font-weight: bold;
+        }
+        .download-button:hover {
+            background-color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="menubar">
-                <div class="logo">
-                    <img src="logo.png" alt="Logo">
-                    <span>overflow</span>
-                </div>
-                <nav class="nav-links">
-                    <a href="#">Product ▼</a>
-                    <a href="#">Examples</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Pricing</a>
-                </nav>
-                <div>
-                    <a href="#" class="signin">Sign In</a>
-                    <a href="#" class="download-button">Download for free</a>
-                </div>
-            </div>
-        </header>
-        <div class="sidebar">
-            Sidebar
+    <div class="menubar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span>overflow</span>
         </div>
-        <div class="main">
-            <main>
+        <div class="nav-links">
+            <a href="#">Product ▼</a>
+            <a href="#">Examples</a>
+            <a href="#">Blog</a>
+            <a href="#">Pricing</a>
+        </div>
+        <div class="auth-links">
+            <a href="#">Sign In</a>
+            <a href="#" class="button">Download for free</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            Header
+        </div>
+        <div class="content">
+            <div class="sidebar">
+                Sidebar
+            </div>
+            <div class="main-content">
                 <h1>User flows done right</h1>
                 <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
-                <a href="#" class="button">Download - free trial</a>
-            </main>
+                <a href="#" class="download-button">Download - free trial</a>
+            </div>
         </div>
-        <footer>
+        <div class="footer">
             Footer
-        </footer>
+        </div>
     </div>
 </body>
 </html>

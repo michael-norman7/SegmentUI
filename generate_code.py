@@ -261,6 +261,7 @@ def main():
     output_dir = os.path.join("output", project_name)
 
     os.makedirs(output_dir, exist_ok=True)
+    shutil.copy(original_image_path, output_dir)
 
     # Get component files and count them
     component_files = [

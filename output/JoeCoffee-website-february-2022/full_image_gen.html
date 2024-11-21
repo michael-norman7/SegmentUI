@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe Coffee</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .top-bar {
+            background-color: #1073cf;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            color: #1073cf;
+            font-weight: bold;
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        .nav-icons {
+            display: flex;
+            align-items: center;
+        }
+        .nav-icons img {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+        }
+        .hero {
+            position: relative;
+            text-align: left;
+            color: black;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            transform: translate(-10%, -20%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            max-width: 500px;
+        }
+        .hero-text h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .hero-text p {
+            font-size: 18px;
+        }
+        .hero-text button {
+            background-color: #1073cf;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        Free UPS Shipping on All U.S. Orders Over $40! Subscriptions Always Ship Free.
+    </div>
+
+    <div class="navbar">
+        <div class="logo">JoeCoffee</div>
+        <ul class="nav-menu">
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#workshop">The Workshop</a></li>
+            <li><a href="#discover">Discover</a></li>
+            <li><a href="#catering">Catering</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="#wholesale">Wholesale</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="#order-online" style="background-color: #1073cf; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">ORDER ONLINE</a>
+            <img src="user-icon.png" alt="User Icon">
+            <img src="cart-icon.png" alt="Cart Icon">
+        </div>
+    </div>
+
+    <div class="hero">
+        <img src="coffee-table.jpg" alt="Coffee Table">
+        <div class="hero-text">
+            <h4>ORDER AHEAD IS HERE!</h4>
+            <h1>Download the Joe Coffee App</h1>
+            <button>DOWNLOAD NOW</button>
+        </div>
+    </div>
+
+</body>
+</html>

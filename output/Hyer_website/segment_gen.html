@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Wireframe</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 10px;
+            padding: 10px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .header {
+            grid-column: 1 / 4;
+            background-color: #f8d7da;
+            height: 100px;
+        }
+        .header .menubar {
+            background: linear-gradient(to right, #6a7f98, #758ca0);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 100%;
+        }
+        .header .menubar img.logo {
+            height: 40px;
+        }
+        .header .menu-items {
+            display: flex;
+            gap: 20px;
+        }
+        .header .menu-item {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .header .social-icons img {
+            height: 30px;
+            padding-left: 10px;
+        }
+        .nav {
+            grid-column: 1 / 2;
+            background-color: #cfe2ff;
+            height: calc(100vh - 120px);
+        }
+        .main {
+            grid-column: 2 / 4;
+            background-color: #e2e3e5;
+            height: calc(100vh - 120px);
+        }
+        .footer {
+            grid-column: 1 / 4;
+            background-color: #d1e7dd;
+            height: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            background: transparent;
+        }
+        .navbar a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .main-content {
+            position: relative;
+            text-align: center;
+            color: #000;
+            padding-top: 50px;
+        }
+        .main-content h1 {
+            font-size: 80px;
+            margin: 0;
+        }
+        .main-content h2 {
+            font-size: 40px;
+            margin: 10px 0;
+        }
+        .main-content img {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+        }
+        .subtext {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menubar">
+                <img src="logo.png" alt="Logo" class="logo">
+                <nav class="menu-items">
+                    <a href="#" class="menu-item">Solutions</a>
+                    <a href="#" class="menu-item">About Us</a>
+                    <a href="#" class="menu-item">Contact</a>
+                </nav>
+                <div class="social-icons">
+                    <img src="icon1.png" alt="Social Icon 1">
+                    <img src="icon2.png" alt="Social Icon 2">
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="navbar">
+                <a href="#">Solutions</a>
+                <a href="#">About us</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-content">
+                <h1>Flyer<sup>®</sup></h1>
+                <h2>Personalised Aviation</h2>
+                <img src="plane.png" alt="Plane Image">
+                <p class="subtext">More flexibility, freedom and choice!</p>
+                <div class="buttons">
+                    <button>Book an Aircraft</button>
+                    <button>Book a Shared Flight</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+</html>

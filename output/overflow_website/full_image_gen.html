@@ -1,82 +1,102 @@
-l
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overflow</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #e0eafb, #bfcdef);
-            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #d8eefe, #c3b7f9);
             text-align: center;
-            overflow-x: hidden;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;
             padding: 20px 40px;
-            background-color: transparent;
+            box-sizing: border-box;
         }
-        .navbar a {
-            color: #000;
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
             text-decoration: none;
-            margin: 0 15px;
+            color: black;
             font-weight: 500;
         }
-        .navbar a.logo {
-            font-size: 24px;
+        .cta {
+            display: flex;
+        }
+        .cta a {
+            text-decoration: none;
             font-weight: bold;
-        }
-        .navbar-right a {
-            border: 1px solid #000;
-            padding: 10px 20px;
+            color: black;
+            background-color: white;
+            padding: 10px 15px;
             border-radius: 5px;
-            font-size: 14px;
+            transition: background-color 0.3s;
         }
-        .main-content {
-            padding: 150px 20px;
+        .cta a:hover {
+            background-color: lightgray;
         }
-        .main-content h1 {
-            font-size: 48px;
-            margin: 0 0 20px;
+        .content {
+            margin-top: 50px;
+            max-width: 800px;
+            text-align: center;
         }
-        .main-content p {
-            font-size: 20px;
-            margin: 0 0 40px;
+        .content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1.2em;
         }
         .download-button {
-            background-color: #000;
-            color: #fff;
-            padding: 15px 30px;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
             text-decoration: none;
-            border-radius: 5px;
             font-weight: bold;
-            font-size: 16px;
+            border-radius: 5px;
         }
     </style>
+    <title>User Flows</title>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="#" class="logo">overflow</a>
-        <div class="navbar-middle">
+
+    <div class="navbar">
+        <div class="logo">overflow</div>
+        <div class="menu">
             <a href="#">Product</a>
             <a href="#">Examples</a>
             <a href="#">Blog</a>
             <a href="#">Pricing</a>
-        </div>
-        <div class="navbar-right">
             <a href="#">Sign In</a>
-            <a href="#" class="download-button">Download for free</a>
+            <a class="cta" href="#">Download for free</a>
         </div>
-    </nav>
-    <div class="main-content">
+    </div>
+
+    <div class="content">
         <h1>User flows done right</h1>
         <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
-        <a href="#" class="download-button">Download - free trial</a>
+        <a class="download-button" href="#">Download - free trial</a>
     </div>
+
 </body>
 </html>

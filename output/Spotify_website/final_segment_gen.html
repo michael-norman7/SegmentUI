@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Design</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #FFD279;
+        }
+        .header {
+            background-color: #FEC8DC;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .nav-links {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-left: 20px;
+            color: black;
+            font-weight: bold;
+        }
+        .main {
+            display: flex;
+            height: calc(100vh - 70px);
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        .text-section {
+            max-width: 45%;
+        }
+        .text-section p {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+        }
+        .text-section h2 {
+            font-size: 40px;
+            margin: 10px 0 0;
+        }
+        .image-section {
+            background-color: #E76F51;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .image-section::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 300px;
+            height: 300px;
+            background-color: #FFB6B9;
+            z-index: -1;
+        }
+        .image {
+            width: 250px;
+            height: 250px;
+            background-color: #FFE8D6;
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 12px;
+            color: black;
+        }
+        .footer {
+            background-color: #fff;
+            padding: 20px 50px;
+        }
+        .footer h2 {
+            margin: 0 0 20px;
+            font-size: 24px;
+        }
+        .new-releases {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+        }
+        .release-item {
+            flex: none;
+            width: 200px;
+            height: 200px;
+            background-color: #EAEAEA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="spotify-logo.png" alt="Spotify Logo">
+            <span>Spotify Design</span>
+        </div>
+        <ul class="nav-links">
+            <li>Stories</li>
+            <li>Labs</li>
+            <li>Team</li>
+            <li>Tools</li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="text-section">
+            <p>UX Writing</p>
+            <h2>We’re Spilling the Tea:<br>Spotify UX Writing<br>Questions Answered</h2>
+        </div>
+        <div class="image-section">
+            <div class="image"></div>
+        </div>
+        <div class="scroll-down">SCROLL DOWN &#709;</div>
+    </div>
+    <div class="footer">
+        <h2>New Releases</h2>
+        <div class="new-releases">
+            <div class="release-item">1</div>
+            <div class="release-item">2</div>
+            <div class="release-item">3</div>
+            <div class="release-item">4</div>
+        </div>
+    </div>
+</body>
+</html>

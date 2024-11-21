@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .header, .footer {
+            display: none;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        .logo {
+            font-size: 24px;
+        }
+        .logo a {
+            text-decoration: none;
+            color: black;
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+        .menu-item {
+            margin-left: 20px;
+            color: pink;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .menu-item:hover {
+            color: black;
+        }
+        .hero {
+            background-image: url('https://example.com/image.jpg'); /* Replace with the correct URL */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            text-shadow: 1px 1px 2px black;
+        }
+        .hero h1 {
+            font-size: 8rem;
+            letter-spacing: 5px;
+        }
+        .make-noise {
+            position: absolute;
+            bottom: 10%;
+            right: 22%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            transform: rotate(-15deg);
+            color: #b4ff00;
+            border: 3px solid #b4ff00;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="nav">
+    <div class="logo"><a href="#">RCA</a></div>
+    <div class="menu">
+        <a href="#" class="menu-item">Listen</a>
+        <a href="#" class="menu-item">Menu</a>
+    </div>
+</div>
+
+<div class="hero">
+    <h1>ARI</h1>
+    <div class="make-noise">MAKE NOISE</div>
+</div>
+
+</body>
+</html>

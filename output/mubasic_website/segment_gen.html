@@ -9,159 +9,142 @@
             margin: 0;
             font-family: Arial, sans-serif;
         }
-        .container {
-            display: grid;
-            grid-template-areas: 
-                "header header header"
-                "sidebar main aside"
-                "footer footer footer";
-            grid-template-rows: 100px 1fr 100px;
-            grid-template-columns: 1fr 3fr 1fr;
-            height: 100vh;
-        }
         header {
-            grid-area: header;
-            background-color: #b0e57c;
+            background-color: #ff9999;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #99ccff;
+            padding: 10px;
+        }
+        main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin: 10px;
         }
         .sidebar {
-            grid-area: sidebar;
-            background-color: #f8b500;
+            background-color: #ffcc99;
+            width: 20%;
+            padding: 10px;
         }
-        .main {
-            grid-area: main;
-            background-color: #00bcd4;
+        .content {
+            background-color: #ccffcc;
+            width: 75%;
+            padding: 20px;
             display: flex;
-        }
-        .aside {
-            grid-area: aside;
-            background-color: #f06292;
+            justify-content: space-between;
         }
         footer {
-            grid-area: footer;
-            background-color: #607d8b;
+            background-color: #cccccc;
+            text-align: center;
+            padding: 10px;
         }
         .main-content-left {
-            background-color: #f8c471;
+            background-color: #f8d99c;
             padding: 40px;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            flex: 1;
+            align-items: flex-start;
         }
         .logo {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .headline {
+            font-size: 48px;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .headline span {
+            color: #e87d2e;
+        }
+        .description {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
         }
         .icon {
             position: absolute;
-            right: 20px;
             top: 20px;
+            right: 20px;
+            font-size: 24px;
         }
-        .headline {
-            margin-top: 20px;
-            font-size: 48px;
-            font-weight: bold;
+        .main_content_right {
+            width: 300px;
         }
-        .highlight {
-            color: #d35400;
-        }
-        .subheadline {
-            margin-top: 20px;
-            font-size: 16px;
-            max-width: 400px;
-        }
-        .main-content-right {
-            background-color: #F0EEE2;
-            padding: 20px;
-            flex: 1;
-        }
-        .bar {
+        .block {
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            color: #fff;
             padding: 10px;
-            margin: 5px 0;
-            border-radius: 5px;
-            color: white;
+            margin-bottom: 5px;
+            font-family: Arial, sans-serif;
             font-weight: bold;
         }
-        .bar div {
+        .block div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 30px;
             height: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.4);
             margin-right: 10px;
-            border-radius: 3px;
         }
-        .bar-text {
-            background-color: black;
-            padding: 10px;
-            color: white;
-            border-radius: 3px;
-        }
-        .m-bar {
-            background-color: #89B0AE;
-        }
-        .u-bar {
-            background-color: black;
-            margin-left: auto;
-        }
-        .b-bar {
-            background-color: #efa964;
-        }
-        .a-bar {
-            background-color: #F4D9A0;
-        }
-        .s-bar {
-            background-color: black;
-            margin-left: auto;
-        }
-        .i-bar {
-            background-color: #BF6146;
-        }
-        .c-bar {
-            background-color: #B588CC;
-        }
+        .block.m { background-color: #a2c4c9; }
+        .block.b { background-color: #e7b676; }
+        .block.a { background-color: #eddbc2; }
+        .block.i { background-color: #d4876d; }
+        .block.c { background-color: #c5a4d6; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header></header>
-        <div class="sidebar"></div>
-        <main class="main">
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">
             <div class="main-content-left">
                 <div class="logo">mubasic</div>
-                <div class="icon">+</div>
                 <div class="headline">
-                    The <span class="highlight">#1</span> source for children’s music.
+                    The <span>#1</span> source for <br> children's music.
                 </div>
-                <div class="subheadline">
+                <div class="description">
                     An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.
                 </div>
+                <div class="icon">🎵</div>
             </div>
-            <div class="main-content-right">
-                <div class="bar m-bar">
+            <div class="main_content_right">
+                <div class="block m">
                     <div>M</div>
-                    <div class="bar-text">U</div>
+                    <div>U</div>
                 </div>
-                <div class="bar b-bar">
+                <div class="block b">
                     <div>B</div>
+                    <div></div>
                 </div>
-                <div class="bar a-bar">
+                <div class="block a">
                     <div>A</div>
-                    <div class="bar-text s-bar">S</div>
+                    <div>S</div>
                 </div>
-                <div class="bar i-bar">
+                <div class="block i">
                     <div>I</div>
+                    <div></div>
                 </div>
-                <div class="bar c-bar">
+                <div class="block c">
                     <div>C</div>
+                    <div></div>
                 </div>
             </div>
-        </main>
-        <aside class="aside"></aside>
-        <footer></footer>
-    </div>
+        </div>
+    </main>
+    <footer>Footer</footer>
 </body>
 </html>

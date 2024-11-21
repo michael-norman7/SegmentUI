@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro Bliss</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+        }
+        header .contact-info {
+            font-size: 14px;
+        }
+        header .social-icons a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+        nav {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav .logo {
+            font-family: 'Lora', serif;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+        nav .logo span {
+            margin-left: 10px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav ul li a.active {
+            color: #B5B5B5;
+        }
+        .hero {
+            background-image: url('https://via.placeholder.com/1500x600');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 50px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-family: 'Lora', serif;
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .hero .buttons {
+            margin-top: 20px;
+        }
+        .hero .buttons a {
+            display: inline-block;
+            text-decoration: none;
+            padding: 10px 25px;
+            margin: 0 5px;
+            border-radius: 25px;
+            border: 2px solid;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .hero .buttons .book-table {
+            background-color: maroon;
+            color: #fff;
+            border-color: maroon;
+        }
+        .hero .buttons .explore-menu {
+            color: #333;
+            border-color: #333;
+        }
+        .hero .buttons a:hover {
+            background-color: #fff;
+            color: maroon;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contact-info">
+            📞 (414) 857 - 0107 &emsp; 📧 yummy@bistrobliss
+        </div>
+        <div class="social-icons">
+            <a href="#">🐦</a>
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+        </div>
+    </header>
+    <nav>
+        <div class="logo">
+            <img src="https://via.placeholder.com/50" alt="Logo" />
+            <span>Bistro Bliss</span>
+        </div>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <a href="#" class="book-table">Book A Table</a>
+    </nav>
+    <div class="hero">
+        <h1>Best food for your taste</h1>
+        <p>Discover delectable cuisine and unforgettable moments in our welcoming, culinary haven.</p>
+        <div class="buttons">
+            <a href="#" class="book-table">Book A Table</a>
+            <a href="#" class="explore-menu">Explore Menu</a>
+        </div>
+    </div>
+</body>
+</html>

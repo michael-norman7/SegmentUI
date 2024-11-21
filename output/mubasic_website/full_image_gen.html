@@ -3,91 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mubasic - Children's Music</title>
+    <title>Children's Music</title>
     <style>
         body {
-            margin: 0;
             display: flex;
-            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .left {
+            background-color: #f3c37f;
             color: black;
+            width: 50%;
+            padding: 30px;
+            box-sizing: border-box;
         }
-        .left-panel {
-            background-color: #F1C290;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px;
+        .left h1 {
+            font-size: 3rem;
+            font-weight: bold;
         }
-        .right-panel {
-            background-color: #292929;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px;
+        .left h1 span {
+            color: #f18c4d;
         }
-        h1 {
-            font-size: 3em;
-            line-height: 1.2;
-            margin: 0;
-        }
-        h1 span {
-            color: #F28E41;
-        }
-        p {
-            margin-top: 20px;
-            font-size: 1em;
-        }
-        .logo {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        .bars {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .bar {
-            height: 60px;
-            display: flex;
-            align-items: center;
-            padding-left: 15px;
-            color: #333;
-            font-size: 1.5em;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .bar div {
+        .right {
             background-color: black;
             color: white;
-            padding: 5px;
-            border-radius: 3px;
-            margin-right: 10px;
-            width: 30px;
-            text-align: center;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        .bar.m { background-color: #A9C9D2; }
-        .bar.b { background-color: #FAC98A; }
-        .bar.a { background-color: #F8DEBA; }
-        .bar.i { background-color: #CB775F; }
-        .bar.c { background-color: #C8B4DA; }
+        .box {
+            width: 80%;
+            margin-bottom: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            color: black;
+        }
+        .box span {
+            width: 40px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .box:nth-child(1) { background-color: #b2cbd9; }
+        .box:nth-child(2) { background-color: #e5c79e; }
+        .box:nth-child(3) { background-color: #eee6d2; }
+        .box:nth-child(4) { background-color: #ef9f7f; }
+        .box:nth-child(5) { background-color: #c6b2d9; }
     </style>
 </head>
 <body>
-    <div class="left-panel">
-        <div class="logo">mubasic</div>
-        <h1>The <span>#1</span> source for children's music.</h1>
+    <div class="left">
+        <div style="margin-bottom: 20px;">
+            <strong>mubasic</strong>
+        </div>
+        <h1>The <span>#1</span><br>source for<br>children's<br>music.</h1>
         <p>An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.</p>
     </div>
-    <div class="right-panel">
-        <div class="bars">
-            <div class="bar m"><div>M</div></div>
-            <div class="bar b"><div>U</div></div>
-            <div class="bar a"><div>B</div></div>
-            <div class="bar i"><div>A</div></div>
-            <div class="bar c"><div>S</div></div>
-        </div>
+    <div class="right">
+        <div class="box"><span>M</span>usic</div>
+        <div class="box"><span>B</span>rowse</div>
+        <div class="box"><span>A</span>ccess</div>
+        <div class="box"><span>I</span>nspire</div>
+        <div class="box"><span>C</span>reate</div>
     </div>
 </body>
 </html>

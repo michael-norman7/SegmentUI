@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Design</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        header {
+            background-color: #ffd063;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            position: relative;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 50px;
+        }
+        nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+        }
+        .intro-text {
+            max-width: 50%;
+        }
+        .intro-text h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .intro-text p {
+            font-size: 1.2rem;
+        }
+        .abstract-art {
+            background-color: #ff6eb0;
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            right: 10%;
+            top: 20%;
+        }
+        .scroll-note {
+            position: absolute;
+            bottom: 20px;
+            right: 50px;
+            font-size: 0.8rem;
+        }
+        .new-releases {
+            padding: 20px 50px;
+        }
+        .release-item {
+            display: inline-block;
+            width: 23%;
+            margin: 1%;
+            background-color: #eee;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Spotify Design</div>
+        <nav>
+            <a href="#">Stories</a>
+            <a href="#">Labs</a>
+            <a href="#">Team</a>
+            <a href="#">Tools</a>
+        </nav>
+        <div class="intro-text">
+            <h1>We’re Spilling the Tea: Spotify UX Writing Questions Answered</h1>
+        </div>
+        <div class="abstract-art"></div>
+        <div class="scroll-note">SCROLL DOWN</div>
+    </header>
+    <section class="new-releases">
+        <h2>New Releases</h2>
+        <div class="release-item">Release 1</div>
+        <div class="release-item">Release 2</div>
+        <div class="release-item">Release 3</div>
+        <div class="release-item">Release 4</div>
+    </section>
+</body>
+</html>

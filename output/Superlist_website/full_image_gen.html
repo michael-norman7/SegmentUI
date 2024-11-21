@@ -1,101 +1,98 @@
-l
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superlist</title>
+    <title>Homepage</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F5F5FA;
+            background-color: #f6f6fc;
             color: #333;
         }
-        .header {
-            background-color: #FF6B6B;
+        header {
+            background-color: #f4503e;
             padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
-        .download-banner {
-            background-color: white;
+        .header-left {
+            float: left;
+        }
+        .header-right {
+            float: right;
+        }
+        .header-right button {
+            margin: 0 5px;
             padding: 10px 20px;
-            border-radius: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: relative;
-            top: -30px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
         }
-        .buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .buttons a {
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
+        .header-right .sign-up {
+            background-color: #f4503e;
             color: white;
-            font-weight: bold;
         }
-        .sign-up {
-            background-color: #FF6B6B;
+        .header-right .sign-in {
+            background-color: #e9e9f3;
+            color: #333;
         }
-        .sign-in {
-            background-color: #FFE6E6;
-            color: #FF6B6B;
-        }
-        .intro {
+        .main-content {
             text-align: center;
-            margin: 100px 20px;
+            padding: 60px 20px;
         }
-        .intro h1 {
+        .main-content h1 {
+            font-size: 3em;
             margin: 0;
-            font-size: 2.5em;
+            color: #333;
         }
-        .intro span {
-            color: #FF6B6B;
+        .main-content p {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #f4503e;
         }
-        .categories {
+        .tab-container {
             display: flex;
             justify-content: center;
             margin: 20px 0;
-            gap: 15px;
         }
-        .category {
-            background-color: white;
+        .tab {
+            background: #e9e9f3;
             padding: 10px 20px;
-            border-radius: 25px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            font-weight: bold;
-            color: #777;
+            margin: 0 10px;
+            border-radius: 20px;
+            cursor: pointer;
         }
-        .category.active {
-            border: 2px solid #FF6B6B;
-            color: #FF6B6B;
+        .tab.active {
+            background: #f4503e;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div></div>
-        <div class="buttons">
-            <a href="#" class="sign-up">Sign Up</a>
-            <a href="#" class="sign-in">Sign in</a>
+
+    <header>
+        <div class="header-left">
+            <a href="#" class="download-superlist">
+                <img src="placeholder_img_qr.png" alt="QR code" style="height:50px;">
+            </a>
+        </div>
+        <div class="header-right">
+            <button class="sign-up">Sign Up</button>
+            <button class="sign-in">Sign in ↗</button>
+        </div>
+        <div style="clear: both;"></div>
+    </header>
+
+    <div class="main-content">
+        <h1>Home to <br> all your <span style="color: #f4503e;">&#x2713; lists</span></h1>
+        <p>Superlist</p>
+        <div class="tab-container">
+            <div class="tab">Teamwork</div>
+            <div class="tab active">Personal projects</div>
+            <div class="tab">Everything in between</div>
         </div>
     </div>
-    <div class="download-banner">
-        <p>Free forever for individuals</p>
-        <button>Download Superlist</button>
-    </div>
-    <div class="intro">
-        <h1>Home to <span>all your</span> lists</h1>
-    </div>
-    <div class="categories">
-        <div class="category">Teamwork</div>
-        <div class="category active">Personal projects</div>
-        <div class="category">Everything in between</div>
-    </div>
+
 </body>
 </html>

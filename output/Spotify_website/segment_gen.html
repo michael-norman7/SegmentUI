@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "nav main"
+                "footer footer";
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+        }
+        .header {
+            grid-area: header;
+            background-color: #8e44ad;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav {
+            grid-area: nav;
+            background-color: #3498db;
+            padding: 20px;
+        }
+        .main {
+            grid-area: main;
+            background-color: #2ecc71;
+            padding: 20px;
+        }
+        .footer {
+            grid-area: footer;
+            background-color: #e74c3c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .menubar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #FEC868;
+            padding: 10px 20px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            background-color: #FEC8DC;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .logo img {
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+        }
+        .logo-text {
+            font-weight: bold;
+            color: black;
+        }
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin-right: 20px;
+            font-weight: bold;
+            color: black;
+        }
+        .nav-links li:last-child {
+            margin-right: 0;
+        }
+        .main-content {
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            padding: 0 50px;
+        }
+        .text-section {
+            flex: 1;
+        }
+        .text-section h2 {
+            color: #000;
+            font-size: 40px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .text-section p {
+            color: #000;
+            font-size: 16px;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        .image-section {
+            flex: 1;
+            position: relative;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background-color: #e76f51;
+            z-index: 1;
+        }
+        .image {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            height: 200px;
+            background-color: #ffe8d6;
+            z-index: 2;
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 12px;
+            color: #000;
+        }
+        .footer-component {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-top: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .footer-component .content {
+            display: flex;
+            align-items: center;
+        }
+        .footer-component h2 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .footer-component .view-all {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .footer-component .view-all svg {
+            margin-left: 5px;
+            width: 16px;
+            height: 16px;
+        }
+        .new-releases {
+            display: flex;
+            overflow-x: auto;
+            padding-top: 20px;
+        }
+        .release-item {
+            flex: 0 0 auto;
+            margin-right: 10px;
+            background-color: #eaeaea;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menubar">
+                <div class="logo-container">
+                    <div class="logo">
+                        <img src="spotify-logo.png" alt="Spotify Logo">
+                        <span class="logo-text">Spotify Design</span>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li>Stories</li>
+                    <li>Labs</li>
+                    <li>Team</li>
+                    <li>Tools</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav">
+            Navigation
+        </div>
+        <div class="main">
+            <div class="main-content">
+                <div class="text-section">
+                    <p>UX Writing</p>
+                    <h2>We’re Spilling the Tea:<br>Spotify UX Writing<br>Questions Answered</h2>
+                </div>
+                <div class="image-section">
+                    <div class="image-overlay"></div>
+                    <div class="image"></div>
+                </div>
+            </div>
+            <div class="scroll-down">SCROLL DOWN &#709;</div>
+        </div>
+        <div class="footer">
+            <div class="footer-component">
+                <div class="content">
+                    <h2>New Releases</h2>
+                </div>
+                <a href="#" class="view-all">
+                    VIEW ALL STORIES 
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </a>
+            </div>
+            <div class="new-releases">
+                <div class="release-item">1</div>
+                <div class="release-item">2</div>
+                <div class="release-item">3</div>
+                <div class="release-item">4</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

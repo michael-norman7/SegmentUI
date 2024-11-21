@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro Bliss</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .topbar {
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contact-info {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #666;
+            font-size: 16px;
+        }
+        .navbar .active {
+            background-color: #e5e5d5;
+            border-radius: 15px;
+            padding: 5px 15px;
+        }
+        .navbar button {
+            padding: 10px 20px;
+            border: 1px solid #666;
+            background-color: transparent;
+            color: #666;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar button:hover {
+            background-color: #666;
+            color: white;
+        }
+        .main-content {
+            text-align: center;
+            background-image: url('background.jpg');
+            background-size: cover;
+            padding: 100px 20px;
+        }
+        .main-content h1 {
+            font-size: 3rem;
+            color: #3C2A1E;
+            margin: 0;
+        }
+        .main-content p {
+            font-size: 1.2rem;
+            color: #6D6D6D;
+            margin: 20px 0;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .button-primary {
+            background-color: #A43D35;
+            color: #fff;
+        }
+        .button-secondary {
+            background-color: #fff;
+            color: #A43D35;
+            border-color: #A43D35;
+        }
+        .button:hover {
+            background-color: white;
+            color: #A43D35;
+            border-color: #A43D35;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="contact-info">
+                <div>(414) 857 - 0107</div>
+                <div>yummy@bistrobliss</div>
+            </div>
+            <div class="social-icons">
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <h1>Bistro Bliss</h1>
+            </div>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button>Book A Table</button>
+        </div>
+        <div class="main-content">
+            <h1>Best food for your taste</h1>
+            <p>Discover delectable cuisine and unforgettable moments in our welcoming, culinary haven.</p>
+            <div class="button-container">
+                <button class="button button-primary">Book A Table</button>
+                <button class="button button-secondary">Explore Menu</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Nakashima Woodworkers</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .menubar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            color: white;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 2;
+        }
+        .menubar-item {
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+        }
+        .main-content {
+            position: relative;
+            text-align: center;
+            min-height: 100vh;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .quote {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 700px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="menubar">
+            <div class="menubar-item">GEORGE NAKASHIMA WOODWORKERS</div>
+            <div>
+                <a href="#" class="menubar-item">FURNITURE</a>
+                <a href="#" class="menubar-item">PHILOSOPHY</a>
+            </div>
+        </div>
+        <div class="quote">
+            <p>“In Japanese, kodama, the ‘spirit of a tree,’ refers to a feeling of special kinship with the heart of a tree. It is our deepest respect for the tree…that we may offer the tree a second life.”</p>
+            <p>&mdash; George Nakashima</p>
+        </div>
+    </div>
+</body>
+</html>
