@@ -5,100 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireframe Layout</title>
     <style>
-        body, html {
+        body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
         .header {
-            background-color: #6a1b9a;
+            background-color: #800080; /* Purple */
             height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-        }
-        .main {
-            background-color: #43a047;
-            height: calc(100vh - 100px);
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .block {
-            width: 80%;
-            height: 80%;
-            border: 2px dashed #fff;
-        }
-        .menubar {
-            background-image: url('your-background-image.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 60px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .menu-item {
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-            padding: 0 15px;
-        }
-        .menu-item:hover {
-            text-decoration: underline;
         }
         .main-content {
+            background-color: #00FF00; /* Green */
+            height: 600px;
             position: relative;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            overflow: hidden;
+            background-image: url('https://your-image-url.com');
+            background-size: cover;
+            background-position: center;
         }
-        .background-image {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            filter: brightness(70%);
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #ddd;
+        }
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+        }
+        /* Main Content Styles */
+        .text-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
         }
         .quote {
-            position: absolute;
-            bottom: 20%;
-            left: 10%;
-            color: white;
             font-size: 1.5rem;
-            max-width: 40%;
+            line-height: 1.5;
         }
-        .quote p {
-            margin: 0;
-        }
-        .quote .author {
+        .author {
             margin-top: 10px;
-            font-style: italic;
+            font-size: 1rem;
+            text-align: right;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        Header
-    </div>
-    <div class="menubar">
-        <a href="#" class="menu-item">George Nakashima Woodworkers</a>
-        <a href="#" class="menu-item">Furniture</a>
-        <a href="#" class="menu-item">Philosophy</a>
-        <a href="#" class="menu-item">...</a>
-    </div>
-    <div class="main">
-        <div class="main-content">
-            <img src="background-image.jpg" alt="Forest Background" class="background-image">
-            <div class="quote">
-                <p>“In Japanese, kodama, the ‘spirit of a tree,’ refers to a feeling of special kinship with the heart of a tree. It is our deepest respect for the tree...that we may offer the tree a second life.”</p>
-                <p class="author">— George Nakashima</p>
+        <div class="navbar">
+            <a href="#">George Nakashima Woodworkers</a>
+            <div class="navbar-menu">
+                <a href="#">Furniture</a>
+                <a href="#">Philosophy</a>
+                <a href="#">...</a>
             </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="text-overlay">
+            <p class="quote">"In Japanese, kodama, the ‘spirit of a tree,’ refers to a feeling of special kinship with the heart of a tree. It is our deepest respect for the tree...that we may offer the tree a second life."</p>
+            <p class="author">— George Nakashima</p>
         </div>
     </div>
 </body>

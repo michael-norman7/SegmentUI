@@ -336,7 +336,7 @@ def main():
     while True:
         try:
             selection = input(
-                "Enter the number of the image project you want to process of 'all': "
+                "Enter the number of the image project you want to process or 'all': "
             )
             if selection == "all":
                 for project_name in image_projects:
@@ -344,7 +344,7 @@ def main():
                     process_project(project_name)
                 break
             elif 0 <= int(selection) < len(image_projects):
-                process_project(image_projects[selection])
+                process_project(image_projects[int(selection)])
                 break
             else:
                 print("Invalid selection. Please enter a number from the list.")
