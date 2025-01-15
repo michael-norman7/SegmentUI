@@ -5,35 +5,10 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import asyncio
 from pyppeteer import launch
+from utils import *
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-
-# Utility function to encode an image to base64
-def encode_image(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode("utf-8")
-
-
-async def capture_screenshot(html_path, output_image_path, width=1920, height=1080):
-    # Launch headless browser
-    browser = await launch()
-    page = await browser.newPage()
-    
-    await page.setViewport({"width": width, "height": height})
-
-    # Convert HTML file path to file URL
-    file_url = f"file:///{os.path.abspath(html_path)}"
-
-    # Open the HTML file
-    await page.goto(file_url, {"waitUntil": "networkidle0"})
-
-    # Take a screenshot and save it
-    await page.screenshot({"path": output_image_path, "fullPage": True})
-
-    # Close the browser
-    await browser.close()
 
 
 def generate_full_image_code(original_image_path):
@@ -245,7 +220,7 @@ def process_project(project_name, tests):
     num_components = len(component_files)
 
     # Test Full Image Gen
-    if 'full_image' in tests:
+    if "full_image" in tests:
         full_image_code = generate_full_image_code(original_image_path)
         full_image_code_path = os.path.join(output_dir, "full_image_gen.html")
         with open(full_image_code_path, "w") as file:
@@ -254,7 +229,9 @@ def process_project(project_name, tests):
 
         full_image_gen_image_path = os.path.join(output_dir, "full_image_gen.png")
         try:
-            asyncio.run(capture_screenshot(full_image_code_path, full_image_gen_image_path))
+            asyncio.run(
+                capture_screenshot(full_image_code_path, full_image_gen_image_path)
+            )
             print(
                 f"Screenshot of the full image gen code saved to {full_image_gen_image_path}"
             )
@@ -262,7 +239,7 @@ def process_project(project_name, tests):
             print(f"Error while capturing screenshot: {e}")
 
     # Test Segment Gen
-    if 'segment_gen' in tests:
+    if "segment_gen" in tests:
         # Generate base structure with the appropriate number of placeholders
         base_structure_code = generate_base_structure(masked_image_path, num_components)
 
@@ -278,7 +255,9 @@ def process_project(project_name, tests):
             print(
                 f"Generating code for component {idx + 1}/{len(component_files)}: {component_name}"
             )
-            component_code = generate_component_code(component_image_path, component_name)
+            component_code = generate_component_code(
+                component_image_path, component_name
+            )
             components_code.append(component_code)
 
         # Step 3: Combine the base structure and component code
@@ -293,7 +272,9 @@ def process_project(project_name, tests):
         segment_gen_image_path = os.path.join(output_dir, "preview_segment_gen.png")
         try:
             asyncio.run(capture_screenshot(combined_code_path, segment_gen_image_path))
-            print(f"Screenshot of the segment gen code saved to {segment_gen_image_path}")
+            print(
+                f"Screenshot of the segment gen code saved to {segment_gen_image_path}"
+            )
         except Exception as e:
             print(f"Error while capturing screenshot: {e}")
 
@@ -325,8 +306,8 @@ def process_project(project_name, tests):
 
 # Main function to run the code generation
 def main():
-    tests = ['full_image', 'segment_gen']    
-    
+    tests = ["full_image", "segment_gen"]
+
     # List image project directories in the "img" folder
     img_dir = "img"
     image_projects = [
