@@ -3,98 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overflow</title>
+    <title>Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(to bottom right, #e0e7ff, #c0cfff);
-            color: #333;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0eaff, #a4b6f8);
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
         }
         header {
+            position: absolute;
+            top: 20px;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        header img {
-            height: 40px;
-        }
-        nav {
-            display: flex;
-            gap: 20px;
+            padding: 0 20px;
         }
         nav a {
+            margin: 0 15px;
+            color: black;
             text-decoration: none;
-            color: #333;
         }
-        .right {
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .cta-buttons {
             display: flex;
-            gap: 20px;
             align-items: center;
         }
-        .right a {
-            text-decoration: none;
-            color: #333;
-        }
-        .button {
+        .cta-buttons a {
+            margin-left: 20px;
             padding: 10px 20px;
             background-color: black;
             color: white;
-            text-decoration: none;
             border-radius: 5px;
-        }
-        main {
-            text-align: center;
-            padding: 100px 20px;
+            text-decoration: none;
         }
         h1 {
-            font-size: 3em;
-            font-weight: bold;
-            color: white;
+            font-size: 48px;
+            margin-bottom: 20px;
         }
         p {
-            font-size: 1.2em;
-            color: white;
+            font-size: 20px;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 20px auto;
         }
-        .download {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .download a {
+        .download-button {
+            padding: 10px 20px;
             background-color: black;
             color: white;
-            padding: 10px 30px;
-            text-decoration: none;
             border-radius: 5px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <img src="logo.svg" alt="Logo">
+        <div class="logo">overflow</div>
         <nav>
             <a href="#">Product</a>
             <a href="#">Examples</a>
             <a href="#">Blog</a>
             <a href="#">Pricing</a>
         </nav>
-        <div class="right">
+        <div class="cta-buttons">
             <a href="#">Sign In</a>
-            <a href="#" class="button">Download for free</a>
+            <a href="#">Download for free</a>
         </div>
     </header>
-    <main>
-        <h1>User flows done right</h1>
-        <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
-        <div class="download">
-            <a href="#">Download - free trial</a>
-        </div>
-    </main>
+
+    <h1>User flows done right</h1>
+    <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
+    <a href="#" class="download-button">Download - free trial</a>
+
 </body>
 </html>
