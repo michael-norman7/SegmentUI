@@ -3,227 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Wireframe</title>
     <style>
-        body {
+        body, html {
             margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
         }
         .header {
-            background-color: purple;
-            height: 100px;
+            background-color: #8A2BE2;
+            height: 10%;
         }
         .navbar {
-            background-color: black;
-            color: white;
+            background-color: #000;
+            height: 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .navbar .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu li {
+            color: #fff;
+        }
+        .navbar .menu li.active {
+            font-weight: bold;
+        }
+        .navbar .menu li a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .navbar .auth {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar .auth a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .navbar .auth .signup {
+            background-color: #4169E1;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .sub-navbar {
+            background-color: #fff;
+            height: 5%;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .sub-navbar .title {
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        .sub-navbar .links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .sub-navbar .links li {
+            color: gray;
+        }
+        .content {
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .content .card {
+            background-color: #fff;
+            width: calc(33% - 20px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .content .card img {
+            width: 100%;
+        }
+        .content .card .info {
+            padding: 10px;
+        }
+        .content .card .info .title {
+            font-weight: bold;
+        }
+        .content .card .info .author {
+            color: gray;
+            font-size: 14px;
+        }
+        .content .card .stats {
             padding: 10px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-        }
-        .navbar-logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        .navbar-menu {
-            display: flex;
-            gap: 20px;
-        }
-        .navbar-menu a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-        }
-        .navbar-menu a:hover {
-            opacity: 1;
-        }
-        .navbar-auth {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        .navbar-auth a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-        }
-        .navbar-auth a:hover {
-            opacity: 1;
-        }
-        .signup-button {
-            background-color: #4263EB;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .signup-button:hover {
-            background-color: #2f50c9;
-        }
-        .sub-nav-bar {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-        }
-        .sub-nav-bar h2 {
-            font-size: 18px;
-            color: #333333;
-            margin: 0;
-            font-weight: bold;
-            flex: 1;
-        }
-        .sub-nav-bar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        .sub-nav-bar li {
-            margin-left: 20px;
-            color: #999999;
-            cursor: pointer;
             font-size: 14px;
-        }
-        .sub-nav-bar li.active {
-            color: #333333;
-            font-weight: bold;
-        }
-        .main-content {
-            background-color: olive;
-            height: calc(100vh - 150px);
-        }
-        .container {
-            width: 100%;
-            margin: 20px auto;
-            max-width: 1200px;
-        }
-        .tabs {
-            display: flex;
-            justify-content: center;
-            border-bottom: 2px solid #eee;
-        }
-        .tab {
-            padding: 10px 20px;
-            cursor: pointer;
-            color: #666;
-            font-weight: bold;
-        }
-        .tab.active {
-            border-bottom: 2px solid #333;
-            color: #333;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-        }
-        .card-content {
-            padding: 15px;
-        }
-        .card-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 0;
-        }
-        .card-subtitle {
-            font-size: 14px;
-            color: #999;
-            margin-top: 5px;
-        }
-        .card-stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #999;
-        }
-        .stats-icon {
-            margin-right: 5px;
+            color: gray;
         }
     </style>
+    <title>Complete Website Layout</title>
 </head>
 <body>
     <div class="header"></div>
     <div class="navbar">
-        <div class="navbar-logo">webflow</div>
-        <div class="navbar-menu">
-            <a href="#">Showcase</a>
-            <a href="#">Designers</a>
-            <a href="#">Learn & Support</a>
-        </div>
-        <div class="navbar-auth">
+        <div class="logo">webflow</div>
+        <ul class="menu">
+            <li class="active"><a href="#">Showcase</a></li>
+            <li><a href="#">Designers</a></li>
+            <li><a href="#">Learn & Support</a></li>
+        </ul>
+        <div class="auth">
             <a href="#">Log In</a>
-            <a href="#" class="signup-button">Sign Up for Free</a>
+            <a href="#" class="signup">Sign Up for Free</a>
         </div>
     </div>
-    <div class="sub-nav-bar">
-        <h2>Explore the Showcase</h2>
-        <ul>
-            <li class="active">Popular</li>
+    <div class="sub-navbar">
+        <div class="title">Explore the Showcase</div>
+        <ul class="links">
             <li>Recent</li>
-            <li>Cloneable</li>
+            <li>Most Liked</li>
+            <li>Most Viewed</li>
         </ul>
     </div>
-    <div class="main-content">
-        <div class="container">
-            <div class="tabs">
-                <div class="tab">Recent</div>
-                <div class="tab active">Most Liked</div>
-                <div class="tab">Most Viewed</div>
+    <div class="content">
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Project Image">
+            <div class="info">
+                <div class="title">Project Title</div>
+                <div class="author">by Author</div>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <img src="image1.jpg" alt="Project 1">
-                    <div class="card-content">
-                        <p class="card-title">Heco</p>
-                        <p class="card-subtitle">by jthelms</p>
-                        <div class="card-stats">
-                            <span><i class="stats-icon">❤️</i>22204</span>
-                            <span><i class="stats-icon">💬</i>28</span>
-                            <span><i class="stats-icon">👁</i>562</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="image2.jpg" alt="Project 2">
-                    <div class="card-content">
-                        <p class="card-title">New concept for IMDB</p>
-                        <p class="card-subtitle">by joaopaulots</p>
-                        <div class="card-stats">
-                            <span><i class="stats-icon">❤️</i>27628</span>
-                            <span><i class="stats-icon">💬</i>37</span>
-                            <span><i class="stats-icon">👁</i>540</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="image3.jpg" alt="Project 3">
-                    <div class="card-content">
-                        <p class="card-title">Cards - Webflow UI Kit</p>
-                        <p class="card-subtitle">by janlosert</p>
-                        <div class="card-stats">
-                            <span><i class="stats-icon">❤️</i>19195</span>
-                            <span><i class="stats-icon">💬</i>31</span>
-                            <span><i class="stats-icon">👁</i>538</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Additional cards can be added here in the same format -->
+            <div class="stats">
+                <div>Views: 1234</div>
+                <div>Likes: 56</div>
+                <div>Comments: 12</div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Project Image">
+            <div class="info">
+                <div class="title">Project Title</div>
+                <div class="author">by Author</div>
+            </div>
+            <div class="stats">
+                <div>Views: 2345</div>
+                <div>Likes: 78</div>
+                <div>Comments: 34</div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Project Image">
+            <div class="info">
+                <div class="title">Project Title</div>
+                <div class="author">by Author</div>
+            </div>
+            <div class="stats">
+                <div>Views: 3456</div>
+                <div>Likes: 90</div>
+                <div>Comments: 45</div>
             </div>
         </div>
     </div>

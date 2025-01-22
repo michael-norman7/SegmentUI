@@ -11,146 +11,116 @@
             padding: 0;
             background-color: #f5f5f5;
         }
-        .navbar {
+        header {
             background-color: #000;
             color: #fff;
-            padding: 10px 20px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
         }
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .navbar button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .content {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        h1 {
+        header h1 {
+            margin: 0;
             font-size: 24px;
-            margin-bottom: 10px;
+        }
+        header nav a {
+            color: #fff;
+            margin-left: 15px;
+        }
+        .cta {
+            color: #fff;
+            background-color: #4a4aff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .container {
+            padding: 20px;
         }
         .tabs {
             display: flex;
+            justify-content: center;
             border-bottom: 1px solid #ccc;
+            margin-bottom: 20px;
         }
-        .tabs div {
-            padding: 10px 20px;
-            cursor: pointer;
+        .tabs a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #333;
+            padding-bottom: 5px;
         }
-        .tabs .active {
-            border-bottom: 2px solid #000;
+        .tabs a.active {
+            border-bottom: 2px solid #333;
             font-weight: bold;
         }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
         }
         .card {
             background-color: #fff;
-            width: calc(33.333% - 20px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             overflow: hidden;
         }
         .card img {
             width: 100%;
-            height: auto;
         }
-        .card-info {
-            padding: 10px;
+        .card-content {
+            padding: 15px;
         }
-        .card-info h3 {
-            margin: 10px 0;
-            font-size: 16px;
+        .card-title {
+            font-size: 18px;
+            margin: 0 0 10px 0;
+            font-weight: bold;
         }
-        .card-info small {
-            color: #666;
-        }
-        .stats {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 10px;
+        .card-meta {
             font-size: 14px;
-            color: #666;
+            color: #777;
         }
     </style>
 </head>
 <body>
-
-<div class="navbar">
-    <div>
-        <a href="#">webflow</a>
-        <a href="#">Showcase</a>
-        <a href="#">Designers</a>
-        <a href="#">Learn & Support</a>
-    </div>
-    <div>
-        <a href="#">Log In</a>
-        <button>Sign Up for Free</button>
-    </div>
-</div>
-
-<div class="content">
-    <h1>Explore the Showcase</h1>
-    <div class="tabs">
-        <div class="active">Popular</div>
-        <div>Recent</div>
-        <div>Cloneable</div>
-    </div>
-
-    <div class="grid">
-        <div class="card">
-            <img src="https://via.placeholder.com/400x200" alt="Project Image">
-            <div class="card-info">
-                <h3>Project Title</h3>
-                <small>by Username</small>
+    <header>
+        <h1>webflow</h1>
+        <nav>
+            <a href="#">Showcase</a>
+            <a href="#">Designers</a>
+            <a href="#">Learn & Support</a>
+            <a href="#" class="cta">Log In</a>
+            <a href="#" class="cta">Sign Up for Free</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="tabs">
+            <a href="#" class="active">Popular</a>
+            <a href="#">Recent</a>
+            <a href="#">Cloneable</a>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <img src="image1.jpg" alt="Image 1">
+                <div class="card-content">
+                    <h2 class="card-title">Heco</h2>
+                    <div class="card-meta">by jthelms</div>
+                </div>
             </div>
-            <div class="stats">
-                <span>22204 ♥</span>
-                <span>28 🗨</span>
-                <span>562</span>
+            <div class="card">
+                <img src="image2.jpg" alt="Image 2">
+                <div class="card-content">
+                    <h2 class="card-title">New concept for IMDB</h2>
+                    <div class="card-meta">by joaopaulots</div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image3.jpg" alt="Image 3">
+                <div class="card-content">
+                    <h2 class="card-title">Cards - Webflow UI Kit</h2>
+                    <div class="card-meta">by janlosert</div>
+                </div>
             </div>
         </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/400x200" alt="Project Image">
-            <div class="card-info">
-                <h3>New Concept</h3>
-                <small>by Username</small>
-            </div>
-            <div class="stats">
-                <span>27628 ♥</span>
-                <span>37 🗨</span>
-                <span>540</span>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/400x200" alt="Project Image">
-            <div class="card-info">
-                <h3>Cards - Webflow UI Kit</h3>
-                <small>by Username</small>
-            </div>
-            <div class="stats">
-                <span>19195 ♥</span>
-                <span>31 🗨</span>
-                <span>538</span>
-            </div>
-        </div>
-        <!-- Additional card elements can go here -->
     </div>
-</div>
-
 </body>
 </html>

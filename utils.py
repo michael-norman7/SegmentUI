@@ -9,12 +9,10 @@ def encode_image(image_path):
         return base64.b64encode(image_file.read()).decode("utf-8")
 
 
-async def capture_screenshot(html_path, output_image_path, width=1920, height=1080):
+async def capture_screenshot(html_path, output_image_path):
     # Launch headless browser
     browser = await launch()
     page = await browser.newPage()
-
-    await page.setViewport({"width": width, "height": height})
 
     # Convert HTML file path to file URL
     file_url = f"file:///{os.path.abspath(html_path)}"

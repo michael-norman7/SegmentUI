@@ -8,6 +8,7 @@ from PIL import Image, ImageDraw
 from dotenv import load_dotenv
 from matplotlib import pyplot as plt
 import io
+from utils import *
 
 load_dotenv()
 
@@ -37,12 +38,6 @@ colors_normalized = [(r / 255, g / 255, b / 255) for r, g, b in colors]
 
 # Keep track of used colors to avoid duplication
 used_colors = []
-
-
-# Function to encode the image to base64
-def encode_image(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode("utf-8")
 
 
 # Function to crop and save components based on coordinates
@@ -125,28 +120,28 @@ def create_bounding_boxes_image(image_path, components, output_path):
     width, height = image.size
 
     # Create a transparent overlay
-    overlay = Image.new('RGBA', image.size, (255,255,255,0))
+    overlay = Image.new("RGBA", image.size, (255, 255, 255, 0))
     draw = ImageDraw.Draw(overlay)
 
     # Define a list of vibrant and easily distinguishable colors
     colors = [
-        (255, 0, 0),      # Red
-        (0, 255, 0),      # Lime
-        (0, 0, 255),      # Blue
-        (255, 255, 0),    # Yellow
-        (255, 0, 255),    # Magenta
-        (0, 255, 255),    # Cyan
-        (255, 165, 0),    # Orange
-        (128, 0, 128),    # Purple
+        (255, 0, 0),  # Red
+        (0, 255, 0),  # Lime
+        (0, 0, 255),  # Blue
+        (255, 255, 0),  # Yellow
+        (255, 0, 255),  # Magenta
+        (0, 255, 255),  # Cyan
+        (255, 165, 0),  # Orange
+        (128, 0, 128),  # Purple
         (255, 192, 203),  # Pink
         (255, 105, 180),  # Hot Pink
-        (173, 255, 47),   # Green Yellow
-        (0, 128, 128),    # Teal
-        (0, 0, 128),      # Navy
-        (128, 128, 0),    # Olive
-        (255, 69, 0),     # Orange Red
-        (154, 205, 50),   # Yellow Green
-        (138, 43, 226),   # Blue Violet
+        (173, 255, 47),  # Green Yellow
+        (0, 128, 128),  # Teal
+        (0, 0, 128),  # Navy
+        (128, 128, 0),  # Olive
+        (255, 69, 0),  # Orange Red
+        (154, 205, 50),  # Yellow Green
+        (138, 43, 226),  # Blue Violet
     ]
 
     # Shuffle the colors to randomize assignment
@@ -170,7 +165,7 @@ def create_bounding_boxes_image(image_path, components, output_path):
         else:
             # If we run out of colors, reuse colors starting from the beginning
             color = colors[idx % len(colors)]
-        
+
         # Draw a rectangle outline with transparent fill
         draw.rectangle([x, y, x + w, y + h], outline=color + (255,), width=5)
 
@@ -178,6 +173,7 @@ def create_bounding_boxes_image(image_path, components, output_path):
     combined = Image.alpha_composite(image, overlay)
     combined.save(output_path)
     print(f"Saved image with bounding boxes: {output_path}")
+
 
 # Function to encode PIL image to base64
 def encode_pil_image(image):
@@ -286,7 +282,9 @@ def split_image(image_path, critique=False):
             exit(1)
 
         # Create an image with bounding boxes
-        bounding_boxes_image_path = os.path.join(output_dir, base_name + "_bounding_boxes.png")
+        bounding_boxes_image_path = os.path.join(
+            output_dir, base_name + "_bounding_boxes.png"
+        )
         create_bounding_boxes_image(image_path, components, bounding_boxes_image_path)
 
         if not critique:
@@ -299,7 +297,7 @@ def split_image(image_path, critique=False):
         # Display the image with bounding boxes
         plt.figure(figsize=(15, 10))  # Increase the figure size
         plt.imshow(Image.open(bounding_boxes_image_path))
-        plt.axis('off')
+        plt.axis("off")
         plt.show()
 
         # Ask GPT to critique the bounding boxes
@@ -317,7 +315,9 @@ def split_image(image_path, critique=False):
                     },
                     {
                         "type": "image_url",
-                        "image_url": {"url": f"data:image/png;base64,{base64_bounding_boxes_image}"},
+                        "image_url": {
+                            "url": f"data:image/png;base64,{base64_bounding_boxes_image}"
+                        },
                     },
                 ],
             }
@@ -339,7 +339,9 @@ def split_image(image_path, critique=False):
             print("GPT found issues with the bounding boxes. Regenerating...")
             attempt += 1
             if attempt > 3:
-                print("Maximum attempts reached. Proceeding with current bounding boxes.")
+                print(
+                    "Maximum attempts reached. Proceeding with current bounding boxes."
+                )
                 break
 
     # Proceed to crop and save components
