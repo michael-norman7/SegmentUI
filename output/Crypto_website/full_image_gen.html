@@ -3,78 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypton Website</title>
+    <title>Crypton</title>
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
             background-color: #111;
             color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            height: 100vh;
             align-items: center;
+            height: 100vh;
+            text-align: center;
         }
-        .header {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-        .share {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+        .container {
+            max-width: 600px;
         }
         h1 {
             font-size: 3em;
             margin: 0;
+            line-height: 1.2;
         }
-        p {
-            font-size: 1.2em;
-            margin: 10px 0;
+        h2 {
+            font-size: 1.5em;
+            font-weight: normal;
         }
         .menu {
-            position: absolute;
-            bottom: 80px;
-            text-align: left;
+            margin-top: 50px;
+            font-size: 0.9em;
+            text-transform: uppercase;
         }
         .menu a {
-            display: block;
-            color: #fff;
-            margin: 5px 0;
+            color: #bbb;
             text-decoration: none;
+            margin: 0 10px;
         }
-        .arrow-down {
+        .menu a:hover {
+            color: #fff;
+        }
+        .bottom-arrow {
             position: absolute;
             bottom: 20px;
-            font-size: 2em;
-        }
-        .chat-icon {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background-color: #24d1d1;
-            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5em;
         }
     </style>
 </head>
 <body>
-    <div class="header">-_</div>
-    <div class="share">Share</div>
-    <h1>
-        Hello!<br>
-        I'm Crypton
-    </h1>
-    <p>A cryptocurrency trading bot<br>based on machine learning.</p>
-    <div class="menu">
-        <a href="#">Technology</a>
-        <a href="#">Team lookup</a>
-        <a href="#">Contacts</a>
+    <div class="container">
+        <h1>Hello!<br>I'm Crypton</h1>
+        <h2>A cryptocurrency trading bot based on machine learning.</h2>
+        <div class="menu">
+            <a href="#">Technology</a>
+            <a href="#">Team lookup</a>
+            <a href="#">Contacts</a>
+        </div>
     </div>
-    <div class="arrow-down">↓</div>
-    <div class="chat-icon"></div>
+    <div class="bottom-arrow">↓</div>
 </body>
 </html>

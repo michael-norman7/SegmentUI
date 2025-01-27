@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import asyncio
 from pyppeteer import launch
 from utils import *
+import sys
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -43,7 +44,7 @@ def generate_full_image_code(original_image_path, output_dir):
     end_index = full_image_code.find("```", start_index + 6)
     if start_index != -1 and end_index != -1:
         full_image_code = full_image_code[start_index + 7 : end_index].strip()
-        
+
     full_image_code_path = os.path.join(output_dir, "full_image_gen.html")
     with open(full_image_code_path, "w") as file:
         file.write(full_image_code)
@@ -51,9 +52,7 @@ def generate_full_image_code(original_image_path, output_dir):
 
     full_image_gen_image_path = os.path.join(output_dir, "full_image_gen.png")
     try:
-        asyncio.run(
-            capture_screenshot(full_image_code_path, full_image_gen_image_path)
-        )
+        asyncio.run(capture_screenshot(full_image_code_path, full_image_gen_image_path))
         print(
             f"Screenshot of the full image gen code saved to {full_image_gen_image_path}"
         )
@@ -81,7 +80,11 @@ def generate_segment_code(
             {
                 "type": "text",
                 "text": (
-                    """This is a blank wireframe for a website. There are multiple blocks with different colors 
+                    """You are an expert web developer tasked with creating a website based on the provided wireframe.
+                    Your task is to recreate a website with the highest level of detail to the best of your ability.
+                    Recreate the style, layout, and structure of the website as accurately as possible.
+                    
+                    This is a blank wireframe for a website. There are multiple blocks with different colors 
                     to designate different components of the website. Generate the HTML and CSS code for the basic 
                     structure of the site, setting up a layout that allows individual components to be created 
                     and inserted into it later. Do not return any text except the code itself in a single HTML file."""
@@ -200,8 +203,8 @@ def generate_segment_code(
             {
                 "type": "text",
                 "text": (
-                    """Here is an image of the desired website and an image of what the code currently generates. 
-                        Please verify that the final code accurately represents the original image and is correctly structured. 
+                    """Here is an image of the final desired website and an image of what the code currently generates. 
+                        Please verify that the code accurately represents the original image and is correctly structured with a very high level of accuracy. 
                         If there are any issues, make the necessary adjustments to the code.
                         
                         Do not return any text except the HTML code.
@@ -270,7 +273,7 @@ def process_project(project_name, tests):
     # Test Full Image Gen
     if "full_image" in tests:
         print("Generating code from full image...")
-        
+
         generate_full_image_code(original_image_path, output_dir)
 
     # Test Segment Gen
@@ -297,28 +300,34 @@ def main():
         print("No image projects found in the 'img' directory.")
         return
 
-    print("Image projects found:")
-    for idx, project in enumerate(image_projects):
-        print(f"{idx}: {project}")
+    if len(sys.argv) > 1:
+        project_name = sys.argv[1]
+        if project_name in image_projects:
+            print(f"Processing project: {project_name}")
+            process_project(project_name, tests)
+    else:
+        print("Image projects found:")
+        for idx, project in enumerate(image_projects):
+            print(f"{idx}: {project}")
 
-    # Prompt user to select an image project
-    while True:
-        try:
-            selection = input(
-                "Enter the number of the image project you want to process or 'all': "
-            )
-            if selection == "all":
-                for project_name in image_projects:
-                    print(f"Processing project: {project_name}")
-                    process_project(project_name, tests)
-                break
-            elif 0 <= int(selection) < len(image_projects):
-                process_project(image_projects[int(selection)], tests)
-                break
-            else:
-                print("Invalid selection. Please enter a number from the list.")
-        except ValueError:
-            print("Invalid input. Please enter a number.")
+        # Prompt user to select an image project
+        while True:
+            try:
+                selection = input(
+                    "Enter the number of the image project you want to process or 'all': "
+                )
+                if selection == "all":
+                    for project_name in image_projects:
+                        print(f"Processing project: {project_name}")
+                        process_project(project_name, tests)
+                    break
+                elif 0 <= int(selection) < len(image_projects):
+                    process_project(image_projects[int(selection)], tests)
+                    break
+                else:
+                    print("Invalid selection. Please enter a number from the list.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
 
 
 if __name__ == "__main__":

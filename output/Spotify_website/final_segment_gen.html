@@ -3,80 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Design</title>
+    <title>Wireframe Website</title>
     <style>
-        body {
+        body, html {
             margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
-            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .header {
+            height: 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background: linear-gradient(90deg, #f8b195, #f67280);
+            padding: 10px 20px;
+            background-color: #f4b860;
         }
         .logo {
             display: flex;
             align-items: center;
         }
         .logo img {
-            height: 25px;
+            height: 30px;
             margin-right: 10px;
         }
-        .nav-links a {
-            margin: 0 10px;
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu-item {
             text-decoration: none;
             color: black;
             font-weight: bold;
         }
         .main-content {
-            background-color: #f5c76f;
+            background-color: #f4b860;
+            height: 45%;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            padding: 40px;
+            padding: 0 50px;
         }
         .text-content {
-            max-width: 40%;
+            max-width: 50%;
+            color: black;
         }
-        .text-content h2 {
-            font-size: 2.5rem;
+        .text-content h1 {
+            font-size: 2.5em;
             margin: 0;
-            color: #333;
         }
         .text-content p {
-            font-size: 1.2rem;
-            margin: 10px 0 20px;
-            color: #555;
+            margin: 10px 0 0 0;
+            font-size: 0.9em;
+            font-weight: bold;
         }
-        .graphic-content {
-            background: url('abstract-shapes.png') no-repeat center/cover;
-            width: 350px;
-            height: 350px;
-            border-radius: 8px;
+        .image-content {
+            max-width: 45%;
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            background-color: white;
+            height: 45%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 50px;
+        }
+        .footer h2 {
+            margin: 0 0 20px 0;
+            color: black;
+            font-size: 1.5em;
+        }
+        .footer .new-releases {
+            display: flex;
+            gap: 10px;
+        }
+        .release-item {
+            flex: 1;
+            background-color: pink;
+            box-sizing: border-box;
+        }
+        .release-item img {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="spotify-logo.png" alt="Spotify Logo">
-            <span>Spotify Design</span>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span>Spotify Design</span>
+            </div>
+            <div class="menu">
+                <a href="#" class="menu-item">Stories</a>
+                <a href="#" class="menu-item">Updates</a>
+                <a href="#" class="menu-item">Team</a>
+                <a href="#" class="menu-item">Tools</a>
+            </div>
         </div>
-        <div class="nav-links">
-            <a href="#">Stories</a>
-            <a href="#">Labs</a>
-            <a href="#">Team</a>
-            <a href="#">Tools</a>
+        <div class="main-content">
+            <div class="text-content">
+                <p>UX WRITING</p>
+                <h1>We're Spilling the Tea: Spotify UX Writing Questions Answered</h1>
+            </div>
+            <div class="image-content">
+                <img src="graphic.png" alt="Graphic">
+            </div>
         </div>
-    </div>
-    <div class="main-content">
-        <div class="text-content">
-            <p>UX WRITING</p>
-            <h2>We’re Spilling the Tea:<br>Spotify UX Writing Questions Answered</h2>
+        <div class="footer">
+            <h2>New Releases</h2>
+            <div class="new-releases">
+                <div class="release-item"><img src="release1.png" alt="Release 1"></div>
+                <div class="release-item"><img src="release2.png" alt="Release 2"></div>
+                <div class="release-item"><img src="release3.png" alt="Release 3"></div>
+                <div class="release-item"><img src="release4.png" alt="Release 4"></div>
+            </div>
         </div>
-        <div class="graphic-content"></div>
     </div>
 </body>
 </html>

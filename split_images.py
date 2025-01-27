@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from matplotlib import pyplot as plt
 import io
 from utils import *
+import sys
 
 load_dotenv()
 
@@ -237,15 +238,16 @@ def split_image(image_path, critique=False):
                     {
                         "type": "text",
                         "text": (
-                            "Identify the major UI components in the provided webpage image. "
-                            "Do not include any text or logos in the components. "
-                            f"The image has the dimensions {width}x{height} pixels.\n"
-                            "For each component (e.g., menubar, sub-navigation bar, main content area, footer), "
-                            "provide the bounding box coordinates in pixels as integers in the format:\n"
-                            '{"component_name": "menubar", "coordinates": [x, y, width, height]}.\n'
-                            "There does not need to be each type of component if the website is very simple. "
-                            "There may only be a main content component. "
-                            "Return the results as a JSON array."
+                            f"""Identify the major UI components in the provided webpage image. 
+                            Do not include any text or logos in the components. 
+                            The image has the dimensions {width}x{height} pixels.
+                            For each component (e.g., menubar, sub-navigation bar, main content area, footer), 
+                            provide the bounding box coordinates in pixels as integers in the format:""" +
+                            '{"component_name": "menubar", "coordinates": [x, y, width, height]}.' + 
+                            """Each part of the image should be enclosed in a bounding box.
+                            There does not need to be each type of component if the website is very simple. 
+                            There may only be a main content component. 
+                            Return the results as a JSON array."""
                         ),
                     },
                     {
@@ -363,21 +365,27 @@ if not image_files:
     print("No image files found in the current directory.")
     exit(1)
 
-print("Image files found:")
-for idx, filename in enumerate(image_files):
-    print(f"{idx}: {filename}")
+if len(sys.argv) > 1 and sys.argv[1] + ".png" in image_files:
+    image_name = sys.argv[1] + ".png"
+    image_path = "full_images/" + image_name
+    split_image(image_path, critique=True)
+else:
+    print("Image files found:")
+    for idx, filename in enumerate(image_files):
+        print(f"{idx}: {filename}")
 
-# Prompt the user to select an image file
-while True:
-    try:
-        selection = int(input("Enter the number of the image you want to process: "))
-        if 0 <= selection < len(image_files):
-            image_path = "full_images/" + image_files[selection]
-            break
-        else:
-            print("Invalid selection. Please enter a number from the list.")
-    except ValueError:
-        print("Invalid input. Please enter a number.")
+    # Prompt the user to select an image file
+    while True:
+        try:
+            selection = int(
+                input("Enter the number of the image you want to process: ")
+            )
+            if 0 <= selection < len(image_files):
+                image_path = "full_images/" + image_files[selection]
+                break
+            else:
+                print("Invalid selection. Please enter a number from the list.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
-
-split_image(image_path, critique=True)
+    split_image(image_path, critique=True)

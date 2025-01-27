@@ -3,146 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bistro Bliss</title>
+    <title>Wireframe Layout</title>
     <style>
-        body {
-            font-family: 'Georgia', serif;
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
         .topbar {
-            background-color: #4A4A4A;
-            color: white;
             display: flex;
             justify-content: space-between;
-            padding: 10px 20px;
+            align-items: center;
+            background-color: #424242;
+            color: white;
+            padding: 10px 30px;
         }
         .contact-info {
             display: flex;
+            align-items: center;
         }
-        .contact-info span {
-            margin-right: 20px;
+        .contact-info i {
+            margin-right: 5px;
         }
-        .social-icons a {
-            color: white;
-            text-decoration: none;
-            margin-left: 10px;
+        .social-icons i {
+            margin-left: 15px;
+            cursor: pointer;
         }
-        .navbar {
-            background-color: #fff;
-            border-bottom: 1px solid #e0e0e0;
+        .header {
             display: flex;
             justify-content: space-between;
-            padding: 20px 60px;
             align-items: center;
+            padding: 20px 30px;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        .navbar-logo {
+        .logo {
             display: flex;
             align-items: center;
         }
-        .navbar-logo img {
-            width: 40px;
+        .logo img {
+            height: 50px;
             margin-right: 10px;
         }
-        .navbar-logo span {
-            font-size: 24px;
-            font-weight: bold;
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
-        .navbar-menu a {
-            text-decoration: none;
-            color: #333;
-            margin: 0 10px;
-            padding: 5px 10px;
-            border-radius: 5px;
+        .nav-links li {
+            margin: 0 15px;
+            cursor: pointer;
+            font-weight: 500;
         }
-        .navbar-menu a:hover, .navbar-menu a.active {
-            background-color: #d5d8c3;
-        }
-        .book-btn {
-            border: 1px solid #555;
-            padding: 10px 20px;
+        .nav-links li:first-child {
+            background-color: #ECECEC;
+            padding: 10px 15px;
             border-radius: 20px;
-            text-decoration: none;
-            color: #555;
         }
-        .book-btn:hover {
-            background-color: #555;
-            color: #fff;
+        .book-button {
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 20px;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 15px;
         }
-        .main-content {
-            background-image: url('https://via.placeholder.com/1200x600');
+        .content {
+            background-image: url('main-content-bg.jpg');
             background-size: cover;
             background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 150px 20px;
             color: #333;
+            height: 100%;
+            flex-grow: 1;
+            padding: 40px;
         }
-        .main-content h1 {
-            font-size: 3rem;
+        .content h1 {
+            font-size: 48px;
             margin-bottom: 20px;
         }
-        .main-content p {
-            font-size: 1.2rem;
+        .content p {
+            font-size: 18px;
             margin-bottom: 40px;
         }
-        .main-content .btn {
-            padding: 15px 30px;
-            font-size: 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease-in-out;
+        .content .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        .btn-primary {
-            background-color: #b33030;
+        .content .buttons .btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+        .content .buttons .btn-primary {
+            background-color: #A10E13;
             color: white;
-            margin-right: 10px;
+            border: none;
         }
-        .btn-primary:hover {
-            background-color: #8b2727;
-        }
-        .btn-secondary {
+        .content .buttons .btn-secondary {
             background-color: transparent;
-            border: 2px solid #b33030;
-            color: #b33030;
-        }
-        .btn-secondary:hover {
-            background-color: #b33030;
-            color: white;
+            color: #333;
+            border: 2px solid #333;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="topbar">
-        <div class="contact-info">
-            <span>(414) 857 – 0107</span>
-            <span>yummy@bistrobliss</span>
+    <div class="container">
+        <div class="topbar">
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <span>(414) 857 - 0107</span>
+                <i class="fas fa-envelope" style="margin-left: 20px;"></i>
+                <span>yummy@bistrobliss</span>
+            </div>
+            <div class="social-icons">
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
+            </div>
         </div>
-        <div class="social-icons">
-            <a href="#" target="_blank">T</a>
-            <a href="#" target="_blank">F</a>
-            <a href="#" target="_blank">I</a>
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span style="font-size: 24px; font-weight: bold;">Bistro Bliss</span>
+            </div>
+            <ul class="nav-links">
+                <li>Home</li>
+                <li>About</li>
+                <li>Menu</li>
+                <li>Pages</li>
+                <li>Contact</li>
+            </ul>
+            <button class="book-button">Book A Table</button>
+        </div>
+        <div class="content">
+            <div>
+                <h1>Best food for your taste</h1>
+                <p>Discover delectable cuisine and unforgettable moments in our welcoming, culinary haven.</p>
+                <div class="buttons">
+                    <button class="btn btn-primary">Book A Table</button>
+                    <button class="btn btn-secondary">Explore Menu</button>
+                </div>
+            </div>
         </div>
     </div>
-
-    <header class="navbar">
-        <div class="navbar-logo">
-            <img src="https://via.placeholder.com/40" alt="Bistro Logo">
-            <span>Bistro Bliss</span>
-        </div>
-        <nav class="navbar-menu">
-            <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Menu</a>
-            <a href="#">Pages</a>
-            <a href="#">Contact</a>
-        </nav>
-        <a href="#" class="book-btn">Book A Table</a>
-    </header>
-
-    <main class="main-content">
-        <h1>Best food for your taste</h1>
-        <p>Discover delectable cuisine and unforgettable moments in our welcoming, culinary haven.</p>
-        <button class="btn btn-primary">Book A Table</button>
-        <button class="btn btn-secondary">Explore Menu</button>
-    </main>
 </body>
 </html>

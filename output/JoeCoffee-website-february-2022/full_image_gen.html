@@ -10,89 +10,100 @@
             margin: 0;
             padding: 0;
         }
-        .header {
-            background-color: #0066cc;
+        .top-bar {
+            background-color: #0072CE;
             color: white;
             text-align: center;
             padding: 10px;
+            font-size: 14px;
         }
-        .nav {
+        .navbar {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
             background-color: white;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
         }
-        .nav a {
+        .navbar a {
             margin: 0 15px;
             color: black;
             text-decoration: none;
+            font-weight: bold;
         }
-        .nav a.order-online {
-            background-color: #0066cc;
+        .navbar-logo {
+            color: #0072CE;
+            font-size: 24px;
+        }
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-right a.button {
+            background-color: #0072CE;
             color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            text-decoration: none;
         }
-        .banner {
-            text-align: center;
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             padding: 50px 0;
-            background-color: #f9f9f9;
-            position: relative;
+            background-color: #f7f7f7;
+            text-align: center;
         }
-        .banner img {
+        .content img {
             max-width: 100%;
             height: auto;
+            margin-bottom: 30px;
         }
-        .banner-text {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: black;
-            text-shadow: 1px 1px 4px rgba(255,255,255,0.8);
+        .content h1 {
+            font-size: 36px;
+            margin: 20px 0;
+            color: #333;
         }
-        .banner-text h2 {
-            font-size: 32px;
-            margin: 10px 0;
-        }
-        .banner-text p {
+        .content p {
             font-size: 18px;
-            margin: 10px 0;
+            color: #333;
         }
-        .banner-text a {
-            background-color: #0066cc;
+        .content a.button {
+            background-color: #0072CE;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             text-decoration: none;
-            border-radius: 5px;
+            font-size: 18px;
+            border-radius: 4px;
             margin-top: 20px;
-            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="top-bar">
         Free UPS Shipping on All U.S. Orders Over $40! Subscriptions Always Ship Free.
     </div>
-    <div class="nav">
-        <a href="#">JoeCoffee</a>
-        <a href="#">SHOP</a>
-        <a href="#">THE WORKSHOP</a>
-        <a href="#">DISCOVER</a>
-        <a href="#">CATERING</a>
-        <a href="#">CAREERS</a>
-        <a href="#">LOCATIONS</a>
-        <a href="#">WHOLESALE</a>
-        <a href="#" class="order-online">ORDER ONLINE</a>
-    </div>
-    <div class="banner">
-        <img src="https://via.placeholder.com/1364x600" alt="Coffee and Croissant">
-        <div class="banner-text">
-            <h2>ORDER AHEAD IS HERE!</h2>
-            <p><strong>Download the Joe Coffee App</strong></p>
-            <a href="#">DOWNLOAD NOW</a>
+    <div class="navbar">
+        <div class="navbar-logo">JoeCoffee</div>
+        <div>
+            <a href="#">SHOP</a>
+            <a href="#">THE WORKSHOP</a>
+            <a href="#">DISCOVER</a>
+            <a href="#">CATERING</a>
+            <a href="#">CAREERS</a>
+            <a href="#">LOCATIONS</a>
+            <a href="#">WHOLESALE</a>
         </div>
+        <div class="navbar-right">
+            <a href="#" class="button">ORDER ONLINE</a>
+        </div>
+    </div>
+    <div class="content">
+        <img src="coffee_image.jpg" alt="Coffee and Pastries">
+        <h1>ORDER AHEAD IS HERE!</h1>
+        <p>Download the Joe Coffee App</p>
+        <a href="#" class="button">DOWNLOAD NOW</a>
     </div>
 </body>
 </html>

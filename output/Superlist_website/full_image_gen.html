@@ -6,86 +6,118 @@
     <title>Superlist</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f6f6fb;
             margin: 0;
             padding: 0;
-            background-color: #f7f7fc;
-            color: #333;
         }
-        .header {
-            background-color: #ff5b5b;
-            padding: 10px 20px;
-            color: white;
+        .top-bar {
+            background-color: #ec663c;
+            padding: 10px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
-        .header button {
-            background-color: white;
-            color: #ff5b5b;
-            border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .header button:first-child {
-            background-color: #ff5b5b;
+        .download-banner {
+            background-color: #ec663c;
             color: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: inline-block;
+            transform: rotate(-10deg);
         }
-        .main-content {
+        .download-banner p {
+            margin: 0;
+            font-size: 12px;
+        }
+        .download-banner h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .header-content {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
-        .main-content h1 {
+        .header-content h1 {
+            margin: 10px 0;
             font-size: 48px;
-            margin: 20px 0;
+            font-weight: bold;
+            color: #2d2d44;
         }
-        .main-content h1 span {
-            color: #ff5b5b;
+        .header-content h1 span {
+            color: #ec663c;
+            font-size: 56px;
         }
-        .tabs {
+        .header-content h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #2d2d44;
+        }
+        .button-container {
+            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
+            gap: 10px;
         }
-        .tabs button {
-            background-color: white;
-            color: #666;
-            border: 1px solid #ddd;
+        .button {
             padding: 10px 20px;
+            border: none;
             border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
             cursor: pointer;
         }
-        .tabs button.active {
-            border-color: #ff5b5b;
-            color: #ff5b5b;
+        .sign-up {
+            background-color: #ec663c;
+            color: white;
+        }
+        .sign-in {
+            background-color: #eaeaf5;
+            color: #2d2d44;
+        }
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .badge {
+            border: 2px solid #eaeaf5;
+            border-radius: 14px;
+            padding: 5px 15px;
+            font-size: 14px;
+            color: #2d2d44;
+        }
+        .badge.active {
+            border-color: #ec663c;
+            background-color: #fef2f0;
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <div class="promo">
-            <span>Free forever for individuals</span>
-        </div>
-        <button>Download Superlist</button>
-        <div>
-            <button>Sign Up</button>
-            <button>Sign in &#8594;</button>
-        </div>
+<div class="top-bar">
+    <div class="download-banner">
+        <p>Free forever for individuals</p>
+        <h2>Download Superlist</h2>
     </div>
+    <div class="button-container">
+        <button class="button sign-up">Sign Up</button>
+        <button class="button sign-in">Sign in</button>
+    </div>
+</div>
 
-    <div class="main-content">
-        <img src="logo.png" alt="Superlist Logo" width="150">
-        <h1>Home to <span>all your</span> <span>lists</span></h1>
-        <div class="tabs">
-            <button>Teamwork</button>
-            <button class="active">Personal projects</button>
-            <button>Everything in between</button>
-        </div>
-    </div>
+<div class="header-content">
+    <h2>Superlist</h2>
+    <h1>Home to <span>&#10003;</span> lists</h1>
+</div>
+
+<div class="badge-container">
+    <div class="badge">Teamwork</div>
+    <div class="badge active">Personal projects</div>
+    <div class="badge">Everything in between</div>
+</div>
 
 </body>
 </html>

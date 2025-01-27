@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Very Complicated Website (No Images)</title>
+  <style>
+    /* ====================== BASE RESETS & FONTS ====================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #fafafa;
+      color: #333;
+      line-height: 1.5;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    button {
+      cursor: pointer;
+    }
+
+    /* ====================== HEADER & TOP NAVBAR ====================== */
+    header {
+      background-color: #283593;  /* Deep Purple */
+      color: #fff;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ====================== DARK MODE TOGGLE ====================== */
+    .dark-mode-toggle {
+      background-color: #5c6bc0;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      color: #fff;
+    }
+    .dark-mode-toggle:hover {
+      background-color: #3949ab;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background-color: #2c2c2c;
+      color: #e0e0e0;
+    }
+    body.dark-mode header {
+      background-color: #1e1e1e;
+    }
+    body.dark-mode .side-nav {
+      background-color: #121212;
+    }
+    body.dark-mode .tab-nav button {
+      background-color: #444;
+      color: #ddd;
+    }
+    body.dark-mode table,
+    body.dark-mode th,
+    body.dark-mode td {
+      border-color: #666;
+    }
+
+    /* ====================== SIDE NAV (COLLAPSIBLE) ====================== */
+    .side-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #303f9f; /* Indigo */
+      color: #fff;
+      width: 250px;
+      height: 100vh;
+      padding: 3rem 1rem;
+      transform: translateX(-250px);
+      transition: transform 0.3s ease;
+      z-index: 999;
+    }
+    .side-nav.open {
+      transform: translateX(0);
+    }
+    .side-nav h2 {
+      margin-bottom: 2rem;
+      font-weight: normal;
+    }
+    .side-nav a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .side-nav a:hover {
+      text-decoration: underline;
+    }
+    .side-nav-toggle {
+      background-color: #5c6bc0;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      color: #fff;
+      margin-left: 1rem;
+    }
+    .side-nav-toggle:hover {
+      background-color: #3949ab;
+    }
+
+    /* ====================== HERO SECTION WITH GRADIENT ANIMATION ====================== */
+    .hero {
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(45deg, #8e24aa, #ec407a, #5c6bc0);
+      background-size: 100% 100%;
+      animation: gradientBG 12s ease infinite;
+      padding: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* ====================== TAB SECTION ====================== */
+    .tabs-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .tab-nav {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .tab-nav button {
+      background-color: #7e57c2;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .tab-nav button:hover {
+      background-color: #5e35b1;
+    }
+    .tab-content {
+      display: none;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ====================== FAQ SECTION (ACCORDION) ====================== */
+    .faq-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .faq h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item button {
+      background: #3949ab;
+      color: #fff;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    .faq-item button:hover {
+      background: #303f9f;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background: #eceff1;
+      margin-top: 0.5rem;
+      padding: 0 0.75rem;
+      border-radius: 4px;
+    }
+    .faq-answer.open {
+      padding: 0.75rem;
+      max-height: 200px; /* Just an example max height */
+    }
+
+    /* ====================== SORTABLE TABLE SECTION ====================== */
+    .table-section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #eee;
+      cursor: pointer;
+      user-select: none;
+    }
+    th:hover {
+      background-color: #ddd;
+    }
+
+    /* ====================== MODAL SECTION ====================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 2000;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal {
+      background: #fff;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      border-radius: 8px;
+      text-align: center;
+      position: relative;
+    }
+    .modal h3 {
+      margin-bottom: 1rem;
+    }
+    .modal p {
+      margin-bottom: 1.5rem;
+    }
+    .close-modal-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #f44336;
+      border: none;
+      color: #fff;
+      border-radius: 4px;
+      padding: 0.4rem 0.7rem;
+    }
+    .open-modal-btn {
+      background: #ec407a;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .open-modal-btn:hover {
+      background: #d81b60;
+    }
+
+    /* ====================== FOOTER ====================== */
+    footer {
+      background: #fff;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    }
+    footer p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* ====================== MEDIA QUERIES ====================== */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        margin-top: 1rem;
+      }
+      .hero {
+        height: auto;
+        padding: 3rem 1rem;
+      }
+      .tabs-section, .faq-section, .table-section {
+        margin: 1rem auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====================== SIDE NAV (START HIDDEN) ====================== -->
+  <div class="side-nav" id="sideNav">
+    <h2>Side Navigation</h2>
+    <a href="#hero">Hero</a>
+    <a href="#tabs">Tabs</a>
+    <a href="#faq">FAQ</a>
+    <a href="#table">Table</a>
+    <a href="#modal-section">Modal</a>
+  </div>
+
+  <!-- ====================== HEADER & TOP NAV ====================== -->
+  <header>
+    <div class="logo">ComplicatedSite</div>
+    <div class="nav-links">
+      <button class="side-nav-toggle" id="sideNavToggle">Toggle Side Nav</button>
+      <button class="dark-mode-toggle" id="darkModeToggle">Dark Mode</button>
+    </div>
+  </header>
+
+  <!-- ====================== HERO SECTION ====================== -->
+  <section class="hero" id="hero">
+    <div>
+      <h1>Welcome to the Complex Single-Page Website</h1>
+      <p>All the bells and whistles, no images required.</p>
+    </div>
+  </section>
+
+  <!-- ====================== TABS SECTION ====================== -->
+  <section class="tabs-section" id="tabs">
+    <h2>Multi-Tab Section</h2>
+    <div class="tab-nav">
+      <button data-tab-target="#tab1">Tab 1</button>
+      <button data-tab-target="#tab2">Tab 2</button>
+      <button data-tab-target="#tab3">Tab 3</button>
+    </div>
+    <!-- Content for each tab -->
+    <div class="tab-content" id="tab1">
+      <h3>Tab 1 Content</h3>
+      <p>
+        This is the content for Tab 1. You can put anything you like here:
+        text, code snippets, or even embedded components.
+      </p>
+    </div>
+    <div class="tab-content" id="tab2">
+      <h3>Tab 2 Content</h3>
+      <p>
+        Here lies the content for Tab 2. You can show/hide this using the
+        buttons above, providing a good user experience.
+      </p>
+    </div>
+    <div class="tab-content" id="tab3">
+      <h3>Tab 3 Content</h3>
+      <p>
+        Last but not least, Tab 3’s content. By default, only one tab is shown
+        at a time.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====================== FAQ SECTION (ACCORDION) ====================== -->
+  <section class="faq-section" id="faq">
+    <h2>FAQ (Accordion Style)</h2>
+    <div class="faq">
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <button class="faq-question">What is this website about?</button>
+        <div class="faq-answer">
+          <p>
+            It's a demonstration of a single HTML file containing a variety
+            of layout and interactive elements—no images needed.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <button class="faq-question">How does the side navigation work?</button>
+        <div class="faq-answer">
+          <p>
+            The side nav is hidden off-screen. Clicking the “Toggle Side Nav”
+            button translates it into view, and clicking again hides it.
+          </p>
+        </div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <button class="faq-question">Can I enable a dark mode?</button>
+        <div class="faq-answer">
+          <p>
+            Yes! The “Dark Mode” button toggles a special CSS class on the
+            <code>&lt;body&gt;</code> element, changing background and text colors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== SORTABLE TABLE SECTION ====================== -->
+  <section class="table-section" id="table">
+    <h2>Sortable Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th data-col="name">Name</th>
+          <th data-col="country">Country</th>
+          <th data-col="score">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice</td>
+          <td>USA</td>
+          <td>92</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>Canada</td>
+          <td>85</td>
+        </tr>
+        <tr>
+          <td>Charlie</td>
+          <td>UK</td>
+          <td>78</td>
+        </tr>
+        <tr>
+          <td>Diana</td>
+          <td>Australia</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>Eric</td>
+          <td>Japan</td>
+          <td>88</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 0.5rem;">(Click on any column header to sort)</p>
+  </section>
+
+  <!-- ====================== MODAL SECTION ====================== -->
+  <section id="modal-section" style="text-align:center; margin: 2rem 0;">
+    <button class="open-modal-btn" id="openModalBtn">Open Modal</button>
+  </section>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="close-modal-btn" id="closeModalBtn">X</button>
+      <h3>Modal Title</h3>
+      <p>
+        This is a modal pop-up! You can include any text or
+        interactive elements here.
+      </p>
+      <button class="open-modal-btn" onclick="alert('Button inside modal clicked!')">Inside Modal Button</button>
+    </div>
+  </div>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer>
+    <p>&copy; 2025 Complex Site. All rights reserved.</p>
+  </footer>
+
+  <!-- ====================== SCRIPTS ====================== -->
+  <script>
+    /* --------------- SIDE NAV TOGGLE --------------- */
+    const sideNavToggle = document.getElementById('sideNavToggle');
+    const sideNav = document.getElementById('sideNav');
+    sideNavToggle.addEventListener('click', () => {
+      sideNav.classList.toggle('open');
+    });
+
+    /* --------------- DARK MODE TOGGLE --------------- */
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    /* --------------- TABS --------------- */
+    const tabButtons = document.querySelectorAll('.tab-nav button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = document.querySelector(button.dataset.tabTarget);
+        // Hide all tab contents
+        tabContents.forEach(tc => tc.classList.remove('active'));
+        // Show the targeted tab
+        target.classList.add('active');
+      });
+    });
+    // Show the first tab by default
+    if (tabContents.length > 0) {
+      tabContents[0].classList.add('active');
+    }
+
+    /* --------------- FAQ ACCORDION --------------- */
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling; // .faq-answer
+        answer.classList.toggle('open');
+      });
+    });
+
+    /* --------------- SORTABLE TABLE --------------- */
+    const tableHeaders = document.querySelectorAll('th[data-col]');
+    tableHeaders.forEach(th => {
+      th.addEventListener('click', () => {
+        sortTable(th.dataset.col);
+      });
+    });
+
+    // Keep track of sort direction for each column
+    let sortDirections = {
+      name: 1,
+      country: 1,
+      score: 1,
+    };
+
+    function sortTable(col) {
+      const tbody = document.querySelector('table tbody');
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+
+      // Determine column index
+      let colIndex;
+      switch(col) {
+        case 'name': colIndex = 0; break;
+        case 'country': colIndex = 1; break;
+        case 'score': colIndex = 2; break;
+      }
+
+      // Sort rows
+      rows.sort((a, b) => {
+        const A = a.cells[colIndex].innerText;
+        const B = b.cells[colIndex].innerText;
+
+        if (col === 'score') {
+          // Numeric comparison
+          return (parseInt(A, 10) - parseInt(B, 10)) * sortDirections[col];
+        } else {
+          // String comparison
+          return A.localeCompare(B) * sortDirections[col];
+        }
+      });
+
+      // Flip sort direction
+      sortDirections[col] *= -1;
+
+      // Rebuild table
+      rows.forEach(row => tbody.appendChild(row));
+    }
+
+    /* --------------- MODAL --------------- */
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalOverlay = document.getElementById('modalOverlay');
+
+    openModalBtn.addEventListener('click', () => {
+      modalOverlay.classList.add('active');
+    });
+    closeModalBtn.addEventListener('click', () => {
+      modalOverlay.classList.remove('active');
+    });
+    // Close modal if user clicks outside of it
+    modalOverlay.addEventListener('click', (e) => {
+      if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

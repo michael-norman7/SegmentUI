@@ -3,180 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe Layout</title>
+    <title>Complete Website</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
         }
         .header {
-            background-color: #f8bcbc;
+            background-color: #ff9900;
             height: 100px;
+            width: 100%;
+        }
+        .menubar {
+            background-color: #a0baca;
+            padding: 10px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
-        .nav {
-            background-color: #f0e68c;
-            height: 50px;
+        .menu {
+            list-style: none;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            margin: 0;
+            padding: 0;
         }
-        .main-content {
-            display: flex;
-            flex: 1;
-        }
-        .sidebar {
-            background-color: #98fb98;
-            width: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .content {
-            background-color: #afeeee;
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .footer {
-            background-color: #dda0dd;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        /* Navbar styles */
-        .navbar {
-            background-color: #778899;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-        }
-        .navbar img.logo {
-            height: 40px;
+        .menu li {
             margin-right: 20px;
         }
-        .navbar a {
-            color: white;
-            padding: 14px 20px;
+        .menu li a {
             text-decoration: none;
-            text-align: center;
-        }
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        .navbar .menu-icons img {
-            height: 30px;
-            margin-left: 15px;
-        }
-        /* Flyer styles */
-        .main-content img {
-            width: 100%;
-            opacity: 0.8;
-        }
-        .main-content h1 {
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            font-size: 4rem;
-            margin: 0;
             color: #000;
         }
-        .main-content h2 {
-            position: absolute;
-            top: 50%;
-            left: 10%;
-            margin: 0;
-            font-size: 2rem;
-            color: #000;
-        }
-        .sub-text {
-            position: absolute;
-            bottom: 10%;
-            left: 10%;
-            font-size: 1rem;
-        }
-        .button-container {
-            position: absolute;
-            bottom: 5%;
-            left: 10%;
-        }
-        .button-container button {
-            background-color: #fff;
-            border: 2px solid #000;
-            border-radius: 15px;
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .button-container button:hover {
-            background-color: #f0f0f0;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
         .icons {
-            position: absolute;
-            top: 10px;
-            right: 50px;
+            display: flex;
         }
-        .icons img {
-            width: 20px;
-            height: 20px;
+        .icon {
             margin-left: 10px;
+        }
+        .main {
+            background-color: #F3F7FA;
+            height: 500px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .title {
+            font-size: 72px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .subtitle {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+        .aircraft-img {
+            width: 100%;
+            max-width: 700px;
+            margin: 20px 0;
+        }
+        .description {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .buttons {
+            display: flex;
+            margin: 20px 0;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-
     <div class="header">
-        Header
-    </div>
-
-    <div class="nav">
-        <div class="navbar">
-            <img src="logo.png" class="logo" alt="Logo">
-            <a href="#solutions">Solutions</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
-            <div class="menu-icons" style="margin-left:auto;">
-                <img src="icon1.png" alt="Icon 1">
-                <img src="icon2.png" alt="Icon 2">
-            </div>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <div class="sidebar">
-            Sidebar
-        </div>
-        <div class="content">
-            <img src="airplane-background.jpg" alt="Airplane Background">
-            <h1>Flyer<sup>®</sup></h1>
-            <h2>Personalised Aviation</h2>
-            <div class="sub-text">
-                <p>More flexibility, freedom and choice!</p>
-            </div>
-            <div class="button-container">
-                <button>Book an Aircraft</button>
-                <button>Book a Shared Flight</button>
-            </div>
+        <div class="menubar">
+            <div class="logo">Logo</div>
+            <ul class="menu">
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
             <div class="icons">
-                <img src="icon1.png" alt="Icon 1">
-                <img src="icon2.png" alt="Icon 2">
+                <img src="icon1.png" alt="Icon 1" class="icon">
+                <img src="icon2.png" alt="Icon 2" class="icon">
             </div>
         </div>
     </div>
-
-    <div class="footer">
-        Footer
+    <div class="main">
+        <h1 class="title">Flyer<sup>®</sup></h1>
+        <h2 class="subtitle">Personalised Aviation</h2>
+        <img src="aircraft.png" alt="Aircraft Image" class="aircraft-img">
+        <p class="description">More flexibility, freedom and choice!</p>
+        <div class="buttons">
+            <a href="#" class="button">Book an Aircraft</a>
+            <a href="#" class="button">Book a Shared Flight</a>
+        </div>
     </div>
-
 </body>
 </html>

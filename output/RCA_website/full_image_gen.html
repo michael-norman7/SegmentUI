@@ -3,79 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Page</title>
+    <title>ART</title>
     <style>
         body, html {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
             font-family: Arial, sans-serif;
-            overflow: hidden;
         }
-        .header {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        .container {
+            position: relative;
+            text-align: center;
             color: white;
         }
-        .header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .header .links {
-            display: flex;
-            gap: 15px;
-        }
-        .header .links a {
-            color: pink;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .content {
+
+        .background-image {
             width: 100%;
-            height: 100%;
-            background-image: url('https://via.placeholder.com/1500x800');
+            height: 100vh;
+            background-image: url('https://via.placeholder.com/1200');
             background-size: cover;
             background-position: center;
+            filter: grayscale(100%);
+        }
+
+        .top-bar {
+            position: absolute;
+            top: 0;
+            width: 100%;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
-        .content .title {
-            font-size: 100px;
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            text-transform: uppercase;
+
+        .top-bar a {
+            color: pink;
+            margin: 0 15px;
+            text-decoration: none;
         }
-        .content .button {
-            margin-top: 20px;
-            background: yellow;
-            border-radius: 20px;
-            padding: 10px 20px;
-            color: black;
+
+        .center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
             font-weight: bold;
-            text-transform: uppercase;
+        }
+
+        .make-noise {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 20px;
+            color: limegreen;
+            border: 2px solid limegreen;
+            padding: 5px 10px;
+            border-radius: 15px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">RCA</div>
-        <div class="links">
-            <a href="#">Listen</a>
-            <a href="#">Menu</a>
+    <div class="container">
+        <div class="background-image"></div>
+        <div class="top-bar">
+            <div>RCA</div>
+            <div>
+                <a href="#listen">Listen</a>
+                <a href="#menu">Menu</a>
+            </div>
         </div>
-    </div>
-    <div class="content">
-        <div class="title">ART</div>
-        <div class="button">Make Noise</div>
+        <div class="center-text">ART</div>
+        <div class="make-noise">MAKE NOISE</div>
     </div>
 </body>
 </html>

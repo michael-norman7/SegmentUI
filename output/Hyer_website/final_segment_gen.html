@@ -3,100 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyer Aviation</title>
+    <title>Complete Website</title>
     <style>
-        body, html {
+        body {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
         }
-        .navbar {
+        .header {
+            background-color: #a0baca;
+            height: 100px;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background: transparent;
-            position: absolute;
+            padding: 10px;
+        }
+        .menubar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             width: 100%;
-            z-index: 10;
         }
-        .navbar a {
-            color: #000;
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li {
+            margin-right: 20px;
+        }
+        .menu li a {
             text-decoration: none;
-            margin: 0 15px;
+            color: #000;
         }
-        .navbar .menu-icons img {
-            height: 25px;
-            margin-left: 15px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
-        .hero {
-            position: relative;
-            height: 100vh;
-            background: linear-gradient(to bottom, #a7c7e7, #f0f0f0), url('airplane-background.jpg') no-repeat center center;
-            background-size: cover;
+        .icons {
+            display: flex;
+        }
+        .icon {
+            margin-left: 10px;
+        }
+        .main {
+            background-color: #F3F7FA;
+            height: 600px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            padding: 0 10%;
-            color: white;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
         }
-        .hero h1 {
-            font-size: 6rem;
+        .title {
+            font-size: 72px;
+            font-weight: bold;
             margin: 0;
         }
-        .hero h2 {
-            font-size: 3rem;
-            margin: 20px 0;
-        }
-        .sub-text {
-            font-size: 1.2rem;
+        .subtitle {
+            font-size: 36px;
             margin: 10px 0;
         }
-        .button-container {
-            margin-top: 20px;
+        .aircraft-img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px 0;
         }
-        .button-container button {
-            background-color: #fff;
-            border: none;
-            border-radius: 30px;
-            padding: 15px 25px;
-            margin-right: 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        .description {
+            margin: 20px 0;
+            font-size: 18px;
         }
-        .button-container button:hover {
-            background-color: #ddd;
+        .buttons {
+            display: flex;
+            margin: 20px 0;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            border-radius: 5px;
+            display: inline-block;
         }
     </style>
 </head>
 <body>
-
-    <div class="navbar">
-        <div class="menu">
-            <a href="#solutions">Solutions</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="menu-icons">
-            <img src="icon1.png" alt="Icon 1">
-            <img src="icon2.png" alt="Icon 2">
-        </div>
-    </div>
-
-    <div class="hero">
-        <h1>Hyer<sup>®</sup></h1>
-        <h2>Personalised Aviation</h2>
-        <div class="sub-text">
-            <p>More flexibility, freedom and choice!</p>
-        </div>
-        <div class="button-container">
-            <button>Book an Aircraft</button>
-            <button>Book a Shared Flight</button>
+    <div class="header">
+        <div class="menubar">
+            <div class="logo">Logo</div>
+            <ul class="menu">
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="icons">
+                <img src="icon1.png" alt="Icon 1" class="icon">
+                <img src="icon2.png" alt="Icon 2" class="icon">
+            </div>
         </div>
     </div>
-
+    <div class="main">
+        <h1 class="title">Hyer<sup>®</sup></h1>
+        <h2 class="subtitle">Personalised Aviation</h2>
+        <img src="aircraft.png" alt="Aircraft Image" class="aircraft-img">
+        <p class="description">More flexibility, freedom and choice!</p>
+        <div class="buttons">
+            <a href="#" class="button">Book an Aircraft</a>
+            <a href="#" class="button">Book a Shared Flight</a>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,82 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypton Landing Page</title>
+    <title>Complete Website</title>
     <style>
         body {
-            font-family: 'Courier New', monospace;
             margin: 0;
-            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #000;
+            height: 50px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .main {
+            background-color: #000;
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .main h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .main p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .main nav {
+            margin-top: 20px;
+        }
+        .main nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 16px;
+        }
+        .footer {
+            background-color: #000;
+            height: 50px;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #0D0D0D;
-            color: #FFFFFF;
-            overflow: hidden;
-        }
-
-        .container {
-            text-align: left;
-            max-width: 600px;
-            position: relative;
-        }
-
-        h1 {
-            font-size: 4em;
-            margin: 0;
-        }
-
-        p {
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
-
-        .menu {
-            margin-top: 50px;
-        }
-
-        .menu a {
-            display: block;
-            font-size: 1em;
-            color: #FFFFFF;
-            text-decoration: none;
-            margin-bottom: 10px;
-        }
-
-        .share {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1em;
-        }
-
-        .scroll-down {
-            text-align: center;
-            font-size: 2em;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <div class="share">Share</div>
-        <h1>Hello!<br>I'm Crypton</h1>
-        <p>A cryptocurrency trading bot based on machine learning.</p>
-        <div class="menu">
-            <a href="#">Technology</a>
-            <a href="#">Team lookup</a>
-            <a href="#">Contacts</a>
+        <div class="header">
+            <div>_</div>
+            <div>Share</div>
         </div>
-        <div class="scroll-down">↓</div>
+        <div class="main">
+            <h1>Hello!<br>I'm Crypton</h1>
+            <p>A cryptocurrency trading bot based on machine learning.</p>
+            <nav>
+                <a href="#">Technology</a>
+                <a href="#">Team lookup</a>
+                <a href="#">Contacts</a>
+            </nav>
+        </div>
+        <div class="footer">
+            <span>&darr;</span>
+        </div>
     </div>
 </body>
-
 </html>

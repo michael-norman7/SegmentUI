@@ -3,91 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Overflow</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #e0eaff, #a4b6f8);
-            color: white;
+            margin: 0;
+            background: linear-gradient(to bottom, #e0f7fa, #9cbbf1);
+            color: #fff;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
         }
-        header {
-            position: absolute;
-            top: 20px;
-            width: 100%;
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 20px;
         }
-        nav a {
-            margin: 0 15px;
-            color: black;
+        .navbar a {
+            color: #000;
             text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
         }
         .logo {
-            font-weight: bold;
             font-size: 24px;
-        }
-        .cta-buttons {
+            font-weight: bold;
             display: flex;
             align-items: center;
         }
-        .cta-buttons a {
-            margin-left: 20px;
-            padding: 10px 20px;
-            background-color: black;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
+        .main-content {
+            padding-top: 100px;
         }
         h1 {
             font-size: 48px;
-            margin-bottom: 20px;
+            margin: 0;
         }
         p {
-            font-size: 20px;
+            font-size: 18px;
             max-width: 600px;
-            margin: 0 auto 20px auto;
+            margin: 20px auto;
+            line-height: 1.5;
         }
-        .download-button {
-            padding: 10px 20px;
-            background-color: black;
-            color: white;
-            border-radius: 5px;
+        .download-btn {
+            display: inline-block;
+            background-color: #000;
+            color: #fff;
+            padding: 15px 30px;
+            font-weight: bold;
             text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-
-    <header>
-        <div class="logo">overflow</div>
-        <nav>
+    <div class="navbar">
+        <div class="logo">
+            <div style="color:red; border-radius:50%; width:20px; height:20px; background-color:blue; margin-right:5px;"></div>
+            overflow
+        </div>
+        <div>
             <a href="#">Product</a>
             <a href="#">Examples</a>
             <a href="#">Blog</a>
             <a href="#">Pricing</a>
-        </nav>
-        <div class="cta-buttons">
             <a href="#">Sign In</a>
-            <a href="#">Download for free</a>
+            <a href="#" class="download-btn" style="background-color:#fff; color:#000;">Download for free</a>
         </div>
-    </header>
-
-    <h1>User flows done right</h1>
-    <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
-    <a href="#" class="download-button">Download - free trial</a>
-
+    </div>
+    <div class="main-content">
+        <h1>User flows done right</h1>
+        <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
+        <a href="#" class="download-btn">Download - free trial</a>
+    </div>
 </body>
 </html>

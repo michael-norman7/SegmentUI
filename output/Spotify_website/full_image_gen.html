@@ -8,101 +8,96 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            color: #333;
         }
-        header {
-            background-color: #FBE5C0;
+        .header {
+            padding: 20px;
+            background-color: #f5d28b;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            position: relative;
         }
-        header .left {
-            display: flex;
-            align-items: center;
+        .header-logo {
+            font-size: 1.5em;
+            font-weight: bold;
         }
-        header .left img {
-            margin-right: 10px;
-        }
-        header nav a {
-            margin: 0 10px;
+        .header-nav a {
+            margin-left: 20px;
             text-decoration: none;
             color: #333;
         }
         .hero {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
             padding: 50px;
-            background-color: #FBD3D3;
+            background-color: #f5d28b;
+            position: relative;
         }
-        .hero .text {
-            max-width: 50%;
-            font-size: 24px;
-            color: #333;
-        }
-        .hero .image {
-            width: 40%;
-            display: flex;
-            justify-content: center;
-        }
-        .hero .image img {
-            max-width: 100%;
-            height: auto;
-        }
-        .scroll-down {
+        .hero::before {
+            content: '';
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 12px;
-            color: #333;
+            top: 0;
+            left: 0;
+            width: 250px;
+            height: 100%;
+            background-color: #f79bcf;
+            clip-path: ellipse(100% 50% at 50% 50%);
         }
-        h2 {
-            margin: 20px;
-            color: #333;
+        .hero-content {
+            z-index: 1;
+            max-width: 600px;
+        }
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+        .hero-img {
+            z-index: 1;
+            width: 300px;
+            height: 300px;
+            background-color: #f8cfb4;
+            margin-left: auto;
         }
         .new-releases {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
+            padding: 50px 20px;
+            background-color: #fff;
         }
-        .new-releases img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
+        .new-releases h2 {
+            margin-bottom: 20px;
+        }
+        .release-cards {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            width: 200px;
+            height: 200px;
+            background-color: #eee;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="left">
-            <img src="logo.png" alt="Logo" width="50">
-            <span>Spotify Design</span>
-        </div>
-        <nav>
+    <header class="header">
+        <div class="header-logo">Spotify Design</div>
+        <nav class="header-nav">
             <a href="#">Stories</a>
-            <a href="#">Latino</a>
+            <a href="#">Latest</a>
             <a href="#">Team</a>
             <a href="#">Tools</a>
         </nav>
     </header>
     <section class="hero">
-        <div class="text">
-            <h1>We're Spilling the Tea: Spotify UX Writing Questions Answered</h1>
+        <div class="hero-content">
+            <h1>We’re Spilling the Tea: Spotify UX Writing Questions Answered</h1>
         </div>
-        <div class="image">
-            <img src="abstract-art.png" alt="Abstract Art">
-        </div>
-        <div class="scroll-down">SCROLL DOWN</div>
+        <div class="hero-img"></div>
     </section>
-    <section>
+    <section class="new-releases">
         <h2>New Releases</h2>
-        <div class="new-releases">
-            <img src="album1.png" alt="Album 1">
-            <img src="album2.png" alt="Album 2">
-            <img src="album3.png" alt="Album 3">
-            <img src="album4.png" alt="Album 4">
+        <div class="release-cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
         </div>
     </section>
 </body>

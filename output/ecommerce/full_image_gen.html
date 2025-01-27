@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopName</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+        header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+        .hero h1 {
+            margin: 0;
+        }
+        .hero p {
+            margin: 10px 0;
+        }
+        .hero button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .content {
+            padding: 30px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .product-details {
+            padding: 15px;
+        }
+        .product-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .product-description {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .product button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        footer {
+            background-color: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ShopName</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Cart</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <h1>Welcome to Our E-Shop</h1>
+        <p>Discover the best deals on the latest products and enjoy seamless online shopping.</p>
+        <button>Shop Now</button>
+    </div>
+    <div class="content">
+        <h2>Featured Products</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://via.placeholder.com/200x150" alt="Cozy Cotton T-Shirt">
+                <div class="product-details">
+                    <div class="product-title">Cozy Cotton T-Shirt</div>
+                    <div class="product-description">Experience ultimate comfort with our 100% cotton T-shirt, perfect for everyday wear.</div>
+                    <div class="product-price">$19.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200x150" alt="Wireless Noise-Cancelling Earbuds">
+                <div class="product-details">
+                    <div class="product-title">Wireless Noise-Cancelling Earbuds</div>
+                    <div class="product-description">Enjoy crystal-clear sound and reduce ambient noise wherever you go.</div>
+                    <div class="product-price">$29.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200x150" alt="Ceramic Coffee Mug">
+                <div class="product-details">
+                    <div class="product-title">Ceramic Coffee Mug</div>
+                    <div class="product-description">Kickstart your morning with a sleek, durable mug that keeps beverages warm.</div>
+                    <div class="product-price">$9.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200x150" alt="Portable Bluetooth Speaker">
+                <div class="product-details">
+                    <div class="product-title">Portable Bluetooth Speaker</div>
+                    <div class="product-description">Take your music wherever you go with our compact, rechargeable speaker.</div>
+                    <div class="product-price">$14.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200x150" alt="Everyday Backpack">
+                <div class="product-details">
+                    <div class="product-title">Everyday Backpack</div>
+                    <div class="product-description">Stylish and spacious, our backpack is designed for both work and travel.</div>
+                    <div class="product-price">$24.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200x150" alt="Modern Desk Lamp">
+                <div class="product-details">
+                    <div class="product-title">Modern Desk Lamp</div>
+                    <div class="product-description">Illuminate your workspace with a sleek lamp featuring adjustable brightness.</div>
+                    <div class="product-price">$39.99</div>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 ShopName. All rights reserved.
+    </footer>
+</body>
+</html>

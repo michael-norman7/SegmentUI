@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern E-Commerce Website</title>
+
+  <style>
+    /* Resets & Basic Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto; /* Let images scale naturally */
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #007BFF;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style-type: none;
+    }
+
+    nav ul li {
+      padding: 0.5rem;
+    }
+
+    nav ul li a:hover {
+      color: #007BFF;
+    }
+
+    /* Mobile Navigation Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #fff;
+        flex-direction: column;
+        width: 200px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      nav ul.open {
+        max-height: 300px; /* enough to show menu items */
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      /* Fill full browser height */
+      min-height: 15vh;
+      background: url('https://via.placeholder.com/1920x1080/007BFF/FFFFFF?text=Hero+Image') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem auto;
+    }
+
+    .hero button {
+      background: #fff;
+      color: #007BFF;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .hero button:hover {
+      background: #f2f2f2;
+    }
+
+    /* Product Section */
+    .products-section {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      color: #007BFF;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Make the product image area maintain a consistent ratio */
+    .product-image {
+      position: relative;
+      width: 100%;
+      padding-bottom: 66%; /* ~3:2 aspect ratio (adjust as you like) */
+      background-color: #ddd;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Crop the image to fill the area */
+    }
+
+    .product-details {
+      padding: 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-details h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .product-actions button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .product-actions button:hover {
+      background: #0056b3;
+    }
+
+    /* Footer */
+    footer {
+      background: #fff;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    
+    footer p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">ShopName</div>
+      <nav>
+        <div class="menu-toggle" id="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Welcome to Our E-Shop</h1>
+      <p>Discover the best deals on the latest products and enjoy seamless online shopping.</p>
+      <button>Shop Now</button>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="product-grid">
+      <!-- Product Card 1 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/400x300" alt="Cozy Cotton T-Shirt">
+        </div>
+        <div class="product-details">
+          <h3>Cozy Cotton T-Shirt</h3>
+          <p>Experience ultimate comfort with our 100% cotton T-shirt, perfect for everyday wear.</p>
+          <div class="price">$19.99</div>
+          <div class="product-actions">
+            <button onclick="addToCart('Cozy Cotton T-Shirt')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/400x300" alt="Wireless Noise-Cancelling Earbuds">
+        </div>
+        <div class="product-details">
+          <h3>Wireless Noise-Cancelling Earbuds</h3>
+          <p>Enjoy crystal-clear sound and reduce ambient noise wherever you go.</p>
+          <div class="price">$29.99</div>
+          <div class="product-actions">
+            <button onclick="addToCart('Wireless Noise-Cancelling Earbuds')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/400x300" alt="Ceramic Coffee Mug">
+        </div>
+        <div class="product-details">
+          <h3>Ceramic Coffee Mug</h3>
+          <p>Kickstart your morning with a sleek, durable mug that keeps beverages warm.</p>
+          <div class="price">$9.99</div>
+          <div class="product-actions">
+            <button onclick="addToCart('Ceramic Coffee Mug')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/400x300" alt="Portable Bluetooth Speaker">
+        </div>
+        <div class="product-details">
+          <h3>Portable Bluetooth Speaker</h3>
+          <p>Take your music wherever you go with our compact, rechargeable speaker.</p>
+          <div class="price">$14.99</div>
+          <div class="product-actions">
+            <button onclick="addToCart('Portable Bluetooth Speaker')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 5 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/400x300" alt="Everyday Backpack">
+        </div>
+        <div class="product-details">
+          <h3>Everyday Backpack</h3>
+          <p>Stylish and spacious, our backpack is designed for both work and travel.</p>
+          <div class="price">$24.99</div>
+          <div class="product-actions">
+            <button onclick="addToCart('Everyday Backpack')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 6 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://via.placeholder.com/400x300" alt="Modern Desk Lamp">
+        </div>
+        <div class="product-details">
+          <h3>Modern Desk Lamp</h3>
+          <p>Illuminate your workspace with a sleek lamp featuring adjustable brightness.</p>
+          <div class="price">$39.99</div>
+          <div class="product-actions">
+            <button onclick="addToCart('Modern Desk Lamp')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ShopName. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+
+    // Example "Add to Cart" function
+    function addToCart(productName) {
+      alert(productName + " added to cart!");
+      // In a real application, you would handle the cart logic here
+    }
+  </script>
+</body>
+</html>

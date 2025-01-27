@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            background-color: #A7D245;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .logo {
+            color: #C75050;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+        }
+        .main-content {
+            background-color: #FFFFFF;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .main-content h1 {
+            color: #C75050;
+            font-size: 36px;
+        }
+        .main-content p {
+            color: #555;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .main-content .button {
+            margin-top: 20px;
+            background-color: #C75050;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: #F4F4F4;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: left;
+        }
+        .footer img {
+            margin-right: 20px;
+        }
+        .footer h2 {
+            color: #C75050;
+            font-size: 24px;
+        }
+        .footer p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">MyBlog</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Posts</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div class="main-content">
+        <h1>Welcome to My Personal Blog</h1>
+        <p>Sharing my journey, stories, and passions with the world. Dive in to explore<br>lifestyle tips, travel adventures, and more.</p>
+        <a href="#" class="button">Read Latest Posts</a>
+    </div>
+    <div class="footer">
+        <img src="image-placeholder.png" alt="About me image" width="100" height="100">
+        <div>
+            <h2>About Me</h2>
+            <p>Hello! I'm Jane Doe, a writer and travel enthusiast with a passion for exploring new cultures and sharing experiences. On this blog, you'll find my personal reflections, tips, and stories from the road.</p>
+            <p>When I'm not traveling, I love experimenting with healthy recipes, practicing yoga, and capturing everyday moments on my camera.</p>
+        </div>
+    </div>
+</body>
+</html>

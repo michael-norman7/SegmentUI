@@ -3,122 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Layout</title>
+    <title>Wireframe Website</title>
     <style>
-        body {
+        body, html {
             margin: 0;
+            padding: 0;
+            height: 100%;
             font-family: Arial, sans-serif;
-            display: grid;
-            grid-template-areas: 
-                "header header header"
-                "nav content sidebar"
-                "footer footer footer";
-            grid-template-rows: 100px 1fr 100px;
-            grid-template-columns: 1fr 3fr 1fr;
-            height: 100vh;
         }
-        #header {
-            grid-area: header;
-            background-color: #8e44ad;
-        }
-        #nav {
-            grid-area: nav;
-            background-color: #3498db;
-        }
-        #content {
-            grid-area: content;
-            background-color: #2ecc71;
-        }
-        #sidebar {
-            grid-area: sidebar;
-            background-color: #e74c3c;
-        }
-        #footer {
-            grid-area: footer;
-            background-color: #f1c40f;
-        }
-        .navbar {
+        .container {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            height: 100%;
+        }
+        .header {
+            height: 10%;
+            display: flex;
             justify-content: space-between;
-            background: linear-gradient(to right, pink, lightyellow);
-            padding: 10px 20px;
+            align-items: center;
+            padding: 0 20px;
+            background-color: #f4b860;
         }
-        .navbar-logo {
+        .logo {
             display: flex;
             align-items: center;
         }
-        .navbar-logo img {
-            height: 25px;
-            width: auto;
+        .logo img {
+            height: 30px;
             margin-right: 10px;
         }
-        .navbar-links {
+        .menu {
             display: flex;
             gap: 20px;
         }
-        .navbar-links a {
+        .menu-item {
             text-decoration: none;
             color: black;
             font-weight: bold;
         }
         .main-content {
+            background-color: #f4b860;
+            height: 45%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            height: 100%;
-            background: #f5c76f;
-            padding: 20px;
+            padding: 0 50px;
         }
         .text-content {
             max-width: 50%;
+            color: black;
         }
-        .text-content h2 {
-            font-size: 3rem;
-            color: #211c1b;
-            font-weight: bold;
+        .text-content h1 {
+            font-size: 2em;
             margin: 0;
         }
         .text-content p {
-            font-size: 1rem;
-            color: #211c1b;
-            margin: 20px 0;
+            margin: 10px 0 0 0;
         }
-        .graphic-content {
-            position: relative;
-            width: 400px;
-            height: 400px;
-            background: url('abstract-shapes.png') no-repeat center/cover;
-            border-radius: 8px;
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            background-color: pink;
+            height: 45%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .footer h2 {
+            margin: 0 0 20px 0;
+            color: black;
+        }
+        .footer .new-releases {
+            display: flex;
+            gap: 10px;
+        }
+        .release-item {
+            flex: 1;
+            background-color: white;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .release-item img {
+            width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <div id="header">
-        <div class="navbar">
-            <div class="navbar-logo">
-                <img src="spotify-logo.png" alt="Spotify Logo">
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
                 <span>Spotify Design</span>
             </div>
-            <div class="navbar-links">
-                <a href="#">Stories</a>
-                <a href="#">Events</a>
-                <a href="#">Team</a>
-                <a href="#">Tools</a>
+            <div class="menu">
+                <a href="#" class="menu-item">Stories</a>
+                <a href="#" class="menu-item">Updates</a>
+                <a href="#" class="menu-item">Team</a>
+                <a href="#" class="menu-item">Tools</a>
             </div>
         </div>
-    </div>
-    <div id="nav"></div>
-    <div id="content">
         <div class="main-content">
             <div class="text-content">
                 <p>UX WRITING</p>
-                <h2>We’re Spilling the Tea: <br> Spotify UX Writing Questions Answered</h2>
+                <h1>We're Spilling the Tea: Spotify UX Writing Questions Answered</h1>
             </div>
-            <div class="graphic-content"></div>
+            <div class="image-content">
+                <img src="graphic.png" alt="Graphic">
+            </div>
+        </div>
+        <div class="footer">
+            <h2>New Releases</h2>
+            <div class="new-releases">
+                <div class="release-item"><img src="release1.png" alt="Release 1"></div>
+                <div class="release-item"><img src="release2.png" alt="Release 2"></div>
+                <div class="release-item"><img src="release3.png" alt="Release 3"></div>
+                <div class="release-item"><img src="release4.png" alt="Release 4"></div>
+            </div>
         </div>
     </div>
-    <div id="sidebar"></div>
-    <div id="footer"></div>
 </body>
 </html>

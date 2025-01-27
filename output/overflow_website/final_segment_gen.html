@@ -3,72 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overflow Website</title>
+    <title>Complete Website</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #e0e7ff, #90a4fc);
-            color: #fff;
-            text-align: center;
         }
         .header {
+            background-color: white;
+            height: 10vh;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background-color: transparent;
+            padding: 0 20px;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .logo {
             display: flex;
             align-items: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #000;
         }
-        .logo::before {
-            content: '';
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            border-radius: 50%;
-            margin-right: 10px;
+        .logo img {
+            width: 30px;
+            height: 30px;
+            margin-right: 8px;
         }
         .menu {
             display: flex;
             align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
-        .menu a {
+        .menu li {
             margin: 0 15px;
-            text-decoration: none;
-            color: #000;
-            font-size: 16px;
+            color: #333;
         }
-        .menu .button {
-            background-color: #000;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
+        .menu li a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .sign-in {
+            margin-right: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        .download-btn {
+            background-color: black;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: bold;
         }
-        .main-content {
-            padding: 100px 20px;
+        .content {
+            background: linear-gradient(to bottom, #ffffff, #dff0ff);
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: black;
         }
-        .main-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
+        .content h1 {
+            font-size: 3em;
+            margin: 0.2em 0;
+            font-weight: bold;
         }
-        .main-content p {
-            font-size: 20px;
-            margin-bottom: 30px;
+        .content p {
+            font-size: 1.5em;
+            max-width: 700px;
+            color: #333;
         }
-        .download-button {
-            background-color: #000;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 30px;
-            font-size: 18px;
+        .download-trial-btn {
+            margin-top: 20px;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: bold;
         }
@@ -76,20 +88,25 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">overflow</div>
-        <div class="menu">
-            <a href="#">Product</a>
-            <a href="#">Examples</a>
-            <a href="#">Blog</a>
-            <a href="#">Pricing</a>
-            <a href="#">Sign In</a>
-            <a href="#" class="button">Download for free</a>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span style="font-weight: bold; font-size: 1.2em;">overflow</span>
+        </div>
+        <ul class="menu">
+            <li><a href="#">Product ▼</a></li>
+            <li><a href="#">Examples</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pricing</a></li>
+        </ul>
+        <div>
+            <a href="#" class="sign-in">Sign In</a>
+            <a href="#" class="download-btn">Download for free</a>
         </div>
     </div>
-    <div class="main-content">
+    <div class="content">
         <h1>User flows done right</h1>
         <p>Create interactive user flows, stunning design presentations, and step-by-step walkthroughs to engage your audience in synchronous or asynchronous design critique.</p>
-        <a href="#" class="download-button">Download - free trial</a>
+        <a href="#" class="download-trial-btn">Download - free trial</a>
     </div>
 </body>
 </html>

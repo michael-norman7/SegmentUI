@@ -5,245 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wireframe Layout</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto 1fr auto;
-            grid-template-areas:
-                "header"
-                "main"
-                "footer";
-            height: 100vh;
-        }
-        header {
-            grid-area: header;
-            background-color: #ff9999;
-            padding: 20px;
-            text-align: center;
-        }
-        main {
-            grid-area: main;
-            background-color: #99ff99;
-            padding: 20px;
-        }
-        footer {
-            grid-area: footer;
-            background-color: #9999ff;
-            padding: 20px;
-            text-align: center;
-        }
-        .sidebar {
-            background-color: #ffff99;
-            padding: 20px;
-            grid-area: sidebar;
-        }
-        .content {
-            background-color: #99ffff;
-            padding: 20px;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .container {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
-        
-        /* Topbar Styles */
         .topbar {
-            background-color: #4A4A4A;
-            color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
+            background-color: #424242;
+            color: white;
+            padding: 10px;
         }
         .contact-info {
             display: flex;
             align-items: center;
         }
         .contact-info i {
-            margin-right: 8px;
+            margin-right: 5px;
         }
-        .contact-info span {
-            margin-right: 20px;
+        .social-icons i {
+            margin-left: 10px;
         }
-        .social-icons {
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #FAFAFA;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
             display: flex;
             align-items: center;
         }
-        .social-icons a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            margin-left: 8px;
-            background-color: #636363;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
         }
-        
-        /* Navbar Styles */
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin: 0 15px;
+            cursor: pointer;
+        }
+        .book-button {
+            padding: 10px 20px;
+            border: 2px solid #333;
+            border-radius: 20px;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 15px;
+        }
         .navbar {
             display: flex;
+            justify-content: center;
             align-items: center;
-            justify-content: space-between;
-            padding: 20px 60px;
-            background-color: #fff;
-            border-bottom: 2px solid #ccc;
+            background-color: #FFFFFF;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
         }
-        .navbar-logo {
+        .navbar-links {
             display: flex;
-            align-items: center;
+            list-style: none;
         }
-        .navbar-logo img {
-            width: 40px;
-            margin-right: 10px;
+        .navbar-links li {
+            margin: 0 15px;
+            cursor: pointer;
+            font-size: 16px;
         }
-        .navbar-logo span {
-            font-size: 24px;
-            font-weight: bold;
-            color: #555;
-        }
-        .navbar-menu {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .navbar-menu a {
-            text-decoration: none;
-            color: #555;
-            font-weight: normal;
-        }
-        .navbar-menu a:hover,
-        .navbar-menu a.active {
-            color: #fff;
-            background-color: #d5d8c3;
-            padding: 5px 10px;
-            border-radius: 20px;
-        }
-        .book-btn {
-            padding: 10px 20px;
-            border: 2px solid #555;
-            color: #555;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .book-btn:hover {
-            background-color: #555;
-            color: #fff;
-        }
-        
-        /* Main Content Styles */
-        .main-content {
-            background-image: url('background.jpg');
+        .content {
+            background-image: url('main-content-bg.jpg');
             background-size: cover;
             background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 100px 20px;
             color: #333;
+            height: 100%;
+            flex-grow: 1;
+            padding: 20px;
         }
-        .main-content h1 {
-            font-size: 3rem;
+        .content h1 {
+            font-size: 48px;
             margin-bottom: 20px;
-            color: #333;
         }
-        .main-content p {
-            font-size: 1.2rem;
+        .content p {
+            font-size: 18px;
             margin-bottom: 40px;
-            color: #777;
         }
-        .main-content .btn {
-            padding: 15px 30px;
-            font-size: 1rem;
+        .content .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .content .buttons .btn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+        }
+        .content .buttons .btn-primary {
+            background-color: #A10E13;
+            color: white;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
         }
-        .btn-primary {
-            background-color: #b33030;
-            color: white;
-            margin-right: 10px;
-        }
-        .btn-primary:hover {
-            background-color: #8b2727;
-        }
-        .btn-secondary {
+        .content .buttons .btn-secondary {
             background-color: transparent;
-            border: 2px solid #b33030;
-            color: #b33030;
-        }
-        .btn-secondary:hover {
-            background-color: #b33030;
-            color: white;
+            color: #333;
+            border: 2px solid #333;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
-    <div class="topbar">
-        <div class="contact-info">
-            <span><i class="fas fa-phone"></i> (414) 857 – 0107</span>
-            <span><i class="fas fa-envelope"></i> yummy@bistrobliss</span>
-        </div>
-        <div class="social-icons">
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-    </div>
-
-    <header>
-        <h1>Header</h1>
-    </header>
-
-    <div class="navbar">
-        <div class="navbar-logo">
-            <img src="https://via.placeholder.com/40x40" alt="Logo">
-            <span>Bistro Bliss</span>
-        </div>
-        <div class="navbar-menu">
-            <a href="#" class="active">Home</a>
-            <a href="#">About</a>
-            <a href="#">Menu</a>
-            <a href="#">Pages</a>
-            <a href="#">Contact</a>
-        </div>
-        <a href="#" class="book-btn">Book A Table</a>
-    </div>
-
-    <main>
-        <div class="main-content">
-            <h1>Best food for your taste</h1>
-            <p>Discover delectable cuisine and unforgettable moments in our welcoming, culinary haven.</p>
-            <button class="btn btn-primary">Book A Table</button>
-            <button class="btn btn-secondary">Explore Menu</button>
-        </div>
-        
-        <div class="container">
-            <div class="sidebar">
-                <h2>Sidebar</h2>
+    <div class="container">
+        <div class="topbar">
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <span>(414) 857 - 0107</span>
+                <i class="fas fa-envelope" style="margin-left: 20px;"></i>
+                <span>yummy@bistrobliss</span>
             </div>
-            <div class="content">
-                <h2>Content</h2>
+            <div class="social-icons">
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-github"></i>
             </div>
         </div>
-    </main>
-
-    <footer>
-        <p>Footer</p>
-    </footer>
-
-    <!-- Font Awesome CDN -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span style="font-size: 24px; font-weight: bold;">Bistro Bliss</span>
+            </div>
+            <ul class="nav-links">
+                <li>Home</li>
+                <li>About</li>
+                <li>Menu</li>
+                <li>Pages</li>
+                <li>Contact</li>
+            </ul>
+            <button class="book-button">Book A Table</button>
+        </div>
+        <div class="navbar">
+            <ul class="navbar-links">
+                <li>Home</li>
+                <li>About Us</li>
+                <li>Our Menu</li>
+                <li>Reservations</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div>
+                <h1>Best food for your taste</h1>
+                <p>Discover delectable cuisine and unforgettable moments in our welcoming, culinary haven.</p>
+                <div class="buttons">
+                    <button class="btn btn-primary">Book A Table</button>
+                    <button class="btn btn-secondary">Explore Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

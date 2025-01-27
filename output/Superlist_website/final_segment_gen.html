@@ -3,118 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superlist</title>
+    <title>Complete Wireframe</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f7f6fb;
+            background-color: #F3F2F6;
         }
         .header {
-            background-color: #f04d2d;
-            padding: 10px 20px;
+            background-color: #E5533C;
+            padding: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .menubar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            width: 100%;
         }
-        .header-logo {
-            color: white;
+        .menubar .logo {
             font-size: 24px;
             font-weight: bold;
         }
-        .header-buttons {
-            display: flex;
-        }
-        .header-buttons a {
-            text-decoration: none;
-            color: white;
-            margin-left: 10px;
-            padding: 5px 15px;
-            border-radius: 20px;
-            background-color: #f04d2d;
-            transition: background-color 0.3s ease;
-        }
-        .header-buttons a:hover {
-            background-color: #d84315;
-        }
         .main-content {
-            text-align: center;
-            padding: 100px 20px;
-        }
-        .main-content .logo {
-            font-size: 28px;
-            color: #333;
-        }
-        .main-content p {
-            font-size: 40px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .main-content .highlight {
-            color: #f04d2d;
-        }
-        .tabs {
+            background-color: #F3F2F6;
+            min-height: 400px;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .main-content .headline {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #333;
+        }
+        .main-content .headline span {
+            color: #E5533C;
+        }
+        .main-content .tagline {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #666;
+        }
+        .main-content .projects {
+            display: flex;
+            gap: 10px;
             margin-top: 20px;
         }
-        .tab {
-            margin: 0 10px;
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            cursor: pointer;
-        }
-        .tab.active {
-            border-color: #f04d2d;
-            color: #f04d2d;
-        }
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        .cta-button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button.signup {
-            background-color: #f04d2d;
-            color: white;
-        }
-        .cta-button.signin {
+        .main-content .projects button {
             background-color: white;
-            color: #f04d2d;
-            border: 2px solid #f04d2d;
+            color: #333;
+            border: 2px solid #ccc;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
         }
-        .cta-button:hover {
-            opacity: 0.9;
+        .main-content .projects button.selected {
+            background-color: #E5533C;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="header-logo">Superlist</div>
-        <div class="header-buttons">
-            <a class="header-button" href="#">Download Superlist</a>
-        </div>
-    </div>
+    <header class="header">
+        <nav class="menubar">
+            <div class="logo">Superlist</div>
+            <div class="buttons">
+                <button style="background-color: #E5533C; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Sign Up</button>
+                <button style="background-color: #F3F2F6; color: #333; border: 2px solid #ccc; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Sign in</button>
+            </div>
+        </nav>
+    </header>
     <div class="main-content">
-        <p>Home to <span class="highlight">all your ✔️ lists</span></p>
-        <div class="tabs">
-            <div class="tab">Teamwork</div>
-            <div class="tab active">Personal projects</div>
-            <div class="tab">Everything in between</div>
+        <div class="headline">
+            Home to all your <span>lists</span>
         </div>
-        <div class="cta-buttons">
-            <button class="cta-button signup">Sign Up</button>
-            <button class="cta-button signin">Sign in</button>
+        <div class="tagline">
+            Teamwork, Personal projects, Everything in between
+        </div>
+        <div class="projects">
+            <button>Teamwork</button>
+            <button class="selected">Personal projects</button>
+            <button>Everything in between</button>
         </div>
     </div>
 </body>

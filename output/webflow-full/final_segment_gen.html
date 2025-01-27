@@ -3,180 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
     <style>
-        body, html {
+        body {
             margin: 0;
-            padding: 0;
-            height: 100%;
             font-family: Arial, sans-serif;
         }
-        .header {
-            background-color: #000;
-            height: 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
         .navbar {
-            background-color: #000;
-            height: 5%;
+            background-color: #000000;
+            height: 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 20px;
+            color: white;
         }
         .navbar .logo {
-            color: #fff;
-            font-size: 24px;
             font-weight: bold;
+            font-size: 20px;
         }
         .navbar .menu {
-            list-style: none;
             display: flex;
             gap: 20px;
         }
-        .navbar .menu li {
-            color: #fff;
-        }
-        .navbar .menu li.active {
-            font-weight: bold;
-        }
-        .navbar .menu li a {
-            color: inherit;
+        .navbar .menu a {
             text-decoration: none;
+            color: white;
+            font-size: 16px;
         }
         .navbar .auth {
             display: flex;
+            gap: 20px;
             align-items: center;
-            gap: 10px;
         }
-        .navbar .auth a {
-            color: #fff;
+        .navbar .auth .login {
+            color: gray;
             text-decoration: none;
         }
         .navbar .auth .signup {
-            background-color: #4169E1;
-            padding: 5px 10px;
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
             border-radius: 5px;
-            color: #fff;
         }
         .sub-navbar {
-            background-color: #fff;
-            height: 5%;
+            background-color: #ffffff;
+            height: 50px;
             display: flex;
             align-items: center;
             padding: 0 20px;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid #e0e0e0;
         }
         .sub-navbar .title {
+            font-size: 18px;
             font-weight: bold;
-            margin-right: 20px;
+            color: black;
+            margin-right: 30px;
         }
         .sub-navbar .links {
-            list-style: none;
             display: flex;
             gap: 20px;
         }
-        .sub-navbar .links li {
+        .sub-navbar .links a {
+            text-decoration: none;
             color: gray;
+            font-size: 16px;
+        }
+        .sub-navbar .links a.active {
+            color: black;
+            border-bottom: 2px solid black;
         }
         .content {
-            background-color: #f0f0f0;
+            background-color: #f7f7f7;
             padding: 20px;
-            display: flex;
-            flex-wrap: wrap;
+        }
+        .content .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            justify-content: space-around;
         }
         .content .card {
-            background-color: #fff;
-            width: calc(33% - 20px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            border: 1px solid #e0e0e0;
             border-radius: 5px;
             overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
         }
         .content .card img {
             width: 100%;
+            height: auto;
         }
         .content .card .info {
-            padding: 10px;
+            padding: 15px;
         }
         .content .card .info .title {
+            font-size: 16px;
             font-weight: bold;
+            margin-bottom: 10px;
         }
         .content .card .info .author {
             color: gray;
-            font-size: 14px;
-        }
-        .content .card .stats {
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-            color: gray;
         }
     </style>
-    <title>Complete Website Layout</title>
 </head>
 <body>
-    <div class="header">
+
+    <div class="navbar">
         <div class="logo">webflow</div>
-        <ul class="menu">
-            <li class="active"><a href="#">Showcase</a></li>
-            <li><a href="#">Designers</a></li>
-            <li><a href="#">Learn & Support</a></li>
-        </ul>
+        <div class="menu">
+            <a href="#">Showcase</a>
+            <a href="#">Designers</a>
+            <a href="#">Learn & Support</a>
+        </div>
         <div class="auth">
-            <a href="#">Log In</a>
+            <a href="#" class="login">Log In</a>
             <a href="#" class="signup">Sign Up for Free</a>
         </div>
     </div>
     <div class="sub-navbar">
         <div class="title">Explore the Showcase</div>
-        <ul class="links">
-            <li>Popular</li>
-            <li>Recent</li>
-            <li>Cloneable</li>
-        </ul>
+        <div class="links">
+            <a href="#" class="active">Popular</a>
+            <a href="#">Recent</a>
+            <a href="#">Cloneable</a>
+        </div>
     </div>
     <div class="content">
-        <div class="card">
-            <img src="https://via.placeholder.com/300x150" alt="Project Image">
-            <div class="info">
-                <div class="title">Project Title</div>
-                <div class="author">by Author</div>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Showcase Image">
+                <div class="info">
+                    <div class="title">Heco</div>
+                    <div class="author">by jthelms</div>
+                </div>
             </div>
-            <div class="stats">
-                <div>Views: 1234</div>
-                <div>Likes: 56</div>
-                <div>Comments: 12</div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Showcase Image">
+                <div class="info">
+                    <div class="title">Breaking Bad</div>
+                    <div class="author">by joaopaulots</div>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x150" alt="Project Image">
-            <div class="info">
-                <div class="title">Project Title</div>
-                <div class="author">by Author</div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Showcase Image">
+                <div class="info">
+                    <div class="title">Cards - Webflow UI Kit</div>
+                    <div class="author">by janlosert</div>
+                </div>
             </div>
-            <div class="stats">
-                <div>Views: 2345</div>
-                <div>Likes: 78</div>
-                <div>Comments: 34</div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300x150" alt="Project Image">
-            <div class="info">
-                <div class="title">Project Title</div>
-                <div class="author">by Author</div>
-            </div>
-            <div class="stats">
-                <div>Views: 3456</div>
-                <div>Likes: 90</div>
-                <div>Comments: 45</div>
-            </div>
+            <!-- Add more cards to match the original layout as necessary -->
         </div>
     </div>
+
 </body>
 </html>

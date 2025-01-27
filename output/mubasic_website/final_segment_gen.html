@@ -3,103 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mubasic</title>
+    <title>Complete Website</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
+        body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            height: 100%;
             display: flex;
-            height: 100vh;
-            color: #000;
         }
-        .left {
-            background-color: #f3c487;
-            width: 50%;
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .left-column {
+            flex: 1;
+            background-color: #F4C573; /* Light yellow background */
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            box-sizing: border-box;
         }
-        .left .logo {
+
+        .right-column {
+            flex: 1;
+            background-color: #333; /* Dark background for right content */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .branding {
+            font-size: 18px;
             font-weight: bold;
-            font-size: 20px;
+            margin-bottom: 20px;
         }
-        .left h1 {
+
+        .headline {
             font-size: 48px;
             font-weight: bold;
             line-height: 1.2;
-            margin: 20px 0;
+            margin: 0;
         }
-        .left h1 span {
-            color: #e86f1d;
+
+        .highlight {
+            color: #E07B39; /* Orange highlight */
         }
-        .left .description {
+
+        .subtext {
             font-size: 16px;
+            max-width: 400px;
+            margin: 20px 0 0;
         }
-        .right {
-            background-color: #000;
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            padding: 20px;
-        }
+
         .bar {
+            height: 50px;
+            margin: 10px 0;
             display: flex;
             align-items: center;
-            padding: 10px;
-            color: #fff;
+            color: black;
             font-weight: bold;
+            font-size: 18px;
         }
+
         .bar span {
-            margin-right: 10px;
-            padding: 5px 10px;
-        }
-        .bar-long {
-            flex: 1;
-            height: 30px;
-            background-color: #000;
+            width: 50px;
+            height: 50px;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin-right: 10px;
         }
-        .bar:nth-child(1) { background-color: #86BBD8; }
-        .bar:nth-child(2) { background-color: #F4A261; }
-        .bar:nth-child(3) { background-color: #E2C495; }
-        .bar:nth-child(4) { background-color: #E76F51; }
-        .bar:nth-child(5) { background-color: #C5B4E3; }
+
+        .blue { background-color: #93C6D6; }
+        .yellow { background-color: #F4C573; }
+        .beige { background-color: #F3DEC4; }
+        .orange { background-color: #E07B39; }
+        .purple { background-color: #B798D1; }
+        .black-highlight { background-color: #000; color: #fff; }
     </style>
 </head>
 <body>
-    <div class="left">
-        <div class="logo">mubasic</div>
-        <h1>The <span>#1</span> source for children's music.</h1>
-        <p class="description">An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.</p>
-    </div>
-    <div class="right">
-        <div class="bar">
-            <span>M</span>
-            <div class="bar-long">U</div>
+    <div class="container">
+        <div class="left-column">
+            <div class="branding">mubasic</div>
+            <div class="headline">
+                The <span class="highlight">#1</span> source for children's music.
+            </div>
+            <div class="subtext">
+                An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.
+            </div>
         </div>
-        <div class="bar">
-            <span>B</span>
-            <div class="bar-long"></div>
-        </div>
-        <div class="bar">
-            <span>A</span>
-            <div class="bar-long">S</div>
-        </div>
-        <div class="bar">
-            <span>I</span>
-            <div class="bar-long"></div>
-        </div>
-        <div class="bar">
-            <span>C</span>
-            <div class="bar-long"></div>
+        <div class="right-column">
+            <div class="bar blue"><span>M</span><div class="black-highlight" style="flex: 1; padding-left: 50px;">U</div></div>
+            <div class="bar yellow"><span>B</span></div>
+            <div class="bar beige"><span>A</span><div class="black-highlight" style="flex: 1; padding-left: 50px;">S</div></div>
+            <div class="bar orange"><span>I</span></div>
+            <div class="bar purple"><span>C</span></div>
         </div>
     </div>
 </body>

@@ -3,82 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe Layout</title>
+    <title>Combined Website</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-        .header {
-            background-color: #800080; /* Purple */
-            height: 100px;
-        }
-        .main-content {
-            background-color: #00FF00; /* Green */
-            height: 600px;
-            position: relative;
-            background-image: url('https://your-image-url.com');
-            background-size: cover;
-            background-position: center;
-        }
-        /* Navbar Styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 10px 20px;
-        }
-        .navbar a {
             color: white;
-            text-decoration: none;
-            padding: 10px;
+        }
+
+        .header {
+            background-color: #6A1B9A;
+            height: 100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+        }
+
+        .logo {
+            font-size: 20px;
             font-weight: bold;
         }
-        .navbar a:hover {
-            color: #ddd;
-        }
-        .navbar-menu {
+
+        .menu {
             display: flex;
-            gap: 20px;
+            gap: 30px;
         }
-        /* Main Content Styles */
-        .text-overlay {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: white;
-            max-width: 600px;
+
+        .menu-item {
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            background: url('https://via.placeholder.com/1500') no-repeat center center;
+            background-size: cover;
+            height: calc(100vh - 100px);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .quote {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
-            border-radius: 10px;
-        }
-        .quote {
-            font-size: 1.5rem;
+            border-radius: 8px;
+            max-width: 600px;
+            font-size: 24px;
             line-height: 1.5;
-        }
-        .author {
-            margin-top: 10px;
-            font-size: 1rem;
-            text-align: right;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="navbar">
-            <a href="#">George Nakashima Woodworkers</a>
-            <div class="navbar-menu">
-                <a href="#">Furniture</a>
-                <a href="#">Philosophy</a>
-                <a href="#">...</a>
-            </div>
+        <div class="logo">GEORGE NAKASHIMA WOODWORKERS</div>
+        <div class="menu">
+            <div class="menu-item">FURNITURE</div>
+            <div class="menu-item">PHILOSOPHY</div>
+            <div class="menu-item">...</div>
         </div>
     </div>
     <div class="main-content">
-        <div class="text-overlay">
-            <p class="quote">"In Japanese, kodama, the ‘spirit of a tree,’ refers to a feeling of special kinship with the heart of a tree. It is our deepest respect for the tree...that we may offer the tree a second life."</p>
-            <p class="author">— George Nakashima</p>
+        <div class="quote">
+            "In Japanese, kodama, the 'spirit of a tree,' refers to a feeling of special kinship with the heart of a tree. It is our deepest respect for the tree... that we may offer the tree a second life."
+            <br>— George Nakashima
         </div>
     </div>
 </body>

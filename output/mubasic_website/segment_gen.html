@@ -3,157 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe Layout</title>
+    <title>Complete Website</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
+            height: 100%;
+            display: flex;
         }
+
         .container {
-            display: grid;
-            grid-template-areas:
-                "header header header"
-                "nav content sidebar"
-                "footer footer footer";
-            grid-template-columns: 1fr 3fr 1fr;
-            grid-template-rows: auto 1fr auto;
+            display: flex;
+            width: 100%;
             height: 100vh;
-            gap: 10px;
-            padding: 10px;
         }
-        header {
-            grid-area: header;
-            background-color: #f8b400;
-        }
-        nav {
-            grid-area: nav;
-            background-color: #5aa469;
-        }
-        .content {
-            grid-area: content;
-            background-color: #58a4b0;
-        }
-        .sidebar {
-            grid-area: sidebar;
-            background-color: #ff6b6b;
-        }
-        footer {
-            grid-area: footer;
-            background-color: #4d4d4d;
-        }
-        .main-content-left {
-            background-color: #f3c487;
-            color: #000;
+
+        .left-column {
+            flex: 1;
+            background-color: #F4C573; /* Light yellow background */
             padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            height: 100vh;
-            box-sizing: border-box;
+            justify-content: center;
         }
-        .logo {
+
+        .right-column {
+            flex: 1;
+            background-color: #333; /* Dark background for right content */
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
         }
-        .brand-name {
+
+        .branding {
+            font-size: 18px;
             font-weight: bold;
-            font-size: 20px;
+            margin-bottom: 20px;
         }
-        .tagline {
+
+        .headline {
             font-size: 48px;
             font-weight: bold;
             line-height: 1.2;
-            margin: 0;
         }
-        .tagline span {
-            color: #e86f1d;
+
+        .highlight {
+            color: #E07B39; /* Orange highlight */
         }
-        .description {
+
+        .subtext {
             font-size: 16px;
-            margin-top: auto;
+            margin-top: 20px;
+            max-width: 400px;
         }
-        .main-content-right {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+
         .bar {
+            height: 50px;
+            margin: 10px 0;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 10px;
-            color: #fff;
+            color: black;
             font-weight: bold;
+            font-size: 18px;
         }
+
         .bar span {
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            background-color: rgba(255, 255, 255, 0.2);
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.5);
             margin-right: 10px;
         }
-        .bar-long {
-            flex: 1;
-            height: 30px;
-            background-color: #000;
-            margin-left: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .bar:nth-child(1) { background-color: #86BBD8; }
-        .bar:nth-child(2) { background-color: #F4A261; }
-        .bar:nth-child(3) { background-color: #E2C495; }
-        .bar:nth-child(4) { background-color: #E76F51; }
-        .bar:nth-child(5) { background-color: #C5B4E3; }
+
+        .blue { background-color: #93C6D6; }
+        .yellow { background-color: #F4C573; }
+        .beige { background-color: #F3DEC4; }
+        .orange { background-color: #E07B39; }
+        .purple { background-color: #B798D1; }
+        .black-highlight { background-color: #000; }
     </style>
 </head>
 <body>
     <div class="container">
-        <header></header>
-        <nav></nav>
-        <div class="content">
-            <div class="main-content-left">
-                <div class="logo">
-                    <div class="brand-name">mubasic</div>
-                    <div class="icon">+</div>
-                </div>
-                <h1 class="tagline">The <span>#1</span> source for children's music.</h1>
-                <p class="description">An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.</p>
+        <div class="left-column">
+            <div class="branding">mubasic</div>
+            <div class="headline">
+                The <span class="highlight">#1</span> source for children's music.
+            </div>
+            <div class="subtext">
+                An ever-growing catalogue of high-quality children's music, sourced by talented music creators from all over the world.
             </div>
         </div>
-        <aside class="sidebar">
-            <div class="main-content-right">
-                <div class="bar">
-                    <span>M</span>
-                    <div class="bar-long">U</div>
-                </div>
-                <div class="bar">
-                    <span>B</span>
-                    <div class="bar-long"></div>
-                </div>
-                <div class="bar">
-                    <span>A</span>
-                    <div class="bar-long">S</div>
-                </div>
-                <div class="bar">
-                    <span>I</span>
-                    <div class="bar-long"></div>
-                </div>
-                <div class="bar">
-                    <span>C</span>
-                    <div class="bar-long"></div>
-                </div>
-            </div>
-        </aside>
-        <footer></footer>
+        <div class="right-column">
+            <div class="bar blue"><span>M</span><div class="black-highlight" style="flex: 1; padding-left: 50px;">U</div></div>
+            <div class="bar yellow"><span>B</span></div>
+            <div class="bar beige"><span>A</span><div class="black-highlight" style="flex: 1; padding-left: 50px;">S</div></div>
+            <div class="bar orange"><span>I</span></div>
+            <div class="bar purple"><span>C</span></div>
+        </div>
     </div>
 </body>
 </html>

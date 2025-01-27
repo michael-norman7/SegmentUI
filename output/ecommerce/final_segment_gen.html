@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .header {
+            background-color: white;
+            height: 15vh;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px 2px 5px #ddd;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .navbar .logo {
+            color: #0066ff;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+            align-items: center;
+        }
+        .navbar ul li {
+            display: inline;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1em;
+        }
+        .main {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .hero a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .featured {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .featured h2 {
+            color: #007bff;
+            font-size: 2em;
+        }
+        .products {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product {
+            background-color: white;
+            box-shadow: 0px 2px 5px #ddd;
+            padding: 20px;
+            width: calc(33.333% - 40px);
+            margin: 10px 0;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .product h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .product p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .product .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product .cart-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #f3f3f3;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px -2px 5px #ddd;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+    <title>Complete Wireframe Layout</title>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <a href="#" class="logo">ShopName</a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <div class="hero">
+            <h1>Welcome to Our E-Shop</h1>
+            <p>Discover the best deals on the latest products and enjoy seamless online shopping.</p>
+            <a href="#">Shop Now</a>
+        </div>
+        <div class="featured">
+            <h2>Featured Products</h2>
+        </div>
+        <div class="products">
+            <div class="product">
+                <img src="placeholder.jpg" alt="Cozy Cotton T-Shirt">
+                <h3>Cozy Cotton T-Shirt</h3>
+                <p>Experience ultimate comfort with our 100% cotton T-shirt, perfect for everyday wear.</p>
+                <div class="price">$19.99</div>
+                <a href="#" class="cart-btn">Add to Cart</a>
+            </div>
+            <div class="product">
+                <img src="placeholder.jpg" alt="Wireless Noise-Cancelling Earbuds">
+                <h3>Wireless Noise-Cancelling Earbuds</h3>
+                <p>Enjoy crystal-clear sound and reduce ambient noise wherever you go.</p>
+                <div class="price">$29.99</div>
+                <a href="#" class="cart-btn">Add to Cart</a>
+            </div>
+            <div class="product">
+                <img src="placeholder.jpg" alt="Ceramic Coffee Mug">
+                <h3>Ceramic Coffee Mug</h3>
+                <p>Kickstart your morning with a sleek, durable mug that keeps beverages warm.</p>
+                <div class="price">$9.99</div>
+                <a href="#" class="cart-btn">Add to Cart</a>
+            </div>
+            <div class="product">
+                <img src="placeholder.jpg" alt="Portable Bluetooth Speaker">
+                <h3>Portable Bluetooth Speaker</h3>
+                <p>Take your music wherever you go with our compact, rechargeable speaker.</p>
+                <div class="price">$14.99</div>
+                <a href="#" class="cart-btn">Add to Cart</a>
+            </div>
+            <div class="product">
+                <img src="placeholder.jpg" alt="Everyday Backpack">
+                <h3>Everyday Backpack</h3>
+                <p>Stylish and spacious, our backpack is perfect for school, work, or travel.</p>
+                <div class="price">$39.99</div>
+                <a href="#" class="cart-btn">Add to Cart</a>
+            </div>
+            <div class="product">
+                <img src="placeholder.jpg" alt="Modern Desk Lamp">
+                <h3>Modern Desk Lamp</h3>
+                <p>Illuminate your workspace with a lamp that combines style and functionality.</p>
+                <div class="price">$24.99</div>
+                <a href="#" class="cart-btn">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        © 2025 ShopName. All rights reserved.
+    </div>
+</body>
+</html>

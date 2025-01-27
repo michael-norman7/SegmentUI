@@ -3,155 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Wireframe</title>
+    <title>Complete Wireframe</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-        .container {
-            display: grid;
-            grid-template-areas:
-                'header header header'
-                'sidebar main main'
-                'footer footer footer';
-            grid-template-columns: 1fr 2fr 2fr;
-            grid-template-rows: auto 1fr auto;
-            height: 100vh;
+            background-color: #F3F2F6;
         }
         .header {
-            grid-area: header;
-            background-color: #ff9999;
-            padding: 20px;
-        }
-        .sidebar {
-            grid-area: sidebar;
-            background-color: #99ccff;
-            padding: 20px;
-        }
-        .main {
-            grid-area: main;
-            background-color: #99ff99;
-            padding: 20px;
-        }
-        .footer {
-            grid-area: footer;
-            background-color: #cccccc;
-            padding: 20px;
-        }
-        /* Style from Component 1 */
-        .menubar {
-            background-color: #EF5350;
-            padding: 10px 20px;
-            color: #fff;
+            background-color: #2B3C85;
+            height: 100px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
-        .logo {
+        .menubar {
+            background-color: #E5533C;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .menubar .logo {
             font-size: 24px;
             font-weight: bold;
-            margin-right: auto;
         }
-        .menu-item {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #fff;
+        .menubar .tagline {
+            font-size: 14px;
         }
-        .menu-item:hover {
-            text-decoration: underline;
-        }
-        /* Style from Component 2 */
         .main-content {
+            background-color: #F3F2F6;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 20px;
         }
-        .main-content h1 {
-            font-size: 2.5rem;
-            margin: 0;
-            line-height: 1.2;
+        .main-content .headline {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #333;
         }
-        .main-content p {
-            font-size: 1.8rem;
-            margin: 0;
-            line-height: 1.2;
+        .main-content .headline span {
+            color: #E5533C;
         }
-        .main-content .highlight {
-            color: #f04d2d;
+        .main-content .tagline {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #666;
         }
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
+        .main-content .buttons {
+            margin-top: 20px;
         }
-        .tab {
-            margin: 0 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 15px;
-            border: 1px solid #ddd;
-            background-color: #f7f6fb;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .tab.active {
-            background-color: #f04d2d;
-            color: #fff;
-        }
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-        .cta-button {
-            margin: 0 0.5rem;
-            padding: 0.7rem 1.5rem;
-            border-radius: 25px;
+        .main-content .buttons button {
+            background-color: #E5533C;
+            color: white;
             border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            border-radius: 5px;
+            font-size: 16px;
         }
-        .cta-button.signup {
-            background-color: #f04d2d;
-            color: #fff;
-        }
-        .cta-button.signin {
-            background-color: #fff;
-            color: #f04d2d;
-            border: 1px solid #f04d2d;
-        }
-        .cta-button:hover {
-            opacity: 0.9;
+        .main-content .buttons button.secondary {
+            background-color: #666;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="menubar">
-                <div class="logo">Logo</div>
-                <a class="menu-item" href="#">Home</a>
-                <a class="menu-item" href="#">About</a>
-                <a class="menu-item" href="#">Services</a>
-                <a class="menu-item" href="#">Contact</a>
-            </div>
+    <header class="header">
+        <nav class="menubar">
+            <div class="logo">Logo</div>
+            <div class="tagline">Free forever for individuals</div>
+        </nav>
+    </header>
+    <div class="main-content">
+        <div class="headline">
+            Home to all your <span>lists</span>
         </div>
-        <div class="sidebar">Sidebar</div>
-        <div class="main">
-            <div class="main-content">
-                <div class="logo">
-                    <h1>Superlist</h1>
-                </div>
-                <p>Home to <span class="highlight">all your ✔️ lists</span></p>
-                <div class="tabs">
-                    <div class="tab">Teamwork</div>
-                    <div class="tab active">Personal projects</div>
-                    <div class="tab">Everything in between</div>
-                </div>
-                <div class="cta-buttons">
-                    <button class="cta-button signup">Sign Up</button>
-                    <button class="cta-button signin">Sign in</button>
-                </div>
-            </div>
+        <div class="tagline">
+            Teamwork, Personal projects, Everything in between
         </div>
-        <div class="footer">Footer</div>
+        <div class="buttons">
+            <button>Sign Up</button>
+            <button class="secondary">Sign in</button>
+        </div>
     </div>
 </body>
 </html>
