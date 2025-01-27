@@ -4,6 +4,7 @@ import base64
 from dotenv import load_dotenv
 import pandas as pd
 import glob
+
 # import sys
 # import argparse
 
@@ -80,7 +81,12 @@ def update_excel_with_scores(folder_path, excel_path, tests):
     # Load existing Excel file if it exists
     if os.path.exists(excel_path):
         existing_dfs = {}
-        for sheet_name in ["Overall Scores", "Visual Scores", "Content Scores", "Functional Scores"]:
+        for sheet_name in [
+            "Overall Scores",
+            "Visual Scores",
+            "Content Scores",
+            "Functional Scores",
+        ]:
             df = pd.read_excel(excel_path, sheet_name=sheet_name)
             if "Image Name" not in df.columns:
                 df["Image Name"] = ""
@@ -88,7 +94,12 @@ def update_excel_with_scores(folder_path, excel_path, tests):
     else:
         existing_dfs = {
             sheet_name: pd.DataFrame()
-            for sheet_name in ["Overall Scores", "Visual Scores", "Content Scores", "Functional Scores"]
+            for sheet_name in [
+                "Overall Scores",
+                "Visual Scores",
+                "Content Scores",
+                "Functional Scores",
+            ]
         }
         for df in existing_dfs.values():
             df["Image Name"] = ""
@@ -178,76 +189,62 @@ def update_excel_with_scores(folder_path, excel_path, tests):
 # def add_single_image_scores_to_excel(
 #     image_name, original_image_path, excel_path, tests
 # ):
-    try:
-        new_rows = {
-            "Overall Scores": {"": image_name},
-            "Visual Scores": {"": image_name},
-            "Content Scores": {"": image_name},
-            "Functional Scores": {"": image_name},
-        }
+#     try:
+#         new_rows = {
+#             "Overall Scores": {"": image_name},
+#             "Visual Scores": {"": image_name},
+#             "Content Scores": {"": image_name},
+#             "Functional Scores": {"": image_name},
+#         }
 
-        for test in tests:
-            if test == "Full Image Gen":
-                generated_image_path = f"output/{image_name}/full_image_gen.png"
-            elif test == "Segment Gen":
-                generated_image_path = f"output/{image_name}/final_segment_gen.png"
-            else:
-                continue
+#         for test in tests:
+#             if test == "Full Image Gen":
+#                 generated_image_path = f"output/{image_name}/full_image_gen.png"
+#             elif test == "Segment Gen":
+#                 generated_image_path = f"output/{image_name}/final_segment_gen.png"
+#             else:
+#                 continue
 
-            accuracy_score = get_accuracy_score(
-                original_image_path, generated_image_path
-            )
-            scores = accuracy_score.split(", ")
-            visual_score = int(scores[0].split(": ")[1])
-            content_score = int(scores[1].split(": ")[1])
-            functional_score = int(scores[2].split(": ")[1])
-            overall_score = int(scores[3].split(": ")[1])
+#             accuracy_score = get_accuracy_score(
+#                 original_image_path, generated_image_path
+#             )
+#             scores = accuracy_score.split(", ")
+#             visual_score = int(scores[0].split(": ")[1])
+#             content_score = int(scores[1].split(": ")[1])
+#             functional_score = int(scores[2].split(": ")[1])
+#             overall_score = int(scores[3].split(": ")[1])
 
-            new_rows["Overall Scores"][test] = overall_score
-            new_rows["Visual Scores"][test] = visual_score
-            new_rows["Content Scores"][test] = content_score
-            new_rows["Functional Scores"][test] = functional_score
+#             new_rows["Overall Scores"][test] = overall_score
+#             new_rows["Visual Scores"][test] = visual_score
+#             new_rows["Content Scores"][test] = content_score
+#             new_rows["Functional Scores"][test] = functional_score
 
-        # Load existing Excel file and append new rows
-        # Read existing sheets
-        existing_dfs = {
-            sheet_name: pd.read_excel(excel_path, sheet_name=sheet_name)
-            for sheet_name in new_rows.keys()
-        }
+#         # Load existing Excel file and append new rows
+#         # Read existing sheets
+#         existing_dfs = {
+#             sheet_name: pd.read_excel(excel_path, sheet_name=sheet_name)
+#             for sheet_name in new_rows.keys()
+#         }
 
-        # Append new rows to existing dataframes
-        for sheet_name, new_row in new_rows.items():
-            existing_dfs[sheet_name] = pd.concat(
-                [existing_dfs[sheet_name], pd.DataFrame([new_row])], ignore_index=True
-            )
+#         # Append new rows to existing dataframes
+#         for sheet_name, new_row in new_rows.items():
+#             existing_dfs[sheet_name] = pd.concat(
+#                 [existing_dfs[sheet_name], pd.DataFrame([new_row])], ignore_index=True
+#             )
 
-        # Write updated dataframes back to the Excel file
-        with pd.ExcelWriter(excel_path, mode="w") as writer:
-            for sheet_name, df in existing_dfs.items():
-                df.to_excel(writer, sheet_name=sheet_name, index=False)
-    except Exception as e:
-        print(f"Error: {e}")
-        print(f"Failed to add scores for {image_name}")
+#         # Write updated dataframes back to the Excel file
+#         with pd.ExcelWriter(excel_path, mode="w") as writer:
+#             for sheet_name, df in existing_dfs.items():
+#                 df.to_excel(writer, sheet_name=sheet_name, index=False)
+#     except Exception as e:
+#         print(f"Error: {e}")
+#         print(f"Failed to add scores for {image_name}")
 
 
 def main():
-    # parser = argparse.ArgumentParser(description="Rate accuracy of generated images.")
-    # parser.add_argument(
-    #     "--image", type=str, help="Specific image name to rate accuracy for."
-    # )
-    # args = parser.parse_args()
-
     excel_path = "accuracy_scores.xlsx"
     tests = ["Full Image Gen", "Segment Gen"]
 
-    # if args.image:
-    #     image_name = args.image
-    #     original_image_path = f"output/{image_name}/{image_name}.png"
-    #     add_single_image_scores_to_excel(
-    #         image_name, original_image_path, excel_path, tests
-    #     )
-    #     print(f"Accuracy scores for {image_name} have been added to {excel_path}")
-    # else:
     folder_path = "full_images"
     update_excel_with_scores(folder_path, excel_path, tests)
     print(f"Accuracy scores have been updated in {excel_path}")
