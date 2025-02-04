@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: yellow;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo::before {
+            content: "≡≡";
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .main {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .content-card {
+            background-color: blue;
+            width: 30%;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+        }
+        .content-card p {
+            margin: 5px 0;
+            color: black;
+        }
+        .content-card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo"></div>
+        <div class="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">All Categories</a>
+            <a href="#">Submit Your Site</a>
+            <a href="#">Log In</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content-card">
+            <p>Paper Sizes</p>
+            <div class="meta">
+                <span>☆ 150</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Ian Jones</p>
+            <div class="meta">
+                <span>☆ 134</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Frank Chimero</p>
+            <div class="meta">
+                <span>☆ 84</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Lettuce & Company</p>
+            <div class="meta">
+                <span>☆ 52</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Monica Lovati</p>
+            <div class="meta">
+                <span>☆ 94</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Simon James Design</p>
+            <div class="meta">
+                <span>☆ 56</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

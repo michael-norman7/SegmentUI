@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Forward</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-weight: bold;
+        }
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        .nav li {
+            display: inline;
+        }
+        .highlight {
+            background-color: red;
+            color: white;
+            padding: 10px 15px;
+            text-transform: uppercase;
+        }
+        .container {
+            display: flex;
+            height: calc(100vh - 50px);
+        }
+        .blue-section {
+            background-color: #092869;
+            color: white;
+            flex: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .text-box {
+            max-width: 300px;
+        }
+        .text-box h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .text-box p {
+            margin: 10px 0;
+        }
+        .text-box button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #fff;
+            color: #092869;
+            cursor: pointer;
+        }
+        .arrow-sections > div {
+            flex: 1;
+            clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+        }
+        .yellow-section {
+            background-color: #ffd700;
+        }
+        .green-section {
+            background-color: #9acd32;
+        }
+        .red-section {
+            background-color: #b22222;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">NEW HOME CO.</div>
+        <ul class="nav">
+            <li><div class="highlight">Find Your New Home</div></li>
+            <li>Design</li>
+            <li>Programs</li>
+            <li>Service</li>
+            <li>About</li>
+            <li>Reviews</li>
+            <li>News</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="blue-section">
+            <div class="text-box">
+                <h1>Move Forward</h1>
+                <p>Let us help you move forward into your new home today.<br>Explore our move-in ready homes available now.</p>
+                <button>Start Your Home Search</button>
+            </div>
+        </div>
+        <div class="arrow-sections">
+            <div class="yellow-section"></div>
+            <div class="green-section"></div>
+            <div class="red-section"></div>
+        </div>
+    </div>
+</body>
+</html>

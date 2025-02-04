@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+        .header {
+            background-color: #000;
+            height: 100px;
+        }
+        .nav-bar {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 50px;
+        }
+        .nav-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .nav-bar a:hover {
+            color: #ddd;
+        }
+        .nav-bar .logo {
+            font-weight: bold;
+        }
+        .nav-bar .button {
+            background-color: #3b49f7;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .sub-nav {
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .sub-nav a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .sub-nav a:hover {
+            color: #000;
+        }
+        .sub-nav .bold {
+            font-weight: bold;
+            color: #000;
+            margin-right: 20px;
+        }
+        .main-content {
+            background-color: #fff;
+            padding: 20px;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .tabs a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #666;
+        }
+        .tabs a.active {
+            color: #000;
+            font-weight: bold;
+            border-bottom: 3px solid #000;
+            padding-bottom: 3px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+        .card-image {
+            background-color: #ff0000;
+            height: 150px;
+        }
+        .card-content {
+            padding: 10px;
+            font-size: 14px;
+            color: #333;
+        }
+        .card-footer {
+            padding: 10px;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+        }
+        .card-footer img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="nav-bar">
+        <div class="menu-left">
+            <a href="#" class="logo">webflow</a>
+            <a href="#">Showcase</a>
+            <a href="#">Designers</a>
+            <a href="#">Learn & Support</a>
+        </div>
+        <div class="menu-right">
+            <a href="#">Log In</a>
+            <a href="#" class="button">Sign Up for Free</a>
+        </div>
+    </div>
+    <div class="sub-nav">
+        <span class="bold">Explore the Showcase</span>
+        <a href="#" class="active">Popular</a>
+        <a href="#">Recent</a>
+        <a href="#">Cloneable</a>
+    </div>
+    <div class="main-content">
+        <div class="tabs">
+            <a href="#">Recent</a>
+            <a href="#" class="active">Most Liked</a>
+            <a href="#">Most Viewed</a>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    Heco<br>
+                    <small>by <a href="#">jthelms</a></small>
+                </div>
+                <div class="card-footer">
+                   <img src="https://via.placeholder.com/20" alt="author-image"> 22,204 ♥ 28 ✎ 562
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    New concept for IMDB<br>
+                    <small>by <a href="#">joaopaulots</a></small>
+                </div>
+                <div class="card-footer">
+                    <img src="https://via.placeholder.com/20" alt="author-image"> 27,628 ♥ 37 ✎ 540
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    Cards - Webflow UI Kit<br>
+                    <small>by <a href="#">janlosert</a></small>
+                </div>
+                <div class="card-footer">
+                    <img src="https://via.placeholder.com/20" alt="author-image"> 19,195 ♥ 31 ✎ 2808
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    geospace<br>
+                    <small>by <a href="#">joaopaulots</a></small>
+                </div>
+                <div class="card-footer">
+                    <img src="https://via.placeholder.com/20" alt="author-image"> 21,024 ♥ 46 ✎ 526
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    Legowerk<br>
+                    <small>by <a href="#">DarioStefanutto</a></small>
+                </div>
+                <div class="card-footer">
+                    <img src="https://via.placeholder.com/20" alt="author-image"> 12,717 ♥ 65 ✎ 2508
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    leAD Sports Accelerator<br>
+                    <small>by <a href="#">MILK</a></small>
+                </div>
+                <div class="card-footer">
+                    <img src="https://via.placeholder.com/20" alt="author-image"> 17,560 ♥ 39 ✎ 488
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    Cards 2.0 - Framework/UI ... <br>
+                    <small>by <a href="#">janlosert</a></small>
+                </div>
+                <div class="card-footer">
+                    <img src="https://via.placeholder.com/20" alt="author-image"> 15,595 ♥ 41 ✎ 3901
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    Overton Graphics<br>
+                    <small>by <a href="#">OvertonGraphics</a></small>
+                </div>
+                <div class="card-footer">
+                    <img src="https://via.placeholder.com/20" alt="author-image"> 20,589 ♥ 29 ✎ 454
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1E1B47;
+            color: #FFFFFF;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1E1B47;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: orange;
+        }
+
+        .main-content {
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .main-title {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        .sub-title {
+            font-size: 18px;
+            margin: 20px 0;
+            color: #BBBBBB;
+        }
+
+        .buttons {
+            margin: 20px 0;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button.download {
+            background-color: #643D32;
+            color: #FFFFFF;
+        }
+
+        .button.buy {
+            background-color: #F5A623;
+            color: #FFFFFF;
+        }
+
+        footer {
+            margin: 40px 0;
+            text-align: center;
+            color: #BBBBBB;
+            font-size: 14px;
+        }
+
+        .footer-tiles {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .tile {
+            width: 150px;
+            height: 100px;
+            background-color: #4F4873;
+            margin: 10px;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            background-color: #F5A623;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="highlight">About</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="highlight">Get a Quote</a></li>
+        </ul>
+    </nav>
+    <div class="main-content">
+        <div class="main-title">Simplicity in web design</div>
+        <div class="sub-title">A simple and clean design can help users focus on the content of your website.</div>
+        <div class="buttons">
+            <button class="button download">Download</button>
+            <button class="button buy">Buy Now</button>
+        </div>
+    </div>
+    <footer>
+        <div>The goal of simplicity in web design is to help users focus on the content of a website...</div>
+        <div class="footer-tiles">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+    </footer>
+</body>
+</html>

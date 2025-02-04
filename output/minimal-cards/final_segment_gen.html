@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrected Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: white;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo::before {
+            content: url('data:image/svg+xml;utf8,<svg fill="%23000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 12h18v2H3zm0 6h18v2H3zm0-12v2h18V6H3z"/></svg>');
+            font-size: 24px;
+            color: black;
+            margin-right: 10px;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: normal;
+        }
+        .main {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .content-card {
+            background-color: deepskyblue;
+            width: 30%;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+        }
+        .content-card p {
+            margin: 5px 0;
+            color: black;
+            font-weight: normal;
+        }
+        .content-card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo"></div>
+        <div class="nav-menu">
+            <a href="#">Home</a>
+            <a href="#">All Categories</a>
+            <a href="#">Submit Your Site</a>
+            <a href="#">Log In</a>
+            <a href="#">Sign Up</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="content-card">
+            <p>Paper Sizes</p>
+            <div class="meta">
+                <span>☆ 150</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Ian Jones</p>
+            <div class="meta">
+                <span>☆ 134</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Frank Chimero</p>
+            <div class="meta">
+                <span>☆ 84</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Lettuce & Company</p>
+            <div class="meta">
+                <span>☆ 52</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Monica Lovati</p>
+            <div class="meta">
+                <span>☆ 94</span>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Simon James Design</p>
+            <div class="meta">
+                <span>☆ 56</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

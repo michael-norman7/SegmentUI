@@ -80,9 +80,10 @@ def generate_segment_code(
             {
                 "type": "text",
                 "text": (
-                    """You are an expert web developer tasked with creating a website based on the provided wireframe.
-                    Your task is to recreate a website with the highest level of detail to the best of your ability.
-                    Recreate the style, layout, and structure of the website as accurately as possible.
+                    """You are an expert web developer that is extremely detail-oriented who is tasked with creating 
+                    a website based on the provided wireframe. Your task is to recreate a website with the highest level 
+                    of detail to the best of your ability. Recreate the style, layout, and structure of the website as 
+                    accurately as possible.
                     
                     This is a blank wireframe for a website. There are multiple blocks with different colors 
                     to designate different components of the website. Generate the HTML and CSS code for the basic 

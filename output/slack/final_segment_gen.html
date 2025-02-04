@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #fff;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            height: 30px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-buttons a {
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .sign-in {
+            color: #333;
+        }
+        .get-started {
+            background-color: #690096;
+            color: #fff;
+        }
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #f8f5f2;
+            height: calc(100vh - 60px);
+            padding: 80px 20px;
+        }
+        .content-text {
+            max-width: 400px;
+        }
+        .content-text h1 {
+            font-size: 2.5em;
+            margin: 0.5em 0;
+            color: #333;
+        }
+        .content-text p {
+            color: #333;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 2px solid #690096;
+        }
+        .try-free {
+            background-color: #690096;
+            color: #fff;
+        }
+        .contact-sales {
+            background-color: transparent;
+            color: #690096;
+        }
+        .visuals {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            position: relative;
+        }
+        .visual-box {
+            width: 100px;
+            height: 150px;
+        }
+        .red-box {
+            background-color: #b32d00;
+        }
+        .yellow-box {
+            background-color: #ffcc00;
+        }
+        .tag {
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-30%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="slack-logo.png" alt="Slack logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">Why Slack?</a>
+            <a href="#">Solutions</a>
+            <a href="#">Resources</a>
+            <a href="#">Enterprise</a>
+            <a href="#">Pricing</a>
+        </div>
+        <div class="nav-buttons">
+            <a href="#" class="sign-in">Sign in</a>
+            <a href="#" class="get-started">GET STARTED</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="content-text">
+            <h1>Slack is where work happens</h1>
+            <p>With channels in Slack, you and your team know where to go to ask questions, share updates and stay in the loop.</p>
+            <div class="buttons">
+                <a href="#" class="try-free">TRY FOR FREE</a>
+                <a href="#" class="contact-sales">CONTACT SALES</a>
+            </div>
+        </div>
+        <div class="visuals">
+            <div class="visual-box red-box"></div>
+            <div class="tag"># quarterly-planning</div>
+            <div class="visual-box yellow-box"></div>
+        </div>
+    </div>
+</body>
+</html>

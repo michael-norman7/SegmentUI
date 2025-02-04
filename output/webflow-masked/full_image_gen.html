@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .navbar .btn {
+            background-color: #0070f3;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        .content {
+            margin: 20px;
+        }
+        .tabs {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+        .tab {
+            margin-right: 20px;
+            padding-bottom: 10px;
+            cursor: pointer;
+        }
+        .tab.active {
+            border-bottom: 2px solid black;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            width: 30%;
+            margin-bottom: 20px;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+        }
+        .card-image {
+            background-color: red;
+            height: 150px;
+        }
+        .card-info {
+            padding: 10px;
+        }
+        .card-info p {
+            margin: 5px 0;
+        }
+        .card-info small {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>
+            <strong>Webflow</strong> <a href="#">Showcase</a> <a href="#">Designers</a> <a href="#">Learn & Support</a>
+        </div>
+        <div>
+            <a href="#">Log In</a> 
+            <a href="#" class="btn">Sign Up for Free</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>Explore the Showcase</h1>
+        <div class="tabs">
+            <div class="tab">Recent</div>
+            <div class="tab active">Most Liked</div>
+            <div class="tab">Most Viewed</div>
+        </div>
+        <div class="gallery">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-info">
+                    <small>👁️ 22204 💬 28 ❤️ 562</small>
+                    <p>Heco<br><small>by jthelms</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-info">
+                    <small>👁️ 27628 💬 37 ❤️ 540</small>
+                    <p>New concept for IMDB<br><small>by joaopaulots</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-info">
+                    <small>👁️ 19195 💬 31 ❤️ 538</small>
+                    <p>Cards - Webflow UI Kit<br><small>by janlosert</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-info">
+                    <small>👁️ 12717 💬 65 ❤️ 526</small>
+                    <p>Legowerk<br><small>by DarioStefanutto</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-info">
+                    <small>👁️ 17560 💬 39 ❤️ 488</small>
+                    <p>IeAD Sports Accelerator<br><small>by MILK</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-info">
+                    <small>👁️ 15595 💬 41 ❤️ 472</small>
+                    <p>Cards 2.0 - Framework/UI ...<br><small>by janlosert</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-info">
+                    <small>👁️ 20589 💬 29 ❤️ 454</small>
+                    <p>Overton Graphics<br><small>by OvertonGraphics</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

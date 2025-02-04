@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 80px;
+            border-bottom: 1px solid #ccc;
+        }
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #002147;
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+        }
+        .menu-item {
+            margin-left: 20px;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+        .button {
+            background-color: #ff0000;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .main {
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+        }
+        .main-content {
+            display: flex;
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+        .text-section {
+            background-color: #002147;
+            color: white;
+            padding: 40px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .text-section h1 {
+            margin: 0;
+            font-size: 48px;
+        }
+        .text-section p {
+            margin: 20px 0;
+        }
+        .text-section a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #ff0000;
+            padding: 10px 20px;
+            border-radius: 4px;
+        }
+        .arrow-section {
+            display: flex;
+            flex: 3;
+        }
+        .arrow {
+            flex: 1;
+            clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%);
+        }
+        .arrow:first-child {
+            background-color: #ffc107;
+        }
+        .arrow:nth-child(2) {
+            background-color: #8bc34a;
+        }
+        .arrow:last-child {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">NEW HOME CO.</div>
+        <div class="menu">
+            <a href="#" class="button">FIND YOUR NEW HOME</a>
+            <a href="#" class="menu-item">DESIGN</a>
+            <a href="#" class="menu-item">PROGRAMS</a>
+            <a href="#" class="menu-item">SERVICE</a>
+            <a href="#" class="menu-item">ABOUT</a>
+            <a href="#" class="menu-item">REVIEWS</a>
+            <a href="#" class="menu-item">NEWS</a>
+            <a href="#" class="menu-item">🔍</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-content">
+            <div class="text-section">
+                <h1>MOVE FORWARD</h1>
+                <p>Let us help you move forward into your new home today. Explore our move-in ready homes available now.</p>
+                <a href="#">START YOUR HOME SEARCH ></a>
+            </div>
+            <div class="arrow-section">
+                <div class="arrow"></div>
+                <div class="arrow"></div>
+                <div class="arrow"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

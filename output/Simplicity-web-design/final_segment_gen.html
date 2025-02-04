@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a33;
+            color: #fff;
+        }
+        .header {
+            background-color: #191970;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            justify-content: space-between;
+        }
+        .logo {
+            width: 30px;
+            height: 30px;
+            background-color: orange;
+            transform: rotate(45deg);
+            margin-right: 40px;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 40px;
+        }
+        .menu-item {
+            color: white;
+            text-decoration: none;
+        }
+        .menu-item:hover, .active {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        .quote {
+            color: orange;
+        }
+        .content {
+            background-color: #1a1a33;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .main-logo {
+            width: 70px;
+            height: 70px;
+            background-color: orange;
+            transform: rotate(45deg);
+            margin: 0 auto 30px;
+        }
+        h1 {
+            margin: 20px 0;
+            font-size: 48px;
+        }
+        p {
+            margin: 10px 0;
+            font-size: 20px;
+            color: #bbb;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .button {
+            padding: 12px 25px;
+            background-color: orange;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button.secondary {
+            background-color: #473d30;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .link {
+            color: #bbb;
+            text-decoration: none;
+        }
+        .icon {
+            display: inline-block;
+            background: white;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background-color: #473d60;
+            width: 180px;
+            height: 120px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div style="display: flex; align-items: center;">
+            <div class="logo"></div>
+            <ul class="menu">
+                <li><a href="#" class="menu-item">Home</a></li>
+                <li><a href="#" class="menu-item active">About</a></li>
+                <li><a href="#" class="menu-item">Reviews</a></li>
+                <li><a href="#" class="menu-item">Contact</a></li>
+            </ul>
+        </div>
+        <a href="#" class="menu-item quote">Get a Quote</a>
+    </div>
+    <div class="content">
+        <div class="main-logo"></div>
+        <h1>Simplicity in web design</h1>
+        <p>A simple and clean design can help users focus on the content of your website.</p>
+        <div class="links">
+            <a href="#" class="link"><span class="icon"></span>See How it Works</a>
+            <a href="#" class="link"><span class="icon"></span>Explore the Concepts</a>
+        </div>
+        <div class="buttons">
+            <button class="button secondary">Download</button>
+            <button class="button">Buy Now</button>
+        </div>
+        <p>The goal of simplicity in web design is to help users focus on the content of a website and not be overwhelmed or distracted by design elements.</p>
+        <div class="cards">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+</body>
+</html>

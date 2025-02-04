@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrected Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #e0d9d0;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #e0d9d0;
+            padding: 15px 0;
+        }
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 800;
+        }
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 50px);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .content {
+            background-color: #e0d9d0;
+            width: 80%;
+            max-width: 1000px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .text-section {
+            flex: 1;
+            max-width: 70%;
+        }
+        .text-section h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: bold;
+            color: #333;
+            line-height: 1.2;
+        }
+        .text-section p {
+            margin: 20px 0;
+            font-size: 1.25em;
+            color: #333;
+        }
+        .text-section .social-links {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .text-section .social-links span {
+            font-size: 1em;
+            margin-right: 10px;
+            color: #333;
+        }
+        .text-section .social-links i {
+            font-size: 1.5em;
+            margin: 0 5px;
+            color: #333;
+        }
+        .image-section {
+            width: 30%;
+            background-color: #77a65e;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#">BIO</a>
+        <a href="#">PORTFOLIO</a>
+        <a href="#">PODCAST</a>
+        <a href="#">BLOG</a>
+    </nav>
+    <main class="main">
+        <div class="content">
+            <div class="text-section">
+                <h1>Bethany Jones</h1>
+                <p>I'm a dedicated culture critic and blogger located in San Francisco, California.</p>
+                <div class="social-links">
+                    <span>@reallygreatsite</span>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                </div>
+            </div>
+            <div class="image-section"></div>
+        </div>
+    </main>
+</body>
+</html>
