@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloud Solutions - Elevate Your Business</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              secondary: "#6b7280",
+              accent: "#fde047",
+              neutral: "#f3f4f6",
+            },
+            fontFamily: { lato: ["Lato", "sans-serif"] },
+            keyframes: {
+              "fade-slide-up": {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              "slide-in-right": {
+                "0%": { transform: "translateX(100%)", opacity: "0" },
+                "100%": { transform: "translateX(0)", opacity: "1" },
+              },
+            },
+            animation: {
+              "fade-slide-up": "fade-slide-up 0.6s ease-out forwards",
+              "slide-in-right": "slide-in-right 0.7s ease-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "lato", sans-serif;
+      }
+      .animate-fade-slide-up {
+        animation: fade-slide-up 0.6s ease-out forwards;
+      }
+      .animate-slide-in-right {
+        animation: slide-in-right 0.7s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-neutral text-secondary">
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold text-primary">
+          <a href="#" class="hover:text-primary transition-colors duration-300">
+            <i class="fa-solid fa-cloud text-primary mr-2"></i> CloudSoft
+          </a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#solutions"
+            class="hover:text-primary transition-colors duration-300"
+            >Solutions</a
+          >
+          <a
+            href="#features"
+            class="hover:text-primary transition-colors duration-300"
+            >Features</a
+          >
+          <a
+            href="#pricing"
+            class="hover:text-primary transition-colors duration-300"
+            >Pricing</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-primary transition-colors duration-300"
+            >Contact</a
+          >
+        </div>
+        <div class="md:hidden">
+          <button
+            id="mobile-menu-button"
+            class="text-gray-500 hover:text-primary focus:outline-none focus:text-primary"
+          >
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+      </nav>
+      <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-6 py-4 flex flex-col space-y-4">
+          <a
+            href="#solutions"
+            class="hover:text-primary transition-colors duration-300 block py-2"
+            >Solutions</a
+          >
+          <a
+            href="#features"
+            class="hover:text-primary transition-colors duration-300 block py-2"
+            >Features</a
+          >
+          <a
+            href="#pricing"
+            class="hover:text-primary transition-colors duration-300 block py-2"
+            >Pricing</a
+          >
+          <a
+            href="#contact"
+            class="hover:text-primary transition-colors duration-300 block py-2"
+            >Contact</a
+          >
+          <a
+            href="#"
+            class="bg-primary text-white py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-300 block text-center"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </header>
+    <section class="hero bg-white py-24">
+      <div
+        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+      >
+        <div class="hero-text md:animate-fade-slide-up">
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            Empower Your Business with
+            <span class="text-primary">Cloud Solutions</span>
+          </h1>
+          <p class="text-lg text-secondary mb-8">
+            Unlock agility, scalability, and innovation with our cutting-edge
+            cloud software. Designed for modern businesses to thrive in the
+            digital era.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#contact"
+              class="bg-primary text-white py-3 px-6 rounded-md hover:bg-secondary transition-colors duration-300 font-semibold"
+            >
+              Get Started <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <a
+              href="#features"
+              class="inline-flex items-center text-secondary hover:text-primary transition-colors duration-300 font-semibold"
+            >
+              Learn More <i class="fa-solid fa-circle-info ml-2"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image md:animate-slide-in-right">
+          <img
+            src="https://picsum.photos/id/237/600/400"
+            alt="Cloud Software Dashboard"
+            class="rounded-xl shadow-lg"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="solutions" class="py-20 bg-neutral">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-12">
+          Our Cloud Solutions
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <div class="mb-4 text-primary text-5xl">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Scalable Infrastructure
+            </h3>
+            <p class="text-secondary">
+              Dynamically adjust resources to meet demand. Pay-as-you-go pricing
+              for optimal cost efficiency.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <div class="mb-4 text-primary text-5xl">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Robust Security
+            </h3>
+            <p class="text-secondary">
+              Enterprise-grade security features protect your data and ensure
+              compliance.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <div class="mb-4 text-primary text-5xl">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Rapid Deployment
+            </h3>
+            <p class="text-secondary">
+              Quickly deploy and manage applications with our intuitive cloud
+              platform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-16">
+          Key Features
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="flex items-start">
+            <div class="mr-4 text-3xl text-primary">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Automated Backups
+              </h3>
+              <p class="text-secondary">
+                Ensure your data is always safe with automatic and reliable
+                backup solutions.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="mr-4 text-3xl text-primary">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Easy Integration
+              </h3>
+              <p class="text-secondary">
+                Seamlessly integrate with your existing systems and workflows.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="mr-4 text-3xl text-primary">
+              <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Mobile Access
+              </h3>
+              <p class="text-secondary">
+                Access your applications and data from anywhere, on any device.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="mr-4 text-3xl text-primary">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Enhanced Privacy
+              </h3>
+              <p class="text-secondary">
+                Control your data with advanced privacy settings and compliance
+                certifications.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="mr-4 text-3xl text-primary">
+              <i class="fa-solid fa-chart-simple"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                Real-time Analytics
+              </h3>
+              <p class="text-secondary">
+                Gain insights with real-time dashboards and comprehensive
+                analytics tools.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="mr-4 text-3xl text-primary">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800 mb-2">
+                24/7 Support
+              </h3>
+              <p class="text-secondary">
+                Reliable and responsive support team available around the clock.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="pricing" class="py-20 bg-neutral">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-16">
+          Flexible Pricing Plans
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-8"
+          >
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">Basic</h4>
+            <div class="text-4xl font-bold text-primary mb-4">
+              $19 <span class="text-secondary text-sm">/ month</span>
+            </div>
+            <ul class="space-y-2 text-secondary mb-6">
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> 100 GB
+                Storage
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> Basic
+                Features
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-gray-400 mr-2"></i> Advanced
+                Analytics
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-gray-400 mr-2"></i> 24/7
+                Support
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="bg-primary text-white py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-300 block text-center font-semibold"
+              >Choose Plan</a
+            >
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-8"
+          >
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">Standard</h4>
+            <div class="text-4xl font-bold text-primary mb-4">
+              $49 <span class="text-secondary text-sm">/ month</span>
+            </div>
+            <ul class="space-y-2 text-secondary mb-6">
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> 500 GB
+                Storage
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> All Basic
+                Features
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> Advanced
+                Analytics
+              </li>
+              <li>
+                <i class="fa-solid fa-xmark text-gray-400 mr-2"></i> 24/7
+                Support
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="bg-primary text-white py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-300 block text-center font-semibold"
+              >Choose Plan</a
+            >
+          </div>
+          <div
+            class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-8"
+          >
+            <h4 class="text-xl font-semibold text-gray-800 mb-4">Premium</h4>
+            <div class="text-4xl font-bold text-primary mb-4">
+              $99 <span class="text-secondary text-sm">/ month</span>
+            </div>
+            <ul class="space-y-2 text-secondary mb-6">
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> 1 TB Storage
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> All Standard
+                Features
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> Advanced
+                Analytics
+              </li>
+              <li>
+                <i class="fa-solid fa-check text-primary mr-2"></i> 24/7 Support
+              </li>
+            </ul>
+            <a
+              href="#contact"
+              class="bg-primary text-white py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-300 block text-center font-semibold"
+              >Choose Plan</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-12">
+          Ready to Get Started?
+        </h2>
+        <p class="text-lg text-secondary mb-8">
+          Contact us today to learn more about how CloudSoft can transform your
+          business.
+        </p>
+        <a
+          href="#"
+          class="bg-primary text-white py-3 px-6 rounded-md hover:bg-secondary transition-colors duration-300 font-semibold"
+        >
+          Contact Us <i class="fa-solid fa-envelope ml-2"></i>
+        </a>
+      </div>
+    </section>
+    <footer class="bg-neutral py-8">
+      <div class="container mx-auto px-6 text-center text-secondary">
+        <p>© 2024 CloudSoft. All rights reserved.</p>
+        <p class="mt-2">
+          <a href="#" class="hover:text-primary transition-colors duration-300"
+            >Privacy Policy</a
+          >
+          <span class="mx-2">•</span>
+          <a href="#" class="hover:text-primary transition-colors duration-300"
+            >Terms of Service</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script>
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

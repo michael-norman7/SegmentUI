@@ -183,7 +183,7 @@ def encode_pil_image(image):
     return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
 
-def split_image(image_path, critique=False):
+def split_image(image_path, critique=True):
     if not os.path.exists(image_path):
         print(f"Image file '{image_path}' not found.")
         return
@@ -241,12 +241,14 @@ def split_image(image_path, critique=False):
                             f"""Identify the major UI components in the provided webpage image. 
                             Do not include any text or logos in the components. 
                             The image has the dimensions {width}x{height} pixels.
-                            For each component (e.g., menubar, sub-navigation bar, main content area, footer), 
-                            provide the bounding box coordinates in pixels as integers in the format:""" +
-                            '{"component_name": "menubar", "coordinates": [x, y, width, height]}.' + 
-                            """Each part of the image should be enclosed in a bounding box.
-                            There does not need to be each type of component if the website is very simple. 
-                            There may only be a main content component. 
+                            For each component (e.g., menubar, sub-navigation bar, section, footer, ...), 
+                            provide the bounding box coordinates in pixels as integers in the format:"""
+                            + '{"component_name": "menubar", "coordinates": [x, y, width, height]}.'
+                            + """Each part of the image should be enclosed in a bounding box.
+                            There does not need to be each type of component if the website is very simple.
+                            There can be multiple components of the same type.
+                            Divide the image into as many content sections as logically necessary.
+                            Each part of the image must be contained within at least one bounding box.
                             Return the results as a JSON array."""
                         ),
                     },
@@ -258,23 +260,18 @@ def split_image(image_path, critique=False):
             }
         ]
 
-        # Send the request to GPT-4O
         response = client.chat.completions.create(
             model="gpt-4o", messages=prompt, max_tokens=500, temperature=0
         )
 
-        # Extract the assistant's reply
         assistant_reply = response.choices[0].message.content
 
-        # Parse the JSON output
         try:
-            # Remove code block markers if present
             if assistant_reply.startswith("```json"):
                 assistant_reply = assistant_reply.strip("```json").strip()
             elif assistant_reply.startswith("```"):
                 assistant_reply = assistant_reply.strip("```").strip()
 
-            # Safely evaluate the response as a Python literal
             components = ast.literal_eval(assistant_reply)
         except Exception as e:
             print("Failed to parse the model's response.")
@@ -283,7 +280,6 @@ def split_image(image_path, critique=False):
             print(assistant_reply)
             exit(1)
 
-        # Create an image with bounding boxes
         bounding_boxes_image_path = os.path.join(
             output_dir, base_name + "_bounding_boxes.png"
         )
@@ -292,17 +288,13 @@ def split_image(image_path, critique=False):
         if not critique:
             break
 
-        # Encode the image with bounding boxes to base64
         base64_bounding_boxes_image = encode_image(bounding_boxes_image_path)
 
-        # display_image_with_bounding_boxes(image_path, components)
-        # Display the image with bounding boxes
-        plt.figure(figsize=(15, 10))  # Increase the figure size
+        plt.figure(figsize=(15, 10))
         plt.imshow(Image.open(bounding_boxes_image_path))
         plt.axis("off")
         plt.show()
 
-        # Ask GPT to critique the bounding boxes
         critique_prompt = [
             {
                 "role": "user",
@@ -325,7 +317,6 @@ def split_image(image_path, critique=False):
             }
         ]
 
-        # Send the critique request to GPT-4O
         critique_response = client.chat.completions.create(
             model="gpt-4o", messages=critique_prompt, max_tokens=200, temperature=0
         )
@@ -356,6 +347,78 @@ def split_image(image_path, critique=False):
     print("Components extracted and segmented image saved.")
 
 
+def set_split_image(image_path, critique=True):
+    if not os.path.exists(image_path):
+        print(f"Image file '{image_path}' not found.")
+        return
+
+    base_name = os.path.splitext(os.path.basename(image_path))[0]
+
+    # Create the output directory named after the input file
+    output_dir = "img/" + base_name
+    set_segments_dir = os.path.join(output_dir, "set_segments")
+
+    bounding_boxes_image_path = os.path.join(
+        output_dir, base_name + "_set_bounding_boxes.png"
+    )
+    segmented_image_path = os.path.join(
+        output_dir, base_name + "_set_segments_overlay.png"
+    )
+
+    if os.path.exists(set_segments_dir):
+        shutil.rmtree(set_segments_dir)
+        print(f"Deleted existing directory: {set_segments_dir}")
+
+    if os.path.exists(bounding_boxes_image_path):
+        os.remove(bounding_boxes_image_path)
+        print(f"Deleted existing file: {bounding_boxes_image_path}")
+
+    if os.path.exists(segmented_image_path):
+        os.remove(segmented_image_path)
+        print(f"Deleted existing file: {segmented_image_path}")
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Move the input file into the output directory
+    new_image_path = os.path.join(output_dir, os.path.basename(image_path))
+    if not os.path.exists(new_image_path):
+        shutil.copy2(image_path, new_image_path)
+        print(f"Copied {image_path} to {new_image_path}")
+        image_path = new_image_path  # Update image_path to new location
+    else:
+        print(f"{new_image_path} already exists.")
+        image_path = new_image_path  # Ensure image_path is updated even if file exists
+
+    if not os.path.exists(set_segments_dir):
+        os.makedirs(set_segments_dir)
+
+    image = Image.open(image_path).convert("RGB")
+    width, height = image.size
+
+    components = [{"component_name": "menubar", "coordinates": [0, 0, width, 50]}]
+    curr_height = 50
+    increment = 400
+    while curr_height < height:
+        comp_height = min(increment, height - curr_height)
+        components.append(
+            {
+                "component_name": "section",
+                "coordinates": [0, curr_height, width, comp_height],
+            }
+        )
+        curr_height += comp_height
+
+    create_bounding_boxes_image(image_path, components, bounding_boxes_image_path)
+
+    crop_and_save_components(image_path, components, set_segments_dir)
+
+    # Create an image with solid boxes over segments
+    create_segmented_image(image_path, components, segmented_image_path)
+
+    print("Components extracted and segmented image saved.")
+
+
 # List image files in the current directory
 image_extensions = (".png", ".jpg", ".jpeg", ".bmp", ".gif")
 files_in_directory = os.listdir("./full_images")
@@ -369,6 +432,7 @@ if len(sys.argv) > 1 and sys.argv[1] + ".png" in image_files:
     image_name = sys.argv[1] + ".png"
     image_path = "full_images/" + image_name
     split_image(image_path, critique=True)
+    set_split_image(image_path, critique=True)
 else:
     print("Image files found:")
     for idx, filename in enumerate(image_files):
@@ -389,3 +453,4 @@ else:
             print("Invalid input. Please enter a number.")
 
     split_image(image_path, critique=True)
+    set_split_image(image_path, critique=True)

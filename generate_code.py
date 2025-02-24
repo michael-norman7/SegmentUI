@@ -266,10 +266,16 @@ def process_project(project_name, tests):
     original_image_path = os.path.join(base_dir, f"{project_name}.png")
     masked_image_path = os.path.join(base_dir, f"{project_name}_segments_overlay.png")
     segments_dir = os.path.join(base_dir, "segments")
+    set_segments_dir = os.path.join(base_dir, "set_segments")
     output_dir = os.path.join("output", project_name)
+    set_output_dir = os.path.join("output", project_name + "_set")
 
     os.makedirs(output_dir, exist_ok=True)
     shutil.copy(original_image_path, output_dir)
+
+    if "set_segment_gen" in tests:
+        os.makedirs(set_output_dir, exist_ok=True)
+        shutil.copy(original_image_path, set_output_dir)
 
     # Test Full Image Gen
     if "full_image" in tests:
@@ -284,12 +290,21 @@ def process_project(project_name, tests):
         generate_segment_code(
             masked_image_path, original_image_path, segments_dir, output_dir
         )
+        
+    # Test Set Segments Gen
+    if "set_segment_gen" in tests:
+        print("Generating code from image set segments...")
+
+        generate_segment_code(
+            masked_image_path, original_image_path, set_segments_dir, set_output_dir
+        )
 
 
 # Main function to run the code generation
 def main():
-    tests = ["full_image", "segment_gen"]
+    # tests = ["full_image", "segment_gen", "set_segment_gen"]
     # tests = ["segment_gen"]
+    tests = ["set_segment_gen"]
 
     # List image project directories in the "img" folder
     img_dir = "img"

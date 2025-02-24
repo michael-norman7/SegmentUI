@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f6fa;
+        }
+        .header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .menu-bar {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            color: #1e90ff;
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        .menu-item {
+            color: #000000;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .main {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            margin: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-icon {
+            background-color: #1e90ff;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+        .card-content {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .card-description {
+            color: #555;
+            font-size: 14px;
+            text-align: center;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .table th, .table td {
+            font-size: 12px;
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .status-dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .in-transit {
+            background-color: #40e0d0;
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 0 10px 20px 10px;
+        }
+        .stat {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            padding: 15px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #f3f3f3;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+    <title>Wireframe Website</title>
+</head>
+<body>
+    <div class="header">
+        <div class="menu-bar">
+            <div class="logo">🔗 OptiRoute Dashboard</div>
+            <div class="menu">
+                <a href="#" class="menu-item">Dashboard</a>
+                <a href="#" class="menu-item">Routes</a>
+                <a href="#" class="menu-item">Vehicles</a>
+                <a href="#" class="menu-item">Reports</a>
+                <a href="#" class="menu-item">Settings</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">...</div>
+                <div>Traffic Flow</div>
+            </div>
+            <div class="card-content">
+                <img src="https://via.placeholder.com/200x100" class="card-content" alt="Traffic Flow Image">
+            </div>
+            <div class="card-description">Real-time traffic density across the network.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">📈</div>
+                <div>Route Efficiency</div>
+            </div>
+            <div class="card-content">
+                <img src="https://via.placeholder.com/200x100" class="card-content" alt="Route Efficiency Image">
+            </div>
+            <div class="card-description">Performance metrics for optimal route suggestions.</div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🚚</div>
+                <div>Vehicle Tracking</div>
+            </div>
+            <div class="card-content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>VEHICLE ID</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VEH-123</td>
+                            <td><span class="status-dot in-transit"></span> In Transit</td>
+                        </tr>
+                        <tr>
+                            <td>VEH-456</td>
+                            <td><span class="status-dot in-transit"></span> In Transit</td>
+                        </tr>
+                        <tr>
+                            <td>VEH-789</td>
+                            <td><span class="status-dot"></span> Idle</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-description">Current status and location of vehicles in the fleet.</div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div>Avg. Traffic Density</div>
+            <div>75%</div>
+            <div>Compared to last week</div>
+        </div>
+        <div class="stat">
+            <div>Optimal Routes</div>
+            <div>92%</div>
+            <div>Of suggested routes are optimal</div>
+        </div>
+        <div class="stat">
+            <div>On-Time Arrival</div>
+            <div>98%</div>
+            <div>Vehicles arriving on schedule</div>
+        </div>
+        <div class="stat">
+            <div>System Load</div>
+            <div>Low</div>
+            <div>System performance is nominal</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2024 OptiRoute. All rights reserved.
+    </div>
+</body>
+</html>

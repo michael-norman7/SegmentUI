@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: black;
+            margin: 0 15px;
+        }
+        .navbar .brand {
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 20px;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero-text h1 {
+            font-size: 2.5em;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .hero-text p {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #555;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .cta-buttons {
+            margin-top: 20px;
+        }
+        .cta-buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta-buttons a.secondary {
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        .features-section {
+            background-color: #f4f7fa;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .features-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .features-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .feature {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 200px;
+        }
+        .feature h3 {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .feature p {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .productivity-section {
+            background-color: #f4f7fa;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .productivity-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .productivity-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .productivity-feature {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 200px;
+        }
+        .productivity-feature h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .productivity-feature p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .pricing-section {
+            background-color: #f4f7fa;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .pricing-details {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .pricing-text {
+            max-width: 50%;
+            text-align: left;
+        }
+        .pricing-text h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .pricing-text h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .pricing-text p {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .pricing-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .pricing-text ul li {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .pricing-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .footer {
+            background-color: #343A40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .pricing-plans {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .pricing-plan {
+            background-color: #E9ECEF;
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+        }
+        .pricing-plan.pro {
+            background-color: #007BFF;
+            color: white;
+        }
+        .pricing-plan h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .pricing-plan p {
+            font-size: 1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#" class="brand">AI ProdTools</a>
+            <div>
+                <a href="#">Features</a>
+                <a href="#">Productivity</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1>Unlock Peak Productivity with AI-Powered Tools</h1>
+                <p>Supercharge your workflow with intelligent AI tools designed for seamless integration and maximum efficiency. Experience the future of productivity, today.</p>
+                <div class="cta-buttons">
+                    <a href="#">Get Started Free</a>
+                    <a href="#" class="secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/300" alt="Hero Image">
+            </div>
+        </div>
+        <div class="features-section">
+            <h2>Powerful Features Designed for You</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <h3>Smart Automation</h3>
+                    <p>Automate repetitive tasks and focus on what truly matters. Our AI learns your workflow and optimizes accordingly.</p>
+                </div>
+                <div class="feature">
+                    <h3>Intelligent Insights</h3>
+                    <p>Gain valuable insights from your data with AI-driven analytics. Make informed decisions and drive your projects forward.</p>
+                </div>
+            </div>
+           <div class="features-container">
+                <div class="feature">
+                    <h3>Seamless Integration</h3>
+                    <p>Integrate our AI tools seamlessly with your existing platforms and applications. No disruption, just pure productivity.</p>
+                </div>
+                <div class="feature">
+                    <h3>Enhanced Security</h3>
+                    <p>Your data security is our top priority. Benefit from robust security features and encrypted data handling.</p>
+                </div>
+            </div>
+            <div class="features-container">
+                <div class="feature">
+                    <h3>Collaborative AI</h3>
+                    <p>Boost team collaboration with AI tools that facilitate seamless communication and project management.</p>
+                </div>
+                <div class="feature">
+                    <h3>User-Friendly Interface</h3>
+                    <p>Enjoy an intuitive and easy-to-use interface. Get up and running quickly, no extensive training required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="productivity-section">
+            <h2>Experience a New Level of Productivity</h2>
+            <div class="pricing-details">
+                <div class="pricing-image">
+                    <img src="https://via.placeholder.com/400" alt="Pricing Image">
+                </div>
+                <div class="pricing-text">
+                    <h3>Maximize Your Efficiency</h3>
+                    <p>Our AI productivity tools are engineered to streamline your daily tasks, eliminate bottlenecks, and free up your time for strategic initiatives. Reclaim your workday and achieve more.</p>
+                    <ul>
+                        <li>Automated Task Management</li>
+                        <li>Smart Scheduling and Reminders</li>
+                        <li>AI-Powered Content Creation</li>
+                        <li>Real-Time Collaboration Tools</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="cta-button">Explore Productivity Tools</a>
+        </div>
+        <div class="pricing-section">
+            <h2>Flexible Pricing Plans</h2>
+            <div class="pricing-plans">
+                <div class="pricing-plan">
+                    <h3>Basic</h3>
+                    <p>For individuals and small teams getting started.</p>
+                </div>
+                <div class="pricing-plan pro">
+                    <h3>Pro</h3>
+                    <p>For growing businesses needing more power and features.</p>
+                </div>
+                <div class="pricing-plan">
+                    <h3>Enterprise</h3>
+                    <p>Custom solutions for large organizations with specific needs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Ready to Transform Your Productivity?</p>
+            <p>Contact us today to learn more about how our AI productivity tools can revolutionize your workflow.</p>
+            <a href="#" class="cta-button">Contact Us Now</a>
+            <p>© 2023 AI ProdTools. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

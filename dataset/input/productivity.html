@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Productivity Tools - Boost Your Efficiency</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              secondary: "#6b7280",
+              accent: "#1e40af",
+              neutral: "#f3f4f6",
+            },
+            fontFamily: { sans: ["Roboto", "sans-serif"] },
+            keyframes: {
+              "slide-in-right": {
+                "0%": { transform: "translateX(100%)", opacity: "0" },
+                "100%": { transform: "translateX(0)", opacity: "1" },
+              },
+              "fade-in": { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
+            },
+            animation: {
+              "slide-in-right": "slide-in-right 1s ease-out forwards",
+              "fade-in": "fade-in 1s ease-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .animate-slide-in-right {
+        animation: slide-in-right 1s ease-out forwards;
+      }
+      .animate-fade-in {
+        animation: fade-in 1s ease-out forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-neutral text-gray-800">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-xl font-bold text-primary">AI ProdTools</div>
+        <div class="hidden md:flex space-x-6">
+          <a href="#features" class="hover:text-primary transition-colors"
+            >Features</a
+          >
+          <a href="#productivity" class="hover:text-primary transition-colors"
+            >Productivity</a
+          >
+          <a href="#pricing" class="hover:text-primary transition-colors"
+            >Pricing</a
+          >
+          <a href="#contact" class="hover:text-primary transition-colors"
+            >Contact</a
+          >
+        </div>
+        <div class="md:hidden">
+          <button class="focus:outline-none">
+            <i class="fa fa-bars text-xl"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <section
+      id="hero"
+      class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between"
+    >
+      <div class="md:w-1/2 md:pr-16 animate-fade-in">
+        <h1
+          class="text-4xl md:text-5xl font-bold leading-tight text-gray-900 mb-6"
+        >
+          Unlock Peak Productivity with AI-Powered Tools
+        </h1>
+        <p class="text-lg text-gray-700 mb-8">
+          Supercharge your workflow with intelligent AI tools designed for
+          seamless integration and maximum efficiency. Experience the future of
+          productivity, today.
+        </p>
+        <div class="flex space-x-4">
+          <button
+            class="bg-primary hover:bg-accent text-white font-bold py-3 px-8 rounded-lg transition-colors"
+          >
+            Get Started Free
+          </button>
+          <button
+            class="bg-white hover:bg-neutral border border-gray-300 font-bold py-3 px-8 rounded-lg transition-colors"
+          >
+            Learn More
+          </button>
+        </div>
+      </div>
+      <div class="md:w-1/2 mt-12 md:mt-0 animate-slide-in-right">
+        <img
+          src="https://picsum.photos/800/600"
+          alt="AI Productivity Tools"
+          class="rounded-xl shadow-2xl"
+        />
+      </div>
+    </section>
+    <section id="features" class="bg-white py-20">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12">
+          Powerful Features Designed for You
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div class="mb-4">
+              <i class="fa fa-rocket text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Smart Automation
+            </h3>
+            <p class="text-gray-700">
+              Automate repetitive tasks and focus on what truly matters. Our AI
+              learns your workflow and optimizes accordingly.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div class="mb-4">
+              <i class="fa fa-lightbulb text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Intelligent Insights
+            </h3>
+            <p class="text-gray-700">
+              Gain valuable insights from your data with AI-driven analytics.
+              Make informed decisions and drive your projects forward.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div class="mb-4">
+              <i class="fa fa-code text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Seamless Integration
+            </h3>
+            <p class="text-gray-700">
+              Integrate our AI tools seamlessly with your existing platforms and
+              applications. No disruption, just pure productivity.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div class="mb-4">
+              <i class="fa fa-shield-alt text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Enhanced Security
+            </h3>
+            <p class="text-gray-700">
+              Your data security is our top priority. Benefit from robust
+              security features and encrypted data handling.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div class="mb-4">
+              <i class="fa fa-user-friends text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              Collaborative AI
+            </h3>
+            <p class="text-gray-700">
+              Boost team collaboration with AI tools that facilitate seamless
+              communication and project management.
+            </p>
+          </div>
+          <div
+            class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div class="mb-4">
+              <i class="fa fa-magic text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              User-Friendly Interface
+            </h3>
+            <p class="text-gray-700">
+              Enjoy an intuitive and easy-to-use interface. Get up and running
+              quickly, no extensive training required.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="productivity" class="py-20 bg-neutral">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12">
+          Experience a New Level of Productivity
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="https://picsum.photos/600/400"
+              alt="Productivity Boost"
+              class="rounded-xl shadow-2xl"
+            />
+          </div>
+          <div class="text-left">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Maximize Your Efficiency
+            </h3>
+            <p class="text-gray-700 mb-6">
+              Our AI productivity tools are engineered to streamline your daily
+              tasks, eliminate bottlenecks, and free up your time for strategic
+              initiatives. Reclaim your workday and achieve more.
+            </p>
+            <ul class="list-disc pl-5 text-gray-700">
+              <li class="mb-2">Automated Task Management</li>
+              <li class="mb-2">Smart Scheduling and Reminders</li>
+              <li class="mb-2">AI-Powered Content Creation</li>
+              <li>Real-Time Collaboration Tools</li>
+            </ul>
+            <button
+              class="mt-8 bg-primary hover:bg-accent text-white font-bold py-3 px-8 rounded-lg transition-colors"
+            >
+              Explore Productivity Tools
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="pricing" class="bg-white py-20">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12">
+          Flexible Pricing Plans
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="bg-neutral p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <h4 class="text-xl font-bold text-gray-900 mb-4">Basic</h4>
+            <p class="text-gray-700 mb-4">
+              For individuals and small teams getting started.
+            </p>
+            <div class="text-primary font-bold text-2xl mb-6">$19/month</div>
+            <ul class="list-disc pl-5 text-gray-700 mb-8">
+              <li class="mb-2">Access to basic features</li>
+              <li class="mb-2">Limited AI usage</li>
+              <li>Standard support</li>
+            </ul>
+            <button
+              class="bg-primary hover:bg-accent text-white font-bold py-3 px-6 rounded-lg transition-colors w-full"
+            >
+              Get Started
+            </button>
+          </div>
+          <div
+            class="bg-primary p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow transform scale-105"
+          >
+            <h4 class="text-xl font-bold text-white mb-4">Pro</h4>
+            <p class="text-white mb-4">
+              For growing businesses needing more power and features.
+            </p>
+            <div class="text-white font-bold text-2xl mb-6">$49/month</div>
+            <ul class="list-disc pl-5 text-white mb-8">
+              <li class="mb-2">Access to advanced features</li>
+              <li class="mb-2">Increased AI usage</li>
+              <li>Priority support</li>
+            </ul>
+            <button
+              class="bg-white hover:bg-neutral text-primary font-bold py-3 px-6 rounded-lg transition-colors w-full"
+            >
+              Get Started
+            </button>
+          </div>
+          <div
+            class="bg-neutral p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow"
+          >
+            <h4 class="text-xl font-bold text-gray-900 mb-4">Enterprise</h4>
+            <p class="text-gray-700 mb-4">
+              Custom solutions for large organizations with specific needs.
+            </p>
+            <div class="text-primary font-bold text-2xl mb-6">Contact Us</div>
+            <ul class="list-disc pl-5 text-gray-700 mb-8">
+              <li class="mb-2">Customizable features</li>
+              <li class="mb-2">Unlimited AI usage</li>
+              <li>Dedicated support team</li>
+            </ul>
+            <button
+              class="bg-white hover:bg-neutral border border-gray-300 font-bold py-3 px-6 rounded-lg transition-colors w-full"
+            >
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="py-20 bg-neutral">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12">
+          Ready to Transform Your Productivity?
+        </h2>
+        <p class="text-lg text-gray-700 mb-8">
+          Contact us today to learn more about how our AI productivity tools can
+          revolutionize your workflow.
+        </p>
+        <button
+          class="bg-primary hover:bg-accent text-white font-bold py-3 px-8 rounded-lg transition-colors"
+        >
+          Contact Us Now
+        </button>
+      </div>
+    </section>
+    <footer class="bg-white py-8 border-t border-gray-200">
+      <div class="container mx-auto px-6 text-center text-gray-600">
+        <p>© 2024 AI ProdTools. All rights reserved.</p>
+        <p class="mt-2">
+          <a href="#" class="hover:text-primary transition-colors"
+            >Privacy Policy</a
+          >
+          |
+          <a href="#" class="hover:text-primary transition-colors"
+            >Terms of Service</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-in");
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+        const fadeElements = document.querySelectorAll(
+          ".animate-fade-in-on-scroll"
+        );
+        fadeElements.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

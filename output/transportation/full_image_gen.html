@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiRoute Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-logo img {
+            margin-right: 10px;
+        }
+        .navbar-menu a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #eef1f5;
+            border-top: 1px solid #ddd;
+        }
+        .status-indicator {
+            height: 10px;
+            width: 10px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .status-indicator.in-transit {
+            background-color: #4caf50;
+        }
+        .status-indicator.idle {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo" width="30">
+            <span>OptiRoute Dashboard</span>
+        </div>
+        <div class="navbar-menu">
+            <a href="#">Dashboard</a>
+            <a href="#">Routes</a>
+            <a href="#">Vehicles</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="card">
+            <h3>🔗 Traffic Flow</h3>
+            <img src="traffic.jpg" alt="Traffic">
+            <p>Real-time traffic density across the network.</p>
+        </div>
+        <div class="card">
+            <h3>📈 Route Efficiency</h3>
+            <img src="route.jpg" alt="Route">
+            <p>Performance metrics for optimal route suggestions.</p>
+        </div>
+        <div class="card">
+            <h3>🚚 Vehicle Tracking</h3>
+            <table>
+                <tr>
+                    <th>VEHICLE ID</th>
+                    <th>STATUS</th>
+                </tr>
+                <tr>
+                    <td>VEH-123</td>
+                    <td><span class="status-indicator in-transit"></span>In Transit</td>
+                </tr>
+                <tr>
+                    <td>VEH-456</td>
+                    <td><span class="status-indicator in-transit"></span>In Transit</td>
+                </tr>
+                <tr>
+                    <td>VEH-789</td>
+                    <td><span class="status-indicator idle"></span>Idle</td>
+                </tr>
+            </table>
+            <p>Current status and location of vehicles in the fleet.</p>
+        </div>
+        <div class="card">
+            <h3>📊 Avg. Traffic Density</h3>
+            <h1>75%</h1>
+            <p>Compared to last week</p>
+        </div>
+        <div class="card">
+            <h3>✅ Optimal Routes</h3>
+            <h1>92%</h1>
+            <p>Of suggested routes are optimal</p>
+        </div>
+        <div class="card">
+            <h3>⏱️ On-Time Arrival</h3>
+            <h1>98%</h1>
+            <p>Vehicles arriving on schedule</p>
+        </div>
+        <div class="card">
+            <h3>⚙️ System Load</h3>
+            <h1>Low</h1>
+            <p>System performance is nominal</p>
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 OptiRoute. All rights reserved.
+    </div>
+</body>
+</html>

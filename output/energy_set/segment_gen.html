@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Wireframe Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f6f6f6;
+        }
+        .header {
+            background-color: #ffffff;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+        }
+        .logo img {
+            height: 24px;
+            margin-right: 8px;
+        }
+        .logo span {
+            color: #0066ff;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+        .content-section {
+            padding: 40px 20px;
+        }
+        .content-section h1 {
+            font-size: 32px;
+            color: #000;
+            margin: 0;
+        }
+        .content-section p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .button-primary {
+            background-color: #1e3aa7;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .button-secondary {
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+        .dashboard-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .dashboard-section h2 {
+            font-size: 24px;
+            color: #000;
+            margin: 0;
+        }
+        .dashboard-section p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0 0;
+        }
+        .production-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #f6f6f6;
+        }
+        .card {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .card-text h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #000;
+        }
+        .card-text p {
+            margin: 5px 0 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .solar p {
+            color: #0066ff;
+        }
+        .wind p {
+            color: #339933;
+        }
+        .hydro p {
+            color: #009999;
+        }
+        .metrics-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .metrics-section h2 {
+            font-size: 28px;
+            color: #333;
+            margin: 0;
+        }
+        .metrics-section p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0 40px;
+        }
+        .metrics-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .metrics-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+            text-align: left;
+        }
+        .metrics-card h3 {
+            font-size: 18px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+        }
+        .metrics-card h3::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+        }
+        .metrics-card.frequency h3::before {
+            background-image: url('frequency-icon.svg');
+        }
+        .metrics-card.voltage h3::before {
+            background-image: url('voltage-icon.svg');
+        }
+        .metrics-card p {
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .metrics-card .target {
+            font-size: 14px;
+            color: #666;
+        }
+        .metrics-card .progress {
+            height: 6px;
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 3px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .metrics-card .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            border-radius: 3px;
+        }
+        .frequency .progress-bar {
+            width: 90%;
+            background: #ffc107;
+        }
+        .voltage .progress-bar {
+            width: 100%;
+            background: #4285f4;
+        }
+        .temperature-section {
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .temperature-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .temperature-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin: 0 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+        }
+        .temperature-card h3::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('temperature-icon.svg');
+        }
+        .temperature-card p {
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .temperature-card .optimal-range {
+            font-size: 14px;
+            color: #666;
+        }
+        .temperature-card .progress {
+            height: 6px;
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 3px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .temperature-card .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 70%;
+            background: #4caf50;
+            border-radius: 3px;
+        }
+        .analysis-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .analysis-section h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+        .analysis-section p {
+            font-size: 16px;
+            color: #666;
+            margin: 10px 0 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .breakdown-section {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .breakdown-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+        }
+        .breakdown-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin: 0 0 10px;
+        }
+        .breakdown-card p {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 20px;
+        }
+        .breakdown-card .consumption-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .breakdown-card .consumption-list li {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .breakdown-card .residential {
+            color: #0066ff;
+        }
+        .breakdown-card .commercial {
+            color: #339933;
+        }
+        .breakdown-card .industrial {
+            color: #009999;
+        }
+        .features-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .features-section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .features-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+        }
+        .feature-card h3 {
+            font-size: 18px;
+            color: #333;
+            margin: 20px 0 10px;
+        }
+        .feature-card p {
+            font-size: 16px;
+            color: #666;
+            margin: 0 0 20px;
+        }
+        .feature-card .icon {
+            font-size: 40px;
+        }
+        .monitoring .icon {
+            color: #4285f4;
+        }
+        .analytics .icon {
+            color: #34a853;
+        }
+        .controls .icon {
+            color: #00695c;
+        }
+        .cta-section {
+            background-color: #1e3aa7;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .cta-section h2 {
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo-placeholder.png" alt="Logo">
+            <span>GridWise</span>
+        </div>
+        <div class="menu">
+            <a href="#">Production</a>
+            <a href="#">Stability</a>
+            <a href="#">Consumption</a>
+            <a href="#">Features</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="content-section">
+        <h1>Harnessing Renewable Energy for a Sustainable Future</h1>
+        <p>Real-time insights and intelligent management. Ensure stability, maximize production, and understand consumption patterns like never before.</p>
+        <div class="buttons">
+            <a href="#" class="button-primary">Get Started →</a>
+            <a href="#" class="button-secondary">Learn More</a>
+        </div>
+    </div>
+    <div class="dashboard-section">
+        <h2>Energy Production Dashboard</h2>
+        <p>Real-time monitoring of your renewable energy sources.</p>
+    </div>
+    <div class="production-section">
+        <div class="card solar">
+            <img src="solar-placeholder.jpg" alt="Solar Production">
+            <div class="card-text">
+                <h3>Solar Production</h3>
+                <p>75 MW</p>
+            </div>
+        </div>
+        <div class="card wind">
+            <img src="wind-placeholder.jpg" alt="Wind Production">
+            <div class="card-text">
+                <h3>Wind Production</h3>
+                <p>42 MW</p>
+            </div>
+        </div>
+        <div class="card hydro">
+            <img src="hydro-placeholder.jpg" alt="Hydro Production">
+            <div class="card-text">
+                <h3>Hydro Production</h3>
+                <p>28 MW</p>
+            </div>
+        </div>
+    </div>
+    <div class="metrics-section">
+        <h2>Grid Stability Metrics</h2>
+        <p>Ensure a stable and reliable energy grid with advanced monitoring.</p>
+        <div class="metrics-cards">
+            <div class="metrics-card frequency">
+                <h3>Frequency</h3>
+                <p>59.98 Hz</p>
+                <div class="target">Target: 60 Hz</div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+            <div class="metrics-card voltage">
+                <h3>Voltage</h3>
+                <p>235 kV</p>
+                <div class="target">Target: 230 kV</div>
+                <div class="progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="temperature-section">
+        <div class="temperature-card">
+            <h3>Temperature</h3>
+            <p>28°C</p>
+            <div class="optimal-range">Optimal Range: 10-40°C</div>
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+    <div class="analysis-section">
+        <h2>Consumption Patterns Analysis</h2>
+        <p>Understand energy consumption trends and optimize distribution.</p>
+        <div class="image-container">
+            <img src="table-placeholder.jpg" alt="Table">
+        </div>
+    </div>
+    <div class="breakdown-section">
+        <div class="breakdown-card">
+            <h3>Daily Consumption Breakdown</h3>
+            <p>Analyze consumption by sector to identify areas for efficiency improvements.</p>
+            <ul class="consumption-list">
+                <li><span>Residential</span><span class="residential">45%</span></li>
+                <li><span>Commercial</span><span class="commercial">35%</span></li>
+                <li><span>Industrial</span><span class="industrial">20%</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="features-section">
+        <h2>Key Features</h2>
+        <div class="features-cards">
+            <div class="feature-card monitoring">
+                <div class="icon">📈</div>
+                <h3>Real-time Monitoring</h3>
+                <p>Instantaneous data visualization for production, stability, and consumption.</p>
+            </div>
+            <div class="feature-card analytics">
+                <div class="icon">🛡️</div>
+                <h3>Predictive Analytics</h3>
+                <p>AI-powered forecasting to anticipate grid issues and optimize performance.</p>
+            </div>
+            <div class="feature-card controls">
+                <div class="icon">⚙️</div>
+                <h3>Automated Controls</h3>
+                <p>Intelligent system adjustments to maintain grid stability and efficiency.</p>
+            </div>
+        </div>
+    </div>
+    <div class="cta-section">
+        <h2>Ready to Optimize Your Grid?</h2>
+    </div>
+</body>
+</html>

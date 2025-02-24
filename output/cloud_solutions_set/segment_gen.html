@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #FFF;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            border-bottom: 1px solid #EEE;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .logo span {
+            color: #007BFF;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .block4 {
+            flex: 2;
+            background-color: #F4F6F8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .pricing-plans {
+            display: flex;
+            gap: 20px;
+        }
+        .pricing-plan {
+            background-color: #FFF;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: center;
+        }
+        .pricing-title {
+            color: #333;
+            font-size: 18px;
+            margin: 0;
+        }
+        .pricing-price {
+            color: #007BFF;
+            font-size: 32px;
+            margin: 10px 0;
+        }
+        .pricing-period {
+            color: #333;
+            font-size: 14px;
+        }
+        .pricing-feature {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            color: #666;
+        }
+        .pricing-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #FFF;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .block5 {
+            flex: 1;
+            background-color: #FFF;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .cta-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .cta-text {
+            font-size: 16px;
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .cta-btn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #FFF;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .cta-btn span {
+            margin-left: 5px;
+        }
+        .footer {
+            background-color: #F4F6F8;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #007BFF;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+    </style>
+    <title>Wireframe Layout</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="cloud-icon.png" alt="Logo">
+            <span>CloudSoft</span>
+        </div>
+        <nav class="menu">
+            <a href="#">Solutions</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div class="block4">
+        <div class="section-title">Flexible Pricing Plans</div>
+        <div class="pricing-plans">
+            <div class="pricing-plan">
+                <h3 class="pricing-title">Basic</h3>
+                <div class="pricing-price">$19</div>
+                <div class="pricing-period">/ month</div>
+                <ul class="pricing-feature">
+                    <li>✔ 100 GB Storage</li>
+                    <li>✔ Basic Features</li>
+                    <li>✖ Advanced Analytics</li>
+                    <li>✖ 24/7 Support</li>
+                </ul>
+                <a href="#" class="pricing-btn">Choose Plan</a>
+            </div>
+            <div class="pricing-plan">
+                <h3 class="pricing-title">Standard</h3>
+                <div class="pricing-price">$49</div>
+                <div class="pricing-period">/ month</div>
+                <ul class="pricing-feature">
+                    <li>✔ 500 GB Storage</li>
+                    <li>✔ All Basic Features</li>
+                    <li>✔ Advanced Analytics</li>
+                    <li>✖ 24/7 Support</li>
+                </ul>
+                <a href="#" class="pricing-btn">Choose Plan</a>
+            </div>
+            <div class="pricing-plan">
+                <h3 class="pricing-title">Premium</h3>
+                <div class="pricing-price">$99</div>
+                <div class="pricing-period">/ month</div>
+                <ul class="pricing-feature">
+                    <li>✔ 1 TB Storage</li>
+                    <li>✔ All Standard Features</li>
+                    <li>✔ Advanced Analytics</li>
+                    <li>✔ 24/7 Support</li>
+                </ul>
+                <a href="#" class="pricing-btn">Choose Plan</a>
+            </div>
+        </div>
+    </div>
+    <div class="block5">
+        <h2 class="cta-title">Ready to Get Started?</h2>
+        <p class="cta-text">Contact us today to learn more about how CloudSoft can transform your business.</p>
+        <a href="#" class="cta-btn">Contact Us <span>✉️</span></a>
+    </div>
+    <div class="footer">
+        <p>© 2024 CloudSoft. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> • 
+            <a href="#">Terms of Service</a>
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI ProdTools</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menubar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #0066ff;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .menu-items {
+            display: flex;
+            gap: 30px;
+        }
+
+        .menu-items a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .features {
+            padding: 30px;
+            background-color: #f5f7fa;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .feature-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .productivity {
+            padding: 30px;
+            background-color: #f5f7fa;
+            text-align: center;
+        }
+
+        .productivity-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .image {
+            max-width: 40%;
+        }
+
+        .image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .text-content {
+            max-width: 40%;
+            text-align: left;
+        }
+
+        .text-content h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .text-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .text-content ul {
+            list-style: inside;
+            padding: 0;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .text-content ul li {
+            margin-bottom: 5px;
+        }
+
+        .button {
+            display: block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #0066ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 10px;
+            width: fit-content;
+        }
+
+        .pricing {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pricing-card {
+            background-color: #f5f7fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 250px;
+            text-align: center;
+        }
+
+        .pricing-card.pro {
+            background-color: #0066ff;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .pricing-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: inherit;
+        }
+
+        .pricing-card p,
+        .pricing-card.pro p,
+        .pricing-card.pro a {
+            color: #fff;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            color: inherit;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            margin-bottom: 10px;
+        }
+
+        .contact-section {
+            background-color: #f5f7fa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contact-section p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .contact-button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #0066ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .footer {
+            background-color: #f5f7fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #666;
+            margin: 0 5px;
+        }
+
+        .block {
+            flex: 1;
+        }
+
+        .block1 {
+            background-color: #ccff00;
+        }
+
+        .block2 {
+            background-color: #000080;
+        }
+
+        .block3 {
+            background-color: #ffc0cb;
+        }
+
+        .block4 {
+            background-color: #800080;
+        }
+
+        .block5 {
+            background-color: #ff8c00;
+        }
+
+        .block6 {
+            background-color: #008080;
+        }
+
+        .block7 {
+            background-color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menubar">
+            <div class="logo">
+                <a href="#">AI ProdTools</a>
+            </div>
+            <div class="menu-items">
+                <a href="#">Features</a>
+                <a href="#">Productivity</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>Powerful Features Designed for You</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3>Seamless Integration</h3>
+                    <p>Integrate our AI tools seamlessly with your existing platforms and applications. No disruption, just pure productivity.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Enhanced Security</h3>
+                    <p>Your data security is our top priority. Benefit from robust security features and encrypted data handling.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="productivity">
+            <h2>Experience a New Level of Productivity</h2>
+            <div class="productivity-content">
+                <div class="image">
+                    <img src="productivity.jpg" alt="Productivity Tools">
+                </div>
+                <div class="text-content">
+                    <h3>Maximize Your Efficiency</h3>
+                    <p>Our AI productivity tools are engineered to streamline your daily tasks, eliminate bottlenecks, and free up your time for strategic initiatives. Reclaim your workday and achieve more.</p>
+                    <ul>
+                        <li>Automated Task Management</li>
+                        <li>Smart Scheduling and Reminders</li>
+                        <li>AI-Powered Content Creation</li>
+                        <li>Real-Time Collaboration Tools</li>
+                    </ul>
+                    <a href="#" class="button">Explore Productivity Tools</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing">
+            <h2>Flexible Pricing Plans</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <p>For individuals and small teams getting started.</p>
+                    <p class="price">$19/month</p>
+                    <ul>
+                        <li>Access to basic features</li>
+                        <li>Limited AI usage</li>
+                        <li>Standard support</li>
+                    </ul>
+                    <a href="#" class="button">Get Started</a>
+                </div>
+                <div class="pricing-card pro">
+                    <h3>Pro</h3>
+                    <p>For growing businesses needing more power and features.</p>
+                    <p class="price">$49/month</p>
+                    <ul>
+                        <li>Access to advanced features</li>
+                        <li>Increased AI usage</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <a href="#" class="button">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p>Custom solutions for large organizations with specific needs.</p>
+                    <ul>
+                        <li>Customizable features</li>
+                        <li>Unlimited AI usage</li>
+                        <li>Dedicated support team</li>
+                    </ul>
+                    <a href="#" class="button">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <p>Contact us today to learn more about how our AI productivity tools can revolutionize your workflow.</p>
+            <a href="#" class="contact-button">Contact Us Now</a>
+        </div>
+
+        <div class="footer">
+            &copy; 2024 AI ProdTools. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</body>
+</html>
