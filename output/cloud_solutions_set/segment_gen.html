@@ -3,33 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudSoft Website</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+        }
+        .container {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            width: 100%;
+            height: 100vh;
         }
-        .header {
-            background-color: #FFF;
-            flex: 1;
+        .navbar {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
-            border-bottom: 1px solid #EEE;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .logo {
             display: flex;
             align-items: center;
         }
         .logo img {
-            height: 30px;
-            margin-right: 10px;
+            height: 24px;
+            margin-right: 8px;
         }
-        .logo span {
-            color: #007BFF;
+        .logo-text {
+            color: #0056D2;
             font-size: 24px;
             font-weight: bold;
         }
@@ -42,179 +45,99 @@
             color: #333;
             font-size: 16px;
         }
-        .block4 {
-            flex: 2;
-            background-color: #F4F6F8;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+        .menu a:hover {
+            color: #0056D2;
         }
-        .section-title {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .pricing-plans {
-            display: flex;
-            gap: 20px;
-        }
-        .pricing-plan {
-            background-color: #FFF;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 200px;
+        .cta-section {
+            padding: 50px 20px;
             text-align: center;
-        }
-        .pricing-title {
-            color: #333;
-            font-size: 18px;
-            margin: 0;
-        }
-        .pricing-price {
-            color: #007BFF;
-            font-size: 32px;
-            margin: 10px 0;
-        }
-        .pricing-period {
-            color: #333;
-            font-size: 14px;
-        }
-        .pricing-feature {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
-            color: #666;
-        }
-        .pricing-btn {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background-color: #007BFF;
-            color: #FFF;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .block5 {
-            flex: 1;
-            background-color: #FFF;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+            background-color: #fff;
         }
         .cta-title {
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: bold;
             color: #333;
             margin-bottom: 10px;
-            text-align: center;
         }
-        .cta-text {
+        .cta-description {
             font-size: 16px;
             color: #666;
-            text-align: center;
             margin-bottom: 20px;
         }
-        .cta-btn {
+        .cta-button {
+            display: inline-block;
             padding: 10px 20px;
-            background-color: #007BFF;
-            color: #FFF;
+            background-color: #0056D2;
+            color: white;
+            border: none;
             border-radius: 4px;
             text-decoration: none;
             font-size: 16px;
-            display: inline-flex;
-            align-items: center;
         }
-        .cta-btn span {
-            margin-left: 5px;
+        .cta-button:hover {
+            background-color: #0041a8;
         }
         .footer {
-            background-color: #F4F6F8;
+            background-color: #eef1f5;
             text-align: center;
             padding: 20px;
-        }
-        .footer p {
-            margin: 5px 0;
-            color: #666;
             font-size: 14px;
+            color: #666;
         }
         .footer a {
-            color: #007BFF;
+            color: #333;
             text-decoration: none;
-            margin: 0 5px;
+            margin: 0 10px;
         }
+        .footer a:hover {
+            color: #0056D2;
+        }
+        .block {
+            flex: 1;
+            width: 100%;
+        }
+        .block-1 { background-color: #00FF00; }
+        .block-2 { background-color: #99FF00; }
+        .block-3 { background-color: #008080; }
+        .block-4 { background-color: #FF69B4; }
+        .block-5 { background-color: #FFFF00; }
+        .block-6 { background-color: #FF4500; }
+        .block-7 { background-color: #FF00FF; }
     </style>
-    <title>Wireframe Layout</title>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="cloud-icon.png" alt="Logo">
-            <span>CloudSoft</span>
-        </div>
-        <nav class="menu">
-            <a href="#">Solutions</a>
-            <a href="#">Features</a>
-            <a href="#">Pricing</a>
-            <a href="#">Contact</a>
-        </nav>
-    </div>
-    <div class="block4">
-        <div class="section-title">Flexible Pricing Plans</div>
-        <div class="pricing-plans">
-            <div class="pricing-plan">
-                <h3 class="pricing-title">Basic</h3>
-                <div class="pricing-price">$19</div>
-                <div class="pricing-period">/ month</div>
-                <ul class="pricing-feature">
-                    <li>✔ 100 GB Storage</li>
-                    <li>✔ Basic Features</li>
-                    <li>✖ Advanced Analytics</li>
-                    <li>✖ 24/7 Support</li>
-                </ul>
-                <a href="#" class="pricing-btn">Choose Plan</a>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span class="logo-text">CloudSoft</span>
             </div>
-            <div class="pricing-plan">
-                <h3 class="pricing-title">Standard</h3>
-                <div class="pricing-price">$49</div>
-                <div class="pricing-period">/ month</div>
-                <ul class="pricing-feature">
-                    <li>✔ 500 GB Storage</li>
-                    <li>✔ All Basic Features</li>
-                    <li>✔ Advanced Analytics</li>
-                    <li>✖ 24/7 Support</li>
-                </ul>
-                <a href="#" class="pricing-btn">Choose Plan</a>
-            </div>
-            <div class="pricing-plan">
-                <h3 class="pricing-title">Premium</h3>
-                <div class="pricing-price">$99</div>
-                <div class="pricing-period">/ month</div>
-                <ul class="pricing-feature">
-                    <li>✔ 1 TB Storage</li>
-                    <li>✔ All Standard Features</li>
-                    <li>✔ Advanced Analytics</li>
-                    <li>✔ 24/7 Support</li>
-                </ul>
-                <a href="#" class="pricing-btn">Choose Plan</a>
+            <div class="menu">
+                <a href="#">Solutions</a>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">Contact</a>
             </div>
         </div>
-    </div>
-    <div class="block5">
-        <h2 class="cta-title">Ready to Get Started?</h2>
-        <p class="cta-text">Contact us today to learn more about how CloudSoft can transform your business.</p>
-        <a href="#" class="cta-btn">Contact Us <span>✉️</span></a>
-    </div>
-    <div class="footer">
-        <p>© 2024 CloudSoft. All rights reserved.</p>
-        <p>
-            <a href="#">Privacy Policy</a> • 
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-description">
+                Contact us today to learn more about how CloudSoft can transform your business.
+            </p>
+            <a href="#" class="cta-button">Contact Us ✉️</a>
+        </div>
+        <div class="footer">
+            © 2024 CloudSoft. All rights reserved.
+            <a href="#">Privacy Policy</a> •
             <a href="#">Terms of Service</a>
-        </p>
+        </div>
+        <div class="block block-1"></div>
+        <div class="block block-2"></div>
+        <div class="block block-3"></div>
+        <div class="block block-4"></div>
+        <div class="block block-5"></div>
+        <div class="block block-6"></div>
+        <div class="block block-7"></div>
     </div>
 </body>
 </html>

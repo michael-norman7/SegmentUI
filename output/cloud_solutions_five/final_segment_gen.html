@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 24px;
+            margin-right: 10px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            background-color: #f9f9f9;
+        }
+        .hero-content {
+            max-width: 500px;
+            margin-right: 20px;
+        }
+        .hero img {
+            max-width: 100%;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .hero a {
+            display: inline-block;
+            margin-right: 15px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #0073e6;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .solutions, .features, .pricing, .contact-section, .footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .solutions h2, .features h2, .pricing h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 200px;
+            text-align: left;
+        }
+        .card-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .card-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .pricing-plan .price {
+            font-size: 2em;
+            color: #0073e6;
+            margin-bottom: 5px;
+        }
+        .contact-section .contact-heading {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #f5f7fa;
+            font-size: 0.8em;
+            color: #666;
+        }
+        .footer a {
+            color: #0073e6;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="https://via.placeholder.com/24x24" alt="Logo">
+            CloudSoft
+        </div>
+        <div class="nav">
+            <a href="#">Solutions</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Empower Your Business with <span style="color: #0073e6;">Cloud Solutions</span></h1>
+            <p>Unlock agility, scalability, and innovation with our cutting-edge cloud software. Designed for modern businesses to thrive in the digital era.</p>
+            <a href="#">Get Started</a>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/300" alt="Hero Image">
+        </div>
+    </div>
+    <div class="solutions">
+        <h2>Our Cloud Solutions</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <div class="card-title">Scalable Infrastructure</div>
+                <p>Dynamically adjust resources to meet demand. Pay-as-you-go pricing for optimal cost efficiency.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <div class="card-title">Robust Security</div>
+                <p>Enterprise-grade security features protect your data and ensure compliance.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🚀</div>
+                <div class="card-title">Rapid Deployment</div>
+                <p>Quickly deploy and manage applications with our intuitive cloud platform.</p>
+            </div>
+        </div>
+    </div>
+    <div class="features">
+        <h2>Key Features</h2>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">☁️</div>
+                <div class="card-title">Automated Backups</div>
+                <p>Ensure your data is always safe with automatic and reliable backup solutions.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔧</div>
+                <div class="card-title">Easy Integration</div>
+                <p>Seamlessly integrate with your existing systems and workflows.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📱</div>
+                <div class="card-title">Mobile Access</div>
+                <p>Access your applications and data from anywhere, on any device.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">👤</div>
+                <div class="card-title">Enhanced Privacy</div>
+                <p>Control your data with advanced privacy settings and compliance certifications.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <div class="card-title">Real-time Analytics</div>
+                <p>Gain insights with real-time dashboards and comprehensive analytics tools.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎧</div>
+                <div class="card-title">24/7 Support</div>
+                <p>Reliable and responsive support team available around the clock.</p>
+            </div>
+        </div>
+    </div>
+    <div class="pricing">
+        <h2>Flexible Pricing Plans</h2>
+        <div class="card-container">
+            <div class="card pricing-plan">
+                <div class="card-title">Basic</div>
+                <div class="price">$19 <span>/ month</span></div>
+                <ul>
+                    <li>✔ 100 GB Storage</li>
+                    <li>✔ Basic Features</li>
+                    <li>✖ Advanced Analytics</li>
+                    <li>✖ 24/7 Support</li>
+                </ul>
+                <a href="#" class="button">Choose Plan</a>
+            </div>
+            <div class="card pricing-plan">
+                <div class="card-title">Standard</div>
+                <div class="price">$49 <span>/ month</span></div>
+                <ul>
+                    <li>✔ 500 GB Storage</li>
+                    <li>✔ All Basic Features</li>
+                    <li>✔ Advanced Analytics</li>
+                    <li>✖ 24/7 Support</li>
+                </ul>
+                <a href="#" class="button">Choose Plan</a>
+            </div>
+            <div class="card pricing-plan">
+                <div class="card-title">Premium</div>
+                <div class="price">$99 <span>/ month</span></div>
+                <ul>
+                    <li>✔ 1 TB Storage</li>
+                    <li>✔ All Standard Features</li>
+                    <li>✔ Advanced Analytics</li>
+                    <li>✔ 24/7 Support</li>
+                </ul>
+                <a href="#" class="button">Choose Plan</a>
+            </div>
+        </div>
+    </div>
+    <div class="contact-section">
+        <div class="contact-heading">Ready to Get Started?</div>
+        <div class="contact-subheading">
+            Contact us today to learn more about how CloudSoft can transform your business.
+        </div>
+        <a href="#" class="contact-button">Contact Us <span>✉️</span></a>
+    </div>
+    <div class="footer">
+        © 2024 CloudSoft. All rights reserved.<br>
+        <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
+    </div>
+</body>
+</html>

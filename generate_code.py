@@ -65,6 +65,8 @@ def generate_full_image_code(original_image_path, output_dir):
 def generate_segment_code(
     masked_image_path, original_image_path, segments_dir, output_dir
 ):
+    os.makedirs(output_dir, exist_ok=True)
+    
     masked_image = encode_image(masked_image_path)
     original_image = encode_image(original_image_path)
     component_files = [
@@ -266,9 +268,13 @@ def process_project(project_name, tests):
     original_image_path = os.path.join(base_dir, f"{project_name}.png")
     masked_image_path = os.path.join(base_dir, f"{project_name}_segments_overlay.png")
     segments_dir = os.path.join(base_dir, "segments")
-    set_segments_dir = os.path.join(base_dir, "set_segments")
     output_dir = os.path.join("output", project_name)
+    
+    set_segments_dir = os.path.join(base_dir, "set_segments")
     set_output_dir = os.path.join("output", project_name + "_set")
+    
+    five_segments_dir = os.path.join(base_dir, "five_segments")
+    five_output_dir = os.path.join("output", project_name + "_five")
 
     os.makedirs(output_dir, exist_ok=True)
     shutil.copy(original_image_path, output_dir)
@@ -298,13 +304,23 @@ def process_project(project_name, tests):
         generate_segment_code(
             masked_image_path, original_image_path, set_segments_dir, set_output_dir
         )
+        
+    # Test five Segments Gen
+    if "five_segment_gen" in tests:
+        print("Generating code from five image segments...")
+
+        generate_segment_code(
+            masked_image_path, original_image_path, five_segments_dir, five_output_dir
+        )
 
 
 # Main function to run the code generation
 def main():
-    # tests = ["full_image", "segment_gen", "set_segment_gen"]
+    tests = ["full_image", "segment_gen", "set_segment_gen", "five_segment_gen"]
+    # tests = ["full_image"]
     # tests = ["segment_gen"]
-    tests = ["set_segment_gen"]
+    # tests = ["set_segment_gen"]
+    # tests = ["five_segment_gen"]
 
     # List image project directories in the "img" folder
     img_dir = "img"
