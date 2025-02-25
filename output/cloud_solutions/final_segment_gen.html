@@ -8,255 +8,345 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
         }
         .menubar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 10px 20px;
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 0 20px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            height: 60px;
         }
         .logo {
             display: flex;
             align-items: center;
         }
         .logo img {
-            width: 30px;
-            margin-right: 8px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .logo span {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a73e8;
         }
         .nav-links {
             display: flex;
             gap: 20px;
         }
+        .nav-links a {
+            text-decoration: none;
+            color: #5f6368;
+            font-weight: normal;
+        }
+        .nav-links a:hover {
+            color: #202124;
+        }
         .hero-section {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            padding: 50px;
-            background-color: #f5f5f5;
+            justify-content: space-between;
+            padding: 50px 20px;
+            background-color: #fff;
         }
-        .hero-text {
+        .hero-content {
             max-width: 50%;
         }
-        .hero-text h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin: 0;
+        .hero-content h1 {
+            font-size: 2.5rem;
+            color: #202124;
+            margin-bottom: 20px;
         }
-        .hero-text h1 span {
-            color: #0073e6;
+        .hero-content h1 span {
+            color: #1a73e8;
         }
-        .hero-text p {
-            color: #666;
-            font-size: 1.1em;
-            margin-top: 20px;
-            line-height: 1.6em;
+        .hero-content p {
+            font-size: 1rem;
+            color: #5f6368;
+            margin-bottom: 30px;
+            line-height: 1.5;
         }
         .hero-buttons {
-            margin-top: 20px;
+            display: flex;
+            gap: 15px;
         }
         .hero-buttons a {
             display: inline-block;
             padding: 10px 20px;
-            color: white;
-            background-color: #0073e6;
+            font-size: 1rem;
             border-radius: 5px;
             text-decoration: none;
-            margin-right: 10px;
+            color: #fff;
+            background-color: #1a73e8;
+            transition: background-color 0.3s;
         }
-        .hero-buttons a.learn-more {
-            background-color: transparent;
-            color: #666;
-            border: 1px solid #666;
+        .hero-buttons a:hover {
+            background-color: #1665d8;
+        }
+        .hero-buttons .learn-more {
+            background-color: #f1f3f4;
+            color: #3c4043;
+        }
+        .hero-buttons .learn-more:hover {
+            background-color: #e0e0e0;
         }
         .hero-image img {
+            width: 400px;
             border-radius: 10px;
-            max-width: 400px;
         }
-        .solutions-section, .features-section, .pricing-section, .call-to-action-section, .footer {
+        .solutions-section, .features-section, .pricing-section, .cta-section {
             padding: 50px 20px;
             text-align: center;
-            background-color: #f0f2f5;
+            background-color: #f7f8fa;
         }
-        .solutions-section h2, .features-section h2, .pricing-section h2, .call-to-action-section h2 {
-            color: #333;
-            font-size: 2em;
+        .solutions-section h2, .features-section h2, .pricing-section h2, .cta-section h2 {
+            font-size: 2rem;
+            color: #202124;
             margin-bottom: 40px;
         }
-        .solution-cards, .feature-list, .pricing-cards {
+        .solution-cards, .features-grid, .pricing-plans {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         .solution-card, .feature-item, .pricing-card {
-            background-color: white;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             padding: 20px;
-            max-width: 300px;
+            width: 250px;
             text-align: center;
         }
+        .solution-card img, .feature-item img {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        .solution-card h3, .feature-item h3, .pricing-card h3 {
+            font-size: 1.25rem;
+            color: #202124;
+            margin-bottom: 10px;
+        }
+        .solution-card p, .feature-item p, .pricing-card ul {
+            font-size: 1rem;
+            color: #5f6368;
+            line-height: 1.5;
+        }
         .pricing-card .price {
-            color: #0073e6;
-            font-size: 2em;
-            margin: 10px 0;
+            font-size: 2rem;
+            color: #1a73e8;
+            margin-bottom: 10px;
         }
-        .pricing-card button {
-            margin-top: 20px;
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .pricing-card ul li {
+            font-size: 1rem;
+            color: #5f6368;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pricing-card ul li .icon {
+            margin-right: 5px;
+        }
+        .pricing-card ul li .icon.check {
+            color: #1a73e8;
+        }
+        .pricing-card ul li .icon.cross {
+            color: #db4437;
+        }
+        .pricing-card a {
+            display: inline-block;
             padding: 10px 20px;
-            color: white;
-            background-color: #0073e6;
+            font-size: 1rem;
             border-radius: 5px;
-            border: none;
-            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1a73e8;
+            transition: background-color 0.3s;
         }
-        .call-to-action-section p {
-            color: #666;
-            font-size: 1.1em;
-            margin-top: 10px;
+        .pricing-card a:hover {
+            background-color: #1665d8;
         }
-        .call-to-action-section button {
-            margin-top: 20px;
+        .cta-section p {
+            font-size: 1rem;
+            color: #5f6368;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .cta-section .cta-button {
+            display: inline-block;
             padding: 10px 20px;
-            color: white;
-            background-color: #0073e6;
+            font-size: 1rem;
             border-radius: 5px;
-            border: none;
-            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1a73e8;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .cta-section .cta-button:hover {
+            background-color: #1665d8;
+        }
+        .footer {
+            background-color: #f7f8fa;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5f6368;
         }
         .footer p {
-            color: #666;
-            margin: 5px 0;
+            margin: 10px 0;
         }
         .footer a {
-            color: #0073e6;
             text-decoration: none;
+            color: #1a73e8;
             margin: 0 10px;
-        }
-        .footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="menubar">
         <div class="logo">
-            <img src="cloud-icon.png" alt="Cloud Icon">
-            <span style="color: #0073e6; font-size: 1.2em;">CloudSoft</span>
+            <img src="cloud-icon.png" alt="Logo">
+            <span>CloudSoft</span>
         </div>
         <div class="nav-links">
-            <a href="#">Solutions</a>
-            <a href="#">Features</a>
-            <a href="#">Pricing</a>
-            <a href="#">Contact</a>
+            <a href="#solutions">Solutions</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
         </div>
     </div>
+
     <div class="hero-section">
-        <div class="hero-text">
+        <div class="hero-content">
             <h1>Empower Your Business with <span>Cloud Solutions</span></h1>
             <p>Unlock agility, scalability, and innovation with our cutting-edge cloud software. Designed for modern businesses to thrive in the digital era.</p>
             <div class="hero-buttons">
-                <a href="#">Get Started</a>
-                <a href="#" class="learn-more">Learn More</a>
+                <a href="#get-started">Get Started</a>
+                <a href="#learn-more" class="learn-more">Learn More</a>
             </div>
         </div>
         <div class="hero-image">
-            <img src="dog-image.jpg" alt="Dog Image">
+            <img src="dog-image.jpg" alt="Cloud Solutions Image">
         </div>
     </div>
+
     <div class="solutions-section">
         <h2>Our Cloud Solutions</h2>
         <div class="solution-cards">
             <div class="solution-card">
+                <img src="icon-infrastructure.png" alt="Scalable Infrastructure">
                 <h3>Scalable Infrastructure</h3>
                 <p>Dynamically adjust resources to meet demand. Pay-as-you-go pricing for optimal cost efficiency.</p>
             </div>
             <div class="solution-card">
+                <img src="icon-security.png" alt="Robust Security">
                 <h3>Robust Security</h3>
                 <p>Enterprise-grade security features protect your data and ensure compliance.</p>
             </div>
             <div class="solution-card">
+                <img src="icon-deployment.png" alt="Rapid Deployment">
                 <h3>Rapid Deployment</h3>
                 <p>Quickly deploy and manage applications with our intuitive cloud platform.</p>
             </div>
         </div>
     </div>
+
     <div class="features-section">
         <h2>Key Features</h2>
-        <div class="feature-list">
+        <div class="features-grid">
             <div class="feature-item">
+                <img src="icon-backup.png" alt="Automated Backups">
                 <h3>Automated Backups</h3>
                 <p>Ensure your data is always safe with automatic and reliable backup solutions.</p>
             </div>
             <div class="feature-item">
+                <img src="icon-integration.png" alt="Easy Integration">
                 <h3>Easy Integration</h3>
                 <p>Seamlessly integrate with your existing systems and workflows.</p>
             </div>
             <div class="feature-item">
+                <img src="icon-mobile-access.png" alt="Mobile Access">
                 <h3>Mobile Access</h3>
                 <p>Access your applications and data from anywhere, on any device.</p>
             </div>
             <div class="feature-item">
+                <img src="icon-privacy.png" alt="Enhanced Privacy">
                 <h3>Enhanced Privacy</h3>
                 <p>Control your data with advanced privacy settings and compliance certifications.</p>
             </div>
             <div class="feature-item">
+                <img src="icon-analytics.png" alt="Real-time Analytics">
                 <h3>Real-time Analytics</h3>
                 <p>Gain insights with real-time dashboards and comprehensive analytics tools.</p>
             </div>
             <div class="feature-item">
+                <img src="icon-support.png" alt="24/7 Support">
                 <h3>24/7 Support</h3>
                 <p>Reliable and responsive support team available around the clock.</p>
             </div>
         </div>
     </div>
+
     <div class="pricing-section">
         <h2>Flexible Pricing Plans</h2>
-        <div class="pricing-cards">
+        <div class="pricing-plans">
             <div class="pricing-card">
                 <h3>Basic</h3>
                 <div class="price">$19 <span>/ month</span></div>
-                <p>✔ 100 GB Storage</p>
-                <p>✔ Basic Features</p>
-                <p>✖ Advanced Analytics</p>
-                <p>✖ 24/7 Support</p>
-                <button>Choose Plan</button>
+                <ul>
+                    <li><span class="icon check">✓</span>100 GB Storage</li>
+                    <li><span class="icon check">✓</span>Basic Features</li>
+                    <li><span class="icon cross">✗</span>Advanced Analytics</li>
+                    <li><span class="icon cross">✗</span>24/7 Support</li>
+                </ul>
+                <a href="#">Choose Plan</a>
             </div>
             <div class="pricing-card">
                 <h3>Standard</h3>
                 <div class="price">$49 <span>/ month</span></div>
-                <p>✔ 500 GB Storage</p>
-                <p>✔ All Basic Features</p>
-                <p>✔ Advanced Analytics</p>
-                <p>✖ 24/7 Support</p>
-                <button>Choose Plan</button>
+                <ul>
+                    <li><span class="icon check">✓</span>500 GB Storage</li>
+                    <li><span class="icon check">✓</span>All Basic Features</li>
+                    <li><span class="icon check">✓</span>Advanced Analytics</li>
+                    <li><span class="icon cross">✗</span>24/7 Support</li>
+                </ul>
+                <a href="#">Choose Plan</a>
             </div>
             <div class="pricing-card">
                 <h3>Premium</h3>
                 <div class="price">$99 <span>/ month</span></div>
-                <p>✔ 1 TB Storage</p>
-                <p>✔ All Standard Features</p>
-                <p>✔ Advanced Analytics</p>
-                <p>✔ 24/7 Support</p>
-                <button>Choose Plan</button>
+                <ul>
+                    <li><span class="icon check">✓</span>1 TB Storage</li>
+                    <li><span class="icon check">✓</span>All Standard Features</li>
+                    <li><span class="icon check">✓</span>Advanced Analytics</li>
+                    <li><span class="icon check">✓</span>24/7 Support</li>
+                </ul>
+                <a href="#">Choose Plan</a>
             </div>
         </div>
     </div>
-    <div class="call-to-action-section">
+
+    <div class="cta-section">
         <h2>Ready to Get Started?</h2>
         <p>Contact us today to learn more about how CloudSoft can transform your business.</p>
-        <button>Contact Us <span>✉️</span></button>
+        <a href="#contact" class="cta-button">Contact Us</a>
     </div>
+
     <div class="footer">
         <p>© 2024 CloudSoft. All rights reserved.</p>
-        <a href="#">Privacy Policy</a> &bull;
-        <a href="#">Terms of Service</a>
+        <p>
+            <a href="#privacy-policy">Privacy Policy</a>
+            <span>•</span>
+            <a href="#terms-of-service">Terms of Service</a>
+        </p>
     </div>
 </body>
 </html>

@@ -3,246 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Website</title>
+    <title>CloudSoft Website</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f7fa;
+            font-family: Arial, sans-serif;
+            background-color: #f9fbfd;
         }
-        .header {
+        nav {
+            background-color: white;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 50px;
-            background-color: #fff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
-        .logo {
+        nav .logo {
             display: flex;
             align-items: center;
+            font-size: 1.5em;
+            color: #2e3c5a;
         }
-        .logo img {
-            height: 24px;
+        nav .logo img {
+            width: 30px;
             margin-right: 10px;
         }
-        .nav {
+        nav ul {
+            list-style: none;
             display: flex;
             gap: 20px;
         }
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 60px;
-            background-color: #f9f9f9;
+        nav ul li {
+            display: inline;
         }
-        .hero-content {
-            max-width: 500px;
+        nav ul li a {
+            text-decoration: none;
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .text-content {
+            max-width: 600px;
+        }
+        h1, p {
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #2e3c5a;
+        }
+        h1 span {
+            color: #0056e0;
+        }
+        p {
+            color: #6c757d;
+            margin-top: 20px;
+        }
+        .buttons {
+            margin-top: 30px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
             margin-right: 20px;
         }
-        .hero img {
-            max-width: 100%;
-        }
-        .hero h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 1em;
-            margin-bottom: 20px;
-        }
-        .hero a {
-            display: inline-block;
-            margin-right: 15px;
-            padding: 10px 20px;
-            color: #fff;
-            background-color: #0073e6;
-            border-radius: 5px;
+        .btn-secondary {
+            color: #007bff;
             text-decoration: none;
+            display: inline-block;
+            align-items: center;
+            font-weight: 500;
         }
-        .solutions, .features, .pricing, .contact-section, .footer {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #fff;
-            margin: 20px;
-            border-radius: 8px;
+        .btn-secondary i {
+            margin-left: 5px;
+        }
+        .image-container {
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .solutions h2, .features h2, .pricing h2 {
-            font-size: 2em;
-            margin-bottom: 30px;
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
-        .card-container {
+        .features-section, .pricing-section, .contact-section {
+            text-align: center;
+        }
+        .cards, .features-grid, .pricing-cards {
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
-        .card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
+        .card, .feature-item, .pricing-card {
+            background-color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 200px;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            flex: 1 1 300px;
             text-align: left;
         }
-        .card-title {
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .card-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        .pricing-plan .price {
-            font-size: 2em;
-            color: #0073e6;
-            margin-bottom: 5px;
-        }
-        .contact-section .contact-heading {
-            font-size: 1.8em;
+        .card-icon, .feature-icon, .price {
+            font-size: 30px;
+            color: #0056e0;
             margin-bottom: 20px;
         }
+        .card-title, .feature-title, .plan-title {
+            font-size: 1.25em;
+            color: #2e3c5a;
+            margin-bottom: 10px;
+        }
+        .card-description, .feature-description, .contact-section p {
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+        .choose-btn, .contact-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
         .footer {
-            background-color: #f5f7fa;
-            font-size: 0.8em;
-            color: #666;
+            background-color: #f3f6f9;
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9em;
         }
         .footer a {
-            color: #0073e6;
+            color: #007bff;
             text-decoration: none;
-            margin: 0 5px;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-    <div class="header">
+    <nav>
         <div class="logo">
-            <img src="https://via.placeholder.com/24x24" alt="Logo">
+            <img src="https://via.placeholder.com/30" alt="Logo">
             CloudSoft
         </div>
-        <div class="nav">
-            <a href="#">Solutions</a>
-            <a href="#">Features</a>
-            <a href="#">Pricing</a>
-            <a href="#">Contact</a>
-        </div>
-    </div>
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Empower Your Business with <span style="color: #0073e6;">Cloud Solutions</span></h1>
+        <ul>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="text-content">
+            <h1>Empower Your Business with <span>Cloud Solutions</span></h1>
             <p>Unlock agility, scalability, and innovation with our cutting-edge cloud software. Designed for modern businesses to thrive in the digital era.</p>
-            <a href="#">Get Started</a>
-            <a href="#">Learn More</a>
+            <div class="buttons">
+                <a href="#" class="btn-primary">Get Started</a>
+                <a href="#" class="btn-secondary">Learn More <i>ℹ️</i></a>
+            </div>
         </div>
-        <div class="hero-image">
-            <img src="https://via.placeholder.com/300" alt="Hero Image">
+        <div class="image-container">
+            <img src="https://via.placeholder.com/400x260" alt="Dog Image">
         </div>
     </div>
-    <div class="solutions">
+    <div class="features-section">
         <h2>Our Cloud Solutions</h2>
-        <div class="card-container">
+        <div class="cards">
             <div class="card">
                 <div class="card-icon">📈</div>
                 <div class="card-title">Scalable Infrastructure</div>
-                <p>Dynamically adjust resources to meet demand. Pay-as-you-go pricing for optimal cost efficiency.</p>
+                <div class="card-description">Dynamically adjust resources to meet demand. Pay-as-you-go pricing for optimal cost efficiency.</div>
             </div>
             <div class="card">
                 <div class="card-icon">🛡️</div>
                 <div class="card-title">Robust Security</div>
-                <p>Enterprise-grade security features protect your data and ensure compliance.</p>
+                <div class="card-description">Enterprise-grade security features protect your data and ensure compliance.</div>
             </div>
             <div class="card">
                 <div class="card-icon">🚀</div>
                 <div class="card-title">Rapid Deployment</div>
-                <p>Quickly deploy and manage applications with our intuitive cloud platform.</p>
+                <div class="card-description">Quickly deploy and manage applications with our intuitive cloud platform.</div>
             </div>
         </div>
     </div>
-    <div class="features">
+    <div class="features-section">
         <h2>Key Features</h2>
-        <div class="card-container">
-            <div class="card">
-                <div class="card-icon">☁️</div>
-                <div class="card-title">Automated Backups</div>
-                <p>Ensure your data is always safe with automatic and reliable backup solutions.</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">☁️</div>
+                <div class="feature-title">Automated Backups</div>
+                <div class="feature-description">Ensure your data is always safe with automatic and reliable backup solutions.</div>
             </div>
-            <div class="card">
-                <div class="card-icon">🔧</div>
-                <div class="card-title">Easy Integration</div>
-                <p>Seamlessly integrate with your existing systems and workflows.</p>
+            <div class="feature-item">
+                <div class="feature-icon">🔧</div>
+                <div class="feature-title">Easy Integration</div>
+                <div class="feature-description">Seamlessly integrate with your existing systems and workflows.</div>
             </div>
-            <div class="card">
-                <div class="card-icon">📱</div>
-                <div class="card-title">Mobile Access</div>
-                <p>Access your applications and data from anywhere, on any device.</p>
+            <div class="feature-item">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">Mobile Access</div>
+                <div class="feature-description">Access your applications and data from anywhere, on any device.</div>
             </div>
-            <div class="card">
-                <div class="card-icon">👤</div>
-                <div class="card-title">Enhanced Privacy</div>
-                <p>Control your data with advanced privacy settings and compliance certifications.</p>
+            <div class="feature-item">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Enhanced Privacy</div>
+                <div class="feature-description">Control your data with advanced privacy settings and compliance certifications.</div>
             </div>
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <div class="card-title">Real-time Analytics</div>
-                <p>Gain insights with real-time dashboards and comprehensive analytics tools.</p>
+            <div class="feature-item">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Real-time Analytics</div>
+                <div class="feature-description">Gain insights with real-time dashboards and comprehensive analytics tools.</div>
             </div>
-            <div class="card">
-                <div class="card-icon">🎧</div>
-                <div class="card-title">24/7 Support</div>
-                <p>Reliable and responsive support team available around the clock.</p>
+            <div class="feature-item">
+                <div class="feature-icon">🎧</div>
+                <div class="feature-title">24/7 Support</div>
+                <div class="feature-description">Reliable and responsive support team available around the clock.</div>
             </div>
         </div>
     </div>
-    <div class="pricing">
+    <div class="pricing-section">
         <h2>Flexible Pricing Plans</h2>
-        <div class="card-container">
-            <div class="card pricing-plan">
-                <div class="card-title">Basic</div>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <div class="plan-title">Basic</div>
                 <div class="price">$19 <span>/ month</span></div>
-                <ul>
+                <ul class="features">
                     <li>✔ 100 GB Storage</li>
                     <li>✔ Basic Features</li>
-                    <li>✖ Advanced Analytics</li>
-                    <li>✖ 24/7 Support</li>
+                    <li>✘ Advanced Analytics</li>
+                    <li>✘ 24/7 Support</li>
                 </ul>
-                <a href="#" class="button">Choose Plan</a>
+                <a href="#" class="choose-btn">Choose Plan</a>
             </div>
-            <div class="card pricing-plan">
-                <div class="card-title">Standard</div>
+            <div class="pricing-card">
+                <div class="plan-title">Standard</div>
                 <div class="price">$49 <span>/ month</span></div>
-                <ul>
+                <ul class="features">
                     <li>✔ 500 GB Storage</li>
                     <li>✔ All Basic Features</li>
                     <li>✔ Advanced Analytics</li>
-                    <li>✖ 24/7 Support</li>
+                    <li>✘ 24/7 Support</li>
                 </ul>
-                <a href="#" class="button">Choose Plan</a>
+                <a href="#" class="choose-btn">Choose Plan</a>
             </div>
-            <div class="card pricing-plan">
-                <div class="card-title">Premium</div>
+            <div class="pricing-card">
+                <div class="plan-title">Premium</div>
                 <div class="price">$99 <span>/ month</span></div>
-                <ul>
+                <ul class="features">
                     <li>✔ 1 TB Storage</li>
                     <li>✔ All Standard Features</li>
                     <li>✔ Advanced Analytics</li>
                     <li>✔ 24/7 Support</li>
                 </ul>
-                <a href="#" class="button">Choose Plan</a>
+                <a href="#" class="choose-btn">Choose Plan</a>
             </div>
         </div>
     </div>
     <div class="contact-section">
-        <div class="contact-heading">Ready to Get Started?</div>
-        <div class="contact-subheading">
-            Contact us today to learn more about how CloudSoft can transform your business.
-        </div>
-        <a href="#" class="contact-button">Contact Us <span>✉️</span></a>
+        <h2>Ready to Get Started?</h2>
+        <p>Contact us today to learn more about how CloudSoft can transform your business.</p>
+        <a href="#" class="contact-btn">Contact Us ✉️</a>
     </div>
     <div class="footer">
-        © 2024 CloudSoft. All rights reserved.<br>
+        © 2024 CloudSoft. All rights reserved.
+        <br>
         <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
     </div>
 </body>
