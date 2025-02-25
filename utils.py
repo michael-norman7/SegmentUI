@@ -14,14 +14,43 @@ async def capture_screenshot(html_path, output_image_path):
     browser = await launch()
     page = await browser.newPage()
 
+    # Set viewport width to a standard desktop width
+    await page.setViewport({"width": 1280, "height": 800})
+
     # Convert HTML file path to file URL
     file_url = f"file:///{os.path.abspath(html_path)}"
 
     # Open the HTML file
     await page.goto(file_url, {"waitUntil": "networkidle0"})
 
-    # Take a screenshot and save it
-    await page.screenshot({"path": output_image_path, "fullPage": True})
+    # Get the actual height of the content
+    dimensions = await page.evaluate(
+        """() => {
+        return {
+            height: document.documentElement.offsetHeight,
+            width: document.documentElement.offsetWidth
+        }
+    }"""
+    )
+
+    # Update viewport to match content dimensions
+    await page.setViewport(
+        {"width": dimensions["width"], "height": dimensions["height"]}
+    )
+
+    # Take a screenshot of only the visible content
+    await page.screenshot(
+        {
+            "path": output_image_path,
+            "fullPage": False,
+            "clip": {
+                "x": 0,
+                "y": 0,
+                "width": dimensions["width"],
+                "height": dimensions["height"],
+            },
+        }
+    )
 
     # Close the browser
     await browser.close()
