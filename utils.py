@@ -10,20 +10,14 @@ def encode_image(image_path):
 
 
 async def capture_screenshot(html_path, output_image_path):
-    # Launch headless browser
     browser = await launch()
     page = await browser.newPage()
 
-    # Set viewport width to a standard desktop width
-    await page.setViewport({"width": 1280, "height": 800})
+    await page.setViewport({"width": 1280, "height": 1000})
 
-    # Convert HTML file path to file URL
     file_url = f"file:///{os.path.abspath(html_path)}"
-
-    # Open the HTML file
     await page.goto(file_url, {"waitUntil": "networkidle0"})
 
-    # Get the actual height of the content
     dimensions = await page.evaluate(
         """() => {
         return {
@@ -33,12 +27,10 @@ async def capture_screenshot(html_path, output_image_path):
     }"""
     )
 
-    # Update viewport to match content dimensions
     await page.setViewport(
         {"width": dimensions["width"], "height": dimensions["height"]}
     )
 
-    # Take a screenshot of only the visible content
     await page.screenshot(
         {
             "path": output_image_path,
@@ -52,5 +44,6 @@ async def capture_screenshot(html_path, output_image_path):
         }
     )
 
-    # Close the browser
+    print(f"Screenshot saved to {output_image_path}")
+
     await browser.close()

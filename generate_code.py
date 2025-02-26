@@ -66,7 +66,7 @@ def generate_segment_code(
     masked_image_path, original_image_path, segments_dir, output_dir
 ):
     os.makedirs(output_dir, exist_ok=True)
-    
+
     masked_image = encode_image(masked_image_path)
     original_image = encode_image(original_image_path)
     component_files = [
@@ -269,10 +269,10 @@ def process_project(project_name, tests):
     masked_image_path = os.path.join(base_dir, f"{project_name}_segments_overlay.png")
     segments_dir = os.path.join(base_dir, "segments")
     output_dir = os.path.join("output", project_name)
-    
+
     set_segments_dir = os.path.join(base_dir, "set_segments")
     set_output_dir = os.path.join("output", project_name + "_set")
-    
+
     five_segments_dir = os.path.join(base_dir, "five_segments")
     five_output_dir = os.path.join("output", project_name + "_five")
 
@@ -285,32 +285,44 @@ def process_project(project_name, tests):
 
     # Test Full Image Gen
     if "full_image" in tests:
+        test = "full_image"
         print("Generating code from full image...")
 
         generate_full_image_code(original_image_path, output_dir)
 
     # Test Segment Gen
     if "segment_gen" in tests:
+        test = "segment_gen"
         print("Generating code from image segments...")
 
         generate_segment_code(
-            masked_image_path, original_image_path, segments_dir, output_dir
+            masked_image_path, original_image_path, segments_dir, output_dir, test
         )
-        
+
     # Test Set Segments Gen
     if "set_segment_gen" in tests:
+        test = "set_segment_gen"
         print("Generating code from image set segments...")
 
         generate_segment_code(
-            masked_image_path, original_image_path, set_segments_dir, set_output_dir
+            masked_image_path,
+            original_image_path,
+            set_segments_dir,
+            set_output_dir,
+            test,
         )
-        
+
     # Test five Segments Gen
     if "five_segment_gen" in tests:
+        test = "five_segment_gen"
         print("Generating code from five image segments...")
 
         generate_segment_code(
-            masked_image_path, original_image_path, five_segments_dir, five_output_dir
+            masked_image_path,
+            original_image_path,
+            five_segments_dir,
+            five_output_dir,
+            test,
         )
 
 
