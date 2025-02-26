@@ -4,142 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CloudSoft</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
         header {
-            background: #fff;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
         }
-
-        header a.logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #007bff;
+        header .logo {
             font-weight: bold;
-            font-size: 1.2em;
+            color: #0056b3;
         }
-
-        header nav a {
-            margin: 0 15px;
-            text-decoration: none;
+        nav a {
+            margin-left: 20px;
             color: #333;
+            text-decoration: none;
         }
-
         .hero {
             display: flex;
-            align-items: center;
             justify-content: space-between;
             padding: 50px 20px;
+            background-color: #f8f9fa;
         }
-
-        .hero-text {
-            max-width: 600px;
-        }
-
-        .hero-text h1 {
-            font-size: 2.5em;
+        .hero h1 {
             color: #333;
-            margin-bottom: 20px;
         }
-
-        .hero-text .blue-text {
-            color: #007bff;
+        .hero h1 span {
+            color: #0056b3;
         }
-
-        .hero-buttons a {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-right: 10px;
-            background: #007bff;
+        .hero button {
+            background-color: #0056b3;
             color: #fff;
-            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
             border-radius: 5px;
-            transition: background 0.3s;
+            cursor: pointer;
         }
-
-        .hero-buttons a:hover {
-            background: #0056b3;
-        }
-
         .hero img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            border-radius: 8px;
         }
-
-        section {
+        .solutions, .features, .pricing {
             padding: 50px 20px;
-            background: #f8f9fa;
-        }
-
-        .section-title {
             text-align: center;
-            margin-bottom: 30px;
-            font-size: 1.8em;
         }
-
-        .features, .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        .solutions h2, .features h2, .pricing h2 {
+            color: #333;
+        }
+        .section {
+            display: flex;
+            justify-content: center;
             gap: 20px;
-            text-align: center;
+            margin-top: 30px;
         }
-
-        .feature-item, .price-plan {
-            background: #fff;
-            border-radius: 10px;
+        .solution-card, .feature-card, .pricing-card {
+            background-color: #fff;
             padding: 20px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: left;
         }
-
-        .feature-item h3, .price-plan h4 {
-            margin-bottom: 15px;
-            font-size: 1.2em;
+        .pricing-card {
+            position: relative;
         }
-
-        .price-plan .price {
-            font-size: 2em;
-            margin: 20px 0;
+        .pricing-card strong {
+            font-size: 24px;
+            color: #0056b3;
         }
-
-        .price-plan a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .contact, footer {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
         footer {
-            background: #f8f9fa;
-            color: #666;
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #333;
         }
     </style>
 </head>
 <body>
 
 <header>
-    <a href="#" class="logo"><i class="fas fa-cloud"></i> CloudSoft</a>
+    <div class="logo">CloudSoft</div>
     <nav>
         <a href="#">Solutions</a>
         <a href="#">Features</a>
@@ -149,109 +101,106 @@
 </header>
 
 <section class="hero">
-    <div class="hero-text">
-        <h1>Empower Your Business with <span class="blue-text">Cloud Solutions</span></h1>
+    <div>
+        <h1>Empower Your Business with <span>Cloud Solutions</span></h1>
         <p>Unlock agility, scalability, and innovation with our cutting-edge cloud software. Designed for modern businesses to thrive in the digital era.</p>
-        <div class="hero-buttons">
-            <a href="#">Get Started <i class="fas fa-arrow-right"></i></a>
-            <a href="#" class="secondary">Learn More <i class="fas fa-info-circle"></i></a>
-        </div>
+        <button>Get Started</button>
     </div>
-    <img src="https://via.placeholder.com/600" alt="Hero Image">
+    <img src="https://via.placeholder.com/400" alt="Hero Image">
 </section>
 
-<section class="our-solutions">
-    <h2 class="section-title">Our Cloud Solutions</h2>
-    <div class="features">
-        <div class="feature-item">
-            <h3><i class="fas fa-chart-line"></i> Scalable Infrastructure</h3>
+<section class="solutions">
+    <h2>Our Cloud Solutions</h2>
+    <div class="section">
+        <div class="solution-card">
+            <h3>Scalable Infrastructure</h3>
             <p>Dynamically adjust resources to meet demand. Pay-as-you-go pricing for optimal cost efficiency.</p>
         </div>
-        <div class="feature-item">
-            <h3><i class="fas fa-shield-alt"></i> Robust Security</h3>
+        <div class="solution-card">
+            <h3>Robust Security</h3>
             <p>Enterprise-grade security features protect your data and ensure compliance.</p>
         </div>
-        <div class="feature-item">
-            <h3><i class="fas fa-rocket"></i> Rapid Deployment</h3>
+        <div class="solution-card">
+            <h3>Rapid Deployment</h3>
             <p>Quickly deploy and manage applications with our intuitive cloud platform.</p>
         </div>
     </div>
 </section>
 
-<section class="key-features">
-    <h2 class="section-title">Key Features</h2>
-    <div class="features">
-        <div class="feature-item">
-            <h3><i class="fas fa-cloud-upload-alt"></i> Automated Backups</h3>
+<section class="features">
+    <h2>Key Features</h2>
+    <div class="section">
+        <div class="feature-card">
+            <h3>Automated Backups</h3>
             <p>Ensure your data is always safe with automatic and reliable backup solutions.</p>
         </div>
-        <div class="feature-item">
-            <h3><i class="fas fa-link"></i> Easy Integration</h3>
+        <div class="feature-card">
+            <h3>Easy Integration</h3>
             <p>Seamlessly integrate with your existing systems and workflows.</p>
         </div>
-        <div class="feature-item">
-            <h3><i class="fas fa-mobile-alt"></i> Mobile Access</h3>
+        <div class="feature-card">
+            <h3>Mobile Access</h3>
             <p>Access your applications and data from anywhere, on any device.</p>
         </div>
-        <div class="feature-item">
-            <h3><i class="fas fa-lock"></i> Enhanced Privacy</h3>
+    </div>
+    <div class="section">
+        <div class="feature-card">
+            <h3>Enhanced Privacy</h3>
             <p>Control your data with advanced privacy settings and compliance certifications.</p>
         </div>
-        <div class="feature-item">
-            <h3><i class="fas fa-chart-area"></i> Real-time Analytics</h3>
+        <div class="feature-card">
+            <h3>Real-time Analytics</h3>
             <p>Gain insights with real-time dashboards and comprehensive analytics tools.</p>
         </div>
-        <div class="feature-item">
-            <h3><i class="fas fa-headset"></i> 24/7 Support</h3>
+        <div class="feature-card">
+            <h3>24/7 Support</h3>
             <p>Reliable and responsive support team available around the clock.</p>
         </div>
     </div>
 </section>
 
-<section class="pricing-plans">
-    <h2 class="section-title">Flexible Pricing Plans</h2>
-    <div class="pricing">
-        <div class="price-plan">
-            <h4>Basic</h4>
-            <div class="price">$19 / month</div>
-            <p>100 GB Storage</p>
-            <p>Basic Features</p>
-            <p>Advanced Analytics</p>
-            <p>24/7 Support</p>
-            <a href="#">Choose Plan</a>
+<section class="pricing">
+    <h2>Flexible Pricing Plans</h2>
+    <div class="section">
+        <div class="pricing-card">
+            <h3>Basic</h3>
+            <strong>$19</strong>/month
+            <ul>
+                <li>✔ 100 GB Storage</li>
+                <li>✔ Basic Features</li>
+                <li>✖ Advanced Analytics</li>
+                <li>✖ 24/7 Support</li>
+            </ul>
+            <button>Choose Plan</button>
         </div>
-        <div class="price-plan">
-            <h4>Standard</h4>
-            <div class="price">$49 / month</div>
-            <p>500 GB Storage</p>
-            <p>All Basic Features</p>
-            <p>Advanced Analytics</p>
-            <p>24/7 Support</p>
-            <a href="#">Choose Plan</a>
+        <div class="pricing-card">
+            <h3>Standard</h3>
+            <strong>$49</strong>/month
+            <ul>
+                <li>✔ 500 GB Storage</li>
+                <li>✔ All Basic Features</li>
+                <li>✖ Advanced Analytics</li>
+                <li>✖ 24/7 Support</li>
+            </ul>
+            <button>Choose Plan</button>
         </div>
-        <div class="price-plan">
-            <h4>Premium</h4>
-            <div class="price">$99 / month</div>
-            <p>1 TB Storage</p>
-            <p>All Standard Features</p>
-            <p>Advanced Analytics</p>
-            <p>24/7 Support</p>
-            <a href="#">Choose Plan</a>
+        <div class="pricing-card">
+            <h3>Premium</h3>
+            <strong>$99</strong>/month
+            <ul>
+                <li>✔ 1 TB Storage</li>
+                <li>✔ All Standard Features</li>
+                <li>✔ Advanced Analytics</li>
+                <li>✔ 24/7 Support</li>
+            </ul>
+            <button>Choose Plan</button>
         </div>
     </div>
 </section>
 
-<section class="contact">
-    <h2>Ready to Get Started?</h2>
-    <p>Contact us today to learn more about how CloudSoft can transform your business.</p>
-    <a href="#" class="contact-button">Contact Us <i class="fas fa-envelope"></i></a>
-</section>
-
 <footer>
     <p>© 2024 CloudSoft. All rights reserved.</p>
-    <p>
-        <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
-    </p>
+    <p>Privacy Policy • Terms of Service</p>
 </footer>
 
 </body>

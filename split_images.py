@@ -183,7 +183,7 @@ def encode_pil_image(image):
     return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
 
-def split_image(image_path, critique=True):
+def split_image(image_path, critique=False):
     if not os.path.exists(image_path):
         print(f"Image file '{image_path}' not found.")
         return
@@ -290,10 +290,10 @@ def split_image(image_path, critique=True):
 
         base64_bounding_boxes_image = encode_image(bounding_boxes_image_path)
 
-        plt.figure(figsize=(15, 10))
-        plt.imshow(Image.open(bounding_boxes_image_path))
-        plt.axis("off")
-        plt.show()
+        # plt.figure(figsize=(15, 10))
+        # plt.imshow(Image.open(bounding_boxes_image_path))
+        # plt.axis("off")
+        # plt.show()
 
         critique_prompt = [
             {
@@ -398,7 +398,7 @@ def set_split_image(image_path):
 
     components = [{"component_name": "menubar", "coordinates": [0, 0, width, 50]}]
     curr_height = 50
-    increment = 400
+    increment = 500
     while curr_height < height:
         comp_height = min(increment, height - curr_height)
         components.append(
@@ -475,7 +475,7 @@ def five_split_image(image_path):
         comp_height = min(increment, height - curr_height)
         if len(components) == 4:
             comp_height = height - curr_height
-        
+
         components.append(
             {
                 "component_name": "section",
@@ -506,7 +506,7 @@ if not image_files:
 if len(sys.argv) > 1 and sys.argv[1] + ".png" in image_files:
     image_name = sys.argv[1] + ".png"
     image_path = "full_images/" + image_name
-    split_image(image_path, critique=True)
+    split_image(image_path, critique=False)
     set_split_image(image_path)
     five_split_image(image_path)
 else:
@@ -528,6 +528,6 @@ else:
         except ValueError:
             print("Invalid input. Please enter a number.")
 
-    split_image(image_path, critique=True)
+    split_image(image_path, critique=False)
     set_split_image(image_path)
     five_split_image(image_path)
