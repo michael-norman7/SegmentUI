@@ -17,7 +17,7 @@ def encode_image(image_path):
 async def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     input_dir = os.path.join(script_dir, "input")
-    output_dir = os.path.abspath(os.path.join(script_dir, "output"))
+    output_dir = os.path.abspath(os.path.join(script_dir, "..", "full_images"))
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
