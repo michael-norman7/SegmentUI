@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiRoute Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-logo img {
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .navbar-logo span {
+            font-weight: bold;
+            font-size: 18px;
+            color: #0073e6;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: normal;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .section {
+            flex: 1 1 300px;
+            max-width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .section img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .section-header img {
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .section-header span {
+            font-weight: bold;
+        }
+
+        .section-description {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .footer {
+            background-color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            color: #666;
+            font-size: 14px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">
+            <img src="logo.png" alt="Logo">
+            <span>OptiRoute Dashboard</span>
+        </div>
+        <div class="navbar-menu">
+            <a href="#">Dashboard</a>
+            <a href="#">Routes</a>
+            <a href="#">Vehicles</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="section">
+            <div class="section-header">
+                <img src="traffic-icon.png" alt="Traffic Icon">
+                <span>Traffic Flow</span>
+            </div>
+            <img src="traffic.jpg" alt="Traffic">
+            <div class="section-description">Real-time traffic density across the network.</div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="efficiency-icon.png" alt="Efficiency Icon">
+                <span>Route Efficiency</span>
+            </div>
+            <img src="route.jpg" alt="Route">
+            <div class="section-description">Performance metrics for optimal route suggestions.</div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="tracking-icon.png" alt="Tracking Icon">
+                <span>Vehicle Tracking</span>
+            </div>
+            <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+                <tr>
+                    <th style="text-align:left; border-bottom: 1px solid #ddd; padding:8px;">VEHICLE ID</th>
+                    <th style="text-align:left; border-bottom: 1px solid #ddd; padding:8px;">STATUS</th>
+                    <th style="text-align:left; border-bottom: 1px solid #ddd; padding:8px;">LOCATION</th>
+                </tr>
+                <tr>
+                    <td style="padding:8px;">VEH-123</td>
+                    <td style="padding:8px; display: flex; align-items: center;">
+                        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #00bfa5; display:inline-block; margin-right:5px;"></span> In Transit
+                    </td>
+                    <td style="padding:8px;">City Center</td>
+                </tr>
+                <tr>
+                    <td style="padding:8px;">VEH-456</td>
+                    <td style="padding:8px; display: flex; align-items: center;">
+                        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #2979ff; display:inline-block; margin-right:5px;"></span> In Transit
+                    </td>
+                    <td style="padding:8px;">Suburb X</td>
+                </tr>
+                <tr>
+                    <td style="padding:8px;">VEH-789</td>
+                    <td style="padding:8px; display: flex; align-items: center;">
+                        <span style="width: 10px; height: 10px; border-radius: 50%; background-color: #ccc; display:inline-block; margin-right:5px;"></span> Idle
+                    </td>
+                    <td style="padding:8px;">Depot</td>
+                </tr>
+            </table>
+            <div class="section-description">Current status and location of vehicles in the fleet.</div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="density-icon.png" alt="Density Icon">
+                <span>Avg. Traffic Density</span>
+            </div>
+            <div style="font-size: 32px; font-weight: bold;">75%</div>
+            <div class="section-description">Compared to last week</div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="routes-icon.png" alt="Routes Icon">
+                <span>Optimal Routes</span>
+            </div>
+            <div style="font-size: 32px; font-weight: bold;">92%</div>
+            <div class="section-description">Of suggested routes are optimal</div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="arrival-icon.png" alt="Arrival Icon">
+                <span>On-Time Arrival</span>
+            </div>
+            <div style="font-size: 32px; font-weight: bold;">98%</div>
+            <div class="section-description">Vehicles arriving on schedule</div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="load-icon.png" alt="Load Icon">
+                <span>System Load</span>
+            </div>
+            <div style="font-size: 32px; font-weight: bold;">Low</div>
+            <div class="section-description">System performance is nominal</div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 OptiRoute. All rights reserved.
+    </div>
+</body>
+</html>

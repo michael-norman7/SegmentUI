@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudSoft</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 10px;
+        }
+        .logo {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero img {
+            max-width: 40%;
+            border-radius: 8px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-secondary {
+            margin-left: 15px;
+        }
+        .section {
+            padding: 50px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: calc(33% - 40px);
+        }
+        footer {
+            padding: 20px;
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+        }
+        .pricing-table {
+            display: flex;
+            justify-content: center;
+        }
+        .pricing-card {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 40px);
+            text-align: left;
+        }
+        .pricing-card h3 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">CloudSoft</a>
+        <nav>
+            <a href="#">Solutions</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="hero-text">
+            <h1>Empower Your Business with <span style="color: #007bff;">Cloud Solutions</span></h1>
+            <p>Unlock agility, scalability, and innovation with our cutting-edge cloud software. Designed for modern businesses to thrive in the digital era.</p>
+            <button class="btn-primary">Get Started</button>
+            <button class="btn-secondary">Learn More</button>
+        </div>
+        <img src="https://via.placeholder.com/500" alt="Cloud Solutions">
+    </div>
+    <div class="section">
+        <h2>Our Cloud Solutions</h2>
+        <div class="card"> 
+            <h3>Scalable Infrastructure</h3>
+            <p>Dynamically adjust resources to meet demand. Pay-as-you-go pricing for optimal cost efficiency.</p>
+        </div>
+        <div class="card">
+            <h3>Robust Security</h3>
+            <p>Enterprise-grade security features protect your data and ensure compliance.</p>
+        </div>
+        <div class="card">
+            <h3>Rapid Deployment</h3>
+            <p>Quickly deploy and manage applications with our intuitive cloud platform.</p>
+        </div>
+    </div>
+    <div class="section" style="background-color: #fff;">
+        <h2>Key Features</h2>
+        <div class="card"> 
+            <h3>Automated Backups</h3>
+            <p>Ensure your data is always safe with automatic and reliable backup solutions.</p>
+        </div>
+        <div class="card">
+            <h3>Easy Integration</h3>
+            <p>Seamlessly integrate with your existing systems and workflows.</p>
+        </div>
+        <div class="card">
+            <h3>Mobile Access</h3>
+            <p>Access your applications and data from anywhere, on any device.</p>
+        </div>
+        <div class="card">
+            <h3>Enhanced Privacy</h3>
+            <p>Control your data with advanced privacy settings and compliance certifications.</p>
+        </div>
+        <div class="card">
+            <h3>Real-time Analytics</h3>
+            <p>Gain insights with real-time dashboards and comprehensive analytics tools.</p>
+        </div>
+        <div class="card">
+            <h3>24/7 Support</h3>
+            <p>Reliable and responsive support team available around the clock.</p>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Flexible Pricing Plans</h2>
+        <div class="pricing-table">
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <p><strong>$19</strong> / month</p>
+                <ul>
+                    <li>100 GB Storage</li>
+                    <li>Basic Features</li>
+                    <li>Advanced Analytics</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <button class="btn-primary">Choose Plan</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Standard</h3>
+                <p><strong>$49</strong> / month</p>
+                <ul>
+                    <li>500 GB Storage</li>
+                    <li>All Basic Features</li>
+                    <li>Advanced Analytics</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <button class="btn-primary">Choose Plan</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Premium</h3>
+                <p><strong>$99</strong> / month</p>
+                <ul>
+                    <li>1 TB Storage</li>
+                    <li>All Standard Features</li>
+                    <li>Advanced Analytics</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <button class="btn-primary">Choose Plan</button>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <h2>Ready to Get Started?</h2>
+        <p>Contact us today to learn more about how CloudSoft can transform your business.</p>
+        <button class="btn-primary">Contact Us</button>
+    </div>
+    <footer>
+        <p>© 2024 CloudSoft. All rights reserved.</p>
+        <p><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a> • <a href="#" style="color: #fff; text-decoration: none;">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

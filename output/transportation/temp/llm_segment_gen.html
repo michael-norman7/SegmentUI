@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            background-color: #99cc33;
+            height: 100px;
+            position: relative;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-logo img {
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .navbar-logo span {
+            font-weight: bold;
+            font-size: 18px;
+            color: #0073e6;
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: black;
+            font-weight: normal;
+        }
+
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            margin-top: 120px;
+        }
+
+        .section {
+            width: calc(30% - 20px);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            margin: 10px;
+            padding: 15px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .section-header img {
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .section-header span {
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: #f5f7fa;
+            text-align: center;
+            padding: 10px 0;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="navbar-logo">
+                <img src="logo.png" alt="Logo">
+                <span>OptiRoute Dashboard</span>
+            </div>
+            <div class="navbar-menu">
+                <a href="#">Dashboard</a>
+                <a href="#">Routes</a>
+                <a href="#">Vehicles</a>
+                <a href="#">Reports</a>
+                <a href="#">Settings</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="section">
+            <div class="section-header">
+                <img src="icon1.png" alt="Icon">
+                <span>Section 1</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="icon2.png" alt="Icon">
+                <span>Section 2</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="icon3.png" alt="Icon">
+                <span>Section 3</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 OptiRoute. All rights reserved.
+    </div>
+</body>
+</html>

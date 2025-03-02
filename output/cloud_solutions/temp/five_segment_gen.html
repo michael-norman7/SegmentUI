@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
+            color: #333;
+        }
+        .block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2d4dd9;
+        }
+        .logo img {
+            height: 24px;
+            margin-right: 10px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+            font-size: 1em;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+        }
+        .section, .services-section, .features-section, .pricing-section, .contact-section {
+            padding: 60px;
+            width: 100%;
+            text-align: center;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .services, .features-grid, .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .service-card, .feature-card, .pricing-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .service-icon, .feature-icon {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #2d4dd9;
+        }
+        .price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2d4dd9;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .price span {
+            font-size: 0.6em;
+            color: #666;
+            font-weight: normal;
+        }
+        .feature-list, .pricing-card ul {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li, .pricing-card li {
+            margin: 10px 0;
+        }
+        .feature-list li:before, .pricing-card li:before {
+            content: '\2713';
+            color: #2d4dd9;
+            display: inline-block;
+            width: 20px;
+        }
+        .feature-list li.unavailable:before, .pricing-card li.unavailable:before {
+            content: '\2717';
+            color: #aaa;
+        }
+        .choose-plan {
+            background-color: #2d4dd9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            margin-top: 20px;
+        }
+        .contact-button {
+            background-color: #2d4dd9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .footer {
+            padding: 20px;
+            background-color: #f5f6fa;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #2d4dd9;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block header">
+        <div class="logo">
+            <img src="cloud-icon.png" alt="CloudSoft Logo">
+            CloudSoft
+        </div>
+        <nav class="nav">
+            <a href="#">Solutions</a>
+            <a href="#">Features</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div class="block section">
+        <h1>Empower Your Business<br>with <span style="color: #2d4dd9;">Cloud Solutions</span></h1>
+        <p>Unlock agility, scalability, and innovation with our cutting-edge cloud software. Designed for modern businesses to thrive in the digital era.</p>
+        <a href="#" class="contact-button">Get Started</a>
+    </div>
+    <div class="block services-section">
+        <h2>Our Cloud Solutions</h2>
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <div class="service-title">Scalable Infrastructure</div>
+                <div class="service-description">
+                    Dynamically adjust resources to meet demand. Pay-as-you-go pricing for optimal cost efficiency.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <div class="service-title">Robust Security</div>
+                <div class="service-description">
+                    Enterprise-grade security features protect your data and ensure compliance.
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚀</div>
+                <div class="service-title">Rapid Deployment</div>
+                <div class="service-description">
+                    Quickly deploy and manage applications with our intuitive cloud platform.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block features-section">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">☁️</div>
+                <div class="feature-title">Automated Backups</div>
+                <div class="feature-description">
+                    Ensure your data is always safe with automatic and reliable backup solutions.
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <div class="feature-title">Easy Integration</div>
+                <div class="feature-description">
+                    Seamlessly integrate with your existing systems and workflows.
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">Mobile Access</div>
+                <div class="feature-description">
+                    Access your applications and data from anywhere, on any device.
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Enhanced Privacy</div>
+                <div class="feature-description">
+                    Control your data with advanced privacy settings and compliance certifications.
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Real-time Analytics</div>
+                <div class="feature-description">
+                    Gain insights with real-time dashboards and comprehensive analytics tools.
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🕒</div>
+                <div class="feature-title">24/7 Support</div>
+                <div class="feature-description">
+                    Reliable and responsive support team available around the clock.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block pricing-section">
+        <h2>Flexible Pricing Plans</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Basic</h3>
+                <div class="price">$19<span> / month</span></div>
+                <ul>
+                    <li>100 GB Storage</li>
+                    <li>Basic Features</li>
+                    <li class="unavailable">Advanced Analytics</li>
+                    <li class="unavailable">24/7 Support</li>
+                </ul>
+                <a href="#" class="choose-plan">Choose Plan</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Standard</h3>
+                <div class="price">$49<span> / month</span></div>
+                <ul>
+                    <li>500 GB Storage</li>
+                    <li>All Basic Features</li>
+                    <li>Advanced Analytics</li>
+                    <li class="unavailable">24/7 Support</li>
+                </ul>
+                <a href="#" class="choose-plan">Choose Plan</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Premium</h3>
+                <div class="price">$99<span> / month</span></div>
+                <ul>
+                    <li>1 TB Storage</li>
+                    <li>All Standard Features</li>
+                    <li>Advanced Analytics</li>
+                    <li>24/7 Support</li>
+                </ul>
+                <a href="#" class="choose-plan">Choose Plan</a>
+            </div>
+        </div>
+    </div>
+    <div class="block contact-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Contact us today to learn more about how CloudSoft can transform your business.</p>
+        <a href="#" class="contact-button">Contact Us ✉️</a>
+    </div>
+    <div class="footer">
+        &copy; 2024 CloudSoft. All rights reserved.
+        <br>
+        <a href="#">Privacy Policy</a> &bull; <a href="#">Terms of Service</a>
+    </div>
+</body>
+</html>

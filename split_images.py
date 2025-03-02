@@ -494,6 +494,78 @@ def five_split_image(image_path):
     print("Components extracted and segmented image saved.")
 
 
+def overlap_split_image(image_path):
+    if not os.path.exists(image_path):
+        print(f"Image file '{image_path}' not found.")
+        return
+
+    base_name = os.path.splitext(os.path.basename(image_path))[0]
+
+    # Create the output directory named after the input file
+    output_dir = "img/" + base_name
+    overlap_segments_dir = os.path.join(output_dir, "overlap_segments")
+
+    bounding_boxes_image_path = os.path.join(
+        output_dir, base_name + "_overlap_bounding_boxes.png"
+    )
+    segmented_image_path = os.path.join(
+        output_dir, base_name + "_overlap_segments_overlay.png"
+    )
+
+    if os.path.exists(overlap_segments_dir):
+        shutil.rmtree(overlap_segments_dir)
+        print(f"Deleted existing directory: {overlap_segments_dir}")
+
+    if os.path.exists(bounding_boxes_image_path):
+        os.remove(bounding_boxes_image_path)
+        print(f"Deleted existing file: {bounding_boxes_image_path}")
+
+    if os.path.exists(segmented_image_path):
+        os.remove(segmented_image_path)
+        print(f"Deleted existing file: {segmented_image_path}")
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Move the input file into the output directory
+    new_image_path = os.path.join(output_dir, os.path.basename(image_path))
+    if not os.path.exists(new_image_path):
+        shutil.copy2(image_path, new_image_path)
+        print(f"Copied {image_path} to {new_image_path}")
+        image_path = new_image_path  # Update image_path to new location
+    else:
+        print(f"{new_image_path} already exists.")
+        image_path = new_image_path  # Ensure image_path is updated even if file exists
+
+    if not os.path.exists(overlap_segments_dir):
+        os.makedirs(overlap_segments_dir)
+
+    image = Image.open(image_path).convert("RGB")
+    width, height = image.size
+
+    components = []
+    curr_height = 0
+    increment = 1000
+    while curr_height < height:
+        comp_height = min(increment, height - curr_height)
+        components.append(
+            {
+                "component_name": "section",
+                "coordinates": [0, curr_height, width, comp_height],
+            }
+        )
+        curr_height += increment // 2
+
+    create_bounding_boxes_image(image_path, components, bounding_boxes_image_path)
+
+    crop_and_save_components(image_path, components, overlap_segments_dir)
+
+    # Create an image with solid boxes over segments
+    create_segmented_image(image_path, components, segmented_image_path)
+
+    print("Components extracted and segmented image saved.")
+
+
 # List image files in the current directory
 image_extensions = (".png", ".jpg", ".jpeg", ".bmp", ".gif")
 files_in_directory = os.listdir("./full_images")
@@ -509,6 +581,7 @@ if len(sys.argv) > 1 and sys.argv[1] + ".png" in image_files:
     split_image(image_path, critique=False)
     set_split_image(image_path)
     five_split_image(image_path)
+    overlap_split_image(image_path)
 else:
     print("Image files found:")
     for idx, filename in enumerate(image_files):
@@ -531,3 +604,4 @@ else:
     split_image(image_path, critique=False)
     set_split_image(image_path)
     five_split_image(image_path)
+    overlap_split_image(image_path)

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .menubar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .menu-logo {
+            display: flex;
+            align-items: center;
+        }
+        .menu-logo img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .menu-logo span {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4285F4;
+        }
+        .menu-items {
+            display: flex;
+            gap: 20px;
+        }
+        .menu-items a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+        }
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+        }
+        .hero-content {
+            max-width: 50%;
+        }
+        .hero-image {
+            max-width: 40%;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .hero-title {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .hero-description {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 16px;
+        }
+        .button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-primary {
+            background-color: #4285F4;
+            color: #fff;
+        }
+        .button-secondary {
+            background-color: #e0e0e0;
+            color: #000;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 40px 0 20px;
+            text-align: center;
+        }
+        .section-description {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+        .dashboard-item {
+            position: relative;
+            width: 30%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .dashboard-item img {
+            width: 100%;
+            height: auto;
+        }
+        .dashboard-item-text {
+            position: absolute;
+            bottom: 15px;
+            left: 10px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        .metrics-dashboard {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+        .metric-card {
+            width: 30%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .metric-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .metric-value {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .metric-target {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        .metric-bar {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background-color: #e0e0e0;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+        }
+        .bar-fill-yellow { width: 90%; background-color: #FFC107; }
+        .bar-fill-blue { width: 95%; background-color: #2196F3; }
+        .bar-fill-green { width: 70%; background-color: #4CAF50; }
+        .analysis-dashboard {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+        }
+        .analysis-image {
+            width: 48%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .analysis-image img {
+            width: 100%;
+            height: auto;
+        }
+        .breakdown-card {
+            width: 48%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .breakdown-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .breakdown-list {
+            list-style: none;
+            padding: 0;
+        }
+        .breakdown-list li {
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+        .breakdown-list li span {
+            font-weight: bold;
+        }
+        .residential { color: #4285F4; }
+        .commercial { color: #4CAF50; }
+        .industrial { color: #FF5722; }
+        .features-dashboard {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+        .feature-card {
+            width: 30%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #4285F4;
+        }
+        .feature-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .cta-section {
+            background-color: #1a73e8;
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .cta-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .cta-description {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+        .cta-button {
+            padding: 12px 30px;
+            background-color: #ffffff;
+            color: #1a73e8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .footer {
+            background-color: #20232a;
+            color: #cccccc;
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .footer a {
+            color: #cccccc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menubar">
+        <div class="menu-logo">
+            <img src="https://via.placeholder.com/24" alt="Logo">
+            <span>GridWise</span>
+        </div>
+        <div class="menu-items">
+            <a href="#">Production</a>
+            <a href="#">Stability</a>
+            <a href="#">Consumption</a>
+            <a href="#">Features</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Harnessing Renewable Energy for a Sustainable Future</h1>
+            <p class="hero-description">Optimize your renewable energy grid with real-time insights and intelligent management. Ensure stability, maximize production, and understand consumption patterns like never before.</p>
+            <div class="buttons">
+                <button class="button button-primary">Get Started →</button>
+                <button class="button button-secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/400x300" alt="Fireworks">
+        </div>
+    </div>
+    <h2 class="section-title">Energy Production Dashboard</h2>
+    <p class="section-description">Real-time monitoring of your renewable energy sources.</p>
+    <div class="dashboard">
+        <div class="dashboard-item">
+            <img src="https://via.placeholder.com/300" alt="Solar Production">
+            <div class="dashboard-item-text">
+                Solar Production<br>
+                75 MW
+            </div>
+        </div>
+        <div class="dashboard-item">
+            <img src="https://via.placeholder.com/300" alt="Wind Production">
+            <div class="dashboard-item-text">
+                Wind Production<br>
+                42 MW
+            </div>
+        </div>
+        <div class="dashboard-item">
+            <img src="https://via.placeholder.com/300" alt="Hydro Production">
+            <div class="dashboard-item-text">
+                Hydro Production<br>
+                30 MW
+            </div>
+        </div>
+    </div>
+    <h2 class="section-title">Grid Stability Metrics</h2>
+    <p class="section-description">Ensure a stable and reliable energy grid with advanced monitoring.</p>
+    <div class="metrics-dashboard">
+        <div class="metric-card">
+            <div class="metric-title">
+                <span>⚡ Frequency</span>
+            </div>
+            <div class="metric-value">59.98 Hz</div>
+            <div class="metric-target">Target: 60 Hz</div>
+            <div class="metric-bar">
+                <div class="bar-fill bar-fill-yellow"></div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-title">
+                <span>🔋 Voltage</span>
+            </div>
+            <div class="metric-value">235 kV</div>
+            <div class="metric-target">Target: 230 kV</div>
+            <div class="metric-bar">
+                <div class="bar-fill bar-fill-blue"></div>
+            </div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-title">
+                <span>🌡️ Temperature</span>
+            </div>
+            <div class="metric-value">28°C</div>
+            <div class="metric-target">Optimal Range: 10-40°C</div>
+            <div class="metric-bar">
+                <div class="bar-fill bar-fill-green"></div>
+            </div>
+        </div>
+    </div>
+    <h2 class="section-title">Consumption Patterns Analysis</h2>
+    <p class="section-description">Understand energy consumption trends and optimize distribution.</p>
+    <div class="analysis-dashboard">
+        <div class="analysis-image">
+            <img src="https://via.placeholder.com/400" alt="Consumption Image">
+        </div>
+        <div class="breakdown-card">
+            <div class="breakdown-title">Daily Consumption Breakdown</div>
+            <p>Analyze consumption by sector to identify areas for efficiency improvements.</p>
+            <ul class="breakdown-list">
+                <li>Residential <span class="residential">45%</span></li>
+                <li>Commercial <span class="commercial">35%</span></li>
+                <li>Industrial <span class="industrial">20%</span></li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="section-title">Key Features</h2>
+    <div class="features-dashboard">
+        <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <div class="feature-title">Real-time Monitoring</div>
+            <p>Instantaneous data visualization for production, stability, and consumption.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔗</div>
+            <div class="feature-title">Predictive Analytics</div>
+            <p>AI-powered forecasting to anticipate grid issues and optimize performance.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <div class="feature-title">Automated Controls</div>
+            <p>Intelligent system adjustments to maintain grid stability and efficiency.</p>
+        </div>
+    </div>
+    <div class="cta-section">
+        <h2 class="cta-title">Ready to Optimize Your Grid?</h2>
+        <p class="cta-description">Contact us today to learn more about GridWise and how we can help you achieve a sustainable energy future.</p>
+        <a href="#" class="cta-button">Contact Us ✉️</a>
+    </div>
+    <div class="footer">
+        <p>© 2024 GridWise. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>

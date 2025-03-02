@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .header {
+            background-color: #002db3;
+            height: 100px;
+        }
+        .nav {
+            background-color: #006666;
+            height: 100px;
+        }
+        .main-content {
+            background-color: #0000ff;
+            height: 200px;
+        }
+        .section-1 {
+            background-color: #99cc33;
+            height: 200px;
+        }
+        .section-2 {
+            background-color: #00ffff;
+            height: 200px;
+        }
+        .section-3 {
+            background-color: #ffff33;
+            height: 200px;
+        }
+        .footer {
+            background-color: #ff3399;
+            height: 200px;
+        }
+        .footer-secondary {
+            background-color: #ff99cc;
+            height: 100px;
+        }
+        .metrics-section, .analysis-section, .features-section, .cta-section {
+            padding: 40px 20px;
+            background-color: #f8fafc;
+            text-align: center;
+        }
+        .metrics-section h2, .analysis-section h2, .features-section h2, .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .metrics-section p, .analysis-section p, .features-section p, .cta-section p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .metrics-cards, .analysis-cards, .features-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .metric-card, .analysis-card, .feature-card {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .analysis-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .feature-card {
+            text-align: center;
+        }
+        .feature-icon, .cta-button {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .cta-section {
+            background-color: #3366cc;
+            padding: 60px 20px;
+            color: white;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #fff;
+            color: #3366cc;
+            border-radius: 5px;
+            padding: 15px 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .cta-button:hover {
+            background-color: #ddd;
+        }
+        .footer {
+            text-align: center;
+            color: #ccc;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="nav"></div>
+    <div class="main-content"></div>
+    <div class="metrics-section">
+        <h2>Grid Stability Metrics</h2>
+        <p>Ensure a stable and reliable energy grid with advanced monitoring.</p>
+        <div class="metrics-cards">
+            <div class="metric-card">
+                <h3>⚡ Frequency</h3>
+                <h4>59.98 Hz</h4>
+                <span>Target: 60 Hz</span>
+            </div>
+            <div class="metric-card">
+                <h3>🔌 Voltage</h3>
+                <h4>235 kV</h4>
+                <span>Target: 230 kV</span>
+            </div>
+            <div class="metric-card">
+                <h3>🌡️ Temperature</h3>
+                <h4>28°C</h4>
+                <span>Optimal Range: 10-40°C</span>
+            </div>
+        </div>
+    </div>
+    <div class="analysis-section">
+        <h2>Consumption Patterns Analysis</h2>
+        <div class="analysis-cards">
+            <div class="analysis-card">
+                <img src="plant.jpg" alt="Plant">
+                <ul>
+                    <li>Residential <span style="color: #3366cc;">45%</span></li>
+                    <li>Commercial <span style="color: #66cc66;">35%</span></li>
+                    <li>Industrial <span style="color: #21ba45;">20%</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="features-section">
+        <h2>Key Features</h2>
+        <div class="features-cards">
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Real-time Monitoring</h3>
+                <p>Instantaneous data visualization for actionable insights.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Predictive Analytics</h3>
+                <p>AI-powered forecasting to anticipate grid needs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Automated Controls</h3>
+                <p>Intelligent system adjustments to maintain efficiency.</p>
+            </div>
+        </div>
+    </div>
+    <div class="cta-section">
+        <h2>Ready to Optimize Your Grid?</h2>
+        <p>Contact us today to learn more about GridWise and how we can help you achieve a sustainable energy future.</p>
+        <a href="#" class="cta-button">
+            Contact Us 📧
+        </a>
+    </div>
+    <div class="footer">
+        <p>© 2024 GridWise. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>

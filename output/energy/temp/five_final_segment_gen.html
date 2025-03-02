@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .header {
+            background-color: #f8fafc;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+        }
+        .content {
+            max-width: 600px;
+        }
+        .content h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .button-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        .button-primary:hover {
+            background-color: #0056b3;
+        }
+        .button-secondary {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+        .button-secondary:hover {
+            background-color: #999;
+        }
+        .image-container {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .image-container img {
+            width: 500px;
+            height: auto;
+            display: block;
+        }
+        .dashboard-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .metrics-section, .analysis-section, .features-section, .cta-section {
+            padding: 40px 20px;
+            background-color: #f8fafc;
+            text-align: center;
+        }
+        .metrics-section h2, .analysis-section h2, .features-section h2, .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+        .metrics-section p, .analysis-section p, .features-section p, .cta-section p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .metrics-cards, .analysis-cards, .features-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .dashboard-cards .card, .metric-card, .analysis-card, .feature-card {
+            background-color: #fff;
+            border-radius: 10px;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .dashboard-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card-content, .feature-icon {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        .analysis-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .metric-card {
+            text-align: left;
+        }
+        .metric-card h3, .card-content h3 {
+            font-size: 1em;
+            margin: 0;
+            font-weight: bold;
+        }
+        .metric-card h4, .card-content h4 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .metric-card span, .card-content span {
+            font-size: 0.9em;
+            color: #999;
+        }
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            height: 8px;
+        }
+        .progress {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .progress-yellow { background-color: #fbbd08; width: 90%; }
+        .progress-blue { background-color: #2185d0; width: 100%; }
+        .progress-green { background-color: #21ba45; width: 50%; }
+        .cta-section {
+            background-color: #3366cc;
+            padding: 60px 20px;
+            color: white;
+        }
+        .cta-button {
+            background-color: #fff;
+            color: #3366cc;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: background-color 0.2s;
+        }
+        .cta-button:hover {
+            background-color: #ddd;
+        }
+        .footer {
+            background-color: #0a0e27;
+            padding: 20px;
+            text-align: center;
+            color: #ccc;
+            font-size: 0.8em;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">GridWise</div>
+        <div class="nav">
+            <a href="#">Production</a>
+            <a href="#">Stability</a>
+            <a href="#">Consumption</a>
+            <a href="#">Features</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="content">
+            <h1>Harnessing Renewable Energy for a Sustainable Future</h1>
+            <p>Optimize your renewable energy grid with real-time insights and intelligent management. Ensure stability, maximize production, and understand consumption patterns like never before.</p>
+            <div class="buttons">
+                <a href="#" class="button button-primary">Get Started</a>
+                <a href="#" class="button button-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="fireworks.jpg" alt="Fireworks">
+        </div>
+    </div>
+    <div class="dashboard-section">
+        <h2>Energy Production Dashboard</h2>
+        <p>Real-time monitoring of your renewable energy sources.</p>
+        <div class="dashboard-cards">
+            <div class="card" style="background-image: url('solar.jpg');">
+                <div class="card-content">
+                    <h3>Solar Production</h3>
+                    <h4 style="color: #3366cc;">75 MW</h4>
+                    <span>Current Output</span>
+                </div>
+            </div>
+            <div class="card" style="background-image: url('wind.jpg');">
+                <div class="card-content">
+                    <h3>Wind Production</h3>
+                    <h4 style="color: #66cc66;">42 MW</h4>
+                    <span>Current Output</span>
+                </div>
+            </div>
+            <div class="card" style="background-image: url('hydro.jpg');">
+                <div class="card-content">
+                    <h3>Hydro Production</h3>
+                    <h4 style="color: #33cccc;">28 MW</h4>
+                    <span>Current Output</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="metrics-section">
+        <h2>Grid Stability Metrics</h2>
+        <p>Ensure a stable and reliable energy grid with advanced monitoring.</p>
+        <div class="metrics-cards">
+            <div class="metric-card">
+                <h3>⚡ Frequency</h3>
+                <h4>59.98 Hz</h4>
+                <span>Target: 60 Hz</span>
+                <div class="progress-bar">
+                    <div class="progress progress-yellow"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <h3>🔌 Voltage</h3>
+                <h4>235 kV</h4>
+                <span>Target: 230 kV</span>
+                <div class="progress-bar">
+                    <div class="progress progress-blue"></div>
+                </div>
+            </div>
+            <div class="metric-card">
+                <h3>🌡️ Temperature</h3>
+                <h4>28°C</h4>
+                <span>Optimal Range: 10-40°C</span>
+                <div class="progress-bar">
+                    <div class="progress progress-green"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="analysis-section">
+        <h2>Consumption Patterns Analysis</h2>
+        <p>Understand energy consumption trends and optimize distribution.</p>
+        <div class="analysis-cards">
+            <div class="analysis-card">
+                <img src="plant.jpg" alt="Plant">
+                <ul>
+                    <li>Residential <span style="color: #3366cc;">45%</span></li>
+                    <li>Commercial <span style="color: #66cc66;">35%</span></li>
+                    <li>Industrial <span style="color: #21ba45;">20%</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="features-section">
+        <h2>Key Features</h2>
+        <div class="features-cards">
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Real-time Monitoring</h3>
+                <p>Instantaneous data visualization for production, stability, and consumption.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Predictive Analytics</h3>
+                <p>AI-powered forecasting to anticipate grid issues and optimize performance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚙️</div>
+                <h3>Automated Controls</h3>
+                <p>Intelligent system adjustments to maintain grid stability and efficiency.</p>
+            </div>
+        </div>
+    </div>
+    <div class="cta-section">
+        <h2>Ready to Optimize Your Grid?</h2>
+        <p>Contact us today to learn more about GridWise and how we can help you achieve a sustainable energy future.</p>
+        <a href="#" class="cta-button">
+            Contact Us 📧
+        </a>
+    </div>
+    <div class="footer">
+        <p>© 2024 GridWise. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+</body>
+</html>

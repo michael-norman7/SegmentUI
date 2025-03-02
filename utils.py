@@ -13,7 +13,7 @@ async def capture_screenshot(html_path, output_image_path):
     browser = await launch()
     page = await browser.newPage()
 
-    await page.setViewport({"width": 1280, "height": 1000})
+    await page.setViewport({"width": 1280, "height": 800})
 
     file_url = f"file:///{os.path.abspath(html_path)}"
     await page.goto(file_url, {"waitUntil": "networkidle0"})

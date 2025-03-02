@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            height: 50px;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #000;
+            margin-right: 20px;
+        }
+        .navbar a:first-child {
+            font-weight: bold;
+            color: #1e90ff;
+        }
+        .hero-section {
+            background-color: #f7f8fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        .hero-content {
+            max-width: 600px;
+            margin-right: 20px;
+        }
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .hero-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .hero-content .buttons a {
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #1e90ff;
+            color: #fff;
+        }
+        .btn-secondary {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        .hero-image {
+            max-width: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .features-section {
+            background-color: #f7f8fa;
+            padding: 40px 20px;
+            overflow-y: auto;
+            text-align: center;
+        }
+        .features-section h2 {
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .features-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .feature-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .feature-card p {
+            color: #555;
+        }
+        .experience-section {
+            background-color: #f7f8fa;
+            padding: 40px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .experience-content {
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .experience-image {
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 400px;
+            margin-right: 20px;
+        }
+        .experience-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .experience-details {
+            max-width: 500px;
+        }
+        .experience-details h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .experience-details p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .experience-details ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: disc;
+            color: #555;
+        }
+        .pricing-section {
+            background-color: #f7f8fa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .pricing-content {
+            max-width: 1000px;
+        }
+        .pricing-content h2 {
+            margin-bottom: 40px;
+            color: #333;
+        }
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .pricing-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+        }
+        .pricing-card h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .pricing-card p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .pricing-card .price {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #1e90ff;
+        }
+        .call-to-action-section {
+            background-color: #f7f8fa;
+            padding: 60px 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .call-to-action-content {
+            max-width: 800px;
+        }
+        .call-to-action-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .call-to-action-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #1e90ff;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #f7f8fa;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer-content {
+            margin-bottom: 20px;
+        }
+        .footer-content p {
+            color: #555;
+            margin: 5px 0;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #1e90ff;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .footer-bottom {
+            font-size: 0.9em;
+            color: #888;
+        }
+        .footer-bottom a {
+            text-decoration: none;
+            color: #888;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">AI ProdTools</a>
+        <div>
+            <a href="#">Features</a>
+            <a href="#">Productivity</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Unlock Peak Productivity with AI-Powered Tools</h1>
+            <p>Supercharge your workflow with intelligent AI tools designed for seamless integration and maximum efficiency. Experience the future of productivity, today.</p>
+            <div class="buttons">
+                <a href="#" class="btn-primary">Get Started Free</a>
+                <a href="#" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://via.placeholder.com/500" alt="Hero Image">
+        </div>
+    </div>
+    <div class="features-section">
+        <h2>Powerful Features Designed for You</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Smart Automation</h3>
+                <p>Automate repetitive tasks and focus on what truly matters. Our AI learns your workflow and optimizes accordingly.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Intelligent Insights</h3>
+                <p>Gain valuable insights from your data with AI-driven analytics. Make informed decisions and drive your projects forward.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Seamless Integration</h3>
+                <p>Integrate our AI tools seamlessly with your existing platforms and applications. No disruption, just pure productivity.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Enhanced Security</h3>
+                <p>Protect your data with industry-leading security measures. Trust our AI to keep your information safe and secure.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Collaborative AI</h3>
+                <p>Work alongside AI to boost your team’s productivity and innovation. Experience seamless collaboration like never before.</p>
+            </div>
+            <div class="feature-card">
+                <h3>User-Friendly Interface</h3>
+                <p>Enjoy a clean, intuitive interface that makes our AI tools easy to use and fit seamlessly into your workflow.</p>
+            </div>
+        </div>
+    </div>
+    <div class="experience-section">
+        <div class="experience-content">
+            <div class="experience-image">
+                <img src="https://via.placeholder.com/400" alt="Experience Image">
+            </div>
+            <div class="experience-details">
+                <h2>Experience a New Level of Productivity</h2>
+                <p>Our AI productivity tools are engineered to streamline your daily tasks, eliminate bottlenecks, and free up your time for strategic initiatives. Reclaim your workday and achieve more.</p>
+                <ul>
+                    <li>Automated Task Management</li>
+                    <li>Smart Scheduling and Reminders</li>
+                    <li>AI-Powered Content Creation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="pricing-section">
+        <div class="pricing-content">
+            <h2>Flexible Pricing Plans</h2>
+            <div class="pricing-plans">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <p>For individuals and small teams getting started.</p>
+                    <p class="price">$19/month</p>
+                    <p>Access to basic features</p>
+                </div>
+                <div class="pricing-card" style="background-color: #e6f0ff;">
+                    <h3>Pro</h3>
+                    <p>For growing businesses needing more power and features.</p>
+                    <p class="price">$49/month</p>
+                    <p>Access to advanced features</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p>Custom solutions for large organizations with specific needs.</p>
+                    <p class="price">Contact Us</p>
+                    <p>Customizable features</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="call-to-action-section">
+        <div class="call-to-action-content">
+            <h2>Ready to Transform Your Productivity?</h2>
+            <div class="call-to-action-button">
+                <a href="#">Get Started Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-content">
+            <p>Contact us today to learn more about how our AI productivity tools can revolutionize your workflow.</p>
+            <a href="#" class="contact-button">Contact Us Now</a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 AI ProdTools. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

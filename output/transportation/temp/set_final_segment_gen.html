@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Website Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #1a73e8;
+        }
+        .logo img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            min-height: 200px;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            font-weight: bold;
+            color: #1a73e8;
+        }
+        .card-header img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .card-description {
+            padding-top: 10px;
+            color: #666;
+        }
+        .vehicle-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .vehicle-table th, .vehicle-table td {
+            border-bottom: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .vehicle-table th {
+            background-color: #f8f8f8;
+        }
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            gap: 20px;
+            background-color: #f0f4f8;
+        }
+        .stats-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+        }
+        .stats-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .stats-card-header img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+        .stats-percentage {
+            font-size: 2em;
+            font-weight: bold;
+            color: #000;
+        }
+        .stats-description {
+            margin-top: 5px;
+            color: #666;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            color: #666;
+            background-color: #f0f4f8;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+            <span>OptiRoute Dashboard</span>
+        </div>
+        <nav class="menu">
+            <a href="#">Dashboard</a>
+            <a href="#">Routes</a>
+            <a href="#">Vehicles</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </nav>
+    </div>
+    <div class="section">
+        <div class="card">
+            <div class="card-header">
+                <img src="icon1.png" alt="Traffic Icon">
+                <span>Traffic Flow</span>
+            </div>
+            <div class="card-content">
+                <img src="traffic.jpg" alt="Traffic Flow">
+                <div class="card-description">
+                    Real-time traffic density across the network.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="icon2.png" alt="Route Icon">
+                <span>Route Efficiency</span>
+            </div>
+            <div class="card-content">
+                <img src="route.jpg" alt="Route Efficiency">
+                <div class="card-description">
+                    Performance metrics for optimal route suggestions.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="icon3.png" alt="Vehicle Icon">
+                <span>Vehicle Tracking</span>
+            </div>
+            <div class="card-content">
+                <table class="vehicle-table">
+                    <thead>
+                        <tr>
+                            <th>Vehicle ID</th>
+                            <th>Status</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VEH-123</td>
+                            <td>In Transit</td>
+                            <td>City Center</td>
+                        </tr>
+                        <tr>
+                            <td>VEH-456</td>
+                            <td>In Transit</td>
+                            <td>Suburb X</td>
+                        </tr>
+                        <tr>
+                            <td>VEH-789</td>
+                            <td>Idle</td>
+                            <td>Depot</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="card-description">
+                    Current status and location of vehicles in the fleet.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stats-section">
+        <div class="stats-card">
+            <div class="stats-card-header">
+                <img src="icon1.png" alt="Traffic Icon">
+                <span>Avg. Traffic Density</span>
+            </div>
+            <div class="stats-percentage">75%</div>
+            <div class="stats-description">
+                Compared to last week
+            </div>
+        </div>
+        <div class="stats-card">
+            <div class="stats-card-header">
+                <img src="icon2.png" alt="Routes Icon">
+                <span>Optimal Routes</span>
+            </div>
+            <div class="stats-percentage">92%</div>
+            <div class="stats-description">
+                Of suggested routes are optimal
+            </div>
+        </div>
+        <div class="stats-card">
+            <div class="stats-card-header">
+                <img src="icon3.png" alt="Arrival Icon">
+                <span>On-Time Arrival</span>
+            </div>
+            <div class="stats-percentage">98%</div>
+            <div class="stats-description">
+                Vehicles arriving on schedule
+            </div>
+        </div>
+        <div class="stats-card">
+            <div class="stats-card-header">
+                <img src="icon4.png" alt="System Icon">
+                <span>System Load</span>
+            </div>
+            <div class="stats-percentage">Low</div>
+            <div class="stats-description">
+                System performance is nominal
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 OptiRoute. All rights reserved.
+    </div>
+</body>
+</html>

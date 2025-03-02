@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiRoute Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f8;
+        }
+
+        .navbar {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            color: #357edd;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            padding: 0 10px;
+            color: #555;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .footer {
+            padding: 10px;
+            text-align: center;
+            background-color: #eaeef3;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo"><i class="fas fa-route"></i> OptiRoute Dashboard</div>
+    <ul>
+        <li>Dashboard</li>
+        <li>Routes</li>
+        <li>Vehicles</li>
+        <li>Reports</li>
+        <li>Settings</li>
+    </ul>
+</nav>
+
+<div class="content">
+    <div class="card">
+        <h3><i class="fas fa-traffic-light"></i> Traffic Flow</h3>
+        <img src="https://via.placeholder.com/300x150" alt="Traffic Flow">
+        <p>Real-time traffic density across the network.</p>
+    </div>
+    <div class="card">
+        <h3><i class="fas fa-route"></i> Route Efficiency</h3>
+        <img src="https://via.placeholder.com/300x150" alt="Route Efficiency">
+        <p>Performance metrics for optimal route suggestions.</p>
+    </div>
+    <div class="card">
+        <h3><i class="fas fa-truck"></i> Vehicle Tracking</h3>
+        <table style="width:100%; text-align:left; margin-top:10px;">
+            <tr>
+                <th>VEHICLE ID</th>
+                <th>STATUS</th>
+                <th>LOCATION</th>
+                <th>ROUTE</th>
+            </tr>
+            <tr>
+                <td>VEH-123</td>
+                <td><span style="color: green;">In Transit</span></td>
+                <td>City Center</td>
+                <td>Route A</td>
+            </tr>
+            <tr>
+                <td>VEH-456</td>
+                <td><span style="color: green;">In Transit</span></td>
+                <td>Suburb X</td>
+                <td>Route B</td>
+            </tr>
+            <tr>
+                <td>VEH-789</td>
+                <td><span style="color: gray;">Idle</span></td>
+                <td>Depot</td>
+                <td>-</td>
+            </tr>
+        </table>
+        <p>Current status and location of vehicles in the fleet.</p>
+    </div>
+    <div class="card">
+        <h3><i class="fas fa-chart-bar"></i> Avg. Traffic Density</h3>
+        <h2>75%</h2>
+        <p>Compared to last week</p>
+    </div>
+    <div class="card">
+        <h3><i class="fas fa-check-circle"></i> Optimal Routes</h3>
+        <h2>92%</h2>
+        <p>Of suggested routes are optimal</p>
+    </div>
+    <div class="card">
+        <h3><i class="fas fa-clock"></i> On-Time Arrival</h3>
+        <h2>98%</h2>
+        <p>Vehicles arriving on schedule</p>
+    </div>
+    <div class="card">
+        <h3><i class="fas fa-tachometer-alt"></i> System Load</h3>
+        <h2>Low</h2>
+        <p>System performance is nominal</p>
+    </div>
+</div>
+
+<footer class="footer">
+    © 2024 OptiRoute. All rights reserved.
+</footer>
+
+</body>
+</html>

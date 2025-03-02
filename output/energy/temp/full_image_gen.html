@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridWise</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        header { background-color: #f8f9fa; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        header a { text-decoration: none; color: black; margin-right: 20px; }
+        header a.logo { font-weight: bold; color: #4a90e2; display: flex; align-items: center; }
+        header a.logo i { margin-right: 10px; }
+        section { padding: 40px; }
+        .hero { display: flex; justify-content: space-between; align-items: center; }
+        .hero-text { max-width: 50%; }
+        .hero img { max-width: 40%; border-radius: 10px; }
+        .buttons { margin-top: 20px; }
+        .buttons a { margin-right: 10px; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
+        .primary { background-color: #4a90e2; color: white; }
+        .secondary { background-color: #e0e0e0; color: black; }
+        .dashboard, .metrics, .analysis, .features { margin-top: 60px; }
+        .cards { display: flex; justify-content: space-between; }
+        .card { background-color: #f1f1f1; padding: 20px; border-radius: 10px; width: 100%; margin-right: 20px; }
+        .card:last-child { margin-right: 0; }
+        .footer { background-color: #4a90e2; color: white; padding: 40px; text-align: center; }
+        .footer a { color: white; text-decoration: none; margin: 0 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><i class="fas fa-bolt"></i>GridWise</a>
+        <nav>
+            <a href="#">Production</a>
+            <a href="#">Stability</a>
+            <a href="#">Consumption</a>
+            <a href="#">Features</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Harnessing Renewable Energy for a Sustainable Future</h1>
+            <p>Optimize your renewable energy grid with real-time insights and intelligent management. Ensure stability, maximize production, and understand consumption patterns like never before.</p>
+            <div class="buttons">
+                <a href="#" class="primary">Get Started</a>
+                <a href="#" class="secondary">Learn More</a>
+            </div>
+        </div>
+        <img src="https://via.placeholder.com/350" alt="Renewable Energy">
+    </section>
+
+    <section class="dashboard">
+        <h2>Energy Production Dashboard</h2>
+        <p>Real-time monitoring of your renewable energy sources.</p>
+        <div class="cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/150" alt="Solar Production">
+                <h3>Solar Production</h3>
+                <p>75 MW</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/150" alt="Wind Production">
+                <h3>Wind Production</h3>
+                <p>42 MW</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/150" alt="Hydro Production">
+                <h3>Hydro Production</h3>
+                <p>28 MW</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="metrics">
+        <h2>Grid Stability Metrics</h2>
+        <p>Ensure a stable and reliable energy grid with advanced monitoring.</p>
+        <div class="cards">
+            <div class="card">
+                <h3><i class="fas fa-bolt"></i> Frequency</h3>
+                <p>59.98 Hz</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-bolt"></i> Voltage</h3>
+                <p>235 kV</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-thermometer-half"></i> Temperature</h3>
+                <p>28°C</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="analysis">
+        <h2>Consumption Patterns Analysis</h2>
+        <p>Understand energy consumption trends and optimize distribution.</p>
+        <div class="cards">
+            <img src="https://via.placeholder.com/200" alt="Energy Consumption">
+            <div class="card">
+                <h3>Daily Consumption Breakdown</h3>
+                <p>Analyze consumption by sector to identify areas for efficiency improvements.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>Key Features</h2>
+        <div class="cards">
+            <div class="card">
+                <h3><i class="fas fa-chart-line"></i> Real-time Monitoring</h3>
+                <p>Instantaneous data visualization for production, stability, and consumption.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-chart-pie"></i> Predictive Analytics</h3>
+                <p>AI-powered forecasting to anticipate grid issues and optimize performance.</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-cogs"></i> Automated Controls</h3>
+                <p>Intelligent system adjustments to maintain grid stability and efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h2>Ready to Optimize Your Grid?</h2>
+        <p>Contact us today to learn more about GridWise and how we can help you achieve a sustainable energy future.</p>
+        <a href="#">Contact Us</a>
+        <footer>
+            <p>© 2024 GridWise. All rights reserved.</p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </footer>
+    </section>
+</body>
+</html>

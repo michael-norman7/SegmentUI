@@ -13,6 +13,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
 def generate_full_image_code(original_image_path, output_dir):
+    temp_dir = os.path.join(output_dir, "temp")
     full_image = encode_image(original_image_path)
     prompt = [
         {
@@ -45,7 +46,7 @@ def generate_full_image_code(original_image_path, output_dir):
     if start_index != -1 and end_index != -1:
         full_image_code = full_image_code[start_index + 7 : end_index].strip()
 
-    full_image_code_path = os.path.join(output_dir, "full_image_gen.html")
+    full_image_code_path = os.path.join(temp_dir, "full_image_gen.html")
     with open(full_image_code_path, "w") as file:
         file.write(full_image_code)
     print(f"Full image code saved to {full_image_code_path}")
@@ -63,8 +64,9 @@ def generate_full_image_code(original_image_path, output_dir):
 
 
 def generate_segment_code(
-    masked_image_path, original_image_path, segments_dir, output_dir
+    masked_image_path, original_image_path, segments_dir, output_dir, test_prefix
 ):
+    temp_dir = os.path.join(output_dir, "temp")
     os.makedirs(output_dir, exist_ok=True)
 
     masked_image = encode_image(masked_image_path)
@@ -188,11 +190,11 @@ def generate_segment_code(
         }
     )
 
-    full_code_path = os.path.join(output_dir, "segment_gen.html")
+    full_code_path = os.path.join(temp_dir, test_prefix + "_segment_gen.html")
     with open(full_code_path, "w") as file:
         file.write(full_code)
 
-    segment_gen_image_path = os.path.join(output_dir, "segment_gen.png")
+    segment_gen_image_path = os.path.join(temp_dir, test_prefix + "_segment_gen.png")
     try:
         asyncio.run(capture_screenshot(full_code_path, segment_gen_image_path))
         print(f"Screenshot of the segment gen code saved to {segment_gen_image_path}")
@@ -242,11 +244,15 @@ def generate_segment_code(
     ):
         final_segment_gen_code = final_segment_gen_code[7:-3].strip()
 
-    final_segment_gen_code_path = os.path.join(output_dir, "final_segment_gen.html")
+    final_segment_gen_code_path = os.path.join(
+        temp_dir, test_prefix + "_final_segment_gen.html"
+    )
     with open(final_segment_gen_code_path, "w") as file:
         file.write(final_segment_gen_code)
 
-    final_segment_gen_image_path = os.path.join(output_dir, "final_segment_gen.png")
+    final_segment_gen_image_path = os.path.join(
+        output_dir, test_prefix + "_final_segment_gen.png"
+    )
     try:
         asyncio.run(
             capture_screenshot(
@@ -267,72 +273,93 @@ def process_project(project_name, tests):
     base_dir = os.path.join(img_dir, project_name)
     original_image_path = os.path.join(base_dir, f"{project_name}.png")
     masked_image_path = os.path.join(base_dir, f"{project_name}_segments_overlay.png")
-    segments_dir = os.path.join(base_dir, "segments")
     output_dir = os.path.join("output", project_name)
 
+    llm_segments_dir = os.path.join(base_dir, "segments")
     set_segments_dir = os.path.join(base_dir, "set_segments")
-    set_output_dir = os.path.join("output", project_name + "_set")
-
     five_segments_dir = os.path.join(base_dir, "five_segments")
-    five_output_dir = os.path.join("output", project_name + "_five")
+    overlap_segments_dir = os.path.join(base_dir, "overlap_segments")
+
+    temp_dir = os.path.join(output_dir, "temp")
 
     os.makedirs(output_dir, exist_ok=True)
+    os.makedirs(temp_dir, exist_ok=True)
     shutil.copy(original_image_path, output_dir)
-
-    if "set_segment_gen" in tests:
-        os.makedirs(set_output_dir, exist_ok=True)
-        shutil.copy(original_image_path, set_output_dir)
 
     # Test Full Image Gen
     if "full_image" in tests:
-        test = "full_image"
+        test_prefix = "full_image"
         print("Generating code from full image...")
 
         generate_full_image_code(original_image_path, output_dir)
 
     # Test Segment Gen
-    if "segment_gen" in tests:
-        test = "segment_gen"
+    if "llm_segment_gen" in tests:
+        test_prefix = "llm"
         print("Generating code from image segments...")
 
         generate_segment_code(
-            masked_image_path, original_image_path, segments_dir, output_dir, test
+            masked_image_path,
+            original_image_path,
+            llm_segments_dir,
+            output_dir,
+            test_prefix,
         )
 
     # Test Set Segments Gen
     if "set_segment_gen" in tests:
-        test = "set_segment_gen"
+        test_prefix = "set"
         print("Generating code from image set segments...")
 
         generate_segment_code(
             masked_image_path,
             original_image_path,
             set_segments_dir,
-            set_output_dir,
-            test,
+            output_dir,
+            test_prefix,
         )
 
     # Test five Segments Gen
     if "five_segment_gen" in tests:
-        test = "five_segment_gen"
+        test_prefix = "five"
         print("Generating code from five image segments...")
 
         generate_segment_code(
             masked_image_path,
             original_image_path,
             five_segments_dir,
-            five_output_dir,
-            test,
+            output_dir,
+            test_prefix,
+        )
+
+    # Test overlap Segments Gen
+    if "overlap_segment_gen" in tests:
+        test_prefix = "overlap"
+        print("Generating code from overlaping image segments...")
+
+        generate_segment_code(
+            masked_image_path,
+            original_image_path,
+            overlap_segments_dir,
+            output_dir,
+            test_prefix,
         )
 
 
 # Main function to run the code generation
 def main():
-    tests = ["full_image", "segment_gen", "set_segment_gen", "five_segment_gen"]
+    # tests = [
+    #     "full_image",
+    #     "llm_segment_gen",
+    #     "set_segment_gen",
+    #     "five_segment_gen",
+    #     "overlap_segment_gen",
+    # ]
     # tests = ["full_image"]
-    # tests = ["segment_gen"]
-    # tests = ["set_segment_gen"]
+    # tests = ["llm_segment_gen"]
+    tests = ["set_segment_gen"]
     # tests = ["five_segment_gen"]
+    # tests = ["overlap_segment_gen"]
 
     # List image project directories in the "img" folder
     img_dir = "img"
