@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptiRoute Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #F6F8FB;
+        }
+        .header {
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+        .header .title {
+            font-size: 18px;
+            color: #1565C0;
+            font-weight: bold;
+        }
+        .header nav a {
+            margin: 0 10px;
+            color: #333333;
+            text-decoration: none;
+        }
+        .main {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            padding: 15px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .card-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .card-title img {
+            margin-right: 10px;
+        }
+        .card-footer {
+            font-size: 14px;
+            color: #666;
+        }
+        .stats-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            width: 180px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stats-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .stats-title img {
+            margin-right: 5px;
+        }
+        .stats-value {
+            font-size: 32px;
+            color: #1E88E5;
+        }
+        .stats-desc {
+            color: #666;
+            font-size: 14px;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ECEFF1;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="title">OptiRoute Dashboard</div>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Routes</a>
+            <a href="#">Vehicles</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </nav>
+    </div>
+
+    <div class="main">
+        <div class="card">
+            <div class="card-title">
+                <img src="icon.png" alt="Traffic Flow">
+                Traffic Flow
+            </div>
+            <img src="traffic-flow.jpg" alt="Traffic Flow Image">
+            <div class="card-footer">Real-time traffic density across the network.</div>
+        </div>
+        <div class="card">
+            <div class="card-title">
+                <img src="icon.png" alt="Route Efficiency">
+                Route Efficiency
+            </div>
+            <img src="route-efficiency.jpg" alt="Route Efficiency Image">
+            <div class="card-footer">Performance metrics for optimal route suggestions.</div>
+        </div>
+        <div class="card">
+            <div class="card-title">
+                <img src="icon.png" alt="Vehicle Tracking">
+                Vehicle Tracking
+            </div>
+            <img src="vehicle-tracking.jpg" alt="Vehicle Tracking Image">
+            <div class="card-footer">Current status and location of vehicles in the fleet.</div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="stats-card">
+            <div class="stats-title">
+                <img src="icon.png" alt="Avg. Traffic Density">
+                Avg. Traffic Density
+            </div>
+            <div class="stats-value">75%</div>
+            <div class="stats-desc">Compared to last week</div>
+        </div>
+        <div class="stats-card">
+            <div class="stats-title">
+                <img src="icon.png" alt="Optimal Routes">
+                Optimal Routes
+            </div>
+            <div class="stats-value">92%</div>
+            <div class="stats-desc">Of suggested routes are optimal</div>
+        </div>
+        <div class="stats-card">
+            <div class="stats-title">
+                <img src="icon.png" alt="On-Time Arrival">
+                On-Time Arrival
+            </div>
+            <div class="stats-value">98%</div>
+            <div class="stats-desc">Vehicles arriving on schedule</div>
+        </div>
+        <div class="stats-card">
+            <div class="stats-title">
+                <img src="icon.png" alt="System Load">
+                System Load
+            </div>
+            <div class="stats-value">Low</div>
+            <div class="stats-desc">System performance is nominal</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2024 OptiRoute. All rights reserved.
+    </div>
+
+</body>
+</html>

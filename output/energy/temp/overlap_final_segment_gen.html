@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridWise Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9fafb;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1F2937;
+            display: flex;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: #1F2937;
+            text-decoration: none;
+        }
+
+        .hero-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px;
+            background-color: #f9fafb;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            color: #1F2937;
+            margin: 0 0 20px 0;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            color: #4B5563;
+            margin: 0 0 20px 0;
+        }
+
+        .hero-content .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-primary, .button-secondary {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .button-primary {
+            background-color: #3B82F6;
+            color: white;
+        }
+
+        .button-secondary {
+            background-color: #E5E7EB;
+            color: #1F2937;
+        }
+
+        .hero-image {
+            max-width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-section {
+            padding: 50px;
+        }
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .dashboard-header h2 {
+            font-size: 28px;
+            color: #1F2937;
+        }
+        .dashboard-header p {
+            font-size: 16px;
+            color: #4B5563;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 260px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 10px;
+        }
+        .card-content h3 {
+            font-size: 18px;
+            color: #1F2937;
+        }
+        .card-content p {
+            font-size: 24px;
+            color: #3B82F6;
+        }
+        .card-content span {
+            font-size: 14px;
+            color: #4B5563;
+        }
+
+        .metrics-header {
+            text-align: center;
+            margin: 50px 0 30px 0;
+        }
+        .metrics-header h2 {
+            font-size: 28px;
+            color: #1F2937;
+        }
+        .metrics-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .metric-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+        }
+        .metric-card h3 {
+            font-size: 16px;
+            color: #1F2937;
+        }
+        .metric-card p {
+            font-size: 24px;
+            color: #1F2937;
+        }
+
+        .progress-bar {
+            margin-top: 10px;
+            height: 5px;
+            border-radius: 3px;
+            background-color: #e5e7eb;
+            position: relative;
+        }
+
+        .progress {
+            height: 100%;
+            border-radius: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .frequency .progress { width: 90%; background-color: #fbbf24; }
+        .voltage .progress { width: 80%; background-color: #3b82f6; }
+        .temperature .progress { width: 70%; background-color: #10b981; }
+
+        .consumption-section {
+            padding: 50px;
+        }
+        .consumption-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .consumption-header h2 {
+            font-size: 28px;
+            color: #1F2937;
+        }
+        .analysis-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .image-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .image-card img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .breakdown-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+        .breakdown-card h3 {
+            font-size: 18px;
+            color: #1F2937;
+            margin: 0 0 10px 0;
+        }
+
+        .breakdown-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .breakdown-card li {
+            font-size: 16px;
+            color: #4B5563;
+            margin: 5px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .breakdown-card li span {
+            font-weight: bold;
+            color: #3B82F6;
+        }
+
+        .features-section {
+            padding: 50px;
+            text-align: center;
+        }
+        .features-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .features-header h2 {
+            font-size: 28px;
+            color: #1F2937;
+        }
+        .features-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 240px;
+            text-align: center;
+        }
+        .feature-card h3 {
+            font-size: 18px;
+            color: #1F2937;
+            margin: 10px 0;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #4B5563;
+            margin: 0;
+        }
+
+        .contact-section {
+            background-color: #1E40AF;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .contact-section h3 {
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+        .contact-section p {
+            font-size: 16px;
+            margin: 10px 0 20px;
+        }
+        .contact-button {
+            background-color: #3B82F6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+            font-size: 12px;
+        }
+        .footer a {
+            color: #3B82F6;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            ✨ GridWise
+        </div>
+        <div class="nav-links">
+            <a href="#">Production</a>
+            <a href="#">Stability</a>
+            <a href="#">Consumption</a>
+            <a href="#">Features</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Harnessing Renewable Energy for a Sustainable Future</h1>
+            <p>Optimize your renewable energy grid with real-time insights and intelligent management. Ensure stability, maximize production, and understand consumption patterns like never before.</p>
+            <div class="buttons">
+                <a href="#" class="button-primary">Get Started</a>
+                <a href="#" class="button-secondary">Learn More</a>
+            </div>
+        </div>
+        <img src="fireworks.jpg" alt="Fireworks over a city" class="hero-image">
+    </div>
+
+    <section class="dashboard-section">
+        <div class="dashboard-header">
+            <h2>Energy Production Dashboard</h2>
+            <p>Real-time monitoring of your renewable energy sources.</p>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <img src="solar.jpg" alt="Solar Production">
+                <div class="card-content">
+                    <h3>Solar Production</h3>
+                    <p>75 MW</p>
+                    <span>Current Output</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="wind.jpg" alt="Wind Production">
+                <div class="card-content">
+                    <h3>Wind Production</h3>
+                    <p>42 MW</p>
+                    <span>Current Output</span>
+                </div>
+            </div>
+            <div class="card">
+                <img src="hydro.jpg" alt="Hydro Production">
+                <div class="card-content">
+                    <h3>Hydro Production</h3>
+                    <p>28 MW</p>
+                    <span>Current Output</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="metrics-header">
+            <h2>Grid Stability Metrics</h2>
+            <p>Ensure a stable and reliable energy grid with advanced monitoring.</p>
+        </div>
+        <div class="metrics-container">
+            <div class="metric-card frequency">
+                <h3>⚡ Frequency</h3>
+                <p>59.98 Hz</p>
+                <span>Target: 60 Hz</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <div class="metric-card voltage">
+                <h3>🔌 Voltage</h3>
+                <p>235 kV</p>
+                <span>Target: 230 kV</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <div class="metric-card temperature">
+                <h3>🌡️ Temperature</h3>
+                <p>28°C</p>
+                <span>Optimal Range: 10-40°C</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="consumption-section">
+        <div class="consumption-header">
+            <h2>Consumption Patterns Analysis</h2>
+            <p>Understand energy consumption trends and optimize distribution.</p>
+        </div>
+        <div class="analysis-container">
+            <div class="image-card">
+                <img src="cactus.jpg" alt="Consumption Pattern Image">
+            </div>
+            <div class="breakdown-card">
+                <h3>Daily Consumption Breakdown</h3>
+                <ul>
+                    <li>Residential <span>45%</span></li>
+                    <li>Commercial <span>35%</span></li>
+                    <li>Industrial <span>20%</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-header">
+            <h2>Key Features</h2>
+        </div>
+        <div class="features-container">
+            <div class="feature-card">
+                <h3>📈 Real-time Monitoring</h3>
+                <p>Instantaneous data visualization for production, stability, and consumption.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔍 Predictive Analytics</h3>
+                <p>AI-powered forecasting to anticipate grid issues and optimize performance.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚙️ Automated Controls</h3>
+                <p>Intelligent system adjustments to maintain grid stability and efficiency.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h3>Ready to Optimize Your Grid?</h3>
+        <p>Contact us today to learn more about GridWise and how we can help you achieve a sustainable energy future.</p>
+        <a href="#" class="contact-button">Contact Us ✉️</a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 GridWise. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

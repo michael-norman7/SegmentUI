@@ -357,9 +357,9 @@ def main():
     # ]
     # tests = ["full_image"]
     # tests = ["llm_segment_gen"]
-    tests = ["set_segment_gen"]
+    # tests = ["set_segment_gen"]
     # tests = ["five_segment_gen"]
-    # tests = ["overlap_segment_gen"]
+    tests = ["overlap_segment_gen"]
 
     # List image project directories in the "img" folder
     img_dir = "img"
