@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary Tracker Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumo-100': '#F0F2F5',
+                        'neumo-200': '#E3E7EC',
+                        'neumo-300': '#D6DDE4',
+                        'neumo-400': '#CAC3CD',
+                        'neumo-500': '#BAB2BC',
+                        'brand-blue': '#3b82f6',
+                    },
+                    boxShadow: {
+                        'neumo': '6px 6px 12px #CBCECE, -6px -6px 12px #FFFFFF',
+                        'neumo-inset': 'inset 6px 6px 12px #CBCECE, inset -6px -6px 12px #FFFFFF',
+                        'neumo-sm': '3px 3px 6px #CBCECE, -3px -3px 6px #FFFFFF',
+                        'neumo-sm-inset': 'inset 3px 3px 6px #CBCECE, inset -3px -3px 6px #FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Nunito Sans', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-neumo-100 font-sans antialiased;
+            }
+        }
+        @layer components {
+            .neumorphic-card {
+                @apply bg-neumo-100 rounded-2xl p-6 shadow-neumo;
+            }
+            .neumorphic-input {
+                @apply bg-neumo-100 rounded-lg p-2 shadow-neumo-inset focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-50;
+            }
+            .neumorphic-btn {
+                @apply bg-neumo-100 rounded-lg py-2 px-4 shadow-neumo hover:shadow-neumo-inset focus:outline-none focus:ring-2 focus:ring-brand-blue focus:ring-opacity-50 transition-shadow duration-200;
+            }
+        }
+        @layer utilities {
+            .neumorphic-progress::-webkit-progress-bar {
+                @apply bg-neumo-100 shadow-neumo-inset rounded-full;
+            }
+
+            .neumorphic-progress::-webkit-progress-value {
+                @apply bg-brand-blue rounded-full shadow-neumo-sm;
+            }
+
+            .neumorphic-progress::-moz-progress-bar {
+                @apply bg-neumo-100 shadow-neumo-inset rounded-full;
+            }
+
+            .neumorphic-progress::-moz-progress-value {
+                @apply bg-brand-blue rounded-full shadow-neumo-sm;
+            }
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800">Vocabulary Dashboard</h1>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <section class="neumorphic-card">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-book-open text-xl mr-2 text-brand-blue"></i>
+                    <h2 class="text-xl font-semibold text-gray-700">Words Learned</h2>
+                </div>
+                <div class="text-4xl font-bold text-gray-800">547</div>
+                <p class="text-sm text-gray-500 mt-1">Total words in your vocabulary list.</p>
+                <div class="mt-4">
+                    <img src="https://picsum.photos/200/100?random=1" alt="Words Learned Chart" class="rounded-lg shadow-neumo-sm">
+                </div>
+            </section>
+
+            <section class="neumorphic-card">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-chart-line text-xl mr-2 text-brand-blue"></i>
+                    <h2 class="text-xl font-semibold text-gray-700">Vocabulary Progress</h2>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-2xl font-bold text-gray-800">78%</span>
+                    <span class="text-sm text-gray-500">Target: 100%</span>
+                </div>
+                <progress class="neumorphic-progress w-full h-4 rounded-full mt-2" value="78" max="100"></progress>
+                <div class="mt-4">
+                    <img src="https://picsum.photos/200/100?random=2" alt="Vocabulary Progress Chart" class="rounded-lg shadow-neumo-sm">
+                </div>
+            </section>
+
+            <section class="neumorphic-card">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-fire-flame-curved text-xl mr-2 text-brand-blue"></i>
+                    <h2 class="text-xl font-semibold text-gray-700">Learning Streaks</h2>
+                </div>
+                <div class="text-4xl font-bold text-gray-800">23 Days</div>
+                <p class="text-sm text-gray-500 mt-1">Keep going! You're on a roll.</p>
+                <div class="mt-4 grid grid-cols-7 gap-1">
+                    <div class="neumorphic-btn text-xs text-gray-600">M</div>
+                    <div class="neumorphic-btn text-xs text-gray-600">T</div>
+                    <div class="neumorphic-btn text-xs text-gray-600">W</div>
+                    <div class="neumorphic-btn text-xs text-gray-600">T</div>
+                    <div class="neumorphic-btn text-xs text-gray-600">F</div>
+                    <div class="neumorphic-btn text-xs text-gray-600">S</div>
+                    <div class="neumorphic-btn text-xs text-gray-600">S</div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn neumorphic-btn-active text-xs text-gray-800 font-semibold"></div>
+                    <div class="neumorphic-btn text-xs text-gray-600"></div>
+                    <div class="neumorphic-btn text-xs text-gray-600"></div>
+                    <div class="neumorphic-btn text-xs text-gray-600"></div>
+                    <div class="neumorphic-btn text-xs text-gray-600"></div>
+                    <div class="neumorphic-btn text-xs text-gray-600"></div>
+                    <div class="neumorphic-btn text-xs text-gray-600"></div>
+                    <div class="neumorphic-btn text-xs text-gray-600"></div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

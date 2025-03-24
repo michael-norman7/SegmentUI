@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#E0E7FF',
+                        secondary: '#C7D2FE',
+                        accent: '#93C5FD',
+                        softWhite: '#F9FAFB',
+                        darkText: '#1F2937',
+                        lightText: '#6B7280',
+                    },
+                    boxShadow: {
+                        soft: '6px 6px 12px #C5C5C5, -6px -6px 12px #FFFFFF',
+                        softInset: 'inset 6px 6px 12px #C5C5C5, inset -6px -6px 12px #FFFFFF',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F9FAFB;
+            color: #1F2937;
+        }
+        .calendar-day:hover {
+            background-color: rgba(147, 197, 253, 0.3);
+        }
+        .calendar-day.active {
+            background-color: #93C5FD;
+            color: white;
+        }
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-softWhite font-poppins">
+    <div class="container mx-auto p-6 md:p-8 lg:p-10 animate-fade-in">
+        <header class="mb-8">
+            <h1 class="text-3xl font-semibold text-darkText">My Recipe Dashboard</h1>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <section class="lg:col-span-2 bg-softWhite p-6 rounded-xl shadow-soft">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-darkText"><i class="fa-solid fa-chart-line mr-2 text-accent"></i> Recipes Cooked</h2>
+                    <button class="text-accent hover:text-primary focus:outline-none"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+                <div class="relative h-72">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fa-solid fa-utensils text-6xl text-secondary mb-4"></i>
+                            <p class="text-4xl font-bold text-darkText">37</p>
+                            <p class="text-lightText">Recipes Cooked This Month</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-softWhite p-6 rounded-xl shadow-soft">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-darkText"><i class="fa-solid fa-calendar-days mr-2 text-accent"></i> Meal Plan</h2>
+                    <button class="text-accent hover:text-primary focus:outline-none"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+                <div class="calendar">
+                    <div class="grid grid-cols-7 gap-2 text-center">
+                        <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2 text-center mt-2">
+                        <div></div><div></div><div></div><div></div><div>1</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">2</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">3</div>
+                        <div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">4</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">5</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">6</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">7</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">8</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">9</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">10</div>
+                        <div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">11</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">12</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">13</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20 active">14</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">15</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">16</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">17</div>
+                        <div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">18</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">19</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">20</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">21</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">22</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">23</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">24</div>
+                        <div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">25</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">26</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">27</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">28</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">29</div><div class="calendar-day p-2 rounded-md cursor-pointer hover:bg-accent/20">30</div><div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-softWhite p-6 rounded-xl shadow-soft">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-darkText"><i class="fa-solid fa-heart mr-2 text-accent"></i> Dietary Preferences</h2>
+                    <button class="text-accent hover:text-primary focus:outline-none"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+                <div>
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 rounded-full overflow-hidden shadow-inner shadow-secondary mr-4">
+                            <img src="https://picsum.photos/200/300?random=1" alt="Vegan" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-darkText">Vegan</h3>
+                            <p class="text-sm text-lightText">70% of recipes</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center mb-3">
+                        <div class="w-12 h-12 rounded-full overflow-hidden shadow-inner shadow-secondary mr-4">
+                            <img src="https://picsum.photos/200/300?random=2" alt="Gluten-Free" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-darkText">Gluten-Free</h3>
+                            <p class="text-sm text-lightText">45% of recipes</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden shadow-inner shadow-secondary mr-4">
+                            <img src="https://picsum.photos/200/300?random=3" alt="Dairy-Free" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-darkText">Dairy-Free</h3>
+                            <p class="text-sm text-lightText">60% of recipes</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-softWhite p-6 rounded-xl shadow-soft lg:col-span-3">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-darkText"><i class="fa-solid fa-list-check mr-2 text-accent"></i> Recent Cooking Log</h2>
+                    <button class="text-accent hover:text-primary focus:outline-none"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-secondary/10">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-lightText font-semibold">Recipe</th>
+                                <th class="px-4 py-2 text-left text-lightText font-semibold">Date Cooked</th>
+                                <th class="px-4 py-2 text-left text-lightText font-semibold">Dietary Info</th>
+                                <th class="px-4 py-2"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-md overflow-hidden mr-2">
+                                            <img src="https://picsum.photos/200/300?random=4" alt="Recipe" class="w-full h-full object-cover">
+                                        </div>
+                                        <span class="font-medium text-darkText">Spaghetti Aglio e Olio</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-lightText">2024-03-13</td>
+                                <td class="px-4 py-3 text-lightText"><span class="inline-block bg-accent/20 text-accent px-2 py-1 rounded-full text-xs">Vegan</span></td>
+                                <td class="px-4 py-3 text-right">
+                                    <button class="text-accent hover:text-primary focus:outline-none"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr class="bg-softWhite">
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-md overflow-hidden mr-2">
+                                            <img src="https://picsum.photos/200/300?random=5" alt="Recipe" class="w-full h-full object-cover">
+                                        </div>
+                                        <span class="font-medium text-darkText">Chicken Stir-Fry</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-lightText">2024-03-12</td>
+                                <td class="px-4 py-3 text-lightText"></td>
+                                <td class="px-4 py-3 text-right">
+                                    <button class="text-accent hover:text-primary focus:outline-none"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3">
+                                    <div class="flex items-center">
+                                        <div class="w-8 h-8 rounded-md overflow-hidden mr-2">
+                                            <img src="https://picsum.photos/200/300?random=6" alt="Recipe" class="w-full h-full object-cover">
+                                        </div>
+                                        <span class="font-medium text-darkText">Lentil Soup</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 text-lightText">2024-03-11</td>
+                                <td class="px-4 py-3 text-lightText"><span class="inline-block bg-accent/20 text-accent px-2 py-1 rounded-full text-xs">Vegan</span> <span class="inline-block bg-accent/20 text-accent px-2 py-1 rounded-full text-xs">Gluten-Free</span></td>
+                                <td class="px-4 py-3 text-right">
+                                    <button class="text-accent hover:text-primary focus:outline-none"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const calendarDays = document.querySelectorAll('.calendar-day');
+            calendarDays.forEach(day => {
+                day.addEventListener('click', () => {
+                    calendarDays.forEach(d => d.classList.remove('active'));
+                    day.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

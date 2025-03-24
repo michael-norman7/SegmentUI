@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Marketing Automation Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        satoshi: ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4F46E5',
+                        'secondary': '#6B7280',
+                        'accent': '#38BDF8',
+                        'neutral': '#F3F4F6',
+                        'dark': '#1F2937',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-fast': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                        'slide-in-left': 'slide-in-left 0.7s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'pulse-fast': 'pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-satoshi bg-neutral text-dark antialiased;
+            }
+        }
+        @layer components {
+            .container {
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+            }
+            .btn-primary {
+                @apply bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors duration-300;
+            }
+            .btn-secondary {
+                @apply bg-secondary text-white font-bold py-3 px-6 rounded-lg hover:bg-secondary/90 transition-colors duration-300;
+            }
+            .section-title {
+                @apply text-3xl font-bold text-center mb-8;
+            }
+            .feature-card {
+                @apply p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300;
+            }
+            .feature-icon {
+                @apply text-primary text-4xl mb-4;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container flex items-center justify-between py-4">
+        <div class="text-xl font-bold text-primary">AI Marketing Platform</div>
+        <ul class="hidden md:flex space-x-8">
+            <li><a href="#features" class="hover:text-primary transition-colors duration-200">Features</a></li>
+            <li><a href="#benefits" class="hover:text-primary transition-colors duration-200">Benefits</a></li>
+            <li><a href="#pricing" class="hover:text-primary transition-colors duration-200">Pricing</a></li>
+            <li><a href="#contact" class="hover:text-primary transition-colors duration-200">Contact</a></li>
+        </ul>
+        <button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Open menu">
+            <i class="fa fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<section class="hero relative overflow-hidden pt-20 pb-32">
+    <div class="container grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="hero-text lg:animate-slide-in-left">
+            <h1 class="text-5xl font-bold mb-6 leading-tight">Unlock Marketing Superpowers with AI</h1>
+            <p class="text-xl text-secondary mb-8">Effortlessly automate your marketing, personalize customer journeys, and drive unprecedented growth with our AI-driven platform.</p>
+            <div class="flex space-x-4">
+                <button class="btn-primary">Get Started Free</button>
+                <button class="btn-secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-image lg:animate-slide-in-right relative">
+            <img src="https://picsum.photos/600/400" alt="AI Marketing Platform Interface" class="rounded-2xl shadow-xl relative z-10">
+            <div class="absolute -top-10 -right-10 bg-accent/20 rounded-full p-16 animate-pulse-fast"></div>
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-neutral to-transparent"></div>
+</section>
+
+<section id="features" class="py-20 bg-white">
+    <div class="container">
+        <h2 class="section-title">Powerful Features, Effortless Marketing</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="feature-card animate-fade-in">
+                <i class="feature-icon fa fa-rocket"></i>
+                <h3 class="text-xl font-bold mb-2">Automated Campaigns</h3>
+                <p class="text-secondary">Launch and manage multi-channel campaigns with AI-powered automation. Set it and forget it.</p>
+            </div>
+            <div class="feature-card animate-fade-in delay-100">
+                <i class="feature-icon fa fa-users"></i>
+                <h3 class="text-xl font-bold mb-2">Personalized Journeys</h3>
+                <p class="text-secondary">Craft unique customer experiences with AI-driven personalization at every touchpoint.</p>
+            </div>
+            <div class="feature-card animate-fade-in delay-200">
+                <i class="feature-icon fa fa-chart-line"></i>
+                <h3 class="text-xl font-bold mb-2">Predictive Analytics</h3>
+                <p class="text-secondary">Gain deep insights and predict future trends with advanced AI analytics and reporting.</p>
+            </div>
+            <div class="feature-card animate-fade-in delay-300">
+                <i class="feature-icon fa fa-wrench"></i>
+                <h3 class="text-xl font-bold mb-2">Easy Integration</h3>
+                <p class="text-secondary">Seamlessly integrate with your existing tools and platforms for a streamlined workflow.</p>
+            </div>
+            <div class="feature-card animate-fade-in delay-400">
+                <i class="feature-icon fa fa-shield-alt"></i>
+                <h3 class="text-xl font-bold mb-2">Robust Security</h3>
+                <p class="text-secondary">Enterprise-grade security and data protection to keep your information safe and secure.</p>
+            </div>
+            <div class="feature-card animate-fade-in delay-500">
+                <i class="feature-icon fa fa-magic"></i>
+                <h3 class="text-xl font-bold mb-2">AI-Powered Insights</h3>
+                <p class="text-secondary">Unlock hidden opportunities and optimize your strategy with intelligent AI-driven insights.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="benefits" class="py-20 bg-neutral">
+    <div class="container">
+        <h2 class="section-title">Benefits That Drive Growth</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex items-start space-x-4 animate-slide-in-left">
+                <div class="p-3 bg-primary/20 text-primary rounded-lg">
+                    <i class="fa fa-bolt"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Increase Efficiency</h3>
+                    <p class="text-secondary">Automate repetitive tasks and free up your team to focus on strategic initiatives.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4 animate-slide-in-right">
+                <div class="p-3 bg-accent/20 text-accent rounded-lg">
+                    <i class="fa fa-bullseye"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Improve Targeting</h3>
+                    <p class="text-secondary">Reach the right audience with precision using AI-powered segmentation and personalization.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4 animate-slide-in-left">
+                <div class="p-3 bg-primary/20 text-primary rounded-lg">
+                    <i class="fa fa-funnel-dollar"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Boost Conversions</h3>
+                    <p class="text-secondary">Optimize your campaigns for maximum conversions and ROI with AI-driven optimization.</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-4 animate-slide-in-right">
+                <div class="p-3 bg-accent/20 text-accent rounded-lg">
+                    <i class="fa fa-clock"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-2">Save Time & Resources</h3>
+                    <p class="text-secondary">Reduce manual effort and optimize resource allocation with intelligent automation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="pricing" class="py-20 bg-white">
+    <div class="container">
+        <h2 class="section-title">Flexible Pricing for Every Business</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-neutral rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in">
+                <h3 class="text-2xl font-bold text-center mb-4">Basic</h3>
+                <div class="text-center text-secondary mb-6"><span class="text-4xl font-bold text-primary">$49</span>/month</div>
+                <ul class="space-y-2 mb-8">
+                    <li><i class="fa fa-check text-primary mr-2"></i>Up to 1,000 Contacts</li>
+                    <li><i class="fa fa-check text-primary mr-2"></i>Basic Automation</li>
+                    <li><i class="fa fa-check text-primary mr-2"></i>Email Marketing</li>
+                    <li class="text-gray-400"><i class="fa fa-times mr-2"></i>AI-Powered Insights</li>
+                    <li class="text-gray-400"><i class="fa fa-times mr-2"></i>Predictive Analytics</li>
+                </ul>
+                <button class="btn-primary w-full">Get Started</button>
+            </div>
+            <div class="bg-primary text-white rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300 transform scale-105 animate-fade-in">
+                <h3 class="text-2xl font-bold text-center mb-4">Pro <span class="text-accent">(Recommended)</span></h3>
+                <div class="text-center text-white mb-6"><span class="text-4xl font-bold">$99</span>/month</div>
+                <ul class="space-y-2 mb-8">
+                    <li><i class="fa fa-check text-accent mr-2"></i>Up to 10,000 Contacts</li>
+                    <li><i class="fa fa-check text-accent mr-2"></i>Advanced Automation</li>
+                    <li><i class="fa fa-check text-accent mr-2"></i>Multi-Channel Marketing</li>
+                    <li><i class="fa fa-check text-accent mr-2"></i>AI-Powered Insights</li>
+                    <li class="text-gray-100"><i class="fa fa-times mr-2"></i>Predictive Analytics</li>
+                </ul>
+                <button class="btn-secondary w-full bg-white text-primary hover:bg-neutral hover:text-primary">Get Started</button>
+            </div>
+            <div class="bg-neutral rounded-xl p-8 shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in">
+                <h3 class="text-2xl font-bold text-center mb-4">Enterprise</h3>
+                <div class="text-center text-secondary mb-6">Custom Pricing</div>
+                <ul class="space-y-2 mb-8">
+                    <li><i class="fa fa-check text-primary mr-2"></i>Unlimited Contacts</li>
+                    <li><i class="fa fa-check text-primary mr-2"></i>Full Automation Suite</li>
+                    <li><i class="fa fa-check text-primary mr-2"></i>Omni-Channel Marketing</li>
+                    <li><i class="fa fa-check text-primary mr-2"></i>AI-Powered Insights</li>
+                    <li><i class="fa fa-check text-primary mr-2"></i>Predictive Analytics</li>
+                </ul>
+                <button class="btn-primary w-full">Contact Us</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-neutral">
+    <div class="container">
+        <h2 class="section-title">Ready to Transform Your Marketing?</h2>
+        <div class="max-w-lg mx-auto bg-white rounded-xl p-8 shadow-md animate-fade-in">
+            <form>
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                    <input type="email" id="email" placeholder="Your Email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                    <textarea id="message" rows="4" placeholder="Your Message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                </div>
+                <button type="submit" class="btn-primary w-full">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-neutral py-12">
+    <div class="container text-center">
+        <p>© 2024 AI Marketing Platform. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="#" class="hover:text-white"><i class="fab fa-facebook-square text-xl"></i></a>
+            <a href="#" class="hover:text-white"><i class="fab fa-twitter-square text-xl"></i></a>
+            <a href="#" class="hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

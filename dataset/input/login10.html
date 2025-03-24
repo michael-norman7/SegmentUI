@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Productivity App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4ade80',
+                        'secondary': '#16a34a',
+                        'accent': '#fde047',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-out-right': {
+                            '0%': { transform: 'translateX(0)', opacity: '1' },
+                            '100%': { transform: 'translateX(100%)', opacity: '0' },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'slide-out-right': 'slide-out-right 0.5s ease-in',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-neutral">
+    <div class="relative h-screen w-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/1920/1080" alt="Background" class="object-cover w-full h-full blur-sm scale-105">
+            <div class="absolute inset-0 bg-gradient-to-br from-neutral/80 via-neutral/70 to-neutral/80"></div>
+        </div>
+        <div class="relative z-10 p-8 rounded-3xl bg-white shadow-2xl w-full max-w-md backdrop-blur-sm animate__animated animate__fadeIn">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-dark mb-2">Log in</h2>
+                <p class="text-gray-500">Stay productive, stay focused.</p>
+            </div>
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fa-regular fa-envelope text-gray-500"></i>
+                        </div>
+                        <input type="email" id="email" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary" placeholder="you@example.com" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fa-solid fa-lock text-gray-500"></i>
+                        </div>
+                        <input type="password" id="password" placeholder="••••••••" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary" required>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary dark:ring-offset-gray-800" >
+                        </div>
+                        <label for="remember" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-primary hover:underline dark:text-primary">Forgot password?</a>
+                </div>
+                <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary dark:hover:bg-secondary dark:focus:ring-primary">Log in</button>
+                <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                    Not registered? <a href="#" class="text-primary hover:underline dark:text-primary">Create account</a>
+                </div>
+            </form>
+            <div id="loadingSpinner" class="hidden mt-6 text-center">
+                <i class="fa-solid fa-spinner fa-spin text-primary text-2xl animate-pulse-custom"></i>
+                <p class="text-gray-500 mt-2">Logging you in...</p>
+            </div>
+            <div id="successMessage" class="hidden mt-6 text-center text-green-500">
+                <i class="fa-solid fa-check-circle text-3xl"></i>
+                <p class="mt-2 font-semibold">Login Successful!</p>
+            </div>
+            <div id="errorMessage" class="hidden mt-6 text-center text-red-500">
+                <i class="fa-solid fa-x-circle text-3xl"></i>
+                <p class="mt-2 font-semibold" id="errorMessageText">Login Failed. Please try again.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loadingSpinner = document.getElementById('loadingSpinner');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorMessageText = document.getElementById('errorMessageText');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!email || !password) {
+                errorMessageText.textContent = "Please fill in all fields.";
+                errorMessage.classList.remove('hidden');
+                return;
+            }
+
+            errorMessage.classList.add('hidden');
+            loadingSpinner.classList.remove('hidden');
+            successMessage.classList.add('hidden');
+
+            setTimeout(() => {
+                loadingSpinner.classList.add('hidden');
+                if (email === 'test@example.com' && password === 'password') {
+                    successMessage.classList.remove('hidden');
+                    setTimeout(() => {
+                        successMessage.classList.add('slide-out-right');
+                        setTimeout(() => {
+                            successMessage.classList.add('hidden');
+                            successMessage.classList.remove('slide-out-right');
+                            // Redirect or perform action after successful login here
+                            alert('Login successful! (Simulated)');
+                        }, 500);
+                    }, 2000);
+
+                } else {
+                    errorMessageText.textContent = "Invalid email or password.";
+                    errorMessage.classList.remove('hidden');
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

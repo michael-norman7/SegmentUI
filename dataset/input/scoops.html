@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoops & Smiles - Ice Cream Paradise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FFD700',
+                        'secondary': '#FF6F61',
+                        'accent': '#90EE90',
+                        'base': '#FFF0F5',
+                        'neutral': '#7851A9',
+                    },
+                    fontFamily: {
+                        'display': ['"Playfair Display"', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'bounce-slow': {
+                            '0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
+                            '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce-slow 1.5s infinite',
+                        'slide-in-right': 'slide-in-right 1s ease-out',
+                        'fade-in': 'fade-in 1s ease-out',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-base font-body">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-3xl font-bold text-neutral">Scoops & Smiles</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#flavors" class="hover:text-secondary transition-colors">Flavors</a>
+                <a href="#about" class="hover:text-secondary transition-colors">About Us</a>
+                <a href="#locations" class="hover:text-secondary transition-colors">Locations</a>
+                <a href="#menu" class="hover:text-secondary transition-colors">Menu</a>
+                <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-neutral focus:outline-none">
+                    <i class="fa fa-bars fa-2x"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-3">
+                <a href="#flavors" class="hover:text-secondary transition-colors block py-2">Flavors</a>
+                <a href="#about" class="hover:text-secondary transition-colors block py-2">About Us</a>
+                <a href="#locations" class="hover:text-secondary transition-colors block py-2">Locations</a>
+                <a href="#menu" class="hover:text-secondary transition-colors block py-2">Menu</a>
+                <a href="#contact" class="hover:text-secondary transition-colors block py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-center gap-10">
+        <div class="md:w-1/2 text-center md:text-left animate-fade-in">
+            <h1 class="font-display text-5xl md:text-6xl font-extrabold text-neutral mb-6">Taste the <span class="text-primary">Sweetest</span> Moments</h1>
+            <p class="text-lg text-gray-700 mb-8">Indulge in handcrafted ice cream made with love and the finest ingredients. Every scoop is a burst of happiness!</p>
+            <a href="#flavors" class="bg-secondary hover:bg-primary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">Discover Flavors</a>
+        </div>
+        <div class="md:w-1/2 animate-slide-in-right flex justify-center">
+            <img src="https://picsum.photos/400/500" alt="Delicious Ice Cream" class="rounded-3xl shadow-xl" />
+        </div>
+    </section>
+
+    <section id="flavors" class="bg-accent py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold text-white mb-12">Our Signature Flavors</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/301" alt="Flavor 1" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Strawberry Bliss</h3>
+                        <p class="text-gray-700">Classic strawberry ice cream with chunks of real strawberries.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/302" alt="Flavor 2" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Chocolate Fudge Swirl</h3>
+                        <p class="text-gray-700">Rich chocolate ice cream with a decadent fudge swirl.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/303" alt="Flavor 3" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Mint Chocolate Chip</h3>
+                        <p class="text-gray-700">Refreshing mint ice cream with generous chocolate chips.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/304" alt="Flavor 4" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Vanilla Bean Dream</h3>
+                        <p class="text-gray-700">Classic vanilla bean ice cream, pure and delightful.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/305" alt="Flavor 5" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Cookie Dough Craze</h3>
+                        <p class="text-gray-700">Buttery cookie dough ice cream with chunks of chocolate chip cookie dough.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/306" alt="Flavor 6" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Butter Pecan Perfection</h3>
+                        <p class="text-gray-700">Rich butter pecan ice cream with crunchy pecans.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-base">
+        <div class="container mx-auto px-6 md:px-20 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/400/400" alt="About Us" class="rounded-3xl shadow-xl"/>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="font-display text-4xl font-bold text-neutral mb-6">Our Story</h2>
+                <p class="text-gray-700 mb-6">Welcome to Scoops & Smiles, where every scoop is crafted with passion and the finest ingredients. We believe in spreading joy, one ice cream at a time. Founded in 2010, our journey began with a simple dream: to create the most delicious and memorable ice cream experience for everyone.</p>
+                <p class="text-gray-700 mb-6">From classic flavors to innovative creations, we are committed to quality and taste. Our ice cream is made fresh daily, using locally sourced milk and cream, and the best ingredients from around the world. We are more than just an ice cream shop; we are a place for community, smiles, and sweet memories.</p>
+                <a href="#menu" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-2.5 px-6 rounded-full transition-colors duration-300">
+                    See Our Menu <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="locations" class="py-20 bg-accent">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold text-white mb-12">Visit Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/307" alt="Location 1" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Downtown Shop</h3>
+                        <p class="text-gray-700">123 Main Street, Cityville, CA 91234</p>
+                        <p class="text-gray-700">Open Daily: 11am - 10pm</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/308" alt="Location 2" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Beachfront Store</h3>
+                        <p class="text-gray-700">456 Ocean Avenue, Beach City, CA 90210</p>
+                        <p class="text-gray-700">Open Daily: 10am - 11pm</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/309" alt="Location 3" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Mall Kiosk</h3>
+                        <p class="text-gray-700">789 Shopping Mall Rd, Malltown, CA 93456</p>
+                        <p class="text-gray-700">Mall Hours</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-base">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold text-neutral mb-12">Our Delicious Menu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/310" alt="Menu Item 1" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Classic Cone</h3>
+                        <p class="text-gray-700">Your choice of flavor in a crispy waffle cone.</p>
+                        <span class="font-bold text-secondary">$4.99</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/311" alt="Menu Item 2" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Sundae Supreme</h3>
+                        <p class="text-gray-700">Loaded with toppings, whipped cream, and a cherry on top!</p>
+                        <span class="font-bold text-secondary">$7.99</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/312" alt="Menu Item 3" class="w-full h-60 object-cover"/>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2 text-neutral">Milkshake Magic</h3>
+                        <p class="text-gray-700">Thick and creamy milkshake, choose your favorite flavor.</p>
+                        <span class="font-bold text-secondary">$6.49</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-accent">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold text-white mb-12">Get in Touch</h2>
+            <p class="text-lg text-white mb-8">Have questions or want to place an order? Contact us today!</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-white hover:text-primary transition-colors"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="#" class="text-white hover:text-primary transition-colors"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-white hover:text-primary transition-colors"><i class="fa fa-envelope fa-2x"></i></a>
+            </div>
+            <p class="text-white">Email: <a href="mailto:hello@scoopsandsmiles.com" class="hover:underline">hello@scoopsandsmiles.com</a></p>
+            <p class="text-white">Phone: <a href="tel:+15551234567" class="hover:underline">+1-555-123-4567</a></p>
+        </div>
+    </section>
+
+    <footer class="bg-neutral py-8 text-center text-white">
+        <p>© 2024 Scoops & Smiles. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

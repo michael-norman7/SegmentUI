@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Top 0.01% UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        secondary: '#0284C7',
+                        accent: '#6EE7B7',
+                        neutral: '#F3F4F6',
+                        dark: '#1E293B',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @keyframes pulse-fast {
+            0%, 100% { opacity: 1 }
+            50% { opacity: .5 }
+        }
+    </style>
+</head>
+<body class="bg-neutral dark:bg-dark flex items-center justify-center h-screen">
+    <div class="relative bg-white shadow-xl rounded-3xl overflow-hidden max-w-md w-full m-6">
+        <div class="absolute inset-0 bg-primary opacity-50 animate-pulse-fast"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-90"></div>
+        <div class="relative p-12">
+            <div class="flex justify-center mb-8 animate-fadeIn">
+                <img src="https://picsum.photos/id/100/200/100" alt="Logo" class="rounded-full shadow-md w-24 h-24 object-cover border-4 border-neutral" />
+            </div>
+            <h2 class="text-3xl font-bold text-white text-center mb-6 animate-fadeIn delay-100">Welcome Back</h2>
+            <form class="space-y-6 animate-fadeIn delay-200">
+                <div>
+                    <label for="username" class="block mb-2 text-sm font-medium text-neutral">Username</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fas fa-user text-neutral"></i>
+                        </div>
+                        <input type="text" id="username" class="bg-neutral/80 border border-neutral text-dark text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5 placeholder-neutral" placeholder="Your Username" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium text-neutral">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fas fa-lock text-neutral"></i>
+                        </div>
+                        <input type="password" id="password" class="bg-neutral/80 border border-neutral text-dark text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5 placeholder-neutral" placeholder="••••••••" required>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-neutral rounded bg-neutral focus:ring-2 focus:ring-primary">
+                        </div>
+                        <div class="ml-2 text-sm">
+                            <label for="remember" class="text-neutral">Remember me</label>
+                        </div>
+                    </div>
+                    <a href="#" class="text-sm font-semibold text-accent hover:underline">Forgot password?</a>
+                </div>
+                <button type="submit" class="w-full text-white bg-accent hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login</button>
+                <div class="text-sm font-medium text-neutral text-center">
+                    Not registered? <a href="#" class="text-accent hover:underline">Create account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-fadeIn.delay-100 {
+            animation-delay: 0.1s;
+        }
+        .animate-fadeIn.delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>

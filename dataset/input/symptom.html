@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Tracker Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ade80',
+                        secondary: '#f472b6',
+                        glass: 'rgba(255, 255, 255, 0.25)',
+                        glassBorder: 'rgba(255, 255, 255, 0.35)',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glassmorphism': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #edf2f7;
+            overflow: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-green-100 to-blue-100 -z-10"></div>
+    <div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+
+            <aside class="lg:col-span-1">
+                <nav class="glass p-6 rounded-lg shadow-glassmorphism sticky top-6">
+                    <div class="mb-8">
+                        <div class="flex items-center justify-center">
+                            <img src="https://picsum.photos/200/300" alt="App Icon" class="w-16 h-16 rounded-full shadow-md mb-2">
+                        </div>
+                        <h2 class="text-xl font-bold text-center mt-2">Symptom Tracker</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="flex items-center glass hover:bg-glassBorder p-3 rounded-md transition-colors">
+                                <i class="fa fa-tachometer-alt mr-4 text-xl"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center glass hover:bg-glassBorder p-3 rounded-md transition-colors">
+                                <i class="fa fa-calendar-week mr-4 text-xl"></i>
+                                Daily Log
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center glass hover:bg-glassBorder p-3 rounded-md transition-colors">
+                                <i class="fa fa-chart-line mr-4 text-xl"></i>
+                                Insights
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center glass hover:bg-glassBorder p-3 rounded-md transition-colors">
+                                <i class="fa fa-cog mr-4 text-xl"></i>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="lg:col-span-3 space-y-6">
+
+                <section class="glass p-6 rounded-lg shadow-glassmorphism">
+                    <h2 class="text-2xl font-bold mb-5">Symptom Frequency</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="glass p-4 rounded-md flex items-center justify-between">
+                            <div>
+                                <h3 class="font-semibold">Headache</h3>
+                                <p class="text-sm text-gray-600">Occurrences this week</p>
+                            </div>
+                            <span class="text-3xl font-bold">7</span>
+                        </div>
+                        <div class="glass p-4 rounded-md flex items-center justify-between">
+                            <div>
+                                <h3 class="font-semibold">Fatigue</h3>
+                                <p class="text-sm text-gray-600">Occurrences this week</p>
+                            </div>
+                            <span class="text-3xl font-bold">5</span>
+                        </div>
+                        <div class="glass p-4 rounded-md flex items-center justify-between">
+                            <div>
+                                <h3 class="font-semibold">Cough</h3>
+                                <p class="text-sm text-gray-600">Occurrences this week</p>
+                            </div>
+                            <span class="text-3xl font-bold">3</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <img src="https://picsum.photos/600/200" alt="Frequency Chart" class="rounded-md w-full">
+                    </div>
+                </section>
+
+                <section class="glass p-6 rounded-lg shadow-glassmorphism">
+                    <h2 class="text-2xl font-bold mb-5">Symptom Severity</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="glass p-4 rounded-md">
+                            <h3 class="font-semibold mb-3">Severity Distribution</h3>
+                            <img src="https://picsum.photos/400/200" alt="Severity Chart" class="rounded-md w-full">
+                        </div>
+                        <div class="glass p-4 rounded-md">
+                            <h3 class="font-semibold mb-3">Average Severity Over Time</h3>
+                            <img src="https://picsum.photos/400/200" alt="Severity Over Time Chart" class="rounded-md w-full">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="glass p-6 rounded-lg shadow-glassmorphism">
+                    <h2 class="text-2xl font-bold mb-5">Health Condition Correlations</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="glass p-4 rounded-md flex flex-col items-center">
+                            <i class="fa fa-heartbeat text-4xl mb-2"></i>
+                            <h3 class="font-semibold text-center">Cardiovascular Health</h3>
+                            <p class="text-sm text-gray-600 text-center">Correlation with symptoms</p>
+                            <div class="mt-2">
+                                <img src="https://picsum.photos/200/150" alt="Correlation Chart 1" class="rounded-md w-full">
+                            </div>
+                        </div>
+                        <div class="glass p-4 rounded-md flex flex-col items-center">
+                            <i class="fa fa-brain text-4xl mb-2"></i>
+                            <h3 class="font-semibold text-center">Neurological Health</h3>
+                            <p class="text-sm text-gray-600 text-center">Correlation with symptoms</p>
+                            <div class="mt-2">
+                                <img src="https://picsum.photos/200/150" alt="Correlation Chart 2" class="rounded-md w-full">
+                            </div>
+                        </div>
+                        <div class="glass p-4 rounded-md flex flex-col items-center">
+                            <i class="fa fa-lungs text-4xl mb-2"></i>
+                            <h3 class="font-semibold text-center">Respiratory Health</h3>
+                            <p class="text-sm text-gray-600 text-center">Correlation with symptoms</p>
+                            <div class="mt-2">
+                                <img src="https://picsum.photos/200/150" alt="Correlation Chart 3" class="rounded-md w-full">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.glass').forEach(glassElement => {
+            glassElement.addEventListener('mouseenter', () => {
+                glassElement.classList.add('hover:scale-105', 'transition-transform', 'duration-200');
+            });
+            glassElement.addEventListener('mouseleave', () => {
+                glassElement.classList.remove('hover:scale-105', 'transition-transform', 'duration-200');
+            });
+        });
+    </script>
+</body>
+</html>

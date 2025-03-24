@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Equipment - Your Trusted Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#0284c7',
+                        accent: '#67e8f9',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .category-card {
+            perspective: 1000px;
+        }
+
+        .category-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .category-card:hover .category-card-inner {
+            transform: rotateY(10deg) rotateX(5deg);
+        }
+
+        .category-card-front,
+        .category-card-back {
+            backface-visibility: hidden;
+        }
+
+        .category-card-back {
+            transform: rotateY(180deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl text-primary">
+                <a href="#" class="hover:text-secondary">EquipNet Industries</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#categories" class="hover:text-secondary transition-colors duration-300">Categories</a>
+                <a href="#solutions" class="hover:text-secondary transition-colors duration-300">Solutions</a>
+                <a href="#services" class="hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#about" class="hover:text-secondary transition-colors duration-300">About Us</a>
+                <a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4">
+                <a href="#categories" class="block py-2 hover:text-secondary transition-colors duration-300">Categories</a>
+                <a href="#solutions" class="block py-2 hover:text-secondary transition-colors duration-300">Solutions</a>
+                <a href="#services" class="block py-2 hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#about" class="block py-2 hover:text-secondary transition-colors duration-300">About Us</a>
+                <a href="#contact" class="block py-2 hover:text-secondary transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero bg-primary/5 py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-dark mb-6 animate-fade-in">
+                Explore Premium Industrial Equipment
+            </h1>
+            <p class="text-lg text-gray-700 mb-8 animate-fade-in delay-200">
+                Elevate your operations with our robust and innovative industrial solutions.
+            </p>
+            <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 animate-slide-in-right">
+                <i class="fa fa-search mr-2"></i> Browse Equipment
+            </button>
+        </div>
+    </section>
+
+    <section id="categories" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-dark mb-12">Equipment Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="category-card group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="category-card-inner">
+                        <div class="category-card-front">
+                            <img src="https://picsum.photos/200/300?random=1" alt="Category 1" class="w-full h-64 object-cover rounded-xl">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-semibold text-dark mb-2 group-hover:text-primary transition-colors duration-300">Manufacturing Machines</h3>
+                                <p class="text-gray-600">Precision tools for efficient production lines.</p>
+                            </div>
+                        </div>
+                        <div class="category-card-back bg-primary p-6 rounded-xl text-white flex flex-col justify-center items-center text-center">
+                            <i class="fa fa-industry text-4xl mb-4"></i>
+                            <p class="text-lg font-light">Explore our range of advanced manufacturing machines designed for optimal performance and reliability.</p>
+                            <button class="mt-4 bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                                View Machines <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="category-card-inner">
+                        <div class="category-card-front">
+                            <img src="https://picsum.photos/200/300?random=2" alt="Category 2" class="w-full h-64 object-cover rounded-xl">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-semibold text-dark mb-2 group-hover:text-primary transition-colors duration-300">Robotics & Automation</h3>
+                                <p class="text-gray-600">Automated systems for increased productivity.</p>
+                            </div>
+                        </div>
+                        <div class="category-card-back bg-primary p-6 rounded-xl text-white flex flex-col justify-center items-center text-center">
+                            <i class="fa fa-cogs text-4xl mb-4"></i>
+                            <p class="text-lg font-light">Discover cutting-edge robotics and automation solutions to streamline your industrial processes and enhance efficiency.</p>
+                            <button class="mt-4 bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                                View Robotics <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="category-card-inner">
+                        <div class="category-card-front">
+                            <img src="https://picsum.photos/200/300?random=3" alt="Category 3" class="w-full h-64 object-cover rounded-xl">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-semibold text-dark mb-2 group-hover:text-primary transition-colors duration-300">Power & Energy Systems</h3>
+                                <p class="text-gray-600">Reliable power solutions for industrial needs.</p>
+                            </div>
+                        </div>
+                        <div class="category-card-back bg-primary p-6 rounded-xl text-white flex flex-col justify-center items-center text-center">
+                            <i class="fa fa-bolt text-4xl mb-4"></i>
+                            <p class="text-lg font-light">Explore our robust power and energy systems designed to provide reliable and sustainable energy for industrial applications.</p>
+                            <button class="mt-4 bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                                View Power Systems <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="category-card-inner">
+                        <div class="category-card-front">
+                            <img src="https://picsum.photos/200/300?random=4" alt="Category 4" class="w-full h-64 object-cover rounded-xl">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-semibold text-dark mb-2 group-hover:text-primary transition-colors duration-300">Material Handling</h3>
+                                <p class="text-gray-600">Efficient solutions for moving and managing materials.</p>
+                            </div>
+                        </div>
+                        <div class="category-card-back bg-primary p-6 rounded-xl text-white flex flex-col justify-center items-center text-center">
+                            <i class="fa fa-truck-moving text-4xl mb-4"></i>
+                            <p class="text-lg font-light">Optimize your material flow with our advanced handling equipment, designed for efficiency and safety in industrial environments.</p>
+                            <button class="mt-4 bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                                View Material Handling <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="category-card-inner">
+                        <div class="category-card-front">
+                            <img src="https://picsum.photos/200/300?random=5" alt="Category 5" class="w-full h-64 object-cover rounded-xl">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-semibold text-dark mb-2 group-hover:text-primary transition-colors duration-300">Pumps & Valves</h3>
+                                <p class="text-gray-600">Essential components for fluid control systems.</p>
+                            </div>
+                        </div>
+                        <div class="category-card-back bg-primary p-6 rounded-xl text-white flex flex-col justify-center items-center text-center">
+                            <i class="fa fa-filter text-4xl mb-4"></i>
+                            <p class="text-lg font-light">Explore our comprehensive range of industrial pumps and valves, engineered for precision and reliability in fluid management systems.</p>
+                            <button class="mt-4 bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                                View Pumps & Valves <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <div class="category-card-inner">
+                        <div class="category-card-front">
+                            <img src="https://picsum.photos/200/300?random=6" alt="Category 6" class="w-full h-64 object-cover rounded-xl">
+                            <div class="p-6 bg-white">
+                                <h3 class="text-xl font-semibold text-dark mb-2 group-hover:text-primary transition-colors duration-300">Safety & Environment</h3>
+                                <p class="text-gray-600">Equipment for workplace safety and environmental compliance.</p>
+                            </div>
+                        </div>
+                        <div class="category-card-back bg-primary p-6 rounded-xl text-white flex flex-col justify-center items-center text-center">
+                            <i class="fa fa-shield-alt text-4xl mb-4"></i>
+                            <p class="text-lg font-light">Ensure a safe and compliant workplace with our specialized safety and environmental equipment, designed to meet industry standards.</p>
+                            <button class="mt-4 bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                                View Safety Equipment <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 text-center">
+            <nav class="mb-6">
+                <a href="#" class="text-neutral hover:text-accent px-4">Terms of Service</a>
+                <a href="#" class="text-neutral hover:text-accent px-4">Privacy Policy</a>
+                <a href="#" class="text-neutral hover:text-accent px-4">Support</a>
+                <a href="#" class="text-neutral hover:text-accent px-4">Contact Us</a>
+            </nav>
+            <p class="text-sm text-neutral/70">
+                © 2024 EquipNet Industries. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

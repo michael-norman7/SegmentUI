@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Business Insurance - Peace of Mind, Guaranteed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#3b82f6',
+                        'accent': '#60a5fa',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.6s ease-out both',
+                        'fade-in': 'fade-in 0.4s ease-out both',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-fade-slide-up {
+            animation: fade-slide-up 0.6s ease-out both;
+        }
+        .animate-fade-in {
+            animation: fade-in 0.4s ease-out both;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 py-4 md:px-12 lg:px-24 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary">Secure<span>Insure</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#solutions" class="hover:text-secondary transition-colors duration-200">Solutions</a>
+                <a href="#why-us" class="hover:text-secondary transition-colors duration-200">Why Us</a>
+                <a href="#testimonials" class="hover:text-secondary transition-colors duration-200">Testimonials</a>
+                <a href="#contact" class="hover:text-secondary transition-colors duration-200">Contact</a>
+            </div>
+            <button class="hidden md:inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-6 rounded-full transition-colors duration-200">Get a Quote</button>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-6 py-4">
+                <a href="#solutions" class="block py-2 hover:text-secondary transition-colors duration-200">Solutions</a>
+                <a href="#why-us" class="block py-2 hover:text-secondary transition-colors duration-200">Why Us</a>
+                <a href="#testimonials" class="block py-2 hover:text-secondary transition-colors duration-200">Testimonials</a>
+                <a href="#contact" class="block py-2 hover:text-secondary transition-colors duration-200">Contact</a>
+                <button class="block w-full text-center mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-6 rounded-full transition-colors duration-200">Get a Quote</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero py-20 md:py-32 bg-neutral">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 animate-fade-slide-up">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6">Protecting Your Business, <span class="text-primary">Securing Your Future</span></h1>
+                    <p class="text-lg text-gray-700 mb-8">Comprehensive business insurance solutions tailored to your unique needs. Get peace of mind knowing your business is protected from the unexpected.</p>
+                    <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-200">Get a Free Quote <i class="fa fa-arrow-right ml-2"></i></button>
+                </div>
+                <div class="lg:w-1/2 animate-fade-in">
+                    <img src="https://picsum.photos/800/600" alt="Business Insurance Illustration" class="rounded-2xl shadow-xl" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <section id="solutions" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Business Insurance Solutions</h2>
+                    <p class="text-gray-700 text-lg">Find the perfect coverage to protect your business from every angle.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                        <div class="mb-4">
+                            <img src="https://picsum.photos/200/300" alt="Property Insurance" class="rounded-xl w-full h-48 object-cover" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Property Insurance</h3>
+                        <p class="text-gray-700">Protect your business property from damage, theft, and other covered perils. Ensure your physical assets are secure.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-semibold transition-colors duration-200">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                    <div class="p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                        <div class="mb-4">
+                            <img src="https://picsum.photos/201/300" alt="Liability Insurance" class="rounded-xl w-full h-48 object-cover" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Liability Insurance</h3>
+                        <p class="text-gray-700">Safeguard your business from financial losses due to lawsuits, injuries, or property damage claims. Protect your assets and reputation.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-semibold transition-colors duration-200">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                    <div class="p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                        <div class="mb-4">
+                            <img src="https://picsum.photos/202/300" alt="Professional Indemnity Insurance" class="rounded-xl w-full h-48 object-cover" loading="lazy">
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Professional Indemnity</h3>
+                        <p class="text-gray-700">Protect your business from claims of negligence, errors, or omissions in your professional services. Essential for consultants and service providers.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-semibold transition-colors duration-200">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="py-20 md:py-24 bg-neutral">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Why Choose SecureInsure?</h2>
+                    <p class="text-gray-700 text-lg">Experience the SecureInsure advantage – reliable protection and exceptional service.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-shield-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Unparalleled Security</h3>
+                        <p class="text-gray-700">Robust policies designed to offer maximum protection against a wide range of business risks.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-users text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Expert Support</h3>
+                        <p class="text-gray-700">Dedicated team of insurance experts providing personalized advice and support whenever you need it.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-coins text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-2">Competitive Rates</h3>
+                        <p class="text-gray-700">Get premium coverage at competitive rates, ensuring you receive the best value for your investment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="py-20 md:py-24 bg-white">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">What Our Clients Say</h2>
+                    <p class="text-gray-700 text-lg">Trusted by businesses of all sizes. Hear from our satisfied clients.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-6 rounded-2xl shadow-md bg-neutral">
+                        <div class="mb-4">
+                            <img src="https://picsum.photos/50/50" alt="Client 1" class="rounded-full w-12 h-12" loading="lazy">
+                            <span class="ml-2 font-semibold">John Smith, CEO</span>
+                        </div>
+                        <p class="text-gray-700 italic">"SecureInsure has been instrumental in protecting our business. Their team is knowledgeable, responsive, and truly cares about our needs."</p>
+                    </div>
+                    <div class="p-6 rounded-2xl shadow-md bg-neutral">
+                        <div class="mb-4">
+                            <img src="https://picsum.photos/51/50" alt="Client 2" class="rounded-full w-12 h-12" loading="lazy">
+                            <span class="ml-2 font-semibold">Jane Doe, Founder</span>
+                        </div>
+                        <p class="text-gray-700 italic">"Switching to SecureInsure was the best decision we made. Their comprehensive coverage and excellent customer service are unmatched."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-24 bg-primary">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24 text-center text-white">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">Ready to Secure Your Business?</h2>
+                <p class="text-lg mb-12 opacity-80">Get in touch with us today for a personalized quote and discover how SecureInsure can protect your business assets and future.</p>
+                <button class="bg-white text-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-neutral transition-colors duration-200">Contact Us Now <i class="fa fa-envelope ml-2"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <p>© 2024 SecureInsure. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-accent transition-colors duration-200">Privacy Policy</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Terms of Service</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (this.getAttribute('href') !== '#') {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                } else {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+
+
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

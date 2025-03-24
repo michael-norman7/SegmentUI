@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PartyPalooza - Your Ultimate Party Supply Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import "tailwindcss";
+        body { font-family: 'Lato', sans-serif; }
+        .playfair { font-family: 'Playfair Display', serif; }
+        .bg-gradient-party { background-image: linear-gradient(135deg, #fde047 0%, #fae8ff 50%, #bef264 100%); }
+        .text-shadow-party { text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+        .shadow-party { box-shadow: 0 15px 25px rgba(0,0,0,0.08); }
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-background dark:bg-gray-900 text-text dark:text-gray-50">
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="#" class="playfair text-2xl font-bold text-primary">PartyPalooza</a>
+        <div class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-accent transition-colors">Home</a>
+            <a href="#" class="hover:text-accent transition-colors">Shop</a>
+            <a href="#" class="hover:text-accent transition-colors">Themes</a>
+            <a href="#" class="hover:text-accent transition-colors">Occasions</a>
+            <a href="#" class="hover:text-accent transition-colors">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero bg-gradient-party py-24 md:py-36 overflow-hidden relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="md:grid grid-cols-2 gap-8 items-center">
+                <div class="hero-text text-center md:text-left">
+                    <h1 class="playfair text-5xl md:text-6xl font-bold text-primary text-shadow-party mb-6 animate-slide-in-left">
+                        Let's Get This Party Started!
+                    </h1>
+                    <p class="text-lg text-gray-700 dark:text-gray-200 mb-8 animate-slide-in-left delay-200">
+                        Your one-stop shop for the most amazing party supplies. Make every celebration unforgettable!
+                    </p>
+                    <a href="#" class="cta-button bg-accent text-white font-bold py-3 px-8 rounded-full hover:bg-secondary transition-colors animate-slide-in-left delay-400 shadow-party">
+                        Shop Now <i class="fas fa-shopping-cart ml-2"></i>
+                    </a>
+                </div>
+                <div class="hero-image relative justify-self-center">
+                    <img src="https://picsum.photos/400/400" alt="Party Supplies" class="rounded-full shadow-party animate-float w-full md:w-auto max-w-md">
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-background dark:from-gray-900 to-transparent"></div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="playfair text-3xl font-bold text-secondary mb-12">Explore Our Popular Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="category-card bg-white shadow-party rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/301" alt="Balloons" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Balloons</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Helium, latex, foil balloons for every occasion.</p>
+                        <a href="#" class="inline-block mt-4 cta-button-secondary text-accent font-semibold hover:text-secondary transition-colors">
+                            Shop Balloons <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category-card bg-white shadow-party rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/302" alt="Decorations" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Decorations</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Banners, streamers, confetti and more to set the scene.</p>
+                        <a href="#" class="inline-block mt-4 cta-button-secondary text-accent font-semibold hover:text-secondary transition-colors">
+                            Shop Decorations <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="category-card bg-white shadow-party rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/303" alt="Tableware" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Tableware</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Plates, cups, cutlery and napkins in fun designs.</p>
+                        <a href="#" class="inline-block mt-4 cta-button-secondary text-accent font-semibold hover:text-secondary transition-colors">
+                            Shop Tableware <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="playfair text-3xl font-bold text-secondary mb-12">Shop By Theme</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                <a href="#" class="theme-card bg-white shadow-party rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/304" alt="Birthday Party" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-primary">Birthday</h3>
+                    </div>
+                </a>
+                <a href="#" class="theme-card bg-white shadow-party rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/305" alt="Wedding" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-primary">Wedding</h3>
+                    </div>
+                </a>
+                <a href="#" class="theme-card bg-white shadow-party rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/306" alt="Baby Shower" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-primary">Baby Shower</h3>
+                    </div>
+                </a>
+                <a href="#" class="theme-card bg-white shadow-party rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/307" alt="Halloween" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-primary">Halloween</h3>
+                    </div>
+                </a>
+                <a href="#" class="theme-card bg-white shadow-party rounded-xl overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/308" alt="Christmas" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold text-primary">Christmas</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="playfair text-3xl font-bold text-secondary mb-12">Why Choose PartyPalooza?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-item">
+                    <div class="feature-icon mb-4 inline-flex items-center justify-center rounded-full bg-accent-light text-accent p-3">
+                        <i class="fas fa-check-circle fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">High-Quality Products</h3>
+                    <p class="text-gray-600 dark:text-gray-300">We offer only the best party supplies that are durable and look fantastic.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon mb-4 inline-flex items-center justify-center rounded-full bg-accent-light text-accent p-3">
+                        <i class="fas fa-truck fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Fast & Reliable Shipping</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Get your party supplies delivered quickly and efficiently, right to your door.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon mb-4 inline-flex items-center justify-center rounded-full bg-accent-light text-accent p-3">
+                        <i class="fas fa-smile fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Excellent Customer Support</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Our friendly team is here to help you with any questions or needs you may have.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section bg-secondary py-24 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="playfair text-4xl font-bold text-white mb-8 text-shadow-party">Ready to Plan Your Party?</h2>
+            <p class="text-lg text-gray-100 mb-12">Browse our wide selection of party supplies and make your next event a hit!</p>
+            <a href="#" class="cta-button bg-accent text-white font-bold py-3 px-8 rounded-full hover:bg-primary transition-colors shadow-party">
+                Explore All Supplies <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-100 dark:bg-gray-900 py-8 border-t border-gray-200 dark:border-gray-700">
+    <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+        <p>© 2024 PartyPalooza. All rights reserved.</p>
+        <div class="mt-4">
+            <a href="#" class="hover:text-accent transition-colors mx-2"><i class="fab fa-facebook-square fa-lg"></i></a>
+            <a href="#" class="hover:text-accent transition-colors mx-2"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="hover:text-accent transition-colors mx-2"><i class="fab fa-twitter-square fa-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const heroText = document.querySelector('.hero-text');
+        heroText.classList.add('animate__animated', 'animate__fadeInUp');
+
+        const heroImage = document.querySelector('.hero-image');
+        heroImage.classList.add('animate__animated', 'animate__fadeInRight');
+
+        const categoryCards = document.querySelectorAll('.category-card');
+        categoryCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('animate__animated', 'animate__fadeInUp');
+            }, 150 * index);
+        });
+
+        const themeCards = document.querySelectorAll('.theme-card');
+        themeCards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add('animate__animated', 'animate__fadeInUp');
+            }, 100 * index);
+        });
+
+        const featureItems = document.querySelectorAll('.feature-item');
+        featureItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('animate__animated', 'animate__fadeInUp');
+            }, 200 * index);
+        });
+    });
+</script>
+
+</body>
+</html>

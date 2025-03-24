@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Lumina Jewels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F8F0E3',
+                        'secondary': '#EADBC8',
+                        'accent': '#D9CAB3',
+                        'dark': '#1E1E1E',
+                    },
+                    keyframes: {
+                        'fade-slide-down': {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        'scale-up': {
+                            '0%': { transform: 'scale(0.95)' },
+                            '100%': { transform: 'scale(1)' }
+                        }
+                    },
+                    animation: {
+                        'fade-slide-down': 'fade-slide-down 0.6s ease-out forwards',
+                        'fade-in': 'fade-in 0.8s ease-out forwards',
+                        'scale-up': 'scale-up 0.4s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-primary text-dark">
+    <header class="sticky top-0 z-50 bg-primary shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-display text-2xl font-bold tracking-tight">Luxe Lumina</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#collections" class="hover:text-accent transition-colors duration-200">Collections</a>
+                <a href="#about" class="hover:text-accent transition-colors duration-200">About</a>
+                <a href="#lookbook" class="hover:text-accent transition-colors duration-200">Lookbook</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-200">Contact</a>
+                <button class="relative group">
+                    <i class="fa-solid fa-bag-shopping hover:text-accent transition-colors duration-200"></i>
+                    <span class="absolute -top-2 right-0 bg-accent text-primary text-xs rounded-full px-2 py-0 pointer-events-none group-hover:animate-pulse">3</span>
+                </button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-accent focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#collections" class="block py-2 hover:text-accent transition-colors duration-200">Collections</a>
+                <a href="#about" class="block py-2 hover:text-accent transition-colors duration-200">About</a>
+                <a href="#lookbook" class="block py-2 hover:text-accent transition-colors duration-200">Lookbook</a>
+                <a href="#contact" class="block py-2 hover:text-accent transition-colors duration-200">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero relative overflow-hidden pt-24 md:pt-32">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text pb-12 md:pb-0" >
+                <h1 class="font-display text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-6 animate-fade-slide-down">Exquisite Jewelry <br/> For Timeless Moments</h1>
+                <p class="text-lg text-gray-700 mb-8 animate-fade-slide-down delay-100">Discover handcrafted jewelry that embodies elegance and sophistication. Each piece tells a story, designed to be cherished for generations.</p>
+                <div class="space-x-4 animate-fade-slide-down delay-200">
+                    <a href="#collections" class="inline-block bg-secondary text-dark py-3 px-8 rounded-full font-semibold hover:bg-accent transition-colors duration-300">Explore Collections</a>
+                    <a href="#lookbook" class="inline-block text-dark hover:text-accent transition-colors duration-300 font-medium">View Lookbook</a>
+                </div>
+            </div>
+            <div class="hero-image relative animate-scale-up">
+                <img src="https://picsum.photos/id/102/800/1000" alt="Elegant Jewelry" class="rounded-3xl shadow-xl aspect-[4/5] object-cover w-full max-w-md mx-auto md:max-w-none">
+                <div class="absolute bottom-0 left-10 md:left-20 p-6 bg-secondary rounded-2xl shadow-lg transform translate-y-1/2 z-10 hidden md:block">
+                    <p class="text-xl font-semibold mb-2">Featured Collection</p>
+                    <p class="text-gray-700 text-sm">The Aurora Collection - Inspired by the Northern Lights.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-primary to-transparent"></div>
+    </section>
+
+    <section id="collections" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold tracking-tight mb-12 animate-fade-in">Our Collections</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="collection-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 animate-fade-in">
+                    <img src="https://picsum.photos/id/222/400/500" alt="Collection 1" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Celestial Dreams</h3>
+                        <p class="text-gray-700">Inspired by the cosmos, featuring star and moon motifs.</p>
+                        <a href="#" class="inline-block mt-4 text-secondary hover:text-accent font-medium transition-colors duration-200">Explore Collection <i class="fa-solid fa-arrow-right text-sm align-middle ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="collection-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 animate-fade-in delay-100">
+                    <img src="https://picsum.photos/id/244/400/500" alt="Collection 2" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Floral Whispers</h3>
+                        <p class="text-gray-700">Delicate floral designs, capturing nature's beauty.</p>
+                        <a href="#" class="inline-block mt-4 text-secondary hover:text-accent font-medium transition-colors duration-200">Explore Collection <i class="fa-solid fa-arrow-right text-sm align-middle ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="collection-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 animate-fade-in delay-200">
+                    <img src="https://picsum.photos/id/255/400/500" alt="Collection 3" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Geometric Echoes</h3>
+                        <p class="text-gray-700">Modern geometric patterns for a contemporary style.</p>
+                        <a href="#" class="inline-block mt-4 text-secondary hover:text-accent font-medium transition-colors duration-200">Explore Collection <i class="fa-solid fa-arrow-right text-sm align-middle ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="about-image animate-fade-in">
+                <img src="https://picsum.photos/id/311/600/700" alt="Jewelry Designer" class="rounded-3xl shadow-xl aspect-square object-cover">
+            </div>
+            <div class="about-text animate-fade-in delay-100">
+                <h2 class="font-display text-4xl font-bold tracking-tight mb-6">About Luxe Lumina</h2>
+                <p class="text-lg text-gray-700 mb-8">Luxe Lumina Jewels was founded with a passion for creating exceptional jewelry that celebrates individuality and timeless beauty. Each piece is meticulously handcrafted by skilled artisans, using only the finest materials. Our designs are inspired by nature, art, and the moments that shape our lives.</p>
+                <p class="text-lg text-gray-700 mb-8">We believe in sustainable and ethical practices, ensuring that our jewelry is not only beautiful but also responsibly made. Discover the artistry and dedication behind Luxe Lumina, and find a piece that resonates with your unique style and story.</p>
+                <a href="#contact" class="inline-block bg-accent text-dark py-3 px-8 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="lookbook" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold tracking-tight mb-12 animate-fade-in">Lookbook</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img src="https://picsum.photos/id/404/300/400" alt="Lookbook Image 1" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in">
+                <img src="https://picsum.photos/id/411/300/400" alt="Lookbook Image 2" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-100">
+                <img src="https://picsum.photos/id/422/300/400" alt="Lookbook Image 3" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-200">
+                <img src="https://picsum.photos/id/433/300/400" alt="Lookbook Image 4" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-300">
+                <img src="https://picsum.photos/id/444/300/400" alt="Lookbook Image 5" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in">
+                <img src="https://picsum.photos/id/455/300/400" alt="Lookbook Image 6" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-100">
+                <img src="https://picsum.photos/id/466/300/400" alt="Lookbook Image 7" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-200">
+                <img src="https://picsum.photos/id/477/300/400" alt="Lookbook Image 8" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in delay-300">
+            </div>
+            <a href="#" class="inline-block mt-8 bg-secondary text-dark py-3 px-8 rounded-full font-semibold hover:bg-accent transition-colors duration-300 animate-fade-in">View Full Lookbook</a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-primary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold tracking-tight mb-12 animate-fade-in">Contact Us</h2>
+            <p class="text-lg text-gray-700 mb-8 animate-fade-in delay-100">We'd love to hear from you. For inquiries, custom orders, or collaborations, please reach out to us.</p>
+            <div class="flex justify-center space-x-8 mb-12 animate-fade-in delay-200">
+                <a href="mailto:info@luxelumina.com" class="text-secondary hover:text-accent transition-colors duration-200"><i class="fa-solid fa-envelope text-2xl"></i></a>
+                <a href="#" class="text-secondary hover:text-accent transition-colors duration-200"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-secondary hover:text-accent transition-colors duration-200"><i class="fa-brands fa-facebook text-2xl"></i></a>
+            </div>
+            <p class="text-gray-700 text-sm animate-fade-in delay-300">© 2024 Luxe Lumina Jewels. All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

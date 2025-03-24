@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Portal Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Nunito Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#4f46e5',
+                        accent: '#a78bfa',
+                        success: '#36d399',
+                        error: '#f43f5e',
+                        warning: '#fbbd23',
+                        info: '#3ab7bf',
+                        background: '#f3f4f6',
+                        card: '#ffffff',
+                        'card-shadow': '#e5e7eb',
+                        'input-border': '#d1d5db',
+                        'input-focus': '#c3b2ff',
+                    },
+                    keyframes: {
+                        'gradient-xy': {
+                            '0%, 100%': {
+                                'background-position': '0% 50%'
+                            },
+                            '50%': {
+                                'background-position': '100% 50%'
+                            },
+                        },
+                        'pulse-fast': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'gradient-xy': 'gradient-xy 15s linear infinite',
+                        'pulse-fast': 'pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    boxShadow: {
+                        'glow-primary': '0 0 20px -5px rgba(99, 102, 241, 0.6)',
+                        'glow-accent': '0 0 20px -5px rgba(167, 139, 250, 0.6)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-background flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8 animate-fade-in">
+    <div class="relative w-full max-w-md bg-card rounded-2xl shadow-xl overflow-hidden animate__animated animate__fadeIn animate__faster">
+        <div class="absolute inset-0 bg-gradient-to-br from-accent to-primary opacity-20 blur-3xl animate-gradient-xy"></div>
+        <div class="relative p-10">
+            <div class="text-center">
+                <img src="https://picsum.photos/200/300" alt="Game Portal Logo" class="mx-auto h-24 w-auto mb-6 rounded-full shadow-md border-4 border-white">
+                <h2 class="mt-2 text-3xl font-bold text-gray-900">
+                    Welcome Back!
+                </h2>
+                <p class="mt-2 text-sm text-gray-500">
+                    Login to access exclusive games and rewards.
+                </p>
+            </div>
+            <div class="mt-8">
+                <div class="space-y-6">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">
+                            Email address
+                        </label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa fa-envelope text-gray-500"></i>
+                            </div>
+                            <input type="email" name="email" id="email" class="focus:ring-accent focus:border-accent block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label for="password" class="block text-sm font-medium text-gray-700">
+                            Password
+                        </label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa fa-lock text-gray-500"></i>
+                            </div>
+                            <input type="password" name="password" id="password" class="focus:ring-accent focus:border-accent block w-full pl-10 sm:text-sm border-gray-300 rounded-md" placeholder="Your password">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <button type="button" class="focus:outline-none">
+                                    <i class="fa fa-eye text-gray-500 hover:text-gray-700 cursor-pointer"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember-me" name="remember-me" type="checkbox" class="focus:ring-accent h-4 w-4 text-accent border-gray-300 rounded">
+                            <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <div class="text-sm">
+                            <a href="#" class="font-medium text-primary hover:text-secondary">
+                                Forgot your password?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors duration-300">
+                            <i class="fa fa-sign-in-alt mr-2"></i> Sign in
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-6 relative">
+                    <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-card text-gray-500">
+                            Or continue with
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-2 gap-3">
+                    <div>
+                        <button type="button" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors duration-300">
+                            <span class="sr-only">Sign in with Facebook</span>
+                            <i class="fa-brands fa-facebook-f mr-2"></i> Facebook
+                        </button>
+                    </div>
+
+                    <div>
+                        <button type="button" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors duration-300">
+                            <span class="sr-only">Sign in with Google</span>
+                            <i class="fa-brands fa-google mr-2"></i> Google
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 py-8 bg-gray-50 border-t border-gray-200 sm:px-10">
+            <p class="text-xs text-gray-500 text-center">
+                By signing in, you agree to our <a href="#" class="font-medium text-primary hover:text-secondary">Terms of Service</a> and <a href="#" class="font-medium text-primary hover:text-secondary">Privacy Policy</a>.
+            </p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const passwordInput = document.getElementById('password');
+            const passwordToggle = document.querySelector('.fa-eye');
+
+            passwordToggle.addEventListener('click', () => {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    passwordToggle.classList.remove('fa-eye');
+                    passwordToggle.classList.add('fa-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    passwordToggle.classList.remove('fa-eye-slash');
+                    passwordToggle.classList.add('fa-eye');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

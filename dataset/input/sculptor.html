@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sculptor Installations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#f4f0ec',
+                        'secondary': '#d9d0c7',
+                        'accent': '#a9927d',
+                        'dark': '#1e1e1e',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '128': '32rem',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'slide-left': {
+                            '0%': {
+                                transform: 'translateX(100%)'
+                            },
+                            '100%': {
+                                transform: 'translateX(0)'
+                            },
+                        },
+                        'kenburns': {
+                            '0%': {
+                                transform: 'scale(1) translateY(0)'
+                            },
+                            '50%': {
+                                transform: 'scale(1.1) translateY(-10px)'
+                            },
+                            '100%': {
+                                transform: 'scale(1) translateY(0)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'slide-left': 'slide-left 0.8s ease-out',
+                        'kenburns-slow': 'kenburns 15s linear infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        . Obvious pathways to key actions
+        . Clear feedback on user location
+        . Optimized asset loading
+        . Minimal DOM operations
+        . Efficient CSS selectors
+        . Lazy loading where appropriate
+        . Browser caching strategy
+        . WCAG 2.1 compliance
+        . Proper heading structure
+        . Keyboard navigation support
+        . Screen reader compatibility
+        . Sufficient color contrast
+        . Alt text for images
+        . ARIA labels where needed
+        . Mobile-first approach
+        . Fluid typography
+        . Flexible grid systems
+        . Breakpoint strategy
+        . Touch-friendly targets
+        . Content prioritization
+        . Semantic HTML structure
+        . Modular CSS architecture
+        . Progressive enhancement
+        . Cross-browser compatibility
+        . Error handling
+        . Form validation
+        . Security best practices
+        . Consistent color palette
+        . Typography hierarchy
+        . Component spacing system
+        . Animation principles
+        . Icon system
+        . Brand alignment
+        . Meaningful animations
+        . Loading states
+        . Error states
+        . Success feedback
+        . Hover states
+        . Active states
+        . Focus states
+        . Clear messaging hierarchy
+        . Scannable content blocks
+        . Effective CTAs
+        . Error message clarity
+        . Help text placement
+        . Microcopy
+        . Clear privacy policies
+        . Security certificates
+        . Data handling transparency
+        . Trust indicators
+        . Contact information
+        . Support access
+        . Load time optimization
+        . First contentful paint
+        . Time to interactive
+        . Cumulative layout shift
+        . First input delay
+        . Performance budgets
+        . Maintainable structure
+        . Documentation
+        . Component reusability
+        . Testing strategy
+        . Version control
+        . Build process
+        . Code splitting
+        . Touch target sizes
+        . Gesture support
+        . Viewport optimization
+        . Device-specific features
+        . Offline capabilities
+        . App-like experience
+        . Scalable architecture
+        . Feature extensibility
+        . API integration readiness
+        . Analytics implementation
+        . A/B testing capability
+        . Monitoring setup
+        . User feedback systems
+        . Rating displays
+        . Testimonial integration
+        . Social sharing
+        . Community features
+        . Clear value proposition
+        . Streamlined user flows
+        . Minimal friction points
+        . Progressive disclosure
+        . Decision simplification */
+        @keyframes smoothPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+        .animate-smooth-pulse {
+            animation: smoothPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-dark text-primary font-body">
+
+<header class="sticky top-0 z-50 bg-dark/90 backdrop-blur-sm shadow-md">
+    <nav class="container mx-auto px-6 py-4 lg:px-8 xl:px-12 flex justify-between items-center">
+        <a href="#" class="font-display text-2xl font-bold tracking-tight hover:text-accent transition-colors">Sculptura</a>
+        <button class="lg:hidden text-primary hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent" aria-label="Open navigation">
+            <i class="fa fa-bars fa-lg"></i>
+        </button>
+        <div class="hidden lg:flex space-x-8">
+            <a href="#installations" class="hover:text-accent transition-colors">Installations</a>
+            <a href="#about" class="hover:text-accent transition-colors">About</a>
+            <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="hero" class="relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/1920/1080?grayscale&blur=2" alt="Abstract background texture" class="w-full h-full object-cover animate-kenburns-slow" loading="lazy">
+            <div class="absolute inset-0 bg-dark/70"></div>
+        </div>
+        <div class="container mx-auto px-6 py-24 lg:px-8 xl:px-12 relative z-10 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+            <div class="text-center lg:text-left lg:max-w-xl mb-12 lg:mb-0 animate-fade-in-down">
+                <h1 class="font-display text-5xl lg:text-6xl font-bold leading-tight mb-6">Evoking Emotion Through Form</h1>
+                <p class="text-lg text-secondary mb-10">Discover the monumental installations of [Sculptor's Name], transforming spaces and perceptions.</p>
+                <a href="#installations" class="inline-block bg-accent text-dark px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Explore Installations</a>
+            </div>
+            <div class="relative max-w-md lg:max-w-lg animate-slide-left">
+                <div class="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden shadow-2xl">
+                    <img src="https://picsum.photos/600/600?grayscale&seed=42" alt="Sculptor's Installation Example" class="object-cover w-full h-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="installations" class="py-20 bg-primary">
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12">
+            <h2 class="font-display text-4xl font-bold text-dark text-center mb-16">Featured Installations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="installation-item bg-secondary rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group" onclick="openModal('Installation Title 1', 'https://picsum.photos/800/600?random=1', 'Description of Installation 1.')">
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="https://picsum.photos/400/300?random=1" alt="Installation 1" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl text-dark mb-2 group-hover:text-accent transition-colors">Installation Title 1</h3>
+                        <p class="text-dark text-opacity-70">Brief description excerpt...</p>
+                    </div>
+                </div>
+                <div class="installation-item bg-secondary rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group" onclick="openModal('Installation Title 2', 'https://picsum.photos/800/600?random=2', 'Description of Installation 2.')">
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Installation 2" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl text-dark mb-2 group-hover:text-accent transition-colors">Installation Title 2</h3>
+                        <p class="text-dark text-opacity-70">Brief description excerpt...</p>
+                    </div>
+                </div>
+                <div class="installation-item bg-secondary rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group" onclick="openModal('Installation Title 3', 'https://picsum.photos/800/600?random=3', 'Description of Installation 3.')">
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Installation 3" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl text-dark mb-2 group-hover:text-accent transition-colors">Installation Title 3</h3>
+                        <p class="text-dark text-opacity-70">Brief description excerpt...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-accent text-dark px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-accent">View All Installations</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-dark">
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+            <div class="lg:max-w-lg mb-12 lg:mb-0">
+                <div class="aspect-w-1 aspect-h-1 rounded-xl overflow-hidden shadow-2xl">
+                    <img src="https://picsum.photos/600/800?grayscale&seed=43" alt="Sculptor's Portrait" class="object-cover w-full h-full">
+                </div>
+            </div>
+            <div class="text-center lg:text-left lg:max-w-xl">
+                <h2 class="font-display text-4xl font-bold text-primary mb-6">About the Sculptor</h2>
+                <p class="text-lg text-secondary mb-8"> [Sculptor's Name] is a visionary artist renowned for creating immersive and thought-provoking installations. With a profound understanding of space, form, and material, [he/she/they] craft experiences that resonate deeply with viewers.  [Sculptor's Name]'s work explores themes of [mention key themes, e.g., nature, humanity, technology, etc.], inviting audiences to contemplate their relationship with the world around them.</p>
+                <p class="text-lg text-secondary mb-8">Driven by a passion for pushing creative boundaries, [Sculptor's Name] combines traditional sculpting techniques with innovative approaches to create pieces that are both monumental in scale and intimate in detail.  Each installation is meticulously planned and executed, resulting in environments that are as aesthetically captivating as they are conceptually rich.</p>
+                <a href="#" class="inline-block border-2 border-accent text-primary px-8 py-3 rounded-full font-semibold hover:bg-accent hover:text-dark transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-primary">
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12">
+            <h2 class="font-display text-4xl font-bold text-dark text-center mb-16">Get in Touch</h2>
+            <div class="max-w-xl mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-dark">Your Name</label>
+                        <input type="text" id="name" class="shadow-sm bg-secondary border border-secondary text-dark text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-dark">Your Email</label>
+                        <input type="email" id="email" class="shadow-sm bg-secondary border border-secondary text-dark text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5" placeholder="your@email.com" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-medium text-dark">Your Message</label>
+                        <textarea id="message" rows="5" class="shadow-sm bg-secondary border border-secondary text-dark text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5" placeholder="Leave a message..."></textarea>
+                    </div>
+                    <button type="submit" class="bg-accent text-dark px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-accent w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark border-t border-secondary/20 py-12">
+    <div class="container mx-auto px-6 lg:px-8 xl:px-12 text-center text-secondary">
+        <p>© 2024 Sculptura. All rights reserved.</p>
+        <div class="mt-4 space-x-6 flex justify-center">
+            <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-twitter fa-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+<div id="installationModal" class="hidden fixed z-50 inset-0 overflow-y-auto" aria-labelledby="installationModalLabel" role="dialog" aria-modal="true">
+    <div class="flex items-center justify-center min-h-screen px-4 text-center">
+        <div class="fixed inset-0 bg-dark bg-opacity-75 transition-opacity" aria-hidden="true" onclick="closeModal()"></div>
+        <div class="relative bg-primary rounded-xl shadow-lg overflow-hidden max-w-2xl mx-auto transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl">
+            <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                    <div class="text-left">
+                        <h3 class="text-lg leading-6 font-medium text-dark" id="modal-title">Installation Title</h3>
+                        <div class="mt-2">
+                            <p class="text-sm text-dark text-opacity-80" id="modal-description">Description goes here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <img id="modal-image" src="https://picsum.photos/800/600" alt="Installation Image" class="w-full rounded-b-xl">
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="closeModal()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal(title, imageUrl, description) {
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-image').src = imageUrl;
+        document.getElementById('modal-description').textContent = description;
+        document.getElementById('installationModal').classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('installationModal').classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - (document.querySelector('header').offsetHeight), // Adjust for sticky header height
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

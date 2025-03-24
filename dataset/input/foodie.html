@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Delight - A Culinary Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F8F0E3',
+                        'secondary': '#EED9C4',
+                        'accent': '#D9C0B4',
+                        'dark': '#1E1E1E',
+                        'light': '#FFFFFF',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '26': '6.5rem',
+                        '30': '7.5rem',
+                        '34': '8.5rem',
+                        '38': '9.5rem',
+                        '42': '10.5rem',
+                        '46': '11.5rem',
+                        '50': '12.5rem',
+                        '54': '13.5rem',
+                        '58': '14.5rem',
+                        '62': '15.5rem',
+                        '66': '16.5rem',
+                        '70': '17.5rem',
+                        '74': '18.5rem',
+                        '78': '19.5rem',
+                        '82': '20.5rem',
+                        '86': '21.5rem',
+                        '90': '22.5rem',
+                        '94': '23.5rem',
+                        '98': '24.5rem',
+                        '102': '25.5rem',
+                        '106': '26.5rem',
+                        '110': '27.5rem',
+                        '114': '28.5rem',
+                        '118': '29.5rem',
+                        '120': '30rem',
+                        '124': '31rem',
+                        '128': '32rem',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-down': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(10px)'
+                            },
+                        },
+                        'slide-in-left': {
+                            '0%': {
+                                transform: 'translateX(-100%)',
+                                opacity: '0'
+                            },
+                            '100%': {
+                                transform: 'translateX(0)',
+                                opacity: '1'
+                            },
+                        },
+                        'slide-out-left': {
+                            'from': {
+                                transform: 'translateX(0)',
+                                opacity: '1'
+                            },
+                            'to': {
+                                transform: 'translateX(-100%)',
+                                opacity: '0'
+                            },
+                        },
+                        'pulse-bg': {
+                            '0%, 100%': { backgroundColor: '#EED9C4' },
+                            '50%': { backgroundColor: '#D9C0B4' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-down': 'fade-out-down 0.5s ease-in',
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'slide-out-left': 'slide-out-left 0.5s ease-in',
+                        'pulse-bg': 'pulse-bg 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .blog-post-content > *:not(h2):not(h3):not(h4):not(h5):not(h6):not(ul):not(ol):not(p):not(blockquote):not(pre){
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .blog-post-content > h2 {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .blog-post-content > h3 {
+            font-size: 1.75rem;
+            line-height: 1.3;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .blog-post-content > h4 {
+            font-size: 1.5rem;
+            line-height: 1.3;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        .blog-post-content > h5 {
+            font-size: 1.25rem;
+            line-height: 1.3;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .blog-post-content > h6 {
+            font-size: 1rem;
+            line-height: 1.3;
+            margin-top: 0.75rem;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+        .blog-post-content > p {
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+        .blog-post-content > ul, .blog-post-content > ol {
+            margin-top: 0.75rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+        }
+        .blog-post-content > ul {
+            list-style-type: disc;
+        }
+        .blog-post-content > ol {
+            list-style-type: decimal;
+        }
+        .blog-post-content > blockquote {
+            border-left: 4px solid theme('colors.accent');
+            padding-left: 1rem;
+            font-style: italic;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .blog-post-content > pre {
+            background-color: theme('colors.gray.100');
+            padding: 1rem;
+            overflow-x: auto;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.375rem;
+        }
+        .blog-post-content > img {
+            border-radius: 0.375rem;
+        }
+
+    </style>
+</head>
+<body class="bg-primary text-dark font-body">
+
+    <header class="sticky top-0 bg-primary z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-display text-2xl font-bold hover:text-accent transition-colors duration-300">Foodie <span class="text-accent">Delight</span></a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="/" class="hover:text-accent transition-colors duration-300">Home</a>
+                <a href="/recipes" class="hover:text-accent transition-colors duration-300">Recipes</a>
+                <a href="/blog" class="hover:text-accent transition-colors duration-300">Blog</a>
+                <a href="/about" class="hover:text-accent transition-colors duration-300">About</a>
+                <a href="/contact" class="hover:text-accent transition-colors duration-300">Contact</a>
+                <input type="text" placeholder="Search recipes..." class="px-4 py-2 rounded-full bg-secondary focus:outline-none focus:ring-2 focus:ring-accent text-dark">
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-accent focus:outline-none">
+                    <i class="fa fa-bars fa-2x"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-primary shadow-md p-4">
+            <a href="/" class="block py-2 hover:text-accent transition-colors duration-300">Home</a>
+            <a href="/recipes" class="block py-2 hover:text-accent transition-colors duration-300">Recipes</a>
+            <a href="/blog" class="block py-2 hover:text-accent transition-colors duration-300">Blog</a>
+            <a href="/about" class="block py-2 hover:text-accent transition-colors duration-300">About</a>
+            <a href="/contact" class="block py-2 hover:text-accent transition-colors duration-300">Contact</a>
+            <input type="text" placeholder="Search recipes..." class="mt-4 px-4 py-2 rounded-full bg-secondary focus:outline-none focus:ring-2 focus:ring-accent text-dark block w-full">
+        </div>
+    </header>
+
+    <section class="hero container mx-auto px-6 mt-24 md:mt-32 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text fade-in-down animate-once animate-delay-100">
+                <h1 class="font-display text-5xl md:text-6xl font-bold leading-tight mb-6">Savor Every <span class="text-accent">Delicious</span> Moment</h1>
+                <p class="text-lg mb-8">Explore a world of culinary inspiration with our curated recipes and captivating food stories. Discover your next favorite meal and embark on a flavorful journey.</p>
+                <a href="/recipes" class="inline-block bg-accent text-light px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">Explore Recipes</a>
+            </div>
+            <div class="hero-image fade-in-down animate-once animate-delay-300">
+                <img src="https://picsum.photos/id/1025/800/600" alt="Delicious food" class="rounded-2xl shadow-xl w-full h-auto object-cover" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-recipes bg-secondary py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold text-center mb-12">Featured Recipes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="recipe-card bg-light rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/237/400/300" alt="Recipe 1" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">Spicy Thai Basil Chicken</h3>
+                        <p class="text-gray-700 mb-4">Quick, easy, and bursting with flavor. Perfect for a weeknight dinner.</p>
+                        <a href="/recipe/thai-basil-chicken" class="inline-block bg-accent text-light px-6 py-2 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">View Recipe</a>
+                    </div>
+                </div>
+                <div class="recipe-card bg-light rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/42/400/300" alt="Recipe 2" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">Creamy Tomato Pasta Bake</h3>
+                        <p class="text-gray-700 mb-4">Comfort food at its finest. A cheesy and satisfying pasta dish for any occasion.</p>
+                        <a href="/recipe/tomato-pasta-bake" class="inline-block bg-accent text-light px-6 py-2 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">View Recipe</a>
+                    </div>
+                </div>
+                <div class="recipe-card bg-light rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/39/400/300" alt="Recipe 3" class="w-full h-56 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-xl font-semibold mb-2">Decadent Chocolate Lava Cakes</h3>
+                        <p class="text-gray-700 mb-4">Indulge in pure chocolate bliss. Warm, gooey, and utterly irresistible dessert.</p>
+                        <a href="/recipe/chocolate-lava-cakes" class="inline-block bg-accent text-light px-6 py-2 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">View Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-posts py-16 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold text-center mb-12">Latest Blog Posts</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                <div class="blog-post-preview">
+                    <a href="/blog/post-1" class="block hover:opacity-90 transition-opacity duration-300">
+                        <img src="https://picsum.photos/id/1040/600/400" alt="Blog Post 1" class="rounded-2xl w-full h-64 object-cover mb-4">
+                    </a>
+                    <div class="px-2">
+                        <h3 class="font-display text-xl font-semibold mb-2"><a href="/blog/post-1" class="hover:text-accent transition-colors duration-300">The Art of Slow Cooking: Mastering Flavor and Tenderness</a></h3>
+                        <p class="text-gray-700 mb-4">Slow cooking is more than just a technique; it's a culinary philosophy. Discover how low and slow can unlock incredible flavors...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fa fa-calendar-alt mr-1"></i> Nov 15, 2024</span>
+                            <a href="/blog/post-1" class="text-accent hover:text-secondary transition-colors duration-300"><i class="fa fa-arrow-right"></i> Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-post-preview">
+                    <a href="/blog/post-2" class="block hover:opacity-90 transition-opacity duration-300">
+                        <img src="https://picsum.photos/id/1043/600/400" alt="Blog Post 2" class="rounded-2xl w-full h-64 object-cover mb-4">
+                    </a>
+                    <div class="px-2">
+                        <h3 class="font-display text-xl font-semibold mb-2"><a href="/blog/post-2" class="hover:text-accent transition-colors duration-300">Baking Bread at Home: A Beginner's Guide to Delicious Loaves</a></h3>
+                        <p class="text-gray-700 mb-4">Freshly baked bread is one of life's simple pleasures. Our guide breaks down the basics, making homemade bread accessible to everyone...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fa fa-calendar-alt mr-1"></i> Nov 8, 2024</span>
+                            <a href="/blog/post-2" class="text-accent hover:text-secondary transition-colors duration-300"><i class="fa fa-arrow-right"></i> Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blog-post-preview">
+                    <a href="/blog/post-3" class="block hover:opacity-90 transition-opacity duration-300">
+                        <img src="https://picsum.photos/id/1056/600/400" alt="Blog Post 3" class="rounded-2xl w-full h-64 object-cover mb-4">
+                    </a>
+                    <div class="px-2">
+                        <h3 class="font-display text-xl font-semibold mb-2"><a href="/blog/post-3" class="hover:text-accent transition-colors duration-300">Spice Up Your Life: Exploring Global Flavors in Your Kitchen</a></h3>
+                        <p class="text-gray-700 mb-4">Embark on a global culinary adventure without leaving your home. We explore exciting spices and flavor combinations from around the world...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500"><i class="fa fa-calendar-alt mr-1"></i> Nov 1, 2024</span>
+                            <a href="/blog/post-3" class="text-accent hover:text-secondary transition-colors duration-300"><i class="fa fa-arrow-right"></i> Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="/blog" class="inline-block bg-accent text-light px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">View All Blog Posts</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-secondary py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-dark">© 2024 Foodie Delight. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="text-dark hover:text-accent transition-colors duration-300"><i class="fab fa-facebook-square fa-lg"></i></a>
+                <a href="#" class="text-dark hover:text-accent transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="text-dark hover:text-accent transition-colors duration-300"><i class="fab fa-pinterest-square f
+content_copy
+download
+Use code with caution.
+Html

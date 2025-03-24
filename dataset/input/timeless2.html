@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#34d399',
+                        'secondary': '#a7f3d0',
+                        'accent': '#10b981',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '72': '18rem',
+                        '84': '21rem',
+                        '96': '24rem',
+                        '108': '27rem',
+                        '120': '30rem',
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'slide-up': 'slide-up 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @layer base {
+            body {
+                @apply font-inter bg-neutral text-dark antialiased;
+            }
+            h1, h2, h3 {
+                @apply font-bold tracking-tight;
+            }
+            h1 { @apply text-4xl md:text-5xl lg:text-6xl; }
+            h2 { @apply text-3xl md:text-4xl; }
+            h3 { @apply text-2xl; }
+            p { @apply text-base leading-relaxed; }
+            a { @apply text-accent hover:text-primary transition-colors; }
+            button, .button { @apply rounded-md font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-transform active:scale-95; }
+        }
+        @layer components {
+            .container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+            .section { @apply py-16 md:py-24 lg:py-32; }
+            .card { @apply bg-white rounded-lg shadow-md overflow-hidden; }
+            .btn-primary { @apply bg-primary text-white px-5 py-3 hover:bg-accent; }
+            .btn-secondary { @apply bg-secondary text-dark px-5 py-3 hover:bg-primary hover:text-white; }
+        }
+        @layer utilities {
+            .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+            .bg-gradient-primary { background: linear-gradient(135deg, theme('colors.primary'), theme('colors.accent')); }
+        }
+    </style>
+</head>
+<body class="animate-fade-in">
+
+<header class="bg-white sticky top-0 z-50 shadow-md">
+    <div class="container">
+        <nav class="flex justify-between items-center py-4">
+            <a href="/" class="text-2xl font-bold text-dark">Timeless Blog</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-primary">Home</a>
+                <a href="#" class="hover:text-primary">Categories</a>
+                <a href="#" class="hover:text-primary">About</a>
+                <a href="#" class="hover:text-primary">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-neutral shadow-md py-2">
+        <div class="container flex flex-col space-y-2">
+            <a href="#" class="block py-1 hover:bg-gray-100 px-4">Home</a>
+            <a href="#" class="block py-1 hover:bg-gray-100 px-4">Categories</a>
+            <a href="#" class="block py-1 hover:bg-gray-100 px-4">About</a>
+            <a href="#" class="block py-1 hover:bg-gray-100 px-4">Contact</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                <div class="lg:col-span-2">
+                    <div class="mb-12 animate-slide-up">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/10/800/450" alt="Blog Post Image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h2 class="mb-4">Embracing Minimalism in Modern Living</h2>
+                                <p class="mb-6 text-gray-700">Explore the beauty of less and how minimalism can transform your life and home. Discover practical tips and inspiration for decluttering and simplifying.</p>
+                                <a href="#" class="btn-primary inline-flex items-center">
+                                    Read More <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-12 animate-slide-up delay-100">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/20/800/450" alt="Blog Post Image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h2 class="mb-4">The Art of Scandinavian Interior Design</h2>
+                                <p class="mb-6 text-gray-700">Delve into the world of Scandinavian design, characterized by simplicity, functionality, and natural materials. Learn how to create a cozy and inviting space inspired by Nordic aesthetics.</p>
+                                <a href="#" class="btn-primary inline-flex items-center">
+                                    Read More <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-12 animate-slide-up delay-200">
+                        <div class="card">
+                            <img src="https://picsum.photos/id/30/800/450" alt="Blog Post Image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h2 class="mb-4">Sustainable Living: Small Changes, Big Impact</h2>
+                                <p class="mb-6 text-gray-700">Discover easy and impactful ways to live more sustainably. From reducing waste to conserving energy, find practical tips for an eco-friendly lifestyle.</p>
+                                <a href="#" class="btn-primary inline-flex items-center">
+                                    Read More <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="lg:col-span-1">
+                    <div class="card mb-8 p-6">
+                        <h3 class="mb-4">About Us</h3>
+                        <img src="https://picsum.photos/id/40/200/200" alt="Author Image" class="w-24 h-24 rounded-full mb-4 mx-auto">
+                        <p class="text-sm text-gray-700 text-center">Welcome to our blog, dedicated to timeless design and sustainable living. We share inspiration and practical advice for creating beautiful and meaningful spaces.</p>
+                        <div class="flex justify-center mt-4 space-x-4">
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card mb-8 p-6">
+                        <h3 class="mb-4">Categories</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-primary"><i class="fa fa-tag mr-2"></i> Minimalism</a></li>
+                            <li><a href="#" class="hover:text-primary"><i class="fa fa-tag mr-2"></i> Scandinavian Design</a></li>
+                            <li><a href="#" class="hover:text-primary"><i class="fa fa-tag mr-2"></i> Sustainable Living</a></li>
+                            <li><a href="#" class="hover:text-primary"><i class="fa fa-tag mr-2"></i> Interior Design</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card mb-8 p-6">
+                        <h3 class="mb-4">Stay Updated</h3>
+                        <p class="text-sm text-gray-700 mb-4">Subscribe to our newsletter and never miss our latest posts.</p>
+                        <div class="mt-2">
+                            <input type="email" placeholder="Your email address" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-primary focus:ring-opacity-50 focus:border-primary">
+                            <button class="btn-secondary mt-3 w-full">Subscribe</button>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark text-neutral py-12">
+    <div class="container text-center">
+        <p class="mb-4">© 2024 Timeless Blog. All rights reserved.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="hover:text-primary"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="hover:text-primary"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="hover:text-primary"><i class="fab fa-linkedin fa-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>

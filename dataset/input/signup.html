@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Apex Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#570df8',
+                        'secondary': '#f000b8',
+                        'accent': '#37cdbe',
+                        'neutral': '#3d4451',
+                        'base-100': '#ffffff',
+                        'info': '#3ab7bf',
+                        'success': '#36d399',
+                        'warning': '#fbbd23',
+                        'error': '#f87272',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-blurred-top': {
+                            '0%': {
+                                transform: 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
+                                'transform-origin': '50% 0%',
+                                filter: 'blur(40px)',
+                                opacity: '0'
+                            },
+                            '100%': {
+                                transform: 'translateY(0) scaleY(1) scaleX(1)',
+                                'transform-origin': '50% 50%',
+                                filter: 'blur(0)',
+                                opacity: '1'
+                            },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '.5' }
+                        }
+                    },
+                    animation: {
+                        'slide-in-blurred-top': 'slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        . FrostedGlass {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-primary to-secondary min-h-screen flex items-center justify-center overflow-hidden">
+
+<div class="absolute inset-0 animate-pulse-custom bg-gradient-to-br from-primary to-secondary opacity-10"></div>
+
+<div class="FrostedGlass p-12 rounded-3xl shadow-2xl z-10 w-full max-w-lg animate-slide-in-blurred-top">
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-white mb-2">Join Apex Platform</h2>
+        <p class="text-white opacity-70">Create your account and explore new possibilities.</p>
+    </div>
+
+    <form id="signupForm" class="space-y-6">
+        <div>
+            <label for="name" class="block mb-2 text-sm font-medium text-white">Full Name</label>
+            <input type="text" id="name" class="shadow-sm bg-neutral border border-neutral-300 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 dark:bg-neutral dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-accent dark:focus:border-accent" placeholder="Your Full Name" required>
+        </div>
+        <div>
+            <label for="email" class="block mb-2 text-sm font-medium text-white">Email Address</label>
+            <input type="email" id="email" class="shadow-sm bg-neutral border border-neutral-300 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 dark:bg-neutral dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-accent dark:focus:border-accent" placeholder="you@example.com" required>
+        </div>
+        <div>
+            <label for="password" class="block mb-2 text-sm font-medium text-white">Password</label>
+            <input type="password" id="password" class="shadow-sm bg-neutral border border-neutral-300 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 dark:bg-neutral dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-accent dark:focus:border-accent" placeholder="••••••••" required>
+        </div>
+
+        <div id="advancedFields" class="hidden space-y-6 animate-fade-in">
+            <div>
+                <label for="username" class="block mb-2 text-sm font-medium text-white">Username (Optional)</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                        <i class="fa-regular fa-user text-white opacity-70"></i>
+                    </div>
+                    <input type="text" id="username" class="shadow-sm bg-neutral border border-neutral-300 text-white text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5 ps-10 dark:bg-neutral dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-accent dark:focus:border-accent" placeholder="Choose a username">
+                </div>
+            </div>
+            <div>
+                <label for="profilePicture" class="block mb-2 text-sm font-medium text-white">Profile Picture (Optional)</label>
+                <div class="flex items-center justify-center w-full">
+                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-32 border-2 border-neutral-300 border-dashed rounded-lg cursor-pointer bg-neutral dark:hover:bg-bray-800 dark:bg-neutral-700 hover:bg-neutral-100 dark:border-neutral-600 dark:hover:border-neutral-500 dark:hover:bg-neutral-600">
+                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                            <img id="profileImagePlaceholder" src="https://picsum.photos/id/237/100/100" alt="Profile Preview" class="rounded-full h-16 w-16 mb-2">
+                            <p class="mb-2 text-sm text-neutral-500 dark:text-neutral-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                            <p class="text-xs text-neutral-500 dark:text-neutral-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                        </div>
+                        <input id="dropzone-file" type="file" class="hidden" accept="image/*" onchange="previewImage(event)"/>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label for="bio" class="block mb-2 text-sm font-medium text-white">Bio (Optional)</label>
+                <textarea id="bio" rows="3" class="block p-2.5 w-full text-sm text-white bg-neutral rounded-lg border border-neutral-300 focus:ring-accent focus:border-accent dark:bg-neutral dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-accent dark:focus:border-accent" placeholder="Tell us about yourself"></textarea>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <div class="flex items-start">
+                <div class="flex items-center h-5">
+                    <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-neutral-300 rounded bg-neutral focus:ring-accent dark:focus:ring-accent dark:ring-offset-neutral-800 focus:ring-2 dark:bg-neutral dark:border-neutral-600">
+                </div>
+                <label for="remember" class="ms-2 text-sm font-medium text-white dark:text-neutral-300">Remember me</label>
+            </div>
+            <button type="button" id="toggleAdvanced" class="text-sm text-accent hover:underline dark:text-accent-500">Advanced Options</button>
+        </div>
+        <button type="submit" class="w-full text-white bg-accent hover:bg-accent-800 focus:ring-4 focus:outline-none focus:ring-accent-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-accent-600 dark:hover:bg-accent-700 dark:focus:ring-accent-800">Create Account</button>
+        <div class="text-sm font-medium text-white text-center">
+            Already have an account? <a href="#" class="text-accent hover:underline dark:text-accent-500">Log In</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    const advancedFields = document.getElementById('advancedFields');
+    const toggleAdvancedButton = document.getElementById('toggleAdvanced');
+
+    toggleAdvancedButton.addEventListener('click', () => {
+        advancedFields.classList.toggle('hidden');
+        if (!advancedFields.classList.contains('hidden')) {
+            setTimeout(() => {
+                advancedFields.classList.add('animate-fade-in');
+            }, 10);
+        } else {
+            advancedFields.classList.remove('animate-fade-in');
+        }
+    });
+
+    function previewImage(event) {
+        const reader = new FileReader();
+        reader.onload = () => {
+            const profileImagePlaceholder = document.getElementById('profileImagePlaceholder');
+            profileImagePlaceholder.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Signup Form Submitted! (Functionality to be implemented)');
+        // In a real application, you would handle form submission via AJAX or similar.
+    });
+</script>
+
+</body>
+</html>

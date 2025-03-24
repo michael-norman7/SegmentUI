@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0EA5E9',
+                        'secondary': '#64748B',
+                        'accent': '#FBBF24',
+                        'neutral': '#F3F4F6',
+                    },
+                    keyframes: {
+                        'pulse-bg': {
+                            '0%, 100%': { backgroundColor: '#E0F7FA' },
+                            '50%': { backgroundColor: '#B2EBF2' }
+                        }
+                    },
+                    animation: {
+                        'pulse-bg': 'pulse-bg 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-text-fill-color: #1E293B;
+            -webkit-box-shadow: 0 0 0px 1000px white inset;
+            box-shadow: 0 0 0px 1000px white inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+</head>
+<body class="bg-neutral flex items-center justify-center min-h-screen">
+    <div class="animate-pulse-bg absolute inset-0 z-[-1]"></div>
+    <div class="relative bg-white p-10 rounded-xl shadow-2xl w-full max-w-md overflow-hidden">
+        <div class="absolute inset-0 opacity-50 pointer-events-none" style="background-image: url('https://picsum.photos/1200/800'); background-size: cover; filter: blur(40px);"></div>
+        <div class="relative z-10">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-primary mb-2">Log In</h2>
+                <p class="text-secondary">Access your account</p>
+            </div>
+            <form class="space-y-6">
+                <div>
+                    <label for="email" class="block mb-2 text-secondary text-sm font-semibold">Email</label>
+                    <div class="relative">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                            <i class="fa-solid fa-envelope text-secondary"></i>
+                        </div>
+                        <input type="email" id="email" class="block w-full p-4 pl-10 text-sm border border-neutral rounded-md bg-white text-text focus:ring-primary focus:border-primary" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-secondary text-sm font-semibold">Password</label>
+                    <div class="relative">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                            <i class="fa-solid fa-lock text-secondary"></i>
+                        </div>
+                        <input type="password" id="password" class="block w-full p-4 pl-10 text-sm border border-neutral rounded-md bg-white text-text focus:ring-primary focus:border-primary" placeholder="Password" required>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" type="checkbox" class="w-4 h-4 border border-neutral rounded focus:ring-primary focus:ring-offset-gray-100 text-primary">
+                        <label for="remember-me" class="ml-2 text-sm text-secondary">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-primary hover:underline">Forgot password?</a>
+                </div>
+                <div>
+                    <button type="submit" class="w-full py-3 px-5 text-sm font-semibold text-center text-white bg-primary rounded-md hover:bg-sky-600 focus:ring-4 focus:outline-none focus:ring-blue-300">Log in</button>
+                </div>
+                <div class="text-sm text-secondary text-center">
+                    Don't have an account? <a href="#" class="text-primary hover:underline">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

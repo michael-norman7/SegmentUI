@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite Teen Fitness - Unleash Your Potential</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#F97316',
+                        'secondary': '#EA580C',
+                        'accent': '#FCD34D',
+                        'neutral': '#F3F4F6',
+                        'dark': '#1E293B',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 1s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    transitionTimingFunction: {
+                        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+
+    <header class="sticky top-0 z-50 bg-neutral/90 backdrop-blur-sm shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary hover:text-secondary transition-colors duration-300">Ignite Fitness</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#classes" class="hover:text-primary transition-colors duration-300">Classes</a>
+                <a href="#trainers" class="hover:text-primary transition-colors duration-300">Trainers</a>
+                <a href="#schedule" class="hover:text-primary transition-colors duration-300">Schedule</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors duration-300">Testimonials</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral shadow-md absolute top-full left-0 right-0 z-40">
+            <div class="px-6 py-4 flex flex-col space-y-3">
+                <a href="#classes" class="hover:text-primary transition-colors duration-300 block py-2">Classes</a>
+                <a href="#trainers" class="hover:text-primary transition-colors duration-300 block py-2">Trainers</a>
+                <a href="#schedule" class="hover:text-primary transition-colors duration-300 block py-2">Schedule</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors duration-300 block py-2">Testimonials</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300 block py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="bg-gradient-to-br from-accent/20 via-neutral to-neutral py-24 md:py-32 relative overflow-hidden">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-6xl font-bold text-dark mb-6 leading-tight">Unleash Your Inner Athlete</h1>
+                <p class="text-xl text-gray-700 mb-8">High-energy fitness classes designed for teenagers. Build strength, boost confidence, and have fun!</p>
+                <a href="#classes" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl">Explore Classes</a>
+            </div>
+            <div class="relative justify-self-end">
+                <img src="https://picsum.photos/id/25/600/400" alt="Teenagers exercising" class="rounded-2xl shadow-2xl translate-x-6 md:translate-x-12 transition-transform duration-500 hover:translate-x-0 hover:scale-105 transform origin-bottom-right">
+                <div class="absolute bottom-0 right-0 bg-accent text-dark p-4 rounded-xl shadow-md translate-y-4 md:translate-y-8 animate-pulse-fast">
+                    <p class="font-bold text-lg">🔥 Summer Sale! 🔥</p>
+                    <p class="text-sm">Join now & get 20% off!</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-neutral to-transparent"></div>
+    </section>
+
+    <section id="classes" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Our Awesome Classes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/30/400/300" alt="High Intensity Training" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">High Intensity Training (HIT)</h3>
+                        <p class="text-gray-700 mb-4">Push your limits with our HIT classes. Burn calories and build endurance in a fun, fast-paced environment.</p>
+                        <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-6 rounded-full transition-colors duration-300">Join Class</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/35/400/300" alt="Strength & Conditioning" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">Strength & Conditioning</h3>
+                        <p class="text-gray-700 mb-4">Develop strength and improve your overall athletic performance. Perfect for all fitness levels.</p>
+                        <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-6 rounded-full transition-colors duration-300">Join Class</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/40/400/300" alt="Dance Fitness" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-2">Dance Fitness</h3>
+                        <p class="text-gray-700 mb-4">Get your groove on and burn calories with our energetic dance fitness classes. No experience needed!</p>
+                        <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-2 px-6 rounded-full transition-colors duration-300">Join Class</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trainers" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Meet Our Expert Trainers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/50/400/300" alt="Trainer 1" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-1">Alex Johnson</h3>
+                        <p class="text-gray-600 mb-3">HIT & Strength Coach</p>
+                        <p class="text-gray-700">Alex is passionate about helping teens reach their fitness goals through challenging and fun workouts.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/55/400/300" alt="Trainer 2" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-1">Sarah Williams</h3>
+                        <p class="text-gray-600 mb-3">Dance Fitness Instructor</p>
+                        <p class="text-gray-700">Sarah's energy and enthusiasm make every dance fitness class an unforgettable experience.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/60/400/300" alt="Trainer 3" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-1">Michael Brown</h3>
+                        <p class="text-gray-600 mb-3">Youth Fitness Specialist</p>
+                        <p class="text-gray-700">Michael specializes in creating fitness programs that are tailored to the unique needs of teenagers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Class Schedule</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse table-auto">
+                    <thead class="bg-gray-200">
+                        <tr>
+                            <th class="py-4 px-6 border-b font-bold uppercase text-sm text-gray-700">Day</th>
+                            <th class="py-4 px-6 border-b font-bold uppercase text-sm text-gray-700">Time</th>
+                            <th class="py-4 px-6 border-b font-bold uppercase text-sm text-gray-700">Class</th>
+                            <th class="py-4 px-6 border-b font-bold uppercase text-sm text-gray-700">Trainer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-4 px-6 border-b text-center">Monday</td>
+                            <td class="py-4 px-6 border-b text-center">4:00 PM - 5:00 PM</td>
+                            <td class="py-4 px-6 border-b text-center">HIT</td>
+                            <td class="py-4 px-6 border-b text-center">Alex</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 border-b text-center">Tuesday</td>
+                            <td class="py-4 px-6 border-b text-center">4:00 PM - 5:00 PM</td>
+                            <td class="py-4 px-6 border-b text-center">Dance Fitness</td>
+                            <td class="py-4 px-6 border-b text-center">Sarah</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 border-b text-center">Wednesday</td>
+                            <td class="py-4 px-6 border-b text-center">4:00 PM - 5:00 PM</td>
+                            <td class="py-4 px-6 border-b text-center">Strength & Conditioning</td>
+                            <td class="py-4 px-6 border-b text-center">Michael</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 border-b text-center">Thursday</td>
+                            <td class="py-4 px-6 border-b text-center">4:00 PM - 5:00 PM</td>
+                            <td class="py-4 px-6 border-b text-center">HIT</td>
+                            <td class="py-4 px-6 border-b text-center">Alex</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 border-b text-center">Friday</td>
+                            <td class="py-4 px-6 border-b text-center">4:00 PM - 5:00 PM</td>
+                            <td class="py-4 px-6 border-b text-center">Dance Fitness</td>
+                            <td class="py-4 px-6 border-b text-center">Sarah</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">What Teens Are Saying</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+                    <i class="fa-solid fa-quote-left text-3xl text-primary mb-4 block"></i>
+                    <p class="text-gray-700 mb-4">"Ignite Fitness classes are the best! I've never felt so energized and motivated to work out. The trainers are awesome and make every class super fun."</p>
+                    <h4 class="font-bold text-dark">- Jessica M.</h4>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition-shadow duration-300">
+                    <i class="fa-solid fa-quote-left text-3xl text-primary mb-4 block"></i>
+                    <p class="text-gray-700 mb-4">"I used to hate exercise, but now I look forward to going to Ignite Fitness. It's a great way to relieve stress and hang out with friends while getting fit."</p>
+                    <h4 class="font-bold text-dark">- Kevin L.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-accent/10">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Ready to Get Started?</h2>
+            <p class="text-gray-700 mb-8 text-lg">Join Ignite Fitness today and start your journey to a healthier, happier you!</p>
+            <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg hover:shadow-xl">Sign Up Now</a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Ignite Fitness. All Rights Reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="hover:text-primary"><i class="fa-brands fa-facebook-square text-2xl"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fa-brands fa-twitter-square text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

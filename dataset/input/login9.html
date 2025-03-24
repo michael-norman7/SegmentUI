@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#64748b',
+                        'accent': '#f43f5e',
+                        'neutral': '#f3f4f6',
+                    },
+                    keyframes: {
+                        'slide-in-blurred-top': {
+                            '0%': {
+                                transform: 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
+                                'transform-origin': '50% 0%',
+                                filter: 'blur(40px)',
+                                opacity: '0'
+                            },
+                            '100%': {
+                                transform: 'translateY(0) scaleY(1) scaleX(1)',
+                                'transform-origin': '50% 50%',
+                                filter: 'blur(0)',
+                                opacity: '1'
+                            },
+                        },
+                        'pulse-fast': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-blurred-top': 'slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
+                        'pulse-fast': 'pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        . FrostedGlass{
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-neutral">
+    <div class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://picsum.photos/1920/1080')">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="FrostedGlass p-8 rounded-3xl z-10 w-full max-w-md space-y-6 animation-slide-in-blurred-top">
+            <div class="text-center">
+                <h2 class="mt-6 text-3xl font-bold text-white">
+                    Welcome Back
+                </h2>
+                <p class="mt-2 text-secondary">
+                    Login to access your dashboard
+                </p>
+            </div>
+            <form class="mt-8 space-y-6" action="#" method="POST">
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <input type="email" name="email" id="email" class="block w-full p-4 pl-10 sm:text-sm border border-gray-300 rounded-md focus:ring-primary focus:border-primary bg-transparent text-white" placeholder="Email Address" required>
+                </div>
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <input type="password" name="password" id="password" placeholder="Password" class="block w-full p-4 pl-10 sm:text-sm border border-gray-300 rounded-md focus:ring-primary focus:border-primary bg-transparent text-white" required>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded bg-neutral">
+                        <label for="remember-me" class="ml-2 block text-sm text-secondary">
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-primary hover:underline">
+                            Forgot password?
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                        Login
+                    </button>
+                </div>
+            </form>
+            <div class="text-center text-secondary">
+                Don't have an account?
+                <a href="#" class="font-medium text-primary hover:underline">
+                    Sign up
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.classList.add('ring-2', 'ring-primary', 'ring-opacity-50');
+                });
+                input.addEventListener('blur', () => {
+                    input.classList.remove('ring-2', 'ring-primary', 'ring-opacity-50');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

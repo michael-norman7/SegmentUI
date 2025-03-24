@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form - Neumorphism</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumo-light': '#f0f2f5',
+                        'neumo-dark-shadow': '#c0c0c0',
+                        'neumo-light-shadow': '#ffffff',
+                    },
+                    boxShadow: {
+                        'neumo-lg': '15px 15px 30px #c0c0c0, -15px -15px 30px #ffffff',
+                        'neumo-sm': '7px 7px 14px #c0c0c0, -7px -7px 14px #ffffff',
+                        'neumo-xl': '20px 20px 40px #c0c0c0, -20px -20px 40px #ffffff',
+                        'neumo-inset': 'inset 5px 5px 10px #c0c0c0, inset -5px -5px 10px #ffffff',
+                        'neumo-inset-sm': 'inset 3px 3px 6px #c0c0c0, inset -3px -3px 6px #ffffff',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .login-container {
+            perspective: 800px;
+        }
+        .login-form {
+            transform-style: preserve-3d;
+        }
+        .input-field:focus + .icon-wrapper i,
+        .input-field:active + .icon-wrapper i {
+            color: #2563eb;
+            transform: scale(1.1);
+        }
+        .input-field:focus,
+        .input-field:active {
+            box-shadow: inset 7px 7px 14px #c0c0c0, inset -7px -7px 14px #ffffff;
+        }
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 10px 10px 20px #c0c0c0, -10px -10px 20px #ffffff;
+        }
+        .submit-button:active {
+            transform: translateY(0);
+            box-shadow: inset 7px 7px 14px #c0c0c0, inset -7px -7px 14px #ffffff;
+        }
+        .icon-wrapper {
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        .input-field {
+            transition: box-shadow 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-neumo-light flex items-center justify-center h-screen">
+    <div class="login-container transform transition-transform duration-500 hover:scale-105">
+        <div class="login-form bg-neumo-light p-10 rounded-xl shadow-neumo-lg w-96">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-semibold text-gray-800">Log In</h2>
+                <p class="text-gray-500 mt-2">Enter your credentials to access your account</p>
+            </div>
+            <form class="space-y-6">
+                <div class="relative">
+                    <input type="email" id="email" class="input-field peer bg-neumo-light w-full rounded-lg py-3 pl-10 pr-3 shadow-neumo-inset-sm focus:outline-none placeholder-transparent" placeholder="Email Address" required>
+                    <label for="email" class="absolute left-3 -top-2.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all peer-focus:-top-2.5 peer-focus:text-gray-600 peer-focus:text-sm bg-neumo-light px-1">Email Address</label>
+                    <div class="absolute left-3 top-2 icon-wrapper pointer-events-none">
+                        <i class="fas fa-envelope text-gray-400 transition-transform"></i>
+                    </div>
+                </div>
+                <div class="relative">
+                    <input type="password" id="password" class="input-field peer bg-neumo-light w-full rounded-lg py-3 pl-10 pr-3 shadow-neumo-inset-sm focus:outline-none placeholder-transparent" placeholder="Password" required>
+                    <label for="password" class="absolute left-3 -top-2.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all peer-focus:-top-2.5 peer-focus:text-gray-600 peer-focus:text-sm bg-neumo-light px-1">Password</label>
+                    <div class="absolute left-3 top-2 icon-wrapper pointer-events-none">
+                        <i class="fas fa-lock text-gray-400 transition-transform"></i>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 rounded bg-neumo-light shadow-neumo-inset-sm focus:ring-0">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-700">
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                            Forgot password?
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="submit-button w-full py-3 rounded-lg bg-blue-600 text-white font-semibold shadow-neumo-sm transition-transform duration-200">
+                        Log in
+                    </button>
+                </div>
+                <div class="text-sm text-center text-gray-500">
+                    Don't have an account?
+                    <a href="#" class="font-medium text-blue-600 hover:text-blue-500">
+                        Sign up
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.closest('.relative').querySelector('.icon-wrapper i').classList.add('text-blue-600');
+            });
+            input.addEventListener('blur', () => {
+                input.closest('.relative').querySelector('.icon-wrapper i').classList.remove('text-blue-600');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nourish - Healthy Food Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ade80',
+                        secondary: '#a7f3d0',
+                        accent: '#10b981',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .animate-delay-100 {
+            animation-delay: 0.1s;
+        }
+        .animate-delay-200 {
+            animation-delay: 0.2s;
+        }
+        .animate-delay-300 {
+            animation-delay: 0.3s;
+        }
+        .animate-delay-400 {
+            animation-delay: 0.4s;
+        }
+        .animate-delay-500 {
+            animation-delay: 0.5s;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+    <header class="sticky top-0 bg-neutral/90 backdrop-blur-sm z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold text-primary hover:text-accent transition-colors">Nourish</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#how-it-works" class="hover:text-primary transition-colors">How it works</a>
+                <a href="#menu" class="hover:text-primary transition-colors">Menu</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <button class="hidden md:block bg-primary hover:bg-accent text-white font-semibold px-4 py-2 rounded-full transition-colors">Order Now</button>
+            <div class="md:hidden">
+                <button id="mobile-menu-button"><i class="fa fa-bars text-xl"></i></button>
+            </div>
+        </nav>
+
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-4">
+                <a href="#how-it-works" class="hover:text-primary transition-colors block">How it works</a>
+                <a href="#menu" class="hover:text-primary transition-colors block">Menu</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors block">Testimonials</a>
+                <a href="#contact" class="hover:text-primary transition-colors block">Contact</a>
+                <button class="bg-primary hover:bg-accent text-white font-semibold px-4 py-2 rounded-full transition-colors w-full block text-center">Order Now</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero relative overflow-hidden py-24 md:py-36">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text fade-in animate-delay-200">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Healthy Food, Delivered Fresh to Your Door</h1>
+                <p class="text-xl text-gray-600 mb-8">Fuel your body with delicious, nutritious meals designed by top chefs and nutritionists. Ready to eat, delivered weekly.</p>
+                <div class="flex space-x-4">
+                    <button class="bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-full transition-colors">Explore Menu</button>
+                    <button class="bg-white hover:bg-neutral border border-gray-300 font-semibold px-6 py-3 rounded-full transition-colors">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image slide-in-right">
+                <img src="https://picsum.photos/600/800" alt="Delicious Healthy Food" class="rounded-3xl shadow-2xl">
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-neutral to-transparent"></div>
+    </section>
+
+    <section id="how-it-works" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-12">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="step-card p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow slide-up animate-delay-200">
+                    <div class="w-16 h-16 bg-secondary text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-rocket fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">1. Choose Your Plan</h3>
+                    <p class="text-gray-600">Select from our flexible meal plans tailored to your dietary needs and preferences.</p>
+                </div>
+                <div class="step-card p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow slide-up animate-delay-300">
+                    <div class="w-16 h-16 bg-secondary text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-utensils fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">2. Delicious Meals Prepared</h3>
+                    <p class="text-gray-600">Our chefs prepare fresh, healthy meals using locally sourced ingredients.</p>
+                </div>
+                <div class="step-card p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow slide-up animate-delay-400">
+                    <div class="w-16 h-16 bg-secondary text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-truck fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">3. Delivered to Your Door</h3>
+                    <p class="text-gray-600">Enjoy convenient weekly deliveries right to your doorstep, ready to heat and eat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-secondary/20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-12">Our Weekly Menu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="menu-item-card bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow slide-up animate-delay-200">
+                    <img src="https://picsum.photos/400/300" alt="Meal 1" class="rounded-t-2xl w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Grilled Salmon with Roasted Vegetables</h3>
+                        <p class="text-gray-600 mb-4">Fresh salmon fillet grilled to perfection, served with seasonal roasted vegetables.</p>
+                        <span class="text-sm font-semibold text-primary">550 Calories</span>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow slide-up animate-delay-300">
+                    <img src="https://picsum.photos/401/300" alt="Meal 2" class="rounded-t-2xl w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Chicken Stir-Fry with Brown Rice</h3>
+                        <p class="text-gray-600 mb-4">Lean chicken breast stir-fried with colorful vegetables and a light soy ginger sauce, served with brown rice.</p>
+                        <span class="text-sm font-semibold text-primary">480 Calories</span>
+                    </div>
+                </div>
+                <div class="menu-item-card bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow slide-up animate-delay-400">
+                    <img src="https://picsum.photos/402/300" alt="Meal 3" class="rounded-t-2xl w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Vegan Lentil Soup with Whole Wheat Bread</h3>
+                        <p class="text-gray-600 mb-4">Hearty and flavorful vegan lentil soup packed with vegetables, served with a slice of whole wheat bread.</p>
+                        <span class="text-sm font-semibold text-primary">420 Calories</span>
+                    </div>
+                </div>
+            </div>
+            <button class="mt-12 bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-full transition-colors">See Full Menu</button>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-12">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow p-6 slide-up animate-delay-200">
+                    <div class="mb-4"><i class="fa fa-quote-left text-gray-400 text-2xl"></i></div>
+                    <p class="text-gray-700 mb-4">"Nourish has completely transformed my eating habits! The meals are not only healthy but incredibly delicious and convenient. I've never felt better!"</p>
+                    <div class="flex items-center justify-center mt-4">
+                        <img src="https://picsum.photos/50/50" alt="Customer 1" class="rounded-full mr-2">
+                        <span class="font-semibold">Sarah J.</span>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow p-6 slide-up animate-delay-300">
+                    <div class="mb-4"><i class="fa fa-quote-left text-gray-400 text-2xl"></i></div>
+                    <p class="text-gray-700 mb-4">"I'm so impressed with the quality and variety of meals from Nourish. It's made eating healthy so easy and enjoyable. Highly recommend!"</p>
+                    <div class="flex items-center justify-center mt-4">
+                        <img src="https://picsum.photos/51/50" alt="Customer 2" class="rounded-full mr-2">
+                        <span class="font-semibold">Michael K.</span>
+                    </div>
+                </div>
+                <div class="testimonial-card bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow p-6 slide-up animate-delay-400">
+                    <div class="mb-4"><i class="fa fa-quote-left text-gray-400 text-2xl"></i></div>
+                    <p class="text-gray-700 mb-4">"As a busy professional, Nourish is a lifesaver. I no longer have to worry about meal prepping, and I'm eating healthier than ever. Thank you, Nourish!"</p>
+                    <div class="flex items-center justify-center mt-4">
+                        <img src="https://picsum.photos/52/50" alt="Customer 3" class="rounded-full mr-2">
+                        <span class="font-semibold">Emily L.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-12">Get Started Today</h2>
+            <p class="text-xl text-gray-600 mb-8">Ready to nourish your body with delicious and healthy meals? Choose your plan and start your journey to a healthier you.</p>
+            <button class="bg-primary hover:bg-accent text-white font-semibold px-6 py-3 rounded-full transition-colors">Order Now</button>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <p>© 2024 Nourish. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-facebook-square fa-lg"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fab fa-twitter-square fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (document.getElementById('mobile-menu')) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

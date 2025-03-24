@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playful Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#6366f1',
+                        'secondary': '#4f46e5',
+                        'accent': '#a78bfa',
+                        'game-bg': '#f0f9ff',
+                        'game-step-active': '#3b82f6',
+                        'game-step-inactive': '#d1d5db',
+                        'success': '#22c55e',
+                        'error': '#ef4444',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-out-left': {
+                            '0%': { transform: 'translateX(0)', opacity: '1' },
+                            '100%': { transform: 'translateX(-100%)', opacity: '0' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'fade-out': {
+                            '0%': { opacity: '1' },
+                            '100%': { opacity: '0' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
+                        'slide-out-left': 'slide-out-left 0.5s ease-in forwards',
+                        'fade-in': 'fade-in 0.3s ease-out forwards',
+                        'fade-out': 'fade-out 0.3s ease-in forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .step-content {
+            animation: fade-in 0.5s ease-out forwards;
+        }
+        .step-content.slide-out {
+            animation: slide-out-left 0.5s ease-in forwards;
+        }
+        .step-content.slide-in {
+            animation: slide-in-right 0.5s ease-out forwards;
+        }
+        .progress-bar-fill {
+            transition: width 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-game-bg">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+            <div>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                    Join the Adventure!
+                </h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Sign up to unlock exclusive features and start your quest.
+                </p>
+            </div>
+
+            <div class="relative">
+                <div class="flex justify-between text-sm font-medium text-gray-500 mb-2">
+                    <span>Step <span id="currentStep">1</span> of <span id="totalSteps">4</span></span>
+                    <span id="stepTitle">Character Selection</span>
+                </div>
+                <div class="bg-gray-200 rounded-full h-2 mb-4">
+                    <div id="progressBar" class="progress-bar-fill bg-game-step-active h-2 rounded-full" style="width: 25%"></div>
+                </div>
+                <div class="flex justify-between relative z-10 mb-6">
+                    <button type="button" id="prevStepBtn" class="px-4 py-2 text-sm font-semibold text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Back
+                    </button>
+                    <button type="button" id="nextStepBtn" class="px-4 py-2 text-sm font-semibold text-white bg-primary rounded-md hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-accent">
+                        Next <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <form class="mt-8 space-y-6" action="#" method="POST">
+                <div id="step1" class="step-content">
+                    <div class="rounded-md shadow-sm -space-y-px">
+                        <div>
+                            <label for="name" class="sr-only">Your Name</label>
+                            <input type="text" id="name" name="name" required class="appearance-none rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email-address" class="sr-only">Email address</label>
+                            <input type="email" id="email-address" name="email" required class="appearance-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" placeholder="Email address">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step2" class="step-content hidden">
+                    <div class="rounded-md shadow-sm -space-y-px">
+                        <div>
+                            <label for="password" class="sr-only">Password</label>
+                            <input type="password" id="password" name="password" required class="appearance-none rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" placeholder="Password">
+                        </div>
+                        <div>
+                            <label for="confirm-password" class="sr-only">Confirm Password</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required class="appearance-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step3" class="step-content hidden">
+                    <div class="rounded-md shadow-sm -space-y-px">
+                        <div>
+                            <label for="username" class="sr-only">Username</label>
+                            <input type="text" id="username" name="username" required class="appearance-none rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" placeholder="Username">
+                        </div>
+                        <div>
+                            <label for="profile-picture" class="sr-only">Profile Picture URL</label>
+                            <input type="url" id="profile-picture" name="profile-picture" class="appearance-none rounded-b-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" placeholder="Profile Picture URL (Optional)" value="https://picsum.photos/200/300">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step4" class="step-content hidden">
+                    <div class="rounded-md shadow-sm -space-y-px">
+                        <div>
+                            <label for="preferences" class="block text-sm font-medium text-gray-700">Preferences (Optional)</label>
+                            <textarea id="preferences" name="preferences" rows="3" class="mt-1 shadow-sm appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" placeholder="Tell us about your preferences..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step5" class="step-content hidden text-center">
+                    <i class="fa-solid fa-check-circle text-success text-7xl mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900">Signup Complete!</h3>
+                    <p class="text-gray-600">Welcome to the adventure. Get ready to explore!</p>
+                    <button type="submit" class="mt-6 group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-accent">
+                        Complete Signup
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const stepContents = document.querySelectorAll('.step-content');
+        const prevStepBtn = document.getElementById('prevStepBtn');
+        const nextStepBtn = document.getElementById('nextStepBtn');
+        const progressBar = document.getElementById('progressBar');
+        const currentStepDisplay = document.getElementById('currentStep');
+        const totalStepsDisplay = document.getElementById('totalSteps');
+        const stepTitleDisplay = document.getElementById('stepTitle');
+
+        let currentStep = 1;
+        const totalSteps = stepContents.length -1 ;
+        totalStepsDisplay.textContent = totalSteps;
+
+        const stepTitles = {
+            1: "Character Selection",
+            2: "Account Security",
+            3: "Profile Setup",
+            4: "Preferences",
+            5: "Complete",
+        };
+
+        function updateStep(step) {
+            if (step >= 1 && step <= totalSteps + 1) {
+                stepContents.forEach((content, index) => {
+                    if (index + 1 === currentStep) {
+                        content.classList.remove('hidden', 'slide-out');
+                        content.classList.add('slide-in');
+                    } else if (index + 1 === step) {
+                        content.classList.remove('hidden', 'slide-out');
+                        content.classList.add('slide-in');
+                    }
+                     else {
+                        content.classList.remove('slide-in');
+                        content.classList.add('hidden');
+                    }
+                });
+
+                currentStep = step;
+                currentStepDisplay.textContent = currentStep;
+                stepTitleDisplay.textContent = stepTitles[currentStep];
+
+                const progressPercentage = ((currentStep - 1) / totalSteps) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+
+                prevStepBtn.disabled = currentStep === 1;
+                nextStepBtn.disabled = currentStep === totalSteps + 1;
+
+                if (currentStep === totalSteps) {
+                    nextStepBtn.textContent = 'Complete';
+                } else {
+                    nextStepBtn.innerHTML = 'Next <i class="fa-solid fa-arrow-right ml-2"></i>';
+                }
+                if (currentStep === totalSteps + 1) {
+                    prevStepBtn.classList.add('hidden');
+                    nextStepBtn.classList.add('hidden');
+                } else {
+                    prevStepBtn.classList.remove('hidden');
+                    nextStepBtn.classList.remove('hidden');
+                }
+            }
+        }
+
+        nextStepBtn.addEventListener('click', () => {
+            if (currentStep < totalSteps + 1) {
+                updateStep(currentStep + 1);
+            }
+        });
+
+        prevStepBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                updateStep(currentStep - 1);
+            }
+        });
+
+        updateStep(1);
+    </script>
+</body>
+</html>

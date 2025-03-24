@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-bg': '#f0f2f5',
+                        'neu-100': '#e4e7eb',
+                        'neu-200': '#d1d5db',
+                        'neu-300': '#a6a9ad',
+                    },
+                    boxShadow: {
+                        'neu': '6px 6px 12px #c8ced3, -6px -6px 12px #ffffff',
+                        'neu-inset': 'inset 6px 6px 12px #c8ced3, inset -6px -6px 12px #ffffff',
+                        'neu-sm': '4px 4px 8px #c8ced3, -4px -4px 8px #ffffff',
+                        'neu-inset-sm': 'inset 4px 4px 8px #c8ced3, inset -4px -4px 8px #ffffff',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .neumorphic-card {
+            background: #f0f2f5;
+            box-shadow: 6px 6px 12px #c8ced3, -6px -6px 12px #ffffff;
+            border-radius: 16px;
+        }
+        .neumorphic-btn {
+            background: #f0f2f5;
+            box-shadow: 4px 4px 8px #c8ced3, -4px -4px 8px #ffffff;
+            border-radius: 12px;
+        }
+        .neumorphic-btn:active {
+            box-shadow: inset 4px 4px 8px #c8ced3, inset -4px -4px 8px #ffffff;
+        }
+        .neumorphic-input {
+            background: #f0f2f5;
+            box-shadow: inset 4px 4px 8px #c8ced3, inset -4px -4px 8px #ffffff;
+            border-radius: 8px;
+        }
+        .neumorphic-progress {
+            background: #f0f2f5;
+            box-shadow: inset 4px 4px 8px #c8ced3, inset -4px -4px 8px #ffffff;
+            border-radius: 50px;
+        }
+        .neumorphic-checkbox {
+            background: #f0f2f5;
+            box-shadow: 4px 4px 8px #c8ced3, -4px -4px 8px #ffffff;
+            border-radius: 6px;
+        }
+        .neumorphic-checkbox:checked {
+            box-shadow: inset 4px 4px 8px #c8ced3, inset -4px -4px 8px #ffffff;
+            background-color: #4f46e5;
+        }
+        .neumorphic-slider::-webkit-slider-thumb {
+            background: #f0f2f5;
+            box-shadow: 4px 4px 8px #c8ced3, -4px -4px 8px #ffffff;
+        }
+        .neumorphic-slider::-moz-range-thumb {
+            background: #f0f2f5;
+            box-shadow: 4px 4px 8px #c8ced3, -4px -4px 8px #ffffff;
+        }
+
+
+    </style>
+</head>
+<body class="bg-soft-bg">
+    <div class="container mx-auto p-6 md:p-8 lg:p-10">
+
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-neu-300 animate-pulse">FinanceFlow</h1>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <section class="neumorphic-card p-6 md:p-8 transform hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-piggy-bank text-xl text-indigo-500 mr-3"></i>
+                    <h2 class="text-xl font-semibold text-neu-300">Account Balances</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <div class="text-gray-600">Checking</div>
+                        <div class="font-semibold text-lg">$5,489.50</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-gray-600">Savings</div>
+                        <div class="font-semibold text-lg">$12,765.20</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-gray-600">Credit Card</div>
+                        <div class="font-semibold text-lg text-red-500">-$785.90</div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <button class="neumorphic-btn px-4 py-2 font-medium text-indigo-700 hover:text-indigo-900 transition-colors duration-200">View Details</button>
+                </div>
+            </section>
+
+            <section class="neumorphic-card p-6 md:p-8 transform hover:scale-105 transition-transform duration-300">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-chart-pie text-xl text-green-500 mr-3"></i>
+                    <h2 class="text-xl font-semibold text-neu-300">Spending Summary</h2>
+                </div>
+                <div class="mb-6">
+                    <img src="https://picsum.photos/300/200" alt="Spending Chart" class="w-full rounded-md neumorphic-inset">
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <div class="text-gray-600">Groceries</div>
+                        <div class="font-semibold text-md">$320</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-gray-600">Entertainment</div>
+                        <div class="font-semibold text-md">$185</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-gray-600">Utilities</div>
+                        <div class="font-semibold text-md">$110</div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <button class="neumorphic-btn px-4 py-2 font-medium text-green-700 hover:text-green-900 transition-colors duration-200">Detailed Report</button>
+                </div>
+            </section>
+
+            <section class="neumorphic-card p-6 md:p-8 transform hover:scale-105 transition-transform duration-300 lg:col-span-1 md:col-span-2">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-chart-line text-xl text-blue-500 mr-3"></i>
+                    <h2 class="text-xl font-semibold text-neu-300">Budget Progress</h2>
+                </div>
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="text-gray-600">Monthly Budget</div>
+                        <div class="font-semibold text-md">$2,500</div>
+                    </div>
+                    <div class="neumorphic-progress h-8 relative overflow-hidden">
+                        <div class="bg-indigo-500 h-full neumorphic-inset-sm transition-all duration-1000" style="width: 65%;">
+                            <div class="absolute top-0 left-0 h-full w-full flex justify-center items-center text-white font-semibold text-sm">65%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center">
+                        <div class="text-gray-600">Remaining</div>
+                        <div class="font-semibold text-md">$875</div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="text-gray-600">Spent</div>
+                        <div class="font-semibold text-md">$1,625</div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <button class="neumorphic-btn px-4 py-2 font-medium text-blue-700 hover:text-blue-900 transition-colors duration-200">Manage Budget</button>
+                </div>
+            </section>
+
+            <section class="neumorphic-card p-6 md:p-8 transform hover:scale-105 transition-transform duration-300 lg:col-span-1">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-bell text-xl text-yellow-500 mr-3"></i>
+                    <h2 class="text-xl font-semibold text-neu-300">Notifications</h2>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <div class="w-2 h-2 rounded-full bg-yellow-500 mr-2"></div>
+                        <span class="text-gray-700 text-sm">Upcoming bill payment of $50 for Utilities.</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
+                        <span class="text-gray-700 text-sm">You've saved $25 this week on groceries!</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-2 h-2 rounded-full bg-red-500 mr-2"></div>
+                        <span class="text-gray-700 text-sm">Over budget in Entertainment by $30.</span>
+                    </li>
+                </ul>
+                <div class="mt-6 text-center">
+                    <button class="neumorphic-btn px-4 py-2 font-medium text-yellow-700 hover:text-yellow-900 transition-colors duration-200">View All</button>
+                </div>
+            </section>
+
+            <section class="neumorphic-card p-6 md:p-8 transform hover:scale-105 transition-transform duration-300 lg:col-span-2">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-cog text-xl text-gray-500 mr-3"></i>
+                    <h2 class="text-xl font-semibold text-neu-300">Settings</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">Username</label>
+                        <input class="neumorphic-input appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="YourUsername">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                        <input class="neumorphic-input appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="email@example.com">
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-between">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="darkMode" class="neumorphic-checkbox h-5 w-5 text-indigo-600 focus:ring-0 transition duration-300 cursor-pointer">
+                        <label for="darkMode" class="ml-2 text-gray-700">Dark Mode</label>
+                    </div>
+                    <button class="neumorphic-btn px-4 py-2 font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200">Save Changes</button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-12 text-center text-gray-500">
+            <p>© 2024 FinanceFlow. All rights reserved.</p>
+        </footer>
+
+    </div>
+    <script>
+        document.querySelectorAll('.neumorphic-card, .neumorphic-btn').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.classList.add('hover:shadow-neu-sm');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('hover:shadow-neu-sm');
+            });
+        });
+    </script>
+</body>
+</html>

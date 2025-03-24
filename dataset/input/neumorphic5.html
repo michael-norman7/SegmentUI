@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphic Signup</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'off-white': '#f9fafa',
+                        'soft-blue': '#e0f2fe',
+                        'pale-blue': '#d1d5db',
+                    },
+                    boxShadow: {
+                        'neumorphic-light': '6px 6px 12px #c8c8c8, -6px -6px 12px #ffffff',
+                        'neumorphic-inset': 'inset 6px 6px 12px #c8c8c8, inset -6px -6px 12px #ffffff',
+                        'neumorphic-focus': '4px 4px 8px #c8c8c8, -4px -4px 8px #ffffff',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body class="bg-off-white flex items-center justify-center min-h-screen">
+    <div class="bg-off-white p-10 rounded-3xl shadow-neumorphic-light w-full max-w-md">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Sign Up</h2>
+            <p class="text-gray-500">Create your account to get started.</p>
+        </div>
+        <form id="signup-form" class="space-y-6">
+            <div>
+                <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Name</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa fa-user text-gray-400"></i>
+                    </div>
+                    <input type="text" id="name" class="bg-off-white border-none shadow-neumorphic-inset text-gray-900 text-sm rounded-lg focus:ring-soft-blue focus:shadow-neumorphic-focus focus:border-soft-blue block w-full pl-10 p-2.5" placeholder="Your Name" required>
+                </div>
+            </div>
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Email</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa fa-envelope text-gray-400"></i>
+                    </div>
+                    <input type="email" id="email" class="bg-off-white border-none shadow-neumorphic-inset text-gray-900 text-sm rounded-lg focus:ring-soft-blue focus:shadow-neumorphic-focus focus:border-soft-blue block w-full pl-10 p-2.5" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa fa-lock text-gray-400"></i>
+                    </div>
+                    <input type="password" id="password" class="bg-off-white border-none shadow-neumorphic-inset text-gray-900 text-sm rounded-lg focus:ring-soft-blue focus:shadow-neumorphic-focus focus:border-soft-blue block w-full pl-10 p-2.5" placeholder="Password" required>
+                </div>
+            </div>
+            <div>
+                <label for="confirm_password" class="block mb-2 text-sm font-medium text-gray-700">Confirm Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa fa-lock text-gray-400"></i>
+                    </div>
+                    <input type="password" id="confirm_password" class="bg-off-white border-none shadow-neumorphic-inset text-gray-900 text-sm rounded-lg focus:ring-soft-blue focus:shadow-neumorphic-focus focus:border-soft-blue block w-full pl-10 p-2.5" placeholder="Confirm Password" required>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="flex items-center h-5">
+                    <input id="terms" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-soft-blue" required>
+                </div>
+                <label for="terms" class="ml-2 text-sm font-medium text-gray-700">I agree to the <a href="#" class="text-blue-600 hover:underline">Terms and Conditions</a></label>
+            </div>
+            <button type="submit" class="w-full text-white bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center shadow-neumorphic-light transition-transform duration-200 hover:scale-105 focus:scale-102">Create Account</button>
+            <div class="text-sm font-medium text-gray-500 text-center">
+                Already have an account? <a href="#" class="text-blue-600 hover:underline">Log In</a>
+            </div>
+        </form>
+        <div id="form-message" class="mt-4 text-center text-sm"></div>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formMessage = document.getElementById('form-message');
+            formMessage.textContent = 'Processing...';
+            formMessage.className = 'mt-4 text-center text-sm text-gray-600';
+
+            setTimeout(() => {
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm_password').value;
+
+                if (password !== confirmPassword) {
+                    formMessage.textContent = 'Passwords do not match.';
+                    formMessage.className = 'mt-4 text-center text-sm text-red-500';
+                } else {
+                    formMessage.textContent = 'Signup successful!';
+                    formMessage.className = 'mt-4 text-center text-sm text-green-500';
+                    // Simulate successful signup and reset form after 2 seconds
+                    setTimeout(() => {
+                        document.getElementById('signup-form').reset();
+                        formMessage.textContent = '';
+                    }, 2000);
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

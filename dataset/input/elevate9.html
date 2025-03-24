@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate B2B Marketing | [Your Agency Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#115e59',
+                        accent: '#38bdf8',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', ],
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.6s ease-out forwards',
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-fade-slide-up {
+            animation: fade-slide-up 0.6s ease-out forwards;
+        }
+        .animate-slide-in-right {
+            animation: slide-in-right 0.7s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+<header class="bg-white sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto px-6 py-4 md:flex md:justify-between md:items-center">
+        <div class="flex items-center justify-between">
+            <a href="#" class="text-xl font-bold text-primary hover:text-secondary">
+                [Agency Logo/Name]
+            </a>
+            <div class="md:hidden">
+                <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Toggle menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="#services" class="hover:text-primary">Services</a>
+            <a href="#clients" class="hover:text-primary">Clients</a>
+            <a href="#about" class="hover:text-primary">About Us</a>
+            <a href="#contact" class="hover:text-primary">Contact</a>
+            <a href="#insights" class="hover:text-primary">Insights</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="hero" class="py-24 md:py-32 bg-white overflow-hidden">
+        <div class="container mx-auto px-6 md:flex md:items-center">
+            <div class="md:w-1/2 fade-slide-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-dark leading-tight mb-6">
+                    Driving B2B Growth Through <span class="text-primary">Strategic Marketing</span> Solutions.
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    We partner with ambitious B2B companies to craft and execute data-driven marketing strategies that deliver measurable results and lasting impact.
+                </p>
+                <div class="space-x-4">
+                    <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300">
+                        Get Started <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#services" class="inline-block text-gray-700 hover:text-primary font-semibold py-3 px-6 rounded-md transition-colors duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 md:pl-12 mt-12 md:mt-0 animate-slide-in-right">
+                <img src="https://picsum.photos/id/25/800/600" alt="Strategic Marketing Illustration" class="rounded-xl shadow-2xl" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Our B2B Marketing Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up" style="animation-delay: 0.1s;">
+                    <div class="w-12 h-12 bg-accent text-white rounded-md flex items-center justify-center mb-4">
+                        <i class="fa fa-chart-line fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">SEO & Content Marketing</h3>
+                    <p class="text-gray-600">Drive organic growth and establish thought leadership with strategic SEO and compelling content.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up" style="animation-delay: 0.2s;">
+                    <div class="w-12 h-12 bg-accent text-white rounded-md flex items-center justify-center mb-4">
+                        <i class="fa fa-bullhorn fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Paid Advertising (PPC)</h3>
+                    <p class="text-gray-600">Reach your ideal B2B audience with targeted and ROI-focused paid advertising campaigns.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up" style="animation-delay: 0.3s;">
+                    <div class="w-12 h-12 bg-accent text-white rounded-md flex items-center justify-center mb-4">
+                        <i class="fa fa-envelope fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Email Marketing & Automation</h3>
+                    <p class="text-gray-600">Nurture leads and build lasting relationships with effective email marketing and automation workflows.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up" style="animation-delay: 0.4s;">
+                    <div class="w-12 h-12 bg-accent text-white rounded-md flex items-center justify-center mb-4">
+                        <i class="fa fa-users fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Social Media Marketing</h3>
+                    <p class="text-gray-600">Engage your professional audience and build brand awareness on relevant social media platforms.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up" style="animation-delay: 0.5s;">
+                    <div class="w-12 h-12 bg-accent text-white rounded-md flex items-center justify-center mb-4">
+                        <i class="fa fa-lightbulb fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Marketing Strategy & Consulting</h3>
+                    <p class="text-gray-600">Develop a comprehensive marketing strategy tailored to your B2B goals and market landscape.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up" style="animation-delay: 0.6s;">
+                    <div class="w-12 h-12 bg-accent text-white rounded-md flex items-center justify-center mb-4">
+                        <i class="fa fa-wrench fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Marketing Analytics & Reporting</h3>
+                    <p class="text-gray-600">Track performance, analyze data, and optimize your marketing efforts for maximum ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Trusted by Leading B2B Brands</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 grayscale hover-none">
+                <div><img src="https://picsum.photos/id/30/100/80" alt="Client Logo" class="opacity-70 hover:opacity-100 transition-opacity duration-300" loading="lazy"></div>
+                <div><img src="https://picsum.photos/id/31/100/80" alt="Client Logo" class="opacity-70 hover:opacity-100 transition-opacity duration-300" loading="lazy"></div>
+                <div><img src="https://picsum.photos/id/32/100/80" alt="Client Logo" class="opacity-70 hover:opacity-100 transition-opacity duration-300" loading="lazy"></div>
+                <div><img src="https://picsum.photos/id/33/100/80" alt="Client Logo" class="opacity-70 hover:opacity-100 transition-opacity duration-300" loading="lazy"></div>
+                <div><img src="https://picsum.photos/id/34/100/80" alt="Client Logo" class="opacity-70 hover:opacity-100 transition-opacity duration-300" loading="lazy"></div>
+            </div>
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-dark mb-4">See What Our Clients Say</h3>
+                <div class="max-w-2xl mx-auto p-6 bg-neutral rounded-xl shadow-md">
+                    <i class="fa fa-quote-left text-gray-400 text-2xl block mb-2"></i>
+                    <p class="text-gray-700 italic">"[Agency Name] has been instrumental in transforming our B2B marketing strategy. Their expertise and data-driven approach have significantly boosted our lead generation and brand visibility."</p>
+                    <p class="mt-4 font-semibold">- John Smith, CEO, Example Corp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 md:flex md:items-center">
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/id/40/600/400" alt="About Us Team" class="rounded-xl shadow-2xl" loading="lazy">
+            </div>
+            <div class="md:w-1/2 md:pl-12 mt-12 md:mt-0">
+                <h2 class="text-3xl font-bold text-dark mb-6">About Our Agency</h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    We are a team of passionate marketing experts dedicated to helping B2B businesses thrive in the digital landscape. With years of experience and a client-centric approach, we deliver tailored solutions that drive sustainable growth.
+                </p>
+                <p class="text-lg text-gray-600 mb-8">
+                    Our mission is to empower B2B companies with innovative and effective marketing strategies, enabling them to reach their full potential and achieve their business objectives.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Ready to Elevate Your B2B Marketing?</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-primary focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-primary focus:ring-opacity-50">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-primary focus:ring-opacity-50"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300">
+                            Send Message <i class="fa fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Latest B2B Marketing Insights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-fade-slide-up" style="animation-delay: 0.1s;">
+                    <img src="https://picsum.photos/id/50/400/300" alt="Blog Post Image" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">The Future of B2B Content Marketing</h3>
+                        <p class="text-gray-600 mb-4">Explore the evolving landscape of B2B content marketing and strategies for success.</p>
+                        <a href="#" class="text-primary hover:text-secondary font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-fade-slide-up" style="animation-delay: 0.2s;">
+                    <img src="https://picsum.photos/id/51/400/300" alt="Blog Post Image" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Maximizing ROI with B2B PPC Campaigns</h3>
+                        <p class="text-gray-600 mb-4">Learn how to optimize your B2B PPC campaigns for maximum return on investment.</p>
+                        <a href="#" class="text-primary hover:text-secondary font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-fade-slide-up" style="animation-delay: 0.3s;">
+                    <img src="https://picsum.photos/id/52/400/300" alt="Blog Post Image" class="w-full h-48 object-cover" loading="lazy">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Data-Driven B2B Marketing Strategies</h3>
+                        <p class="text-gray-600 mb-4">Discover the power of data analytics in shaping effective B2B marketing strategies.</p>
+                        <a href="#" class="text-primary hover:text-secondary font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark text-neutral py-12">
+    <div class="container mx-auto px-6 text-center">
+        <p>© 2024 [Your Agency Name]. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="#" class="hover:text-accent">Privacy Policy</a>
+            <a href="#" class="hover:text-accent">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

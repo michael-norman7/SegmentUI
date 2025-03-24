@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept Artist Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#64ffda',
+                        secondary: '#f0f8ff',
+                        accent: '#ccd6f6',
+                        dark: '#0a192f',
+                        darker: '#020c1b',
+                        lightestSlate: '#ccd6f6',
+                        lightSlate: '#a8b2d1',
+                        slate: '#8892b0',
+                        darkSlate: '#495670',
+                    },
+                    fontFamily: {
+                        'bebas': ['Bebas Neue', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'tilt-shimmer': {
+                            '0%':   { transform: 'rotate(-3deg) translateY(-2px)', backgroundPosition: '0 0' },
+                            '50%':  { backgroundPosition: '100% 100%' },
+                            '100%': { transform: 'rotate(3deg) translateY(2px)', backgroundPosition: '0 0' },
+                        }
+                    },
+                    animation: {
+                        'slide-left': 'slide-in-left 1s ease-out forwards',
+                        'slide-right': 'slide-in-right 1s ease-out forwards',
+                        'fade': 'fade-in 1s ease-out forwards',
+                        'tilt-shimmer': 'tilt-shimmer 6s linear infinite',
+                    },
+                    boxShadow: {
+                        'neon-sm': '0 0 5px theme("colors.primary")',
+                        'neon-md': '0 0 10px theme("colors.primary")',
+                        'neon-lg': '0 0 20px theme("colors.primary")',
+                        'inner-glow': 'inset 0 0 10px rgba(0, 0, 0, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes tilt-shimmer {
+            0%    { background-position: 0% 50%; }
+            50%   { background-position: 100% 50%; }
+            100%  { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-dark text-secondary font-inter">
+
+<header class="sticky top-0 z-50 bg-darker bg-opacity-90 backdrop-blur-md shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="font-bebas text-3xl text-primary tracking-wider hover:text-accent transition-colors duration-300">ARTIST</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#portfolio" class="hover:text-primary transition-colors duration-300">Portfolio</a>
+            <a href="#about" class="hover:text-primary transition-colors duration-300">About</a>
+            <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+        </div>
+        <button class="md:hidden text-secondary hover:text-primary focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </nav>
+</header>
+
+<section id="hero" class="relative py-20 md:py-32 overflow-hidden">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="hero-text md:order-1 animate-slide-left">
+            <h1 class="font-bebas text-5xl md:text-7xl text-secondary uppercase tracking-wider mb-4">Unleash Your Imagination</h1>
+            <p class="text-slate text-lg mb-8">Crafting worlds and characters that breathe life into video games. Explore a universe of concept art and visual development.</p>
+            <a href="#portfolio" class="inline-block bg-primary text-darker px-8 py-3 rounded-md font-semibold hover:bg-accent hover:shadow-neon-sm transition-all duration-300">View Portfolio</a>
+        </div>
+        <div class="hero-image relative animate-slide-right">
+            <div class="aspect-w-1 aspect-h-1 md:aspect-w-3 md:aspect-h-2 rounded-xl overflow-hidden shadow-lg border-2 border-darkSlate">
+                <img src="https://picsum.photos/id/10/600/400" alt="Hero Image" class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] md:w-[110%] md:h-[110%] rounded-full bg-gradient-to-br from-primary to-accent opacity-20 blur-3xl"></div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="py-20 md:py-24 bg-darker">
+    <div class="container mx-auto px-6">
+        <h2 class="font-bebas text-4xl text-secondary uppercase tracking-wider text-center mb-12 animate-fade">Portfolio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-neon-md transition-shadow duration-300 animate-fade">
+                <img src="https://picsum.photos/id/20/400/300" alt="Portfolio Item 1" class="object-cover w-full h-60">
+                <div class="p-4 bg-dark">
+                    <h3 class="text-secondary font-semibold mb-2">Environment Concept</h3>
+                    <p class="text-slate text-sm">A stylized landscape concept art piece.</p>
+                </div>
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-neon-md transition-shadow duration-300 animate-fade">
+                <img src="https://picsum.photos/id/30/400/300" alt="Portfolio Item 2" class="object-cover w-full h-60">
+                <div class="p-4 bg-dark">
+                    <h3 class="text-secondary font-semibold mb-2">Character Design</h3>
+                    <p class="text-slate text-sm">A futuristic character concept for a sci-fi game.</p>
+                </div>
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-neon-md transition-shadow duration-300 animate-fade">
+                <img src="https://picsum.photos/id/40/400/300" alt="Portfolio Item 3" class="object-cover w-full h-60">
+                <div class="p-4 bg-dark">
+                    <h3 class="text-secondary font-semibold mb-2">Weapon Concept</h3>
+                    <p class="text-slate text-sm">A high-tech weapon design with intricate details.</p>
+                </div>
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-neon-md transition-shadow duration-300 animate-fade">
+                <img src="https://picsum.photos/id/50/400/300" alt="Portfolio Item 4" class="object-cover w-full h-60">
+                <div class="p-4 bg-dark">
+                    <h3 class="text-secondary font-semibold mb-2">Vehicle Concept</h3>
+                    <p class="text-slate text-sm">A futuristic vehicle concept for a racing game.</p>
+                </div>
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-neon-md transition-shadow duration-300 animate-fade">
+                <img src="https://picsum.photos/id/60/400/300" alt="Portfolio Item 5" class="object-cover w-full h-60">
+                <div class="p-4 bg-dark">
+                    <h3 class="text-secondary font-semibold mb-2">Creature Design</h3>
+                    <p class="text-slate text-sm">A fantastical creature concept from another world.</p>
+                </div>
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-neon-md transition-shadow duration-300 animate-fade">
+                <img src="https://picsum.photos/id/70/400/300" alt="Portfolio Item 6" class="object-cover w-full h-60">
+                <div class="p-4 bg-dark">
+                    <h3 class="text-secondary font-semibold mb-2">UI Concept</h3>
+                    <p class="text-slate text-sm">A clean and modern UI concept for a game menu.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20 md:py-24">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="about-image relative animate-slide-left">
+            <div class="aspect-w-1 aspect-h-1 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+                <img src="https://picsum.photos/id/80/400/400" alt="Artist Image" class="object-cover w-full h-full">
+            </div>
+        </div>
+        <div class="about-text md:order-1 animate-slide-right">
+            <h2 class="font-bebas text-4xl text-secondary uppercase tracking-wider mb-6">About Me</h2>
+            <p class="text-slate text-lg mb-4">A passionate concept artist specializing in video game art. With years of experience in the industry, I bring worlds to life through detailed environments, compelling characters, and innovative designs.</p>
+            <p class="text-slate text-lg mb-4">My skills encompass a wide range of styles, from realistic to stylized, and I am proficient in various digital art tools. I thrive on challenges and am always eager to collaborate on exciting projects.</p>
+            <div class="flex space-x-4 mt-6">
+                <a href="#" class="text-slate hover:text-primary transition-colors duration-300"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                <a href="#" class="text-slate hover:text-primary transition-colors duration-300"><i class="fa-brands fa-artstation text-xl"></i></a>
+                <a href="#" class="text-slate hover:text-primary transition-colors duration-300"><i class="fa-brands fa-instagram text-xl"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 md:py-24 bg-darker">
+    <div class="container mx-auto px-6">
+        <h2 class="font-bebas text-4xl text-secondary uppercase tracking-wider text-center mb-12 animate-fade">Contact</h2>
+        <div class="max-w-lg mx-auto animate-fade">
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-secondary text-sm font-semibold">Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-3 rounded-md bg-darkSlate text-secondary border border-darkSlate focus:border-primary focus:ring-primary focus:ring-opacity-50">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-secondary text-sm font-semibold">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-3 rounded-md bg-darkSlate text-secondary border border-darkSlate focus:border-primary focus:ring-primary focus:ring-opacity-50">
+                </div>
+                <div>
+                    <label for="message" class="block mb-2 text-secondary text-sm font-semibold">Message</label>
+                    <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-md bg-darkSlate text-secondary border border-darkSlate focus:border-primary focus:ring-primary focus:ring-opacity-50"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary text-darker px-8 py-3 rounded-md font-semibold hover:bg-accent hover:shadow-neon-sm transition-all duration-300">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 bg-darker border-t border-darkSlate">
+    <div class="container mx-auto px-6 text-center text-slate">
+        <p>© 2024 Concept Artist. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-fade').forEach(element => {
+            observer.observe(element);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

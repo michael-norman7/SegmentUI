@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Consulting - Strategic Management Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#115e59',
+                        accent: '#38bdf8',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-slide-down': {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                    animation: {
+                        'fade-slide-down': 'fade-slide-down 0.6s ease-out',
+                        'fade-slide-up': 'fade-slide-up 0.6s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-fade-slide-down {
+            animation: fade-slide-down 0.6s ease-out forwards;
+        }
+        .animate-fade-slide-up {
+            animation: fade-slide-up 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-inter text-dark bg-neutral">
+
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="text-xl font-bold text-primary">Elevate Consulting</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#expertise" class="hover:text-secondary transition-colors duration-300">Expertise</a>
+                <a href="#clients" class="hover:text-secondary transition-colors duration-300">Clients</a>
+                <a href="#insights" class="hover:text-secondary transition-colors duration-300">Insights</a>
+                <a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="absolute top-full right-0 left-0 bg-white shadow-md py-2 flex flex-col items-center">
+                <a href="#services" class="block py-2 hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#expertise" class="block py-2 hover:text-secondary transition-colors duration-300">Expertise</a>
+                <a href="#clients" class="block py-2 hover:text-secondary transition-colors duration-300">Clients</a>
+                <a href="#insights" class="block py-2 hover:text-secondary transition-colors duration-300">Insights</a>
+                <a href="#contact" class="block py-2 hover:text-secondary transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="hero" class="py-24 md:py-36 bg-neutral">
+    <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 animate-fade-slide-down">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark leading-tight mb-6">
+                Strategic Solutions for <span class="text-primary">Business Transformation</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-8">
+                Elevate your business with expert management consulting. We deliver tailored strategies and drive sustainable growth.
+            </p>
+            <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary md:py-4 md:text-lg md:px-10 transition-colors duration-300">
+                Get Started <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+        <div class="md:w-1/2 animate-fade-slide-up">
+            <img src="https://picsum.photos/id/100/800/600" alt="Strategic Consulting" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Our Core Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                <div class="w-12 h-12 bg-accent rounded-lg mb-4 flex items-center justify-center mx-auto md:mx-0">
+                    <i class="fa fa-lightbulb text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Strategy & Planning</h3>
+                <p class="text-gray-600">Developing robust strategies to navigate market complexities and achieve sustainable competitive advantage.</p>
+            </div>
+            <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                <div class="w-12 h-12 bg-accent rounded-lg mb-4 flex items-center justify-center mx-auto md:mx-0">
+                    <i class="fa fa-chart-line text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Operational Excellence</h3>
+                <p class="text-gray-600">Improving efficiency, reducing costs, and enhancing operational performance across your organization.</p>
+            </div>
+            <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                <div class="w-12 h-12 bg-accent rounded-lg mb-4 flex items-center justify-center mx-auto md:mx-0">
+                    <i class="fa fa-users text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Organizational Change Management</h3>
+                <p class="text-gray-600">Guiding your people and processes through change, ensuring smooth transitions and lasting adoption.</p>
+            </div>
+            <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                <div class="w-12 h-12 bg-accent rounded-lg mb-4 flex items-center justify-center mx-auto md:mx-0">
+                    <i class="fa fa-coins text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Financial Advisory</h3>
+                <p class="text-gray-600">Providing expert financial insights and solutions to optimize capital, manage risk, and drive profitability.</p>
+            </div>
+            <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                <div class="w-12 h-12 bg-accent rounded-lg mb-4 flex items-center justify-center mx-auto md:mx-0">
+                    <i class="fa fa-laptop-code text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Digital Transformation</h3>
+                <p class="text-gray-600">Leveraging technology to transform business models, enhance customer experiences, and create new revenue streams.</p>
+            </div>
+            <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                <div class="w-12 h-12 bg-accent rounded-lg mb-4 flex items-center justify-center mx-auto md:mx-0">
+                    <i class="fa fa-globe text-white text-xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Global Market Entry</h3>
+                <p class="text-gray-600">Supporting businesses in expanding into new international markets with strategic planning and local insights.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="expertise" class="py-20 bg-neutral">
+    <div class="container mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <img src="https://picsum.photos/id/1020/800/600" alt="Our Expertise" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 md:ml-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Deep Industry Expertise</h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    Our consultants bring years of experience across diverse industries, providing tailored solutions and actionable insights.
+                </p>
+                <ul class="list-disc pl-5 text-gray-700">
+                    <li class="mb-2">Financial Services</li>
+                    <li class="mb-2">Technology & Telecommunications</li>
+                    <li class="mb-2">Healthcare & Pharmaceuticals</li>
+                    <li class="mb-2">Energy & Resources</li>
+                    <li>Consumer Goods & Retail</li>
+                </ul>
+                <a href="#contact" class="mt-8 inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary md:py-4 md:text-lg md:px-10 transition-colors duration-300">
+                    Explore More <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="clients" class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Trusted by Leading Organizations</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+            <div><img src="https://picsum.photos/id/200/100/80" alt="Client Logo 1" class="opacity-70 hover:opacity-100 transition-opacity duration-300 mx-auto"></div>
+            <div><img src="https://picsum.photos/id/201/100/80" alt="Client Logo 2" class="opacity-70 hover:opacity-100 transition-opacity duration-300 mx-auto"></div>
+            <div><img src="https://picsum.photos/id/202/100/80" alt="Client Logo 3" class="opacity-70 hover:opacity-100 transition-opacity duration-300 mx-auto"></div>
+            <div><img src="https://picsum.photos/id/203/100/80" alt="Client Logo 4" class="opacity-70 hover:opacity-100 transition-opacity duration-300 mx-auto"></div>
+            <div><img src="https://picsum.photos/id/204/100/80" alt="Client Logo 5" class="opacity-70 hover:opacity-100 transition-opacity duration-300 mx-auto"></div>
+            <div><img src="https://picsum.photos/id/205/100/80" alt="Client Logo 6" class="opacity-70 hover:opacity-100 transition-opacity duration-300 mx-auto"></div>
+            <div><img src="https://picsum.photos/id/206/100/80" alt="Client Logo 7" class="opacity-70 hover:opacity-100 transition-opacity duration-300 mx-auto"></div>
+            <div><img src="https://picsum.photos/id/207/100/80" alt="Client Logo 8" class="opacity-70 hover:opacity-100 transition-opacity duration-300 mx-auto"></div>
+        </div>
+    </div>
+</section>
+
+<section id="insights" class="py-20 bg-neutral">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Latest Insights & Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="rounded-xl shadow-md overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300">
+                <img src="https://picsum.photos/id/300/400/300" alt="Article 1" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-dark mb-2">The Future of Sustainable Business</h3>
+                    <p class="text-gray-600 mb-4">Explore how sustainability is becoming a core business imperative and driving innovation.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-medium transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="rounded-xl shadow-md overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300">
+                <img src="https://picsum.photos/id/301/400/300" alt="Article 2" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-dark mb-2">Navigating Digital Disruption in 2024</h3>
+                    <p class="text-gray-600 mb-4">Strategies for businesses to adapt and thrive in an era of rapid technological change.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-medium transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="rounded-xl shadow-md overflow-hidden bg-white hover:shadow-lg transition-shadow duration-300">
+                <img src="https://picsum.photos/id/302/400/300" alt="Article 3" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-dark mb-2">Building Resilient Supply Chains</h3>
+                    <p class="text-gray-600 mb-4">Best practices for creating agile and robust supply chains in a volatile global landscape.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-medium transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Contact Us</h2>
+        <div class="max-w-lg mx-auto">
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
+                    <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="name@example.com" required>
+                </div>
+                <div>
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your Message</label>
+                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Leave your message..."></textarea>
+                </div>
+                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary-300 transition-colors duration-300 w-full">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-neutral py-12">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+        <div class="mb-4">
+            <a href="#" class="text-neutral hover:text-accent mr-4"><i class="fab fa-linkedin text-xl"></i></a>
+            <a href="#" class="text-neutral hover:text-accent mr-4"><i class="fab fa-twitter text-xl"></i></a>
+            <a href="#" class="text-neutral hover:text-accent"><i class="fab fa-facebook text-xl"></i></a>
+        </div>
+        <p class="text-sm">© 2024 Elevate Consulting. All rights reserved.</p>
+        <p class="text-sm"> <a href="#" class="text-neutral hover:text-accent">Privacy Policy</a> | <a href="#" class="text
+content_copy
+download
+Use code with caution.
+Html

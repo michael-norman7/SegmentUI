@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS v4 Upgrade Guide - Premium Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#0284c7',
+                        'accent': '#67e8f9',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    typography: (theme) => ({
+                        DEFAULT: {
+                            css: {
+                                '--tw-prose-body': theme('colors.dark'),
+                                '--tw-prose-headings': theme('colors.primary'),
+                                '--tw-prose-lead': theme('colors.gray.600'),
+                                '--tw-prose-links': theme('colors.secondary'),
+                                '--tw-prose-bold': theme('colors.dark'),
+                                '--tw-prose-counters': theme('colors.gray.500'),
+                                '--tw-prose-bullets': theme('colors.gray.500'),
+                                '--tw-prose-hr': theme('colors.gray.200'),
+                                '--tw-prose-quotes': theme('colors.gray.900'),
+                                '--tw-prose-quote-borders': theme('colors.gray.200'),
+                                '--tw-prose-captions': theme('colors.gray.500'),
+                                '--tw-prose-code': theme('colors.gray.900'),
+                                '--tw-prose-pre-code': theme('colors.gray.100'),
+                                '--tw-prose-pre-bg': theme('colors.gray.900'),
+                                '--tw-prose-th-borders': theme('colors.gray.300'),
+                                '--tw-prose-td-borders': theme('colors.gray.200'),
+                                '--tw-prose-invert-body': theme('colors.gray.200'),
+                                '--tw-prose-invert-headings': theme('colors.white'),
+                                '--tw-prose-invert-lead': theme('colors.gray.300'),
+                                '--tw-prose-invert-links': theme('colors.white'),
+                                '--tw-prose-invert-bold': theme('colors.white'),
+                                '--tw-prose-invert-counters': theme('colors.gray.400'),
+                                '--tw-prose-invert-bullets': theme('colors.gray.600'),
+                                '--tw-prose-invert-hr': theme('colors.gray.700'),
+                                '--tw-prose-invert-quotes': theme('colors.gray.100'),
+                                '--tw-prose-invert-quote-borders': theme('colors.gray.700'),
+                                '--tw-prose-invert-captions': theme('colors.gray.400'),
+                                '--tw-prose-invert-code': theme('colors.white'),
+                                '--tw-prose-invert-pre-code': theme('colors.gray.300'),
+                                '--tw-prose-invert-pre-bg': theme('colors.gray.800'),
+                                '--tw-prose-invert-th-borders': theme('colors.gray.500'),
+                                '--tw-prose-invert-td-borders': theme('colors.gray.600'),
+                                'h2': {
+                                    fontSize: theme('fontSize.2xl')[0],
+                                    fontWeight: theme('fontWeight.bold'),
+                                    marginTop: theme('spacing.12'),
+                                    marginBottom: theme('spacing.6'),
+                                },
+                                'h3': {
+                                    fontSize: theme('fontSize.xl')[0],
+                                    fontWeight: theme('fontWeight.semibold'),
+                                    marginTop: theme('spacing.10'),
+                                    marginBottom: theme('spacing.4'),
+                                },
+                                'p': {
+                                    marginTop: theme('spacing.4'),
+                                    marginBottom: theme('spacing.4'),
+                                },
+                                'ul': {
+                                    marginTop: theme('spacing.4'),
+                                    marginBottom: theme('spacing.4'),
+                                },
+                                'ol': {
+                                    marginTop: theme('spacing.4'),
+                                    marginBottom: theme('spacing.4'),
+                                },
+                                'li': {
+                                    marginTop: theme('spacing.2'),
+                                    marginBottom: theme('spacing.2'),
+                                },
+                                'blockquote': {
+                                    marginTop: theme('spacing.6'),
+                                    marginBottom: theme('spacing.6'),
+                                    borderLeftWidth: '4px',
+                                    borderLeftColor: theme('colors.primary'),
+                                    fontStyle: 'italic',
+                                    fontWeight: '500',
+                                    color: theme('colors.gray.700'),
+                                },
+                                'code': {
+                                    fontWeight: '600',
+                                    backgroundColor: theme('colors.gray.100'),
+                                    padding: '0.25rem 0.5rem',
+                                    borderRadius: '0.25rem',
+                                },
+                                'pre code': {
+                                    backgroundColor: 'transparent',
+                                    padding: '0',
+                                    borderRadius: '0',
+                                },
+                            },
+                        },
+                    }),
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-primary hover:text-secondary transition-colors">
+                <i class="fa-solid fa-rocket text-secondary mr-2"></i>Upgrade Blog
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#upgrade-tool" class="hover:text-secondary transition-colors">Upgrade Tool</a>
+                <a href="#manual-upgrade" class="hover:text-secondary transition-colors">Manual Upgrade</a>
+                <a href="#changes-v3-v4" class="hover:text-secondary transition-colors">V3 to V4 Changes</a>
+                <a href="#conclusion" class="hover:text-secondary transition-colors">Conclusion</a>
+            </div>
+            <div class="md:hidden">
+                <button class="focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 prose lg:prose-xl max-w-3xl animate-fade-in">
+
+        <article>
+            <header class="mb-8">
+                <h1 class="text-4xl font-bold text-primary mb-4">Upgrade to Tailwind CSS v4: A Comprehensive Guide</h1>
+                <p class="text-gray-600">Everything you need to know to smoothly transition your projects to the latest Tailwind CSS version.</p>
+                <div class="mt-4 flex space-x-4">
+                    <span class="text-sm text-gray-500"><i class="fa-regular fa-calendar mr-1"></i> Published on: March 10, 2024</span>
+                    <span class="text-sm text-gray-500"><i class="fa-regular fa-clock mr-1"></i> 15 minute read</span>
+                </div>
+                <div class="mt-6">
+                    <img src="https://picsum.photos/1200/400" alt="Tailwind CSS v4 Upgrade" class="rounded-lg shadow-md w-full object-cover aspect-[3/1]">
+                </div>
+            </header>
+
+            <section class="mb-12">
+                <h2 id="introduction">Introduction</h2>
+                <p>Tailwind CSS v4 is here, bringing performance improvements and exciting new features. While the upgrade is designed to be smooth, some breaking changes require attention. This guide provides a clear path to upgrade your projects from v3 to v4, ensuring a seamless transition and highlighting key improvements.</p>
+
+                <aside class="bg-neutral p-6 rounded-lg shadow-md mt-8">
+                    <h3 class="font-semibold text-lg mb-2 text-secondary"><i class="fa-solid fa-key mr-2"></i> Key Takeaways</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Tailwind CSS v4 offers performance enhancements and new features.</li>
+                        <li>An automated upgrade tool is available for most projects.</li>
+                        <li>Manual upgrade steps are outlined for specific configurations.</li>
+                        <li>Several breaking changes require code adjustments.</li>
+                        <li>Understanding the changes ensures a smooth upgrade process.</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section class="mb-12">
+                <h2 id="upgrade-tool">Using the Upgrade Tool</h2>
+                <p>For most projects, the Tailwind CSS team has provided an automated upgrade tool. This tool handles the majority of the migration process, including dependency updates, configuration file migration to CSS, and template file adjustments.</p>
+
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-bash">npx @tailwindcss/upgrade</code></pre>
+                </div>
+
+                <p class="mt-4">Before running the tool, ensure you have Node.js 20 or higher. It's highly recommended to run the upgrade tool in a new branch to review changes and test thoroughly before merging.</p>
+
+                <aside class="bg-neutral p-6 rounded-lg shadow-md mt-8">
+                    <h3 class="font-semibold text-lg mb-2 text-secondary"><i class="fa-solid fa-wrench mr-2"></i> Upgrade Tool Highlights</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Automates most of the upgrade process from v3 to v4.</li>
+                        <li>Handles dependency updates and configuration migration.</li>
+                        <li>Saves significant time and effort in upgrading projects.</li>
+                        <li>Requires Node.js 20 or higher.</li>
+                        <li>Always run in a new branch for safety and review.</li>
+                    </ul>
+                </aside>
+
+            </section>
+
+            <section class="mb-12">
+                <h2 id="manual-upgrade">Upgrading Manually</h2>
+                <p>While the upgrade tool is recommended, understanding manual steps is crucial for complex projects or specific setups. Here's a breakdown of manual upgrade considerations:</p>
+
+                <h3 class="mt-8" id="postcss">Using PostCSS</h3>
+                <p>In v4, the PostCSS plugin is now in <code class="text-sm">@tailwindcss/postcss</code>. Remove <code class="text-sm">postcss-import</code> and <code class="text-sm">autoprefixer</code> as they are now handled automatically.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-javascript">
+export default {
+  plugins: {
+    "postcss-import": {}, <span class="text-red-500">// REMOVE</span>
+    tailwindcss: {},
+    autoprefixer: {}, <span class="text-red-500">// REMOVE</span>
+    "@tailwindcss/postcss": {},
+  },
+};
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8" id="vite">Using Vite</h3>
+                <p>Migrate to the dedicated Vite plugin <code class="text-sm">@tailwindcss/vite</code> for improved performance.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-javascript">
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+});
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8" id="tailwind-cli">Using Tailwind CLI</h3>
+                <p>Tailwind CLI is now in <code class="text-sm">@tailwindcss/cli</code>. Update your build commands accordingly.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-bash">
+npx tailwindcss -i input.css -o output.css <span class="text-red-500">// OLD</span>
+npx @tailwindcss/cli -i input.css -o output.css <span class="text-green-500">// NEW</span>
+                    </code></pre>
+                </div>
+
+                <aside class="bg-neutral p-6 rounded-lg shadow-md mt-8">
+                    <h3 class="font-semibold text-lg mb-2 text-secondary"><i class="fa-solid fa-book-open mr-2"></i> Manual Upgrade Tips</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Understand PostCSS, Vite, and CLI specific changes.</li>
+                        <li>Update dependencies to the new packages.</li>
+                        <li>Review configuration files for necessary adjustments.</li>
+                        <li>Test build commands after manual updates.</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <section class="mb-12" id="changes-v3-v4">
+                <h2 >Key Changes from v3 to v4</h2>
+                <p>Tailwind CSS v4 introduces several breaking changes. Understanding these is crucial for a successful upgrade. Here's a detailed list:</p>
+
+                <h3 class="mt-8">Removed <code class="text-sm">@tailwind</code> directives</h3>
+                <p>Replace <code class="text-sm">@tailwind</code> directives with standard CSS <code class="text-sm">@import "tailwindcss";</code>.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-css">
+@tailwind base;     <span class="text-red-500">// REMOVE</span>
+@tailwind components; <span class="text-red-500">// REMOVE</span>
+@tailwind utilities;  <span class="text-red-500">// REMOVE</span>
+@import "tailwindcss"; <span class="text-green-500">// ADD</span>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Removed Deprecated Utilities</h3>
+                <p>Several deprecated utilities from v3 have been removed. Use the modern alternatives:</p>
+                <ul class="list-disc list-inside mt-4">
+                    <li><code class="text-sm">bg-opacity-*</code> replaced by <code class="text-sm">bg-black/50</code></li>
+                    <li><code class="text-sm">text-opacity-*</code> replaced by <code class="text-sm">text-black/50</code></li>
+                    <li><code class="text-sm">border-opacity-*</code> replaced by <code class="text-sm">border-black/50</code></li>
+                    <li>... (and others listed in the original text)</li>
+                </ul>
+
+                <h3 class="mt-8">Renamed Utilities</h3>
+                <p>Some utilities have been renamed for consistency:</p>
+                <ul class="list-disc list-inside mt-4">
+                    <li><code class="text-sm">shadow-sm</code> renamed to <code class="text-sm">shadow-xs</code></li>
+                    <li><code class="text-sm">shadow</code> renamed to <code class="text-sm">shadow-sm</code></li>
+                    <li>... (and others listed in the original text)</li>
+                </ul>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-html">
+<input class="shadow-sm" /> <span class="text-red-500">// OLD</span>
+<input class="shadow-xs" /> <span class="text-green-500">// NEW</span>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Updated shadow, radius, and blur scales</h3>
+                <p>Scales have been updated to ensure every utility has a named value. Update utilities accordingly (e.g., <code class="text-sm">shadow-sm</code> to <code class="text-sm">shadow-xs</code>).</p>
+
+                <h3 class="mt-8">Renamed outline utility</h3>
+                <p><code class="text-sm">outline-none</code> is now <code class="text-sm">outline-hidden</code>. <code class="text-sm">outline-none</code> now sets <code class="text-sm">outline-style: none</code>.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-html">
+<input class="focus:outline-none" /> <span class="text-red-500">// OLD (was outline-hidden behavior)</span>
+<input class="focus:outline-hidden" /> <span class="text-green-500">// NEW (outline-hidden behavior)</span>
+<input class="focus:outline-none" /> <span class="text-green-500">// NEW (actual outline-none)</span>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Default ring width change</h3>
+                <p>The default <code class="text-sm">ring</code> utility is now 1px (was 3px). Use <code class="text-sm">ring-3</code> to get the previous 3px ring.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-html">
+<input class="ring ring-blue-500" /> <span class="text-red-500">// OLD (3px ring)</span>
+<input class="ring-3 ring-blue-500" /> <span class="text-green-500">// NEW (3px ring)</span>
+                    </code></pre>
+                </div>
+
+                 <h3 class="mt-8">Space-between selector change</h3>
+                <p>Selector for <code class="text-sm">space-x-*</code> and <code class="text-sm">space-y-*</code> utilities changed for performance. May affect spacing with inline elements or custom margins.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-css">
+/* Before */
+.space-y-4 > :not([hidden]) ~ :not([hidden]) { /* ... */ }
+/* Now */
+.space-y-4 > :not(:last-child) { /* ... */ }
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Variants with gradients</h3>
+                <p>Variant gradients now preserve values. Use <code class="text-sm">via-none</code> to "unset" gradients in specific states.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-html">
+<div class="bg-linear-to-r from-red-500 via-orange-400 to-yellow-400 dark:via-none dark:from-blue-500 dark:to-teal-400">
+  <!-- ... -->
+</div>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Container configuration</h3>
+                <p>Container utility customization is now done via <code class="text-sm">@utility</code> directive instead of configuration options.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-css">
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+                    </code></pre>
+                </div>
+
+                 <h3 class="mt-8">Default border color</h3>
+                <p>Default border color changed from <code class="text-sm">gray-200</code> to <code class="text-sm">currentColor</code>. Ensure to specify border colors explicitly.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-html">
+<div class="border border-gray-200 px-2 py-3 ...">
+  <!-- ... -->
+</div>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Default ring width and color</h3>
+                <p>Default ring width is 1px, and color is <code class="text-sm">currentColor</code>. Use <code class="text-sm">ring-3</code> and specify color if needed.</p>
+
+                <h3 class="mt-8">Preflight changes</h3>
+                <ul class="list-disc list-inside mt-4">
+                    <li>New default placeholder color (current text color at 50% opacity).</li>
+                    <li>Buttons use <code class="text-sm">cursor: default</code>.</li>
+                    <li>Dialog margins removed.</li>
+                </ul>
+
+                <h3 class="mt-8">Using a prefix</h3>
+                <p>Prefixes now look like variants (e.g., <code class="text-sm">tw:flex</code>).</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-html">
+<div class="tw:flex tw:bg-red-500 tw:hover:bg-red-600">
+  <!-- ... -->
+</div>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Adding custom utilities</h3>
+                <p>Use <code class="text-sm">@utility</code> API instead of <code class="text-sm">@layer utilities</code> for custom utilities.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-css">
+@utility tab-4 {
+  tab-size: 4;
+}
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Variant stacking order</h3>
+                <p>Variant stacking order is now left-to-right (was right-to-left).</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-html">
+<ul class="py-4 first:*:pt-0 last:*:pb-0"> <span class="text-red-500">// OLD</span>
+<ul class="py-4 *:first:pt-0 *:last:pb-0"> <span class="text-green-500">// NEW</span>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Variables in arbitrary values</h3>
+                <p>Use parentheses for CSS variables in arbitrary values: <code class="text-sm">bg-(--brand-color)</code> (was <code class="text-sm">bg-[--brand-color]</code>).</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-html">
+<div class="bg-[--brand-color]"></div> <span class="text-red-500">// OLD</span>
+<div class="bg-(--brand-color)"></div> <span class="text-green-500">// NEW</span>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Hover styles on mobile</h3>
+                <p>Hover variant now only applies on devices that support hover. Can override with <code class="text-sm">@custom-variant hover (&:hover);</code> if needed.</p>
+
+                <h3 class="mt-8">Transitioning outline-color</h3>
+                <p><code class="text-sm">transition</code> and <code class="text-sm">transition-color</code> now include <code class="text-sm">outline-color</code>.</p>
+
+                <h3 class="mt-8">Disabling core plugins</h3>
+                <p><code class="text-sm">corePlugins</code> option is no longer supported.</p>
+
+                <h3 class="mt-8">Using the <code class="text-sm">theme()</code> function</h3>
+                <p>Prefer CSS variables over <code class="text-sm">theme()</code> function. Use CSS variable names in <code class="text-sm">theme()</code> (e.g., <code class="text-sm">theme(--breakpoint-xl)</code>).</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-css">
+@media (width >= theme(screens.xl)) { /* ... */ } <span class="text-red-500">// OLD</span>
+@media (width >= theme(--breakpoint-xl)) { /* ... */ } <span class="text-green-500">// NEW</span>
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Using a JavaScript config file</h3>
+                <p>JavaScript config files are supported but not auto-detected. Use <code class="text-sm">@config</code> directive to load them.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-css">
+@config "../../tailwind.config.js";
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Theme values in JavaScript</h3>
+                <p><code class="text-sm">resolveConfig</code> removed. Use CSS variables directly in JavaScript.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-javascript">
+<motion.div animate={{ backgroundColor: "var(--color-blue-500)" }} />
+                    </code></pre>
+                </div>
+
+                <h3 class="mt-8">Using <code class="text-sm">@apply</code> with Vue, Svelte, or CSS modules</h3>
+                <p>Use <code class="text-sm">@reference</code> to import theme variables in separate CSS files or use CSS variables directly.</p>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-vue">
+<style>
+  @reference "../../app.css";
+  h1 {
+    @apply text-2xl font-bold text-red-500;
+  }
+</style>
+                    </code></pre>
+                </div>
+                <div class="bg-gray-100 p-4 rounded-md mt-4 overflow-x-auto">
+                    <pre><code class="language-vue">
+<style>
+  h1 {
+    color: var(--text-red-500);
+  }
+</style>
+                    </code></pre>
+                </div>
+
+
+                <aside class="bg-neutral p-6 rounded-lg shadow-md mt-8">
+                    <h3 class="font-semibold text-lg mb-2 text-secondary"><i class="fa-solid fa-list-check mr-2"></i> Key Changes Summary</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="text-sm">@tailwind</code> directives replaced with <code class="text-sm">@import "tailwindcss"</code>.</li>
+                        <li>Deprecated utilities removed; use modern alternatives.</li>
+                        <li>Utilities renamed (e.g., <code class="text-sm">shadow-sm</code> to <code class="text-sm">shadow-xs</code>).</li>
+                        <li>Outline and ring utilities behavior adjustments.</li>
+                        <li>Configuration and customization method changes.</li>
+                        <li>JavaScript and CSS variable usage updates.</li>
+                    </ul>
+                </aside>
+            </section>
+
+
+            <section class="mb-12" id="conclusion">
+                <h2>Conclusion</h2>
+                <p>Upgrading to Tailwind CSS v4 brings significant improvements and optimizations. While breaking changes require adjustments, the automated upgrade tool and this guide simplify the process. By understanding the key changes and following the outlined steps, you can ensure a smooth transition and leverage the latest features of Tailwind CSS. Embrace the upgrade and enjoy a more performant and streamlined styling experience.</p>
+
+                <aside class="bg-neutral p-6 rounded-lg shadow-md mt-8">
+                    <h3 class="font-semibold text-lg mb-2 text-secondary"><i class="fa-solid fa-thumbs-up mr-2"></i> Final Thoughts</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Tailwind CSS v4 upgrade is beneficial for project performance and features.</li>
+                        <li>Utilize the upgrade tool for efficiency.</li>
+                        <li>Review
+content_copy
+download
+Use code with caution.
+Html

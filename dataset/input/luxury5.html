@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Silk Scarf - Product Detail</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1e293b',
+                        'secondary': '#f9fafb',
+                        'accent': '#d1d5db',
+                        'brand': '#7c3aed',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '128': '32rem',
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
+                        'fade-in': 'fade-in 0.3s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-secondary text-primary">
+    <header class="sticky top-0 bg-secondary z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="font-bold text-xl">Brand</a>
+                <button class="lg:hidden text-primary focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#" class="hover:text-brand">Home</a>
+                    <a href="#" class="hover:text-brand">Shop</a>
+                    <a href="#" class="hover:text-brand">About</a>
+                    <a href="#" class="hover:text-brand">Contact</a>
+                </div>
+                <div class="hidden lg:flex space-x-4">
+                    <button class="hover:text-brand focus:outline-none"><i class="fa fa-search"></i></button>
+                    <button class="hover:text-brand focus:outline-none"><i class="fa fa-shopping-bag"></i></button>
+                    <button class="hover:text-brand focus:outline-none"><i class="fa fa-user"></i></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-24 px-6 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="relative">
+                <div id="productCarousel" class="relative overflow-hidden rounded-2xl">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-item fade-in" data-index="0">
+                            <img src="https://picsum.photos/600/800?random=1" alt="Product Image 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="carousel-item hidden fade-in" data-index="1">
+                            <img src="https://picsum.photos/600/800?random=2" alt="Product Image 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="carousel-item hidden fade-in" data-index="2">
+                            <img src="https://picsum.photos/600/800?random=3" alt="Product Image 3" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <button id="prevButton" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-secondary bg-opacity-50 hover:bg-opacity-70 text-primary p-2 rounded-full focus:outline-none">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
+                    <button id="nextButton" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-secondary bg-opacity-50 hover:bg-opacity-70 text-primary p-2 rounded-full focus:outline-none">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
+                    <div id="thumbnailContainer" class="hidden lg:flex space-x-2 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                        <button data-index="0" class="thumbnail active border-2 border-brand rounded-md overflow-hidden w-16 h-24 focus:outline-none">
+                            <img src="https://picsum.photos/200/300?random=1" alt="Thumbnail 1" class="w-full h-full object-cover">
+                        </button>
+                        <button data-index="1" class="thumbnail rounded-md overflow-hidden w-16 h-24 focus:outline-none">
+                            <img src="https://picsum.photos/200/300?random=2" alt="Thumbnail 2" class="w-full h-full object-cover">
+                        </button>
+                        <button data-index="2" class="thumbnail rounded-md overflow-hidden w-16 h-24 focus:outline-none">
+                            <img src="https://picsum.photos/200/300?random=3" alt="Thumbnail 3" class="w-full h-full object-cover">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h1 class="text-3xl font-bold mb-4">Elegant Silk Scarf - Limited Edition</h1>
+                <div class="flex items-center mb-3">
+                    <span class="text-yellow-500 mr-2"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span>
+                    <span class="text-sm text-accent">4.8 (256 Reviews)</span>
+                </div>
+                <p class="text-gray-600 mb-6">Indulge in the exquisite softness of our limited edition silk scarf, handcrafted from the finest mulberry silk. Its delicate weave and subtle sheen make it a perfect accessory for any occasion.</p>
+                <div class="flex items-center mb-6">
+                    <span class="font-bold text-2xl mr-4">$125.00</span>
+                    <span class="text-sm text-gray-500 line-through">$150.00</span>
+                    <span class="text-brand text-sm ml-2">(15% Off)</span>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="font-semibold mb-2">Color</h3>
+                    <div class="flex items-center space-x-3">
+                        <button class="color-option w-8 h-8 rounded-full border-2 border-accent hover:border-brand focus:outline-none active:border-brand" style="background-color: #f472b6;" data-color="#f472b6"></button>
+                        <button class="color-option w-8 h-8 rounded-full border-2 border-accent hover:border-brand focus:outline-none active:border-brand" style="background-color: #a78bfa;" data-color="#a78bfa"></button>
+                        <button class="color-option w-8 h-8 rounded-full border-2 border-accent hover:border-brand focus:outline-none active:border-brand" style="background-color: #67e8f9;" data-color="#67e8f9"></button>
+                        <button class="color-option w-8 h-8 rounded-full border-2 border-accent hover:border-brand focus:outline-none active:border-brand" style="background-color: #4ade80;" data-color="#4ade80"></button>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="font-semibold mb-2">Size</h3>
+                    <div class="flex items-center space-x-4">
+                        <button class="size-option px-4 py-2 rounded-full border border-accent hover:border-brand focus:outline-none active:border-brand">Small</button>
+                        <button class="size-option px-4 py-2 rounded-full border border-accent hover:border-brand focus:outline-none active:border-brand">Medium</button>
+                        <button class="size-option px-4 py-2 rounded-full border border-accent hover:border-brand focus:outline-none active:border-brand">Large</button>
+                    </div>
+                </div>
+
+                <button class="w-full bg-brand text-secondary py-3 rounded-full font-semibold hover:bg-brand/90 focus:outline-none transition-colors duration-300 mb-6">
+                    <i class="fa fa-shopping-cart mr-2"></i> Add to Cart
+                </button>
+
+                <div class="border-t border-accent pt-6">
+                    <h3 class="font-semibold mb-3">Product Details</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700">
+                        <li>100% Mulberry Silk</li>
+                        <li>Dimensions: 70cm x 200cm</li>
+                        <li>Hand-rolled edges</li>
+                        <li>Dry clean only</li>
+                        <li>Made in Italy</li>
+                    </ul>
+                </div>
+
+                <div class="border-t border-accent pt-6 mt-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-semibold">Customer Reviews</h3>
+                        <a href="#" class="text-sm text-brand hover:underline">View All Reviews</a>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <img src="https://picsum.photos/50/50?random=4" alt="Reviewer 1" class="rounded-full w-8 h-8">
+                            </div>
+                            <div>
+                                <div class="flex items-center mb-1">
+                                    <span class="text-yellow-500 mr-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                    <span class="text-sm text-accent">5 days ago</span>
+                                </div>
+                                <p class="text-sm text-gray-700">Absolutely stunning scarf! The silk is so luxurious and the color is even more beautiful in person. Highly recommend!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="flex-shrink-0">
+                                <img src="https://picsum.photos/50/50?random=5" alt="Reviewer 2" class="rounded-full w-8 h-8">
+                            </div>
+                            <div>
+                                <div class="flex items-center mb-1">
+                                    <span class="text-yellow-500 mr-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span>
+                                    <span class="text-sm text-accent">1 week ago</span>
+                                </div>
+                                <p class="text-sm text-gray-700">Beautiful scarf, very soft and elegant. It's a bit pricey but definitely worth the investment for a timeless piece.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-secondary border-t border-accent py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Customer Service</h4>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li><a href="#" class="hover:text-brand">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-brand">Shipping & Delivery</a></li>
+                        <li><a href="#" class="hover:text-brand">Returns & Exchanges</a></li>
+                        <li><a href="#" class="hover:text-brand">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">About Us</h4>
+                    <ul class="text-sm text-gray-700 space-y-2">
+                        <li><a href="#" class="hover:text-brand">Our Story</a></li>
+                        <li><a href="#" class="hover:text-brand">Careers</a></li>
+                        <li><a href="#" class="hover:text-brand">Press</a></li>
+                        <li><a href="#" class="hover:text-brand">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-brand"><i class="fa-brands fa-facebook-square fa-lg"></i></a>
+                        <a href="#" class="hover:text-brand"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                        <a href="#" class="hover:text-brand"><i class="fa-brands fa-twitter-square fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm text-gray-500">
+                <p>© 2024 Brand, Inc. All rights reserved.</p>
+                <p><a href="#" class="hover:underline">Privacy Policy</a> | <a href="#" class="hover:underline">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        const thumbnailContainer = document.getElementById('thumbnailContainer');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        let currentItemIndex = 0;
+
+        function showItem(index) {
+            carouselItems.forEach(item => item.classList.add('hidden'));
+            carouselItems[index].classList.remove('hidden');
+            thumbnails.forEach(thumb => thumb.classList.remove('active', 'border-brand', 'border-2'));
+            thumbnails[index].classList.add('active', 'border-brand', 'border-2');
+            currentItemIndex = index;
+        }
+
+        function nextItem() {
+            const nextIndex = (currentItemIndex + 1) % carouselItems.length;
+            showItem(nextIndex);
+        }
+
+        function prevItem() {
+            const prevIndex = (currentItemIndex - 1 + carouselItems.length) % carouselItems.length;
+            showItem(prevIndex);
+        }
+
+        nextButton.addEventListener('click', nextItem);
+        prevButton.addEventListener('click', prevItem);
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                const index = parseInt(thumbnail.dataset.index);
+                showItem(index);
+            });
+        });
+
+        setInterval(nextItem, 5000);
+
+        const colorOptions = document.querySelectorAll('.color-option');
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                colorOptions.forEach(opt => opt.classList.remove('active', 'border-brand', 'border-2'));
+                option.classList.add('active', 'border-brand', 'border-2');
+            });
+        });
+
+        const sizeOptions = document.querySelectorAll('.size-option');
+        sizeOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                sizeOptions.forEach(opt => opt.classList.remove('active', 'border-brand', 'border-2'));
+                option.classList.add('active', 'border-brand', 'border-2');
+            });
+        });
+    </script>
+</body>
+</html>

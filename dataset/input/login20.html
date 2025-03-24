@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#007bff',
+                        'secondary': '#6c757d',
+                        'accent': '#ffc107',
+                        'neutral': '#f8f8f8',
+                    },
+                    keyframes: {
+                        'pulse-bg': {
+                            '0%, 100%': { backgroundColor: 'rgba(2,132,199, 0.2)' },
+                            '50%': { backgroundColor: 'rgba(2,132,199, 0.4)' },
+                        }
+                    },
+                    animation: {
+                        'pulse-bg': 'pulse-bg 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: linear-gradient(45deg, #007bff, #6610f2, #e83e8c, #fd7e14, #ffc107, #28a745, #20c997);
+            background-size: cover;
+            animation: rotate 15s linear infinite;
+            z-index: -1;
+            opacity: 0.6;
+            filter: blur(80px);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+                background-position: 0% 50%;
+            }
+            100% {
+                transform: rotate(360deg);
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral flex items-center justify-center h-screen">
+    <div class="login-container relative overflow-hidden bg-white rounded-2xl shadow-xl p-12 md:p-20 max-w-md w-full">
+        <div class="mb-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Log in</h2>
+            <p class="text-gray-500">Enter your credentials to access your account.</p>
+        </div>
+        <form class="space-y-6">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 sr-only">Email</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa-solid fa-envelope text-gray-500"></i>
+                    </div>
+                    <input type="email" id="email" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary" placeholder="Email address" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 sr-only">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa-solid fa-lock text-gray-500"></i>
+                    </div>
+                    <input type="password" id="password" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary" placeholder="Password" required>
+                </div>
+            </div>
+            <button type="submit" class="w-full text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4 text-center">Log in</button>
+            <div class="text-sm font-medium text-gray-500 text-center">
+                <a href="#" class="text-primary hover:underline focus:ring-2 focus:ring-primary">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        const loginContainer = document.querySelector('.login-container');
+        loginContainer.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            loginContainer.style.transform = `rotateX(${y * 5}deg) rotateY(${x * 5}deg)`;
+        });
+
+        loginContainer.addEventListener('mouseout', () => {
+            loginContainer.style.transform = `rotateX(0deg) rotateY(0deg)`;
+            loginContainer.style.transition = 'transform 0.5s ease-out';
+        });
+
+        loginContainer.addEventListener('mouseover', () => {
+            loginContainer.style.transition = 'none';
+        });
+
+        const submitButton = document.querySelector('button[type="submit"]');
+        submitButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            submitButton.classList.add('animate-pulse-bg');
+            setTimeout(() => {
+                submitButton.classList.remove('animate-pulse-bg');
+                alert('Login functionality would be implemented here.');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

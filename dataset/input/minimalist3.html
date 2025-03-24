@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Art Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .animate-fade {
+            animation: fade 0.5s ease-in-out forwards;
+            opacity: 0;
+        }
+        @keyframes fade {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter antialiased">
+    <header class="sticky top-0 bg-white shadow-sm z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-xl font-semibold text-gray-900">Gallery</a>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="animate-fade group relative bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Abstract Painting" class="object-cover rounded-t-lg group-hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate">Abstract Painting</h3>
+                    <p class="text-sm text-gray-500 mb-3 truncate">By Artist Name</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700 font-medium">$250</span>
+                        <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-40 bg-black transition-opacity duration-300">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="px-4 py-2 bg-white bg-opacity-80 hover:bg-opacity-100 text-gray-900 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <div class="animate-fade group relative bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/301?random=2" alt="Modern Sculpture" class="object-cover rounded-t-lg group-hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate">Modern Sculpture</h3>
+                    <p class="text-sm text-gray-500 mb-3 truncate">By Artist Name</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700 font-medium">$480</span>
+                        <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-40 bg-black transition-opacity duration-300">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="px-4 py-2 bg-white bg-opacity-80 hover:bg-opacity-100 text-gray-900 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <div class="animate-fade group relative bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/302?random=3" alt="Contemporary Photography" class="object-cover rounded-t-lg group-hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate">Contemporary Photography</h3>
+                    <p class="text-sm text-gray-500 mb-3 truncate">By Artist Name</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700 font-medium">$320</span>
+                        <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-40 bg-black transition-opacity duration-300">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="px-4 py-2 bg-white bg-opacity-80 hover:bg-opacity-100 text-gray-900 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <div class="animate-fade group relative bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/303?random=4" alt="Surrealist Artwork" class="object-cover rounded-t-lg group-hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate">Surrealist Artwork</h3>
+                    <p class="text-sm text-gray-500 mb-3 truncate">By Artist Name</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700 font-medium">$510</span>
+                        <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-40 bg-black transition-opacity duration-300">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="px-4 py-2 bg-white bg-opacity-80 hover:bg-opacity-100 text-gray-900 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <div class="animate-fade group relative bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/304?random=5" alt="Pop Art Print" class="object-cover rounded-t-lg group-hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate">Pop Art Print</h3>
+                    <p class="text-sm text-gray-500 mb-3 truncate">By Artist Name</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700 font-medium">$180</span>
+                        <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-40 bg-black transition-opacity duration-300">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="px-4 py-2 bg-white bg-opacity-80 hover:bg-opacity-100 text-gray-900 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+            <div class="animate-fade group relative bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/305?random=6" alt="Minimalist Drawing" class="object-cover rounded-t-lg group-hover:opacity-90 transition-opacity duration-300">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate">Minimalist Drawing</h3>
+                    <p class="text-sm text-gray-500 mb-3 truncate">By Artist Name</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-700 font-medium">$120</span>
+                        <button class="px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-40 bg-black transition-opacity duration-300">
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button class="px-4 py-2 bg-white bg-opacity-80 hover:bg-opacity-100 text-gray-900 rounded-md text-sm font-medium focus:outline-none transition-colors duration-200">
+                        View Details
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="bg-gray-50 border-t border-gray-200 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>© 2024 Art Gallery. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-gray-700">Privacy Policy</a>
+                <span class="mx-2">•</span>
+                <a href="#" class="hover:text-gray-700">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.animate-fade');
+            fadeElements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.classList.add('animate-fade-in');
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>

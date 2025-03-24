@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Grid Management Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .pulse-chart {
+            background-image: url('https://picsum.photos/200/300'); /* Placeholder chart image */
+            background-size: cover;
+            background-position: center;
+            @apply rounded-xl shadow-md;
+        }
+        .bar-chart {
+            background-image: url('https://picsum.photos/200/301'); /* Placeholder chart image */
+            background-size: cover;
+            background-position: center;
+            @apply rounded-xl shadow-md;
+        }
+        .line-chart {
+            background-image: url('https://picsum.photos/200/302'); /* Placeholder chart image */
+            background-size: cover;
+            background-position: center;
+            @apply rounded-xl shadow-md;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-blue-600">
+                <i class="fa-solid fa-solar-panel mr-2"></i> GridWise
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#production" class="hover:text-blue-500 transition-colors duration-300">Production</a>
+                <a href="#stability" class="hover:text-blue-500 transition-colors duration-300">Stability</a>
+                <a href="#consumption" class="hover:text-blue-500 transition-colors duration-300">Consumption</a>
+                <a href="#features" class="hover:text-blue-500 transition-colors duration-300">Features</a>
+                <a href="#contact" class="hover:text-blue-500 transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero container mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 animate__animated animate__fadeInUp">
+                    Harnessing Renewable Energy for a Sustainable Future
+                </h1>
+                <p class="text-lg text-gray-700 mb-8 animate__animated animate__fadeInUp animate__delay-1s">
+                    Optimize your renewable energy grid with real-time insights and intelligent management.
+                    Ensure stability, maximize production, and understand consumption patterns like never before.
+                </p>
+                <div class="flex space-x-4 animate__animated animate__fadeInUp animate__delay-2s">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                        Get Started <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image animate__animated animate__fadeInRight">
+                <img src="https://picsum.photos/600/400" alt="Renewable Energy Grid Management Platform" class="rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <section id="production" class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Energy Production Dashboard</h2>
+            <p class="text-gray-600">Real-time monitoring of your renewable energy sources.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="pulse-chart h-80 bg-gray-100 p-6 flex flex-col justify-end items-center">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Solar Production</h3>
+                <div class="text-4xl font-bold text-blue-600">75 MW</div>
+                <p class="text-gray-500">Current Output</p>
+            </div>
+            <div class="bar-chart h-80 bg-gray-100 p-6 flex flex-col justify-end items-center">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Wind Production</h3>
+                <div class="text-4xl font-bold text-green-600">42 MW</div>
+                <p class="text-gray-500">Current Output</p>
+            </div>
+            <div class="line-chart h-80 bg-gray-100 p-6 flex flex-col justify-end items-center">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Hydro Production</h3>
+                <div class="text-4xl font-bold text-teal-600">28 MW</div>
+                <p class="text-gray-500">Current Output</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="stability" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Grid Stability Metrics</h2>
+                <p class="text-gray-600">Ensure a stable and reliable energy grid with advanced monitoring.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-bolt text-yellow-500 text-2xl mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900">Frequency</h3>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-800">59.98 Hz</div>
+                    <p class="text-sm text-gray-500 mt-2">Target: 60 Hz</p>
+                    <div class="h-2 bg-gray-200 rounded-full mt-4">
+                        <div class="bg-yellow-500 h-2 rounded-full" style="width: 99%;"></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-wave-square text-blue-500 text-2xl mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900">Voltage</h3>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-800">235 kV</div>
+                    <p class="text-sm text-gray-500 mt-2">Target: 230 kV</p>
+                    <div class="h-2 bg-gray-200 rounded-full mt-4">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-thermometer-half text-red-500 text-2xl mr-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900">Temperature</h3>
+                    </div>
+                    <div class="text-3xl font-bold text-gray-800">28°C</div>
+                    <p class="text-sm text-gray-500 mt-2">Optimal Range: 10-40°C</p>
+                    <div class="h-2 bg-gray-200 rounded-full mt-4">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="consumption" class="container mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Consumption Patterns Analysis</h2>
+            <p class="text-gray-600">Understand energy consumption trends and optimize distribution.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="h-96 bg-gray-100 rounded-xl shadow-md">
+                <img src="https://picsum.photos/400/300" alt="Consumption Chart" class="w-full h-full object-cover rounded-xl">
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Daily Consumption Breakdown</h3>
+                <p class="text-gray-700 mb-6">Analyze consumption by sector to identify areas for efficiency improvements.</p>
+                <ul class="space-y-3">
+                    <li class="flex justify-between items-center">
+                        <span class="font-semibold text-gray-800">Residential</span>
+                        <span class="text-blue-600 font-bold">45%</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span class="font-semibold text-gray-800">Commercial</span>
+                        <span class="text-green-600 font-bold">35%</span>
+                    </li>
+                    <li class="flex justify-between items-center">
+                        <span class="font-semibold text-gray-800">Industrial</span>
+                        <span class="text-teal-600 font-bold">20%</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="bg-gray-50 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Real-time Monitoring</h3>
+                    <p class="text-gray-600">Instantaneous data visualization for production, stability, and consumption.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Predictive Analytics</h3>
+                    <p class="text-gray-600">AI-powered forecasting to anticipate grid issues and optimize performance.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="text-teal-600 text-4xl mb-4">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Automated Controls</h3>
+                    <p class="text-gray-600">Intelligent system adjustments to maintain grid stability and efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-blue-700 py-24 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8">Ready to Optimize Your Grid?</h2>
+            <p class="text-lg mb-12 opacity-80">Contact us today to learn more about GridWise and how we can help you achieve a sustainable energy future.</p>
+            <button class="bg-white hover:bg-gray-100 text-blue-700 font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+                Contact Us <i class="fa-solid fa-envelope ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 GridWise. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroSection = document.querySelector('.hero');
+            heroSection.classList.add('animate__animated', 'animate__fadeIn');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderland Park - Where Magic Comes Alive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FF6F61;
+            --secondary-color: #FFD700;
+            --accent-color: #4CAF50;
+            --text-color-light: #FFFFFF;
+            --text-color-dark: #333333;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-color-dark);
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+        }
+        .feature-card:nth-child(1) .feature-icon { background-color: #FFD700; }
+        .feature-card:nth-child(2) .feature-icon { background-color: #4CAF50; }
+        .feature-card:nth-child(3) .feature-icon { background-color: #FF6F61; }
+        .attraction-card:nth-child(1) { background: linear-gradient(135deg, #FFD700 0%, #FFA000 100%); }
+        .attraction-card:nth-child(2) { background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%); }
+        .attraction-card:nth-child(3) { background: linear-gradient(135deg, #FF6F61 0%, #D84315 100%); }
+        .experience-card:nth-child(1) { background: #E1F5FE; }
+        .experience-card:nth-child(2) { background: #FCE4EC; }
+        .experience-card:nth-child(3) { background: #FFFDE7; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-primary-color"><i class="fas fa-magic mr-2"></i> Wonderland Park</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#attractions" class="hover:text-primary-color transition-colors duration-300">Attractions</a>
+                <a href="#experiences" class="hover:text-primary-color transition-colors duration-300">Experiences</a>
+                <a href="#tickets" class="hover:text-primary-color transition-colors duration-300">Tickets</a>
+                <a href="#contact" class="hover:text-primary-color transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-primary-color focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-3">
+                <a href="#attractions" class="hover:text-primary-color transition-colors duration-300 block py-2">Attractions</a>
+                <a href="#experiences" class="hover:text-primary-color transition-colors duration-300 block py-2">Experiences</a>
+                <a href="#tickets" class="hover:text-primary-color transition-colors duration-300 block py-2">Tickets</a>
+                <a href="#contact" class="hover:text-primary-color transition-colors duration-300 block py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero bg-gradient-to-br from-yellow-100 to-red-100 py-24 md:py-32 relative overflow-hidden">
+        <div class="container mx-auto px-6 text-center md:text-left relative z-10">
+            <h1 class="hero-title text-5xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-6 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">Unleash the Fun at Wonderland Park!</h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-8 animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">Experience thrilling rides, enchanting shows, and unforgettable moments for the whole family.</p>
+            <a href="#tickets" class="inline-block bg-primary-color hover:bg-secondary-color text-text-color-light font-bold py-3 px-8 rounded-full transition-colors duration-300 animate__animated animate__fadeInUp" style="animation-delay: 0.6s;">Get Your Tickets Now!</a>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-gray-50 pointer-events-none"></div>
+        <div class="absolute top-1/4 right-0 -translate-y-1/4 md:translate-y-0 md:top-1/2 transform -translate-x-1/2 md:translate-x-0 z-0">
+            <img src="https://picsum.photos/600/400" alt="Wonderland Park Scene" class="rounded-xl shadow-2xl animate__animated animate__fadeInRight" style="animation-delay: 0.8s;">
+        </div>
+    </section>
+
+    <section id="attractions" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Explore Our Amazing Attractions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="attraction-card p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/300" alt="Roller Coaster" class="rounded-xl mb-4">
+                    <h3 class="text-xl font-bold text-text-color-light mb-2">The Cyclone Rollercoaster</h3>
+                    <p class="text-text-color-light">Experience breathtaking drops and thrilling twists on our signature rollercoaster.</p>
+                </div>
+                <div class="attraction-card p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/301" alt="Water Rides" class="rounded-xl mb-4">
+                    <h3 class="text-xl font-bold text-text-color-light mb-2">Splash Zone Water Rides</h3>
+                    <p class="text-text-color-light">Cool off and have fun with our exciting water rides for all ages.</p>
+                </div>
+                <div class="attraction-card p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/302" alt="Kids Area" class="rounded-xl mb-4">
+                    <h3 class="text-xl font-bold text-text-color-light mb-2">Enchanted Forest Kids Area</h3>
+                    <p class="text-text-color-light">A magical place for young adventurers with gentle rides and playful activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Create Unforgettable Experiences</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="experience-card p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/303" alt="Family Show" class="rounded-xl mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Spectacular Family Shows</h3>
+                    <p class="text-gray-700">Enjoy live performances with music, dance, and amazing special effects.</p>
+                </div>
+                <div class="experience-card p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/304" alt="Character Meet" class="rounded-xl mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Meet & Greet Characters</h3>
+                    <p class="text-gray-700">Get up close and personal with your favorite Wonderland Park characters.</p>
+                </div>
+                <div class="experience-card p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/305" alt="Dining" class="rounded-xl mb-4">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Delicious Dining Options</h3>
+                    <p class="text-gray-700">Savor a variety of tasty treats and meals throughout the park.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tickets" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Get Your Tickets Today!</h2>
+            <p class="text-lg text-gray-700 mb-8">Choose from our flexible ticket options and start planning your magical day.</p>
+            <div class="flex justify-center space-x-4 md:space-x-8 mb-12">
+                <div class="flex flex-col items-center">
+                    <div class="text-4xl font-bold text-primary-color">$59</div>
+                    <div class="text-lg text-gray-700">Single Day Pass</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-4xl font-bold text-accent-color">$149</div>
+                    <div class="text-lg text-gray-700">Family Pass (4)</div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="text-4xl font-bold text-secondary-color">$199</div>
+                    <div class="text-lg text-gray-700">Season Pass</div>
+                </div>
+            </div>
+            <a href="#" class="inline-block bg-accent-color hover:bg-primary-color text-text-color-light font-bold py-3 px-8 rounded-full transition-colors duration-300">Purchase Tickets</a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">Contact Us</h2>
+            <p class="text-lg text-gray-700 mb-8">Have questions? We're here to help! Reach out to us for any inquiries.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-primary-color transition-colors duration-300"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" class="text-gray-500 hover:text-primary-color transition-colors duration-300"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-gray-500 hover:text-primary-color transition-colors duration-300"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+            <p class="mt-8 text-gray-600">Email: <a href="mailto:info@wonderlandpark.com" class="text-primary-color hover:underline">info@wonderlandpark.com</a></p>
+            <p class="text-gray-600">Phone: <span class="text-primary-color">1-800-WONDERLAND</span></p>
+        </div>
+    </section>
+
+    <footer class="bg-gray-200 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600">© 2024 Wonderland Park. All rights reserved.</p>
+            <p class="text-gray-500 text-sm mt-2">Privacy Policy | Terms of Service</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                mobileMenu.classList.add('hidden');
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

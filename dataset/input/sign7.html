@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'satoshi': ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4F46E5',
+                        'secondary': '#6B7280',
+                        'accent': '#FCD34D',
+                        'success': '#34D399',
+                        'error': '#F87171',
+                        'dark-bg': '#111827',
+                        'light-bg': '#F9FAFB',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.3s ease-in-out forwards',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Satoshi', sans-serif;
+            background-color: theme('colors.light-bg');
+            color: theme('colors.secondary');
+        }
+        .form-container {
+            animation: slide-up 0.6s ease-out forwards;
+        }
+        .input-field {
+            transition: border-color 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: theme('colors.primary');
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+        }
+        .submit-button {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .submit-button:hover {
+            background-color: theme('colors.secondary');
+            transform: scale(1.05);
+        }
+        .error-message {
+            animation: fade-in 0.3s ease-in-out forwards;
+        }
+        .success-message {
+            animation: fade-in 0.3s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-light-bg">
+    <div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8 form-container bg-white shadow-2xl rounded-2xl p-8 md:p-12">
+            <div>
+                <img class="mx-auto h-12 w-auto" src="https://picsum.photos/id/1025/200/300" alt="Workflow">
+                <h2 class="mt-6 text-center text-3xl font-bold text-gray-900">
+                    Sign up for free
+                </h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Or
+                    <a href="#" class="font-medium text-primary hover:text-indigo-500">
+                        login to your account
+                    </a>
+                </p>
+            </div>
+            <form class="mt-8 space-y-6" action="#" method="POST">
+                <input type="hidden" name="remember" value="true">
+                <div class="space-y-4">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">
+                            Email address
+                        </label>
+                        <div class="mt-1">
+                            <input id="email" name="email" type="email" autocomplete="email" required class="input-field appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">
+                            Password
+                        </label>
+                        <div class="mt-1">
+                            <input id="password" name="password" type="password" autocomplete="current-password" required class="input-field appearance-none rounded-md relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm" placeholder="Your secure password">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-primary hover:text-indigo-500">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="submit-button group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                            <i class="fa-solid fa-user-plus text-white group-hover:text-light-bg transition-colors duration-300"></i>
+                        </span>
+                        Sign up
+                    </button>
+                </div>
+            </form>
+             <div class="mt-6 relative">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-white text-gray-500">
+                        Or continue with
+                    </span>
+                </div>
+            </div>
+
+            <div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <button type="button" class="inline-flex justify-center w-full py-3 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                            <span class="sr-only">Sign in with Facebook</span>
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    <div>
+                        <button type="button" class="inline-flex justify-center w-full py-3 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                            <span class="sr-only">Sign in with Google</span>
+                            <i class="fa-brands fa-google" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                let isValid = true;
+
+                if (!emailInput.value) {
+                    isValid = false;
+                    // Email validation error handling (visual feedback)
+                    emailInput.classList.add('border-error');
+                } else {
+                    emailInput.classList.remove('border-error');
+                }
+
+                if (!passwordInput.value) {
+                    isValid = false;
+                    // Password validation error handling (visual feedback)
+                    passwordInput.classList.add('border-error');
+                } else {
+                    passwordInput.classList.remove('border-error');
+                }
+
+                if (isValid) {
+                    // Simulate successful signup (replace with actual API call)
+                    console.log('Signup successful with:', { email: emailInput.value, password: passwordInput.value });
+                    // Success feedback (e.g., redirect or message)
+                    alert('Signup Successful!'); // Replace with better UI feedback
+                } else {
+                    // General form error feedback if needed
+                    alert('Please check the form for errors.'); // Replace with better UI feedback
+                }
+            });
+        });
+    </script>
+</body>
+</html>

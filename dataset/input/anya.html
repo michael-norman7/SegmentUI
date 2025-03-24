@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anya Petrova - Performance Artist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-purple': '#38325A',
+                        'neon-pink': '#FF69B4',
+                        'off-white': '#F9F9F9',
+                        'slate-blue': '#708090',
+                    },
+                    keyframes: {
+                        'slide-in-blurred-top': {
+                            '0%': {
+                                transform: 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
+                                'transform-origin': '50% 0%',
+                                filter: 'blur(40px)',
+                                opacity: '0'
+                            },
+                            '100%': {
+                                transform: 'translateY(0) scaleY(1) scaleX(1)',
+                                'transform-origin': '50% 50%',
+                                filter: 'blur(0px)',
+                                opacity: '1'
+                            },
+                        },
+                        'fade-in-out': {
+                            '0%, 100%': { opacity: '0' },
+                            '50%': { opacity: '1' },
+                        },
+                        'pulse-expand': {
+                            '0%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.1)' },
+                            '100%': { transform: 'scale(1)' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-blurred-top': 'slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
+                        'fade-in-out': 'fade-in-out 3s ease-in-out infinite',
+                        'pulse-expand': 'pulse-expand 2s ease-in-out infinite',
+                    },
+                    transitionTimingFunction: {
+                        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .aspect-custom {
+            aspect-ratio: 9 / 16;
+        }
+        .text-shadow-neon {
+            text-shadow: 0 0 5px theme('colors.neon-pink'), 0 0 10px theme('colors.neon-pink'), 0 0 15px theme('colors.neon-pink');
+        }
+    </style>
+</head>
+<body class="bg-off-white text-dark-purple">
+    <header class="sticky top-0 z-50 bg-off-white bg-opacity-90 backdrop-blur-sm border-b border-slate-200">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="font-display text-xl font-bold">
+                    Anya Petrova
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-neon-pink transition-colors">About</a>
+                    <a href="#performances" class="hover:text-neon-pink transition-colors">Performances</a>
+                    <a href="#gallery" class="hover:text-neon-pink transition-colors">Gallery</a>
+                    <a href="#contact" class="hover:text-neon-pink transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="absolute top-full right-0 left-0 bg-off-white shadow-md py-2">
+                    <a href="#about" class="block px-4 py-2 hover:bg-slate-100">About</a>
+                    <a href="#performances" class="block px-4 py-2 hover:bg-slate-100">Performances</a>
+                    <a href="#gallery" class="block px-4 py-2 hover:bg-slate-100">Gallery</a>
+                    <a href="#contact" class="block px-4 py-2 hover:bg-slate-100">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-off-white to-slate-100 opacity-30"></div>
+        </div>
+        <div class="container mx-auto px-6 py-32 md:py-48 relative z-10">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <h1 class="font-display text-4xl md:text-5xl font-bold mb-6 slide-in-blurred-top text-shadow-neon">
+                        Evoke. Provoke. <span class="text-neon-pink">Perform.</span>
+                    </h1>
+                    <p class="text-lg mb-8 text-slate-blue">
+                        Anya Petrova is a performance artist exploring the boundaries of human expression. Through movement, sound, and visual storytelling, she creates immersive experiences that challenge perceptions and ignite emotions.
+                    </p>
+                    <a href="#performances" class="inline-block bg-neon-pink text-off-white px-8 py-3 rounded-full font-semibold hover:bg-dark-purple transition-colors pulse-expand">
+                        Explore Performances
+                    </a>
+                </div>
+                <div class="order-1 md:order-2 justify-self-end">
+                    <div class="relative w-96 h-96 md:w-128 md:h-128 rounded-full overflow-hidden shadow-xl border-4 border-neon-pink">
+                        <img src="https://picsum.photos/id/1027/400/400" alt="Anya Petrova" class="object-cover w-full h-full animate-fade-in-out" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold text-center mb-12">About Anya</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="mb-6">
+                        Driven by a passion to connect with audiences on a visceral level, Anya Petrova's performances are more than just shows – they are dialogues. Drawing inspiration from diverse art forms and societal narratives, her work transcends conventional theater, venturing into interactive and site-specific installations.
+                    </p>
+                    <p class="mb-6">
+                        With a background in contemporary dance and experimental sound design, Anya crafts multi-sensory experiences that invite viewers to question, feel, and participate. Her performances have been featured in international festivals and galleries, consistently pushing the envelope of live art.
+                    </p>
+                    <p class="mb-6">
+                        Explore the journey of an artist dedicated to making the invisible visible, the unheard resonant, and the intangible profoundly felt.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://picsum.photos/id/1025/300/200" alt="Performance Shot 1" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                    <img src="https://picsum.photos/id/1026/300/200" alt="Performance Shot 2" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                    <img src="https://picsum.photos/id/1029/300/200" alt="Performance Shot 3" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                    <img src="https://picsum.photos/id/1030/300/200" alt="Performance Shot 4" class="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="performances" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold text-center mb-16">Featured Performances</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="performance-card bg-off-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1031/400/300" alt="Performance Title 1" class="w-full h-64 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Ephemeral Echoes</h3>
+                        <p class="text-slate-blue mb-4">A site-specific performance exploring memory and urban spaces.</p>
+                        <a href="#" class="inline-flex items-center text-neon-pink hover:text-dark-purple transition-colors font-medium">
+                            Learn More <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="performance-card bg-off-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1032/400/300" alt="Performance Title 2" class="w-full h-64 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Chromatic Rhythms</h3>
+                        <p class="text-slate-blue mb-4">An interactive performance blending color theory with rhythmic movement.</p>
+                        <a href="#" class="inline-flex items-center text-neon-pink hover:text-dark-purple transition-colors font-medium">
+                            Learn More <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="performance-card bg-off-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1033/400/300" alt="Performance Title 3" class="w-full h-64 object-cover" />
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Silent Symphony</h3>
+                        <p class="text-slate-blue mb-4">A non-verbal performance focused on physical storytelling and emotional resonance.</p>
+                        <a href="#" class="inline-flex items-center text-neon-pink hover:text-dark-purple transition-colors font-medium">
+                            Learn More <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold text-center mb-16">Performance Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1034/300/300" alt="Gallery Image 1" class="w-full h-full object-cover" />
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1035/300/300" alt="Gallery Image 2" class="w-full h-full object-cover" />
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1036/300/300" alt="Gallery Image 3" class="w-full h-full object-cover" />
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1037/300/300" alt="Gallery Image 4" class="w-full h-full object-cover" />
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1038/300/300" alt="Gallery Image 5" class="w-full h-full object-cover" />
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1039/300/300" alt="Gallery Image 6" class="w-full h-full object-cover" />
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1040/300/300" alt="Gallery Image 7" class="w-full h-full object-cover" />
+                </div>
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1041/300/300" alt="Gallery Image 8" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-3xl font-bold text-center mb-16">Contact & Bookings</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="mb-8">
+                        For booking inquiries, collaborations, or press information, please reach out using the contact form or directly via email.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-4 text-slate-blue"></i>
+                            <a href="mailto:anya.petrova.artist@email.com" class="hover:text-neon-pink transition-colors">anya.petrova.artist@email.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-4 text-slate-blue"></i>
+                            +1 555-123-4567
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-map-marker-alt mr-4 text-slate-blue"></i>
+                            New York, NY
+                        </li>
+                    </ul>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="text-slate-blue hover:text-neon-pink transition-colors" aria-label="Instagram"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-slate-blue hover:text-neon-pink transition-colors" aria-label="Facebook"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-slate-blue hover:text-neon-pink transition-colors" aria-label="Twitter"><i class="fab fa-twitter text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-slate-blue">Your Name</label>
+                            <input type="text" id="name" class="shadow-sm bg-off-white border border-slate-300 text-slate-blue text-sm rounded-lg focus:ring-neon-pink focus:border-neon-pink block w-full p-2.5" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-slate-blue">Your Email</label>
+                            <input type="email" id="email" class="shadow-sm bg-off-white border border-slate-300 text-slate-blue text-sm rounded-lg focus:ring-neon-pink focus:border-neon-pink block w-full p-2.5" placeholder="your@email.com" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 text-sm font-medium text-slate-blue">Your Message</label>
+                            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-slate-blue bg-off-white rounded-lg shadow-sm border border-slate-300 focus:ring-neon-pink focus:border-neon-pink" placeholder="Leave your message..."></textarea>
+                        </div>
+                        <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-off-white bg-neon-pink rounded-lg hover:bg-dark-purple focus:ring-4 focus:outline-none focus:ring-neon-pink transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-purple text-off-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Anya Petrova. All rights reserved.</p>
+            <p class="mt-2 text-slate-blue text-sm">Website by Bard</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

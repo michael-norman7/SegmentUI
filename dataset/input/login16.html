@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0EA5E9',
+                        'secondary': '#64748B',
+                        'minimal': '#F0F0F0',
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .bg-gradient-minimal {
+            background: linear-gradient(135deg, #E0E0E0, #F8F8F8);
+        }
+    </style>
+</head>
+<body class="bg-gradient-minimal h-screen flex items-center justify-center font-sans">
+    <div class="animate-fade-in p-8 bg-white rounded-xl shadow-2xl w-96">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-semibold text-primary mb-2 animate-slide-up delay-100"><i class="fa-solid fa-lock"></i></h2>
+            <p class="text-secondary animate-slide-up delay-200">Login to your account</p>
+        </div>
+        <form class="space-y-6">
+            <div class="animate-slide-up delay-300">
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-secondary">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <input type="text" id="username" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-minimal focus:ring-primary focus:border-primary" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="animate-slide-up delay-400">
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-secondary">
+                        <i class="fa-solid fa-key"></i>
+                    </div>
+                    <input type="password" id="password" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-minimal focus:ring-primary focus:border-primary" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="animate-slide-up delay-500">
+                <button type="submit" class="w-full text-white bg-primary hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login</button>
+            </div>
+        </form>
+        <div class="mt-6 text-center animate-slide-up delay-600">
+            <a href="#" class="text-sm text-secondary hover:underline focus:ring-primary focus:ring-offset-2">Forgot password?</a>
+        </div>
+    </div>
+</body>
+</html>

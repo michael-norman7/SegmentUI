@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegance in Ink - Calligraphy Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['"Playfair Display"', 'serif'],
+                        'body': ['"Roboto Condensed"', 'sans-serif'],
+                    },
+                    colors: {
+                        'ink': '#1a202c',
+                        'parchment': '#f0e68c',
+                        'gold': '#d4af37',
+                        'accent': '#cda45e',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'slide-left': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            },
+                        },
+                        'scale-up': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'scale(0.9)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'scale(1)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out forwards',
+                        'slide-left': 'slide-left 0.5s ease-out forwards',
+                        'scale-up': 'scale-up 0.3s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        . Obvious pathways to key actions
+Minimal clicks to reach destinations
+Consistent navigation patterns
+Clear feedback on user location
+
+
+Visual Hierarchy & Layout
+
+
+Strategic use of whitespace
+Clear content grouping
+Purposeful contrast and emphasis
+Scannable content structure
+Balanced visual weight
+
+
+Performance Considerations
+
+
+Optimized asset loading
+Minimal DOM operations
+Efficient CSS selectors
+Lazy loading where appropriate
+Browser caching strategy
+
+
+Accessibility Standards
+
+
+WCAG 2.1 compliance
+Proper heading structure
+Keyboard navigation support
+Screen reader compatibility
+Sufficient color contrast
+Alt text for images
+ARIA labels where needed
+
+
+Responsive Design Principles
+
+
+Mobile-first approach
+Fluid typography
+Flexible grid systems
+Breakpoint strategy
+Touch-friendly targets
+Content prioritization
+
+
+Technical Implementation
+
+
+Semantic HTML structure
+Modular CSS architecture
+Progressive enhancement
+Cross-browser compatibility
+Error handling
+Form validation
+Security best practices
+
+
+Visual Design Elements
+
+
+Consistent color palette
+Typography hierarchy
+Component spacing system
+Animation principles
+Icon system
+Brand alignment
+
+
+Interaction Design
+
+
+Meaningful animations
+Loading states
+Error states
+Success feedback
+Hover states
+Active states
+Focus states
+
+
+Content Strategy
+
+
+Clear messaging hierarchy
+Scannable content blocks
+Effective CTAs
+Error message clarity
+Help text placement
+Microcopy
+
+
+Trust & Security Signals
+
+
+Clear privacy policies
+Security certificates
+Data handling transparency
+Trust indicators
+Contact information
+Support access
+
+
+Performance Metrics
+
+
+Load time optimization
+First contentful paint
+Time to interactive
+Cumulative layout shift
+First input delay
+Performance budgets
+
+
+Code Quality
+
+
+Maintainable structure
+Documentation
+Component reusability
+Testing strategy
+Version control
+Build process
+Code splitting
+
+
+Mobile Considerations
+
+
+Touch target sizes
+Gesture support
+Viewport optimization
+Device-specific features
+Offline capabilities
+App-like experience
+
+
+Future-Proofing
+
+
+Scalable architecture
+Feature extensibility
+API integration readiness
+Analytics implementation
+A/B testing capability
+Monitoring setup
+
+
+Social Proof & Engagement
+
+
+User feedback systems
+Rating displays
+Testimonial integration
+Social sharing
+Community features
+
+
+Conversion Optimization
+
+
+Clear value proposition
+Streamlined user flows
+Minimal friction points
+Progressive disclosure
+Decision simplification */
+        @keyframes ink-flow {
+            0% {
+                stroke-dashoffset: 800;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .animate-ink-flow {
+            animation: ink-flow 2s linear forwards;
+        }
+    </style>
+</head>
+<body class="bg-parchment text-ink">
+
+<header class="sticky top-0 bg-parchment bg-opacity-90 backdrop-blur-sm z-50">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="text-xl font-display font-semibold text-accent">Elegance in Ink</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#portfolio" class="hover:text-accent transition-colors duration-300">Portfolio</a>
+                <a href="#about" class="hover:text-accent transition-colors duration-300">About</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl text-ink hover:text-accent"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="absolute top-full right-0 left-0 bg-parchment shadow-md py-2">
+                <a href="#portfolio" class="block px-4 py-2 hover:text-accent transition-colors duration-300">Portfolio</a>
+                <a href="#about" class="block px-4 py-2 hover:text-accent transition-colors duration-300">About</a>
+                <a href="#contact" class="block px-4 py-2 hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="hero" class="py-20 md:py-32">
+    <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row items-center justify-center">
+        <div class="md:w-1/2 md:pr-16 mb-10 md:mb-0 animate-fade-in-down">
+            <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-6">
+                Exquisite Calligraphy<br/>
+                <span class="text-accent">Crafted with Passion</span>
+            </h1>
+            <p class="font-body text-lg text-ink opacity-70 mb-8">
+                Welcome to the portfolio of [Artist Name], a calligraphy artist dedicated to creating timeless and expressive works. Explore a collection of handcrafted art, from elegant scripts to modern designs.
+            </p>
+            <a href="#portfolio" class="inline-block bg-accent text-parchment px-8 py-3 rounded-full font-body font-semibold hover:bg-gold transition-colors duration-300">
+                View Portfolio
+            </a>
+        </div>
+        <div class="md:w-1/2 animate-slide-left relative">
+            <img src="https://picsum.photos/id/1025/600/400" alt="Calligraphy Example" class="rounded-lg shadow-xl w-full h-auto object-cover">
+            <div class="absolute bottom-0 right-0 p-4 bg-parchment rounded-bl-lg rounded-tr-lg shadow-md">
+                <p class="font-body text-sm text-ink opacity-80 italic">"The quick brown fox jumps over the lazy fox."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="font-display text-4xl font-semibold text-center text-ink mb-12 animate-fade-in-down">
+            Portfolio Highlights
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up">
+                <img src="https://picsum.photos/id/237/400/300" alt="Calligraphy Piece 1" class="w-full h-auto object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up delay-100">
+                <img src="https://picsum.photos/id/238/400/300" alt="Calligraphy Piece 2" class="w-full h-auto object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up delay-200">
+                <img src="https://picsum.photos/id/239/400/300" alt="Calligraphy Piece 3" class="w-full h-auto object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up delay-300">
+                <img src="https://picsum.photos/id/240/400/300" alt="Calligraphy Piece 4" class="w-full h-auto object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up delay-400">
+                <img src="https://picsum.photos/id/241/400/300" alt="Calligraphy Piece 5" class="w-full h-auto object-cover">
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up delay-500">
+                <img src="https://picsum.photos/id/242/400/300" alt="Calligraphy Piece 6" class="w-full h-auto object-cover">
+            </div>
+        </div>
+        <div class="text-center mt-12 animate-fade-in-down">
+            <a href="#" class="inline-block bg-accent text-parchment px-8 py-3 rounded-full font-body font-semibold hover:bg-gold transition-colors duration-300">
+                View Full Portfolio
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center">
+        <div class="md:w-1/2 md:order-last animate-slide-left">
+            <img src="https://picsum.photos/id/333/600/400" alt="Artist Portrait" class="rounded-lg shadow-xl w-full h-auto object-cover">
+        </div>
+        <div class="md:w-1/2 md:pr-16 mb-10 md:mb-0 animate-fade-in-down">
+            <h2 class="font-display text-4xl font-semibold text-ink mb-6">
+                About the Artist
+            </h2>
+            <p class="font-body text-lg text-ink opacity-70 mb-8">
+                [Artist Name] is a passionate calligraphy artist with [Number] years of experience in creating bespoke and expressive lettering. Inspired by classic scripts and modern design, [Artist Name] blends traditional techniques with a contemporary aesthetic.
+            </p>
+            <p class="font-body text-lg text-ink opacity-70 mb-8">
+                Driven by a love for the art of writing, each piece is meticulously handcrafted, ensuring the highest quality and attention to detail. Whether it's wedding invitations, custom artwork, or brand collaborations, [Artist Name]'s calligraphy adds a touch of elegance and sophistication.
+            </p>
+            <a href="#contact" class="inline-block bg-accent text-parchment px-8 py-3 rounded-full font-body font-semibold hover:bg-gold transition-colors duration-300">
+                Get in Touch
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+        <h2 class="font-display text-4xl font-semibold text-center text-ink mb-12 animate-fade-in-down">
+            Contact & Inquiries
+        </h2>
+        <div class="max-w-lg mx-auto animate-slide-left">
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-sm font-body font-semibold text-ink">Your Name</label>
+                    <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-ink text-sm rounded-lg focus:ring-accent focus:border-accent block w-full p-2.5" placeholder="Your name">
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-body font-semibold text-ink">Your Email</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-ink text-sm rounded-lg focus:ring-accent focus:border-accent block w-full
+content_copy
+download
+Use code with caution.
+Html

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolest Shopping Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#64748b',
+                        'accent': '#fde047',
+                        'neutral': '#f3f4f6',
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(0)', opacity: '1' },
+                            '100%': { transform: 'translateY(-10px)', opacity: '0' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeOut: {
+                            '0%': { opacity: '1' },
+                            '100%': { opacity: '0' },
+                        },
+                    },
+                    animation: {
+                        'slide-down': 'slideDown 0.3s ease-out forwards',
+                        'slide-up': 'slideUp 0.3s ease-out forwards',
+                        'fade-in': 'fadeIn 0.3s ease-out forwards',
+                        'fade-out': 'fadeOut 0.3s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .zoom-in-out-box {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .zoom-in-out-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .cart-item-image {
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans antialiased">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12 pt-16 pb-24">
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <section class="lg:col-span-2">
+                <div class="bg-white rounded-3xl shadow-xl p-6 md:p-8 zoom-in-out-box">
+                    <h1 class="text-2xl font-bold text-gray-800 mb-6 animate-slide-down" style="animation-delay: 0.1s;">Shopping Cart</h1>
+                    <ul id="cart-items" class="space-y-6 mb-8">
+                        <li class="flex items-center space-x-4 py-2 border-b border-neutral animate-slide-down" style="animation-delay: 0.2s;">
+                            <img src="https://picsum.photos/200/300?1" alt="Product 1" class="w-20 h-20 rounded-xl cart-item-image">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800">Awesome T-Shirt</h3>
+                                <p class="text-secondary text-sm">Size: M, Color: Blue</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="flex items-center justify-end space-x-2 mb-2">
+                                    <button class="p-1 rounded-full hover:bg-neutral focus:outline-none">
+                                        <i class="fa-solid fa-minus text-secondary"></i>
+                                    </button>
+                                    <span class="text-gray-700 font-medium">1</span>
+                                    <button class="p-1 rounded-full hover:bg-neutral focus:outline-none">
+                                        <i class="fa-solid fa-plus text-secondary"></i>
+                                    </button>
+                                </div>
+                                <p class="font-semibold text-gray-800">$24.99</p>
+                                <button class="text-red-500 hover:text-red-700 focus:outline-none text-sm">
+                                    <i class="fa-regular fa-trash-can mr-1"></i>Remove
+                                </button>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4 py-2 border-b border-neutral animate-slide-down" style="animation-delay: 0.3s;">
+                            <img src="https://picsum.photos/200/300?2" alt="Product 2" class="w-20 h-20 rounded-xl cart-item-image">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800">Cool Coffee Mug</h3>
+                                <p class="text-secondary text-sm">Ceramic, White</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="flex items-center justify-end space-x-2 mb-2">
+                                    <button class="p-1 rounded-full hover:bg-neutral focus:outline-none">
+                                        <i class="fa-solid fa-minus text-secondary"></i>
+                                    </button>
+                                    <span class="text-gray-700 font-medium">2</span>
+                                    <button class="p-1 rounded-full hover:bg-neutral focus:outline-none">
+                                        <i class="fa-solid fa-plus text-secondary"></i>
+                                    </button>
+                                </div>
+                                <p class="font-semibold text-gray-800">$12.50</p>
+                                <button class="text-red-500 hover:text-red-700 focus:outline-none text-sm">
+                                    <i class="fa-regular fa-trash-can mr-1"></i>Remove
+                                </button>
+                            </div>
+                        </li>
+                        <li class="flex items-center space-x-4 py-2 animate-slide-down" style="animation-delay: 0.4s;">
+                            <img src="https://picsum.photos/200/300?3" alt="Product 3" class="w-20 h-20 rounded-xl cart-item-image">
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-gray-800">Stylish Notebook</h3>
+                                <p class="text-secondary text-sm">A5, Lined</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="flex items-center justify-end space-x-2 mb-2">
+                                    <button class="p-1 rounded-full hover:bg-neutral focus:outline-none">
+                                        <i class="fa-solid fa-minus text-secondary"></i>
+                                    </button>
+                                    <span class="text-gray-700 font-medium">3</span>
+                                    <button class="p-1 rounded-full hover:bg-neutral focus:outline-none">
+                                        <i class="fa-solid fa-plus text-secondary"></i>
+                                    </button>
+                                </div>
+                                <p class="font-semibold text-gray-800">$8.99</p>
+                                <button class="text-red-500 hover:text-red-700 focus:outline-none text-sm">
+                                    <i class="fa-regular fa-trash-can mr-1"></i>Remove
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="mb-6 animate-fade-in" style="animation-delay: 0.5s;">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Discount Code</h4>
+                        <div class="flex rounded-xl shadow-sm overflow-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+                            <input type="text" placeholder="Enter discount code" class="px-4 py-3 w-full rounded-xl outline-none border-none shadow-none" id="discount-code">
+                            <button class="bg-primary text-white font-semibold px-5 py-3 rounded-r-xl hover:bg-primary/80 focus:outline-none transition-colors">Apply</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-6 animate-fade-in" style="animation-delay: 0.6s;">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Gift Card</h4>
+                        <div class="flex rounded-xl shadow-sm overflow-hidden focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
+                            <input type="text" placeholder="Enter gift card code" class="px-4 py-3 w-full rounded-xl outline-none border-none shadow-none" id="gift-card-code">
+                            <button class="bg-primary text-white font-semibold px-5 py-3 rounded-r-xl hover:bg-primary/80 focus:outline-none transition-colors">Apply</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lg:col-span-1">
+                <div class="bg-white rounded-3xl shadow-xl p-6 md:p-8 sticky top-20 zoom-in-out-box animate-slide-down" style="animation-delay: 0.2s;">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6">Order Summary</h2>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-gray-700">Subtotal</span>
+                        <span class="font-semibold text-gray-800">$71.47</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-gray-700">Discount</span>
+                        <span class="font-semibold text-primary">- $5.00</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-gray-700">Gift Card</span>
+                        <span class="font-semibold text-primary">- $10.00</span>
+                    </div>
+                    <div class="border-t border-neutral py-4 flex justify-between items-center mb-6">
+                        <span class="text-lg font-semibold text-gray-800">Total</span>
+                        <span class="text-2xl font-bold text-primary">$56.47</span>
+                    </div>
+                    <button class="bg-accent text-gray-800 font-bold py-3 px-6 rounded-xl w-full hover:bg-accent/80 focus:outline-none transition-colors animate-fade-in" style="animation-delay: 0.7s;">
+                        Proceed to Checkout <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                    <div class="mt-4 text-center animate-fade-in" style="animation-delay: 0.8s;">
+                        <img src="https://picsum.photos/200/50?4" alt="Secure Checkout" class="mx-auto mb-2 opacity-70">
+                        <p class="text-secondary text-sm">Secure checkout guaranteed</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItems = document.getElementById('cart-items');
+
+            if (cartItems && cartItems.children.length === 0) {
+                const emptyCartMessage = document.createElement('li');
+                emptyCartMessage.classList.add('text-center', 'py-10', 'text-gray-500', 'animate-fade-in');
+                emptyCartMessage.style.animationDelay = '0.2s';
+                emptyCartMessage.innerHTML = `
+                    <i class="fa-regular fa-face-sad-tear text-4xl mb-3"></i>
+                    <p>Your cart is currently empty.</p>
+                `;
+                cartItems.appendChild(emptyCartMessage);
+            }
+        });
+    </script>
+</body>
+</html>

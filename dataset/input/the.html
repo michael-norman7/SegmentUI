@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Whimsical Wonders Puppet Show</title>
+    <link href="output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+      @layer base {
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Fredoka:wght@300..700&display=swap');
+      }
+    </style>
+</head>
+<body class="font-fredoka text-puppetDark antialiased">
+    <header class="sticky top-0 bg-puppetYellow/90 backdrop-blur-sm z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-playfair italic font-bold text-puppetPurple hover:text-puppetPink transition-colors duration-300">Whimsical Wonders</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-puppetPink transition-colors duration-300">About Show</a>
+                <a href="#schedule" class="hover:text-puppetPink transition-colors duration-300">Show Schedule</a>
+                <a href="#tickets" class="hover:text-puppetPink transition-colors duration-300">Get Tickets</a>
+                <a href="#contact" class="hover:text-puppetPink transition-colors duration-300">Contact</a>
+            </div>
+            <button class="md:hidden text-puppetPurple hover:text-puppetPink focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative py-24 md:py-36 bg-puppetPink overflow-hidden">
+            <div class="absolute inset-0 animate-bounceSlow pointer-events-none" style="background: radial-gradient(circle at bottom left, rgba(244, 114, 182, 0.3), transparent 50%), radial-gradient(circle at top right, rgba(100, 211, 255, 0.2), transparent 50%);"></div>
+            <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
+                <div class="md:grid grid-cols-2 gap-8 items-center">
+                    <div class="hero-text md:order-1 order-2">
+                        <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-puppetPurple mb-6 animate-fadeInDown">Step Right Up! To a World of Wonder!</h1>
+                        <p class="text-lg text-puppetDark mb-10 animate-fadeInUp delay-100">Experience the magic of handcrafted puppets in a spectacular show for all ages. Laughter, amazement, and unforgettable stories await!</p>
+                        <a href="#tickets" class="inline-block py-3 px-8 bg-puppetYellow text-puppetPurple font-bold rounded-2xl hover:bg-puppetOrange hover:shadow-whimsical transition-all duration-300 animate-pulse">Get Your Tickets Now <i class="fa fa-ticket ml-2"></i></a>
+                    </div>
+                    <div class="hero-image md:order-2 order-1 flex justify-center animate-fadeInRight">
+                        <img src="https://picsum.photos/400/500" alt="Puppet Show Image" class="rounded-3xl shadow-2xl max-w-full h-auto md:max-h-[500px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 md:py-32 bg-puppetBlue/10">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-puppetPurple mb-12 animate-wiggle">About the Show</h2>
+                <div class="md:grid grid-cols-2 gap-12 items-center">
+                    <div class="about-text order-2 md:order-1">
+                        <p class="text-lg text-puppetDark mb-8">Prepare to be enchanted by 'The Great Puppet Adventure!', a brand-new production featuring a cast of whimsical characters and thrilling tales. Our show combines traditional puppetry with modern storytelling to create an immersive experience for children and adults alike.</p>
+                        <p class="text-lg text-puppetDark mb-8">From daring heroes to mischievous villains, each puppet is lovingly handcrafted and brought to life by our talented performers. Expect dazzling stagecraft, original music, and a whole lot of fun!</p>
+                        <ul class="list-disc list-inside text-lg text-puppetDark mb-8">
+                            <li>Suitable for all ages (recommended 3+)</li>
+                            <li>Show duration: Approximately 60 minutes</li>
+                            <li>Refreshments available at the venue</li>
+                        </ul>
+                        <a href="#schedule" class="inline-block py-3 px-8 bg-puppetPink text-white font-bold rounded-2xl hover:bg-puppetPurple hover:shadow-whimsical transition-all duration-300">View Show Schedule</a>
+                    </div>
+                    <div class="about-image order-1 md:order-2 flex justify-center">
+                        <img src="https://picsum.photos/500/400" alt="Puppets on Stage" class="rounded-3xl shadow-2xl max-w-full h-auto md:max-h-[400px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="py-20 md:py-32 bg-puppetGreen/10">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-puppetPurple mb-12 animate-wiggle delay-100">Show Schedule</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="schedule-card bg-white rounded-2xl shadow-whimsical p-6 hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-puppetPurple mb-4"><i class="fa fa-calendar mr-2"></i> Saturday, November 9th</h3>
+                        <p class="text-puppetDark mb-2"><i class="fa fa-clock mr-2"></i> 2:00 PM & 5:00 PM</p>
+                        <p class="text-puppetDark"><i class="fa fa-map-marker mr-2"></i> Grand Theatre, Main Hall</p>
+                        <a href="#tickets" class="mt-4 inline-block py-2 px-6 bg-puppetYellow text-puppetPurple font-bold rounded-xl hover:bg-puppetOrange transition-colors duration-300 block">Get Tickets</a>
+                    </div>
+                    <div class="schedule-card bg-white rounded-2xl shadow-whimsical p-6 hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-puppetPurple mb-4"><i class="fa fa-calendar mr-2"></i> Sunday, November 10th</h3>
+                        <p class="text-puppetDark mb-2"><i class="fa fa-clock mr-2"></i> 11:00 AM & 3:00 PM</p>
+                        <p class="text-puppetDark"><i class="fa fa-map-marker mr-2"></i> Grand Theatre, Main Hall</p>
+                        <a href="#tickets" class="mt-4 inline-block py-2 px-6 bg-puppetYellow text-puppetPurple font-bold rounded-xl hover:bg-puppetOrange transition-colors duration-300 block">Get Tickets</a>
+                    </div>
+                    <div class="schedule-card bg-white rounded-2xl shadow-whimsical p-6 hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-puppetPurple mb-4"><i class="fa fa-calendar mr-2"></i> Saturday, November 16th</h3>
+                        <p class="text-puppetDark mb-2"><i class="fa fa-clock mr-2"></i> 2:00 PM & 5:00 PM</p>
+                        <p class="text-puppetDark"><i class="fa fa-map-marker mr-2"></i> Community Center Auditorium</p>
+                        <a href="#tickets" class="mt-4 inline-block py-2 px-6 bg-puppetYellow text-puppetPurple font-bold rounded-xl hover:bg-puppetOrange transition-colors duration-300 block">Get Tickets</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tickets" class="py-20 md:py-32 bg-puppetOrange/10">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-puppetPurple mb-12 animate-wiggle delay-200">Get Your Tickets</h2>
+                <div class="md:grid grid-cols-2 gap-12 items-center">
+                    <div class="tickets-image flex justify-center">
+                        <img src="https://picsum.photos/450/450" alt="Ticket Booth" class="rounded-3xl shadow-2xl max-w-full h-auto md:max-h-[450px]">
+                    </div>
+                    <div class="tickets-content">
+                        <p class="text-lg text-puppetDark mb-8">Secure your seats for an afternoon of enchantment! Tickets are selling fast, so don't miss out on the fun. Choose from standard or premium seating for the best viewing experience.</p>
+                        <div class="mb-8">
+                            <p class="text-xl font-bold text-puppetPurple mb-2">Ticket Prices:</p>
+                            <ul class="list-disc list-inside text-lg text-puppetDark">
+                                <li>Standard: $25 per person</li>
+                                <li>Premium: $40 per person (includes front-row seating and a souvenir program)</li>
+                                <li>Family Pack (2 Adults + 2 Children): $80 (Standard Seating Only)</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-block py-3 px-8 bg-puppetYellow text-puppetPurple font-bold rounded-2xl hover:bg-puppetOrange hover:shadow-whimsical transition-all duration-300">Purchase Tickets Online <i class="fa fa-shopping-cart ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-32 bg-puppetPurple/10">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-playfair text-3xl md:text-4xl font-bold text-puppetPurple mb-12 animate-wiggle delay-300">Contact Us</h2>
+                <div class="md:grid grid-cols-2 gap-12 items-center">
+                    <div class="contact-form">
+                        <form class="bg-white shadow-whimsical rounded-2xl p-8">
+                            <div class="mb-4">
+                                <label for="name" class="block text-puppetDark text-sm font-bold mb-2">Name:</label>
+                                <input type="text" id="name" class="shadow appearance-none border rounded-xl w-full py-2 px-3 text-puppetDark leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-puppetDark text-sm font-bold mb-2">Email:</label>
+                                <input type="email" id="email" class="shadow appearance-none border rounded-xl w-full py-2 px-3 text-puppetDark leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-puppetDark text-sm font-bold mb-2">Message:</label>
+                                <textarea id="message" rows="4" class="shadow appearance-none border rounded-xl w-full py-2 px-3 text-puppetDark leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message"></textarea>
+                            </div>
+                            <button type="submit" class="py-3 px-8 bg-puppetYellow text-puppetPurple font-bold rounded-2xl hover:bg-puppetOrange hover:shadow-whimsical transition-all duration-300">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <p class="text-lg text-puppetDark mb-6">Have questions or need more information? Reach out to us!</p>
+                        <ul class="text-lg text-puppetDark">
+                            <li class="mb-4"><i class="fa fa-phone text-puppetPink mr-2"></i> Phone: <a href="tel:+15551234567" class="hover:text-puppetPink transition-colors duration-300">555-123-4567</a></li>
+                            <li class="mb-4"><i class="fa fa-envelope text-puppetPink mr-2"></i> Email: <a href="mailto:info@whimsicalwonders.com" class="hover:text-puppetPink transition-colors duration-300">info@whimsicalwonders.com</a></li>
+                            <li><i class="fa fa-map-marker text-puppetPink mr-2"></i> Address: 123 Main Street, Anytown, USA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-puppetYellow py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-puppetPurple">© 2024 Whimsical Wonders Puppet Show. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-puppetPurple hover:text-puppetPink"><i class="fab fa-facebook-square text-xl"></i></a>
+                <a href="#" class="text-puppetPurple hover:text-puppetPink"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-puppetPurple hover:text-puppetPink"><i class="fab fa-twitter-square text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Canvas - Music Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F97316',
+                        'secondary': '#EA580C',
+                        'accent': '#FECDA6',
+                        'dark-bg': '#111827',
+                        'dark-text': '#F3F4F6',
+                        'card-light': '#FFFFFF',
+                        'card-dark': '#1F2937',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '72': '18rem',
+                        '84': '21rem',
+                        '96': '24rem',
+                        '120': '30rem',
+                    },
+                    boxShadow: {
+                        'glow-primary': '0 0 20px -5px rgba(249, 115, 22, 0.6)',
+                        'glow-secondary': '0 0 15px -3px rgba(234, 88, 12, 0.5)',
+                        'card-light': '0 5px 20px rgba(0, 0, 0, 0.08)',
+                        'card-dark': '0 5px 20px rgba(0, 0, 0, 0.25)',
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(249, 115, 22, 0.7)' },
+                            '50%': { boxShadow: '0 0 0 10px rgba(249, 115, 22, 0)' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.6s ease-out forwards',
+                        'fade-in': 'fade-in 0.4s ease-in-out forwards',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    transitionProperty: {
+                        'height': 'height',
+                        'spacing': 'margin, padding',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .blog-post-content > * + * {
+            margin-top: 1.2em;
+        }
+        .album-art {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .album-art:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .audio-player-container {
+            overflow: hidden;
+            transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="bg-background dark:bg-dark-bg text-text dark:text-dark-text transition-colors duration-300">
+
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-sm shadow-md transition-colors duration-300">
+        <nav class="container mx-auto px-6 py-4 lg:px-8">
+            <div class="flex items-center justify-between">
+                <a href="/" class="font-poppins font-semibold text-xl text-primary dark:text-primary hover:text-secondary dark:hover:text-secondary transition-colors duration-200">Sonic Canvas</a>
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#" class="hover:text-primary dark:hover:text-primary transition-colors duration-200">Discover</a>
+                    <a href="#" class="hover:text-primary dark:hover:text-primary transition-colors duration-200">Genres</a>
+                    <a href="#" class="hover:text-primary dark:hover:text-primary transition-colors duration-200">Artists</a>
+                    <a href="#" class="hover:text-primary dark:hover:text-primary transition-colors duration-200">About</a>
+                    <a href="#" class="hover:text-primary dark:hover:text-primary transition-colors duration-200">Contact</a>
+                </div>
+                <div class="lg:hidden">
+                    <button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero container mx-auto mt-24 px-6 py-12 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="hero-text lg:order-1 animate-fade-in">
+                <h1 class="font-poppins font-bold text-4xl lg:text-5xl mb-6 leading-tight">Dive Deep into the Sound</h1>
+                <p class="text-lg mb-8 text-gray-600 dark:text-gray-300">Explore the latest albums, discover emerging artists, and immerse yourself in the world of music. Your journey through sound starts here.</p>
+                <button class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full focus:outline-none focus:ring-2 focus:ring-primary animate-pulse-glow transition-colors duration-300">
+                    Start Exploring <i class="fa fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+            <div class="hero-image lg:order-2 animate-slide-in-bottom">
+                <img src="https://picsum.photos/600/400" alt="Hero Music Image" class="rounded-xl shadow-2xl w-full h-auto object-cover aspect-video">
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-16 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <article class="blog-post bg-card-light dark:bg-card-dark rounded-2xl shadow-card-light dark:shadow-card-dark overflow-hidden transition-shadow duration-300 hover:shadow-glow-primary">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Album Art" class="album-art block w-full h-72 object-cover rounded-t-2xl cursor-pointer" onclick="toggleAudioPlayer(this)">
+                    <button class="absolute top-3 right-3 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none" onclick="togglePlay(this); event.stopPropagation();" aria-label="Play">
+                        <i class="fa fa-play text-primary play-icon"></i>
+                        <i class="fa fa-pause text-primary hidden pause-icon"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h2 class="font-poppins font-semibold text-xl mb-2 hover:text-primary dark:hover:text-primary transition-colors duration-200 cursor-pointer">Album Title Here</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Artist Name - Genre</p>
+                    <p class="text-gray-700 dark:text-gray-300 blog-post-content">
+                        A brief description of the album. Highlighting key aspects, musical style, and overall vibe. This is a teaser to entice readers to listen.
+                    </p>
+                </div>
+                <div class="audio-player-container h-0">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+                        <audio class="w-full" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="none"></audio>
+                        <div class="flex items-center justify-between mt-2">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="togglePlay(this.closest('.audio-player-container').previousElementSibling.querySelector('button'));" class="audio-play-pause-button focus:outline-none" aria-label="Play/Pause">
+                                    <i class="fa fa-play text-primary text-lg play-icon"></i>
+                                    <i class="fa fa-pause text-primary text-lg hidden pause-icon"></i>
+                                </button>
+                                <span class="current-time text-sm text-gray-600 dark:text-gray-400">0:00</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <input type="range" class="volume-slider w-24" min="0" max="1" step="0.05" value="1">
+                                <i class="fa fa-volume-up text-gray-600 dark:text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="progress-bar-container bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2 overflow-hidden">
+                            <div class="progress-bar bg-primary h-full rounded-full" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+             <article class="blog-post bg-card-light dark:bg-card-dark rounded-2xl shadow-card-light dark:shadow-card-dark overflow-hidden transition-shadow duration-300 hover:shadow-glow-primary">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Album Art" class="album-art block w-full h-72 object-cover rounded-t-2xl cursor-pointer" onclick="toggleAudioPlayer(this)">
+                    <button class="absolute top-3 right-3 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none" onclick="togglePlay(this); event.stopPropagation();" aria-label="Play">
+                        <i class="fa fa-play text-primary play-icon"></i>
+                        <i class="fa fa-pause text-primary hidden pause-icon"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h2 class="font-poppins font-semibold text-xl mb-2 hover:text-primary dark:hover:text-primary transition-colors duration-200 cursor-pointer">Another Great Album</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Different Artist - Electronic</p>
+                    <p class="text-gray-700 dark:text-gray-300 blog-post-content">
+                         Explore the soundscapes of this electronic masterpiece. A journey through rhythm and melody, perfect for late-night listening.
+                    </p>
+                </div>
+                <div class="audio-player-container h-0">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+                        <audio class="w-full" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" preload="none"></audio>
+                        <div class="flex items-center justify-between mt-2">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="togglePlay(this.closest('.audio-player-container').previousElementSibling.querySelector('button'));" class="audio-play-pause-button focus:outline-none" aria-label="Play/Pause">
+                                    <i class="fa fa-play text-primary text-lg play-icon"></i>
+                                    <i class="fa fa-pause text-primary text-lg hidden pause-icon"></i>
+                                </button>
+                                <span class="current-time text-sm text-gray-600 dark:text-gray-400">0:00</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <input type="range" class="volume-slider w-24" min="0" max="1" step="0.05" value="1">
+                                <i class="fa fa-volume-up text-gray-600 dark:text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="progress-bar-container bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2 overflow-hidden">
+                            <div class="progress-bar bg-primary h-full rounded-full" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+             <article class="blog-post bg-card-light dark:bg-card-dark rounded-2xl shadow-card-light dark:shadow-card-dark overflow-hidden transition-shadow duration-300 hover:shadow-glow-primary">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Album Art" class="album-art block w-full h-72 object-cover rounded-t-2xl cursor-pointer" onclick="toggleAudioPlayer(this)">
+                    <button class="absolute top-3 right-3 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none" onclick="togglePlay(this); event.stopPropagation();" aria-label="Play">
+                        <i class="fa fa-play text-primary play-icon"></i>
+                        <i class="fa fa-pause text-primary hidden pause-icon"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <h2 class="font-poppins font-semibold text-xl mb-2 hover:text-primary dark:hover:text-primary transition-colors duration-200 cursor-pointer">Rhythmic Explorations</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Indie Band - Alternative Rock</p>
+                    <p class="text-gray-700 dark:text-gray-300 blog-post-content">
+                        Raw energy and heartfelt lyrics define this album. Experience the passion and creativity of this indie rock band.
+                    </p>
+                </div>
+                <div class="audio-player-container h-0">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+                        <audio class="w-full" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" preload="none"></audio>
+                        <div class="flex items-center justify-between mt-2">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="togglePlay(this.closest('.audio-player-container').previousElementSibling.querySelector('button'));" class="audio-play-pause-button focus:outline-none" aria-label="Play/Pause">
+                                    <i class="fa fa-play text-primary text-lg play-icon"></i>
+                                    <i class="fa fa-pause text-primary text-lg hidden pause-icon"></i>
+                                </button>
+                                <span class="current-time text-sm text-gray-600 dark:text-gray-400">0:00</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <input type="range" class="volume-slider w-24" min="0" max="1" step="0.05" value="1">
+                                <i class="fa fa-volume-up text-gray-600 dark:text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="progress-bar-container bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2 overflow-hidden">
+                            <div class="progress-bar bg-primary h-full rounded-full" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-dark-bg border-t border-gray-200 dark:border-gray-700 py-12 transition-colors duration-300">
+        <div class="container mx-auto px-6 lg:px-8 text-center">
+            <p class="text-gray-600 dark:text-gray-400">© 2024 Sonic Canvas. All rights reserved.</p>
+            <div class="flex justify-center mt-4 space-x-6">
+                <a href="#" class="hover:text-primary dark:hover:text-primary transition-colors duration-200"><i class="fab fa-facebook-square text-2xl"></i></a>
+                <a href="#" class="hover:text-primary dark:hover:text-primary transition-colors duration-200"><i class="fab fa-twitter-square text-2xl"></i></a>
+                <a href="#" class="hover:text-primary dark:hover:text-primary transition-colors duration-200"><i class="fab fa-instagram-square text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAudioPlayer(albumArt) {
+            const post = albumArt.closest('.blog-post');
+            const playerContainer = post.querySelector('.audio-player-container');
+            const isCollapsed = playerContainer.classList.contains('h-0');
+
+            document.querySelectorAll('.audio-player-container').forEach(el => el.classList.add('h-0'));
+            if (isCollapsed) {
+                playerContainer.classList.remove('h-0');
+                setTimeout(() => { // small delay for smooth transition
+                    playerContainer.style.height = playerContainer.scrollHeight + 'px';
+                }, 0);
+            } else {
+                playerContainer.style.height = 0;
+                playerContainer.addEventListener('transitionend', function resetHeight() {
+                    playerContainer.classList.add('h-0');
+                    playerContainer.removeEventListener('transitionend', resetHeight);
+                }, { once: true });
+            }
+        }
+
+        function togglePlay(button) {
+            const post = button.closest('.blog-post');
+            const audio = post.querySelector('audio');
+            const playIcon = button.querySelector('.play-icon');
+            const pauseIcon = button.querySelector('.pause-icon');
+            const isPlaying = !audio.paused;
+
+            if (isPlaying) {
+                audio.pause();
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+            } else {
+                audio.play();
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+            }
+        }
+
+        document.querySelectorAll('audio').forEach(audio => {
+            const progressBar = audio.closest('.audio-player-container').querySelector('.progress-bar');
+            const currentTimeDisplay = audio.closest('.audio-player-container').querySelector('.current-time');
+            const volumeSlider = audio.closest('.audio-player-container').querySelector('.volume-slider');
+
+            audio.addEventListener('timeupdate', () => {
+                const progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.style.width = `${progress}%`;
+                currentTimeDisplay.textContent = formatTime(audio.currentTime);
+            });
+
+            audio.addEventListener('loadedmetadata', () => {
+                audio.closest('.audio-player-container').querySelector('.current-time').textContent = formatTime(0);
+            });
+
+            volumeSlider.addEventListener('input', () => {
+                audio.volume = volumeSlider.value;
+            });
+
+            audio.addEventListener('play', () => {
+                setPlayState(audio, true);
+            });
+
+             audio.addEventListener('pause', () => {
+                setPlayState(audio, false);
+            });
+        });
+
+        function setPlayState(audio, isPlaying) {
+            const playerContainer = audio.closest('.audio-player-container');
+            const albumArtButton = playerContainer.previousElementSibling.querySelector('button');
+            const audioPlayerButton = playerContainer.querySelector('.audio-play-pause-button');
+
+            [albumArtButton, audioPlayerButton].forEach(button => {
+                if (button) {
+                    const playIcon = button.querySelector('.play-icon');
+                    const pauseIcon = button.querySelector('.pause-icon');
+                    if (isPlaying) {
+                        playIcon.classList.add('hidden');
+                        pauseIcon.classList.remove('hidden');
+                    } else {
+                        playIcon.classList.remove('hidden');
+                        pauseIcon.classList.add('hidden');
+                    }
+                }
+            });
+        }
+
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+    </script>
+
+</body>
+</html>

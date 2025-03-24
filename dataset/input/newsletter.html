@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com/4.0.0-alpha.1"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0EA5E9',
+                        'secondary': '#64748B',
+                        'accent': '#FBBF24',
+                        'success': '#34D399',
+                        'error': '#F87171',
+                        'dark-bg': '#111827',
+                        'light-bg': '#F9FAFB',
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.6s ease-out forwards',
+                        'fade-in': 'fade-in 0.4s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @utility email-input {
+            @apply shadow-sm bg-light-bg border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 dark:bg-dark-bg dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary;
+        }
+        @utility submit-button {
+            @apply text-white bg-primary hover:bg-sky-700 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary dark:hover:bg-sky-700 dark:focus:ring-sky-800;
+        }
+    </style>
+</head>
+<body class="bg-light-bg dark:bg-dark-bg flex items-center justify-center min-h-screen">
+    <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl p-12 sm:p-20 max-w-lg w-full animation-slide-in-bottom">
+        <div class="text-center">
+            <img src="https://picsum.photos/200/300" alt="Newsletter Illustration" class="mx-auto rounded-xl shadow-md mb-6 w-32 h-48 object-cover">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Stay Updated</h2>
+            <p class="text-secondary dark:text-gray-400 mb-8">Subscribe to our newsletter and never miss out on new content, exclusive offers, and more.</p>
+        </div>
+        <form id="signup-form" class="space-y-6">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Address</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <i class="fa fa-envelope text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                    <input type="email" id="email" class="email-input ps-10" placeholder="you@example.com" required>
+                </div>
+            </div>
+            <button type="submit" class="submit-button w-full animation-fade-in hover:scale-105 transition-transform duration-300">Subscribe</button>
+            <p id="form-message" class="text-sm text-success dark:text-success text-center hidden"></p>
+        </form>
+        <div class="mt-6 text-center">
+            <a href="#" class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Privacy Policy</a>
+            <span class="mx-2 text-gray-300">|</span>
+            <a href="#" class="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">Contact Us</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('email');
+            const formMessage = document.getElementById('form-message');
+            const email = emailInput.value;
+
+            if (!email) {
+                formMessage.textContent = 'Please enter your email address.';
+                formMessage.classList.remove('hidden', 'text-success');
+                formMessage.classList.add('text-error');
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.classList.remove('hidden', 'text-success');
+                formMessage.classList.add('text-error');
+                return;
+            }
+
+            formMessage.textContent = 'Subscribed successfully!';
+            formMessage.classList.remove('hidden', 'text-error');
+            formMessage.classList.add('text-success');
+            emailInput.value = '';
+
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

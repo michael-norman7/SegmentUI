@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphic Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light': '#F0F0F3',
+                        'dark-100': '#C9C9CB',
+                        'dark-200': '#B3B3B5',
+                        'primary': '#6366F1',
+                    },
+                    boxShadow: {
+                        'neumorphic-inner': 'inset 8px 8px 16px #D9D9DC, inset -8px -8px 16px #FFFFFF',
+                        'neumorphic-outer': '8px 8px 16px #D9D9DC, -8px -8px 16px #FFFFFF',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F0F0F3;
+        }
+    </style>
+</head>
+<body class="bg-light flex items-center justify-center h-screen">
+    <div class="min-w-[320px] p-8 bg-light rounded-xl shadow-neumorphic-outer">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800">Login</h2>
+            <p class="text-dark-200">Enter your credentials to access your account</p>
+        </div>
+        <div class="space-y-6">
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fa fa-user text-dark-200"></i>
+                </div>
+                <input type="text" id="username" class="w-full pl-12 pr-4 py-3 rounded-xl bg-light shadow-neumorphic-inner focus:outline-none focus:shadow-neumorphic-outer text-gray-700" placeholder="Username" />
+            </div>
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <i class="fa fa-lock text-dark-200"></i>
+                </div>
+                <input type="password" id="password" class="w-full pl-12 pr-4 py-3 rounded-xl bg-light shadow-neumorphic-inner focus:outline-none focus:shadow-neumorphic-outer text-gray-700" placeholder="Password" />
+            </div>
+            <button class="w-full py-3 bg-light shadow-neumorphic-outer rounded-xl font-semibold text-primary hover:shadow-neumorphic-inner transition-shadow duration-200">
+                Login
+            </button>
+            <div class="text-center">
+                <a href="#" class="text-sm text-dark-200 hover:text-primary transition-colors duration-200">Forgot Password?</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.classList.remove('shadow-neumorphic-outer');
+                button.classList.add('shadow-neumorphic-inner');
+            });
+            button.addEventListener('mouseup', () => {
+                button.classList.remove('shadow-neumorphic-inner');
+                button.classList.add('shadow-neumorphic-outer');
+            });
+            button.addEventListener('mouseleave', () => {
+                button.classList.remove('shadow-neumorphic-inner');
+                button.classList.add('shadow-neumorphic-outer');
+            });
+        });
+
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.classList.remove('shadow-neumorphic-inner');
+                input.classList.add('shadow-neumorphic-outer');
+            });
+            input.addEventListener('blur', () => {
+                input.classList.remove('shadow-neumorphic-outer');
+                input.classList.add('shadow-neumorphic-inner');
+            });
+        });
+    </script>
+</body>
+</html>

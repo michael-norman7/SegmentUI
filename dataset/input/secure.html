@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Company Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3490dc',
+                        secondary: '#edf2f7',
+                        accent: '#4dc0b5',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-blurred-top': {
+                            '0%': {
+                                transform: 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
+                                'transform-origin': '50% 0%',
+                                filter: 'blur(40px)',
+                                opacity: '0'
+                            },
+                            '100%': {
+                                transform: 'translateY(0) scaleY(1) scaleX(1)',
+                                'transform-origin': '50% 50%',
+                                filter: 'blur(0px)',
+                                opacity: '1'
+                            },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-blurred-top': 'slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://picsum.photos/id/1001/1920/1080') center center/cover no-repeat;
+            filter: blur(10px) brightness(70%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-secondary flex items-center justify-center min-h-screen">
+    <div class="login-container relative overflow-hidden rounded-2xl shadow-2xl bg-white bg-opacity-90 backdrop-blur-md max-w-md w-full p-8 md:p-12 animation-fade-in">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary to-accent opacity-20 rounded-2xl"></div>
+        <div class="text-center mb-8 animation-slide-in-blurred-top">
+            <img src="https://picsum.photos/200/50" alt="Company Logo" class="block mx-auto h-12 mb-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Welcome to <span class="text-primary">SecurePortal</span></h2>
+            <p class="text-gray-600">Login to access your secure company resources.</p>
+        </div>
+        <form class="space-y-6">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 sr-only">Email</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa fa-user text-gray-500"></i>
+                    </div>
+                    <input type="email" id="email" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary" placeholder="Email Address" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 sr-only">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 rtl:inset-r-0 rtl:right-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa fa-lock text-gray-500"></i>
+                    </div>
+                    <input type="password" id="password" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary">
+                    </div>
+                    <label for="remember" class="ms-2 text-sm font-medium text-gray-900">Remember me</label>
+                </div>
+                <a href="#" class="text-sm text-primary hover:underline">Forgot password?</a>
+            </div>
+            <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300">Login</button>
+            <div class="text-sm text-gray-500 text-center">
+                <a href="#" class="text-primary hover:underline">Privacy Policy</a> & <a href="#" class="text-primary hover:underline">Terms of Service</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginContainer = document.querySelector('.login-container');
+            loginContainer.classList.add('animate-fade-in');
+        });
+    </script>
+</body>
+</html>

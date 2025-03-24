@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphic Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neubg': '#f0f2f5',
+                        'neu-primary': '#d9dbe1',
+                        'neu-secondary': '#c7c8ce',
+                        'neu-accent': '#6b7280',
+                    },
+                    boxShadow: {
+                        'neu-inner': 'inset 2px 2px 5px #b8b9be, inset -2px -2px 5px #fff',
+                        'neu-outer': '5px 5px 10px #b8b9be, -5px -5px 10px #fff',
+                        'neu-float': '8px 8px 16px #b8b9be, -8px -8px 16px #fff',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'float': {
+                            '0%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                            '100%': { transform: 'translateY(0px)' },
+                        },
+                        'pulse-soft': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.8 },
+                        }
+                    },
+                    animation: {
+                        'floating': 'float 5s ease-in-out infinite',
+                        'pulse-soft': 'pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body class="bg-neubg flex items-center justify-center min-h-screen">
+
+<div class="relative bg-neubg p-10 rounded-3xl shadow-neu-outer animate-floating" style="width: 400px;">
+    <div class="absolute top-0 left-0 w-full h-full rounded-3xl overflow-hidden z-0">
+        <img src="https://picsum.photos/id/100/400/600" alt="Background" class="absolute top-0 left-0 w-full h-full object-cover opacity-10 blur-sm">
+    </div>
+    <div class="relative z-10">
+        <h2 class="text-2xl font-bold text-neu-accent text-center mb-8 animate-pulse-soft">Login</h2>
+        <form class="space-y-6">
+            <div>
+                <label for="username" class="block mb-2 text-sm font-medium text-gray-900 sr-only">Username</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-user text-neu-accent"></i>
+                    </div>
+                    <input type="text" id="username" class="bg-neubg border-none shadow-neu-inner text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Username" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 sr-only">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-lock text-neu-accent"></i>
+                    </div>
+                    <input type="password" id="password" class="bg-neubg border-none shadow-neu-inner text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300">
+                    </div>
+                    <label for="remember" class="ml-2 text-sm text-gray-500">Remember me</label>
+                </div>
+                <a href="#" class="text-sm text-blue-500 hover:underline">Forgot Password?</a>
+            </div>
+            <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-neu-primary shadow-neu-outer hover:shadow-neu-inner hover:text-neu-accent transition-all duration-300">Login</button>
+            <div class="text-sm font-medium text-gray-500">
+                Not registered? <a href="#" class="text-blue-500 hover:underline">Create account</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const formContainer = document.querySelector('.animate-floating');
+    formContainer.addEventListener('mouseenter', () => {
+        formContainer.classList.remove('animate-floating');
+        formContainer.classList.add('shadow-neu-float');
+    });
+    formContainer.addEventListener('mouseleave', () => {
+        formContainer.classList.add('animate-floating');
+        formContainer.classList.remove('shadow-neu-float');
+    });
+</script>
+
+</body>
+</html>

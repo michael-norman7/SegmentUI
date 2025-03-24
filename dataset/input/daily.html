@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumo-light': '#f0f2f5',
+                        'neumo-dark': '#d9dbe1',
+                        'primary': '#3490dc',
+                        'accent': '#ffed4a',
+                    },
+                    boxShadow: {
+                        'neumo-sm': '2px 2px 5px #b8b9be, -2px -2px 5px #ffffff',
+                        'neumo': '5px 5px 10px #b8b9be, -5px -5px 10px #ffffff',
+                        'neumo-lg': '10px 10px 20px #b8b9be, -10px -10px 20px #ffffff',
+                        'neumo-xl': '15px 15px 25px #b8b9be, -15px -15px 25px #ffffff',
+                        'neumo-inset': 'inset 5px 5px 10px #b8b9be, inset -5px -5px 10px #ffffff',
+                    },
+                    spacing: {
+                        'neumo-space': '20px',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .neumorphic-card {
+            background-color: #f0f2f5;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px #b8b9be, -5px -5px 10px #ffffff;
+        }
+        .neumorphic-btn {
+            background-color: #f0f2f5;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px #b8b9be, -5px -5px 10px #ffffff;
+        }
+        .neumorphic-btn:hover {
+            box-shadow: inset 2px 2px 5px #b8b9be, inset -2px -2px 5px #ffffff;
+        }
+        .neumorphic-input {
+            background-color: #f0f2f5;
+            border-radius: 10px;
+            box-shadow: inset 2px 2px 5px #b8b9be, inset -2px -2px 5px #ffffff;
+        }
+        .neumorphic-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: #f0f2f5;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #b8b9be, -2px -2px 5px #ffffff;
+            cursor: pointer;
+            height: 20px;
+            width: 20px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+        .neumorphic-checkbox:checked {
+            background-color: #3490dc;
+            box-shadow: inset 2px 2px 5px #1e40af, inset -2px -2px 5px #5fa3ef;
+        }
+        .neumorphic-checkbox:checked::after {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 14px;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .task-priority-high { color: red; }
+        .task-priority-medium { color: orange; }
+        .task-priority-low { color: green; }
+
+    </style>
+</head>
+<body class="bg-neumo-light">
+    <div class="container mx-auto p-6 md:p-8 lg:p-10 animate-fade-in">
+        <header class="mb-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/50/50" class="rounded-full neumorphic-card mr-4" alt="User Avatar">
+                    <div>
+                        <h1 class="text-2xl font-semibold text-gray-800">Welcome back, User</h1>
+                        <p class="text-gray-500">Ready for the day?</p>
+                    </div>
+                </div>
+                <div class="space-x-4 hidden md:block">
+                    <button class="neumorphic-btn px-4 py-2"><i class="fa-solid fa-calendar-day mr-2"></i>Today</button>
+                    <button class="neumorphic-btn px-4 py-2"><i class="fa-solid fa-calendar-week mr-2"></i>Week</button>
+                    <button class="neumorphic-btn px-4 py-2"><i class="fa-solid fa-calendar-month mr-2"></i>Month</button>
+                </div>
+                <div class="md:hidden">
+                    <button class="neumorphic-btn p-2"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <section class="lg:col-span-2">
+                <div class="neumorphic-card p-6 mb-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4"><i class="fa-solid fa-calendar-check mr-2"></i>Daily Schedule</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="task1" class="neumorphic-checkbox mr-4">
+                                <label for="task1" class="text-gray-700 font-medium">9:00 AM - 10:00 AM: Meeting with Team</label>
+                            </div>
+                            <span class="task-priority-high"><i class="fa-solid fa-circle-exclamation"></i></span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="task2" class="neumorphic-checkbox mr-4">
+                                <label for="task2" class="text-gray-700 font-medium">10:30 AM - 11:30 AM: Client Call</label>
+                            </div>
+                            <span class="task-priority-medium"><i class="fa-solid fa-circle-exclamation"></i></span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="task3" class="neumorphic-checkbox mr-4">
+                                <label for="task3" class="text-gray-700 font-medium">2:00 PM - 3:00 PM: Work on Project</label>
+                            </div>
+                            <span class="task-priority-low"><i class="fa-solid fa-circle-exclamation"></i></span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="task4" class="neumorphic-checkbox mr-4">
+                                <label for="task4" class="text-gray-700 font-medium">4:00 PM - 5:00 PM: Review Tasks</label>
+                            </div>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neumorphic-card p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4"><i class="fa-solid fa-list-check mr-2"></i>Task Priorities</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="priorityTask1" class="neumorphic-checkbox mr-4">
+                                <label for="priorityTask1" class="text-gray-700 font-medium">Finalize Presentation</label>
+                            </div>
+                            <span class="task-priority-high"><i class="fa-solid fa-circle-exclamation"></i> High</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="priorityTask2" class="neumorphic-checkbox mr-4">
+                                <label for="priorityTask2" class="text-gray-700 font-medium">Send Meeting Minutes</label>
+                            </div>
+                            <span class="task-priority-medium"><i class="fa-solid fa-circle-exclamation"></i> Medium</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <div class="flex items-center">
+                                <input type="checkbox" id="priorityTask3" class="neumorphic-checkbox mr-4">
+                                <label for="priorityTask3" class="text-gray-700 font-medium">Schedule Team Lunch</label>
+                            </div>
+                            <span class="task-priority-low"><i class="fa-solid fa-circle-exclamation"></i> Low</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lg:col-span-1">
+                <div class="neumorphic-card p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4"><i class="fa-solid fa-bell mr-2"></i>Appointment Reminders</h2>
+                    <div class="space-y-4">
+                        <div class="p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <h3 class="font-semibold text-gray-800">Doctor Appointment</h3>
+                            <p class="text-gray-500"><i class="fa-regular fa-calendar mr-2"></i> Tomorrow, 11:00 AM</p>
+                            <p class="text-gray-500"><i class="fa-solid fa-location-dot mr-2"></i> City Hospital</p>
+                        </div>
+                        <div class="p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <h3 class="font-semibold text-gray-800">Dentist Appointment</h3>
+                            <p class="text-gray-500"><i class="fa-regular fa-calendar mr-2"></i> Friday, 3:00 PM</p>
+                            <p class="text-gray-500"><i class="fa-solid fa-location-dot mr-2"></i> Dental Clinic</p>
+                        </div>
+                        <div class="p-4 neumorphic-card hover:shadow-neumo-inset transition-shadow duration-200">
+                            <h3 class="font-semibold text-gray-800">Haircut</h3>
+                            <p class="text-gray-500"><i class="fa-regular fa-calendar mr-2"></i> Saturday, 2:00 PM</p>
+                            <p class="text-gray-500"><i class="fa-solid fa-location-dot mr-2"></i> Salon XYZ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 neumorphic-card p-6">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4"><i class="fa-solid fa-chart-line mr-2"></i> Productivity Overview</h2>
+                    <div class="text-center">
+                        <img src="https://picsum.photos/200/150" class="mx-auto rounded-md" alt="Productivity Chart">
+                        <p class="text-gray-500 mt-2">Weekly Task Completion Rate</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Supplies for Kids - Spark Creativity!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6F61',
+                        'secondary': '#FFD700',
+                        'accent': '#4ECDC4',
+                        'neutral': '#F0F4F8',
+                        'fun-pink': '#FFC0CB',
+                        'fun-blue': '#87CEFA',
+                        'fun-green': '#98FB98',
+                    },
+                    fontFamily: {
+                        'sans': ['Nunito Sans', 'sans-serif'],
+                        'display': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2s linear infinite',
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    boxShadow: {
+                        'pop': '0 0 20px 5px rgba(0, 0, 0, 0.1)',
+                        'fun': '10px 10px 0 rgba(255, 111, 97, 0.3)',
+                    },
+                    transitionProperty: {
+                        'colors-shadow': 'background-color, border-color, color, fill, stroke, box-shadow',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            perspective: 1px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            position: relative;
+            height: auto;
+        }
+
+        .parallax__group {
+            position: relative;
+            height: 100vh;
+            transform-style: preserve-3d;
+        }
+
+        .parallax__layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .parallax__layer--base {
+            transform: translateZ(0);
+            z-index: 4;
+        }
+
+        .parallax__layer--back {
+            transform: translateZ(-1px) scale(2);
+            z-index: 2;
+        }
+
+        .parallax__layer--front {
+            transform: translateZ(1px) scale(0.5);
+            z-index: 3;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-700 overflow-x-hidden">
+<div class="parallax">
+    <header class="parallax__group font-display">
+        <div class="parallax__layer parallax__layer--base bg-neutral z-50">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-primary">
+                    <i class="fa-solid fa-palette mr-2"></i> Artzy Kids
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#products" class="hover:text-primary transition-colors duration-300">Products</a>
+                    <a href="#about" class="hover:text-primary transition-colors duration-300">About Us</a>
+                    <a href="#inspiration" class="hover:text-primary transition-colors duration-300">Inspiration</a>
+                    <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none focus:text-primary">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="parallax__layer parallax__layer--back">
+            <div class="absolute top-0 left-0 w-full h-full bg-fun-blue opacity-10"></div>
+        </div>
+        <div class="parallax__layer parallax__layer--base">
+            <section id="hero" class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-around">
+                <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0 animate-fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold text-primary mb-6">Unleash Your Child's Inner Artist</h1>
+                    <p class="text-xl text-gray-700 mb-10">Spark creativity with our vibrant range of art supplies designed for kids of all ages. Explore, create, and have fun!</p>
+                    <a href="#products" class="bg-secondary text-white font-bold py-3 px-8 rounded-full hover:bg-primary transition-colors duration-300 shadow-pop">
+                        Explore Supplies <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-slide-in-right">
+                    <img src="https://picsum.photos/600/400" alt="Colorful art supplies" class="rounded-xl shadow-pop" />
+                </div>
+            </section>
+        </div>
+    </header>
+
+    <section id="products" class="parallax__group bg-fun-pink">
+        <div class="parallax__layer parallax__layer--back">
+            <div class="absolute top-0 left-0 w-full h-full bg-fun-pink opacity-10"></div>
+        </div>
+        <div class="parallax__layer parallax__layer--base py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">Our Creative Collection</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-pop overflow-hidden hover:shadow-fun transition-shadows duration-300">
+                        <img src="https://picsum.photos/200/300?random=1" alt="Product 1" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Vibrant Washable Markers</h3>
+                            <p class="text-gray-600 mb-4">Non-toxic, long-lasting markers in a rainbow of colors.</p>
+                            <button class="bg-accent text-white font-bold py-2 px-6 rounded-full hover:bg-primary transition-colors duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-pop overflow-hidden hover:shadow-fun transition-shadows duration-300">
+                        <img src="https://picsum.photos/200/300?random=2" alt="Product 2" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Premium Color Pencils Set</h3>
+                            <p class="text-gray-600 mb-4">Smooth, rich pigments for detailed drawings and coloring.</p>
+                            <button class="bg-accent text-white font-bold py-2 px-6 rounded-full hover:bg-primary transition-colors duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-pop overflow-hidden hover:shadow-fun transition-shadows duration-300">
+                        <img src="https://picsum.photos/200/300?random=3" alt="Product 3" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Modeling Clay Fun Pack</h3>
+                            <p class="text-gray-600 mb-4">Soft, pliable clay in assorted colors for endless creations.</p>
+                            <button class="bg-accent text-white font-bold py-2 px-6 rounded-full hover:bg-primary transition-colors duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="parallax__group bg-neutral">
+        <div class="parallax__layer parallax__layer--back">
+             <div class="absolute top-0 left-0 w-full h-full bg-fun-green opacity-10"></div>
+        </div>
+        <div class="parallax__layer parallax__layer--base py-24">
+            <div class="container mx-auto px-6 md:px-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="https://picsum.photos/400/500" alt="About us" class="rounded-2xl shadow-pop" />
+                    </div>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">About Artzy Kids</h2>
+                        <p class="text-gray-700 text-lg mb-8">We believe in nurturing creativity from a young age. Artzy Kids is dedicated to providing high-quality, safe, and fun art supplies that inspire children to explore their imagination and express themselves through art.</p>
+                        <p class="text-gray-700 text-lg mb-8">Our products are carefully selected to ensure they are non-toxic and easy to use for little hands, fostering a love for art in a playful and engaging way.</p>
+                        <a href="#contact" class="inline-flex items-center bg-fun-pink text-white font-bold py-3 px-6 rounded-full hover:bg-primary transition-colors duration-300 shadow-pop">
+                            Learn More <i class="fa-solid fa-info-circle ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inspiration" class="parallax__group bg-fun-blue">
+        <div class="parallax__layer parallax__layer--back">
+            <div class="absolute top-0 left-0 w-full h-full bg-fun-blue opacity-10"></div>
+        </div>
+        <div class="parallax__layer parallax__layer--base py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">Get Inspired!</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="rounded-2xl overflow-hidden shadow-pop hover:shadow-fun transition-shadows duration-300">
+                        <img src="https://picsum.photos/300/200?random=4" alt="Inspiration 1" class="w-full h-48 object-cover" />
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Colorful Cityscape</h3>
+                            <p class="text-gray-600">Create a vibrant cityscape using watercolors and markers.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-pop hover:shadow-fun transition-shadows duration-300">
+                        <img src="https://picsum.photos/300/200?random=5" alt="Inspiration 2" class="w-full h-48 object-cover" />
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Forest Animals</h3>
+                            <p class="text-gray-600">Draw cute forest animals with color pencils and add leafy details.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-pop hover:shadow-fun transition-shadows duration-300">
+                        <img src="https://picsum.photos/300/200?random=6" alt="Inspiration 3" class="w-full h-48 object-cover" />
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Undersea Adventure</h3>
+                            <p class="text-gray-600">Mold and paint your own sea creatures with modeling clay.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="mt-12 inline-flex items-center bg-secondary text-white font-bold py-3 px-8 rounded-full hover:bg-primary transition-colors duration-300 shadow-pop">
+                    Share Your Art <i class="fa-solid fa-camera ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="parallax__group bg-neutral py-12">
+        <div class="parallax__layer parallax__layer--base">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-gray-600 mb-4">Connect with us!</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300"><i class="fa-brands fa-facebook-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-colors duration-300"><i class="fa-brands fa-twitter-square text-2xl"></i></a>
+                </div>
+                <p class="text-gray-500 text-sm">© 2024 Artzy Kids. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', () => {
+        document.querySelector('.hidden.md\\:flex.space-x-6').classList.toggle('hidden');
+        document.querySelector('.hidden.md\\:flex.space-x-6').classList.toggle('flex');
+        document.querySelector('.hidden.md\\:flex.space-x-6').classList.toggle('flex-col');
+        document.querySelector('.hidden.md\\:flex.space-x-6').classList.toggle('absolute');
+        document.querySelector('.hidden.md\\:flex.space-x-6').classList.toggle('bg-neutral');
+content_copy
+download
+Use code with caution.
+Html

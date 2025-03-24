@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtMag - Illuminating Creativity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=typography,aspect-ratio,forms"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#f4f0ec',
+                        'secondary': '#d4cabc',
+                        'accent': '#a49a87',
+                        'dark': '#1e1e1e',
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    typography: (theme) => ({
+                        artmag: {
+                            css: {
+                                '--tw-prose-body': theme('colors.dark'),
+                                '--tw-prose-headings': theme('colors.dark'),
+                                '--tw-prose-lead': theme('colors.accent'),
+                                '--tw-prose-links': theme('colors.accent'),
+                                '--tw-prose-bold': theme('colors.dark'),
+                                '--tw-prose-counters': theme('colors.gray.500'),
+                                '--tw-prose-bullets': theme('colors.gray.500'),
+                                '--tw-prose-hr': theme('colors.gray.200'),
+                                '--tw-prose-quotes': theme('colors.gray.900'),
+                                '--tw-prose-quote-borders': theme('colors.gray.200'),
+                                '--tw-prose-captions': theme('colors.gray.500'),
+                                '--tw-prose-code': theme('colors.dark'),
+                                '--tw-prose-pre-code': theme('colors.gray.100'),
+                                '--tw-prose-pre-bg': theme('colors.gray.900'),
+                                '--tw-prose-th-borders': theme('colors.gray.300'),
+                                '--tw-prose-td-borders': theme('colors.gray.200'),
+                                '--tw-prose-invert-body': theme('colors.gray.200'),
+                                '--tw-prose-invert-headings': theme('colors.white'),
+                                '--tw-prose-invert-lead': theme('colors.gray.300'),
+                                '--tw-prose-invert-links': theme('colors.white'),
+                                '--tw-prose-invert-bold': theme('colors.white'),
+                                '--tw-prose-invert-counters': theme('colors.gray.400'),
+                                '--tw-prose-invert-bullets': theme('colors.gray.600'),
+                                '--tw-prose-invert-hr': theme('colors.gray.700'),
+                                '--tw-prose-invert-quotes': theme('colors.gray.100'),
+                                '--tw-prose-invert-quote-borders': theme('colors.gray.700'),
+                                '--tw-prose-invert-captions': theme('colors.gray.400'),
+                                '--tw-prose-invert-code': theme('colors.white'),
+                                '--tw-prose-invert-pre-code': theme('colors.gray.300'),
+                                '--tw-prose-invert-pre-bg': theme('colors.gray.800'),
+                                '--tw-prose-invert-th-borders': theme('colors.gray.700'),
+                                '--tw-prose-invert-td-borders': theme('colors.gray.800'),
+                            },
+                        },
+                    }),
+                },
+            },
+            plugins: [
+                require('@tailwindcss/typography'),
+                require('@tailwindcss/aspect-ratio'),
+                require('@tailwindcss/forms'),
+            ],
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-body bg-primary text-dark antialiased;
+            }
+            h1, h2, h3 {
+                @apply font-display;
+            }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+<header class="sticky top-0 z-50 bg-primary shadow-md transition-shadow duration-300">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="font-display text-2xl font-bold hover:text-accent transition-colors duration-300">ArtMag</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#" class="hover:text-accent transition-colors duration-300">Featured</a>
+            <a href="#" class="hover:text-accent transition-colors duration-300">Collections</a>
+            <a href="#" class="hover:text-accent transition-colors duration-300">Artists</a>
+            <a href="#" class="hover:text-accent transition-colors duration-300">About</a>
+            <a href="#" class="hover:text-accent transition-colors duration-300">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="hidden md:hidden bg-primary shadow-md" id="mobile-menu">
+        <div class="px-6 py-4 space-y-4">
+            <a href="#" class="block hover:text-accent transition-colors duration-300">Featured</a>
+            <a href="#" class="block hover:text-accent transition-colors duration-300">Collections</a>
+            <a href="#" class="block hover:text-accent transition-colors duration-300">Artists</a>
+            <a href="#" class="block hover:text-accent transition-colors duration-300">About</a>
+            <a href="#" class="block hover:text-accent transition-colors duration-300">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="pt-24 pb-16 bg-secondary/10 overflow-hidden relative">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="fade-in">
+            <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">Immerse Yourself in a World of Art</h1>
+            <p class="text-xl text-gray-700 mb-8">Discover inspiring illustrations and paintings from emerging and established artists. Curated for the discerning eye.</p>
+            <a href="#" class="inline-block bg-accent text-primary px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">Explore Now</a>
+        </div>
+        <div class="relative justify-self-end">
+            <div class="aspect-w-1 aspect-h-1 md:aspect-h-3/4 rounded-xl overflow-hidden shadow-2xl hover:shadow-xl transition-shadow duration-300 translate-x-6 md:translate-x-12 translate-y-6 md:translate-y-12">
+                <img src="https://picsum.photos/id/1020/800/1200" alt="Featured Artwork" class="object-cover w-full h-full">
+            </div>
+            <div class="absolute top-0 left-0 aspect-w-1 aspect-h-1 md:aspect-h-3/4 rounded-xl overflow-hidden shadow-2xl hover:shadow-xl transition-shadow duration-300 -translate-x-6 md:-translate-x-12 -translate-y-6 md:-translate-y-12">
+                <img src="https://picsum.photos/id/1021/800/1200" alt="Featured Artwork 2" class="object-cover w-full h-full">
+            </div>
+        </div>
+    </div>
+    <div class="absolute top-1/4 left-0 w-screen h-1/2 bg-secondary/5 rotate-3 translate-x-[-10%] -z-10"></div>
+    <div class="absolute bottom-1/4 right-0 w-screen h-1/2 bg-accent/5 -rotate-6 translate-x-[10%] -z-10"></div>
+</section>
+
+<section class="py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center">Latest Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-primary rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <a href="#">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="https://picsum.photos/id/1022/600/450" alt="Article Thumbnail" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 truncate">The Beauty of Abstract Landscapes</h3>
+                        <p class="text-gray-700 text-sm mb-4 truncate">Explore the evocative world of abstract landscape painting and its power to...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-xs">Illustration</span>
+                            <span class="text-gray-500 text-xs">5 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            <article class="bg-primary rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <a href="#">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="https://picsum.photos/id/1023/600/450" alt="Article Thumbnail" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 truncate">Digital Painting Techniques for Beginners</h3>
+                        <p class="text-gray-700 text-sm mb-4 truncate">A comprehensive guide to get started with digital painting, tools, and techniques...</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-500 text-xs">Digital Art</span>
+                            <span class="text-gray-500 text-xs">8 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            <article class="bg-primary rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <a href="#">
+                    <div class="aspect-w-4 aspect-h-3">
+                        <img src="https://picsum.photos/id/1024/600/450" alt="Article Thumbnail" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 truncate">The Evolution of Portrait Illustration</h3>
+                        <p class="text-gray-700 text-sm mb-4 truncate">Trace the fascinating journey of portrait illustration from classical to contemporary styles...</p>
+                        <div class="flex justify-between items-center">
+                            <
+content_copy
+download
+Use code with caution.
+Html

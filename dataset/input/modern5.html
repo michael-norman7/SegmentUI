@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Blog Post</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<header class="bg-white sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-blue-600">Awesome Blog</a>
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-blue-600 transition-colors">Home</a>
+            <a href="#" class="hover:text-blue-600 transition-colors">Categories</a>
+            <a href="#" class="hover:text-blue-600 transition-colors">About</a>
+            <a href="#" class="hover:text-blue-600 transition-colors">Contact</a>
+        </nav>
+        <button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<main class="container mx-auto mt-16 px-4 md:px-8 lg:px-12">
+    <article class="max-w-3xl mx-auto animate-fade-in">
+
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">The Ultimate Guide to Modern UI/UX Design</h1>
+            <p class="text-gray-500 text-sm">Published on <time datetime="2024-03-15">March 15, 2024</time> by <a href="#" class="text-blue-600 hover:underline">John Doe</a></p>
+        </div>
+
+        <div class="mb-8 rounded-xl overflow-hidden shadow-lg">
+            <img src="https://picsum.photos/1200/600" alt="Featured image" class="w-full h-auto">
+        </div>
+
+        <section class="prose prose-lg max-w-none mb-8">
+            <p>Welcome to the modern era of web design! In today's digital landscape, user interface (UI) and user experience (UX) design are paramount. Creating a website that is not only visually appealing but also intuitively navigable and highly functional is crucial for success.</p>
+
+            <h2>Understanding the Core Principles</h2>
+            <p>Modern UI/UX design is built upon several key principles:</p>
+            <ul>
+                <li><strong>User-Centricity:</strong> Always design with the end-user in mind. Understand their needs, behaviors, and motivations.</li>
+                <li><strong>Simplicity:</strong> Less is often more. Strive for clean, uncluttered designs that prioritize essential information.</li>
+                <li><strong>Consistency:</strong> Maintain consistent design patterns and elements throughout your website for a cohesive user experience.</li>
+                <li><strong>Accessibility:</strong> Ensure your design is accessible to everyone, including users with disabilities.</li>
+                <li><strong>Performance:</strong> Optimize your website for speed and efficiency to provide a seamless user experience.</li>
+            </ul>
+
+            <h3>Visual Hierarchy and Layout</h3>
+            <p>Creating a clear visual hierarchy is essential for guiding users through your content. Use whitespace effectively to separate content sections and improve readability. Employ purposeful contrast in typography and colors to emphasize key elements. Scannable content structure with headings, subheadings, and bullet points makes it easy for users to find the information they need quickly.</p>
+
+            <div class="aspect-w-16 aspect-h-9 mb-6 rounded-lg overflow-hidden shadow-md">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <p>Embedding videos can significantly enhance user engagement and provide a more dynamic content experience. Ensure your video player is responsive and fits seamlessly within your design.</p>
+
+            <h3>Podcast Integration</h3>
+            <p>Podcasts are another fantastic way to engage your audience. Embedding a podcast player directly into your blog post allows users to consume audio content without leaving the page.</p>
+
+            <div class="bg-gray-100 rounded-lg p-6 mb-8 shadow-md">
+                <div class="flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <img src="https://picsum.photos/80/80" alt="Podcast thumbnail" class="rounded-full">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">The Design Insights Podcast - Episode 12</h4>
+                        <p class="text-gray-500 text-sm">Duration: 35:42</p>
+                    </div>
+                </div>
+                <audio controls class="w-full mt-4">
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <h3>Interactive Elements and Animations</h3>
+            <p>Meaningful animations and interactive elements can elevate the user experience. Use subtle transitions and animations to provide feedback and guide users through interactions. Loading states, error states, and success feedback are crucial for providing a smooth and informative experience.</p>
+
+            <blockquote>
+                <p>“Good design is obvious. Great design is transparent.” - Joe Sparano</p>
+            </blockquote>
+
+            <h3>Accessibility and Performance</h3>
+            <p>Adhering to WCAG 2.1 standards ensures your website is accessible to everyone. Use proper heading structures, provide alt text for images, and ensure sufficient color contrast. Optimize asset loading and implement lazy loading for images and videos to improve page load times and overall performance.</p>
+
+            <p>By focusing on these key aspects of modern UI/UX design, you can create a blog post page that not only looks stunning but also provides an exceptional user experience, setting you apart in the digital world.</p>
+
+            <div class="mt-12 border-t pt-8">
+                <h4 class="text-xl font-semibold mb-4">Share this article</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-blue-600 transition-colors"><i class="fab fa-reddit"></i></a>
+                </div>
+            </div>
+
+        </section>
+
+        <aside class="mt-12 p-6 bg-gray-100 rounded-lg shadow-md">
+            <div class="flex items-center space-x-4">
+                <img src="https://picsum.photos/100/100" alt="Author profile picture" class="rounded-full w-20 h-20">
+                <div>
+                    <h4 class="font-semibold text-lg">About John Doe</h4>
+                    <p class="text-gray-500">John is a UI/UX designer and blogger passionate about creating user-centered digital experiences.</p>
+                </div>
+            </div>
+        </aside>
+
+        <section class="mt-12">
+            <h3 class="text-2xl font-semibold mb-6">Comments</h3>
+            <div class="space-y-4">
+                <div class="flex space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                    <img src="https://picsum.photos/50/50" alt="User avatar" class="rounded-full w-10 h-10">
+                    <div>
+                        <h5 class="font-semibold">Jane Smith</h5>
+                        <p class="text-gray-500 text-sm">March 15, 2024</p>
+                        <p>Great article! Very informative and well-structured.</p>
+                    </div>
+                </div>
+                <div class="flex space-x-4 p-4 bg-white rounded-lg shadow-sm">
+                    <img src="https://picsum.photos/50/50" alt="User avatar" class="rounded-full w-10 h-10">
+                    <div>
+                        <h5 class="font-semibold">Peter Jones</h5>
+                        <p class="text-gray-500 text-sm">March 16, 2024</p>
+                        <p>I especially liked the section on accessibility. Important considerations!</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm">
+                    <textarea placeholder="Leave a comment..." class="w-full p-4 border-none focus:outline-none rounded-lg"></textarea>
+                    <div class="p-4 border-t">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors">Post Comment</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </article>
+</main>
+
+<footer class="bg-gray-900 text-gray-300 py-12 mt-24">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-white">About Us</h4>
+                <p>Awesome Blog is dedicated to providing high-quality content on design, technology, and innovation.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-white">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-gray-100 transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-100 transition-colors">Categories</a></li>
+                    <li><a href="#" class="hover:text-gray-100 transition-colors">About</a></li>
+                    <li><a href="#" class="hover:text-gray-100 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4 text-white">Stay Connected</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fab fa-facebook-square fa-lg"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fab fa-twitter-square fa-lg"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="text-gray-300 hover:text-white transition-colors"><i class="fab fa-instagram-square fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 border-t border-gray-700 pt-8 text-center">
+            <p>© 2024 Awesome Blog. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.querySelectorAll('.animate-fade-in').forEach(el => {
+                el.classList.remove('animate-fade-in');
+            });
+        }, 100);
+    });
+</script>
+
+</body>
+</html>

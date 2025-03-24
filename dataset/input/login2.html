@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Internal System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#115e59',
+                        accent: '#34d399',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, theme('colors.primary'), theme('colors.secondary'), theme('colors.accent'), theme('colors.primary'));
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s linear infinite;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        .login-container::after {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border-radius: 1rem;
+            background: theme('colors.neutral');
+            z-index: -1;
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral flex items-center justify-center min-h-screen overflow-hidden">
+
+<div class="login-container relative p-8 rounded-xl shadow-2xl w-full max-w-md bg-neutral animation-fade-in">
+    <div class="absolute top-4 right-4">
+        <span class="animate-pulse-fast text-accent text-sm"><i class="fa-solid fa-circle"></i></span> <span class="text-sm text-gray-500">Secure Connection</span>
+    </div>
+    <div class="text-center mb-8">
+        <img src="https://picsum.photos/200/100" alt="Company Logo" class="h-16 w-auto mx-auto mb-4 animate-slide-up" style="animation-delay: 0.1s;">
+        <h2 class="text-3xl font-bold text-dark animate-slide-up" style="animation-delay: 0.2s;">Internal System Login</h2>
+        <p class="text-gray-500 mt-2 animate-slide-up" style="animation-delay: 0.3s;">Access your secure company portal</p>
+    </div>
+
+    <form class="space-y-6 animate-slide-up" style="animation-delay: 0.4s;">
+        <div>
+            <label for="username" class="block mb-2 text-sm font-medium text-gray-700 sr-only">Username</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fa-solid fa-user text-gray-500"></i>
+                </div>
+                <input type="text" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary" placeholder="Username" required>
+            </div>
+        </div>
+        <div>
+            <label for="password" class="block mb-2 text-sm font-medium text-gray-700 sr-only">Password</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <i class="fa-solid fa-lock text-gray-500"></i>
+                </div>
+                <input type="password" id="password" placeholder="Password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary" required>
+                <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                    <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none" onclick="togglePasswordVisibility()">
+                        <i id="password-toggle-icon" class="fa-solid fa-eye-slash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-between">
+            <div class="flex items-start">
+                <div class="flex items-center h-5">
+                    <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" >
+                </div>
+                <label for="remember" class="ml-2 text-sm font-medium text-gray-700 dark:text-gray-300">Remember me</label>
+            </div>
+            <a href="#" class="text-sm text-primary hover:underline dark:text-accent">Forgot password?</a>
+        </div>
+        <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary dark:hover:bg-secondary dark:focus:ring-primary">Log in</button>
+    </form>
+    <div class="mt-6 text-center animate-slide-up" style="animation-delay: 0.5s;">
+        <p class="text-gray-500 text-sm">© 2024 Company Name. All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById('password');
+        const passwordToggleIcon = document.getElementById('password-toggle-icon');
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passwordToggleIcon.classList.remove('fa-eye-slash');
+            passwordToggleIcon.classList.add('fa-eye');
+        } else {
+            passwordInput.type = "password";
+            passwordToggleIcon.classList.remove('fa-eye');
+            passwordToggleIcon.classList.add('fa-eye-slash');
+        }
+    }
+</script>
+
+</body>
+</html>

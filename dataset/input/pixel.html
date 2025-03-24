@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Post - Retro Article</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'retro': ['"Press Start 2P"', 'system-ui'],
+                    },
+                    colors: {
+                        'pixel-dark': '#181818',
+                        'pixel-light': '#f0f0f0',
+                        'pixel-primary': '#5496ff',
+                        'pixel-secondary': '#ff7373',
+                        'pixel-accent': '#aaff80',
+                        'pixel-bg': '#080808',
+                        'pixel-text': '#e0e0e0',
+                        'pixel-border': '#303030',
+                    },
+                    spacing: {
+                        'px': '1px',
+                        '2px': '2px',
+                        '4px': '4px',
+                        '8px': '8px',
+                        '12px': '12px',
+                        '16px': '16px',
+                        '20px': '20px',
+                        '24px': '24px',
+                        '32px': '32px',
+                        '40px': '40px',
+                        '48px': '48px',
+                        '64px': '64px',
+                    },
+                    borderWidth: {
+                        'px': '1px',
+                        '2px': '2px',
+                        '4px': '4px',
+                        '8px': '8px',
+                    },
+                    boxShadow: {
+                        'pixel': '2px 2px 0px 0px rgba(48, 48, 48, 1)',
+                        'pixel-md': '4px 4px 0px 0px rgba(48, 48, 48, 1)',
+                        'pixel-lg': '8px 8px 0px 0px rgba(48, 48, 48, 1)',
+                        'pixel-inner': 'inset 2px 2px 0px 0px rgba(48, 48, 48, 1)',
+                    },
+                    dropShadow: {
+                        'pixel': '4px 4px 0px rgba(48, 48, 48, 1)',
+                    },
+                    animation: {
+                        'pulse-pixel': 'pulse-pixel 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        'pulse-pixel': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.5 },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        }
+                    }
+                },
+            },
+            corePlugins: {
+                preflight: true,
+            }
+        }
+    </script>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        .pixel-border-image {
+            border-image-slice: 10 10 10 10 fill;
+            border-width: 10px;
+            border-image-source: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAPElEQVR42mNkYGBgYGBgYJjAwMDAwMDAYGDgAADiAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMAAAD//wMAUt0j4o9haQoAAAAASUVORK5CYII=");
+        }
+        .article-content > *:not(:last-child) {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-pixel-bg text-pixel-text font-retro">
+    <header class="sticky top-0 z-50 bg-pixel-dark pixel-border-image border-pixel-border">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl text-pixel-primary shadow-pixel hover:text-pixel-accent transition-colors duration-200">
+                <i class="fa-solid fa-gamepad"></i> Pixel Post
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-pixel-primary transition-colors duration-200">Articles</a>
+                <a href="#" class="hover:text-pixel-primary transition-colors duration-200">Reviews</a>
+                <a href="#" class="hover:text-pixel-primary transition-colors duration-200">Features</a>
+                <a href="#" class="hover:text-pixel-primary transition-colors duration-200">About</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-pixel-text hover:text-pixel-primary focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-pixel-dark pixel-border-image border-pixel-border py-2">
+            <a href="#" class="block px-4 py-2 hover:bg-pixel-border hover:text-pixel-primary transition-colors duration-200">Articles</a>
+            <a href="#" class="block px-4 py-2 hover:bg-pixel-border hover:text-pixel-primary transition-colors duration-200">Reviews</a>
+            <a href="#" class="block px-4 py-2 hover:bg-pixel-border hover:text-pixel-primary transition-colors duration-200">Features</a>
+            <a href="#" class="block px-4 py-2 hover:bg-pixel-border hover:text-pixel-primary transition-colors duration-200">About</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-24 px-4 md:px-8 lg:px-16">
+        <article class="bg-pixel-dark pixel-border-image border-pixel-border p-4 md:p-8 lg:p-12 shadow-pixel-md animate-fade-in">
+            <header class="mb-8">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-pixel-primary shadow-pixel">
+                    The Legend of Pixelia: A Retro Review
+                </h1>
+                <p class="text-pixel-accent mt-2">
+                    By <span class="text-pixel-secondary">PixelMaster</span> | August 14, 2024
+                </p>
+            </header>
+
+            <div class="mb-8">
+                <img src="https://picsum.photos/600/300" alt="Pixel Game Screenshot" class="w-full rounded-md shadow-pixel-lg">
+                <p class="text-sm text-pixel-light mt-2 italic">
+                    Screenshot from "The Legend of Pixelia", showcasing its stunning 8-bit world.
+                </p>
+            </div>
+
+            <section class="article-content">
+                <p>
+                    Welcome, fellow pixel enthusiasts! Today, we delve into the retro realm of "The Legend of Pixelia," a game that has taken the 8-bit world by storm. Developed by Indie Pixel Studios, this action-adventure RPG is a nostalgic trip back to the golden age of gaming, but with a modern twist.
+                </p>
+
+                <h2>Gameplay: A Blast from the Past</h2>
+                <p>
+                    "Pixelia" masterfully captures the essence of classic games like Zelda and Metroid. You play as Pixel, a brave knight on a quest to save Princess Byte from the clutches of the nefarious Bit Lord. The gameplay is tight and responsive, with satisfying pixel-perfect jumps and sword swings.
+                </p>
+                <img src="https://picsum.photos/400/200" alt="Gameplay Scene" class="w-full rounded-md shadow-pixel-md">
+
+                <h3>Exploration and World Design</h3>
+                <p>
+                    The world of Pixelia is vast and brimming with secrets. Each area is lovingly crafted with detailed pixel art, from lush forests to dark dungeons. Exploration is rewarded with hidden items, challenging puzzles, and encounters with quirky NPCs.
+                </p>
+
+                <h2>Visuals and Sound: Authentic 8-bit Charm</h2>
+                <p>
+                    Visually, "Pixelia" is a triumph. The pixel art is vibrant and expressive, with a carefully chosen color palette that evokes the nostalgia of classic consoles. The soundtrack is equally impressive, featuring catchy chiptune melodies that perfectly complement the gameplay.
+                </p>
+                <img src="https://picsum.photos/400/200" alt="Character Art" class="w-full rounded-md shadow-pixel-md">
+
+                <h3>Characters and Story</h3>
+                <p>
+                    While the story is simple on the surface, "Pixelia" boasts a cast of memorable characters. Pixel himself is a charming protagonist, and the supporting cast, from wise old wizards to mischievous goblins, adds depth and humor to the adventure.
+                </p>
+
+                <h2>Conclusion: A Must-Play for Retro Fans</h2>
+                <p>
+                    "The Legend of Pixelia" is more than just a retro throwback; it's a genuinely great game in its own right. It's a must-play for anyone who loves classic games or is looking for a charming and engaging adventure. With its tight gameplay, beautiful pixel art, and captivating soundtrack, "Pixelia" earns a solid <span class="text-pixel-primary font-bold">9/10</span>.
+                </p>
+
+                <div class="mt-8 pixel-border-image border-pixel-border p-4 bg-pixel-dark shadow-pixel">
+                    <h3 class="text-xl text-pixel-primary mb-2 shadow-pixel">What do you think?</h3>
+                    <textarea placeholder="Share your pixel thoughts!" class="w-full bg-pixel-bg text-pixel-text pixel-border-image border-pixel-border p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-pixel-primary"></textarea>
+                    <button class="mt-4 bg-pixel-primary text-pixel-dark px-4 py-2 rounded-md shadow-pixel hover:bg-pixel-accent transition-colors duration-200">
+                        Submit Comment
+                    </button>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="bg-pixel-dark pixel-border-image border-pixel-border mt-12 py-8 text-center text-pixel-light">
+        <p>© 2024 Pixel Post. All rights reserved.</p>
+        <p class="mt-2">
+            <a href="#" class="hover:text-pixel-primary transition-colors duration-200">Privacy Policy</a> |
+            <a href="#" class="hover:text-pixel-primary transition-colors duration-200">Terms of Service</a>
+        </p>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

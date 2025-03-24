@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F5F5F5',
+                        'secondary': '#1A202C',
+                        'accent': '#94A3B8',
+                    },
+                    keyframes: {
+                        'fade-slide-down': {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        'scale-up': {
+                            '0%': { transform: 'scale(0.95)' },
+                            '100%': { transform: 'scale(1)' }
+                        }
+                    },
+                    animation: {
+                        'fade-slide-down': 'fade-slide-down 0.8s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'scale-up': 'scale-up 0.6s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        .portfolio-item {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .portfolio-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .overlay {
+            transition: opacity 0.3s ease-out;
+        }
+        .portfolio-item:hover .overlay {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-primary font-inter text-secondary">
+
+    <header class="sticky top-0 z-50 bg-primary bg-opacity-90 backdrop-blur-md shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-poppins text-xl font-semibold">
+                <i class="fa-solid fa-camera-retro text-accent mr-2"></i> [Your Name] Photography
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#portfolio" class="hover:text-accent transition-colors">Portfolio</a>
+                <a href="#about" class="hover:text-accent transition-colors">About</a>
+                <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-secondary hover:text-accent focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-4">
+                <a href="#portfolio" class="hover:text-accent transition-colors block">Portfolio</a>
+                <a href="#about" class="hover:text-accent transition-colors block">About</a>
+                <a href="#contact" class="hover:text-accent transition-colors block">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero relative overflow-hidden h-screen flex items-center justify-center">
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/1920/1080?random=1" alt="Hero Image" class="object-cover w-full h-full animate-fade-in">
+            <div class="absolute inset-0 bg-secondary bg-opacity-30"></div>
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="font-poppins text-4xl md:text-6xl font-bold text-primary mb-4 animate-fade-slide-down" style="animation-delay: 0.2s;">Capturing Moments, Telling Stories</h1>
+            <p class="text-lg md:text-xl text-primary mb-8 animate-fade-slide-down" style="animation-delay: 0.4s;">Welcome to my visual journey. Explore my portfolio and discover the world through my lens.</p>
+            <a href="#portfolio" class="bg-accent text-primary font-semibold px-6 py-3 rounded-full hover:bg-opacity-80 transition-colors animate-fade-slide-down" style="animation-delay: 0.6s;">
+                View Portfolio <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="font-poppins text-3xl font-semibold text-center mb-12">Portfolio Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="portfolio-item relative overflow-hidden rounded-lg shadow-md animate-scale-up">
+                    <img src="https://picsum.photos/400/600?random=2" alt="Portfolio Image 1" class="block w-full">
+                    <div class="absolute inset-0 bg-secondary opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                        <a href="#" class="text-primary font-semibold py-2 px-4 border border-primary rounded-full hover:bg-primary hover:text-secondary transition-colors">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item relative overflow-hidden rounded-lg shadow-md animate-scale-up" style="animation-delay: 0.1s;">
+                    <img src="https://picsum.photos/400/600?random=3" alt="Portfolio Image 2" class="block w-full">
+                    <div class="absolute inset-0 bg-secondary opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                        <a href="#" class="text-primary font-semibold py-2 px-4 border border-primary rounded-full hover:bg-primary hover:text-secondary transition-colors">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item relative overflow-hidden rounded-lg shadow-md animate-scale-up" style="animation-delay: 0.2s;">
+                    <img src="https://picsum.photos/400/600?random=4" alt="Portfolio Image 3" class="block w-full">
+                    <div class="absolute inset-0 bg-secondary opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                        <a href="#" class="text-primary font-semibold py-2 px-4 border border-primary rounded-full hover:bg-primary hover:text-secondary transition-colors">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item relative overflow-hidden rounded-lg shadow-md animate-scale-up" style="animation-delay: 0.3s;">
+                    <img src="https://picsum.photos/400/600?random=5" alt="Portfolio Image 4" class="block w-full">
+                    <div class="absolute inset-0 bg-secondary opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                        <a href="#" class="text-primary font-semibold py-2 px-4 border border-primary rounded-full hover:bg-primary hover:text-secondary transition-colors">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item relative overflow-hidden rounded-lg shadow-md animate-scale-up" style="animation-delay: 0.4s;">
+                    <img src="https://picsum.photos/400/600?random=6" alt="Portfolio Image 5" class="block w-full">
+                    <div class="absolute inset-0 bg-secondary opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                        <a href="#" class="text-primary font-semibold py-2 px-4 border border-primary rounded-full hover:bg-primary hover:text-secondary transition-colors">View Project</a>
+                    </div>
+                </div>
+                <div class="portfolio-item relative overflow-hidden rounded-lg shadow-md animate-scale-up" style="animation-delay: 0.5s;">
+                    <img src="https://picsum.photos/400/600?random=7" alt="Portfolio Image 6" class="block w-full">
+                    <div class="absolute inset-0 bg-secondary opacity-0 hover:opacity-80 transition-opacity flex items-center justify-center">
+                        <a href="#" class="text-primary font-semibold py-2 px-4 border border-primary rounded-full hover:bg-primary hover:text-secondary transition-colors">View Project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="text-accent hover:text-secondary transition-colors font-semibold">
+                    <i class="fa-solid fa-arrow-right mr-2"></i> View Full Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/600/400?random=8" alt="About Me" class="rounded-lg shadow-lg animate-fade-in">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="font-poppins text-3xl font-semibold mb-6">About Me</h2>
+                <p class="text-gray-700 mb-8">
+                    Hello! I'm [Your Name], a photographer passionate about capturing the beauty of the world around us. With years of experience, I specialize in [mention your photography specializations, e.g., portrait, landscape, travel]. My goal is to create images that not only document moments but also evoke emotions and tell compelling stories.
+                </p>
+                <p class="text-gray-700 mb-8">
+                    My approach is rooted in [mention your photography style or philosophy, e.g., natural light photography, documentary style, artistic compositions]. I believe in building connections with my subjects and environments to create authentic and meaningful photographs.
+                </p>
+                <a href="#" class="text-accent hover:text-secondary transition-colors font-semibold">
+                    Learn More About Me <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="font-poppins text-3xl font-semibold text-center mb-12">Contact Me</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                        <input type="text" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                        <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-accent focus:ring-accent sm:text-sm"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-accent text-primary font-semibold px-6 py-3 rounded-full hover:bg-opacity-80 transition-colors">
+                            Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-primary py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+            </div>
+            <p>© 2024 [Your Name] Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

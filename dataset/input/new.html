@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Album - [Musician Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family= সত্ব:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'main': [' সত্ব', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#F9F5F6',
+                        secondary: '#5D3FD3',
+                        accent: '#E4D8DC',
+                        dark: '#1A1A1D',
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'slide-up': 'slide-up 1s ease-out',
+                        'fade-in': 'fade-in 1s ease-out',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-position': '0% center'
+                            },
+                            '50%': {
+                                'background-position': '100% center'
+                            },
+                        },
+                        'slide-up': {
+                            '0%': {
+                                transform: 'translateY(50px)',
+                                opacity: '0',
+                            },
+                            '100%': {
+                                transform: 'translateY(0)',
+                                opacity: '1',
+                            },
+                        },
+                        'fade-in': {
+                            '0%': {
+                                opacity: '0',
+                            },
+                            '100%': {
+                                opacity: '1',
+                            },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-dark font-main text-primary no-scrollbar">
+
+<div class="fixed top-0 left-0 w-full h-screen bg-gradient-to-r from-secondary to-accent -z-10 animate-gradient-x bg-[400%_400%]"></div>
+
+<header class="sticky top-0 z-50 bg-dark bg-opacity-70 backdrop-blur-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold">
+            <i class="fa-solid fa-compact-disc text-secondary mr-2"></i>[Musician Name]
+        </a>
+        <div class="hidden md:flex space-x-6">
+            <a href="#album" class="hover:text-accent transition-colors">Album</a>
+            <a href="#listen" class="hover:text-accent transition-colors">Listen</a>
+            <a href="#about" class="hover:text-accent transition-colors">About</a>
+            <a href="#tour" class="hover:text-accent transition-colors">Tour</a>
+            <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-primary hover:text-accent focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-6 py-4 flex flex-col space-y-4">
+            <a href="#album" class="hover:text-accent transition-colors block">Album</a>
+            <a href="#listen" class="hover:text-accent transition-colors block">Listen</a>
+            <a href="#about" class="hover:text-accent transition-colors block">About</a>
+            <a href="#tour" class="hover:text-accent transition-colors block">Tour</a>
+            <a href="#contact" class="hover:text-accent transition-colors block">Contact</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="hero" class="relative py-24 md:py-32 lg:py-48 overflow-hidden">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text md:order-1">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-slide-up">
+                    [Album Title]<br>
+                    <span class="text-secondary">[Musician Name]</span>
+                </h1>
+                <p class="text-lg mb-8 animate-slide-up delay-100">
+                    The new album is finally here. A journey through sound and emotion.
+                    Explore the depths of musical artistry.
+                </p>
+                <div class="space-x-4 animate-slide-up delay-200">
+                    <a href="#listen" class="bg-secondary hover:bg-accent text-dark py-3 px-6 rounded-full font-semibold transition-colors">
+                        Listen Now <i class="fa-solid fa-headphones ml-2"></i>
+                    </a>
+                    <a href="#album" class="text-accent hover:text-primary py-3 px-6 rounded-full font-semibold border border-accent transition-colors">
+                        Learn More <i class="fa-solid fa-info-circle ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image md:order-2 animate-fade-in">
+                <img src="https://picsum.photos/id/1025/600/600" alt="Album Cover" class="rounded-xl shadow-2xl hover:shadow-none transition-shadow duration-300 mx-auto md:mr-0">
+            </div>
+        </div>
+    </section>
+
+    <section id="album" class="py-24 md:py-32 bg-dark">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">About the Album</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-xl bg-accent bg-opacity-10 backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Concept & Story</h3>
+                    <p class="text-primary opacity-80">
+                        "[Album Title]" is a conceptual album exploring themes of [Album Themes].
+                        Each track is a chapter in a larger narrative, designed for a full listening experience.
+                    </p>
+                </div>
+                <div class="p-6 rounded-xl bg-accent bg-opacity-10 backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Musical Style</h3>
+                    <p class="text-primary opacity-80">
+                        The album blends genres of [Genres], creating a unique soundscape.
+                        Expect a mix of [Musical Elements], crafted with detailed sound design.
+                    </p>
+                </div>
+                <div class="p-6 rounded-xl bg-accent bg-opacity-10 backdrop-blur-sm shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">Tracklist Highlights</h3>
+                    <ul class="list-disc list-inside text-primary opacity-80">
+                        <li>Track 1: [Track 1 Name]</li>
+                        <li>Track 2: [Track 2 Name]</li>
+                        <li>Track 3: [Track 3 Name]</li>
+                        <li>...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="listen" class="py-24 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Listen Now</h2>
+            <div class="flex justify-center space-x-6 mb-12">
+                <a href="#" class="hover:opacity-80 transition-opacity">
+                    <img src="https://picsum.photos/id/222/100/100" alt="Spotify" class="rounded-full w-20 h-20 shadow-md">
+                </a>
+                <a href="#" class="hover:opacity-80 transition-opacity">
+                    <img src="https://picsum.photos/id/223/100/100" alt="Apple Music" class="rounded-full w-20 h-20 shadow-md">
+                </a>
+                <a href="#" class="hover:opacity-80 transition-opacity">
+                    <img src="https://picsum.photos/id/224/100/100" alt="YouTube Music" class="rounded-full w-20 h-20 shadow-md">
+                </a>
+                <a href="#" class="hover:opacity-80 transition-opacity">
+                    <img src="https://picsum.photos/id/225/100/100" alt="Bandcamp" class="rounded-full w-20 h-20 shadow-md">
+                </a>
+            </div>
+            <p class="text-lg opacity-80 mb-8">
+                Available on all major streaming platforms and for purchase on Bandcamp.
+            </p>
+            <a href="#" class="bg-accent hover:bg-secondary text-dark py-3 px-6 rounded-full font-semibold transition-colors">
+                Buy Album <i class="fa-solid fa-shopping-cart ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 md:py-32 bg-dark">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="about-image">
+                <img src="https://picsum.photos/id/340/500/700" alt="Musician Photo" class="rounded-xl shadow-2xl hover:shadow-none transition-shadow duration-300 mx-auto md:ml-0">
+            </div>
+            <div class="about-text">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">About [Musician Name]</h2>
+                <p class="text-lg opacity-80 mb-8">
+                    [Musician Name] is a [Genre] artist known for their [Unique Qualities].
+                    With a passion for sound exploration and storytelling, their music resonates with audiences worldwide.
+                    "[Album Title]" is their [Number] album, marking a new chapter in their artistic journey.
+                </p>
+                <p class="text-lg opacity-80 mb-8">
+                    Influenced by [Influences], [Musician Name] creates music that is both innovative and deeply personal.
+                    Explore their discography and join the community of listeners who appreciate authentic artistry.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-accent hover:text-primary transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-accent hover:text-primary transition-colors"><i class="fa-brands fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-accent hover:text-primary transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#" class="text-accent hover:text-primary transition-colors"><i class="fa-brands fa-spotify text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tour" class="py-24 md:py-32 bg-dark">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Tour Dates</h2>
+            <p class="text-lg opacity-80 mb-8">
+                Catch [Musician Name] live on tour. Dates and locations below.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-accent bg-opacity-10 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">City, State</h3>
+                    <p class="text-primary opacity-80">Venue Name</p>
+                    <p class="text-primary opacity-80">Date</p>
+                    <a href="#" class="inline-block mt-4 bg-secondary hover:bg-accent text-dark py-2 px-4 rounded-full font-semibold transition-colors">
+                        Tickets
+                    </a>
+                </div>
+                <div class="bg-accent bg-opacity-10 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">City, State</h3>
+                    <p class="text-primary opacity-80">Venue Name</p>
+                    <p class="text-primary opacity-80">Date</p>
+                    <a href="#" class="inline-block mt-4 bg-secondary hover:bg-accent text-dark py-2 px-4 rounded-full font-semibold transition-colors">
+                        Tickets
+                    </a>
+                </div>
+                <div class="bg-accent bg-opacity-10 backdrop-blur-sm p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold mb-2 text-primary">City, State</h3>
+                    <p class="text-primary opacity-80">Venue Name</p>
+                    <p class="text-primary opacity-80">Date</p>
+                    <a href="#" class="inline-block mt-4 bg-secondary hover:bg-accent text-dark py-2 px-4 rounded-full font-semibold transition-colors">
+                        Tickets
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 md:py-32 bg-dark">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12">Contact & Newsletter</h2>
+            <p class="text-lg opacity-80 mb-8">
+                Stay updated with new releases, tour dates, and exclusive content.
+                Sign up for the newsletter or reach out for inquiries.
+            </p>
+            <div class="max-w-md mx-auto mb-8">
+                <input type="email" placeholder="Your Email Address" class="w-full px-4 py-3 rounded-full bg-accent bg-opacity-10 backdrop-blur-sm text-primary focus:outline-none focus:ring-2 focus:ring-secondary">
+                <button class="mt-4 w-full bg-secondary hover:bg-accent text-dark py-3 rounded-full font-semibold transition-colors">
+                    Subscribe <i class="fa-solid fa-envelope ml-2"></i>
+                </button>
+            </div>
+            <p class="text-sm opacity-60">
+                For booking inquiries or other questions, please email: <a href="mailto:booking@[musicianwebsite].com" class="text-accent hover:underline">booking@[musicianwebsite].com</a>
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="py-12 bg-dark border-t border-accent border-opacity-20">
+    <div class="container mx-auto px-6 text-center opacity-70">
+        <p>© 2024 [Musician Name]. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                if (mobileMenu.classList.contains('hidden') === false) {
+                    mobileMenu.classList.add('hidden'); // Close mobile menu after click
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

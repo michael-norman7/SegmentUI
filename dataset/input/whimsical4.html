@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whimsical Pet Accessories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Nunito Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        'pastel-pink': '#fbcfe8',
+                        'pastel-blue': '#c7d2fe',
+                        'pastel-yellow': '#fef08a',
+                        'pastel-green': '#bbf7d0',
+                        'brand-primary': '#ec4899',
+                        'brand-secondary': '#9d174d',
+                    },
+                    animation: {
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.5s ease-out',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    },
+                    boxShadow: {
+                        'whimsical': '5px 5px 0px rgba(0,0,0,0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.1);
+        }
+        .animate-slide-up {
+            animation: slide-up 0.5s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-pastel-blue font-sans">
+
+    <header class="bg-white py-4 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-serif font-bold text-brand-primary animate-wiggle inline-block"><i class="fa-solid fa-paw mr-2"></i>Pawsome Style</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-brand-primary">New Arrivals</a>
+                <a href="#" class="hover:text-brand-primary">Collections</a>
+                <a href="#" class="hover:text-brand-primary">About Us</a>
+                <a href="#" class="hover:text-brand-primary">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button class="mobile-menu-button">
+                    <i class="fa-solid fa-bars text-brand-primary text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden bg-white py-2">
+            <a href="#" class="block px-4 py-2 hover:bg-pastel-pink">New Arrivals</a>
+            <a href="#" class="block px-4 py-2 hover:bg-pastel-pink">Collections</a>
+            <a href="#" class="block px-4 py-2 hover:bg-pastel-pink">About Us</a>
+            <a href="#" class="block px-4 py-2 hover:bg-pastel-pink">Contact</a>
+        </div>
+    </header>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif font-bold text-brand-secondary text-center mb-8 animate-slide-up">Explore Our Whimsical Collection</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <div class="product-card bg-white rounded-xl p-4 shadow-whimsical hover:shadow-xl animate-slide-up" style="animation-delay: 0.1s;">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Whimsical Collar" class="rounded-lg mb-4 w-full h-60 object-cover">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Sparkle Collar</h3>
+                    <p class="text-sm text-gray-600 mb-4">Add a touch of sparkle to your pet's day!</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-primary font-semibold">$19.99</span>
+                        <button class="bg-pastel-yellow hover:bg-yellow-300 text-gray-700 font-bold py-2 px-4 rounded-full text-sm"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl p-4 shadow-whimsical hover:shadow-xl animate-slide-up" style="animation-delay: 0.2s;">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Playful Bandana" class="rounded-lg mb-4 w-full h-60 object-cover">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Rainbow Bandana</h3>
+                    <p class="text-sm text-gray-600 mb-4">Brighten up walks with this colorful bandana.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-primary font-semibold">$14.99</span>
+                        <button class="bg-pastel-yellow hover:bg-yellow-300 text-gray-700 font-bold py-2 px-4 rounded-full text-sm"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl p-4 shadow-whimsical hover:shadow-xl animate-slide-up" style="animation-delay: 0.3s;">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Cozy Sweater" class="rounded-lg mb-4 w-full h-60 object-cover">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Cloud Sweater</h3>
+                    <p class="text-sm text-gray-600 mb-4">Keep your furry friend warm and snug.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-primary font-semibold">$29.99</span>
+                        <button class="bg-pastel-yellow hover:bg-yellow-300 text-gray-700 font-bold py-2 px-4 rounded-full text-sm"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl p-4 shadow-whimsical hover:shadow-xl animate-slide-up" style="animation-delay: 0.4s;">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Stylish Leash" class="rounded-lg mb-4 w-full h-60 object-cover">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Adventure Leash</h3>
+                    <p class="text-sm text-gray-600 mb-4">Durable and stylish for all your adventures.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-primary font-semibold">$24.99</span>
+                        <button class="bg-pastel-yellow hover:bg-yellow-300 text-gray-700 font-bold py-2 px-4 rounded-full text-sm"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl p-4 shadow-whimsical hover:shadow-xl animate-slide-up" style="animation-delay: 0.5s;">
+                    <img src="https://picsum.photos/200/300?random=5" alt="Fun Toy" class="rounded-lg mb-4 w-full h-60 object-cover">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Cheeky Carrot Toy</h3>
+                    <p class="text-sm text-gray-600 mb-4">Guaranteed fun for hours!</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-primary font-semibold">$9.99</span>
+                        <button class="bg-pastel-yellow hover:bg-yellow-300 text-gray-700 font-bold py-2 px-4 rounded-full text-sm"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl p-4 shadow-whimsical hover:shadow-xl animate-slide-up" style="animation-delay: 0.6s;">
+                    <img src="https://picsum.photos/200/300?random=6" alt="Elegant Bow Tie" class="rounded-lg mb-4 w-full h-60 object-cover">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Dapper Bow Tie</h3>
+                    <p class="text-sm text-gray-600 mb-4">Perfect for special occasions.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-primary font-semibold">$12.99</span>
+                        <button class="bg-pastel-yellow hover:bg-yellow-300 text-gray-700 font-bold py-2 px-4 rounded-full text-sm"><i class="fa-solid fa-cart-shopping mr-2"></i>Add to Cart</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-pastel-pink py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-700 text-sm">© 2024 Pawsome Style. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

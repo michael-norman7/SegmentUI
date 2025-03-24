@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4f46e5',
+                        'secondary': '#6b7280',
+                        'accent': '#fde047',
+                        'success': '#16a34a',
+                        'error': '#dc2626',
+                        'background': '#f9f9f9',
+                        'card': '#ffffff',
+                        'input': '#f3f4f6',
+                        'border': '#d1d5db',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(0, 0, 0, 0.05)',
+                    },
+                    keyframes: {
+                        'pulse-faster': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.5 },
+                        },
+                        'shake': {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-2px)' },
+                            '20%, 40%, 60%, 80%': { transform: 'translateX(2px)' },
+                        }
+                    },
+                    animation: {
+                        'pulse-faster': 'pulse-faster 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shake': 'shake 0.5s ease-in-out',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background');
+        }
+    </style>
+</head>
+<body class="bg-background flex justify-center items-center h-screen font-inter">
+    <div class="fixed top-0 left-0 w-full h-full bg-background pointer-events-none -z-10" style="background-image: url('https://picsum.photos/1920/1080?blur=5'); background-size: cover; background-position: center;"></div>
+    <div class="min-h-screen flex items-center justify-center bg-transparent">
+        <div class="relative flex flex-col md:flex-row md:space-x-12 justify-center items-center bg-card shadow-2xl rounded-3xl p-8 md:p-16 overflow-hidden">
+            <div class="hidden md:block absolute top-0 left-0 w-1/2 h-full bg-primary opacity-50 rounded-3xl -ml-8 -mt-8"></div>
+            <div class="hidden md:block absolute bottom-0 right-0 w-1/2 h-full bg-accent opacity-20 rounded-3xl -mr-8 -mb-8"></div>
+
+            <div class="md:w-1/2 z-10 animate__animated animate__fadeInLeft">
+                <div class="text-center md:text-left mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Log in to your account</h2>
+                    <p class="text-secondary text-lg">Unlock exclusive features and personalized experience.</p>
+                </div>
+                <form class="space-y-6" id="loginForm">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your email</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                                <i class="fa fa-envelope text-gray-500"></i>
+                            </div>
+                            <input type="email" id="email" class="bg-input border border-border text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" placeholder="email@example.com" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Your password</label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+                                <i class="fa fa-lock text-gray-500"></i>
+                            </div>
+                            <input type="password" id="password" class="bg-input border border-border text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" placeholder="••••••••" required>
+                            <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 flex items-center pr-3 hover:text-primary focus:outline-none">
+                                <i id="passwordIcon" class="fa fa-eye-slash text-gray-500"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-border rounded focus:ring-primary focus:ring-2 bg-input">
+                        </div>
+                        <label for="remember" class="ml-2 text-sm font-medium text-gray-900">Remember me</label>
+                    </div>
+                    <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300">Login</button>
+                    <div class="text-sm font-medium text-gray-500 text-center">
+                        <a href="#" class="text-primary hover:underline focus:ring-primary">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="md:w-1/2 animate__animated animate__fadeInRight hidden md:block">
+                <img src="https://picsum.photos/400/600" alt="Login Image" class="rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const togglePasswordButton = document.getElementById('togglePassword');
+        const passwordIcon = document.getElementById('passwordIcon');
+
+        togglePasswordButton.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            passwordIcon.classList.toggle('fa-eye');
+            passwordIcon.classList.toggle('fa-eye-slash');
+        });
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            if (!loginForm.checkValidity()) {
+                loginForm.classList.add('was-validated');
+                return;
+            }
+
+            const submitButton = loginForm.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fa fa-spinner fa-pulse animate-pulse-faster"></i> Logging in...';
+
+            setTimeout(() => {
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'Login';
+
+                const email = emailInput.value;
+                const password = passwordInput.value;
+
+                if (email === 'test@example.com' && password === 'password') {
+                    alert('Login Successful!');
+                    loginForm.reset();
+                } else {
+                    passwordInput.classList.add('animate__animated', 'animate__shake', 'border-error');
+                    setTimeout(() => {
+                        passwordInput.classList.remove('animate__animated', 'animate__shake', 'border-error');
+                    }, 1000);
+                    alert('Login Failed. Invalid credentials.');
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

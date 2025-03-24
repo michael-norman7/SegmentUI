@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainbow Stage Kids - Ignite Imagination</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Bubblegum Sans', 'cursive'],
+                        'body': ['Nunito Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#FF6F61',
+                        'secondary': '#FFD700',
+                        'accent': '#4CAF50',
+                        'neutral': '#F0F4F8',
+                        'fun-pink': '#FF4081',
+                        'sky-blue': '#87CEEB',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleUp: {
+                            '0%': { transform: 'scale(0.5)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        wiggle: 'wiggle 1s ease-in-out infinite',
+                        slideInDown: 'slideIn 0.5s ease-out',
+                        fadeIn: 'fadeIn 0.5s ease-out',
+                        scaleUp: 'scaleUp 0.3s ease-out',
+                    },
+                    boxShadow: {
+                        'fun': '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                    },
+                    transitionProperty: {
+                        'height': 'height',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/1920/1080?blur=5');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-neutral font-body overflow-x-hidden">
+
+<header class="sticky top-0 z-50 bg-white shadow-md transition-transform duration-300" id="header">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="font-display text-3xl font-bold text-primary animate-pulse">Rainbow Stage Kids</a>
+        <button class="lg:hidden text-gray-700 focus:outline-none focus:text-primary" id="mobile-menu-button">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <div class="hidden lg:flex space-x-8">
+            <a href="#about" class="hover:text-primary transition-colors duration-200">About Us</a>
+            <a href="#shows" class="hover:text-primary transition-colors duration-200">Shows</a>
+            <a href="#classes" class="hover:text-primary transition-colors duration-200">Classes</a>
+            <a href="#testimonials" class="hover:text-primary transition-colors duration-200">Testimonials</a>
+            <a href="#contact" class="hover:text-primary transition-colors duration-200">Contact</a>
+        </div>
+    </nav>
+    <div class="lg:hidden hidden" id="mobile-menu">
+        <div class="px-6 py-4 flex flex-col space-y-4">
+            <a href="#about" class="hover:text-primary transition-colors duration-200 block">About Us</a>
+            <a href="#shows" class="hover:text-primary transition-colors duration-200 block">Shows</a>
+            <a href="#classes" class="hover:text-primary transition-colors duration-200 block">Classes</a>
+            <a href="#testimonials" class="hover:text-primary transition-colors duration-200 block">Testimonials</a>
+            <a href="#contact" class="hover:text-primary transition-colors duration-200 block">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="parallax hero py-24 md:py-36 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-neutral to-white opacity-30"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
+        <h1 class="font-display text-5xl md:text-7xl font-bold text-primary mb-6 animate-slideInDown">
+            Unleash Your Inner Star!
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-700 mb-12 animate-fadeIn delay-100">
+            Fun and engaging theater programs for kids of all ages.
+        </p>
+        <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300 shadow-fun animate-scaleUp delay-200">
+            Join the Fun!
+        </button>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-neutral to-transparent"></div>
+</section>
+
+<section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="font-display text-4xl font-bold text-accent mb-4">About Rainbow Stage Kids</h2>
+                <p class="text-gray-700 text-lg mb-6">
+                    At Rainbow Stage Kids, we believe in the power of imagination and creativity.
+                    We offer a vibrant and supportive environment where children can explore the world of theater,
+                    develop their talents, and build confidence that shines both on and off stage.
+                </p>
+                <p class="text-gray-700 text-lg">
+                    Our programs are designed to be fun, engaging, and educational, fostering a love for the performing arts
+                    while nurturing essential life skills such as teamwork, communication, and self-expression.
+                </p>
+            </div>
+            <div class="relative">
+                <img src="https://picsum.photos/400/300?random=1" alt="About Us Image" class="rounded-xl shadow-md">
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-secondary rounded-full opacity-20 animate-wiggle"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="shows" class="py-20 bg-neutral">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="font-display text-4xl font-bold text-fun-pink mb-12">Our Spectacular Shows</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
+                <img src="https://picsum.photos/400/300?random=2" alt="Show 1" class="w-full h-60 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-primary">The Magical Treehouse Adventure</h3>
+                    <p class="text-gray-700">Join Lily and Tom on their journey through a magical treehouse filled with wonder and excitement!</p>
+                    <button class="mt-4 bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Learn More</button>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
+                <img src="https://picsum.photos/400/300?random=3" alt="Show 2" class="w-full h-60 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-primary">Pirates of the Candy Sea</h3>
+                    <p class="text-gray-700">Ahoy mateys! Set sail with Captain Cookie and his crew in search of the legendary Candy Sea treasure.</p>
+                    <button class="mt-4 bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Learn More</button>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
+                <img src="https://picsum.photos/400/300?random=4" alt="Show 3" class="w-full h-60 object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-primary">Enchanted Forest Fairies</h3>
+                    <p class="text-gray-700">Enter a world of enchantment and meet the whimsical fairies who protect the secrets of the enchanted forest.</p>
+                    <button class="mt-4 bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="classes" class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="font-display text-4xl font-bold text-sky-blue mb-12">Our Exciting Classes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-neutral p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                <i class="fa fa-mask fa-3x text-secondary mb-4"></i>
+                <h3 class="font-bold text-xl mb-2 text-primary">Acting Adventures</h3>
+                <p class="text-gray-700 mb-4">Develop acting skills through fun games, improvisation, and scene work.</p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Beginner & Intermediate Levels</li>
+                    <li>Ages 6-10 & 11-14</li>
+                </ul>
+                <button class="mt-4 bg-fun-pink hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Enroll Now</button>
+            </div>
+            <div class="bg-neutral p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                <i class="fa fa-music fa-3x text-secondary mb-4"></i>
+                <h3 class="font-bold text-xl mb-2 text-primary">Musical Theater Magic</h3>
+                <p class="text-gray-700 mb-4">Sing, dance, and act your way to the stage in our musical theater classes.</p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>All Skill Levels Welcome</li>
+                    <li>Ages 8-16</li>
+                </ul>
+                <button class="mt-4 bg-fun-pink hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Enroll Now</button>
+            </div>
+            <div class="bg-neutral p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                <i class="fa fa-paint-brush fa-3x text-secondary mb-4"></i>
+                <h3 class="font-bold text-xl mb-2 text-primary">Creative Drama Kids</h3>
+                <p class="text-gray-700 mb-4">Explore storytelling, character creation, and imaginative play in a supportive group.</p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Perfect for Young Beginners</li>
+                    <li>Ages 4-7</li>
+                </ul>
+                <button class="mt-4 bg-fun-pink hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Enroll Now</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-20 bg-neutral">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="font-display text-4xl font-bold text-secondary mb-12">What Parents Are Saying</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                <i class="fa fa-quote-left text-gray-300 text-4xl mb-4 block text-left"></i>
+                <p class="text-gray-700 mb-4 italic">"Rainbow Stage Kids has been an incredible experience for my daughter. Her confidence has soared, and she absolutely loves going to classes!"</p>
+                <div class="flex items-center justify-end">
+                    <img src="https://picsum.photos/50/50?random=5" alt="Parent 1" class="rounded-full mr-4">
+                    <div class="text-right">
+                        <p class="font-bold text-primary">Jane Smith</p>
+                        <p class="text-sm text-gray-500">Parent of Lily</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                <i class="fa fa-quote-left text-gray-300 text-4xl mb-4 block text-left"></i>
+                <p class="text-gray-700 mb-4 italic">"The instructors are fantastic - so patient and encouraging. My son always comes home excited to tell us about what he learned in drama class."</p>
+                <div class="flex items-center justify-end">
+                    <img src="https://picsum.photos/50/50?random=6" alt="Parent 2" class="rounded-full mr-4">
+                    <div class="text-right">
+                        <p class="font-bold text-primary">Michael Johnson</p>
+                        <p class="text-sm text-gray-500">Parent of Tom</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-primary">
+    <div class="container mx-auto px-6 text-center text-white">
+        <h2 class="font-display t
+content_copy
+download
+Use code with caution.
+Html

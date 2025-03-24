@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-End Stationery - Minimalist Product Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#111827',
+                        'secondary': '#6B7280',
+                        'accent': '#F9FAFB',
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @layer base {
+            body {
+                @apply font-sans antialiased bg-accent text-primary;
+            }
+        }
+        @layer utilities {
+            .product-card {
+                @apply bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 hover:shadow-xl duration-300;
+            }
+            .product-image-container {
+                @apply relative pb-[75%] overflow-hidden; /* 4:3 aspect ratio */
+            }
+            .product-image {
+                @apply absolute top-0 left-0 w-full h-full object-cover;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+<div class="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://picsum.photos/200/300?random=1" alt="Elegant Notebook" class="product-image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate" title="Handcrafted Leather Notebook">Handcrafted Leather Notebook</h3>
+                <p class="text-gray-600 text-sm mb-3 truncate" title="Premium quality paper, hand-stitched binding.">Premium quality paper, hand-stitched binding.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-800 font-medium">$45.00</span>
+                    <button class="bg-primary hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-200" aria-label="Add Handcrafted Leather Notebook to cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://picsum.photos/200/300?random=2" alt="Fountain Pen Set" class="product-image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate" title="Luxury Fountain Pen Set">Luxury Fountain Pen Set</h3>
+                <p class="text-gray-600 text-sm mb-3 truncate" title="Includes three nib sizes, ink converter, and gift box.">Includes three nib sizes, ink converter, and gift box.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-800 font-medium">$120.00</span>
+                    <button class="bg-primary hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-200" aria-label="Add Luxury Fountain Pen Set to cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://picsum.photos/200/300?random=3" alt="Wax Seal Kit" class="product-image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate" title="Vintage Wax Seal Kit">Vintage Wax Seal Kit</h3>
+                <p class="text-gray-600 text-sm mb-3 truncate" title="Classic sealing wax, custom initial stamps, melting spoon.">Classic sealing wax, custom initial stamps, melting spoon.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-800 font-medium">$35.00</span>
+                    <button class="bg-primary hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-200" aria-label="Add Vintage Wax Seal Kit to cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://picsum.photos/200/300?random=4" alt="Calligraphy Ink Set" class="product-image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate" title="Artisan Calligraphy Ink Set">Artisan Calligraphy Ink Set</h3>
+                <p class="text-gray-600 text-sm mb-3 truncate" title="Set of five vibrant, pigment-rich calligraphy inks.">Set of five vibrant, pigment-rich calligraphy inks.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-800 font-medium">$60.00</span>
+                    <button class="bg-primary hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-200" aria-label="Add Artisan Calligraphy Ink Set to cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://picsum.photos/200/300?random=5" alt="Desk Organizer" class="product-image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate" title="Minimalist Desk Organizer">Minimalist Desk Organizer</h3>
+                <p class="text-gray-600 text-sm mb-3 truncate" title="Walnut wood, sleek design, multiple compartments.">Walnut wood, sleek design, multiple compartments.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-800 font-medium">$75.00</span>
+                    <button class="bg-primary hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-200" aria-label="Add Minimalist Desk Organizer to cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://picsum.photos/200/300?random=6" alt="Leather Pen Case" class="product-image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate" title="Genuine Leather Pen Case">Genuine Leather Pen Case</h3>
+                <p class="text-gray-600 text-sm mb-3 truncate" title="Holds up to five pens, soft interior lining.">Holds up to five pens, soft interior lining.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-800 font-medium">$50.00</span>
+                    <button class="bg-primary hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-200" aria-label="Add Genuine Leather Pen Case to cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://picsum.photos/200/300?random=7" alt="Letter Writing Set" class="product-image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate" title="Classic Letter Writing Set">Classic Letter Writing Set</h3>
+                <p class="text-gray-600 text-sm mb-3 truncate" title="Includes stationery, envelopes, and writing guide.">Includes stationery, envelopes, and writing guide.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-800 font-medium">$40.00</span>
+                    <button class="bg-primary hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-200" aria-label="Add Classic Letter Writing Set to cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="https://picsum.photos/200/300?random=8" alt="Sealing Stamp" class="product-image">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 truncate" title="Personalized Sealing Stamp">Personalized Sealing Stamp</h3>
+                <p class="text-gray-600 text-sm mb-3 truncate" title="Custom initial stamp, brass and wooden handle.">Custom initial stamp, brass and wooden handle.</p>
+                <div class="flex items-center justify-between">
+                    <span class="text-gray-800 font-medium">$25.00</span>
+                    <button class="bg-primary hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-md transition-colors duration-200" aria-label="Add Personalized Sealing Stamp to cart">
+                        <i class="fa-solid fa-cart-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

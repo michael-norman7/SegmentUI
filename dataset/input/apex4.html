@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Auditing - Integrity in Finance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#059669',
+                        'accent': '#34d399',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-slide-down': {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'gradient-bg': {
+                            '0%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                            '100%': { 'background-position': '0% 50%' },
+                        },
+                    },
+                    animation: {
+                        'fade-slide-down': 'fade-slide-down 0.6s ease-out',
+                        'fade-slide-up': 'fade-slide-up 0.6s ease-out',
+                        'gradient-bg': 'gradient-bg 15s ease infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/1920/1080?grayscale');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .parallax-mobile {
+            background-image: url('https://picsum.photos/768/1024?grayscale');
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark overflow-x-hidden">
+
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 md:px-12 lg:px-24 py-4 flex justify-between items-center">
+            <a href="/" class="font-bold text-xl md:text-2xl text-primary">
+                Apex Auditing
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#expertise" class="hover:text-secondary transition-colors duration-300">Expertise</a>
+                <a href="#clients" class="hover:text-secondary transition-colors duration-300">Clients</a>
+                <a href="#insights" class="hover:text-secondary transition-colors duration-300">Insights</a>
+                <a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl text-primary"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md absolute top-full left-0 right-0 z-40 animate-fade-slide-down">
+            <div class="px-6 py-8 flex flex-col space-y-4">
+                <a href="#services" class="block py-2 hover:bg-neutral rounded-md px-3 transition-colors duration-200">Services</a>
+                <a href="#expertise" class="block py-2 hover:bg-neutral rounded-md px-3 transition-colors duration-200">Expertise</a>
+                <a href="#clients" class="block py-2 hover:bg-neutral rounded-md px-3 transition-colors duration-200">Clients</a>
+                <a href="#insights" class="block py-2 hover:bg-neutral rounded-md px-3 transition-colors duration-200">Insights</a>
+                <a href="#contact" class="block py-2 hover:bg-neutral rounded-md px-3 transition-colors duration-200">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="parallax min-h-screen flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-slide-down" style="animation-delay: 0.1s;">
+                Navigating Financial Complexity with Clarity
+            </h1>
+            <p class="text-lg md:text-xl lg:text-2xl mb-12 opacity-80 animate-fade-slide-down" style="animation-delay: 0.3s;">
+                Expert Auditing Services for a Transparent and Secure Future.
+            </p>
+            <a href="#contact" class="inline-block px-8 py-3 bg-accent text-white font-semibold rounded-md hover:bg-secondary transition-colors duration-300 animate-fade-slide-up" style="animation-delay: 0.5s;">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-slide-down">Our Core Services</h2>
+                <p class="text-gray-600 md:text-lg animate-fade-slide-up">
+                    Comprehensive auditing and assurance services tailored to your unique needs.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down">
+                    <i class="fa fa-chart-line text-3xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Financial Audits</h3>
+                    <p class="text-gray-700">Rigorous and independent audits to ensure the accuracy and reliability of your financial statements.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down" style="animation-delay: 0.2s;">
+                    <i class="fa fa-shield-alt text-3xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Compliance Audits</h3>
+                    <p class="text-gray-700">Verifying adherence to regulatory requirements and internal policies, minimizing risks and ensuring compliance.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down" style="animation-delay: 0.4s;">
+                    <i class="fa fa-search-dollar text-3xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Forensic Audits</h3>
+                    <p class="text-gray-700">Specialized investigations into financial irregularities, fraud, and disputes, providing clarity and resolution.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down" style="animation-delay: 0.1s;">
+                    <i class="fa fa-lightbulb text-3xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Advisory Services</h3>
+                    <p class="text-gray-700">Strategic guidance on financial controls, risk management, and process optimization to enhance performance.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down" style="animation-delay: 0.3s;">
+                    <i class="fa fa-check-circle text-3xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Internal Audits</h3>
+                    <p class="text-gray-700">Independent assessments of your internal control systems, improving operational efficiency and governance.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down" style="animation-delay: 0.5s;">
+                    <i class="fa fa-file-invoice text-3xl text-secondary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Special Purpose Audits</h3>
+                    <p class="text-gray-700">Customized audit engagements for specific needs, such as due diligence, grants compliance, and project audits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-slide-down">Our Expertise</h2>
+                <p class="text-gray-600 md:text-lg animate-fade-slide-up">
+                    Deep industry knowledge and a team of seasoned professionals dedicated to excellence.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center animate-fade-slide-down">
+                    <img src="https://picsum.photos/200/200?face" alt="Expert 1" class="rounded-full w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Sarah Johnson, CPA</h3>
+                    <p class="text-gray-700">Senior Audit Partner</p>
+                    <p class="text-gray-500 mt-2">15+ Years of Experience</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center animate-fade-slide-down" style="animation-delay: 0.2s;">
+                    <img src="https://picsum.photos/201/201?face" alt="Expert 2" class="rounded-full w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Michael Davis, CFE</h3>
+                    <p class="text-gray-700">Forensic Audit Manager</p>
+                    <p class="text-gray-500 mt-2">10+ Years in Forensic Accounting</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 text-center animate-fade-slide-down" style="animation-delay: 0.4s;">
+                    <img src="https://picsum.photos/202/202?face" alt="Expert 3" class="rounded-full w-24 h-24 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Emily Wilson, CIA</h3>
+                    <p class="text-gray-700">Internal Audit Specialist</p>
+                    <p class="text-gray-500 mt-2">8+ Years Focusing on Internal Controls</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="py-20 bg-white">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-slide-down">Trusted By Leading Organizations</h2>
+                <p class="text-gray-600 md:text-lg animate-fade-slide-up">
+                    We partner with a diverse portfolio of clients across various industries.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 justify-items-center">
+                <img src="https://picsum.photos/100/50" alt="Client Logo 1" class="opacity-70 hover:opacity-100 transition-opacity duration-300 animate-fade-slide-down">
+                <img src="https://picsum.photos/101/50" alt="Client Logo 2" class="opacity-70 hover:opacity-100 transition-opacity duration-300 animate-fade-slide-down" style="animation-delay: 0.1s;">
+                <img src="https://picsum.photos/102/50" alt="Client Logo 3" class="opacity-70 hover:opacity-100 transition-opacity duration-300 animate-fade-slide-down" style="animation-delay: 0.2s;">
+                <img src="https://picsum.photos/103/50" alt="Client Logo 4" class="opacity-70 hover:opacity-100 transition-opacity duration-300 animate-fade-slide-down" style="animation-delay: 0.3s;">
+                <img src="https://picsum.photos/104/50" alt="Client Logo 5" class="opacity-70 hover:opacity-100 transition-opacity duration-300 animate-fade-slide-down" style="animation-delay: 0.4s;">
+                <img src="https://picsum.photos/105/50" alt="Client Logo 6" class="opacity-70 hover:opacity-100 transition-opacity duration-300 animate-fade-slide-down" style="animation-delay: 0.5s;">
+                <img src="https://picsum.photos/106/50" alt="Client Logo 7" class="opacity-70 hover:opacity-100 transition-opacity duration-300 animate-fade-slide-down" style="animation-delay: 0.6s;">
+                <img src="https://picsum.photos/107/50" alt="Client Logo 8" class="opacity-70 hover:opacity-100 transition-opacity duration-300 animate-fade-slide-down" style="animation-delay: 0.7s;">
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-slide-down">Latest Insights</h2>
+                <p class="text-gray-600 md:text-lg animate-fade-slide-up">
+                    Stay informed with our latest articles, reports, and industry analysis.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down">
+                    <img src="https://picsum.photos/400/300" alt="Insight 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">The Future of Audit Technology</h3>
+                        <p class="text-gray-700 mb-4">Explore how technology is transforming the auditing landscape and enhancing efficiency.</p>
+                        <a href="#" class="text-secondary hover:text-primary font-semibold transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down" style="animation-delay: 0.2s;">
+                    <img src="https://picsum.photos/401/300" alt="Insight 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Navigating New Compliance Regulations</h3>
+                        <p class="text-gray-700 mb-4">Understand the key changes in regulatory compliance and how to prepare your organization.</p>
+                        <a href="#" class="text-secondary hover:text-primary font-semibold transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fade-slide-down" style="animation-delay: 0.4s;">
+                    <img src="https://picsum.photos/402/300" alt="Insight 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Risk Management in a Volatile Economy</h3>
+                        <p class="text-gray-700 mb-4">Strategies for effective risk management and safeguarding your business against economic uncertainties.</p>
+                        <a href="#" class="text-secondary hover:text-primary font-semibold transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-primary text-white">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 animate-fade-slide-down">Contact Us</h2>
+                <p class="text-neutral md:text-lg animate-fade-slide-up">
+                    Let's discuss how Apex Auditing can assist your organization.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="animate-fade-slide-down">
+                    <h3 class="text-xl font-semibold mb-4">Get in Touch</h3>
+                    <p class="mb-6">Fill out the form below to schedule a consultation or learn more about our services.</p>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                            <input type="text" id="name" class="w-full bg-neutral text-dark rounded-md px-4 py-2 focus:ring-2 focus:ring-accent focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                            <input type="email" id="email" class="w-full bg-neutral text-dark rounded-md px-4 py-2 focus:ring-2 focus:ring-accent focus:outline-none">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral text-dark rounded-md px-4 py-2 focus:ring-2 focus:ring-accent focus:outline-none"></textarea>
+                        </div>
+                        <button type="submit" class="inline-block px-8 py-3 bg-accent text-white font-semibold rounded-md hover:bg-secondary transition-colors duration-300">Send Message</button>
+                    </form>
+                </div>
+                <div class="lg:border-l lg:border-neutral lg:pl-8 animate-fade-slide-up">
+                    <h3 class="text-xl font-semibold mb-4">Our Office</h3>
+                    <p class="mb-3"><i class="fa fa-map-marker-alt mr-2"></i> 123 Financial District, Cityville, State, 12345</p>
+                    <p class="mb-3"><i class="fa fa-phone mr-2"></i> (123) 456-7890</p>
+                    <p class="mb-3"><i class="fa fa-envelope mr-2"></i> info@apexauditing.com</p>
+                    <div class="mt-6">
+                        <a href="#" class="text-neutral hover:text-accent transition-colors duration-300"><i class="fab fa-linkedin text-xl mr-4"></i></a>
+                        <a href="#" class="text-neutral hover:text-accent transition-colors duration-300"><i class="fab fa-twitter text-xl mr-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 text-center">
+            <p>© 2024 Apex Auditing. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-accent transition-colors duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-accent transition-colors duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListen
+content_copy
+download
+Use code with caution.
+Html

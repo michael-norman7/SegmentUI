@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Cycle Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#E0E5EC',
+                        'secondary': '#AEB7C2',
+                        'accent': '#6B7A8F',
+                        'dark': '#343A40',
+                    },
+                    boxShadow: {
+                        'neumorphic-inner': 'inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFFFFF',
+                        'neumorphic-outer': '5px 5px 15px #BABECC, -5px -5px 15px #FFFFFF'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-poppins bg-primary text-dark antialiased;
+            }
+            button {
+                @apply focus:outline-none;
+            }
+        }
+        @layer components {
+            .card {
+                @apply rounded-2xl p-6 bg-primary shadow-neumorphic-outer;
+            }
+            .inner-card {
+                @apply rounded-xl p-4 bg-primary shadow-neumorphic-inner;
+            }
+            .btn-primary {
+                @apply py-2 px-4 rounded-lg bg-accent text-white font-semibold shadow-neumorphic-outer hover:shadow-neumorphic-inner transition-shadow duration-200;
+            }
+            .icon-neumorphic {
+                @apply w-10 h-10 rounded-full flex items-center justify-center shadow-neumorphic-outer text-accent;
+            }
+            .input-neumorphic {
+                @apply bg-primary shadow-neumorphic-inner rounded-lg px-4 py-2 focus:shadow-neumorphic-outer focus:ring-0 focus:border-secondary;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <header class="sticky top-0 bg-primary shadow-neumorphic-outer z-10">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-semibold text-accent">SleepDeep</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-secondary transition-colors duration-200">Dashboard</a>
+                <a href="#" class="hover:text-secondary transition-colors duration-200">Analysis</a>
+                <a href="#" class="hover:text-secondary transition-colors duration-200">Tips</a>
+                <a href="#" class="hover:text-secondary transition-colors duration-200">Settings</a>
+            </div>
+            <div class="md:hidden">
+                <button class="icon-neumorphic">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div class="card">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="icon-neumorphic"><i class="fa fa-moon"></i></div>
+                    <h2 class="text-lg font-semibold">Sleep Quality</h2>
+                </div>
+                <div class="text-4xl font-bold text-accent mb-2">92<span class="text-secondary text-lg ml-1">%</span></div>
+                <p class="text-secondary">Excellent sleep quality last night.</p>
+                <div class="mt-6">
+                    <button class="btn-primary">View Details</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="icon-neumorphic"><i class="fa fa-chart-line"></i></div>
+                    <h2 class="text-lg font-semibold">Sleep Pattern</h2>
+                </div>
+                <div class="inner-card h-48 flex items-center justify-center">
+                    <img src="https://picsum.photos/300/150" alt="Sleep Pattern Chart" class="max-w-full max-h-full rounded-md">
+                </div>
+                <p class="text-secondary mt-4">Consistent sleep schedule detected.</p>
+            </div>
+
+            <div class="card">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="icon-neumorphic"><i class="fa fa-clock"></i></div>
+                    <h2 class="text-lg font-semibold">Sleep Duration</h2>
+                </div>
+                <div class="text-3xl font-bold text-accent mb-2">7<span class="text-secondary text-lg ml-1">h</span> 45<span class="text-secondary text-lg ml-1">m</span></div>
+                <p class="text-secondary">Slept longer than your average.</p>
+                <div class="mt-6">
+                    <button class="btn-primary">Analyze Trends</button>
+                </div>
+            </div>
+
+            <div class="card md:col-span-2 lg:col-span-1">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="icon-neumorphic"><i class="fa fa-heartbeat"></i></div>
+                    <h2 class="text-lg font-semibold">Key Metrics</h2>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="inner-card p-4">
+                        <div class="text-xl font-semibold text-accent">Deep Sleep</div>
+                        <div class="text-lg text-secondary">2h 15m</div>
+                    </div>
+                    <div class="inner-card p-4">
+                        <div class="text-xl font-semibold text-accent">Light Sleep</div>
+                        <div class="text-lg text-secondary">4h 30m</div>
+                    </div>
+                    <div class="inner-card p-4">
+                        <div class="text-xl font-semibold text-accent">REM Sleep</div>
+                        <div class="text-lg text-secondary">1h 00m</div>
+                    </div>
+                    <div class="inner-card p-4">
+                        <div class="text-xl font-semibold text-accent">Awake Time</div>
+                        <div class="text-lg text-secondary">0h 20m</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card md:col-span-2 lg:col-span-2">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="icon-neumorphic"><i class="fa fa-lightbulb"></i></div>
+                    <h2 class="text-lg font-semibold">Sleep Tips</h2>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa fa-check-circle text-accent"></i>
+                        <span class="text-secondary">Maintain a consistent sleep schedule.</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa fa-check-circle text-accent"></i>
+                        <span class="text-secondary">Create a relaxing bedtime routine.</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa fa-check-circle text-accent"></i>
+                        <span class="text-secondary">Ensure your bedroom is dark, quiet, and cool.</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa fa-check-circle text-accent"></i>
+                        <span class="text-secondary">Limit screen time before bed.</span>
+                    </li>
+                </ul>
+                <div class="mt-6">
+                    <button class="btn-primary">More Tips</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-6 bg-primary shadow-neumorphic-outer mt-8">
+        <div class="container mx-auto px-6 text-center text-secondary">
+            <p>© 2024 SleepDeep. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Dashboard loaded');
+        });
+    </script>
+</body>
+</html>

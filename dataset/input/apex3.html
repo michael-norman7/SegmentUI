@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex PR Agency - Shaping Perceptions, Driving Success</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#115e59',
+                        'accent': '#34d399',
+                        'neutral': '#f3f4f6',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'slide-left': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            },
+                        },
+                        'slide-up': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'slide-left': 'slide-left 0.5s ease-out',
+                        'slide-up': 'slide-up 0.5s ease-out',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/id/1001/1920/1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-neutral">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-primary">Apex PR</div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#about" class="hover:text-secondary transition-colors duration-300">About Us</a>
+                <a href="#clients" class="hover:text-secondary transition-colors duration-300">Clients</a>
+                <a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Let's Talk</button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-4">
+                <a href="#services" class="hover:text-secondary transition-colors duration-300 block">Services</a>
+                <a href="#about" class="hover:text-secondary transition-colors duration-300 block">About Us</a>
+                <a href="#clients" class="hover:text-secondary transition-colors duration-300 block">Clients</a>
+                <a href="#contact" class="hover:text-secondary transition-colors duration-300 block">Contact</a>
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 block text-center">Let's Talk</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero parallax py-32 md:py-64 text-center text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-down" style="animation-delay: 0.1s">Shape Your Story. Amplify Your Voice.</h1>
+            <p class="text-lg md:text-xl mb-12 opacity-80 animate-fade-in-down" style="animation-delay: 0.3s">Strategic Public Relations for a Connected World.</p>
+            <button class="bg-accent hover:bg-teal-400 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors duration-300 animate-slide-up" style="animation-delay: 0.5s">Discover Our Services</button>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-8">Our Expertise, Your Success</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-neutral">
+                    <i class="fa fa-bullhorn text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Strategic Communication</h3>
+                    <p class="text-gray-700">Crafting compelling narratives that resonate with your audience and drive results.</p>
+                </div>
+                <div class="p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-neutral">
+                    <i class="fa fa-newspaper text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Media Relations</h3>
+                    <p class="text-gray-700">Building strong relationships with key media outlets to secure impactful coverage.</p>
+                </div>
+                <div class="p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-neutral">
+                    <i class="fa fa-globe text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Digital & Social PR</h3>
+                    <p class="text-gray-700">Leveraging digital platforms to amplify your message and engage your community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <img src="https://picsum.photos/id/1005/800/600" alt="About Us" class="rounded-lg shadow-lg">
+            </div>
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">About Apex PR Agency</h2>
+                <p class="text-gray-700 mb-6">We are a team of passionate public relations professionals dedicated to helping businesses and organizations thrive in today's complex media landscape. With years of experience and a forward-thinking approach, we deliver strategic communication solutions that make a real difference.</p>
+                <p class="text-gray-700 mb-6">Our mission is to build, protect, and enhance your reputation through innovative and effective PR strategies. We believe in the power of authentic storytelling and its ability to connect brands with their audiences on a deeper level.</p>
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">Learn More About Us</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">Trusted By Leading Brands</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 grayscale hover:grayscale-0 transition-all duration-500">
+                <div><img src="https://picsum.photos/id/221/200/150" alt="Client 1" class="opacity-60 hover:opacity-100 transition-opacity duration-300"></div>
+                <div><img src="https://picsum.photos/id/222/200/150" alt="Client 2" class="opacity-60 hover:opacity-100 transition-opacity duration-300"></div>
+                <div><img src="https://picsum.photos/id/223/200/150" alt="Client 3" class="opacity-60 hover:opacity-100 transition-opacity duration-300"></div>
+                <div><img src="https://picsum.photos/id/224/200/150" alt="Client 4" class="opacity-60 hover:opacity-100 transition-opacity duration-300"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">Let's Start a Conversation</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-4">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-accent focus:border-accent" required>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-accent focus:border-accent" required>
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-accent focus:border-accent" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full text-lg w-full transition-colors duration-300">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <a href="#" class="text-neutral hover:text-accent mx-2"><i class="fab fa-facebook-square text-2xl"></i></a>
+                <a href="#" class="text-neutral hover:text-accent mx-2"><i class="fab fa-twitter-square text-2xl"></i></a>
+                <a href="#" class="text-neutral hover:text-accent mx-2"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a href="#" class="text-neutral hover:text-accent mx-2"><i class="fab fa-instagram-square text-2xl"></i></a>
+            </div>
+            <p class="text-neutral opacity-80">© 2024 Apex PR Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

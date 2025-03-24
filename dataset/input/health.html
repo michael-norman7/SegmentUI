@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Nunito Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#34D399',
+                        secondary: '#10B981',
+                        accent: '#6EE7B7',
+                        neutral: '#F3F4F6',
+                        dark: '#1E293B',
+                    },
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: '1rem',
+                            sm: '2rem',
+                            lg: '4rem',
+                            xl: '5rem',
+                            '2xl': '6rem',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-fade-in {
+            animation: fadein 0.5s ease-in-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadein {
+            to {
+                opacity: 1;
+            }
+        }
+        .article-card:hover .article-card-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container flex justify-between items-center py-4">
+            <a href="/" class="font-bold text-xl text-primary hover:text-secondary transition-colors">Vitality Blog</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-secondary transition-colors">Fitness</a>
+                <a href="#" class="hover:text-secondary transition-colors">Nutrition</a>
+                <a href="#" class="hover:text-secondary transition-colors">Wellness</a>
+                <a href="#" class="hover:text-secondary transition-colors">Community</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-secondary focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#" class="block py-2 hover:bg-neutral transition-colors rounded-md px-2">Fitness</a>
+                <a href="#" class="block py-2 hover:bg-neutral transition-colors rounded-md px-2">Nutrition</a>
+                <a href="#" class="block py-2 hover:bg-neutral transition-colors rounded-md px-2">Wellness</a>
+                <a href="#" class="block py-2 hover:bg-neutral transition-colors rounded-md px-2">Community</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 container">
+        <div class="text-center mb-10 animate-fade-in">
+            <h1 class="text-4xl font-bold text-dark mb-4">Explore Health & Wellness</h1>
+            <p class="text-lg text-gray-600">Your guide to a healthier and happier life. Discover expert articles on fitness, nutrition, and holistic wellness.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="article-card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in">
+                <a href="#">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img class="article-card-image object-cover transition-transform duration-300" src="https://picsum.photos/600/400?random=1" alt="Fitness Article">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">The Ultimate Guide to Morning Yoga</h2>
+                        <p class="text-gray-700 mb-4">Start your day with energy and focus. Learn the best yoga poses for a refreshing morning routine.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=5" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-500">By Jane Doe</span>
+                            </div>
+                            <span class="text-sm text-gray-500">5 days ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="article-card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.1s;">
+                <a href="#">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img class="article-card-image object-cover transition-transform duration-300" src="https://picsum.photos/600/400?random=2" alt="Nutrition Article">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">Superfoods for Energy Boosting</h2>
+                        <p class="text-gray-700 mb-4">Discover the top nutrient-rich foods that will keep you energized throughout the day.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=6" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-500">By John Smith</span>
+                            </div>
+                            <span class="text-sm text-gray-500">1 week ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="article-card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.2s;">
+                <a href="#">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img class="article-card-image object-cover transition-transform duration-300" src="https://picsum.photos/600/400?random=3" alt="Wellness Article">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">Mindfulness Meditation for Beginners</h2>
+                        <p class="text-gray-700 mb-4">Learn the basics of mindfulness meditation and reduce stress with simple techniques.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=7" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-500">By Emily White</span>
+                            </div>
+                            <span class="text-sm text-gray-500">2 weeks ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="article-card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.3s;">
+                <a href="#">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img class="article-card-image object-cover transition-transform duration-300" src="https://picsum.photos/600/400?random=4" alt="Fitness Article">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">Effective Home Workouts for Busy People</h2>
+                        <p class="text-gray-700 mb-4">No gym? No problem! Get fit at home with these quick and effective workout routines.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=8" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-500">By David Green</span>
+                            </div>
+                            <span class="text-sm text-gray-500">3 weeks ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="article-card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.4s;">
+                <a href="#">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img class="article-card-image object-cover transition-transform duration-300" src="https://picsum.photos/600/400?random=9" alt="Nutrition Article">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">The Science of Hydration: How Much Water Do You Really Need?</h2>
+                        <p class="text-gray-700 mb-4">Understand the importance of hydration and learn how to optimize your daily water intake for better health.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=10" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-500">By Sarah Brown</span>
+                            </div>
+                            <span class="text-sm text-gray-500">1 month ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="article-card bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.5s;">
+                <a href="#">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img class="article-card-image object-cover transition-transform duration-300" src="https://picsum.photos/600/400?random=11" alt="Wellness Article">
+                    </div>
+                    <div class="p-6">
+                        <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">Improving Sleep Quality Naturally</h2>
+                        <p class="text-gray-700 mb-4">Struggling with sleep? Discover natural strategies and habits to enhance your sleep quality and wake up refreshed.</p>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50?random=12" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-500">By Michael Lee</span>
+                            </div>
+                            <span class="text-sm text-gray-500">2 months ago</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="mt-12 flex justify-center animate-fade-in" style="animation-delay: 0.6s;">
+            <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-xl transition-colors">
+                Load More Articles
+            </button>
+        </div>
+
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container text-center">
+            <p>© 2024 Vitality Blog. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-facebook-square text-xl"></i></a>
+                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-twitter-square text-xl"></i></a>
+                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-instagram-square text-xl"></i></a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">Disclaimer: This blog provides general health information and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

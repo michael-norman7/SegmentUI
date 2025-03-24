@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Blog - Snapshots of Life</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'caveat': ['Caveat', 'cursive'],
+                    },
+                    colors: {
+                        'paper': '#f8f0e3',
+                        'ink': '#1e1e1e',
+                        'cream': '#f5f5dc',
+                        'brown': '#a0522d',
+                        'mustard': '#ffdb58',
+                    },
+                    keyframes: {
+                        'handwritten': {
+                            '0%': { 'font-variation-settings': "'wght' 100" },
+                            '100%': { 'font-variation-settings': "'wght' 900" },
+                        },
+                        'fade-in-up': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'handwritten': 'handwritten 0.5s ease-out forwards',
+                        'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #paper;
+            color: #ink;
+        }
+        .handwritten-caption {
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            @apply text-ink;
+        }
+        .polaroid-frame {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .polaroid-image {
+            aspect-ratio: 4/5;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-paper text-ink">
+
+<header class="sticky top-0 bg-paper/90 backdrop-blur-sm z-50 shadow-md">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold text-ink hover:text-brown transition-colors">RetroBlog</a>
+        <nav class="hidden md:flex space-x-6">
+            <a href="#polaroids" class="hover:text-brown transition-colors">Polaroids</a>
+            <a href="#about" class="hover:text-brown transition-colors">About</a>
+            <a href="#archive" class="hover:text-brown transition-colors">Archive</a>
+            <a href="#contact" class="hover:text-brown transition-colors">Contact</a>
+        </nav>
+        <button class="md:hidden text-ink hover:text-brown focus:outline-none">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<main class="container mx-auto mt-20 px-4 pb-12">
+
+    <section id="polaroids" class="pt-12">
+        <h2 class="text-3xl font-bold mb-8 text-center">Snapshots</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+
+            <div class="polaroid-frame p-4">
+                <img src="https://picsum.photos/id/10/200/300" alt="City Street" class="polaroid-image block w-full">
+                <p class="handwritten-caption text-center mt-2">Morning stroll in the city.</p>
+            </div>
+
+            <div class="polaroid-frame p-4">
+                <img src="https://picsum.photos/id/20/200/300" alt="Coffee Cup" class="polaroid-image block w-full">
+                <p class="handwritten-caption text-center mt-2">Perfect cup of coffee to start the day.</p>
+            </div>
+
+            <div class="polaroid-frame p-4">
+                <img src="https://picsum.photos/id/30/200/300" alt="Sunset Beach" class="polaroid-image block w-full">
+                <p class="handwritten-caption text-center mt-2">Golden hour at the beach.</p>
+            </div>
+
+            <div class="polaroid-frame p-4">
+                <img src="https://picsum.photos/id/40/200/300" alt="Forest Path" class="polaroid-image block w-full">
+                <p class="handwritten-caption text-center mt-2">Lost in the woods.</p>
+            </div>
+
+            <div class="polaroid-frame p-4">
+                <img src="https://picsum.photos/id/50/200/300" alt="Vintage Car" class="polaroid-image block w-full">
+                <p class="handwritten-caption text-center mt-2">Classic beauty on wheels.</p>
+            </div>
+
+            <div class="polaroid-frame p-4">
+                <img src="https://picsum.photos/id/60/200/300" alt="Mountain View" class="polaroid-image block w-full">
+                <p class="handwritten-caption text-center mt-2">Breathtaking mountain vista.</p>
+            </div>
+
+            <div class="polaroid-frame p-4">
+                <img src="https://picsum.photos/id/70/200/300" alt="Rainy Window" class="polaroid-image block w-full">
+                <p class="handwritten-caption text-center mt-2">Rainy days and cozy vibes.</p>
+            </div>
+
+            <div class="polaroid-frame p-4">
+                <img src="https://picsum.photos/id/80/200/300" alt="City Lights" class="polaroid-image block w-full">
+                <p class="handwritten-caption text-center mt-2">City lights at night.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="blog-post" class="mt-20 prose max-w-none lg:prose-lg">
+        <h2 class="text-4xl font-bold mb-4">A Day in My Life - Captured in Polaroids</h2>
+        <p class="lead">Welcome to my little corner of the internet! I'm excited to share with you a glimpse into my daily adventures, all captured through the nostalgic lens of Polaroid photography. There's something truly special about the instant nature of Polaroids – each photo is a unique, tangible memory that develops right before your eyes.</p>
+        <p>In this blog post, I'll be walking you through a typical day, from sunrise to sunset, showcasing a series of Polaroid snapshots that encapsulate the moments that make up my life. From the simple pleasures of a morning coffee to the breathtaking beauty of a sunset, I hope these images resonate with you and perhaps inspire you to capture your own everyday moments in a unique way.</p>
+        <h3>Morning Rituals</h3>
+        <p>My day usually begins with the aroma of freshly brewed coffee. There's nothing quite like that first sip to awaken the senses and prepare for the day ahead. This Polaroid captures just that – the steam rising from my favorite mug, a quiet moment of reflection before the hustle and bustle begins.</p>
+        <div class="polaroid-frame p-4 w-fit mx-auto my-6">
+            <img src="https://picsum.photos/id/90/400/500" alt="Morning Coffee Polaroid" class="polaroid-image block w-full">
+            <p class="handwritten-caption text-center mt-2">First coffee of the day.</p>
+        </div>
+        <h3>Afternoon Adventures</h3>
+        <p>The afternoon is often when I venture out and explore. Whether it's a walk in the park, a visit to a local market, or simply wandering through city streets, there's always something interesting to discover. This Polaroid is from a recent trip to a vintage bookstore – the scent of old books and the quiet rustle of pages is simply magical.</p>
+        <div class="polaroid-frame p-4 w-fit mx-auto my-6">
+            <img src="https://picsum.photos/id/100/400/500" alt="Bookstore Polaroid" class="polaroid-image block w-full">
+            <p class="handwritten-caption text-center mt-2">Lost in the pages.</p>
+        </div>
+        <h3>Sunset Reflections</h3>
+        <p>As the day winds down, there's nothing I love more than watching the sunset. The sky ablaze with colors, a peaceful moment of contemplation as day turns to night. This Polaroid captures the serene beauty of a recent sunset by the lake – the water reflecting the vibrant hues of the sky.</p>
+        <div class="polaroid-frame p-4 w-fit mx-auto my-6">
+            <img src="https://picsum.photos/id/110/400/500" alt="Sunset Polaroid" class="polaroid-image block w-full">
+            <p class="handwritten-caption text-center mt-2">Golden hour reflections.</p>
+        </div>
+        <p>Thank you for joining me on this visual journey through my day. I hope you enjoyed these Polaroid snapshots and that they brought a little bit of joy and nostalgia to your day. Let me know in the comments which Polaroid is your favorite!</p>
+    </section>
+
+    <section id="about" class="mt-20 py-12 border-t border-gray-300">
+        <h2 class="text-2xl font-bold mb-4">About Me</h2>
+        <p>Hi, I'm [Your Name], a hobbyist photographer with a love for all things retro, especially Polaroid photography. This blog is a space for me to share my snapshots of life and connect with fellow enthusiasts. I believe in finding beauty in the everyday and capturing it in a unique, tangible way. Join me as I explore the world through the lens of my Polaroid camera.</p>
+    </section>
+
+    <section id="archive" class="mt-20 py-12 border-t border-gray-300">
+        <h2 class="text-2xl font-bold mb-4">Archive</h2>
+        <p>Explore past blog posts and photo collections in the archive.</p>
+        <ul class="list-disc list-inside mt-4">
+            <li><a href="#" class="text-brown hover:underline">Summer Adventures - July 2024</a></li>
+            <li><a href="#" class="text-brown hover:underline">Cityscapes - June 2024</a></li>
+            <li><a href="#" class="text-brown hover:underline">Nature Escapes - May 2024</a></li>
+        </ul>
+    </section>
+
+    <section id="contact" class="mt-20 py-12 border-t border-gray-300">
+        <h2 class="text-2xl font-bold mb-4">Contact</h2>
+        <p>Have questions or just want to say hello? Reach out to me at <a href="mailto:your.email@example.com" class="text-brown hover:underline">your.email@example.com</a>.</p>
+    </section>
+
+</main>
+
+<footer class="bg-cream py-6 border-t border-gray-300 mt-12">
+    <div class="container mx-auto px-4 text-center text-sm text-gray-600">
+        © 2024 RetroBlog. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.polaroid-frame').forEach(frame => {
+        frame.addEventListener('mouseover', () => {
+            frame.classList.add('hover:scale-105', 'transition-transform', 'duration-200');
+            frame.querySelector('img').classList.add('hover:brightness-90', 'transition-brightness', 'duration-200');
+        });
+        frame.addEventListener('mouseout', () => {
+            frame.classList.remove('hover:scale-105', 'transition-transform', 'duration-200');
+            frame.querySelector('img').classList.remove('hover:brightness-90', 'transition-brightness', 'duration-200');
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.polaroid-frame').forEach((frame, index) => {
+            frame.classList.add('opacity-0', 'translate-y-4');
+            setTimeout(() => {
+                frame.classList.remove('opacity-0', 'translate-y-4');
+                frame.classList.add('animate-fade-in-up', 'motion-reduce:animate-none');
+            }, 100 * index);
+        });
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromatic Coffee - Bean Catalog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-light': '#f0e8d8',
+                        'coffee-mid': '#a38c7c',
+                        'coffee-dark': '#3d2f27',
+                        'accent': '#e6a756',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-down': {
+                            '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-down': 'slide-down 0.3s ease-out forwards',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: theme('colors.coffee-light');
+            color: theme('colors.coffee-dark');
+        }
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        .product-card {
+            animation: slide-down 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .modal-content {
+            animation: fade-in 0.3s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<header class="sticky top-0 bg-coffee-light shadow-md z-50">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="text-xl font-poppins font-semibold text-coffee-dark">
+                Chromatic Coffee
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#products" class="hover:text-accent transition-colors duration-200">Products</a>
+                <a href="#about" class="hover:text-accent transition-colors duration-200">About</a>
+                <a href="#brew-guides" class="hover:text-accent transition-colors duration-200">Brew Guides</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-200">Contact</a>
+                <button class="relative focus:outline-none">
+                    <i class="fa fa-shopping-cart text-xl hover:text-accent transition-colors duration-200"></i>
+                    <span class="absolute top-[-6px] right-[-8px] bg-accent text-white text-xs rounded-full px-2 py-0.5 animate-pulse-custom">3</span>
+                </button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl text-coffee-dark hover:text-accent transition-colors duration-200"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden mt-4 hidden" id="mobile-menu">
+            <a href="#products" class="block py-2 hover:text-accent transition-colors duration-200">Products</a>
+            <a href="#about" class="block py-2 hover:text-accent transition-colors duration-200">About</a>
+            <a href="#brew-guides" class="block py-2 hover:text-accent transition-colors duration-200">Brew Guides</a>
+            <a href="#contact" class="block py-2 hover:text-accent transition-colors duration-200">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section id="hero" class="py-20 md:py-32 bg-coffee-light">
+    <div class="container mx-auto px-6 text-center">
+        <h1 class="font-poppins text-4xl md:text-6xl font-bold text-coffee-dark mb-4 md:mb-6">Discover Exquisite Coffee Beans</h1>
+        <p class="text-lg md:text-xl text-coffee-mid mb-8 md:mb-12">Elevate your coffee experience with our curated selection of specialty beans.</p>
+        <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300">
+            Explore Products
+        </button>
+    </div>
+</section>
+
+<section id="products" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="font-poppins text-3xl font-semibold text-coffee-dark text-center mb-12">Our Featured Beans</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="product-card bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=1" alt="Ethiopian Yirgacheffe" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">Ethiopian Yirgacheffe</h3>
+                    <p class="text-coffee-mid mb-4">Bright & Floral, with Lemon Acidity</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold">$18.99</span>
+                        <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 open-modal-btn" data-product-id="1">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=2" alt="Colombian Supremo" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">Colombian Supremo</h3>
+                    <p class="text-coffee-mid mb-4">Balanced & Nutty, with Caramel Sweetness</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold">$15.99</span>
+                        <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 open-modal-btn" data-product-id="2">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=3" alt="Sumatran Mandheling" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">Sumatran Mandheling</h3>
+                    <p class="text-coffee-mid mb-4">Earthy & Bold, with Chocolate Notes</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold">$22.99</span>
+                        <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 open-modal-btn" data-product-id="3">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=4" alt="Kenyan AA" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">Kenyan AA</h3>
+                    <p class="text-coffee-mid mb-4">Fruity & Winey, with Blackcurrant Hints</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold">$25.99</span>
+                        <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 open-modal-btn" data-product-id="4">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=5" alt="Brazilian Santos" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">Brazilian Santos</h3>
+                    <p class="text-coffee-mid mb-4">Mild & Sweet, with Hazelnut Undertones</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold">$14.99</span>
+                        <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 open-modal-btn" data-product-id="5">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=6" alt="Guatemalan Antigua" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">Guatemalan Antigua</h3>
+                    <p class="text-coffee-mid mb-4">Spicy & Smoky, with Cocoa Finish</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-lg font-semibold">$19.99</span>
+                        <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300 open-modal-btn" data-product-id="6">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-16 md:py-24 bg-coffee-light">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="font-poppins text-3xl font-semibold text-coffee-dark mb-8">About Chromatic Coffee</h2>
+        <p class="text-lg text-coffee-mid mb-12">
+            We are passionate about sourcing the finest specialty coffee beans from around the globe.
+            Our mission is to bring you exceptional coffee experiences, from the first aroma to the last sip.
+            We work directly with farmers and cooperatives to ensure ethical and sustainable practices,
+            delivering quality and flavor in every bag.
+        </p>
+        <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300">
+            Learn More
+        </button>
+    </div>
+</section>
+
+<section id="brew-guides" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="font-poppins text-3xl font-semibold text-coffee-dark text-center mb-12">Brewing Guides</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=7" alt="Pour Over Guide" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">Pour Over</h3>
+                    <p class="text-coffee-mid">Master the art of pour over brewing for a clean and nuanced cup.</p>
+                    <a href="#" class="inline-block mt-4 bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
+                        View Guide
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=8" alt="French Press Guide" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">French Press</h3>
+                    <p class="text-coffee-mid">Enjoy a full-bodied and rich coffee with the classic French Press method.</p>
+                    <a href="#" class="inline-block mt-4 bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
+                        View Guide
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-coffee-light rounded-lg shadow-md overflow-hidden">
+                <img src="https://picsum.photos/200/300?random=9" alt="Aeropress Guide" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="font-poppins text-xl font-semibold text-coffee-dark mb-2">Aeropress</h3>
+                    <p class="text-coffee-mid">Discover the versatility of Aeropress for a concentrated and smooth brew.</p>
+                    <a href="#" class="inline-block mt-4 bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
+                        View Guide
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-16 md:py-24 bg-coffee-light">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="font-poppins text-3xl font-semibold text-coffee-dark mb-8">Contact Us</h2>
+        <p class="text-lg text-coffee-mid mb-12">
+            Have questions or need assistance? Reach out to our team. We're here to help you with your coffee journey.
+        </p>
+        <div class="flex justify-center space-x-6 mb-8">
+            <a href="#" class="text-coffee-dark hover:text-accent transition-colors duration-200"><i class="fab fa-facebook-square text-3xl"></i></a>
+            <a href="#" class="text-coffee-dark hover:text-accent transition-colors duration-200"><i class="fab fa-instagram text-3xl"></i></a>
+            <a href="#" class="text-coffee-dark hover:text-accent transition-colors duration-200"><i class="fab fa-twitter-square text-3xl"></i></a>
+        </div>
+        <p class="text-coffee-mid">Email: support@chromaticcoffee.com</p>
+        <p class="text-coffee-mid">Phone: +1-555-123-4567</p>
+    </div>
+</section>
+
+<footer class="bg-coffee-dark text-coffee-light py-8">
+    <div class="container mx-auto px-6 text-center">
+        <p>© 2024 Chromatic Coffee. All rights reserved.</p>
+        <p class="mt-2">Crafted with <i class="fa fa-heart text-accent"></i> and Specialty Beans.</p>
+    </div>
+</footer>
+
+<div id="product-modal" class="fixed inset-0 bg-black bg-opacity-50 justify-center items-center hidden z-50">
+    <div class="modal-content bg-white rounded-lg p-8 max-w-md w-full m-6 relative">
+        <button id="close-modal-btn" class="absolute top-2 right-2 text-coffee-dark hover:text-accent focus:outline-none">
+            <i class="fa fa-times text-xl"></i>
+        </button>
+        <img src="https://picsum.photos/200/300?random=10" alt="Product Details" class="w-full h-64 object-cover rounded-md mb-4">
+        <h3 class="font-poppins text-2xl font-semibold text-coffee-dark mb-2 product-name">Product Name</h3>
+        <p class="text-coffee-mid mb-4 product-description">Product Description Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="text-lg font-semibold product-price">$XX.XX</p>
+        <div class="mt-6 flex justify-between">
+            <button class="bg-accent hover:bg-coffee-mid text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300 add-to-cart-btn">
+                Add to Cart
+            </button>
+            <div class="flex items-center space-x-2">
+                <button class="text-coffee-dark hover:text-accent focus:outline-none quantity-btn" data-action="decrease">
+                    <i class="fa fa-minus"></i>
+                </button>
+                <input type="number" class="w-12 text-center border border-coffee-mid rounded quantity-input" value="1" min="1">
+                <button class="text-coffee-dark hover:text-accent focus:outline-none quantity-btn" data-action="increase">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const productModal = document.getElementById('product-modal');
+    const closeModalButton = document.getElementById('close-modal-btn');
+    const openModalButtons = document.querySelectorAll('.open-modal-btn');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId;
+            // Here you would typically fetch product details based on productId
+            // and update the modal content dynamically.
+            // For now, we'll just open the modal with placeholder content.
+            productModal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden'); // Prevent scrolling behind modal
+        });
+    });
+
+    closeModalButton.addEventListener('click', () => {
+        productModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden'); // Re-enable scrolling
+    });
+
+    productModal.addEventListener('click', (event) => {
+        if (event.target === productModal) {
+            productModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden'); // Re-enable scrolling
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            productModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden'); // Re-enable scrolling
+        }
+    });
+
+    const quantityInput = productModal.querySelector('.quantity-input');
+    const quantityButtons = productModal.querySelectorAll('.quantity-btn');
+
+    quantityButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityInput.value);
+            const action = button.dataset.action;
+content_copy
+download
+Use code with caution.
+Html

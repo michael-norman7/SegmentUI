@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellbeing Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#f0f2f5',
+                        'secondary': '#e2e8f0',
+                        'accent': '#cbd5e0',
+                        'text-primary': '#1e293b',
+                        'text-secondary': '#475569',
+                    },
+                    boxShadow: {
+                        'neumorphic': '6px 6px 12px #cbced1, -6px -6px 12px #ffffff',
+                        'neumorphic-inset': 'inset 6px 6px 12px #cbced1, inset -6px -6px 12px #ffffff',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #1e293b;
+        }
+        .neumorphic-card {
+            background-color: #f0f2f5;
+            border-radius: 20px;
+            box-shadow: 6px 6px 12px #cbced1, -6px -6px 12px #ffffff;
+        }
+        .neumorphic-btn {
+            background-color: #f0f2f5;
+            border-radius: 10px;
+            box-shadow: 6px 6px 12px #cbced1, -6px -6px 12px #ffffff;
+        }
+        .neumorphic-input {
+            background-color: #f0f2f5;
+            border-radius: 10px;
+            box-shadow: inset 2px 2px 5px #cbced1, inset -2px -2px 5px #ffffff;
+        }
+        .neumorphic-card-hover:hover {
+            box-shadow: 8px 8px 16px #cbced1, -8px -8px 16px #ffffff;
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+        .chart-container {
+            position: relative;
+        }
+        .chart-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-primary">
+    <div class="container mx-auto p-6 md:p-8 lg:p-10">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-text-primary">Wellbeing Dashboard</h1>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <section class="neumorphic-card p-6 rounded-2xl shadow-neumorphic flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl font-semibold text-text-secondary mb-4">Wellbeing Score</h2>
+                    <div class="flex items-center justify-center h-32">
+                        <div class="relative w-32 h-32">
+                            <div class="absolute inset-0 rounded-full bg-accent opacity-20"></div>
+                            <div class="absolute inset-2 rounded-full bg-primary shadow-neumorphic-inset flex items-center justify-center">
+                                <span class="text-3xl font-bold text-text-primary">85</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-sm text-text-secondary mt-4 text-center">Overall wellbeing based on your recent activities.</p>
+            </section>
+
+            <section class="neumorphic-card p-6 rounded-2xl shadow-neumorphic flex flex-col">
+                <h2 class="text-xl font-semibold text-text-secondary mb-4">Self-Care Activity Log</h2>
+                <ul class="space-y-3">
+                    <li class="neumorphic-card-hover p-4 rounded-xl shadow-neumorphic flex items-center space-x-4">
+                        <i class="fa-solid fa-water text-xl text-blue-500"></i>
+                        <div>
+                            <h3 class="font-semibold text-text-primary">Hydration</h3>
+                            <p class="text-sm text-text-secondary">Logged 8 glasses of water</p>
+                        </div>
+                    </li>
+                    <li class="neumorphic-card-hover p-4 rounded-xl shadow-neumorphic flex items-center space-x-4">
+                        <i class="fa-solid fa-book-open text-xl text-purple-500"></i>
+                        <div>
+                            <h3 class="font-semibold text-text-primary">Mindfulness</h3>
+                            <p class="text-sm text-text-secondary">15 minutes of meditation</p>
+                        </div>
+                    </li>
+                    <li class="neumorphic-card-hover p-4 rounded-xl shadow-neumorphic flex items-center space-x-4">
+                        <i class="fa-solid fa-running text-xl text-green-500"></i>
+                        <div>
+                            <h3 class="font-semibold text-text-primary">Exercise</h3>
+                            <p class="text-sm text-text-secondary">30 minutes of jogging</p>
+                        </div>
+                    </li>
+                </ul>
+                <button class="neumorphic-btn mt-6 py-2 px-4 rounded-lg shadow-neumorphic self-start text-text-primary hover:shadow-neumorphic-inset active:shadow-neumorphic-inset transition-shadow duration-200">View All Activities</button>
+            </section>
+
+            <section class="neumorphic-card p-6 rounded-2xl shadow-neumorphic flex flex-col">
+                <h2 class="text-xl font-semibold text-text-secondary mb-4">Emotional Balance</h2>
+                <div class="chart-container relative">
+                    <img src="https://picsum.photos/300/200" alt="Emotional Balance Chart" class="rounded-xl w-full h-48 object-cover">
+                    <div class="chart-overlay neumorphic-card-hover"></div>
+                </div>
+                <p class="text-sm text-text-secondary mt-4">Weekly emotional balance visualized.</p>
+                <div class="mt-6 flex justify-around text-center">
+                    <div>
+                        <span class="block font-semibold text-text-primary">Positive</span>
+                        <span class="block text-sm text-green-500">65%</span>
+                    </div>
+                    <div>
+                        <span class="block font-semibold text-text-primary">Neutral</span>
+                        <span class="block text-sm text-yellow-500">25%</span>
+                    </div>
+                    <div>
+                        <span class="block font-semibold text-text-primary">Negative</span>
+                        <span class="block text-sm text-red-500">10%</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="neumorphic-card p-6 rounded-2xl shadow-neumorphic">
+                <h2 class="text-xl font-semibold text-text-secondary mb-4">Quick Actions</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="neumorphic-btn p-3 rounded-lg shadow-neumorphic text-text-primary hover:shadow-neumorphic-inset active:shadow-neumorphic-inset transition-shadow duration-200 flex flex-col items-center justify-center">
+                        <i class="fa-solid fa-plus-square text-2xl mb-2"></i>
+                        <span>Log Activity</span>
+                    </button>
+                    <button class="neumorphic-btn p-3 rounded-lg shadow-neumorphic text-text-primary hover:shadow-neumorphic-inset active:shadow-neumorphic-inset transition-shadow duration-200 flex flex-col items-center justify-center">
+                        <i class="fa-solid fa-chart-line text-2xl mb-2"></i>
+                        <span>View Trends</span>
+                    </button>
+                    <button class="neumorphic-btn p-3 rounded-lg shadow-neumorphic text-text-primary hover:shadow-neumorphic-inset active:shadow-neumorphic-inset transition-shadow duration-200 flex flex-col items-center justify-center">
+                        <i class="fa-solid fa-cog text-2xl mb-2"></i>
+                        <span>Settings</span>
+                    </button>
+                    <button class="neumorphic-btn p-3 rounded-lg shadow-neumorphic text-text-primary hover:shadow-neumorphic-inset active:shadow-neumorphic-inset transition-shadow duration-200 flex flex-col items-center justify-center">
+                        <i class="fa-solid fa-question-circle text-2xl mb-2"></i>
+                        <span>Help</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="neumorphic-card p-6 rounded-2xl shadow-neumorphic">
+                <h2 class="text-xl font-semibold text-text-secondary mb-4">Journal Entry</h2>
+                <textarea placeholder="Write your thoughts here..." class="neumorphic-input p-4 rounded-lg w-full h-32 focus:outline-none focus:ring-2 focus:ring-accent bg-primary text-text-primary resize-none"></textarea>
+                <div class="flex justify-end mt-4">
+                    <button class="neumorphic-btn py-2 px-4 rounded-lg shadow-neumorphic text-text-primary hover:shadow-neumorphic-inset active:shadow-neumorphic-inset transition-shadow duration-200">Save Entry</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

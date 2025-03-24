@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#3b82f6',
+                        'accent': '#f0abfc',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'slide-down': {
+                            '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-down': 'slide-down 0.3s ease-out forwards',
+                        'fade-in': 'fade-in 0.5s ease-in-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-neutral text-dark">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-primary">ProductVerse</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#categories" class="hover:text-secondary transition-colors duration-200">Categories</a>
+                    <a href="#documentation" class="hover:text-secondary transition-colors duration-200">Documentation</a>
+                    <a href="#support" class="hover:text-secondary transition-colors duration-200">Support</a>
+                    <a href="#contact" class="hover:text-secondary transition-colors duration-200">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-dark hover:text-secondary focus:outline-none">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="absolute left-0 right-0 mt-2 bg-white shadow-md rounded-md p-4">
+                    <a href="#categories" class="block py-2 hover:text-secondary transition-colors duration-200">Categories</a>
+                    <a href="#documentation" class="block py-2 hover:text-secondary transition-colors duration-200">Documentation</a>
+                    <a href="#support" class="block py-2 hover:text-secondary transition-colors duration-200">Support</a>
+                    <a href="#contact" class="block py-2 hover:text-secondary transition-colors duration-200">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section id="categories" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center animate-slide-down">Explore Product Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                    <img class="w-full h-56 object-cover" src="https://picsum.photos/200/300?random=1" alt="Category Image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Category One</h3>
+                        <p class="text-gray-700 mb-4">Detailed description of category one products and their features.</p>
+                        <a href="#doc-category-one" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                            <i class="fa fa-book mr-2"></i> Documentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                    <img class="w-full h-56 object-cover" src="https://picsum.photos/200/300?random=2" alt="Category Image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Category Two</h3>
+                        <p class="text-gray-700 mb-4">Explore the innovative solutions offered in category two, designed for efficiency.</p>
+                        <a href="#doc-category-two" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                            <i class="fa fa-book mr-2"></i> Documentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                    <img class="w-full h-56 object-cover" src="https://picsum.photos/200/300?random=3" alt="Category Image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Category Three</h3>
+                        <p class="text-gray-700 mb-4">Category three provides a range of products focusing on user-friendly interfaces and accessibility.</p>
+                        <a href="#doc-category-three" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                            <i class="fa fa-book mr-2"></i> Documentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                    <img class="w-full h-56 object-cover" src="https://picsum.photos/200/300?random=4" alt="Category Image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Category Four</h3>
+                        <p class="text-gray-700 mb-4">Discover category four, featuring products engineered for high performance and reliability.</p>
+                        <a href="#doc-category-four" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                            <i class="fa fa-book mr-2"></i> Documentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                    <img class="w-full h-56 object-cover" src="https://picsum.photos/200/300?random=5" alt="Category Image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Category Five</h3>
+                        <p class="text-gray-700 mb-4">Category five offers a selection of products focused on design and aesthetic appeal.</p>
+                        <a href="#doc-category-five" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                            <i class="fa fa-book mr-2"></i> Documentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-xl transition-shadow duration-300">
+                    <img class="w-full h-56 object-cover" src="https://picsum.photos/200/300?random=6" alt="Category Image">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Category Six</h3>
+                        <p class="text-gray-700 mb-4">Explore the advanced technology and features in category six products, built for the future.</p>
+                        <a href="#doc-category-six" class="inline-flex items-center bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                            <i class="fa fa-book mr-2"></i> Documentation
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="documentation" class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 text-center animate-slide-down">Product Documentation</h2>
+            <div class="space-y-6 animate-fade-in">
+                <div id="doc-category-one" class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Category One Documentation</h3>
+                    <p>Detailed documentation for Category One products. Includes setup guides, FAQs, and troubleshooting.</p>
+                    <ul class="list-disc pl-5 mt-4">
+                        <li><a href="#" class="text-primary hover:underline">Installation Guide</a></li>
+                        <li><a href="#" class="text-primary hover:underline">User Manual</a></li>
+                        <li><a href="#" class="text-primary hover:underline">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div id="doc-category-two" class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Category Two Documentation</h3>
+                    <p>Documentation for Category Two products focusing on advanced features and customization.</p>
+                    <ul class="list-disc pl-5 mt-4">
+                        <li><a href="#" class="text-primary hover:underline">API Reference</a></li>
+                        <li><a href="#" class="text-primary hover:underline">Customization Guide</a></li>
+                        <li><a href="#" class="text-primary hover:underline">Best Practices</a></li>
+                    </ul>
+                </div>
+
+                <div id="doc-category-three" class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Category Three Documentation</h3>
+                    <p>Documentation for Category Three products with an emphasis on accessibility and user experience.</p>
+                    <ul class="list-disc pl-5 mt-4">
+                        <li><a href="#" class="text-primary hover:underline">Accessibility Guide</a></li>
+                        <li><a href="#" class="text-primary hover:underline">UX Design Principles</a></li>
+                        <li><a href="#" class="text-primary hover:underline">User Stories</a></li>
+                    </ul>
+                </div>
+
+                 <div id="doc-category-four" class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Category Four Documentation</h3>
+                    <p>Documentation for Category Four products focused on performance optimization and reliability.</p>
+                    <ul class="list-disc pl-5 mt-4">
+                        <li><a href="#" class="text-primary hover:underline">Performance Benchmarks</a></li>
+                        <li><a href="#" class="text-primary hover:underline">Reliability Report</a></li>
+                        <li><a href="#" class="text-primary hover:underline">Scalability Guide</a></li>
+                    </ul>
+                </div>
+
+                <div id="doc-category-five" class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Category Five Documentation</h3>
+                    <p>Documentation for Category Five products with a focus on design specifications and visual elements.</p>
+                    <ul class="list-disc pl-5 mt-4">
+                        <li><a href="#" class="text-primary hover:underline">Design Specifications</a></li>
+                        <li><a href="#" class="text-primary hover:
+content_copy
+download
+Use code with caution.
+Html

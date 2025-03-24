@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Finance - Secure and Innovative Financial Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#115e59',
+                        accent: '#34d399',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral text-dark">
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 py-4 xl:px-0">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold text-primary animate-fade-in">
+                    <a href="/" class="hover:text-secondary">Elevate Finance</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#solutions" class="hover:text-primary transition-colors duration-200">Solutions</a>
+                    <a href="#products" class="hover:text-primary transition-colors duration-200">Products</a>
+                    <a href="#about" class="hover:text-primary transition-colors duration-200">About Us</a>
+                    <a href="#contact" class="hover:text-primary transition-colors duration-200">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fa fa-bars text-xl text-primary hover:text-secondary"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <a href="#solutions" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">Solutions</a>
+                <a href="#products" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">Products</a>
+                <a href="#about" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">About Us</a>
+                <a href="#contact" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero relative py-24 overflow-hidden">
+        <div class="container mx-auto px-6 xl:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="hero-text lg:animate-slide-in-left fade-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 leading-tight">
+                    Empowering Your Financial Future with Innovation and Trust
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Unlock unparalleled financial opportunities with Elevate Finance. We provide secure, innovative, and personalized solutions to help you achieve your financial goals.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#products" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary transition-colors duration-300">
+                        Explore Products
+                        <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="inline-flex items-center px-4 py-2 border border-primary rounded-md text-base font-medium text-primary hover:bg-primary hover:text-white transition-colors duration-300">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image lg:animate-slide-in-right fade-in">
+                <img src="https://picsum.photos/id/100/800/600" alt="Financial Growth" class="rounded-2xl shadow-xl" />
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-neutral to-transparent"></div>
+    </section>
+
+    <section id="solutions" class="py-20 bg-white">
+        <div class="container mx-auto px-6 xl:px-0 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Our Financial Solutions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-neutral rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/200/300" alt="Investment Management" class="rounded-xl mx-auto h-48 w-full object-cover"/>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Investment Management</h3>
+                    <p class="text-gray-700">Maximize your returns with our expert investment strategies and personalized portfolio management.</p>
+                    <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors duration-200">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="p-6 bg-neutral rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/201/300/300" alt="Retirement Planning" class="rounded-xl mx-auto h-48 w-full object-cover"/>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Retirement Planning</h3>
+                    <p class="text-gray-700">Secure your future with our comprehensive retirement planning services tailored to your unique needs.</p>
+                    <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors duration-200">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="p-6 bg-neutral rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/202/300/300" alt="Financial Consulting" class="rounded-xl mx-auto h-48 w-full object-cover"/>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Financial Consulting</h3>
+                    <p class="text-gray-700">Get expert advice and guidance on all your financial decisions to achieve your long-term goals.</p>
+                    <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors duration-200">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-20">
+        <div class="container mx-auto px-6 xl:px-0 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-12">Explore Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fa fa-credit-card text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Premium Credit Cards</h3>
+                    <p class="text-gray-700 mb-4">Enjoy exclusive rewards, low APR, and premium benefits with our range of credit cards.</p>
+                    <a href="#" class="inline-block px-6 py-2 rounded-md bg-accent text-white font-medium hover:bg-primary transition-colors duration-300">View Cards</a>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fa fa-piggy-bank text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">High-Yield Savings Accounts</h3>
+                    <p class="text-gray-700 mb-4">Grow your savings faster with our high-yield accounts and secure online banking platform.</p>
+                    <a href="#" class="inline-block px-6 py-2 rounded-md bg-accent text-white font-medium hover:bg-primary transition-colors duration-300">Open Account</a>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <i class="fa fa-chart-line text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Investment Portfolios</h3>
+                    <p class="text-gray-700 mb-4">Diversify your investments with our expertly managed portfolios tailored to your risk tolerance.</p>
+                    <a href="#" class="inline-block px-6 py-2 rounded-md bg-accent text-white font-medium hover:bg-primary transition-colors duration-300">Explore Portfolios</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 xl:px-0 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="about-image lg:animate-slide-in-left fade-in">
+                <img src="https://picsum.photos/id/300/800/600" alt="About Elevate Finance" class="rounded-2xl shadow-xl" />
+            </div>
+            <div class="about-text lg:animate-slide-in-right fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">About Elevate Finance</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    At Elevate Finance, we are committed to providing innovative and secure financial solutions. With years of expertise, our team is dedicated to helping you navigate the complexities of finance and achieve your financial aspirations. We prioritize trust, transparency, and client satisfaction in everything we do.
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-6">
+                    <li><strong>Client-Centric Approach:</strong> We put your financial needs first.</li>
+                    <li><strong>Expert Guidance:</strong> Our experienced advisors are here to support you.</li>
+                    <li><strong>Secure and Reliable:</strong> Your financial security is our top priority.</li>
+                </ul>
+                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-accent hover:bg-primary transition-colors duration-300">
+                    Learn More About Us
+                    <i class="fa fa-info-circle ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 xl:px-0 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                <div>
+                    <img src="https://picsum.photos/id/400/600/400" alt="Contact Us" class="rounded-2xl shadow-xl"/>
+                </div>
+                <div class="text-left">
+                    <p class="text-gray-700 mb-6">
+                        Have questions or need assistance? Reach out to our dedicated support team. We are here to help you with all your financial inquiries.
+                    </p>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" rows="4" placeholder="Your Message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    </div>
+                    <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-300" type="button">
+                        Send Message
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 xl:px-0 text-center">
+            <div class="mb-4">
+                <a href="/" class="text-xl font-bold hover:text-primary">Elevate Finance</a>
+            </div>
+            <p class="text-gray-400 mb-4">Providing Secure and Innovative Financial Solutions</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-facebook-square text-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-twitter-square text-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fa-brands fa-instagram-square text-lg"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2024 Elevate Finance. All rights reserved.</p>
+            <p class="text-gray-500 text-sm"><a href="/privacy-policy" class="hover:text-white">Privacy Policy</a> | <a href="/terms-of-service" class="hover:text-white">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (this.getAttribute('href') === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+
+                if (mobileMenu.classList.contains('hidden') === false) {
+                    mobileMenu.classList.add('hidden'); // Close mobile menu after click on link
+                }
+            });
+        });
+    </script>
+</body>
+</html>

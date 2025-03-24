@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        'soft-white': '#f7f8fa',
+                        'soft-gray': '#e5e7eb',
+                        'muted-blue': '#94a3b8',
+                        'gentle-teal': '#a7f3d0',
+                        'pale-orange': '#fed7aa',
+                        'light-purple': '#c084fc',
+                    },
+                    boxShadow: {
+                        'soft': '20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff',
+                        'soft-sm': '10px 10px 30px #d9d9d9, -10px -10px 30px #ffffff',
+                    },
+                    transitionProperty: {
+                        'soft-transform': 'transform, box-shadow',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(40px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-up-delay-100': 'slide-up 0.6s ease-out 0.1s forwards',
+                        'slide-up-delay-200': 'slide-up 0.6s ease-out 0.2s forwards',
+                        'slide-up-delay-300': 'slide-up 0.6s ease-out 0.3s forwards',
+                        'fade-in-slow': 'fade-in 1s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-slide-up-delay-100 {
+            animation: slide-up-delay-100;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        .animate-slide-up-delay-200 {
+            animation: slide-up-delay-200;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        .animate-slide-up-delay-300 {
+            animation: slide-up-delay-300;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+        .animate-fade-in-slow {
+            animation: fade-in-slow;
+            animation-fill-mode: forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-soft-white">
+    <header class="sticky top-0 bg-soft-white shadow-soft-sm z-50 backdrop-blur-sm bg-opacity-90">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="font-bold text-xl text-muted-blue hover:text-primary transition-colors">
+                    Soft Products
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-muted-blue hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="text-muted-blue hover:text-primary transition-colors">Categories</a>
+                    <a href="#" class="text-muted-blue hover:text-primary transition-colors">About</a>
+                    <a href="#" class="text-muted-blue hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-muted-blue hover:text-primary focus:outline-none">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="mb-12 animate-fade-in-slow">
+            <h2 class="text-3xl font-bold text-muted-blue mb-6 text-center">Explore Product Categories</h2>
+            <p class="text-muted-blue text-center max-w-2xl mx-auto">Browse our curated selection of product categories, each designed with a soft touch and gentle aesthetics.</p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="animate-slide-up-delay-100 bg-soft-white rounded-2xl p-6 shadow-soft hover:shadow-soft-sm transition-soft-transform transform-gpu hover:scale-105">
+                <div class="aspect-w-16 aspect-h-9 mb-4 rounded-xl overflow-hidden">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Smartphones" class="object-cover w-full h-full">
+                </div>
+                <h3 class="text-xl font-semibold text-muted-blue mb-2">Smartphones</h3>
+                <p class="text-muted-blue">Experience the latest mobile technology with sleek designs and powerful features.</p>
+                <a href="#" class="inline-flex items-center mt-4 text-gentle-teal hover:text-teal-600 transition-colors font-medium">
+                    Explore <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="animate-slide-up-delay-200 bg-soft-white rounded-2xl p-6 shadow-soft hover:shadow-soft-sm transition-soft-transform transform-gpu hover:scale-105">
+                <div class="aspect-w-16 aspect-h-9 mb-4 rounded-xl overflow-hidden">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Laptops" class="object-cover w-full h-full">
+                </div>
+                <h3 class="text-xl font-semibold text-muted-blue mb-2">Laptops</h3>
+                <p class="text-muted-blue">Powerful and portable laptops for work, creativity, and everything in between.</p>
+                <a href="#" class="inline-flex items-center mt-4 text-gentle-teal hover:text-teal-600 transition-colors font-medium">
+                    Explore <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="animate-slide-up-delay-300 bg-soft-white rounded-2xl p-6 shadow-soft hover:shadow-soft-sm transition-soft-transform transform-gpu hover:scale-105">
+                <div class="aspect-w-16 aspect-h-9 mb-4 rounded-xl overflow-hidden">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Headphones" class="object-cover w-full h-full">
+                </div>
+                <h3 class="text-xl font-semibold text-muted-blue mb-2">Headphones</h3>
+                <p class="text-muted-blue">Immersive audio experience with comfortable and stylish headphones for all your listening needs.</p>
+                <a href="#" class="inline-flex items-center mt-4 text-gentle-teal hover:text-teal-600 transition-colors font-medium">
+                    Explore <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="animate-slide-up-delay-100 bg-soft-white rounded-2xl p-6 shadow-soft hover:shadow-soft-sm transition-soft-transform transform-gpu hover:scale-105">
+                <div class="aspect-w-16 aspect-h-9 mb-4 rounded-xl overflow-hidden">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Smartwatches" class="object-cover w-full h-full">
+                </div>
+                <h3 class="text-xl font-semibold text-muted-blue mb-2">Smartwatches</h3>
+                <p class="text-muted-blue">Stay connected and track your fitness with our range of elegant and functional smartwatches.</p>
+                <a href="#" class="inline-flex items-center mt-4 text-gentle-teal hover:text-teal-600 transition-colors font-medium">
+                    Explore <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="animate-slide-up-delay-200 bg-soft-white rounded-2xl p-6 shadow-soft hover:shadow-soft-sm transition-soft-transform transform-gpu hover:scale-105">
+                <div class="aspect-w-16 aspect-h-9 mb-4 rounded-xl overflow-hidden">
+                    <img src="https://picsum.photos/200/300?random=5" alt="Tablets" class="object-cover w-full h-full">
+                </div>
+                <h3 class="text-xl font-semibold text-muted-blue mb-2">Tablets</h3>
+                <p class="text-muted-blue">Versatile tablets for entertainment, productivity, and on-the-go tasks.</p>
+                <a href="#" class="inline-flex items-center mt-4 text-gentle-teal hover:text-teal-600 transition-colors font-medium">
+                    Explore <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+            <div class="animate-slide-up-delay-300 bg-soft-white rounded-2xl p-6 shadow-soft hover:shadow-soft-sm transition-soft-transform transform-gpu hover:scale-105">
+                <div class="aspect-w-16 aspect-h-9 mb-4 rounded-xl overflow-hidden">
+                    <img src="https://picsum.photos/200/300?random=6" alt="Accessories" class="object-cover w-full h-full">
+                </div>
+                <h3 class="text-xl font-semibold text-muted-blue mb-2">Accessories</h3>
+                <p class="text-muted-blue">Enhance your devices with our range of stylish and functional accessories.</p>
+                <a href="#" class="inline-flex items-center mt-4 text-gentle-teal hover:text-teal-600 transition-colors font-medium">
+                    Explore <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-soft-white shadow-soft-sm mt-12 py-8">
+        <div class="container mx-auto px-6 text-center text-muted-blue">
+            <p>© 2024 Soft Pr
+content_copy
+download
+Use code with caution.
+Html

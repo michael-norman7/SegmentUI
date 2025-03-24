@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groundbreaking Research in Astrophysics - Institute of Advanced Studies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Roboto Serif', 'serif'],
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'ias-blue': '#2e5266',
+                        'ias-light-blue': '#57839b',
+                        'ias-gray': '#f0f0f0',
+                        'ias-dark-gray': '#333333',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-down': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(10px)'
+                            },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        'slide-out-left': {
+                            'from': { transform: 'translateX(0)' },
+                            'to': { transform: 'translateX(-100%)' },
+                        },
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-down': 'fade-out-down 0.5s ease-in',
+                        'slide-in-left': 'slide-in-left 0.3s ease-out',
+                        'slide-out-left': 'slide-out-left 0.3s ease-in',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+        }
+        .animate-slide-in-left {
+            animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+
+        .animate-slide-out-left {
+            animation: slide-out-left 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+        }
+    </style>
+</head>
+<body class="bg-ias-gray font-sans text-ias-dark-gray antialiased">
+
+<header class="bg-white sticky top-0 z-50 shadow-md transition-shadow duration-300">
+    <nav class="container mx-auto px-6 py-4 lg:px-8 xl:px-12 flex justify-between items-center">
+        <a href="/" class="font-serif text-xl font-bold text-ias-blue hover:text-ias-light-blue transition-colors duration-300">
+            Institute of Advanced Studies
+        </a>
+        <div class="hidden lg:flex space-x-8">
+            <a href="#" class="hover:text-ias-blue transition-colors duration-300">Research</a>
+            <a href="#" class="hover:text-ias-blue transition-colors duration-300">Publications</a>
+            <a href="#" class="hover:text-ias-blue transition-colors duration-300">People</a>
+            <a href="#" class="hover:text-ias-blue transition-colors duration-300">Events</a>
+            <a href="#" class="hover:text-ias-blue transition-colors duration-300">About</a>
+        </div>
+        <button class="lg:hidden text-ias-blue hover:text-ias-light-blue focus:outline-none">
+            <i class="fa fa-bars fa-lg"></i>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-md animate-fade-in-down">
+        <div class="px-6 py-4">
+            <a href="#" class="block py-2 hover:bg-ias-gray px-3 -mx-3 transition-colors duration-200">Research</a>
+            <a href="#" class="block py-2 hover:bg-ias-gray px-3 -mx-3 transition-colors duration-200">Publications</a>
+            <a href="#" class="block py-2 hover:bg-ias-gray px-3 -mx-3 transition-colors duration-200">People</a>
+            <a href="#" class="block py-2 hover:bg-ias-gray px-3 -mx-3 transition-colors duration-200">Events</a>
+            <a href="#" class="block py-2 hover:bg-ias-gray px-3 -mx-3 transition-colors duration-200">About</a>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto mt-24 px-6 lg:px-8 xl:px-12">
+    <article class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="relative">
+            <img src="https://picsum.photos/id/100/1920/600" alt="Article Hero Image" class="w-full h-auto object-cover" style="max-height: 600px;">
+            <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent text-white w-full">
+                <h1 class="text-4xl font-serif font-bold text-balance mb-2 animate-fade-in-down">
+                    Unveiling the Cosmos: New Insights into Dark Matter Distribution in Galaxy Clusters
+                </h1>
+                <p class="text-lg opacity-80 animate-fade-in-down delay-100">
+                    Groundbreaking research from the Institute of Advanced Studies sheds light on the mysterious nature of dark matter and its influence on galactic structures.
+                </p>
+            </div>
+        </div>
+
+        <div class="px-6 py-8 lg:px-12 lg:py-16">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 rounded-full overflow-hidden">
+                    <img src="https://picsum.photos/id/25/200/300" alt="Author Avatar" class="w-full h-full object-cover">
+                </div>
+                <div class="ml-4">
+                    <p class="font-bold">Dr. Eleanor Vance</p>
+                    <p class="text-sm text-gray-500">Published on March 15, 2024</p>
+                </div>
+            </div>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-serif font-semibold mb-4">Abstract</h2>
+                <p class="text-gray-700">
+                    Galaxy clusters, the largest gravitationally bound structures in the universe, are dominated by dark matter.
+                    Understanding the distribution of dark matter within these clusters is crucial for refining cosmological models
+                    and probing the fundamental properties of dark matter particles. This article presents findings from a novel
+                    observational study utilizing advanced gravitational lensing techniques to map dark matter distribution in
+                    a sample of massive galaxy clusters with unprecedented precision. Our results reveal complex substructures
+                    and asymmetries in the dark matter halos, challenging the predictions of standard cold dark matter simulations.
+                    These findings open new avenues for investigating dark matter interactions and the formation history of galaxy clusters.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-serif font-semibold mb-4">1. Introduction</h2>
+                <p class="text-gray-700 mb-4">
+                    The nature of dark matter remains one of the most compelling mysteries in modern physics and cosmology. While
+                    its gravitational effects are well-established through observations of galaxy rotation curves, gravitational
+                    lensing, and the cosmic microwave background, the fundamental properties of dark matter particles remain elusive.
+                    Galaxy clusters, as dark matter-dominated systems, provide an ideal laboratory for studying dark matter
+                    distribution and its interaction with baryonic matter.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Previous studies, primarily based on X-ray observations and weak gravitational lensing, have provided valuable
+                    insights into the overall dark matter profiles of galaxy clusters. However, these methods often lack the
+                    resolution to probe the inner regions of clusters and to detect subtle substructures within dark matter halos.
+                    In this study, we employ strong gravitational lensing, a powerful technique that utilizes the distortion of
+                    light from background galaxies by the gravitational field of foreground clusters, to achieve high-resolution
+                    mapping of dark matter distribution.
+                </p>
+                <img src="https://picsum.photos/id/101/800/600" alt="Diagram of Galaxy Cluster" class="w-full rounded-lg shadow-md mb-4">
+                <p class="text-sm text-gray-500 text-center mb-4">
+                    Figure 1: Illustration of a galaxy cluster and gravitational lensing effect.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-serif font-semibold mb-4">2. Methodology</h2>
+                <p class="text-gray-700 mb-4">
+                    Our research utilizes data from the James Webb Space Telescope (JWST) and the Atacama Large Millimeter/submillimeter Array (ALMA)
+                    to observe a sample of five massive galaxy clusters at high redshift (z > 0.5). JWST's near-infrared imaging
+                    capabilities allow us to identify faint, multiply-imaged background galaxies lensed by the foreground clusters.
+                    ALMA observations provide complementary data on the gas and dust content of these clusters, aiding in the
+                    distinction between baryonic and dark matter components.
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-4">
+                    <li><strong>Strong Gravitational Lensing Analysis:</strong> We apply sophisticated lens modeling techniques to reconstruct
+                        the mass distribution of the galaxy clusters based on the positions and shapes of the lensed background galaxies.</li>
+                    <li><strong>Substructure Detection:</strong> Our high-resolution lensing maps enable us to identify dark matter substructures,
+                        such as subhalos and tidal streams, within the main cluster halos.</li>
+                    <li><strong>Comparison with Simulations:</strong> We compare our observational findings with predictions from state-of-the-art
+                        N-body simulations of structure formation in cold dark matter cosmologies.</li>
+                </ul>
+                <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4">
+                    <code class="text-sm text-gray-800">
+                        # Python code snippet for lensing analysis (example)
+                        import numpy as np
+                        # ... lensing analysis code ...
+                        def calculate_mass_distribution(lens_data):
+                            # ... complex calculations ...
+                            return mass_map
+                    </code>
+                </pre>
+                <p class="text-sm text-gray-500 mb-4">
+                    Code Example 1: Example Python code for mass distribution calculation.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-serif font-semibold mb-4">3. Results and Discussion</h2>
+                <p class="text-gray-700 mb-4">
+                    Our analysis reveals several key findings that challenge the conventional understanding of dark matter distribution
+                    in galaxy clusters:
+                </p>
+                <ol class="list-decimal list-inside text-gray-700 mb-4">
+                    <li><strong>Asymmetric Dark Matter Halos:</strong> We find significant deviations from spherical symmetry in the dark matter
+                        halos of several clusters, indicating ongoing merger activity and complex formation histories.</li>
+                    <li><strong>Overabundance of Substructures:</strong> The observed number of dark matter substructures is higher than predicted
+                        by standard cold dark matter simulations, potentially suggesting the presence of warm or self-interacting dark matter.</li>
+                    <li><strong>Correlation with Baryonic Matter:</strong> We observe a spatial correlation between dark matter substructures and the
+                        distribution of galaxies and hot gas within the clusters, suggesting a complex interplay between dark and baryonic matter.</li>
+                </ol>
+                <blockquote class="bg-gray-100 border-l-4 border-ias-blue pl-4 italic mb-4">
+                    "These findings provide compelling evidence for the need to refine our models of dark matter and galaxy cluster formation."
+                    <footer class="blockquote-footer mt-2 text-sm not-italic">Dr. Eleanor Vance, Lead Researcher</footer>
+                </blockquote>
+                <p class="text-gray-700">
+                    These results have significant implications for our understanding of dark matter and the evolution of cosmic structures.
+                    Further research, including larger observational samples and more sophisticated simulations, is needed to fully
+                    explore the implications of these findings and to unravel the true nature of dark matter.
+                </p>
+            </section>
+
+            <section class="mb-8">
+                <h2 class="text-2xl font-serif font-semibold mb-4">4. Conclusion</h2>
+                <p class="text-gray-700">
+                    This study provides new high-resolution insights into the distribution of dark matter in galaxy clusters, revealing
+                    complex substructures and asymmetries that challenge current cosmological models. Our findings highlight the
+                    power of gravitational lensing as a tool for probing dark matter and underscore the need for continued research
+                    to address the fundamental questions surrounding this mysterious component of the universe.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-serif font-semibold mb-4">References</h2>
+                <ol class="list-decimal list-inside text-gray-700">
+                    <li>Smith, J., et al. (2023). High-Resolution Dark Matter Mapping of Galaxy Clusters. <cite>The Astrophysical Journal</cite>, 890(2), 120.</li>
+                    <li>Jones, L., & Brown, K. (2022). Gravitational Lensing and Dark Matter Substructure. <cite>Nature Astronomy</cite>, 5(3), 250-255.</li>
+                </ol>
+            </section>
+        </div>
+
+        <div class="bg-ias-gray px-6 py-8 lg:px-12 lg:py-16 border-t border-gray-200">
+            <h3 class="text-xl font-serif font-semibold mb-4">About the Author</h3>
+            <div class="flex items-center">
+                <div class="w-20 h-20 rounded-full overflow-hidden">
+                    <img src="https://picsum.photos/id/30/200/300" alt="Author Profile" class="w-full h-full object-cover">
+                </div>
+                <div class="ml-6">
+                    <p class="text-lg font-semibold">Dr. Eleanor Vance</p>
+                    <p class="text-gray-700 mb-2">Senior Research Fellow in Astrophysics</p>
+                    <p class="text-sm text-gray-500">
+                        Dr. Vance is a leading astrophysicist specializing in dark matter and galaxy cluster research.
+                        She has published extensively in top scientific journals and is a frequent speaker at international conferences.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <aside class="mt-12 lg:mt-16">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 class="text-xl font-serif font-semibold mb-4">Related Articles</h3>
+            <ul class="space-y-4">
+                <li class="border-b border-gray-200 pb-4">
+                    <a href="#" class="block hover:text-ias-blue transition-colors duration-300">
+                        <h4 class="font-semibold">The Enigma of Fast Radio Bursts: Latest Discoveries</h4>
+                        <p class="text-sm text-gray-500">Published on February 28, 2024</p>
+                    </a>
+                </li>
+                <li class="border-b border-gray-200 pb-4">
+                    <a href="#" class="block hover:text-ias-blue transition-colors duration-300">
+                        <h4 class="font-semibold">Quantum Computing: Revolutionizing Scientific Research</h4>
+                        <p class="text-sm text-gray-500">Published on January 15, 2024</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block hover:text-ias-blue transition-colors duration-300">
+                        <h4 class="font-semibold">Decoding the Human Brain: Advances in Neuroscience</h4>
+                        <p class="text-sm text-gray-500">Published on December 5, 2023</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-serif font-semibold mb-4">Categories</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="block hover:text-ias-blue transition-colors duration-300"><i class="fa fa-tag mr-2 text-gray-500"></i> Astrophysics</a></li>
+                <li><a href="#" class="block hover:text-ias-blue transition-colors duration-300"><i class="fa fa-tag mr-2 text-gray-500"></i> Cosmology</a></li>
+                <li><a href="#" class="block hover:text-ias-blue transition-colors duration-300"><i class="fa fa-tag mr-2 text-gray-500"></i> Dark Matter</a></li>
+                <li><a href="#" class="block hover:text-ias-blue transition-colors duration-300"><i class="fa fa-tag mr-2 text-gray-500"></i> Galaxy Clusters</a></li>
+                <li><a href="#" class="block hover:text-ias-blue transition-colors duration-300"><i class="fa fa-tag mr-2 text-gray-500"></i> Gravitational Lensing</a></li>
+            </ul>
+        </div>
+    </aside>
+</main>
+
+<footer class="bg-ias-dark-gray text-white py-12 mt-24">
+    <div class="container mx-auto px-6 lg:px-8 xl:px-12 text-center">
+        <p class="mb-4">© 2024 Institute of Advanced Studies. All rights reserved.</p>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="hover:text-ias-light-blue transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="hover:text-ias-light-blue transition-colors duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="#" class="hover:text-ias-light-blue transition-colors duration-300"><i class="fab fa-youtube fa-lg"></i></a>
+        </div>
+        <p class="mt-4 text-sm text-gray-400">
+            <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a> |
+            <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a> |
+            <a href="#" class="hover:text-white transition-colors duration-300">Contact Us</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.querySelector('header nav button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('animate-fade-out-down');
+            mobileMenu.classList.add('animate-fade-in-down');
+        } else {
+            mobileMenu.classList.remove('animate-fade-in-down');
+            mobileMenu.classList.add('animate-fade-out-down');
+        }
+    });
+</script>
+
+</body>
+</html>

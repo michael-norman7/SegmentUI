@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visionary Design Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0d9488',
+                        'secondary': '#0f766e',
+                        'accent': '#38bdf8',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 1s ease-out forwards',
+                        'slide-in-left': 'slide-in-left 1s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/1920/1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-neutral text-dark">
+
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-primary">Visionary</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#portfolio" class="hover:text-secondary transition-colors duration-300">Portfolio</a>
+                <a href="#services" class="hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#about" class="hover:text-secondary transition-colors duration-300">About Us</a>
+                <a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2">
+            <a href="#portfolio" class="block px-4 py-2 hover:bg-neutral">Portfolio</a>
+            <a href="#services" class="block px-4 py-2 hover:bg-neutral">Services</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-neutral">About Us</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-neutral">Contact</a>
+        </div>
+    </header>
+
+    <section class="parallax py-32 md:py-64 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary opacity-20"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center md:text-left">
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-slide-in-left">Crafting Digital Experiences That Inspire</h1>
+                <p class="text-lg md:text-xl mb-12 animate-slide-in-left delay-200">We are a design agency dedicated to creating visually stunning and user-centric digital solutions.</p>
+                <a href="#portfolio" class="inline-block bg-accent hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 animate-fade-in delay-500">Explore Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Our Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/300" alt="Project 1" class="w-full h-60 object-cover">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Project Title 1</div>
+                        <p class="text-gray-700 text-base">Brief description of project 1.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/401/300" alt="Project 2" class="w-full h-60 object-cover">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Project Title 2</div>
+                        <p class="text-gray-700 text-base">Brief description of project 2.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/402/300" alt="Project 3" class="w-full h-60 object-cover">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Project Title 3</div>
+                        <p class="text-gray-700 text-base">Brief description of project 3.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/403/300" alt="Project 4" class="w-full h-60 object-cover">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Project Title 4</div>
+                        <p class="text-gray-700 text-base">Brief description of project 4.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/404/300" alt="Project 5" class="w-full h-60 object-cover">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Project Title 5</div>
+                        <p class="text-gray-700 text-base">Brief description of project 5.</p>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/405/300" alt="Project 6" class="w-full h-60 object-cover">
+                    <div class="px-6 py-4">
+                        <div class="font-bold text-xl mb-2">Project Title 6</div>
+                        <p class="text-gray-700 text-base">Brief description of project 6.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <div class="mb-4 text-primary text-5xl"><i class="fa fa-laptop"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Web Design</h3>
+                    <p class="text-gray-700">Crafting beautiful and responsive websites tailored to your brand and audience.</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <div class="mb-4 text-accent text-5xl"><i class="fa fa-mobile-alt"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Mobile App Design</h3>
+                    <p class="text-gray-700">Designing intuitive and engaging mobile experiences for iOS and Android platforms.</p>
+                </div>
+                <div class="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <div class="mb-4 text-secondary text-5xl"><i class="fa fa-paint-brush"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Branding & Identity</h3>
+                    <p class="text-gray-700">Creating memorable brand identities that resonate with your target market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">About Us</h2>
+                    <p class="text-gray-700 mb-8">Visionary Design Agency is a team of passionate designers and developers dedicated to delivering exceptional digital experiences. We believe in the power of design to transform businesses and connect with audiences on a deeper level.</p>
+                    <p class="text-gray-700 mb-8">Our approach is collaborative and client-focused. We work closely with you to understand your goals and create solutions that not only look great but also drive results.</p>
+                    <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">Get in Touch</a>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/600/400" alt="About Us" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Contact Us</h2>
+            <div class="max-w-lg mx-auto">
+                <p class="text-gray-700 mb-8">Ready to bring your vision to life? Contact us today to discuss your project.</p>
+                <div class="flex justify-center space-x-4 mb-8">
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 text-2xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="text-gray-700">Email: <a href="mailto:info@visionarydesign.com" class="text-primary hover:text-secondary transition-colors duration-300">info@visionarydesign.com</a></p>
+                <p class="text-gray-700">Phone: <span class="text-primary">+1-555-123-4567</span></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Visionary Design Agency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

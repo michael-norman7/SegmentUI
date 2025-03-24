@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Software Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#3b82f6',
+                        'accent': '#bae6fd',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.6s ease-out forwards',
+                        'fade-in': 'fade-in 0.4s ease-in-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+        }
+        .animate-slide-up {
+            animation: slide-up 0.6s ease-out forwards;
+        }
+        .animate-fade-in {
+            animation: fade-in 0.4s ease-in-out forwards;
+        }
+        @keyframes pulse-custom {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+        .pulse-custom {
+            animation: pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+
+<header class="bg-white sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="text-xl font-semibold text-primary">Software Solutions</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#products" class="hover:text-secondary transition-colors">Products</a>
+                <a href="#solutions" class="hover:text-secondary transition-colors">Solutions</a>
+                <a href="#pricing" class="hover:text-secondary transition-colors">Pricing</a>
+                <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="Menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="products" class="py-20">
+    <div class="container mx-auto px-6 text-center mb-16">
+        <h2 class="text-3xl font-bold text-dark mb-4 animate-slide-up">Explore Our Software Solutions</h2>
+        <p class="text-gray-600 animate-slide-up delay-100">Empower your business with our innovative software suite.</p>
+    </div>
+
+    <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+        <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in">
+            <img src="https://picsum.photos/200/300?random=1" alt="Product 1" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-dark">Project Management Pro</h3>
+                <p class="text-gray-500 text-sm mb-4">Streamline workflows, collaborate seamlessly, and deliver projects on time.</p>
+                <div class="flex items-center mb-3">
+                    <i class="fa fa-check-circle text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Task Management</span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <i class="fa fa-chart-line text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Progress Tracking</span>
+                </div>
+                <div class="flex items-center mb-4">
+                    <i class="fa fa-users text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Team Collaboration</span>
+                </div>
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 focus:outline-none">Learn More</button>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in delay-100">
+            <img src="https://picsum.photos/200/300?random=2" alt="Product 2" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-dark">Customer Relationship CRM</h3>
+                <p class="text-gray-500 text-sm mb-4">Build lasting customer relationships and boost sales with our powerful CRM.</p>
+                <div class="flex items-center mb-3">
+                    <i class="fa fa-users-gear text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Contact Management</span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <i class="fa fa-funnel-dollar text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Sales Automation</span>
+                </div>
+                <div class="flex items-center mb-4">
+                    <i class="fa fa-envelope text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Email Marketing</span>
+                </div>
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 focus:outline-none">Learn More</button>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in delay-200">
+            <img src="https://picsum.photos/200/300?random=3" alt="Product 3" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-dark">Human Resources Management</h3>
+                <p class="text-gray-500 text-sm mb-4">Simplify HR processes, manage employees, and foster a productive workplace.</p>
+                <div class="flex items-center mb-3">
+                    <i class="fa fa-id-card text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Employee Database</span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <i class="fa fa-calendar-alt text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Leave Management</span>
+                </div>
+                <div class="flex items-center mb-4">
+                    <i class="fa fa-file-invoice-dollar text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Payroll Integration</span>
+                </div>
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 focus:outline-none">Learn More</button>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-fade-in delay-300">
+            <img src="https://picsum.photos/200/300?random=4" alt="Product 4" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-semibold mb-2 text-dark">Financial Accounting Software</h3>
+                <p class="text-gray-500 text-sm mb-4">Gain financial clarity, automate accounting tasks, and make informed decisions.</p>
+                <div class="flex items-center mb-3">
+                    <i class="fa fa-calculator text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">General Ledger</span>
+                </div>
+                <div class="flex items-center mb-3">
+                    <i class="fa fa-chart-pie text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Reporting & Analytics</span>
+                </div>
+                <div class="flex items-center mb-4">
+                    <i class="fa fa-university text-secondary mr-2"></i>
+                    <span class="text-sm text-gray-700">Ban
+content_copy
+download
+Use code with caution.
+Html

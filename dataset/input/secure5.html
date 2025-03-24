@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#6366f1',
+                        'secondary': '#4f46e5',
+                        'accent': '#a78bfa',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'pulse-fast': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.5 },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: 0 },
+                            '100%': { transform: 'translateY(0)', opacity: 1 },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        },
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse-fast 1s ease-in-out infinite',
+                        'slide-up': 'slide-up 0.5s ease-out',
+                        'fade-in': 'fade-in 0.3s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-text-fill-color: #1e293b;
+            -webkit-box-shadow: 0 0 0px 1000px #f3f4f6 inset;
+            box-shadow: 0 0 0px 1000px #f3f4f6 inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+        .animate-delay-100 {
+            animation-delay: 100ms;
+        }
+        .animate-delay-200 {
+            animation-delay: 200ms;
+        }
+        .animate-delay-300 {
+            animation-delay: 300ms;
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans antialiased">
+    <div class="min-h-screen flex items-center justify-center bg-neutral py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <div class="animate-slide-up">
+                <div class="flex justify-center mb-6">
+                    <img src="https://picsum.photos/id/222/200/50" alt="Company Logo" class="h-12 w-auto animate-pulse-fast rounded-md shadow-md">
+                </div>
+                <h2 class="mt-6 text-center text-3xl font-bold text-dark">
+                    Secure Data Access
+                </h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Access sensitive information with confidence.
+                </p>
+            </div>
+            <div class="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 mb-4 animate-slide-up animate-delay-100">
+                <form class="space-y-6" action="#" method="POST">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-dark">
+                            Email Address
+                        </label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa fa-envelope text-gray-500"></i>
+                            </div>
+                            <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none block w-full px-3 py-2 pl-10 border border-gray-300 rounded-md placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label for="password" class="block text-sm font-medium text-dark">
+                            Password
+                        </label>
+                        <div class="mt-1 relative rounded-md shadow-sm">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fa fa-lock text-gray-500"></i>
+                            </div>
+                            <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none block w-full px-3 py-2 pl-10 border border-gray-300 rounded-md placeholder-gray-500 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" placeholder="Your password">
+                            <div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+                                <button type="button" id="password-toggle" class="focus:outline-none">
+                                    <i id="password-eye" class="fa fa-eye text-gray-500 hover:text-gray-700"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                            <label for="remember-me" class="ml-2 block text-sm text-gray-700">
+                                Remember me
+                            </label>
+                        </div>
+
+                        <div class="text-sm">
+                            <a href="#" class="font-medium text-primary hover:text-secondary">
+                                Forgot your password?
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                            <span id="button-text">Sign in</span>
+                            <span id="button-loading" class="hidden animate-pulse-fast ml-2"><i class="fa fa-spinner fa-spin"></i></span>
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-6 pt-6 border-t border-gray-200 text-center animate-fade-in animate-delay-300">
+                    <p class="text-sm text-gray-500">
+                        By signing in, you agree to our <a href="#" class="font-medium text-primary hover:text-secondary">Privacy Policy</a> and <a href="#" class="font-medium text-primary hover:text-secondary">Terms of Service</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const passwordToggle = document.getElementById('password-toggle');
+        const passwordEyeIcon = document.getElementById('password-eye');
+        const loginForm = document.querySelector('form');
+        const buttonText = document.getElementById('button-text');
+        const buttonLoading = document.getElementById('button-loading');
+
+        passwordToggle.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordEyeIcon.classList.remove('fa-eye');
+                passwordEyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                passwordEyeIcon.classList.remove('fa-eye-slash');
+                passwordEyeIcon.classList.add('fa-eye');
+            }
+        });
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            buttonText.classList.add('hidden');
+            buttonLoading.classList.remove('hidden');
+
+            setTimeout(() => {
+                buttonText.classList.remove('hidden');
+                buttonLoading.classList.add('hidden');
+                alert('Login successful (simulated)!');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

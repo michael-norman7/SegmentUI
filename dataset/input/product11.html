@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid - Business Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#0284c7',
+                        'accent': '#67e8f9',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.6s ease-out forwards',
+                        'fade-in': 'fade-in 0.4s ease-in-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-slide-up {
+            animation: slide-up 0.6s ease-out forwards;
+        }
+        .animate-fade-in {
+            animation: fade-in 0.4s ease-in-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-primary">Business Solutions</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#products" class="hover:text-secondary transition-colors">Products</a>
+                <a href="#features" class="hover:text-secondary transition-colors">Features</a>
+                <a href="#benefits" class="hover:text-secondary transition-colors">Benefits</a>
+                <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+        <section id="products" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center animate-slide-up">Our Product Suite</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Product 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Management Pro</h3>
+                        <p class="text-gray-700 mb-4">Streamline workflows and boost team collaboration.</p>
+                        <ul class="mb-4">
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Task Automation</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Real-time Collaboration</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Advanced Reporting</li>
+                        </ul>
+                        <p class="text-green-600 font-semibold">Benefit: Increased Productivity</p>
+                        <button class="mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Product 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Customer Relationship Manager</h3>
+                        <p class="text-gray-700 mb-4">Enhance customer relationships and drive sales growth.</p>
+                        <ul class="mb-4">
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Lead Management</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Sales Analytics</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Customer Segmentation</li>
+                        </ul>
+                        <p class="text-green-600 font-semibold">Benefit: Improved Customer Retention</p>
+                        <button class="mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Product 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Marketing Automation Suite</h3>
+                        <p class="text-gray-700 mb-4">Automate marketing campaigns and maximize ROI.</p>
+                        <ul class="mb-4">
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Email Marketing</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Social Media Scheduling</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Campaign Tracking</li>
+                        </ul>
+                        <p class="text-green-600 font-semibold">Benefit: Enhanced Marketing Efficiency</p>
+                        <button class="mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Product 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Human Resources Management</h3>
+                        <p class="text-gray-700 mb-4">Simplify HR processes and empower your workforce.</p>
+                        <ul class="mb-4">
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Employee Onboarding</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Payroll Management</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Performance Reviews</li>
+                        </ul>
+                        <p class="text-green-600 font-semibold">Benefit: Streamlined HR Operations</p>
+                        <button class="mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <img src="https://picsum.photos/200/300?random=5" alt="Product 5" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Financial Planning Tool</h3>
+                        <p class="text-gray-700 mb-4">Gain financial insights and make informed decisions.</p>
+                        <ul class="mb-4">
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Budgeting & Forecasting</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Expense Tracking</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Investment Analysis</li>
+                        </ul>
+                        <p class="text-green-600 font-semibold">Benefit: Improved Financial Control</p>
+                        <button class="mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</button>
+                    </div>
+                </div>
+
+                <div class="rounded-xl shadow-lg overflow-hidden bg-white hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <img src="https://picsum.photos/200/300?random=6" alt="Product 6" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Inventory Management System</h3>
+                        <p class="text-gray-700 mb-4">Optimize stock levels and reduce operational costs.</p>
+                        <ul class="mb-4">
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Stock Tracking</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Order Management</li>
+                            <li class="flex items-center mb-2"><i class="fa fa-check-circle text-primary mr-2"></i> <span class="font-semibold">Feature:</span> Low Stock Alerts</li>
+                        </ul>
+                        <p class="text-green-600 font-semibold">Benefit: Reduced Inventory Costs</p>
+                        <button class="mt-4 bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Learn More</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="features" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center animate-slide-up">Key Features Across All Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
+                <div class="rounded-xl shadow-lg bg-white p-6 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <i class="fa fa-shield-alt text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Enhanced Security</h3>
+                    <p class="text-gray-700">Protect your business data with advanced security measures.</p>
+                </div>
+                <div class="rounded-xl shadow-lg bg-white p-6 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <i class="fa fa-rocket text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Scalable Solutions</h3>
+                    <p class="text-gray-700">Grow your business with our flexible and scalable products.</p>
+                </div>
+                <div class="rounded-xl shadow-lg bg-white p-6 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <i class="fa fa-users text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Dedicated Support</h3>
+                    <p class="text-gray-700">Get assistance when you need it with our dedicated support team.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center animate-slide-up">Business Benefits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
+                <div class="rounded-xl shadow-lg bg-white p-6 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <i class="fa fa-chart-line text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Increase Efficiency</h3>
+                    <p class="text-gray-700">Automate tasks and streamline operations for maximum efficiency.</p>
+                </div>
+                <div class="rounded-xl shadow-lg bg-white p-6 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <i class="fa fa-coins text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Reduce Costs</h3>
+                    <p class="text-gray-700">Optimize resource allocation and minimize unnecessary expenses.</p>
+                </div>
+                <div class="rounded-xl shadow-lg bg-white p-6 hover:shadow-2xl transition-shadow duration-300 ease-in-out">
+                    <i class="fa fa-thumbs-up text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Improve Customer Satisfaction</h3>
+                    <p class="text-gray-700">Enhance customer experiences and build lasting relationships.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="text-center animate-slide-up">
+            <h2 class="text-3xl font-bold mb-8">Ready to Get Started?</h2>
+            <p class="text-gray-700 mb-8">Contact us today to learn more about our solutions and how they can benefit your business.</p>
+            <button class="bg-accent hover:bg-primary text-dark font-bold py-3 px-6 rounded-lg transition-colors duration-300">Contact Us</button>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-neutral py-8 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Business Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

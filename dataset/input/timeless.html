@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeless Tales - A Retro Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif-retro': ['"Playfair Display"', 'serif'],
+                        'sans-retro': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'vintage-paper': '#f0e68c',
+                        'ink-black': '#343a40',
+                        'muted-red': '#a71d31',
+                        'pale-yellow': '#fff8dc',
+                        'light-brown': '#d2b48c',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'typewriter': {
+                            '0%': { width: '0%', opacity: 0 },
+                            '50%': { width: '100%', opacity: 1 },
+                            '100%': { width: '100%', opacity: 1 }
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'typewriter': 'typewriter 2s steps(40) 1s forwards'
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @layer base {
+            body {
+                @apply bg-vintage-paper text-ink-black font-sans-retro;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-serif-retro font-bold;
+            }
+        }
+        @layer utilities {
+            .retro-shadow {
+                box-shadow: 0.3rem 0.3rem 0 0 rgba(0, 0, 0, 0.2);
+            }
+            .content-area p {
+                @apply mb-4 leading-relaxed;
+            }
+            .content-area h2 {
+                @apply text-3xl mt-8 mb-4;
+            }
+            .content-area h3 {
+                @apply text-2xl mt-6 mb-3;
+            }
+            .content-area blockquote {
+                @apply border-l-4 border-muted-red pl-4 italic my-6;
+            }
+            .content-area ul, .content-area ol {
+                @apply list-disc pl-6 mb-4;
+            }
+            .content-area ol {
+                @apply list-decimal;
+            }
+            .content-area img {
+                @apply rounded-md shadow-md my-4;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-pale-yellow sticky top-0 z-50 py-4 retro-shadow">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <h1 class="text-2xl font-serif-retro tracking-wider"><a href="/" class="hover:text-muted-red transition-colors">Timeless Tales</a></h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-muted-red transition-colors">Home</a>
+                <a href="/archives" class="hover:text-muted-red transition-colors">Archives</a>
+                <a href="/about" class="hover:text-muted-red transition-colors">About</a>
+                <a href="/contact" class="hover:text-muted-red transition-colors">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-ink-black hover:text-muted-red focus:outline-none">
+                    <i class="fas fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="/" class="block py-1 hover:text-muted-red transition-colors">Home</a>
+                <a href="/archives" class="block py-1 hover:text-muted-red transition-colors">Archives</a>
+                <a href="/about" class="block py-1 hover:text-muted-red transition-colors">About</a>
+                <a href="/contact" class="block py-1 hover:text-muted-red transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto mt-16 px-4 md:px-8 lg:px-16 grid grid-cols-12 gap-8">
+
+        <main class="col-span-12 lg:col-span-8 content-area animate-fade-in-down">
+            <article class="bg-pale-yellow p-6 md:p-8 rounded-md retro-shadow mb-8">
+                <header class="mb-6">
+                    <h1 class="text-4xl md:text-5xl font-serif-retro text-center leading-tight mb-4 typewriter">The Golden Age of Radio Dramas</h1>
+                    <div class="text-center text-light-brown-500 mb-2">
+                        <i class="far fa-calendar-alt"></i> August 15, 1955 <span class="mx-2">·</span> <i class="far fa-user"></i> By John Doe
+                    </div>
+                    <img src="https://picsum.photos/800/400" alt="Radio Drama Scene" class="rounded-md mt-4 w-full">
+                </header>
+
+                <section class="prose max-w-none">
+                    <p>The crackle of static, the hushed anticipation, the voices that painted vivid pictures in your mind – radio dramas of the 1950s were a unique form of entertainment, captivating millions in their living rooms. Before television dominated the landscape, families would gather around their radios, immersed in tales of mystery, adventure, and romance.</p>
+
+                    <h2>The Rise of Audio Storytelling</h2>
+                    <p>The post-World War II era saw a boom in radio drama production. With Hollywood talent migrating to radio and innovative sound effects becoming increasingly sophisticated, the quality of these productions soared. Shows like "Suspense," "The Shadow," and "Gunsmoke" became household names, offering weekly doses of thrilling narratives.</p>
+
+                    <blockquote>"Radio is the theater of the mind; television is the theater of the retina." -  Unknown Radio Producer</blockquote>
+
+                    <h3>Iconic Shows and Characters</h3>
+                    <p>Let's reminisce about some of the giants of the era:</p>
+                    <ul>
+                        <li><strong>The Shadow:</strong> "Who knows what evil lurks in the hearts of men? The Shadow knows!" – Orson Welles's iconic voice sent shivers down spines.</li>
+                        <li><strong>Suspense:</strong>  A masterclass in psychological thrillers, often featuring twist endings that left audiences breathless.</li>
+                        <li><strong>Gunsmoke:</strong>  A Western epic that ran for decades, portraying the gritty realities of life in Dodge City.</li>
+                        <li><strong>Yours Truly, Johnny Dollar:</strong>  An insurance investigator who found himself in dangerous and intriguing situations.</li>
+                    </ul>
+
+                    <img src="https://picsum.photos/600/300" alt="Vintage Radio" class="float-right ml-6 mb-3 w-1/2">
+
+                    <h3>The Art of Sound Effects</h3>
+                    <p>Sound effects were paramount in bringing these stories to life. From the clatter of hooves to the creaking of doors, sound engineers meticulously crafted auditory landscapes that transported listeners to different worlds.  The Foley artists of the time were true magicians, using everyday objects to create extraordinary sonic illusions.</p>
+
+                    <h2>The Legacy of Radio Dramas</h2>
+                    <p>While television eventually eclipsed radio as the primary form of home entertainment, the legacy of 1950s radio dramas endures. They paved the way for modern audio storytelling, influencing podcasts and audiobooks. The creativity and ingenuity displayed during this golden age continue to inspire storytellers today.</p>
+
+                    <ol>
+                        <li>Explore classic radio drama archives online.</li>
+                        <li>Listen to modern podcasts inspired by these shows.</li>
+                        <li>Share your favorite radio drama memories in the comments below!</li>
+                    </ol>
+
+                    <img src="https://picsum.photos/700/350" alt="People listening to radio" class="w-full">
+
+                    <p>The magic of 1950s radio dramas lies in their ability to engage the imagination. In a world saturated with visuals, perhaps it's time to rediscover the power of audio and let our minds once again paint the pictures.</p>
+
+                    <div class="mt-12 border-t border-light-brown pt-6">
+                        <strong>Tags:</strong> <a href="#" class="text-muted-red hover:underline">Radio</a>, <a href="#" class="text-muted-red hover:underline">1950s</a>, <a href="#" class="text-muted-red hover:underline">Drama</a>, <a href="#" class="text-muted-red hover:underline">History</a>
+                    </div>
+                </section>
+            </article>
+
+            <div class="bg-pale-yellow p-6 md:p-8 rounded-md retro-shadow">
+                <h3 class="text-2xl font-serif-retro mb-4">Comments</h3>
+                <div class="space-y-4">
+                    <div class="flex space-x-4">
+                        <div>
+                            <img src="https://picsum.photos/50/50" alt="Commenter 1" class="rounded-full">
+                        </div>
+                        <div>
+                            <p class="font-bold">Jane Smith</p>
+                            <p class="text-sm text-light-brown">August 16, 1955</p>
+                            <p>What a wonderful article! I grew up listening to "The Shadow" with my grandfather. Pure nostalgia!</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <div>
+                            <img src="https://picsum.photos/50/51" alt="Commenter 2" class="rounded-full">
+                        </div>
+                        <div>
+                            <p class="font-bold">Peter Jones</p>
+                            <p class="text-sm text-light-brown">August 17, 1955</p>
+                            <p>I'm a younger reader, but this makes me want to explore these old radio dramas. Thanks for the recommendations!</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-serif-retro mb-2">Leave a Comment</h4>
+                        <form>
+                            <div class="mb-2">
+                                <input type="text" placeholder="Your Name" class="w-full px-3 py-2 rounded border border-light-brown focus:outline-none focus:ring-2 focus:ring-muted-red">
+                            </div>
+                            <div class="mb-2">
+                                <textarea rows="4" placeholder="Your Comment" class="w-full px-3 py-2 rounded border border-light-brown focus:outline-none focus:ring-2 focus:ring-muted-red"></textarea>
+                            </div>
+                            <button type="submit" class="bg-muted-red text-pale-yellow py-2 px-4 rounded hover:bg-ink-black transition-colors">Post Comment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="col-span-12 lg:col-span-4">
+            <div class="bg-pale-yellow p-6 md:p-8 rounded-md retro-shadow mb-8">
+                <h3 class="text-xl font-serif-retro mb-4">About the Author</h3>
+                <div class="flex items-center space-x-4 mb-4">
+                    <img src="https://picsum.photos/100/100" alt="Author John Doe" class="rounded-full">
+                    <div>
+                        <h4 class="font-bold">John Doe</h4>
+                        <p class="text-sm text-light-brown">Vintage Enthusiast & Historian</p>
+                    </div>
+                </div>
+                <p>John Doe is a writer and historian with a passion for the 1950s. He loves exploring the cultural and technological shifts of the era, from radio dramas to classic cars.</p>
+                <a href="/authors/john-doe" class="inline-block mt-4 text-muted-red hover:underline">Read more articles by John</a>
+            </div>
+
+            <div class="bg-pale-yellow p-6 md:p-8 rounded-md retro-shadow mb-8">
+                <h3 class="text-xl font-serif-retro mb-4">Popular Posts</h3>
+                <ul class="space-y-3">
+                    <li class="py-2 border-b border-light-brown">
+                        <a href="#" class="block hover:text-muted-red transition-colors">The Rise of Drive-In Theaters</a>
+                    </li>
+                    <li class="py-2 border-b border-light-brown">
+                        <a href="#" class="block hover:text-muted-red transition-colors">Fashion Trends of the Fabulous '50s</a>
+                    </li>
+                    <li class="py-2 border-b border-light-brown">
+                        <a href="#" class="block hover:text-muted-red transition-colors">Classic Diner Recipes You Can Make at Home</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-pale-yellow p-6 md:p-8 rounded-md retro-shadow">
+                <h3 class="text-xl font-serif-retro mb-4">Stay Connected</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-ink-black hover:text-muted-red transition-colors"><i class="fab fa-facebook-square fa-lg"></i></a>
+                    <a href="#" class="text-ink-black hover:text-muted-red transition-colors"><i class="fab fa-twitter-square fa-lg"></i></a>
+                    <a href="#" class="text-ink-black hover:text-muted-red transition-colors"><i class="fab fa-instagram-square fa-lg"></i></a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="bg-pale-yellow py-8 mt-16 retro-shadow">
+        <div class="container mx-auto px-4 text-center text-light-brown">
+            <p>© 1955 Timeless Tales. All rights reserved.</p>
+            <p>Crafted with <i class="fas fa-heart text-muted-red"></i> for vintage enthusiasts.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

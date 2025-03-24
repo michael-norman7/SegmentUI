@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Exhibition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-animate { opacity: 0; transform: translateY(20px); animation: heroFadeIn 0.8s ease-out forwards 0.3s; }
+        @keyframes heroFadeIn { to { opacity: 1; transform: translateY(0); } }
+        .feature-animate { opacity: 0; transform: translateY(20px); }
+        .feature-animate.animate { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">Museum</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#exhibition" class="hover:text-blue-500 transition-colors">Exhibition</a>
+                <a href="#artifacts" class="hover:text-blue-500 transition-colors">Artifacts</a>
+                <a href="#visit" class="hover:text-blue-500 transition-colors">Visit</a>
+                <a href="#tickets" class="hover:text-blue-500 transition-colors">Tickets</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-50 shadow-md py-2">
+            <a href="#exhibition" class="block px-4 py-2 hover:bg-gray-100">Exhibition</a>
+            <a href="#artifacts" class="block px-4 py-2 hover:bg-gray-100">Artifacts</a>
+            <a href="#visit" class="block px-4 py-2 hover:bg-gray-100">Visit</a>
+            <a href="#tickets" class="block px-4 py-2 hover:bg-gray-100">Tickets</a>
+        </div>
+    </header>
+
+    <section id="hero" class="py-20 md:py-36 bg-gray-50">
+        <div class="container mx-auto px-6 text-center md:text-left flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 hero-animate">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Discover <span class="text-blue-600">Ancient Worlds</span></h1>
+                <p class="text-lg text-gray-700 mb-12">A new exhibition exploring civilizations of the past. Unearth history and witness breathtaking artifacts.</p>
+                <a href="#tickets" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-colors">Book Tickets</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center md:justify-end hero-animate">
+                <img src="https://picsum.photos/id/10/600/400" alt="Exhibition Preview" class="rounded-xl shadow-2xl" />
+            </div>
+        </div>
+    </section>
+
+    <section id="exhibition" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">About the Exhibition</h2>
+                <p class="text-gray-700 text-lg max-w-2xl mx-auto">Embark on a journey through time. "Ancient Worlds" brings together a collection of rare artifacts and immersive displays, offering a unique glimpse into lost civilizations and their remarkable achievements.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-md feature-animate">
+                    <img src="https://picsum.photos/id/20/300/200" alt="Artifact 1" class="rounded-md mb-4">
+                    <h3 class="font-semibold text-xl mb-2">Lost Empires</h3>
+                    <p class="text-gray-600">Explore the rise and fall of ancient empires, their cultures, and legacies.</p>
+                </div>
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-md feature-animate">
+                    <img src="https://picsum.photos/id/30/300/200" alt="Artifact 2" class="rounded-md mb-4">
+                    <h3 class="font-semibold text-xl mb-2">Daily Life</h3>
+                    <p class="text-gray-600">Discover the everyday lives of people in ancient societies, from their homes to their crafts.</p>
+                </div>
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-md feature-animate">
+                    <img src="https://picsum.photos/id/40/300/200" alt="Artifact 3" class="rounded-md mb-4">
+                    <h3 class="font-semibold text-xl mb-2">Technological Marvels</h3>
+                    <p class="text-gray-600">Witness the incredible inventions and technological advancements of ancient civilizations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="artifacts" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Featured Artifacts</h2>
+                <p class="text-gray-700 text-lg max-w-2xl mx-auto">A curated selection of key artifacts from the exhibition, each telling a unique story of the past.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-center bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/id/50/400/300" alt="Artifact Image" class="w-1/2 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">The Rosetta Stone Replica</h3>
+                        <p class="text-gray-600">Unlock the mysteries of ancient languages with this iconic artifact.</p>
+                    </div>
+                </div>
+                <div class="flex items-center bg-white rounded-xl shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/id/60/400/300" alt="Artifact Image" class="w-1/2 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Ancient Pottery Shard</h3>
+                        <p class="text-gray-600">Examine intricate details of pottery from a lost civilization.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visit" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-4">Visit Us</h2>
+            <p class="text-gray-700 text-lg mb-8">Plan your visit to the "Ancient Worlds" exhibition.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+                <div>
+                    <i class="fa fa-map-marker-alt text-blue-600 text-2xl mb-2"></i>
+                    <h4 class="font-semibold">Location</h4>
+                    <p class="text-gray-600">123 Museum Street, Cityville</p>
+                </div>
+                <div>
+                    <i class="fa fa-clock text-blue-600 text-2xl mb-2"></i>
+                    <h4 class="font-semibold">Hours</h4>
+                    <p class="text-gray-600">10:00 AM - 6:00 PM Daily</p>
+                </div>
+                <div>
+                    <i class="fa fa-ticket-alt text-blue-600 text-2xl mb-2"></i>
+                    <h4 class="font-semibold">Tickets</h4>
+                    <p class="text-gray-600">$15 Adults, $10 Children</p>
+                </div>
+            </div>
+            <a href="#tickets" class="mt-12 inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-colors">Book Tickets Now</a>
+        </div>
+    </section>
+
+    <section id="tickets" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get Your Tickets</h2>
+            <div class="max-w-md mx-auto bg-white rounded-xl shadow-md p-8">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Full Name</label>
+                        <input type="text" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="your.email@example.com" required>
+                    </div>
+                    <div>
+                        <label for="tickets" class="block mb-2 text-sm font-medium text-gray-900">Number of Tickets</label>
+                        <input type="number" id="tickets" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" value="1" min="1" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-full transition-colors">Purchase Tickets</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 mb-4">© 2024 Museum. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-facebook-square text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-twitter-square text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-blue-500"><i class="fab fa-instagram-square text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const featureCards = document.querySelectorAll('.feature-animate');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            featureCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+
+</body>
+</html>

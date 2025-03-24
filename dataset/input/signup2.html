@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Coolest Form Ever</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@tailwindcss/cli@latest/dist/cli.js';
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e0f2fe',
+                        secondary: '#bae6fd',
+                        accent: '#7dd3fc',
+                        soft: '#f9fafb',
+                        darkText: '#1e293b',
+                        lightText: '#6b7280',
+                    },
+                    fontFamily: {
+                        'sans': ['Satoshi', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft-sm': '2px 2px 5px rgba(0,0,0,0.05)',
+                        'soft': '5px 5px 15px rgba(0,0,0,0.05)',
+                        'soft-lg': '10px 10px 25px rgba(0,0,0,0.05)',
+                        'highlight-sm': 'inset 2px 2px 5px rgba(255,255,255,0.8)',
+                        'highlight': 'inset 5px 5px 10px rgba(255,255,255,0.8)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        body {
+            @apply bg-soft font-sans antialiased;
+        }
+
+        .form-container {
+            @apply bg-soft rounded-3xl shadow-soft-lg p-12 flex flex-col gap-8 items-center;
+        }
+
+        .form-input {
+            @apply bg-soft shadow-highlight rounded-xl p-4 w-full focus:outline-none focus:ring-2 focus:ring-accent text-darkText placeholder-lightText;
+        }
+
+        .form-button {
+            @apply bg-accent text-white font-bold rounded-xl p-4 w-full shadow-soft hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-300;
+        }
+
+        .form-icon {
+            @apply text-lightText absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none;
+        }
+
+        .input-wrapper {
+            @apply relative w-full;
+        }
+
+        .error-message {
+            @apply text-red-500 text-sm mt-1;
+        }
+
+        .soft-card {
+            @apply bg-soft rounded-3xl shadow-soft-lg p-8;
+        }
+
+        .soft-button {
+            @apply bg-soft shadow-soft-sm rounded-xl p-3 hover:shadow-soft focus:outline-none focus:ring-2 focus:ring-accent transition-shadow duration-300;
+        }
+    </style>
+    <style>
+        .animate-pulse-soft {
+            animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-soft {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+        .animate-pop-in {
+            animation: pop-in 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes pop-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-primary flex justify-center items-center min-h-screen">
+
+<div class="soft-card animate-pop-in">
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-darkText mb-2">Sign Up</h2>
+        <p class="text-lightText">Join our community and explore amazing features.</p>
+    </div>
+    <form class="form-container" id="signupForm">
+        <div class="input-wrapper">
+            <i class="form-icon fa fa-user"></i>
+            <input type="text" id="username" name="username" placeholder="Username" class="form-input" required>
+        </div>
+        <div class="input-wrapper">
+            <i class="form-icon fa fa-envelope"></i>
+            <input type="email" id="email" name="email" placeholder="Email Address" class="form-input" required>
+        </div>
+        <div class="input-wrapper">
+            <i class="form-icon fa fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Password" class="form-input" required>
+        </div>
+        <div class="input-wrapper">
+            <i class="form-icon fa fa-lock"></i>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" class="form-input" required>
+        </div>
+        <button type="submit" class="form-button animate-pulse-soft hover:animate-none">Sign Up</button>
+        <div id="form-message" class="text-center mt-4"></div>
+    </form>
+    <div class="mt-6 text-center">
+        <p class="text-lightText">Already have an account? <a href="#" class="text-accent hover:underline">Log in</a></p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formMessage = document.getElementById('form-message');
+        formMessage.textContent = 'Signing up...';
+        formMessage.className = 'text-center mt-4 text-lightText';
+
+        setTimeout(() => {
+            formMessage.textContent = 'Signup Successful! Redirecting...';
+            formMessage.className = 'text-center mt-4 text-green-500 font-bold animate-pop-in';
+            setTimeout(() => {
+                window.location.href = 'https://picsum.photos/200/301';
+            }, 1500);
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>

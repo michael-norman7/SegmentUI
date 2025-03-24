@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Categories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#115e59',
+                        'accent': '#34d399',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-primary': '0 0 20px -5px rgba(15, 118, 110, 0.6)',
+                        'glow-accent': '0 0 20px -5px rgba(52, 211, 153, 0.6)',
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.3s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-neutral text-dark antialiased">
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="font-bold text-xl text-primary">Brand</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-secondary transition-colors">Home</a>
+                    <a href="#" class="hover:text-secondary transition-colors">Categories</a>
+                    <a href="#" class="hover:text-secondary transition-colors">About</a>
+                    <a href="#" class="hover:text-secondary transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-12 p-6">
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center md:text-left animate-slide-in-bottom">Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-glow-primary transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.1s;">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Category Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Electronics</h3>
+                        <p class="text-gray-600">Explore our wide range of electronic devices.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors">
+                            Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-glow-primary transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.2s;">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Category Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Clothing</h3>
+                        <p class="text-gray-600">Discover the latest trends in fashion and apparel.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors">
+                            Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-glow-primary transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.3s;">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Category Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Home & Garden</h3>
+                        <p class="text-gray-600">Find everything you need for your home and garden.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors">
+                            Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-glow-primary transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.4s;">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Category Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Books</h3>
+                        <p class="text-gray-600">Immerse yourself in a world of knowledge and stories.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors">
+                            Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-glow-primary transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.5s;">
+                    <img src="https://picsum.photos/200/300?random=5" alt="Category Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Sports & Outdoors</h3>
+                        <p class="text-gray-600">Gear up for your next adventure or workout.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors">
+                            Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-glow-primary transition-shadow duration-300 animate-fade-in" style="animation-delay: 0.6s;">
+                    <img src="https://picsum.photos/200/300?random=6" alt="Category Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Beauty & Personal Care</h3>
+                        <p class="text-gray-600">Enhance your natural beauty and well-being.</p>
+                        <a href="#" class="inline-block mt-4 text-primary hover:text-secondary font-medium transition-colors">
+                            Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-neutral border-t border-gray-200 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>© 2024 Brand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const categoryCards = document.querySelectorAll('.animate-fade-in');
+            categoryCards.forEach((card, index) => {
+                card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+            });
+        });
+    </script>
+</body>
+</html>

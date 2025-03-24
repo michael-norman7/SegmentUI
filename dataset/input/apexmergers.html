@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexMergers - Strategic M&A Advisory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#115e59',
+                        'accent': '#34d399',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-slide-down': {
+                            '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'gradient-shift': {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    },
+                    animation: {
+                        'fade-slide-down': 'fade-slide-down 0.6s ease-out',
+                        'fade-slide-up': 'fade-slide-up 0.6s ease-out',
+                        'gradient-bg': 'gradient-shift 8s linear infinite',
+                    },
+                    boxShadow: {
+                        'hero': '0 15px 30px -5px rgba(0, 0, 0, 0.15)',
+                        'card': '0 10px 20px rgba(0, 0, 0, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/1920/1080?blur=5'); /* example image block */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-inter text-dark antialiased">
+
+<header class="sticky top-0 z-50 bg-neutral shadow-md transition-shadow duration-300">
+    <nav class="container mx-auto px-6 md:px-12 lg:px-20 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-primary hover:text-secondary transition-colors duration-300">
+            ApexMergers
+        </a>
+        <div class="hidden md:flex space-x-8 items-center">
+            <a href="#services" class="hover:text-primary transition-colors duration-300">Services</a>
+            <a href="#team" class="hover:text-primary transition-colors duration-300">Team</a>
+            <a href="#insights" class="hover:text-primary transition-colors duration-300">Insights</a>
+            <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            <a href="#apply" class="inline-flex items-center justify-center px-5 py-2 border border-primary text-primary hover:bg-primary hover:text-neutral font-medium rounded-md shadow-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Let's Talk
+                <i class="ml-2 fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none focus:text-primary">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-neutral shadow-md py-2">
+        <div class="px-6 space-y-2">
+            <a href="#services" class="block py-2 hover:text-primary transition-colors duration-300">Services</a>
+            <a href="#team" class="block py-2 hover:text-primary transition-colors duration-300">Team</a>
+            <a href="#insights" class="block py-2 hover:text-primary transition-colors duration-300">Insights</a>
+            <a href="#contact" class="block py-2 hover:text-primary transition-colors duration-300">Contact</a>
+            <a href="#apply" class="block py-2 hover:text-primary transition-colors duration-300">Let's Talk</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero relative overflow-hidden pt-24 pb-32 md:pb-48 lg:pb-64 parallax">
+    <div class="absolute inset-0 bg-gradient-to-br from-neutral/70 to-neutral/90 z-0"></div>
+    <div class="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+            <div class="hero-text text-center lg:text-left mb-12 lg:mb-0" >
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 animation-fade-slide-down" style="animation-delay: 0.1s;">
+                    Strategic Mergers & Acquisitions <span class="text-primary">Advisory</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 animation-fade-slide-down" style="animation-delay: 0.3s;">
+                    Navigate complex transactions with confidence. ApexMergers provides expert guidance to maximize value and ensure seamless deal execution.
+                </p>
+                <div class="space-x-4 animation-fade-slide-down" style="animation-delay: 0.5s;">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-neutral bg-primary hover:bg-secondary transition-all duration-300 shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                        Explore Our Services
+                        <i class="ml-2 fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#insights" class="inline-flex items-center justify-center px-5 py-2 text-base font-medium rounded-md text-primary hover:text-secondary transition-colors duration-300 focus:outline-none">
+                        Learn More <i class="ml-2 fa-solid fa-circle-info"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image relative animation-fade-slide-up" style="animation-delay: 0.2s;">
+                <img src="https://picsum.photos/800/600" alt="Strategic Growth" class="rounded-xl shadow-hero w-full object-cover aspect-video">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-20 bg-neutral">
+    <div class="container mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Expertise, Your Advantage</h2>
+            <p class="text-gray-600 text-lg">Comprehensive M&A advisory services tailored to your strategic objectives.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-6 bg-white rounded-xl shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-handshake-simple text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Mergers & Acquisitions</h3>
+                <p class="text-gray-500">Expert guidance through every stage of the M&A process, from deal origination to integration.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-chart-line text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Strategic Advisory</h3>
+                <p class="text-gray-500">Strategic insights and advice to align M&A activities with your long-term business goals.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-briefcase text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Divestitures</h3>
+                <p class="text-gray-500">Maximize returns and streamline your portfolio with our strategic divestiture expertise.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-coins text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Valuation Services</h3>
+                <p class="text-gray-500">Accurate and independent valuation services to support informed decision-making in transactions.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-scale-balanced text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Fairness Opinions</h3>
+                <p class="text-gray-500">Independent fairness opinions to ensure transaction terms are fair and reasonable to stakeholders.</p>
+            </div>
+            <div class="p-6 bg-white rounded-xl shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-gear text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Integration & Execution</h3>
+                <p class="text-gray-500">Seamless integration planning and execution to realize synergies and achieve deal objectives.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="py-20">
+    <div class="container mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Meet Our Experienced Team</h2>
+            <p class="text-gray-600 text-lg">Our team of seasoned professionals brings deep industry knowledge and transaction expertise.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div class="text-center">
+                <img src="https://picsum.photos/200/200" alt="Team Member 1" class="rounded-full w-40 h-40 object-cover mx-auto mb-4">
+                <h4 class="text-xl font-semibold text-dark">John Doe</h4>
+                <p class="text-gray-500">Managing Director</p>
+            </div>
+            <div class="text-center">
+                <img src="https://picsum.photos/201/200" alt="Team Member 2" class="rounded-full w-40 h-40 object-cover mx-auto mb-4">
+                <h4 class="text-xl font-semibold text-dark">Jane Smith</h4>
+                <p class="text-gray-500">Senior Advisor</p>
+            </div>
+            <div class="text-center">
+                <img src="https://picsum.photos/202/200" alt="Team Member 3" class="rounded-full w-40 h-40 object-cover mx-auto mb-4">
+                <h4 class="text-xl font-semibold text-dark">Peter Jones</h4>
+                <p class="text-gray-500">Associate Partner</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="insights" class="py-20 bg-neutral">
+    <div class="container mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Latest Insights & News</h2>
+            <p class="text-gray-600 text-lg">Stay informed with our perspectives on the M&A landscape and industry trends.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow-card overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="https://picsum.photos/400/300" alt="Insight 1" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-dark mb-2">The Future of Tech M&A</h3>
+                    <p class="text-gray-500 mb-4">Explore the evolving trends and opportunities in technology mergers and acquisitions.</p>
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 font-medium inline-flex items-center">
+                        Read More <i class="ml-2 fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-card overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="https://picsum.photos/401/300" alt="Insight 2" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-dark mb-2">Navigating Economic Uncertainty in M&A</h3>
+                    <p class="text-gray-500 mb-4">Strategies for successful deal-making amidst global economic shifts.</p>
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 font-medium inline-flex items-center">
+                        Read More <i class="ml-2 fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow-card overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img src="https://picsum.photos/402/300" alt="Insight 3" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-dark mb-2">Maximizing Shareholder Value Through Divestitures</h3>
+                    <p class="text-gray-500 mb-4">Best practices for optimizing divestiture processes and enhancing shareholder returns.</p>
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300 font-medium inline-flex items-center">
+                        Read More <i class="ml-2 fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20">
+    <div class="container mx-auto px-6 md:px-12 lg:px-20">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Let's Discuss Your Strategic Goals</h2>
+            <p class="text-gray-600 text-lg">Reach out to our team to explore how ApexMergers can support your M&A objectives.</p>
+        </div>
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+            <div class="mb-8 lg:mb-0">
+                <img src="https://picsum.photos/600/400" alt="Contact Us" class="rounded-xl shadow-lg w-full object-cover aspect-video">
+            </div>
+            <div>
+                <form class="space-y-4">
+                    <div>
+content_copy
+download
+Use code with caution.
+Html

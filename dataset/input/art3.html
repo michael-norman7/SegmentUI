@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Portfolio - [Your Illustrator Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F9F5EB',
+                        secondary: '#E6E0D4',
+                        accent: '#D9C9B0',
+                        dark: '#1E1E1E',
+                        ink: '#333333',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.8s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'float': {
+                            '0%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                            '100%': { transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1E1E1E;
+            color: #F9F5EB;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+<header class="sticky top-0 z-50 bg-dark/90 backdrop-blur-sm">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-semibold text-primary">
+            [Your Name]
+        </a>
+        <div class="hidden md:flex space-x-6">
+            <a href="#portfolio" class="text-secondary hover:text-primary transition-colors">Portfolio</a>
+            <a href="#about" class="text-secondary hover:text-primary transition-colors">About</a>
+            <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-secondary hover:text-primary focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-6 py-4 flex flex-col space-y-3">
+            <a href="#portfolio" class="block text-secondary hover:text-primary transition-colors">Portfolio</a>
+            <a href="#about" class="block text-secondary hover:text-primary transition-colors">About</a>
+            <a href="#contact" class="block text-secondary hover:text-primary transition-colors">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section id="hero" class="relative py-24 md:py-32 overflow-hidden">
+    <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 fade-in animate__animated animate__fadeInLeft">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight">
+                Crafting Visual Stories Through Digital Illustration
+            </h1>
+            <p class="text-secondary text-lg mb-8">
+                Welcome to my portfolio. I'm a digital illustrator passionate about creating unique and captivating artwork. Explore my latest projects and let's bring your vision to life.
+            </p>
+            <a href="#portfolio" class="inline-block bg-accent text-ink font-semibold px-8 py-3 rounded-full hover:bg-secondary transition-colors">
+                View Portfolio <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+        <div class="md:w-1/2 relative mt-10 md:mt-0">
+            <div class="aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3 rounded-xl overflow-hidden shadow-2xl float animate__animated animate__float">
+                <img src="https://picsum.photos/id/25/600/450" alt="Featured Illustration" class="object-cover w-full h-full">
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-dark to-transparent"></div>
+</section>
+
+<section id="portfolio" class="py-24 md:py-32 bg-dark">
+    <div class="container mx-auto px-6 md:px-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+            Selected Works
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/10/400/300" alt="Artwork 1" class="w-full h-auto block">
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/20/400/300" alt="Artwork 2" class="w-full h-auto block">
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/30/400/300" alt="Artwork 3" class="w-full h-auto block">
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/40/400/300" alt="Artwork 4" class="w-full h-auto block">
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/50/400/300" alt="Artwork 5" class="w-full h-auto block">
+            </div>
+            <div class="portfolio-item rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/60/400/300" alt="Artwork 6" class="w-full h-auto block">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-24 md:py-32 bg-secondary">
+    <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 mb-10 md:mb-0">
+            <div class="aspect-w-1 aspect-h-1 md:aspect-w-1 md:aspect-h-1 rounded-full overflow-hidden shadow-2xl">
+                <img src="https://picsum.photos/id/70/400/400" alt="About Me" class="object-cover w-full h-full">
+            </div>
+        </div>
+        <div class="md:w-1/2 md:pl-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6 leading-tight">
+                About Me
+            </h2>
+            <p class="text-ink text-lg mb-8">
+                Hello! I'm [Your Illustrator Name], a digital illustrator with a passion for creating visually stunning and emotionally resonant artwork. With [Number] years of experience, I specialize in [Specific Styles or Areas of Expertise, e.g., character design, fantasy illustration, UI icons].
+            </p>
+            <p class="text-ink text-lg mb-8">
+                My goal is to translate ideas and concepts into compelling visual narratives. I believe in the power of illustration to communicate, inspire, and evoke emotion. I'm always excited to take on new challenges and collaborate on creative projects.
+            </p>
+            <a href="#contact" class="inline-block bg-accent text-ink font-semibold px-8 py-3 rounded-full hover:bg-primary transition-colors">
+                Let's Connect <i class="fa fa-envelope ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-24 md:py-32 bg-dark">
+    <div class="container mx-auto px-6 md:px-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+            Get In Touch
+        </h2>
+        <div class="max-w-lg mx-auto">
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block text-secondary mb-2">Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-3 rounded-md bg-secondary/10 border border-secondary/20 text-secondary focus:ring-accent focus:border-accent" placeholder="Your Name">
+                </div>
+                <div>
+                    <label for="email" class="block text-secondary mb-2">Email</label>
+                    <input type="email" id="email" class="w-full px-4 py-3 rounded-md bg-secondary/10 border border-secondary/20 text-secondary focus:ring-accent focus:border-accent" placeholder="Your Email">
+                </div>
+                <div>
+                    <label for="message" class="block text-secondary mb-2">Message</label>
+                    <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-md bg-secondary/10 border border-secondary/20 text-secondary focus:ring-accent focus:border-accent" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-accent text-ink font-semibold px-8 py-3 rounded-full hover:bg-secondary transition-colors">
+                    Send Message <i class="fa fa-paper-plane ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-ink py-12">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+        <p class="text-secondary">
+            © 2024 [Your Illustrator Name]. All Rights Reserved.
+        </p>
+        <div class="mt-4 space-x-4">
+            <a href="#" class="text-secondary hover:text-primary"><i class="fab fa-instagram text-lg"></i></a>
+            <a href="#" class="text-secondary hover:text-primary"><i class="fab fa-twitter text-lg"></i></a>
+            <a href="#" class="text-secondary hover:text-primary"><i class="fab fa-linkedin text-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            if (mobileMenu.classList.contains('hidden') === false) {
+                mobileMenu.classList.add('hidden'); // Close mobile menu after click
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

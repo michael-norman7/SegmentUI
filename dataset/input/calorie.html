@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Tracker Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4ade80',
+                        'secondary': '#a7f3d0',
+                        'glass': 'rgba(255, 255, 255, 0.25)',
+                        'glass-border': 'rgba(255, 255, 255, 0.35)',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glassmorphism': '0 8px 32px 0 rgba(31, 38, 135, 0.17)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background: #f3f4f6;
+            overflow: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+        .slide-in-left {
+            animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+        .slide-in-right {
+            animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+        @keyframes slide-in-left {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slide-in-right {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="flex h-screen">
+        <aside class="w-64 bg-gray-800 text-white p-6 flex flex-col justify-between slide-in-left">
+            <div>
+                <div class="text-2xl font-semibold mb-8">NutriTrack</div>
+                <nav>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded-md transition-colors"><i class="fas fa-home mr-2"></i> Dashboard</a>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded-md transition-colors mt-2"><i class="fas fa-utensils mr-2"></i> Food Log</a>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded-md transition-colors mt-2"><i class="fas fa-chart-bar mr-2"></i> Analytics</a>
+                    <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded-md transition-colors mt-2"><i class="fas fa-cog mr-2"></i> Settings</a>
+                </nav>
+            </div>
+            <div class="mt-8">
+                <a href="#" class="block py-2 px-4 hover:bg-gray-700 rounded-md transition-colors"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-8 bg-gray-100 slide-in-right">
+            <header class="mb-8 flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-gray-800">Dashboard</h1>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/50/50" alt="User Avatar" class="rounded-full w-10 h-10 mr-3">
+                    <span class="font-semibold text-gray-700">John Doe</span>
+                </div>
+            </header>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass p-6 rounded-xl shadow-glassmorphism">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-fire-alt text-xl text-primary mr-3"></i>
+                        <h2 class="text-xl font-semibold text-gray-800">Calorie Intake</h2>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="relative w-48 h-48">
+                            <svg class="absolute top-0 left-0 w-full h-full">
+                                <circle class="text-primary stroke-[8px] stroke-primary" cx="50%" cy="50%" r="70" fill="none" stroke-linecap="round" />
+                                <circle class="text-secondary stroke-[8px] stroke-secondary" cx="50%" cy="50%" r="70" fill="none" stroke-linecap="round" stroke-dasharray="440" stroke-dashoffset="110" transform="rotate(-90 100 100)" />
+                            </svg>
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                                <span class="text-2xl font-bold text-gray-800">1950</span>
+                                <span class="text-gray-600">/ 2500 kcal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-gray-600">Daily Goal</p>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-xl shadow-glassmorphism md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-list-alt text-xl text-primary mr-3"></i>
+                        <h2 class="text-xl font-semibold text-gray-800">Food Log</h2>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Food</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Calories</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img class="h-10 w-10 rounded-full" src="https://picsum.photos/50/50?food1" alt="">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Breakfast Burrito</div>
+                                                <div class="text-sm text-gray-500">Homemade</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">650 kcal</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        8:00 AM
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img class="h-10 w-10 rounded-full" src="https://picsum.photos/50/50?food2" alt="">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Chicken Salad</div>
+                                                <div class="text-sm text-gray-500">Lunch</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">480 kcal</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        1:15 PM
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img class="h-10 w-10 rounded-full" src="https://picsum.photos/50/50?food3" alt="">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Protein Shake</div>
+                                                <div class="text-sm text-gray-500">Post Workout</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">320 kcal</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        6:00 PM
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img class="h-10 w-10 rounded-full" src="https://picsum.photos/50/50?food4" alt="">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Salmon Dinner</div>
+                                                <div class="text-sm text-gray-500">Dinner</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">500 kcal</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        7:45 PM
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-xl shadow-glassmorphism">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-chart-pie text-xl text-primary mr-3"></i>
+                        <h2 class="text-xl font-semibold text-gray-800">Macronutrient Breakdown</h2>
+                    </div>
+                    <div>
+                        <div class="mb-3">
+                            <div class="flex justify-between text-gray-700 mb-1">
+                                <span>Protein</span>
+                                <span>120g / 150g</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-primary h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="flex justify-between text-gray-700 mb-1">
+                                <span>Carbs</span>
+                                <span>200g / 250g</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-secondary h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-gray-700 mb-1">
+                                <span>Fats</span>
+                                <span>60g / 70g</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-green-300 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <p class="text-sm text-gray-500">Macronutrient Goals</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

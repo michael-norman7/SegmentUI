@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbus Notes - Effortless Note Taking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F0F4F8',
+                        secondary: '#E0E7ED',
+                        accent: '#CBD5E1',
+                        neutral: '#94A3B8',
+                        dark: '#475569',
+                    },
+                    boxShadow: {
+                        'neumorphic': '6px 6px 12px #CBCECF, -6px -6px 12px #FFFFFF',
+                        'neumorphic-inset': 'inset 6px 6px 12px #CBCECF, inset -6px -6px 12px #FFFFFF',
+                        'neumorphic-hover': '4px 4px 8px #CBCECF, -4px -4px 8px #FFFFFF',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .feature-icon {
+            aspect-ratio: 1/1;
+            border-radius: 0.75rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .animate-delay-300 { animation-delay: 300ms; }
+        .animate-delay-500 { animation-delay: 500ms; }
+        .animate-delay-700 { animation-delay: 700ms; }
+    </style>
+</head>
+<body class="bg-primary">
+    <header class="sticky top-0 bg-primary bg-opacity-90 backdrop-blur-sm shadow-neumorphic z-50 transition-shadow duration-300 hover:shadow-neumorphic-hover">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold text-dark">Nimbus Notes</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="hover:text-neutral transition-colors duration-200">Features</a>
+                <a href="#testimonials" class="hover:text-neutral transition-colors duration-200">Testimonials</a>
+                <a href="#pricing" class="hover:text-neutral transition-colors duration-200">Pricing</a>
+                <a href="#contact" class="hover:text-neutral transition-colors duration-200">Contact</a>
+            </div>
+            <button class="hidden md:inline-flex bg-accent text-dark px-4 py-2 rounded-lg shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300">
+                Get Started
+            </button>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-dark text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-3">
+                <a href="#features" class="hover:text-neutral transition-colors duration-200 block py-2">Features</a>
+                <a href="#testimonials" class="hover:text-neutral transition-colors duration-200 block py-2">Testimonials</a>
+                <a href="#pricing" class="hover:text-neutral transition-colors duration-200 block py-2">Pricing</a>
+                <a href="#contact" class="hover:text-neutral transition-colors duration-200 block py-2">Contact</a>
+                <button class="bg-accent text-dark px-4 py-2 rounded-lg shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 w-full text-center">Get Started</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0 animate__animated animate__fadeInLeft">
+            <h1 class="text-4xl md:text-5xl font-bold text-dark mb-6">Capture Your Thoughts, Effortlessly.</h1>
+            <p class="text-lg text-neutral mb-8">Nimbus Notes is your intuitive space to organize ideas, tasks, and inspirations. Seamlessly capture and access your notes anywhere, anytime.</p>
+            <button class="bg-accent text-dark px-8 py-3 rounded-lg shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300">
+                Start Taking Notes <i class="fa fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+        <div class="md:w-1/2 animate__animated animate__fadeInRight">
+            <img src="https://picsum.photos/id/25/600/400" alt="Nimbus Notes Interface" class="rounded-2xl shadow-neumorphic w-full max-w-md mx-auto md:mx-0">
+        </div>
+    </section>
+
+    <section id="features" class="features bg-secondary py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-dark text-center mb-16">Key Features for Seamless Note-Taking</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-primary p-6 rounded-2xl shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-300">
+                    <div class="feature-icon bg-accent shadow-neumorphic mb-4">
+                        <i class="fa fa-cloud-upload-alt text-dark text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Cloud Sync</h3>
+                    <p class="text-neutral">Access your notes from any device, ensuring your ideas are always within reach.</p>
+                </div>
+                <div class="feature-card bg-primary p-6 rounded-2xl shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-500">
+                    <div class="feature-icon bg-accent shadow-neumorphic mb-4">
+                        <i class="fa fa-lightbulb text-dark text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Intuitive Interface</h3>
+                    <p class="text-neutral">Designed for simplicity and focus, making note-taking a breeze.</p>
+                </div>
+                <div class="feature-card bg-primary p-6 rounded-2xl shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-700">
+                    <div class="feature-icon bg-accent shadow-neumorphic mb-4">
+                        <i class="fa fa-lock text-dark text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Secure & Private</h3>
+                    <p class="text-neutral">Your notes are encrypted and kept private, ensuring peace of mind.</p>
+                </div>
+                <div class="feature-card bg-primary p-6 rounded-2xl shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-300">
+                    <div class="feature-icon bg-accent shadow-neumorphic mb-4">
+                        <i class="fa fa-search text-dark text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Powerful Search</h3>
+                    <p class="text-neutral">Quickly find any note with our advanced search capabilities.</p>
+                </div>
+                <div class="feature-card bg-primary p-6 rounded-2xl shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-500">
+                    <div class="feature-icon bg-accent shadow-neumorphic mb-4">
+                        <i class="fa fa-list-check text-dark text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Task Management</h3>
+                    <p class="text-neutral">Turn notes into actionable tasks and stay organized.</p>
+                </div>
+                <div class="feature-card bg-primary p-6 rounded-2xl shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-700">
+                    <div class="feature-icon bg-accent shadow-neumorphic mb-4">
+                        <i class="fa fa-palette text-dark text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Customizable Themes</h3>
+                    <p class="text-neutral">Personalize your note-taking experience with beautiful themes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-dark text-center mb-16">Loved by Note-Takers Worldwide</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-card bg-primary p-6 rounded-2xl shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/30/100/100" alt="User Avatar" class="rounded-full w-16 h-16 shadow-neumorphic">
+                    </div>
+                    <p class="text-neutral italic mb-4">"Nimbus Notes has completely transformed how I organize my thoughts. It's clean, fast, and incredibly user-friendly."</p>
+                    <p class="font-semibold text-dark">- Sarah M., Designer</p>
+                </div>
+                <div class="testimonial-card bg-primary p-6 rounded-2xl shadow-neumorphic hover:shadow-neumorphic-hover transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-500">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/35/100/100" alt="User Avatar" class="rounded-full w-16 h-16 shadow-neumorphic">
+                    </div>
+                    <p class="text-neutral italic mb-4">"The cloud sync feature is a lifesaver! I can jot down ideas on my phone and access them instantly on my laptop. Highly recommend!"</p>
+                    <p class="font-semibold text-dark">- John K., Student</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing bg-secondary py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-semibold text-dark text-center mb-16">Simple & Flexible Pricing</h2>
+            <div class="grid grid-cols-1
+content_copy
+download
+Use code with caution.
+Html

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Coolest Thing Ever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#64748b',
+                        'accent': '#fde047',
+                        'neutral': '#f3f4f6',
+                    },
+                    keyframes: {
+                        'spin-slow': {
+                            '0%': { transform: 'rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'spin-slow': 'spin-slow 3s linear infinite',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-roboto antialiased bg-neutral text-gray-800">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-primary">CoolProduct</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-primary">Home</a>
+                    <a href="#" class="hover:text-primary">Shop</a>
+                    <a href="#" class="hover:text-primary">About</a>
+                    <a href="#" class="hover:text-primary">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800" aria-label="Toggle menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-24 px-6 pb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <section class="product-gallery" aria-label="Product Images">
+                <div class="relative">
+                    <div id="product-360-view" class="aspect-w-1 aspect-h-1">
+                        <img src="https://picsum.photos/id/1/600/800" alt="Product Image" class="w-full h-full object-cover rounded-lg shadow-lg animate-fade-in" id="product-image">
+                    </div>
+
+                    <div id="spinner" class="absolute inset-0 flex justify-center items-center bg-white/50 rounded-lg" >
+                        <i class="fas fa-spinner fa-spin-slow text-3xl text-primary"></i>
+                    </div>
+
+                    <div class="absolute bottom-4 left-4 bg-white bg-opacity-75 rounded-md px-2 py-1 text-sm">
+                        Drag to rotate
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-details" aria-label="Product Details">
+                <h1 class="text-3xl font-bold mb-4 text-gray-900">Premium Product Name</h1>
+                <h2 class="text-xl text-secondary mb-6">$99.99</h2>
+                <p class="text-gray-700 leading-relaxed mb-8">
+                    This is a detailed product description. Highlight key features, benefits, and unique selling points.
+                    Explain why this product is amazing and why customers should buy it. Focus on the value proposition
+                    and make it compelling.
+                </p>
+
+                <div class="mb-6">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Color</h3>
+                    <div class="flex items-center space-x-3">
+                        <button type="button" class="w-8 h-8 rounded-full bg-red-500 focus:outline-none ring-2 ring-gray-300 hover:ring-primary"></button>
+                        <button type="button" class="w-8 h-8 rounded-full bg-blue-500 focus:outline-none ring-2 ring-gray-300 hover:ring-primary"></button>
+                        <button type="button" class="w-8 h-8 rounded-full bg-green-500 focus:outline-none ring-2 ring-gray-300 hover:ring-primary"></button>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h3 class="font-semibold text-lg mb-2 text-gray-900">Size</h3>
+                    <div class="flex items-center space-x-3">
+                        <button type="button" class="px-4 py-2 rounded-md border border-gray-300 hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary">S</button>
+                        <button type="button" class="px-4 py-2 rounded-md border border-gray-300 hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary">M</button>
+                        <button type="button" class="px-4 py-2 rounded-md border border-gray-300 hover:border-primary focus:outline-none focus:ring-2 focus:ring-primary">L</button>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4 mb-8">
+                    <button class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-md transition-colors duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                    </button>
+                    <button class="bg-accent hover:bg-yellow-500 text-gray-800 font-bold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 shadow-md transition-colors duration-300">
+                        <i class="fas fa-heart mr-2"></i> Wishlist
+                    </button>
+                </div>
+
+                <div class="border-t border-gray-200 pt-6">
+                    <h3 class="font-semibold text-lg mb-3 text-gray-900">Product Details</h3>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Feature 1: High quality materials</li>
+                        <li>Feature 2: Durable and long-lasting</li>
+                        <li>Feature 3: Ergonomic design</li>
+                        <li>Feature 4: Water resistant</li>
+                        <li>Feature 5: Easy to use</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <section class="mt-16 pt-16 border-t border-gray-200" aria-label="Customer Reviews">
+            <h2 class="text-2xl font-bold mb-8 text-gray-900">Customer Reviews</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-4">
+                            <img src="https://picsum.photos/id/10/100/100" alt="Reviewer" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div class="font-semibold">John Doe</div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-gray-300"></i>
+                    </div>
+                    <p class="text-gray-700">
+                        "Great product! Exceeded my expectations. Highly recommend."
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-4">
+                            <img src="https://picsum.photos/id/20/100/100" alt="Reviewer" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div class="font-semibold">Jane Smith</div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                    </div>
+                    <p class="text-gray-700">
+                        "Absolutely love it! Perfect for everyday use and very stylish."
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-gray-300 mr-4">
+                            <img src="https://picsum.photos/id/30/100/100" alt="Reviewer" class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div class="font-semibold">Peter Jones</div>
+                    </div>
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-yellow-500"></i>
+                        <i class="fas fa-star text-gray-300"></i>
+                        <i class="fas fa-star text-gray-300"></i>
+                    </div>
+                    <p class="text-gray-700">
+                        "Good quality for the price. Happy with my purchase."
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 py-12 border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500">
+                © 2024 CoolProduct. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const product360View = document.getElementById('product-360-view');
+            const productImage = document.getElementById('product-image');
+            const spinner = document.getElementById('spinner');
+            const imageCount = 36;
+            let imageIndex = 1;
+            let isDragging = false;
+            let startX = 0;
+            let currentX = 0;
+            let images = [];
+
+            const preloadImages = () => {
+                for (let i = 1; i <= imageCount; i++) {
+                    const img = new Image();
+                    img.src = `https://picsum.photos/id/${i+50}/600/800`;
+                    images.push(img);
+                }
+            };
+
+            preloadImages();
+
+            productImage.onload = () => {
+                spinner.style.display = 'none';
+                productImage.classList.remove('animate-fade-in');
+            };
+
+            const updateImage = () => {
+                productImage.src = images[imageIndex - 1].src;
+            };
+
+            product360View.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX;
+                product360View.classList.add('cursor-grabbing');
+            });
+
+            product360View.addEventListener('mouseup', () => {
+                isDragging = false;
+                product360View.classList.remove('cursor-grabbing');
+            });
+
+            product360View.addEventListener('mouseleave', () => {
+                if(isDragging) {
+                    isDragging = false;
+                    product360View.classList.remove('cursor-grabbing');
+                }
+            });
+
+            product360View.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                currentX = e.clientX;
+                const diffX = currentX - startX;
+                if (Math.abs(diffX) > 5) {
+                    const sensitivity = 5;
+                    imageIndex = imageIndex - Math.round(diffX / sensitivity);
+
+                    if (imageIndex > imageCount) {
+                        imageIndex = 1;
+                    } else if (imageIndex < 1) {
+                        imageIndex = imageCount;
+                    }
+                    updateImage();
+                    startX = currentX;
+                }
+            });
+
+            product360View.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startX = e.touches[0].clientX;
+            });
+
+            product360View.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+
+            product360View.addEventListener('touchcancel', () => {
+                isDragging = false;
+            });
+
+            product360View.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                currentX = e.touches[0].clientX;
+                const diffX = currentX - startX;
+                if (Math.abs(diffX) > 5) {
+                    const sensitivity = 5;
+                    imageIndex = imageIndex - Math.round(diffX / sensitivity);
+
+                    if (imageIndex > imageCount) {
+                        imageIndex = 1;
+                    } else if (imageIndex < 1) {
+                        imageIndex = imageCount;
+                    }
+                    updateImage();
+                    startX = currentX;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

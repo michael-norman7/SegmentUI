@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Deco Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f0e3;
+            color: #333;
+        }
+        .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+        .deco-border-top {
+            border-top: 0.25rem double #4a3728;
+        }
+        .deco-border-bottom {
+            border-bottom: 0.25rem double #4a3728;
+        }
+        .deco-bg-gradient {
+            background: linear-gradient(135deg, #e6d7b9, #d4c4a7);
+        }
+        .shadow-art-deco {
+            box-shadow: 0.5rem 0.5rem 0 0 rgba(74, 55, 40, 0.2);
+        }
+        .aspect-art-deco {
+            aspect-ratio: 4 / 3;
+        }
+        .hover-pulse {
+            transition: transform 0.3s ease-in-out;
+        }
+        .hover-pulse:hover {
+            transform: scale(1.05);
+        }
+        .animate-fade-in {
+            animation: fadein 1s ease-in-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadein {
+            to {
+                opacity: 1;
+            }
+        }
+        .loading::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            z-index: 10;
+            pointer-events: none;
+            animation: loading-fade 1s forwards;
+        }
+        @keyframes loading-fade {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body class="bg-beige-100 text-gray-800">
+
+<header class="bg-beige-200 sticky top-0 z-50 shadow-md deco-border-bottom">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold serif-font text-brown-800 animate-fade-in" style="animation-delay: 0.1s;">The Gilded Quill</div>
+        <ul class="hidden md:flex space-x-8">
+            <li class="animate-fade-in" style="animation-delay: 0.2s;"><a href="#" class="hover:text-brown-600 transition-colors duration-300">Journal</a></li>
+            <li class="animate-fade-in" style="animation-delay: 0.3s;"><a href="#" class="hover:text-brown-600 transition-colors duration-300">Essays</a></li>
+            <li class="animate-fade-in" style="animation-delay: 0.4s;"><a href="#" class="hover:text-brown-600 transition-colors duration-300">Culture</a></li>
+            <li class="animate-fade-in" style="animation-delay: 0.5s;"><a href="#" class="hover:text-brown-600 transition-colors duration-300">About</a></li>
+        </ul>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-brown-700 hover:text-brown-900 focus:outline-none">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="hidden md:hidden" id="mobile-menu">
+        <ul class="px-6 py-4">
+            <li class="py-2"><a href="#" class="block hover:text-brown-600 transition-colors duration-300">Journal</a></li>
+            <li class="py-2"><a href="#" class="block hover:text-brown-600 transition-colors duration-300">Essays</a></li>
+            <li class="py-2"><a href="#" class="block hover:text-brown-600 transition-colors duration-300">Culture</a></li>
+            <li class="py-2"><a href="#" class="block hover:text-brown-600 transition-colors duration-300">About</a></li>
+        </ul>
+    </div>
+</header>
+
+<main class="container mx-auto px-6 py-12">
+    <section class="mb-16">
+        <div class="deco-bg-gradient py-20 px-8 rounded-xl shadow-art-deco text-center animate-fade-in" style="animation-delay: 0.6s;">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold serif-font text-brown-900 leading-tight mb-4">
+                Echoes of the Jazz Age
+            </h1>
+            <p class="text-lg text-brown-700 mb-8">
+                A blog exploring the timeless elegance and vibrant spirit of Art Deco.
+            </p>
+            <a href="#" class="inline-block bg-brown-800 hover:bg-brown-900 text-beige-100 font-semibold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover-pulse">
+                Explore the Journal
+            </a>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <article class="bg-beige-200 rounded-xl shadow-art-deco overflow-hidden animate-fade-in hover-pulse" style="animation-delay: 0.7s;">
+            <a href="#">
+                <img src="https://picsum.photos/400/300" alt="Post Image" class="w-full h-auto aspect-art-deco object-cover">
+            </a>
+            <div class="p-6">
+                <h2 class="serif-font text-2xl font-bold text-brown-800 mb-2">
+                    <a href="#" class="hover:text-brown-900 transition-colors duration-300">The Geometry of Dreams</a>
+                </h2>
+                <p class="text-brown-700 leading-relaxed mb-4">
+                    Discover how geometric patterns define the Art Deco movement, from architecture to jewelry.
+                </p>
+                <a href="#" class="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold transition-colors duration-300">
+                    Read More <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </article>
+
+        <article class="bg-beige-200 rounded-xl shadow-art-deco overflow-hidden animate-fade-in hover-pulse" style="animation-delay: 0.8s;">
+            <a href="#">
+                <img src="https://picsum.photos/401/300" alt="Post Image" class="w-full h-auto aspect-art-deco object-cover">
+            </a>
+            <div class="p-6">
+                <h2 class="serif-font text-2xl font-bold text-brown-800 mb-2">
+                    <a href="#" class="hover:text-brown-900 transition-colors duration-300">Flapper Fashion: A Revolution in Style</a>
+                </h2>
+                <p class="text-brown-700 leading-relaxed mb-4">
+                    Explore the daring and glamorous fashion of the flapper era, a hallmark of Art Deco's liberation.
+                </p>
+                <a href="#" class="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold transition-colors duration-300">
+                    Read More <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </article>
+
+        <article class="bg-beige-200 rounded-xl shadow-art-deco overflow-hidden animate-fade-in hover-pulse" style="animation-delay: 0.9s;">
+            <a href="#">
+                <img src="https://picsum.photos/402/300" alt="Post Image" class="w-full h-auto aspect-art-deco object-cover">
+            </a>
+            <div class="p-6">
+                <h2 class="serif-font text-2xl font-bold text-brown-800 mb-2">
+                    <a href="#" class="hover:text-brown-900 transition-colors duration-300">Art Deco Architecture: Towers of Tomorrow</a>
+                </h2>
+                <p class="text-brown-700 leading-relaxed mb-4">
+                    From skyscrapers to theaters, witness the grandeur of Art Deco architecture that reshaped city skylines.
+                </p>
+                <a href="#" class="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold transition-colors duration-300">
+                    Read More <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </article>
+    </section>
+
+    <section class="mb-16 deco-border-top pt-8 animate-fade-in" style="animation-delay: 1.0s;">
+        <h2 class="serif-font text-3xl font-bold text-brown-800 mb-6 text-center">Featured Essays</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-beige-200 rounded-xl shadow-art-deco p-6 hover-pulse">
+                <h3 class="serif-font text-xl font-bold text-brown-800 mb-2">
+                    <a href="#" class="hover:text-brown-900 transition-colors duration-300">The Roaring Twenties: A Decade of Deco</a>
+                </h3>
+                <p class="text-brown-700 leading-relaxed mb-4">
+                    Dive into the cultural explosion of the 1920s and how it fueled the Art Deco aesthetic.
+                </p>
+                <a href="#" class="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold transition-colors duration-300">
+                    Read Essay <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="bg-beige-200 rounded-xl shadow-art-deco p-6 hover-pulse">
+                <h3 class="serif-font text-xl font-bold text-brown-800 mb-2">
+                    <a href="#" class="hover:text-brown-900 transition-colors duration-300">Art Deco in the Modern World</a>
+                </h3>
+                <p class="text-brown-700 leading-relaxed mb-4">
+                    Explore the enduring legacy of Art Deco and its influence on contemporary design and culture.
+                </p>
+                <a href="#" class="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold transition-colors duration-300">
+                    Read Essay <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-16 deco-border-top pt-8 animate-fade-in" style="animation-delay: 1.1s;">
+        <h2 class="serif-font text-3xl font-bold text-brown-800 mb-6 text-center">Cultural Corner</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-beige-200 rounded-xl shadow-art-deco p-6 hover-pulse">
+                <h3 class="serif-font text-xl font-bold text-brown-800 mb-2">
+                    <a href="#" class="hover:text-brown-900 transition-colors duration-300">Art Deco Cinema: Golden Age of Film</a>
+                </h3>
+                <p class="text-brown-700 leading-relaxed mb-4">
+                    The opulent movie palaces and stylish films that defined Art Deco's cinematic impact.
+                </p>
+                <a href="#" class="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold transition-colors duration-300">
+                    Explore Cinema <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="bg-beige-200 rounded-xl shadow-art-deco p-6 hover-pulse">
+                <h3 class="serif-font text-xl font-bold text-brown-800 mb-2">
+                    <a href="#" class="hover:text-brown-900 transition-colors duration-300">Jazz Music and the Deco Beat</a>
+                </h3>
+                <p class="text-brown-700 leading-relaxed mb-4">
+                    The syncopated rhythms of jazz and their harmonious relationship with the Art Deco movement.
+                </p>
+                <a href="#" class="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold transition-colors duration-300">
+                    Listen to Jazz <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="bg-beige-200 rounded-xl shadow-art-deco p-6 hover-pulse">
+                <h3 class="serif-font text-xl font-bold text-brown-800 mb-2">
+                    <a href="#" class="hover:text-brown-900 transition-colors duration-300">Art Deco Travel: Luxury Liners and Trains</a>
+                </h3>
+                <p class="text-brown-700 leading-relaxed mb-4">
+                    Journey through the glamorous era of Art Deco travel, from lavish liners to elegant trains.
+                </p>
+                <a href="#" class="inline-flex items-center text-brown-600 hover:text-brown-800 font-semibold transition-colors duration-300">
+                    Explore Travel <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-beige-200 deco-border-top py-12 mt-16">
+    <div class="container mx-auto px-6 text-center text-brown-700">
+        <p class="mb-4 animate-fade-in" style="animation-delay: 1.2s;">© 2024 The Gilded Quill. All rights reserved.</p>
+        <div class="flex justify-center space-x-6 animate-fade-in" style="animation-delay: 1.3s;">
+            <a href="#" class="hover:text-brown-800 transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="hover:text-brown-800 transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="hover:text-brown-800 transition-colors duration-300"><i class="fab fa-pinterest fa-lg"></i></a>
+        </div>
+        <p class="mt-4 text-sm animate-fade-in" style="animation-delay: 1.4s;">Crafted with <i class="fa fa-heart text-red-500"></i> and Tailwind CSS</p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    });
+</script>
+
+</body>
+</html>

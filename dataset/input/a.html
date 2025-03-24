@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Retro Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        handwritten: ['"Permanent Marker"', 'cursive'],
+                        handwritten2: ['"Rock Salt"', 'cursive'],
+                        handwritten3: ['"Shadows Into Light"', 'cursive'],
+                    },
+                    colors: {
+                        retroBg: '#f8f0e3',
+                        retroPaper: '#fdf5e6',
+                        retroText: '#332c27',
+                        retroHighlight: '#e0cba8',
+                        retroAccent: '#a28b74',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-up': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-up': 'fade-out-up 0.5s ease-in',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'handwritten3', cursive;
+            background-color: theme('colors.retroBg');
+            color: theme('colors.retroText');
+        }
+        .blog-container {
+            animation: fade-in-down 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-retroBg">
+    <header class="sticky top-0 bg-retroPaper shadow-md z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-retroText hover:text-retroAccent transition-colors">
+                <i class="fa-solid fa-feather-alt text-retroAccent mr-2"></i>RetroBlog
+            </a>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#" class="hover:text-retroAccent transition-colors">Archive</a></li>
+                <li><a href="#" class="hover:text-retroAccent transition-colors">Categories</a></li>
+                <li><a href="#" class="hover:text-retroAccent transition-colors">About</a></li>
+                <li><a href="#" class="hover:text-retroAccent transition-colors">Contact</a></li>
+            </ul>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-retroText hover:text-retroAccent focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-retroPaper shadow-md p-4">
+            <a href="#" class="block py-2 hover:text-retroAccent transition-colors">Archive</a>
+            <a href="#" class="block py-2 hover:text-retroAccent transition-colors">Categories</a>
+            <a href="#" class="block py-2 hover:text-retroAccent transition-colors">About</a>
+            <a href="#" class="block py-2 hover:text-retroAccent transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 blog-container">
+        <article class="mb-10 bg-retroPaper p-8 rounded-lg shadow-md">
+            <div class="text-center mb-8">
+                <h1 class="font-handwritten2 text-4xl md:text-5xl font-bold text-retroText mb-4">The Joys of a Rainy Day</h1>
+                <div class="text-retroAccent text-sm">
+                    <i class="fa-regular fa-calendar mr-1"></i> Published on October 26, 1955 <span class="mx-2">•</span>
+                    <i class="fa-regular fa-user mr-1"></i> By John S.
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <img src="https://picsum.photos/800/400" alt="Rainy Day Scene" class="rounded-md w-full h-auto">
+                <p class="text-retroAccent text-sm italic mt-2">A cozy rainy day scene. Illustration by Vintage Prints.</p>
+            </div>
+
+            <section class="prose max-w-none">
+                <p>Oh, the pitter-patter of rain against the windowpane! Is there a sound more soothing, more conducive to quiet contemplation?</p>
+                <p>Today, as the skies opened up and the world outside turned a soft, misty grey, I found myself drawn to the simple pleasures of a rainy day.  The air is cooler, cleaner somehow, and the frantic pace of life seems to slow to a gentle amble.</p>
+
+                <h2 class="font-handwritten">A Cup of Warmth</h2>
+                <p>First things first, a steaming cup of tea. Earl Grey, with a slice of lemon. The aroma alone is enough to chase away any lingering gloom.  Wrapped in a soft blanket, with the rain as my soundtrack, each sip is a moment of pure bliss.</p>
+
+                <h2 class="font-handwritten">Lost in Pages</h2>
+                <p>Rainy days are made for reading.  I pulled out my old, leather-bound copy of "Moby Dick."  The yellowed pages, the scent of aged paper, it all adds to the atmosphere.  To be transported to another world, another time, while the storm rages gently outside – it's a magic unlike any other.</p>
+
+                <h2 class="font-handwritten">Creative Sparks</h2>
+                <p>There's something about the quiet solitude of a rainy day that ignites creativity.  Perhaps it's the lack of distractions, or maybe it's the introspective mood the weather inspires.  Whatever it is, ideas seem to flow more freely. I spent the afternoon sketching in my notebook, letting the rain wash away the usual creative blocks.</p>
+
+                <p>So, the next time the clouds gather and the rain begins to fall, don't despair. Embrace it!  Find joy in the simple moments, the quiet corners of a rainy day.  You might just discover a little magic of your own.</p>
+
+                <div class="mt-8 border-t border-retroHighlight pt-4">
+                    <p class="text-retroAccent text-sm">
+                        <i class="fa-regular fa-tags mr-1"></i> Tags: <a href="#" class="hover:text-retroAccent">RainyDays</a>, <a href="#" class="hover:text-retroAccent">Cozy</a>, <a href="#" class="hover:text-retroAccent">Reading</a>, <a href="#" class="hover:text-retroAccent">Vintage</a>
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <div class="bg-retroPaper p-8 rounded-lg shadow-md mb-10">
+            <h2 class="font-handwritten2 text-2xl font-bold text-retroText mb-6">Comments</h2>
+
+            <div class="mb-6 p-4 bg-retroBg rounded-md">
+                <div class="flex items-start space-x-4 mb-3">
+                    <div>
+                        <img src="https://picsum.photos/50/50" alt="User Avatar" class="rounded-full">
+                    </div>
+                    <div>
+                        <div class="font-bold text-retroText">Jane Doe <span class="text-retroAccent font-normal text-sm ml-2">October 27, 1955</span></div>
+                        <p class="text-retroText">Lovely post! Rainy days are indeed the best for introspection and creativity. I especially agree about the tea!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 p-4 bg-retroBg rounded-md">
+                <div class="flex items-start space-x-4 mb-3">
+                    <div>
+                        <img src="https://picsum.photos/51/51" alt="User Avatar" class="rounded-full">
+                    </div>
+                    <div>
+                        <div class="font-bold text-retroText">Peter Smith <span class="text-retroAccent font-normal text-sm ml-2">October 28, 1955</span></div>
+                        <p class="text-retroText">Moby Dick and rain, a perfect combination.  Your blog always brings a touch of warmth and nostalgia!</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="mt-6">
+                <div class="mb-4">
+                    <label for="comment" class="block text-retroText text-sm font-bold mb-2">Leave a Comment:</label>
+                    <textarea id="comment" name="comment" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-retroText leading-tight focus:outline-none focus:shadow-outline" placeholder="Your thoughts..."></textarea>
+                </div>
+                <button type="submit" class="bg-retroAccent hover:bg-retroHighlight text-retroPaper font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors">Post Comment</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-retroPaper border-t border-retroHighlight py-6 text-center text-retroText text-sm">
+        © 1955 RetroBlog. All rights reserved. <a href="#" class="hover:text-retroAccent transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-retroAccent transition-colors">Terms of Service</a>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

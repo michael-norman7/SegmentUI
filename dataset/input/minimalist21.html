@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Furniture Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=aspect-ratio,forms"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#111827',
+                        'secondary': '#6B7280',
+                        'accent': '#F9FAFB',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '26': '6.5rem',
+                        '30': '7.5rem',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .transition-smooth {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scale-hover {
+            transform: scale(1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scale-hover:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-accent text-primary">
+    <header class="sticky top-0 z-50 bg-accent/90 backdrop-blur-sm border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-xl">Minimalist Furniture</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#catalog" class="hover:text-secondary transition-smooth">Catalog</a>
+                <a href="#about" class="hover:text-secondary transition-smooth">About</a>
+                <a href="#contact" class="hover:text-secondary transition-smooth">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-primary hover:text-secondary focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#catalog" class="block py-2 hover:text-secondary transition-smooth">Catalog</a>
+                <a href="#about" class="block py-2 hover:text-secondary transition-smooth">About</a>
+                <a href="#contact" class="block py-2 hover:text-secondary transition-smooth">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="py-20 md:py-32">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Timeless Furniture for Modern Living</h1>
+                <p class="text-lg text-secondary mb-8">Discover handcrafted furniture designed with minimalist principles and enduring quality.</p>
+                <a href="#catalog" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-accent font-semibold rounded-md hover:bg-primary/90 transition-smooth focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                    Explore Catalog <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="aspect-w-1 aspect-h-1 w-full md:max-w-md mx-auto overflow-hidden rounded-xl shadow-lg scale-hover">
+                    <img src="https://picsum.photos/id/1025/600/800" alt="Featured Furniture" class="object-cover w-full h-full transition-smooth">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog" class="py-16 md:py-24 bg-gray-50 border-y border-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Curated Collection</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="scale-hover rounded-xl overflow-hidden shadow-md transition-smooth">
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="https://picsum.photos/id/222/400/500" alt="Furniture Item 1" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Minimalist Chair</h3>
+                        <p class="text-secondary text-sm">Elegant and comfortable seating.</p>
+                    </div>
+                </div>
+                <div class="scale-hover rounded-xl overflow-hidden shadow-md transition-smooth">
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="https://picsum.photos/id/223/400/500" alt="Furniture Item 2" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Sculptural Table</h3>
+                        <p class="text-secondary text-sm">A centerpiece for any room.</p>
+                    </div>
+                </div>
+                <div class="scale-hover rounded-xl overflow-hidden shadow-md transition-smooth">
+                    <div class="aspect-w-1 aspect-h-1">
+                        <img src="https://picsum.photos/id/224/400/500" alt="Furniture Item 3" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-2">Modular Sofa</h3>
+                        <p class="text-secondary text-sm">Versatile and adaptable design.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center justify-center px-6 py-3 bg-accent text-primary font-semibold rounded-md hover:bg-gray-100 transition-smooth focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 border border-primary">
+                    View Full Catalog <i class="fa fa-book-open ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 md:py-32">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 relative order-2 md:order-1">
+                <div class="aspect-w-1 aspect-h-1 w-full md:max-w-md mx-auto overflow-hidden rounded-xl shadow-lg scale-hover">
+                    <img src="https://picsum.photos/id/433/600/800" alt="Designer Image" class="object-cover w-full h-full transition-smooth">
+                </div>
+            </div>
+            <div class="md:w-1/2 mb-10 md:mb-0 order-1 md:order-2 md:ml-16">
+                <h2 class="text-3xl font-bold leading-tight mb-6">Designed with Intention</h2>
+                <p class="text-lg text-secondary mb-8">Our furniture is crafted by skilled artisans with a focus on minimalist aesthetics and functional design. We believe in creating pieces that are not only beautiful but also enhance your living space.</p>
+                <p class="text-lg text-secondary mb-8">Each piece is made using sustainably sourced materials and built to last, reflecting our commitment to quality and the environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-gray-50 border-b border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Let's Connect</h2>
+            <p class="text-lg text-secondary mb-8">Have questions or a custom project in mind? Reach out to us.</p>
+            <a href="mailto:contact@minimalistfurniture.com" class="inline-flex items-center justify-center px-6 py-3 bg-primary text-accent font-semibold rounded-md hover:bg-primary/90 transition-smooth focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                Contact Us <i class="fa fa-envelope ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-accent border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center text-secondary">
+            <p>© 2024 Minimalist Furniture. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    if (mobileMenu.classList && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

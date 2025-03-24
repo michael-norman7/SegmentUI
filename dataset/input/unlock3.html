@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Digital Marketing Mastery - E-book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'satoshi': ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#115e59',
+                        accent: '#34d399',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'pulse-shadow': {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(15, 118, 110, 0.4)' },
+                            '50%': { boxShadow: '0 0 0 15px rgba(15, 118, 110, 0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.8s ease-out forwards',
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                        'pulse-cta': 'pulse-shadow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    boxShadow: {
+                        'hero': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+                        'card': '0 15px 30px -5px rgba(0, 0, 0, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-fade-slide-up {
+            animation: fade-slide-up 0.8s ease-out forwards;
+        }
+        .animate-slide-in-right {
+            animation: slide-in-right 0.7s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-satoshi bg-neutral text-dark antialiased">
+
+<header class="bg-white sticky top-0 z-50 shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold text-primary">Digital Marketing Pro</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#benefits" class="hover:text-secondary transition-colors">Benefits</a>
+            <a href="#preview" class="hover:text-secondary transition-colors">Preview</a>
+            <a href="#testimonials" class="hover:text-secondary transition-colors">Testimonials</a>
+            <a href="#cta" class="hover:text-secondary transition-colors">Get E-book</a>
+        </div>
+        <button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
+            <i class="fa fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<section class="hero relative overflow-hidden pb-16 md:pb-24 lg:pb-32">
+    <div class="container mx-auto px-6 pt-24 md:pt-32 lg:pt-40">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="hero-text lg:order-1 animate-fade-slide-up">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 leading-tight">Unlock Digital Marketing Mastery</h1>
+                <p class="text-lg text-gray-700 mb-8">Master the latest digital marketing strategies and techniques with our comprehensive e-book. From SEO to social media, learn how to grow your online presence and drive conversions.</p>
+                <a href="#cta" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors shadow-md animate-pulse-cta">
+                    Download Now <i class="fa fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+            <div class="hero-image relative animate-slide-in-right">
+                <div class="absolute -top-10 -left-10 w-48 h-48 bg-accent rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
+                <div class="absolute bottom-20 right-0 w-40 h-40 bg-primary rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-pulse"></div>
+                <img src="https://picsum.photos/400/600" alt="E-book cover" class="rounded-xl shadow-hero relative z-10">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="benefits" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Key Benefits You'll Gain</h2>
+            <p class="text-gray-700 text-lg">Learn actionable strategies to elevate your digital marketing efforts.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            <div class="benefit-card p-6 bg-neutral rounded-lg shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mb-4">
+                    <i class="fa fa-rocket"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Boost Your Website Traffic</h3>
+                <p class="text-gray-600">Discover proven SEO techniques to rank higher in search results and attract more organic traffic.</p>
+            </div>
+            <div class="benefit-card p-6 bg-neutral rounded-lg shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mb-4">
+                    <i class="fa fa-users"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Enhance Social Media Engagement</h3>
+                <p class="text-gray-600">Craft compelling social media campaigns that resonate with your audience and increase engagement.</p>
+            </div>
+            <div class="benefit-card p-6 bg-neutral rounded-lg shadow-card hover:shadow-lg transition-shadow duration-300">
+                <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mb-4">
+                    <i class="fa fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Improve Conversion Rates</h3>
+                <p class="text-gray-600">Optimize your landing pages and sales funnels to convert more visitors into paying customers.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="preview" class="py-16 md:py-24 bg-neutral">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">E-book Preview</h2>
+            <p class="text-gray-700 text-lg">Take a sneak peek at what's inside the e-book.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div>
+                <img src="https://picsum.photos/400/300" alt="E-book preview page" class="rounded-lg shadow-card">
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold text-dark mb-4">What You'll Learn</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li class="mb-2">SEO Fundamentals and Advanced Techniques</li>
+                    <li class="mb-2">Social Media Marketing Strategies for Every Platform</li>
+                    <li class="mb-2">Content Marketing That Drives Engagement</li>
+                    <li class="mb-2">Email Marketing Best Practices for Higher Conversions</li>
+                    <li class="mb-2">Paid Advertising Campaigns: Google Ads & Social Ads</li>
+                    <li>Analytics and Tracking for Data-Driven Decisions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Hear From Our Readers</h2>
+            <p class="text-gray-700 text-lg">Don't just take our word for it, see what others are saying.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            <div class="testimonial-card p-6 bg-neutral rounded-lg shadow-card">
+                <div class="mb-4">
+                    <i class="fa fa-quote-left text-accent text-2xl"></i>
+                </div>
+                <p class="text-gray-700 mb-4">"This e-book is a game-changer! I've implemented the strategies and seen a significant increase in my website traffic."</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/50/50" alt="Testimonial author" class="rounded-full w-10 h-10 mr-3">
+                    <div class="text-sm">
+                        <p class="font-semibold text-dark">Sarah M.</p>
+                        <p class="text-gray-500">Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card p-6 bg-neutral rounded-lg shadow-card">
+                <div class="mb-4">
+                    <i class="fa fa-quote-left text-accent text-2xl"></i>
+                </div>
+                <p class="text-gray-700 mb-4">"Finally, a digital marketing guide that's easy to understand and implement. Highly recommend for beginners and experienced marketers alike."</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/51/51" alt="Testimonial author" class="rounded-full w-10 h-10 mr-3">
+                    <div class="text-sm">
+                        <p class="font-semibold text-dark">John B.</p>
+                        <p class="text-gray-500">Small Business Owner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card p-6 bg-neutral rounded-lg shadow-card">
+                <div class="mb-4">
+                    <i class="fa fa-quote-left text-accent text-2xl"></i>
+                </div>
+                <p class="text-gray-700 mb-4">"The insights on social media marketing alone are worth the price of the e-book. My engagement rates have skyrocketed!"</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/52/52" alt="Testimonial author" class="rounded-full w-10 h-10 mr-3">
+                    <div class="text-sm">
+                        <p class="font-semibold text-dark">Emily L.</p>
+                        <p class="text-gray-500">Freelance Consultant</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="cta" class="py-24 md:py-32 bg-primary">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">Ready to Master Digital Marketing?</h2>
+        <p class="text-neutral-200 text-lg mb-12">Download your copy of the e-book today and start transforming your online presence.</p>
+        <a href="#" class="inline-flex items-center justify-center px-10 py-4 border border-transparent text-base font-medium rounded-md text-primary bg-accent hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors shadow-lg">
+            Get Your E-book Now <i class="fa fa-book-open ml-2"></i>
+        </a>
+    </div>
+</section>
+
+<footer class="bg-neutral py-8 border-t border-gray-200">
+    <div class="container mx-auto px-6 text-center text-gray-600">
+        <p>© 2024 Digital Marketing Pro. All rights reserved.</p>
+        <p class="mt-2">
+            <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+            <span class="mx-2">·</span>
+            <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

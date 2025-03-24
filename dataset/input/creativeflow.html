@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeFlow - Graphic Design Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F9F5F6',
+                        secondary: '#A62349',
+                        accent: '#E56B6F',
+                        neutral: '#626E69',
+                        dark: '#2A2B2A',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'scale-up': {
+                            '0%': { transform: 'scale(0.95)' },
+                            '100%': { transform: 'scale(1)' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                        'slide-in-left': 'slide-in-left 0.7s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'scale-up': 'scale-up 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @layer utilities {
+            . DebouncedResizeObserver {
+                resize: both;
+                overflow: auto;
+            }
+        }
+    </style>
+</head>
+<body class="font-poppins bg-primary text-dark overflow-x-hidden">
+    <header class="sticky top-0 z-50 bg-primary shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-xl text-secondary hover:text-accent transition-colors duration-300">CreativeFlow</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-secondary transition-colors duration-300">About</a>
+                <a href="#portfolio" class="hover:text-secondary transition-colors duration-300">Portfolio</a>
+                <a href="#services" class="hover:text-secondary transition-colors duration-300">Services</a>
+                <a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+            </div>
+            <button class="md:hidden text-neutral hover:text-secondary focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative overflow-hidden pt-24 md:pt-36 pb-16 md:pb-24">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="md:order-2 animate-slide-in-right">
+                    <img src="https://picsum.photos/id/1025/600/800" alt="Abstract Graphic Design" class="rounded-xl shadow-2xl aspect-square object-cover w-full h-auto md:max-h-[70vh]">
+                </div>
+                <div class="md:order-1 text-center md:text-left animate-slide-in-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-6">Crafting Visual Experiences</h1>
+                    <p class="text-neutral text-lg mb-8">I am a graphic designer passionate about creating impactful and beautiful visual solutions. Let's bring your vision to life.</p>
+                    <div class="space-x-4">
+                        <a href="#portfolio" class="inline-block bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition-colors duration-300 shadow-md">Explore Portfolio</a>
+                        <a href="#contact" class="inline-block border-2 border-accent text-accent px-6 py-3 rounded-lg font-semibold hover:bg-accent hover:text-primary transition-colors duration-300 shadow-md">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-t from-primary to-transparent"></div>
+        </section>
+
+        <section id="about" class="py-20 bg-neutral-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-12 animate-fade-in">About Me</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-scale-up">
+                        <img src="https://picsum.photos/id/1005/400/600" alt="Designer Portrait" class="rounded-xl shadow-xl aspect-[3/4] object-cover w-full h-auto">
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-semibold text-accent mb-4">Driven by Creativity, Rooted in Strategy</h3>
+                        <p class="text-neutral mb-6">With over 5 years of experience in the graphic design industry, I specialize in brand identity, web design, and illustration. My approach is deeply collaborative, focusing on understanding your needs and delivering designs that not only look stunning but also achieve your business goals.</p>
+                        <p class="text-neutral mb-6">I believe in the power of visual communication to tell stories and connect with audiences on an emotional level. My design process is iterative and client-focused, ensuring that the final product is something we're both incredibly proud of.</p>
+                        <ul class="list-disc pl-5 text-neutral">
+                            <li>Brand Identity & Strategy</li>
+                            <li>Web & UI/UX Design</li>
+                            <li>Illustration & Visual Assets</li>
+                            <li>Print & Marketing Collateral</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-12 animate-fade-in">Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-scale-up">
+                        <img src="https://picsum.photos/id/1011/400/300" alt="Portfolio Item 1" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Brand Identity for Tech Startup</h3>
+                            <p class="text-neutral text-sm">Logo, Brand Guidelines, Website Mockups</p>
+                        </div>
+                    </div>
+                    <div class="shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-scale-up">
+                        <img src="https://picsum.photos/id/1012/400/300" alt="Portfolio Item 2" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Website Redesign for Local Business</h3>
+                            <p class="text-neutral text-sm">UI/UX Design, Responsive Layout, Visual Refresh</p>
+                        </div>
+                    </div>
+                    <div class="shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-scale-up">
+                        <img src="https://picsum.photos/id/1013/400/300" alt="Portfolio Item 3" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Illustration Series for Children's Book</h3>
+                            <p class="text-neutral text-sm">Character Design, Scene Illustrations, Cover Art</p>
+                        </div>
+                    </div>
+                    <div class="shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-scale-up">
+                        <img src="https://picsum.photos/id/1015/400/300" alt="Portfolio Item 4" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Marketing Campaign for New Product Launch</h3>
+                            <p class="text-neutral text-sm">Social Media Graphics, Banner Ads, Email Templates</p>
+                        </div>
+                    </div>
+                    <div class="shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-scale-up">
+                        <img src="https://picsum.photos/id/1016/400/300" alt="Portfolio Item 5" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Packaging Design for Gourmet Food Brand</h3>
+                            <p class="text-neutral text-sm">Label Design, Box Packaging, Brand Consistency</p>
+                        </div>
+                    </div>
+                    <div class="shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 animate-scale-up">
+                        <img src="https://picsum.photos/id/1018/400/300" alt="Portfolio Item 6" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Infographic Design for Data Visualization</h3>
+                            <p class="text-neutral text-sm">Data Storytelling, Visual Hierarchy, Engaging Layout</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-neutral-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-12 animate-fade-in">Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-6 bg-primary rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up">
+                        <i class="fa-solid fa-rocket text-3xl text-accent mb-4"></i>
+                        <h3 class="font-semibold text-xl mb-2">Brand Identity</h3>
+                        <p class="text-neutral">Crafting memorable logos, brand guidelines, and visual systems that resonate with your audience.</p>
+                    </div>
+                    <div class="p-6 bg-primary rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up">
+                        <i class="fa-solid fa-desktop text-3xl text-accent mb-4"></i>
+                        <h3 class="font-semibold text-xl mb-2">Web & UI/UX Design</h3>
+                        <p class="text-neutral">Designing intuitive and engaging websites and user interfaces that drive results and user satisfaction.</p>
+                    </div>
+                    <div class="p-6 bg-primary rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up">
+                        <i class="fa-solid fa-pen-nib text-3xl text-accent mb-4"></i>
+                        <h3 class="font-semibold text-xl mb-2">Illustration</h3>
+                        <p class="text-neutral">Creating custom illustrations for websites, books, marketing materials, and various digital and print media.</p>
+                    </div>
+                    <div class="p-6 bg-primary rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up">
+                        <i class="fa-solid fa-print text-3xl text-accent mb-4"></i>
+                        <h3 class="font-semibold text-xl mb-2">Print Design</h3>
+                        <p class="text-neutral">Designing brochures, business cards, posters, and other print collateral with a focus on visual impact.</p>
+                    </div>
+                    <div class="p-6 bg-primary rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up">
+                        <i class="fa-solid fa-camera text-3xl text-accent mb-4"></i>
+                        <h3 class="font-semibold text-xl mb-2">Photography & Editing</h3>
+                        <p class="text-neutral">Professional photography services and image editing to enhance your visual content and brand presentation.</p>
+                    </div>
+                    <div class="p-6 bg-primary rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-scale-up">
+                        <i class="fa-solid fa-video text-3xl text-accent mb-4"></i>
+                        <h3 class="font-semibold text-xl mb-2">Motion Graphics</h3>
+                        <p class="text-neutral">Creating engaging motion graphics and video animations to elevate your brand storytelling and digital presence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-12 animate-fade-in">Contact Me</h2>
+                <div class="max-w-lg mx-auto animate-scale-up">
+                    <p class="text-neutral mb-8">Let's discuss your project! Reach out for collaborations, inquiries, or just to say hello.</p>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none">
+                        </div>
+                        <div>
+                            <textarea rows="4" placeholder="Your Message" class="w-full px-4 py-3 rounded-lg border border-neutral-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-accent text-primary px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition-colors duration-300 shadow-md">Send Message</button>
+                        </div>
+                    </form>
+                    <div class="mt-8">
+                        <p class="text-neutral">Or connect with me on social media:</p>
+                        <div class="flex justify-center space-x-6 mt-4">
+                            <a href="#" class="text-neutral hover:text-secondary transition-colors duration-300"><i class="fa-brands fa-linkedin text-2xl"></i></a>
+                            <a href="#" class="text-neutral hover:text-secondary transition-colors duration-300"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                            <a href="#" class="text-neutral hover:text-secondary transition-colors duration-300"><i class="fa-brands fa-behance text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-primary py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 CreativeFlow. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.querySelector('header');
+            const heroSection = document.getElementById('hero');
+
+            const navHeight = nav.offsetHeight;
+
+            function handleScroll() {
+                if (window.scrollY > heroSection.offsetHeight - navHeight) {
+                    nav.classList.add('shadow-md');
+                } else {
+                    nav.classList.remove('shadow-md');
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll();
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - doc
+content_copy
+download
+Use code with caution.
+Html

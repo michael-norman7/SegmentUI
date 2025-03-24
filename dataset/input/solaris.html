@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solaris Energy - Powering a Sustainable Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#34D399',
+                        secondary: '#06B6D4',
+                        accent: '#A78BFA',
+                        neutral: '#F3F4F6',
+                        dark: '#1E293B',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.6s ease-out forwards',
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                        'slide-in-left': 'slide-in-left 0.7s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-sans antialiased bg-neutral text-dark;
+            }
+        }
+        @layer components {
+            .container-main {
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+            }
+            .section-padding {
+                @apply py-20;
+            }
+            .section-title {
+                @apply text-3xl font-bold text-center mb-10 md:text-4xl;
+            }
+            .cta-button {
+                @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300;
+            }
+            .feature-card {
+                @apply p-6 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300;
+            }
+            .feature-icon {
+                @apply w-12 h-12 rounded-xl bg-accent text-white flex items-center justify-center mb-4;
+            }
+            .testimonial-card {
+                @apply p-6 rounded-lg bg-white shadow-md;
+            }
+        }
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+<header class="sticky top-0 bg-neutral/90 backdrop-blur-sm z-50 shadow-md">
+    <nav class="container-main py-4">
+        <div class="flex justify-between items-center">
+            <a href="#" class="font-bold text-xl text-primary">Solaris Energy</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="hover:text-primary transition-colors duration-300">Services</a>
+                <a href="#why-us" class="hover:text-primary transition-colors duration-300">Why Us</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors duration-300">Testimonials</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none focus:text-primary">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Services</a>
+            <a href="#why-us" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Why Us</a>
+            <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Testimonials</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-primary">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero section-padding">
+    <div class="container-main grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="hero-text md:order-1 animate-fade-slide-up">
+            <h1 class="text-5xl font-bold mb-6 text-gradient bg-gradient-to-r from-primary to-secondary">Power Your Home with Clean Energy</h1>
+            <p class="text-lg text-gray-700 mb-8">Harness the sun's energy and reduce your carbon footprint with our premium solar panel installations. Save money and contribute to a sustainable future.</p>
+            <div class="space-x-4">
+                <a href="#contact" class="cta-button">Get a Free Quote</a>
+                <a href="#services" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors duration-300">Learn More <i class="fa fa-arrow-right ml-2"></i></a>
+            </div>
+        </div>
+        <div class="hero-image relative animate-slide-in-right">
+            <img src="https://picsum.photos/id/25/600/400" alt="Solar Panels on a Roof" class="rounded-xl shadow-lg aspect-video object-cover w-full h-auto">
+        </div>
+    </div>
+</section>
+
+<section id="services" class="section-padding bg-white">
+    <div class="container-main">
+        <h2 class="section-title">Our Solar Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="feature-card animate-fade-slide-up">
+                <div class="feature-icon"><i class="fa fa-sun text-xl"></i></div>
+                <h3 class="text-xl font-semibold mb-2">Residential Solar Installation</h3>
+                <p class="text-gray-600">Tailored solar solutions for homes of all sizes. Reduce your energy bills and increase your home value.</p>
+            </div>
+            <div class="feature-card animate-fade-slide-up delay-100">
+                <div class="feature-icon"><i class="fa fa-building text-xl"></i></div>
+                <h3 class="text-xl font-semibold mb-2">Commercial Solar Solutions</h3>
+                <p class="text-gray-600">Power your business with sustainable energy. Scalable solar systems for maximum energy efficiency.</p>
+            </div>
+            <div class="feature-card animate-fade-slide-up delay-200">
+                <div class="feature-icon"><i class="fa fa-bolt text-xl"></i></div>
+                <h3 class="text-xl font-semibold mb-2">Battery Storage Integration</h3>
+                <p class="text-gray-600">Maximize your solar energy usage with battery storage. Power through the night and during outages.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why-us" class="section-padding bg-neutral">
+    <div class="container-main">
+        <h2 class="section-title">Why Choose Solaris Energy?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="animate-slide-in-left">
+                <img src="https://picsum.photos/id/31/500/400" alt="Team working on solar panel installation" class="rounded-xl shadow-lg aspect-video object-cover w-full h-auto">
+            </div>
+            <div class="space-y-6 animate-fade-slide-up md:text-right">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">Expert Installation Team</h3>
+                    <p class="text-gray-700">Our certified professionals ensure seamless and efficient solar panel installations. We handle everything from permits to activation.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">High-Quality Panels & Equipment</h3>
+                    <p class="text-gray-700">We use only top-tier solar panels and equipment, ensuring longevity and optimal performance for years to come.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-2">Dedicated Customer Support</h3>
+                    <p class="text-gray-700">We provide exceptional customer service and support throughout your solar journey. We are here to answer your questions and assist you every step of the way.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="section-padding bg-white">
+    <div class="container-main">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="testimonial-card animate-fade-slide-up">
+                <i class="fa fa-quote-left text-gray-400 mb-4"></i>
+                <p class="text-gray-700 mb-4">"Switching to solar with Solaris Energy was the best decision for our home. The installation was quick, and our energy bills have drastically reduced!"</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/id/85/50/50" alt="Customer 1" class="rounded-full w-10 h-10 mr-4">
+                    <div class="font-medium">
+                        <p>Sarah M.</p>
+                        <p class="text-sm text-gray-500">Homeowner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-fade-slide-up delay-100">
+                <i class="fa fa-quote-left text-gray-400 mb-4"></i>
+                <p class="text-gray-700 mb-4">"From consultation to installation, Solaris Energy exceeded our expectations. Professional, efficient, and truly committed to customer satisfaction."</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/id/92/50/50" alt="Customer 2" class="rounded-full w-10 h-10 mr-4">
+                    <div class="font-medium">
+                        <p>John B.</p>
+                        <p class="text-sm text-gray-500">Business Owner</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card animate-fade-slide-up delay-200">
+                <i class="fa fa-quote-left text-gray-400 mb-4"></i>
+                <p class="text-gray-700 mb-4">"Impressed with the quality of work and the seamless process. Solaris Energy made going solar easy and affordable. Highly recommend them!"</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/id/77/50/50" alt="Customer 3" class="rounded-full w-10 h-10 mr-4">
+                    <div class="font-medium">
+                        <p>Emily L.</p>
+                        <p class="text-sm text-gray-500">Resident</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section-padding bg-neutral">
+    <div class="container-main">
+        <h2 class="section-title">Get a Free Solar Quote</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="animate-slide-in-left">
+                <img src="https://picsum.photos/id/49/500/400" alt="Contact us" class="rounded-xl shadow-lg aspect-video object-cover w-full h-auto">
+            </div>
+            <div class="animate-fade-slide-up">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
+                        <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
+                        <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="yourname@email.com" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
+                        <input type="tel" id="phone" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" placeholder="Phone Number">
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Message</label>
+                        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="cta-button w-full">Request a Quote</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-neutral py-12">
+    <div class="container-main text-center">
+        <p>© 2024 Solaris Energy. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="#" class="hover:text-primary transition-colors duration-300">Privacy Policy</a>
+            <a href="#" class="hover:text-primary transition-colors duration-300">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

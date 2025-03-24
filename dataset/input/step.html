@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step Counter Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#9ca3af',
+                        accent: '#fde047',
+                        softBg: '#f9f9f9',
+                        softShadow: '#e5e7eb',
+                    },
+                    boxShadow: {
+                        'soft': '5px 5px 15px #d1d5db, -5px -5px 15px #ffffff',
+                        'soft-inset': 'inset 5px 5px 10px #d1d5db, inset -5px -5px 10px #ffffff',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-softBg font-sans antialiased">
+    <div class="container mx-auto p-4 md:p-8 animate-fade-up">
+        <header class="mb-6 md:mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary">My Dashboard</h1>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <div class="bg-softBg rounded-2xl p-6 shadow-soft flex flex-col justify-between overflow-hidden">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-shoe-prints text-xl md:text-2xl text-primary mr-3"></i>
+                        <h2 class="text-lg md:text-xl font-semibold text-gray-800">Daily Steps</h2>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-3xl md:text-4xl font-bold text-gray-900">8,542</span>
+                        <span class="text-secondary text-sm md:text-base">Steps</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-gray-200 rounded-full h-2 mb-2">
+                        <div class="bg-primary rounded-full h-2" style="width: 85%"></div>
+                    </div>
+                    <div class="flex justify-between text-sm md:text-base text-gray-600">
+                        <span>Goal: 10,000</span>
+                        <span>85%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-softBg rounded-2xl p-6 shadow-soft flex flex-col justify-between overflow-hidden">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-heart-pulse text-xl md:text-2xl text-accent mr-3"></i>
+                        <h2 class="text-lg md:text-xl font-semibold text-gray-800">Activity Level</h2>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-center mb-2">
+                            <div class="w-2 h-2 rounded-full bg-green-400 mr-2"></div>
+                            <span class="text-gray-700 text-sm md:text-base">Sedentary: <span class="font-medium">10%</span></span>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <div class="w-2 h-2 rounded-full bg-blue-400 mr-2"></div>
+                            <span class="text-gray-700 text-sm md:text-base">Light: <span class="font-medium">60%</span></span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 rounded-full bg-orange-400 mr-2"></div>
+                            <span class="text-gray-700 text-sm md:text-base">Moderate: <span class="font-medium">25%</span></span>
+                        </div>
+                        <div class="flex items-center mt-2">
+                            <div class="w-2 h-2 rounded-full bg-red-400 mr-2"></div>
+                            <span class="text-gray-700 text-sm md:text-base">Vigorous: <span class="font-medium">5%</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <i class="fa-solid fa-level-up-alt text-secondary text-xl md:text-2xl mb-2"></i>
+                    <p class="text-secondary text-sm md:text-base">Level: <span class="font-medium text-gray-700">Light</span></p>
+                </div>
+            </div>
+
+            <div class="bg-softBg rounded-2xl p-6 shadow-soft flex flex-col justify-between overflow-hidden">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-flag-checkered text-xl md:text-2xl text-primary mr-3"></i>
+                        <h2 class="text-lg md:text-xl font-semibold text-gray-800">Fitness Goal</h2>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-gray-700 font-medium mb-1">Weight Loss</h3>
+                        <div class="bg-gray-200 rounded-full h-2">
+                            <div class="bg-accent rounded-full h-2" style="width: 40%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm md:text-base text-gray-600 mt-1">
+                            <span>Progress: 2kg / 5kg</span>
+                            <span>40%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-gray-700 font-medium mb-1">Daily Exercise</h3>
+                        <div class="bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary rounded-full h-2" style="width: 70%"></div>
+                        </div>
+                        <div class="flex justify-between text-sm md:text-base text-gray-600 mt-1">
+                            <span>Progress: 35 min / 50 min</span>
+                            <span>70%</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="mt-4 bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-300">
+                    View Goals
+                </button>
+            </div>
+
+            <div class="bg-softBg rounded-2xl p-6 shadow-soft md:col-span-2 flex flex-col overflow-hidden">
+                <div class="flex items-center mb-6">
+                    <i class="fa-solid fa-chart-line text-xl md:text-2xl text-accent mr-3"></i>
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800">Weekly Activity Trend</h2>
+                </div>
+                <div class="relative h-64">
+                    <img src="https://picsum.photos/600/300" alt="Activity Trend Chart" class="absolute inset-0 w-full h-full object-cover rounded-lg">
+                </div>
+            </div>
+
+            <div class="bg-softBg rounded-2xl p-6 shadow-soft flex flex-col overflow-hidden">
+                <div class="flex items-center mb-6">
+                    <i class="fa-solid fa-trophy text-xl md:text-2xl text-primary mr-3"></i>
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800">Achievements</h2>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-medal text-yellow-500 text-lg mr-3"></i>
+                        <span class="text-gray-700">10,000 Steps Badge</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-medal text-gray-400 text-lg mr-3"></i>
+                        <span class="text-gray-700">7-Day Streak</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fa-solid fa-lock-open text-green-500 text-lg mr-3"></i>
+                        <span class="text-gray-700">Unlock New Goal</span>
+                    </li>
+                </ul>
+                <button class="mt-6 bg-secondary hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 transition-colors duration-300 self-start">
+                    View All
+                </button>
+            </div>
+
+            <div class="bg-softBg rounded-2xl p-6 shadow-soft flex flex-col overflow-hidden">
+                <div class="flex items-center mb-6">
+                    <i class="fa-solid fa-user-cog text-xl md:text-2xl text-secondary mr-3"></i>
+                    <h2 class="text-lg md:text-xl font-semibold text-gray-800">Settings</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-700">Notifications</span>
+                        <button class="relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 bg-primary" role="switch" aria-checked="true">
+                            <span class="pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform transition ease-in-out duration-200 translate-x-5">
+                                <span class="absolute inset-0 h-full w-full flex items-center justify-center transition-opacity" aria-hidden="true">
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-gray-700">Dark Mode</span>
+                        <button class="relative inline-flex flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 bg-gray-200" role="switch" aria-checked="false">
+                            <span class="pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform transition ease-in-out duration-200 translate-x-0">
+                                <span class="absolute inset-0 h-full w-full flex items-center justify-center transition-opacity opacity-0" aria-hidden="true">
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

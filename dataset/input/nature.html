@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Blog - Breathtaking Landscapes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'nature-primary': '#54B48C',
+                        'nature-secondary': '#3A7D69',
+                        'nature-accent': '#A7C4BC',
+                        'nature-light': '#F8F8FF',
+                        'nature-dark': '#333333',
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out'
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-nature-light font-body text-nature-dark">
+
+    <header class="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-md transition-shadow duration-300" id="header">
+        <nav class="container mx-auto px-6 py-4 md:px-12 lg:px-24 flex justify-between items-center">
+            <a href="/" class="font-display text-2xl font-bold text-nature-primary hover:text-nature-secondary transition-colors duration-300">NatureBlog</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="/" class="nav-link hover:text-nature-primary transition-colors duration-300">Home</a>
+                <a href="/categories" class="nav-link hover:text-nature-primary transition-colors duration-300">Categories</a>
+                <a href="/about" class="nav-link hover:text-nature-primary transition-colors duration-300">About</a>
+                <a href="/contact" class="nav-link hover:text-nature-primary transition-colors duration-300">Contact</a>
+            </div>
+            <button class="md:hidden text-nature-dark hover:text-nature-primary focus:outline-none">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero relative h-screen-75 md:h-screen overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="https://picsum.photos/1920/1080" alt="Hero Image" class="w-full h-full object-cover">
+            </div>
+            <div class="absolute inset-0 bg-nature-dark bg-opacity-40"></div>
+            <div class="container mx-auto px-6 md:px-12 lg:px-24 relative z-10 flex flex-col justify-center h-full text-center">
+                <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 animate-fade-in-down">Explore the Beauty of Nature</h1>
+                <p class="text-xl md:text-2xl text-nature-light mb-8 animate-fade-in-down delay-200">Discover breathtaking landscapes and untold stories from the natural world.</p>
+                <a href="/blog" class="inline-block bg-nature-primary hover:bg-nature-secondary text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 animate-fade-in-down delay-400">Explore Blog</a>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 lg:py-32">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-12">Featured Stories</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+
+                    <article class="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <a href="/post/1">
+                            <img src="https://picsum.photos/400/300" alt="Post Image 1" class="w-full h-64 object-cover">
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-display text-xl font-semibold mb-2 hover:text-nature-primary transition-colors duration-300">
+                                <a href="/post/1">The Serenity of Mountain Lakes</a>
+                            </h3>
+                            <p class="text-nature-dark text-opacity-70 mb-4">A journey to the tranquil waters nestled high in the mountains.</p>
+                            <a href="/post/1" class="inline-flex items-center text-nature-primary hover:text-nature-secondary font-semibold transition-colors duration-300">
+                                Read More <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <a href="/post/2">
+                            <img src="https://picsum.photos/400/301" alt="Post Image 2" class="w-full h-64 object-cover">
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-display text-xl font-semibold mb-2 hover:text-nature-primary transition-colors duration-300">
+                                <a href="/post/2">Whispers of the Forest</a>
+                            </h3>
+                            <p class="text-nature-dark text-opacity-70 mb-4">Immerse yourself in the deep green heart of ancient woodlands.</p>
+                            <a href="/post/2" class="inline-flex items-center text-nature-primary hover:text-nature-secondary font-semibold transition-colors duration-300">
+                                Read More <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                        <a href="/post/3">
+                            <img src="https://picsum.photos/400/302" alt="Post Image 3" class="w-full h-64 object-cover">
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-display text-xl font-semibold mb-2 hover:text-nature-primary transition-colors duration-300">
+                                <a href="/post/3">Coastal Sunsets and Ocean Tales</a>
+                            </h3>
+                            <p class="text-nature-dark text-opacity-70 mb-4">Witness the magic of sunsets painting the vast ocean canvas.</p>
+                            <a href="/post/3" class="inline-flex items-center text-nature-primary hover:text-nature-secondary font-semibold transition-colors duration-300">
+                                Read More <i class="fa fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-nature-light py-16 md:py-24 lg:py-32">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24 text-center">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-8">Explore by Category</h2>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="/category/mountains" class="category-badge">Mountains</a>
+                    <a href="/category/forests" class="category-badge">Forests</a>
+                    <a href="/category/oceans" class="category-badge">Oceans</a>
+                    <a href="/category/deserts" class="category-badge">Deserts</a>
+                    <a href="/category/wildlife" class="category-badge">Wildlife</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24 lg:py-32">
+            <div class="container mx-auto px-6 md:px-12 lg:px-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">About NatureBlog</h2>
+                    <p class="text-nature-dark text-opacity-80 mb-8">NatureBlog is dedicated to showcasing the awe-inspiring beauty of our planet. We bring you captivating stories and stunning photography from around the globe, aiming to inspire a deeper connection with nature and promote environmental awareness.</p>
+                    <a href="/about" class="inline-block bg-nature-accent hover:bg-nature-primary text-nature-dark font-semibold py-3 px-8 rounded-full transition-colors duration-300">Learn More</a>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/600/400" alt="About Us Image" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-nature-dark text-nature-light py-12">
+        <div class="container mx-auto px-6 md:px-12 lg:px-24 flex justify-between items-center">
+            <p>© 2024 NatureBlog. All Rights Reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-nature-primary transition-colors duration-300"><i class="fa fa-facebook-square fa-lg"></i></a>
+                <a href="#" class="hover:text-nature-primary transition-colors duration-300"><i class="fa fa-twitter-square fa-lg"></i></a>
+                <a href="#" class="hover:text-nature-primary transition-colors duration-300"><i class="fa fa-instagram-square fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .nav-link {
+            @apply text-nature-dark font-semibold;
+        }
+        .category-badge {
+            @apply inline-block bg-nature-accent bg-opacity-20 text-nature-accent font-semibold py-2 px-4 rounded-full hover:bg-opacity-40 hover:text-nature-primary transition-all duration-300;
+        }
+        .hero {
+            background-image: url('https://picsum.photos/1920/1080');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+
+    <script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'bg-white', 'bg-opacity-95');
+                header.classList.remove('bg-opacity-90', 'backdrop-blur-sm', 'shadow-sm');
+            } else {
+                header.classList.remove('shadow-md', 'bg-white', 'bg-opacity-95');
+                header.classList.add('bg-opacity-90', 'backdrop-blur-sm', 'shadow-sm');
+            }
+        });
+    </script>
+
+</body>
+</html>

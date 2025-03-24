@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolest Cart Ever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#64748b',
+                        'accent': '#fde047',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '26': '6.5rem',
+                        '30': '7.5rem',
+                        '128': '32rem',
+                    },
+                    boxShadow: {
+                        'cool': '0 10px 50px -10px rgba(0, 0, 0, 0.3)',
+                        'inner-cool': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        @keyframes slide-down {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-down {
+            animation: slide-down 0.5s ease-out;
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-in-out;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .animate-spin-fast {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans antialiased">
+
+    <div class="container mx-auto px-4 md:px-8 lg:px-12 xl:px-20 py-12">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-slide-down">
+
+            <section class="bg-white shadow-cool rounded-3xl p-6 md:p-8 lg:p-10 flex flex-col">
+                <h2 class="text-2xl lg:text-3xl font-bold text-dark mb-6 lg:mb-8">Cart Summary</h2>
+
+                <ul class="space-y-4 lg:space-y-6 flex-grow">
+                    <li class="flex items-center space-x-4 pb-4 border-b border-neutral">
+                        <img src="https://picsum.photos/200/300?random=1" alt="Product Image 1" class="w-20 h-20 rounded-xl object-cover animate-fade-in">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-dark">Awesome T-Shirt</h3>
+                            <p class="text-secondary text-sm">Size: M, Color: Blue</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-secondary hover:text-primary focus:outline-none">
+                                        <i class="fa-solid fa-minus-circle"></i>
+                                    </button>
+                                    <span class="text-dark font-medium">1</span>
+                                    <button class="text-secondary hover:text-primary focus:outline-none">
+                                        <i class="fa-solid fa-plus-circle"></i>
+                                    </button>
+                                </div>
+                                <span class="text-dark font-semibold">$29.99</span>
+                            </div>
+                        </div>
+                        <button class="text-secondary hover:text-primary focus:outline-none">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </li>
+
+                    <li class="flex items-center space-x-4 pb-4 border-b border-neutral">
+                        <img src="https://picsum.photos/200/300?random=2" alt="Product Image 2" class="w-20 h-20 rounded-xl object-cover animate-fade-in">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-dark">Cool Headphones</h3>
+                            <p class="text-secondary text-sm">Wireless, Noise Cancelling</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-secondary hover:text-primary focus:outline-none">
+                                        <i class="fa-solid fa-minus-circle"></i>
+                                    </button>
+                                    <span class="text-dark font-medium">2</span>
+                                    <button class="text-secondary hover:text-primary focus:outline-none">
+                                        <i class="fa-solid fa-plus-circle"></i>
+                                    </button>
+                                </div>
+                                <span class="text-dark font-semibold">$129.99</span>
+                            </div>
+                        </div>
+                        <button class="text-secondary hover:text-primary focus:outline-none">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </li>
+
+                    <li class="flex items-center space-x-4 pb-4 border-b border-neutral">
+                        <img src="https://picsum.photos/200/300?random=3" alt="Product Image 3" class="w-20 h-20 rounded-xl object-cover animate-fade-in">
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-dark">Stylish Backpack</h3>
+                            <p class="text-secondary text-sm">Waterproof, Large Capacity</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex items-center space-x-2">
+                                    <button class="text-secondary hover:text-primary focus:outline-none">
+                                        <i class="fa-solid fa-minus-circle"></i>
+                                    </button>
+                                    <span class="text-dark font-medium">1</span>
+                                    <button class="text-secondary hover:text-primary focus:outline-none">
+                                        <i class="fa-solid fa-plus-circle"></i>
+                                    </button>
+                                </div>
+                                <span class="text-dark font-semibold">$49.99</span>
+                            </div>
+                        </div>
+                        <button class="text-secondary hover:text-primary focus:outline-none">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="mt-8 lg:mt-10">
+                    <div class="flex justify-between items-center mb-3 lg:mb-4">
+                        <span class="text-secondary">Subtotal</span>
+                        <span class="text-dark font-semibold">$209.97</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-3 lg:mb-4">
+                        <span class="text-secondary">Shipping</span>
+                        <span class="text-dark font-semibold">$5.00</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-6 lg:mb-8">
+                        <span class="text-secondary">Tax (8%)</span>
+                        <span class="text-dark font-semibold">$17.19</span>
+                    </div>
+                    <div class="flex justify-between items-center border-t border-neutral pt-6 lg:pt-8">
+                        <span class="text-lg font-bold text-dark">Total</span>
+                        <span class="text-2xl font-bold text-primary">$232.16</span>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="bg-white shadow-cool rounded-3xl p-6 md:p-8 lg:p-10 flex flex-col">
+                <h2 class="text-2xl lg:text-3xl font-bold text-dark mb-6 lg:mb-8">Checkout</h2>
+
+                <form class="space-y-6 lg:space-y-8">
+                    <div>
+                        <label for="email" class="block text-secondary text-sm lg:text-base mb-2">Email Address</label>
+                        <input type="email" id="email" placeholder="your@email.com" class="w-full px-4 py-3 rounded-xl border border-neutral focus:border-primary focus:ring-primary focus:ring-opacity-50 text-dark">
+                    </div>
+                    <div>
+                        <label for="name" class="block text-secondary text-sm lg:text-base mb-2">Full Name</label>
+                        <input type="text" id="name" placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-neutral focus:border-primary focus:ring-primary focus:ring-opacity-50 text-dark">
+                    </div>
+                    <div>
+                        <label for="address" class="block text-secondary text-sm lg:text-base mb-2">Shipping Address</label>
+                        <textarea id="address" placeholder="Your Full Address" rows="3" class="w-full px-4 py-3 rounded-xl border border-neutral focus:border-primary focus:ring-primary focus:ring-opacity-50 text-dark"></textarea>
+                    </div>
+
+                    <div class="border-t border-neutral pt-6 lg:pt-8">
+                        <h3 class="text-lg font-semibold text-dark mb-4">Payment Details</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="card-number" class="block text-secondary text-sm lg:text-base mb-2">Card Number</label>
+                                <input type="text" id="card-number" placeholder="**** **** **** ****" class="w-full px-4 py-3 rounded-xl border border-neutral focus:border-primary focus:ring-primary focus:ring-opacity-50 text-dark">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="expiry" class="block text-secondary text-sm lg:text-base mb-2">Expiry Date</label>
+                                    <input type="text" id="expiry" placeholder="MM/YY" class="w-full px-4 py-3 rounded-xl border border-neutral focus:border-primary focus:ring-primary focus:ring-opacity-50 text-dark">
+                                </div>
+                                <div>
+                                    <label for="cvv" class="block text-secondary text-sm lg:text-base mb-2">CVV</label>
+                                    <input type="text" id="cvv" placeholder="CVV" class="w-full px-4 py-3 rounded-xl border border-neutral focus:border-primary focus:ring-primary focus:ring-opacity-50 text-dark">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 focus:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-300">
+                        Proceed to Payment
+                    </button>
+                </form>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Example interactivity - can be expanded
+
+            const cartItems = document.querySelectorAll('.cart-summary li');
+
+            cartItems.forEach(item => {
+                const decreaseButton = item.querySelector('.fa-minus-circle').parentElement;
+                const increaseButton = item.querySelector('.fa-plus-circle').parentElement;
+                const quantitySpan = item.querySelector('span.text-dark.font-medium');
+                let quantity = parseInt(quantitySpan.textContent);
+
+                decreaseButton.addEventListener('click', () => {
+                    if (quantity > 1) {
+                        quantity--;
+                        quantitySpan.textContent = quantity;
+                        // Update total price logic here
+                    }
+                });
+
+                increaseButton.addEventListener('click', () => {
+                    quantity++;
+                    quantitySpan.textContent = quantity;
+                    // Update total price logic here
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

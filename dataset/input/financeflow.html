@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinanceFlow - Neumorphic Finance Tracking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#f0f2f5',
+                        'secondary': '#e2e8f0',
+                        'accent': '#64748b',
+                        'highlight': '#cbd5e1',
+                    },
+                    boxShadow: {
+                        'neumorphic': '5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff',
+                        'neumorphic-inset': 'inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff',
+                        'neumorphic-hover': '7px 7px 14px #d1d9e6, -7px -7px 14px #ffffff',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .neumorphic-card {
+            background: #f0f2f5;
+            box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+            border-radius: 12px;
+        }
+        .neumorphic-card-inset {
+            background: #f0f2f5;
+            box-shadow: inset 5px 5px 10px #d1d9e6, inset -5px -5px 10px #ffffff;
+            border-radius: 12px;
+        }
+        .neumorphic-btn {
+            background: #f0f2f5;
+            box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .neumorphic-btn:hover {
+            box-shadow: 7px 7px 14px #d1d9e6, -7px -7px 14px #ffffff;
+            transform: translateY(-2px);
+        }
+        .neumorphic-input {
+            background: #f0f2f5;
+            box-shadow: inset 2px 2px 5px #d1d9e6, inset -2px -2px 5px #ffffff;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+        .neumorphic-input:focus {
+            box-shadow: inset 3px 3px 7px #d1d9e6, inset -3px -3px 7px #ffffff;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="sticky top-0 bg-primary z-50 py-4 shadow-neumorphic">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-accent">FinanceFlow</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="hover:text-accent transition-colors">Features</a>
+                <a href="#how-it-works" class="hover:text-accent transition-colors">How it works</a>
+                <a href="#pricing" class="hover:text-accent transition-colors">Pricing</a>
+                <a href="#testimonials" class="hover:text-accent transition-colors">Testimonials</a>
+            </div>
+            <button class="neumorphic-btn px-4 py-2 font-semibold text-gray-700 hidden md:block">Sign Up</button>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-accent text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4">
+                <a href="#features" class="block py-2 hover:text-accent transition-colors">Features</a>
+                <a href="#how-it-works" class="block py-2 hover:text-accent transition-colors">How it works</a>
+                <a href="#pricing" class="block py-2 hover:text-accent transition-colors">Pricing</a>
+                <a href="#testimonials" class="block py-2 hover:text-accent transition-colors">Testimonials</a>
+                <button class="neumorphic-btn block w-full px-4 py-2 mt-4 font-semibold text-gray-700 text-center">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero py-20 md:py-32">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text fade-in-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-accent mb-6">Take Control of Your Finances</h1>
+                <p class="text-lg text-gray-700 mb-8">Effortlessly track your spending, manage budgets, and achieve your financial goals with FinanceFlow.</p>
+                <div class="flex space-x-4">
+                    <button class="neumorphic-btn px-6 py-3 font-semibold text-gray-700 hover:shadow-neumorphic-hover transition-shadow duration-300">Get Started Free</button>
+                    <button class="neumorphic-btn px-6 py-3 font-semibold text-gray-700 hover:shadow-neumorphic-hover transition-shadow duration-300">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image fade-in-right">
+                <div class="neumorphic-card p-6 md:p-8 rounded-2xl shadow-neumorphic relative overflow-hidden">
+                    <img src="https://picsum.photos/400/600" alt="App Dashboard" class="rounded-xl shadow-md">
+                    <div class="absolute inset-0 bg-primary opacity-20 rounded-2xl pointer-events-none"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-accent mb-12">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <div class="feature-item neumorphic-card p-6 hover:shadow-neumorphic-hover transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-highlight rounded-xl flex items-center justify-center mx-auto mb-4 shadow-neumorphic-inset">
+                        <i class="fa fa-chart-line text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-accent mb-2">Spending Tracker</h3>
+                    <p class="text-gray-700">Visualize your expenses and understand where your money goes.</p>
+                </div>
+                <div class="feature-item neumorphic-card p-6 hover:shadow-neumorphic-hover transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-highlight rounded-xl flex items-center justify-center mx-auto mb-4 shadow-neumorphic-inset">
+                        <i class="fa fa-piggy-bank text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-accent mb-2">Budgeting Tools</h3>
+                    <p class="text-gray-700">Create and manage budgets to stay on track with your financial goals.</p>
+                </div>
+                <div class="feature-item neumorphic-card p-6 hover:shadow-neumorphic-hover transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-highlight rounded-xl flex items-center justify-center mx-auto mb-4 shadow-neumorphic-inset">
+                        <i class="fa fa-bell text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-accent mb-2">Smart Notifications</h3>
+                    <p class="text-gray-700">Receive alerts and reminders to help you manage your finances effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-accent mb-12">How FinanceFlow Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="how-it-works-text">
+                    <h3 class="text-2xl font-semibold text-accent mb-4">Simple Setup</h3>
+                    <p class="text-gray-700 mb-6">Connecting your accounts is quick and secure. FinanceFlow supports all major banks and financial institutions.</p>
+                    <h3 class="text-2xl font-semibold text-accent mb-4">Automated Tracking</h3>
+                    <p class="text-gray-700 mb-6">Transactions are automatically categorized and tracked, giving you real-time insights into your finances.</p>
+                    <h3 class="text-2xl font-semibold text-accent mb-4">Personalized Insights</h3>
+                    <p class="text-gray-700">Receive customized reports and recommendations to optimize your financial health.</p>
+                </div>
+                <div class="how-it-works-image">
+                    <div class="neumorphic-card p-6 md:p-8 rounded-2xl shadow-neumorphic relative overflow-hidden">
+                        <img src="https://picsum.photos/401/600" alt="App Interface" class="rounded-xl shadow-md">
+                        <div class="absolute inset-0 bg-primary opacity-20 rounded-2xl pointer-events-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-second
+content_copy
+download
+Use code with caution.
+Html

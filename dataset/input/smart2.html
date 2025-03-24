@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3490dc',
+                        secondary: '#6b7280',
+                        accent: '#ffed4a',
+                        success: '#38c172',
+                        error: '#e3342f',
+                        warning: '#ff9900',
+                        info: '#90cdf4',
+                        gray: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2937',
+                            900: '#111827',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '72': '18rem',
+                        '84': '21rem',
+                        '96': '24rem',
+                        '108': '27rem',
+                        '120': '30rem',
+                    },
+                    boxShadow: {
+                        'smooth': '0 5px 15px rgba(0, 0, 0, .1)',
+                        'deeper': '0 20px 50px rgba(0, 0, 0, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+    <div class="flex h-screen">
+        <aside class="bg-gray-800 text-gray-100 w-64 flex flex-col shadow-md">
+            <div class="p-4">
+                <h1 class="text-2xl font-bold text-white">CityOS</h1>
+                <p class="text-sm text-gray-400">Infrastructure Management</p>
+            </div>
+            <nav class="flex-1 p-4">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <span>City Map</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fas fa-wrench"></i>
+                            <span>Resource Management</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fas fa-bell"></i>
+                            <span>Alerts</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-700 transition-colors duration-200">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="flex-1 bg-gray-100 p-8">
+            <header class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-800">Dashboard Overview</h2>
+                <div class="flex space-x-4 items-center">
+                    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-300 rounded shadow">
+                        <i class="fas fa-cloud-download-alt mr-2"></i> Export Data
+                    </button>
+                    <div class="relative">
+                        <button id="dropdownButton" class="flex items-center space-x-2 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-300 rounded shadow" onclick="toggleDropdown()">
+                            <span>Last 7 Days</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div id="dropdownMenu" class="absolute hidden bg-white text-gray-700 border border-gray-300 rounded shadow-md mt-2 py-1 w-48 right-0 z-10">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Last 24 Hours</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Last 30 Days</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Last Quarter</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Last Year</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="p-2 bg-blue-100 text-blue-500 rounded-full">
+                            <i class="fas fa-temperature-high"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Temperature</h3>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900">28°C</div>
+                    <p class="text-gray-500">Average city temperature</p>
+                    <div class="mt-4">
+                        <img src="https://picsum.photos/200/100" alt="Temperature Graph" class="rounded-md">
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="p-2 bg-green-100 text-green-500 rounded-full">
+                            <i class="fas fa-traffic-light"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Traffic Flow</h3>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900">78%</div>
+                    <p class="text-gray-500">Current traffic flow rate</p>
+                    <div class="mt-4">
+                        <img src="https://picsum.photos/200/100" alt="Traffic Flow Graph" class="rounded-md">
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="p-2 bg-yellow-100 text-yellow-500 rounded-full">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Energy Usage</h3>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900">12,456 kWh</div>
+                    <p class="text-gray-500">Total energy consumption</p>
+                    <div class="mt-4">
+                        <img src="https://picsum.photos/200/100" alt="Energy Usage Graph" class="rounded-md">
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="p-2 bg-red-100 text-red-500 rounded-full">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Water Level</h3>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900">6.5m</div>
+                    <p class="text-gray-500">Average water reservoir level</p>
+                    <div class="mt-4">
+                        <img src="https://picsum.photos/200/100" alt="Water Level Graph" class="rounded-md">
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="p-2 bg-purple-100 text-purple-500 rounded-full">
+                            <i class="fas fa-bus"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Public Transport</h3>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900">94%</div>
+                    <p class="text-gray-500">Public transport operational</p>
+                    <div class="mt-4">
+                        <img src="https://picsum.photos/200/100" alt="Public Transport Graph" class="rounded-md">
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="p-2 bg-teal-100 text-teal-500 rounded-full">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800">Waste Management</h3>
+                    </div>
+                    <div class="text-4xl font-bold text-gray-900">82%</div>
+                    <p class="text-gray-500">Waste recycled today</p>
+                    <div class="mt-4">
+                        <img src="https://picsum.photos/200/100" alt="Waste Management Graph" class="rounded-md">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300 mb-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Real-time Sensor Data</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Sensor ID
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Type
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Location
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Value
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Status
+                                </th>
+                                <th scope="col" class="relative px-6 py-3">
+                                    <span class="sr-only">Edit</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">S-101</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">Temperature</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">Downtown</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">27°C</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        Active
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">S-102</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">Air Quality</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">Park Area</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">45 AQI</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        Active
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">S-103</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">Noise Level</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">Residential</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">60 dB</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                        Warning
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">View</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Public Service Status</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between">
+                            <span class="font-semibold text-gray-700">Water Supply</span>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                <i class="fas fa-check-circle mr-2"></i> Operational
+                            </span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="font-semibold text-gray-700">Electricity Grid</span>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                <i class="fas fa-check-circle mr-2"></i> Operational
+                            </span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="font-semibold text-gray-700">Waste Collection</span>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800">
+                                <i class="fas fa-exclamation-circle mr-2"></i> Minor Delays
+                            </span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="font-semibold text-gray-700">Public Transportation</span>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                <i class="fas fa-check-circle mr-2"></i> Operational
+                            </span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="font-semibold text-gray-700">Emergency Services</span>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                                <i class="fas fa-check-circle mr-2"></i> Operational
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-smooth fade-in hover:shadow-deeper transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Resource Allocation</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-gray-700">Emergency Vehicles</span>
+                            <div class="text-right">
+                                <span class="text-lg font-bold text-gray-900">15</span>
+                                <span class="text-gray-500">/ 20 Available</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-gray-700">Maintenance Crews</span>
+                            <div class="text-right">
+                                <span class="text-lg font-bold text-gray-900">8</span>
+                                <span class="text-gray-500">/ 12 Available</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 66%"></div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-gray-700">Support Staff</span>
+                            <div class="text-right">
+                                <span class="text-lg font-bold text-gray-900">25</span>
+                                <span class="text-gray-500">/ 30 Available</span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 83%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        function toggleDropdown() {
+            document.getElementById("dropdownMenu").classList.toggle("hidden");
+        }
+    </script>
+</body>
+</html>

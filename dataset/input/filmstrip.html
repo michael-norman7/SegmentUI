@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmstrip Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'filmstrip-bg': '#f0f0f0',
+                        'frame': '#ffffff',
+                        'accent': '#38bdf8',
+                        'dark-text': '#334155',
+                        'light-text': '#6b7280',
+                    },
+                    spacing: {
+                        'frame-gap': '2rem',
+                    },
+                    keyframes: {
+                        'slide-left': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        'slide-right': {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        }
+                    },
+                    animation: {
+                        'slide-left': 'slide-left 0.5s ease-out forwards',
+                        'slide-right': 'slide-right 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: theme('colors.filmstrip-bg');
+            color: theme('colors.dark-text');
+        }
+        .filmstrip-container::-webkit-scrollbar {
+            display: none;
+        }
+        .filmstrip-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-filmstrip-bg">
+
+<div class="filmstrip-container relative overflow-x-scroll overflow-y-hidden whitespace-nowrap pb-16" id="filmstrip">
+    <div class="inline-block w-screen min-h-screen p-frame-gap align-top" id="frame-1">
+        <div class="frame bg-frame rounded-3xl shadow-xl p-8 flex flex-col justify-between h-full">
+            <div>
+                <h1 class="text-4xl font-bold mb-4 text-dark-text">Capturing Moments in Code</h1>
+                <p class="text-light-text mb-6">Welcome to a new way to experience content. This blog post is designed as a film strip, each section a frame in your visual journey.</p>
+                <img src="https://picsum.photos/id/10/800/450" alt="Blog Post Image 1" class="rounded-xl mb-6 w-full object-cover aspect-video">
+                <p class="text-dark-text leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            </div>
+            <div class="mt-8">
+                <a href="#" class="inline-flex items-center bg-accent hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl transition-colors duration-300">
+                    <i class="fa-solid fa-arrow-right mr-2"></i>
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="inline-block w-screen min-h-screen p-frame-gap align-top" id="frame-2">
+        <div class="frame bg-frame rounded-3xl shadow-xl p-8 flex flex-col justify-between h-full">
+            <div>
+                <h2 class="text-3xl font-bold mb-4 text-dark-text">The Beauty of User Interfaces</h2>
+                <p class="text-light-text mb-6">Explore the elegance and functionality of well-designed user interfaces. Learn how thoughtful design can enhance user experience.</p>
+                <img src="https://picsum.photos/id/20/800/450" alt="Blog Post Image 2" class="rounded-xl mb-6 w-full object-cover aspect-video">
+                <ul class="list-disc list-inside text-dark-text leading-relaxed mb-6">
+                    <li>Intuitive Navigation</li>
+                    <li>Clear Visual Hierarchy</li>
+                    <li>Engaging Interactions</li>
+                    <li>Responsive Design</li>
+                </ul>
+                <p class="text-dark-text leading-relaxed">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div class="mt-8">
+                <a href="#" class="inline-flex items-center bg-accent hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl transition-colors duration-300">
+                    <i class="fa-solid fa-arrow-right mr-2"></i>
+                    Discover UI Principles
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="inline-block w-screen min-h-screen p-frame-gap align-top" id="frame-3">
+        <div class="frame bg-frame rounded-3xl shadow-xl p-8 flex flex-col justify-between h-full">
+            <div>
+                <h2 class="text-3xl font-bold mb-4 text-dark-text">Performance is Key</h2>
+                <p class="text-light-text mb-6">Understand the importance of website performance and how to optimize for speed and efficiency.</p>
+                <img src="https://picsum.photos/id/30/800/450" alt="Blog Post Image 3" class="rounded-xl mb-6 w-full object-cover aspect-video">
+                <p class="text-dark-text leading-relaxed">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                <ol class="list-decimal list-inside text-dark-text leading-relaxed mt-6">
+                    <li>Optimize Images</li>
+                    <li>Minimize CSS and JavaScript</li>
+                    <li>Leverage Browser Caching</li>
+                    <li>Use a CDN</li>
+                </ol>
+            </div>
+            <div class="mt-8">
+                <a href="#" class="inline-flex items-center bg-accent hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-xl transition-colors duration-300">
+                    <i class="fa-solid fa-arrow-right mr-2"></i>
+                    Optimize Your Site
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute left-0 top-1/2 transform -translate-y-1/2 pl-4">
+        <button onclick="scrollFilmstrip(-1)" class="bg-frame hover:bg-gray-100 rounded-full shadow-md p-4 -ml-2 focus:outline-none">
+            <i class="fa-solid fa-chevron-left text-light-text"></i>
+        </button>
+    </div>
+    <div class="absolute right-0 top-1/2 transform -translate-y-1/2 pr-4">
+        <button onclick="scrollFilmstrip(1)" class="bg-frame hover:bg-gray-100 rounded-full shadow-md p-4 -mr-2 focus:outline-none">
+            <i class="fa-solid fa-chevron-right text-light-text"></i>
+        </button>
+    </div>
+
+    <div class="absolute bottom-4 left-0 right-0 text-center">
+        <div class="inline-flex space-x-2">
+            <button onclick="scrollToFrame(1)" class="frame-dot bg-light-text h-3 w-3 rounded-full focus:outline-none" data-frame="1"></button>
+            <button onclick="scrollToFrame(2)" class="frame-dot bg-light-text hover:bg-gray-400 h-3 w-3 rounded-full focus:outline-none" data-frame="2"></button>
+            <button onclick="scrollToFrame(3)" class="frame-dot bg-light-text hover:bg-gray-400 h-3 w-3 rounded-full focus:outline-none" data-frame="3"></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const filmstrip = document.getElementById('filmstrip');
+    const frameWidth = document.querySelector('.w-screen').offsetWidth;
+    let currentFrame = 1;
+    const frameDots = document.querySelectorAll('.frame-dot');
+
+    function updateFrameDots() {
+        frameDots.forEach(dot => {
+            dot.classList.remove('bg-accent');
+            dot.classList.add('bg-light-text');
+        });
+        const currentDot = document.querySelector(`.frame-dot[data-frame="${currentFrame}"]`);
+        if (currentDot) {
+            currentDot.classList.remove('bg-light-text');
+            currentDot.classList.add('bg-accent');
+        }
+    }
+
+    function scrollFilmstrip(direction) {
+        currentFrame += direction;
+        if (currentFrame < 1) currentFrame = 1;
+        if (currentFrame > 3) currentFrame = 3;
+        updateFrameDots();
+        const targetFrameId = `frame-${currentFrame}`;
+        const targetFrame = document.getElementById(targetFrameId);
+        filmstrip.scrollTo({
+            left: targetFrame.offsetLeft,
+            behavior: 'smooth'
+        });
+    }
+
+    function scrollToFrame(frameNumber) {
+        currentFrame = frameNumber;
+        updateFrameDots();
+        const targetFrameId = `frame-${frameNumber}`;
+        const targetFrame = document.getElementById(targetFrameId);
+        filmstrip.scrollTo({
+            left: targetFrame.offsetLeft,
+            behavior: 'smooth'
+        });
+    }
+
+    updateFrameDots();
+</script>
+
+</body>
+</html>

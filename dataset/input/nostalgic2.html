@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostalgic Article</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'paper': '#f8f0e3',
+                        'ink': '#333',
+                        'accent': '#a2cffe',
+                        'highlight': '#ffdd99',
+                    },
+                    backgroundImage: {
+                        'border-top': "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 5\" fill=\"none\" stroke=\"%23333\" stroke-width=\"2\" stroke-dasharray=\"5 5\"%3E%3Cpath d=\"M0 2.5H100\"/%3E%3C/svg%3E')",
+                        'border-bottom': "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 5\" fill=\"none\" stroke=\"%23333\" stroke-width=\"2\" stroke-dasharray=\"5 5\"%3E%3Cpath d=\"M0 2.5H100\"/%3E%3C/svg%3E')",
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'wiggle': {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.paper');
+            color: theme('colors.ink');
+        }
+        .hand-drawn-border-top {
+            border-top-width: 5px;
+            border-top-style: dashed;
+            border-top-color: theme('colors.ink');
+        }
+        .hand-drawn-border-bottom {
+            border-bottom-width: 5px;
+            border-bottom-style: dashed;
+            border-bottom-color: theme('colors.ink');
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="min-h-screen flex flex-col">
+        <header class="py-6 px-8 print:hidden">
+            <div class="max-w-5xl mx-auto flex justify-between items-center">
+                <div class="font-playfair text-2xl font-bold animate-wiggle">
+                    <i class="fa-regular fa-newspaper"></i> Nostalgia Times
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="hover:text-accent transition-colors">Home</a>
+                    <a href="#" class="hover:text-accent transition-colors">Articles</a>
+                    <a href="#" class="hover:text-accent transition-colors">About</a>
+                    <a href="#" class="hover:text-accent transition-colors">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button class="focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow px-8 py-12 max-w-5xl mx-auto print:block">
+            <div class="mb-10 text-center animate-fade-in-down">
+                <h1 class="font-playfair text-5xl font-bold mb-4">The Charm of Old Typewriters</h1>
+                <p class="text-lg text-ink/70">A look back at the mechanical marvels that shaped modern writing.</p>
+                <div class="mt-4">
+                    <span class="inline-block bg-highlight/50 px-3 py-1 rounded-full text-sm font-semibold text-ink/80 mr-2 mb-2">#typewriters</span>
+                    <span class="inline-block bg-highlight/50 px-3 py-1 rounded-full text-sm font-semibold text-ink/80 mr-2 mb-2">#nostalgia</span>
+                    <span class="inline-block bg-highlight/50 px-3 py-1 rounded-full text-sm font-semibold text-ink/80 mr-2 mb-2">#vintage</span>
+                </div>
+            </div>
+
+            <article class="prose-sm prose-ink max-w-none mb-12 print:prose-sm">
+                <figure class="mb-8 rounded-lg overflow-hidden shadow-md">
+                    <img class="w-full object-cover aspect-video" src="https://picsum.photos/id/1041/800/450" alt="Vintage Typewriter">
+                    <figcaption class="px-4 py-2 text-sm text-center text-ink/70">An Underwood Standard Typewriter from the early 20th century.</figcaption>
+                </figure>
+
+                <p>The rhythmic clatter of keys, the satisfying ding of the carriage return, and the indelible ink pressed onto paper – these are the sensory hallmarks of a typewriter. Before the digital age, typewriters were the indispensable tool for writers, businesses, and anyone needing to produce legible documents. They were more than just machines; they were instruments of creation and communication.</p>
+
+                <h2 class="font-playfair">A Mechanical Symphony</h2>
+                <p>Each typewriter is a complex assembly of levers, springs, and keys, working in concert. When a key is struck, a series of mechanical actions unfold in rapid succession. The typebar, bearing a reversed letter, swings upwards to strike the inked ribbon against the paper, leaving behind a crisp, permanent mark. It's a process both intricate and robust, a testament to mechanical ingenuity.</p>
+
+                <figure class="my-8 rounded-lg overflow-hidden shadow-md">
+                    <img class="w-full object-cover aspect-video" src="https://picsum.photos/id/1042/800/450" alt="Typewriter Keys Close Up">
+                    <figcaption class="px-4 py-2 text-sm text-center text-ink/70">Close-up of typewriter keys, showing the wear and character of use.</figcaption>
+                </figure>
+
+                <h2 class="font-playfair">The Rise and Evolution</h2>
+                <p>The invention of the typewriter is often credited to Christopher Latham Sholes in the late 1860s, though many inventors contributed to its development. Early models were cumbersome and imperfect, but they steadily evolved. By the early 20th century, typewriters had become standardized and widespread, transforming offices and writing practices. Brands like Remington, Underwood, and Olivetti became household names, synonymous with quality and reliability.</p>
+
+                <h2 class="font-playfair">Beyond Functionality: Character and Craftsmanship</h2>
+                <p>Typewriters are not just functional objects; they possess a unique character. Each machine has its own quirks – the weight of the keys, the sound of the bell, the subtle variations in typeface. They embody a sense of craftsmanship and durability rarely found in today's disposable technology. For many, writing on a typewriter is a tactile and immersive experience, connecting them to a slower, more deliberate pace of creation.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-10">
+                    <figure class="rounded-lg overflow-hidden shadow-md">
+                        <img src="https://picsum.photos/id/1043/400/300" alt="Old Typewriter in Workshop">
+                        <figcaption class="px-4 py-2 text-sm text-center text-ink/70">A restored vintage typewriter.</figcaption>
+                    </figure>
+                    <figure class="rounded-lg overflow-hidden shadow-md">
+                        <img src="https://picsum.photos/id/1044/400/300" alt="Person Typing on Typewriter">
+                        <figcaption class="px-4 py-2 text-sm text-center text-ink/70">The focused act of typing.</figcaption>
+                    </figure>
+                </div>
+
+                <h2 class="font-playfair">The Enduring Appeal</h2>
+                <p>In an age of ubiquitous computers and digital text, typewriters might seem like relics of the past. Yet, they retain a devoted following. Writers appreciate the focused, distraction-free writing environment they offer. Collectors cherish them for their historical and aesthetic value. There's a certain romance to the typewriter, a connection to a time when technology was tangible and writing was a more physical act.</p>
+
+                <p>The typewriter is more than just a machine; it's a symbol of a bygone era, a reminder of the beauty of mechanical ingenuity, and a testament to the enduring power of the written word.</p>
+
+                <div class="mt-12 border-t border-ink/20 pt-8">
+                    <p class="text-sm text-ink/60">Published on <time datetime="2024-03-10">March 10, 2024</time></p>
+                    <p class="text-sm text-ink/60">By <span class="font-semibold">Jane Doe</span></p>
+                </div>
+            </article>
+
+            <aside class="print:hidden">
+                <div class="mb-8 p-6 bg-paper rounded-lg shadow-md border border-ink/10">
+                    <h3 class="font-playfair text-xl font-semibold mb-3">About the Author</h3>
+                    <div class="flex items-center mb-4">
+                        <img class="w-12 h-12 rounded-full mr-4" src="https://picsum.photos/id/1027/100/100" alt="Author Jane Doe">
+                        <div class="font-roboto">
+                            <p class="font-semibold">Jane Doe</p>
+                            <p class="text-sm text-ink/70">Vintage Technology Enthusiast</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-ink/80">Jane is a writer and historian with a passion for vintage technology. She explores the stories behind the machines that shaped our world.</p>
+                    <a href="#" class="inline-block mt-4 text-accent hover:underline text-sm font-medium">More articles by Jane</a>
+                </div>
+
+                <div class="mb-8 p-6 bg-paper rounded-lg shadow-md border border-ink/10">
+                    <h3 class="font-playfair text-xl font-semibold mb-3">Related Articles</h3>
+                    <ul class="list-none">
+                        <li class="mb-2">
+                            <a href="#" class="text-ink hover:text-accent transition-colors text-sm"><i class="fa-solid fa-arrow-right text-xs mr-2"></i> The History of the Telegraph</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-ink hover:text-accent transition-colors text-sm"><i class="fa-solid fa-arrow-right text-xs mr-2"></i> Collecting Vintage Radios: A Beginner's Guide</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-ink hover:text-accent transition-colors text-sm"><i class="fa-solid fa-arrow-right text-xs mr-2"></i> The Magic of Analog Photography</a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="py-6 px-8 border-t border-ink/20 print:hidden">
+            <div class="max-w-5xl mx-auto text-center text-sm text-ink/60">
+                © 2024 Nostalgia Times. All rights reserved.
+                <nav class="mt-4 space-x-4 justify-center flex">
+                    <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-accent transition-colors">Contact Us</a>
+                </nav>
+            </div>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const article = document.querySelector('article');
+            const aside = document.querySelector('aside');
+
+            if (window.innerWidth >= 768) { // Example breakpoint for tablet/desktop
+                article.classList.add('lg:grid', 'lg:grid-cols-3', 'lg:gap-8');
+                const articleContent = article.innerHTML;
+                article.innerHTML = `<div class="lg:col-span-2">${articleContent}</div>`;
+                article.querySelector('.lg\\:col-span-2').insertAdjacentElement('afterend', aside);
+            }
+        });
+    </script>
+</body>
+</html>

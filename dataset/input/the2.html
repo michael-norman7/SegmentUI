@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coolest Blog Post Ever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=typography,forms,aspect-ratio"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#0284c7',
+                        accent: '#facc15',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', ],
+                    },
+                    typography: {
+                        quoteless: {
+                            css: {
+                                blockquote: {
+                                    'font-style': 'normal',
+                                    'font-weight': '500',
+                                    '& p:first-of-type::before': { content: '' },
+                                    '& p:last-of-type::after': { content: '' },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-neutral text-dark antialiased;
+            }
+            .blog-container {
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+            }
+        }
+        @layer components {
+            .animated-underline {
+                @apply relative overflow-hidden;
+            }
+            .animated-underline::after {
+                content: '';
+                @apply absolute left-0 bottom-0 w-full h-0.5 bg-accent transform scale-x-0 transition-transform duration-300 origin-left;
+            }
+            .animated-underline:hover::after {
+                @apply scale-x-100;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral">
+
+<header class="sticky top-0 z-50 bg-white border-b border-neutral-200">
+    <div class="blog-container">
+        <nav class="relative flex items-center justify-between py-4">
+            <div class="flex items-center flex-grow">
+                <a href="/" class="font-bold text-xl text-primary hover:text-secondary transition-colors duration-300">Awesome Blog</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="animated-underline font-semibold hover:text-primary">Home</a>
+                <a href="#" class="animated-underline font-semibold hover:text-primary">Categories</a>
+                <a href="#" class="animated-underline font-semibold hover:text-primary">About</a>
+                <a href="#" class="animated-underline font-semibold hover:text-primary">Contact</a>
+                <button class="bg-primary hover:bg-secondary text-white font-semibold py-2 px-4 rounded-full transition-colors duration-300">
+                    Subscribe
+                </button>
+            </div>
+            <div class="md:hidden">
+                <button type="button" class="text-neutral-500 hover:text-neutral-800 focus:outline-none focus:text-neutral-800" aria-label="Toggle menu">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main class="blog-container mt-12 mb-24">
+    <article class="mb-16">
+        <div class="relative">
+            <img src="https://picsum.photos/1200/400" alt="Blog Post Featured Image" class="w-full rounded-xl object-cover aspect-video">
+            <div class="absolute bottom-4 left-4 bg-white bg-opacity-75 rounded-md px-3 py-2 backdrop-blur-sm">
+                <span class="text-sm text-neutral-700 font-semibold">Technology</span>
+            </div>
+        </div>
+
+        <h1 class="mt-8 text-4xl font-bold text-dark sm:text-5xl md:text-6xl leading-tight">
+            The Ultimate Guide to Modern Web Design in 2024
+        </h1>
+
+        <div class="mt-6 flex items-center space-x-4">
+            <img src="https://picsum.photos/50/50" alt="Author Avatar" class="rounded-full w-10 h-10">
+            <div class="font-medium">
+                <p class="text-dark">By John Doe</p>
+                <p class="text-neutral-500 text-sm">Published on March 15, 2024</p>
+            </div>
+        </div>
+
+        <div class="mt-10 prose prose-lg max-w-none">
+            <p>Welcome to the definitive guide to modern web design in 2024. As the digital landscape continues to evolve, staying ahead of the curve is crucial for creating engaging and effective websites. This year, we're seeing a blend of futuristic trends and timeless principles, all focused on user experience and accessibility.</p>
+
+            <h2>Embracing Minimalism and Clean Design</h2>
+            <p>Minimalism is not just a design trend; it's a philosophy. In 2024, expect to see more websites stripping away unnecessary elements to focus on core content. This approach enhances readability, improves site speed, and creates a sophisticated aesthetic.</p>
+            <img src="https://picsum.photos/600/400" alt="Minimalist Web Design Example">
+            <p>Key aspects of minimalist design include:</p>
+            <ul>
+                <li><strong>Whitespace:</strong> Generous use of negative space to create breathing room and visual clarity.</li>
+                <li><strong>Limited Color Palettes:</strong> Sticking to a few carefully chosen colors to maintain consistency and reduce visual clutter.</li>
+                <li><strong>Simple Typography:</strong> Opting for legible and clean fonts that prioritize readability.</li>
+            </ul>
+
+            <h2>Interactive Elements and Micro-Interactions</h2>
+            <p>Engagement is key to keeping users on your site. Interactive elements and micro-interactions play a vital role in making websites feel alive and responsive. These subtle animations and feedback cues enhance the user experience without being intrusive.</p>
+            <blockquote>
+                <p>“Design is not just what it looks like and feels like. Design is how it works.” – Steve Jobs</p>
+            </blockquote>
+            <p>Examples of interactive elements:</p>
+            <ol>
+                <li><strong>Hover Effects:</strong> Subtle animations when users hover over buttons or images.</li>
+                <li><strong>Loading Animations:</strong> Engaging animations during page transitions to keep users entertained.</li>
+                <li><strong>Scroll-Triggered Animations:</strong> Elements that animate as users scroll down the page, revealing content in a dynamic way.</li>
+            </ol>
+
+            <h2>Accessibility at the Forefront</h2>
+            <p>Accessibility is no longer an afterthought but a core component of modern web design. Websites must be inclusive and usable by everyone, regardless of disabilities. WCAG guidelines are becoming increasingly important, and designers are focusing on:</p>
+            <ul>
+                <li><strong>Semantic HTML:</strong> Using HTML tags appropriately to structure content for screen readers.</li>
+                <li><strong>Color Contrast:</strong> Ensuring sufficient contrast between text and background colors for readability.</li>
+                <li><strong>Keyboard Navigation:</strong> Making sure all interactive elements are navigable using the keyboard alone.</li>
+                <li><strong>Alt Text for Images:</strong> Providing descriptive alt text for all images for screen reader users.</li>
+            </ul>
+
+            <h2>Mobile-First and Responsive Design</h2>
+            <p>With the majority of internet traffic coming from mobile devices, a mobile-first approach is essential. Responsive design ensures that websites adapt seamlessly to different screen sizes, providing an optimal viewing experience across all devices.</p>
+            <img src="https://picsum.photos/600/400" alt="Responsive Web Design Example">
+            <p>Key responsive design techniques:</p>
+            <ul>
+                <li><strong>Fluid Grids:</strong> Using flexible grid systems that adjust layout based on screen size.</li>
+                <li><strong>Flexible Images:</strong> Ensuring images scale appropriately without losing quality or distorting layout.</li>
+                <li><strong>Media Queries:</strong> Using CSS media queries to apply different styles for various screen sizes.</li>
+            </ul>
+
+            <h2>Performance Optimization</h2>
+            <p>Website speed is critical for user experience and SEO. Slow-loading websites can lead to high bounce rates and poor search engine rankings. Performance optimization is a key focus in 2024, with techniques such as:</p>
+            <ul>
+                <li><strong>Lazy Loading:</strong> Loading images and other assets only when they are visible in the viewport.</li>
+                <li><strong>Minifying CSS and JavaScript:</strong> Reducing file sizes by removing unnecessary characters and code.</li>
+                <li><strong>Browser Caching:</strong> Leveraging browser caching to store static assets locally and reduce server load.</li>
+                <li><strong>Optimized Images:</strong> Compressing images without sacrificing quality to reduce file sizes.</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Modern web design in 2024 is about creating experiences that are not only visually stunning but also functional, accessible, and performant. By embracing minimalism, interactivity, accessibility, responsiveness, and performance optimization, you can build websites that stand out and deliver exceptional user experiences. Stay creative, stay updated, and keep pushing the boundaries of what's possible in web design!</p>
+        </div>
+
+        <div class="mt-12 flex justify-between items-center border-t border-neutral-200 pt-8">
+            <div class="flex space-x-4">
+                <button class="flex items-center space-x-2 text-neutral-600 hover:text-primary transition-colors duration-300">
+                    <i class="fa fa-thumbs-up"></i>
+                    <span>Like</span>
+                </button>
+                <button class="flex items-center space-x-2 text-neutral-600 hover:text-primary transition-colors duration-300">
+                    <i class="fa fa-comment"></i>
+                    <span>Comment</span>
+                </button>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+    </article>
+
+    <aside class="lg:sticky top-24 lg:ml-8 lg:w-80">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h3 class="font-bold text-xl mb-4 text-dark">About the Author</h3>
+            <img src="https://picsum.photos/100/100" alt="Author Avatar" class="rounded-full w-20 h-20 mx-auto mb-4">
+            <p class="text-sm text-neutral-700 text-center">John Doe is a web design enthusiast and a passionate blogger who loves to share insights about the latest trends in the industry.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h3 class="font-bold text-xl mb-4 text-dark">Categories</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="block hover:text-primary transition-colors duration-300">Web Design</a></li>
+                <li><a href="#" class="block hover:text-primary transition-colors duration-300">Web Development</a></li>
+                <li><a href="#" class="block hover:text-primary transition-colors duration-300">UI/UX Design</a></li>
+                <li><a href="#" class="block hover:text-primary transition-colors duration-300">Technology</a></li>
+                <li><a href="#" class="block hover:text-primary transition-colors duration-300">Inspiration</a></li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6">
+            <h3 class="font-bold text-xl mb-4 text-dark">Stay Updated</h3>
+            <p class="text-sm text-neutral-700 mb-4">Subscribe to our newsletter and get the latest blog posts delivered straight to your inbox.</p>
+            <input type="email" placeholder="Your email address" class="w-full px-4 py-2 rounded-md border border-neutral-300 focus:ring-primary focus:border-primary focus:outline-none">
+            <button class="mt-4 w-full bg-primary hover:bg-secondary text-white font-semibold py-2 rounded-md transition-colors duration-300">Subscribe</button>
+        </div>
+    </aside>
+</main>
+
+<footer class="bg-neutral-100 border-t border-neutral-200 py-12">
+    <div class="blog-container text-center">
+        <p class="text-neutral-600 text-sm">© 2024 Awesome Blog. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-4">
+            <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="text-neutral-600 hover:text-primary transition-colors duration-300">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const animatedUnderlines = document.querySelectorAll('.animated-underline');
+        animatedUnderlines.forEach(underline => {
+            underline.addEventListener('mouseenter', () => {
+                underline.classList.add('hovered');
+            });
+            underline.addEventListener('mouseleave', () => {
+                underline.classList.remove('hovered');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

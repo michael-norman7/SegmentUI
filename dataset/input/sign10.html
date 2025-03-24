@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | NovaFinance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nova-primary': '#0d9488',
+                        'nova-secondary': '#f4f4f5',
+                        'nova-accent': '#6ee7b7',
+                        'nova-text-dark': '#1e293b',
+                        'nova-text-light': '#f8fafc',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-out-left': {
+                            '0%': { transform: 'translateX(0)', opacity: '1' },
+                            '100%': { transform: 'translateX(-100%)', opacity: '0' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'fade-out': {
+                            '0%': { opacity: '1' },
+                            '100%': { opacity: '0' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
+                        'slide-out-left': 'slide-out-left 0.5s ease-in forwards',
+                        'fade-in': 'fade-in 0.3s ease-out forwards',
+                        'fade-out': 'fade-out 0.3s ease-in forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .step-container {
+            transition: height 0.4s ease-in-out;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-nova-secondary text-nova-text-dark">
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-nova-primary to-nova-accent px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl w-full p-10 bg-white rounded-3xl shadow-2xl overflow-hidden">
+            <div class="mb-8 text-center">
+                <a href="#" class="text-2xl font-bold text-nova-primary">
+                    <i class="fa fa-chart-line mr-2"></i>NovaFinance
+                </a>
+                <p class="mt-2 text-gray-500">Unlock your financial future.</p>
+            </div>
+
+            <div id="signup-form">
+                <div id="step-1" class="step-container">
+                    <div class="mb-6 text-center animate-fade-in">
+                        <h2 class="text-3xl font-bold text-nova-text-dark mb-2">Get Started</h2>
+                        <p class="text-gray-600">Create your account in just a few steps.</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 animate-fade-in">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <div class="mt-1">
+                                <input type="text" id="name" placeholder="Your Full Name" class="shadow-sm focus:ring-nova-primary focus:border-nova-primary block w-full sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <div class="mt-1">
+                                <input type="email" id="email" placeholder="you@example.com" class="shadow-sm focus:ring-nova-primary focus:border-nova-primary block w-full sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                            <div class="mt-1">
+                                <input type="password" id="password" placeholder="Create a strong password" class="shadow-sm focus:ring-nova-primary focus:border-nova-primary block w-full sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div></div>
+                            <button onclick="nextStep(1, 2)" class="bg-nova-primary hover:bg-nova-accent text-white font-bold py-2 px-6 rounded-xl focus:outline-none focus:shadow-outline transition-colors duration-300">
+                                Next <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-2" class="step-container hidden" style="height: 0;">
+                    <div class="mb-6 text-center animate-fade-in">
+                        <h2 class="text-3xl font-bold text-nova-text-dark mb-2">Financial Details</h2>
+                        <p class="text-gray-600">Tell us a bit about your finances.</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 animate-fade-in">
+                        <div>
+                            <label for="income" class="block text-sm font-medium text-gray-700">Monthly Income</label>
+                            <div class="mt-1 relative rounded-md shadow-sm">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                                    <span class="text-gray-500 sm:text-sm">$</span>
+                                </div>
+                                <input type="number" id="income" placeholder="Enter your monthly income" class="focus:ring-nova-primary focus:border-nova-primary block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0.00">
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <span class="text-gray-500 sm:text-sm">USD</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="employment" class="block text-sm font-medium text-gray-700">Employment Status</label>
+                            <div class="mt-1">
+                                <select id="employment" class="shadow-sm focus:ring-nova-primary focus:border-nova-primary block w-full sm:text-sm border-gray-300 rounded-md">
+                                    <option value="">Select Status</option>
+                                    <option value="employed">Employed</option>
+                                    <option value="self-employed">Self-Employed</option>
+                                    <option value="unemployed">Unemployed</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="credit-score" class="block text-sm font-medium text-gray-700">Estimated Credit Score</label>
+                            <div class="mt-1">
+                                <input type="number" id="credit-score" placeholder="Enter your credit score (optional)" class="shadow-sm focus:ring-nova-primary focus:border-nova-primary block w-full sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button onclick="prevStep(2, 1)" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline transition-colors duration-300">
+                                <i class="fa fa-arrow-left mr-2"></i> Back
+                            </button>
+                            <button onclick="nextStep(2, 3)" class="bg-nova-primary hover:bg-nova-accent text-white font-bold py-2 px-6 rounded-xl focus:outline-none focus:shadow-outline transition-colors duration-300">
+                                Next <i class="fa fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-3" class="step-container hidden" style="height: 0;">
+                    <div class="mb-6 text-center animate-fade-in">
+                        <h2 class="text-3xl font-bold text-nova-text-dark mb-2">Account Verification</h2>
+                        <p class="text-gray-600">Verify your identity to secure your account.</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-6 animate-fade-in">
+                        <div>
+                            <label for="upload-id" class="block text-sm font-medium text-gray-700">Upload ID</label>
+                            <div class="mt-2 flex justify-center px-6 pt-5 pb-6 border-2 border-dashed rounded-md border-gray-300">
+                                <div class="space-y-1 text-center">
+                                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4V12a4 4 0 014-4h16m24 0h-4c-2.29 0-4.56.66-6.31 1.87-1.75 1.21-2.94 3.01-3.46 5.03M48 8v12m0 0L40 8m8 12l-8-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <div class="flex text-sm text-gray-600">
+                                        <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-nova-primary hover:text-nova-accent focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-nova-primary">
+                                            <span>Upload a file</span>
+                                            <input id="file-upload" type="file" class="sr-only">
+                                        </label>
+                                        <p class="pl-1">or drag and drop</p>
+                                    </div>
+                                    <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                            <div class="mt-1">
+                                <input type="tel" id="phone" placeholder="Enter your phone number" class="shadow-sm focus:ring-nova-primary focus:border-nova-primary block w-full sm:text-sm border-gray-300 rounded-md">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button onclick="prevStep(3, 2)" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold py-2 px-4 rounded-xl focus:outline-none focus:shadow-outline transition-colors duration-300">
+                                <i class="fa fa-arrow-left mr-2"></i> Back
+                            </button>
+                            <button onclick="submitForm()" class="bg-nova-primary hover:bg-nova-accent text-white font-bold py-2 px-6 rounded-xl focus:outline-none focus:shadow-outline transition-colors duration-300">
+                                Complete Sign Up <i class="fa fa-check ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-4" class="step-container hidden text-center" style="height: 0;">
+                    <div class="animate-fade-in">
+                        <div class="mb-6">
+                            <i class="fa fa-check-circle text-6xl text-nova-primary mb-4"></i>
+                            <h2 class="text-3xl font-bold text-nova-text-dark mb-2">Success!</h2>
+                            <p class="text-gray-600">Your account has been successfully created.</p>
+                        </div>
+                        <div class="mb-4">
+                            <img src="https://picsum.photos/200/300" alt="Success Illustration" class="rounded-xl shadow-md inline-block">
+                        </div>
+                        <p class="text-sm text-gray-500">Redirecting you to dashboard...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const stepContainers = document.querySelectorAll('.step-container');
+
+        function nextStep(currentStepNum, nextStepNum) {
+            const currentStepElement = document.getElementById(`step-${currentStepNum}`);
+            const nextStepElement = document.getElementById(`step-${nextStepNum}`);
+
+            if (!validateStep(currentStepNum)) return;
+
+            currentStepElement.classList.add('animate-slide-out-left');
+            setTimeout(() => {
+                currentStepElement.classList.add('hidden');
+                currentStepElement.classList.remove('animate-slide-out-left');
+
+                nextStepElement.classList.remove('hidden');
+                nextStepElement.classList.add('animate-slide-in-right');
+                setTimeout(() => {
+                    nextStepElement.classList.remove('animate-slide-in-right');
+                    adjustFormHeight(nextStepElement);
+                }, 150);
+            }, 300);
+            currentStep = nextStepNum;
+        }
+
+        function prevStep(currentStepNum, prevStepNum) {
+            const currentStepElement = document.getElementById(`step-${currentStepNum}`);
+            const prevStepElement = document.getElementById(`step-${prevStepNum}`);
+
+            currentStepElement.classList.add('animate-slide-out-left');
+            setTimeout(() => {
+                currentStepElement.classList.add('hidden');
+                currentStepElement.classList.remove('animate-slide-out-left');
+
+                prevStepElement.classList.remove('hidden');
+                prevStepElement.classList.add('animate-slide-in-right');
+                setTimeout(() => {
+                    prevStepElement.classList.remove('animate-slide-in-right');
+                    adjustFormHeight(prevStepElement);
+                }, 150);
+            }, 300);
+            currentStep = prevStepNum;
+        }
+
+        function adjustFormHeight(stepElement) {
+            const form = document.getElementById('signup-form');
+            form.style.height = stepElement.offsetHeight + 'px';
+        }
+
+        function validateStep(stepNum) {
+            if (stepNum === 1) {
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value.trim();
+                if (!name || !email || !password) {
+                    alert('Please fill in all fields.');
+                    return false;
+                }
+                if (!isValidEmail(email)) {
+                    alert('Please enter a valid email address.');
+                    return false;
+                }
+                if (password.length < 8) {
+                    alert('Password must be at least 8 characters long.');
+                    return false;
+                }
+            } else if (stepNum === 2) {
+                const income = document.getElementById('income').value;
+                const employment = document.getElementById('employment').value;
+                if (!income || !employment) {
+                    alert('Please fill in all financial details.');
+                    return false;
+                }
+                if (isNaN(parseFloat(income)) || parseFloat(income) < 0) {
+                    alert('Please enter a valid income.');
+                    return false;
+                }
+            } else if (stepNum === 3) {
+                const phone = document.getElementById('phone').value.trim();
+                if (!phone) {
+                    alert('Please enter your phone number.');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function submitForm() {
+            if (validateStep(3)) {
+                document.getElementById('step-3').classList.add('animate-fade-out');
+                setTimeout(() => {
+                    document.getElementById('step-3').classList.add('hidden');
+                    document.getElementById('step-3').classList.remove('animate-fade-out');
+                    const successStep = document.getElementById('step-4');
+                    successStep.classList.remove('hidden');
+                    successStep.classList.add('animate-fade-in');
+                    adjustFormHeight(successStep);
+                    setTimeout(() => {
+                         window.location.href = "/dashboard"; // Placeholder redirect
+                    }, 3000);
+                }, 300);
+            }
+        }
+
+        adjustFormHeight(document.getElementById('step-1'));
+    </script>
+</body>
+</html>

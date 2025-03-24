@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Level Monitor Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neubg': '#f0f2f5',
+                        'neuprimary': '#e0e5ec',
+                        'neudark': '#c0c5ce',
+                        'neuborder': '#d0d5dc',
+                    },
+                    boxShadow: {
+                        'neu': '4px 4px 8px #c8ced5, -4px -4px 8px #ffffff',
+                        'neu-inset': 'inset 4px 4px 8px #c8ced5, inset -4px -4px 8px #ffffff',
+                        'neu-sm': '2px 2px 4px #c8ced5, -2px -2px 4px #ffffff',
+                        'neu-sm-inset': 'inset 2px 2px 4px #c8ced5, inset -2px -2px 4px #ffffff',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body class="bg-neubg">
+    <div class="container mx-auto p-6 md:p-8 lg:p-10">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 text-center">Stress Level Dashboard</h1>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section class="bg-neuprimary p-6 rounded-2xl shadow-neu flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-700 mb-4"><i class="fa-solid fa-heart-pulse mr-2"></i>Stress Level</h2>
+                    <div class="relative h-40">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-5xl font-bold text-blue-600">65%</div>
+                        </div>
+                        <div class="rounded-full border-4 border-neuborder shadow-neu-inset h-full w-full absolute top-0 left-0"></div>
+                        <div class="rounded-full border-4 border-blue-400 h-full w-3/5 absolute top-0 left-0" style="clip-path: circle(50% at 50% 50%);"></div>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <p class="text-sm text-gray-500 text-center">Current stress level based on heart rate and other metrics.</p>
+                </div>
+            </section>
+
+            <section class="bg-neuprimary p-6 rounded-2xl shadow-neu flex flex-col">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4"><i class="fa-solid fa-triangle-exclamation mr-2"></i>Stress Triggers</h2>
+                <ul class="space-y-3">
+                    <li class="bg-white p-4 rounded-lg shadow-neu-sm">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-md overflow-hidden">
+                                <img src="https://picsum.photos/id/1/100/100" alt="Work" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Work Deadline</h3>
+                                <p class="text-sm text-gray-500">Increased stress due to upcoming project deadline.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="bg-white p-4 rounded-lg shadow-neu-sm">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-md overflow-hidden">
+                                <img src="https://picsum.photos/id/2/100/100" alt="Commute" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Heavy Traffic Commute</h3>
+                                <p class="text-sm text-gray-500">Stress from navigating through rush hour traffic.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="bg-white p-4 rounded-lg shadow-neu-sm">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded-md overflow-hidden">
+                                <img src="https://picsum.photos/id/3/100/100" alt="Family" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Family Matters</h3>
+                                <p class="text-sm text-gray-500">Personal stress related to family concerns.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="bg-neuprimary p-6 rounded-2xl shadow-neu flex flex-col">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4"><i class="fa-solid fa-spa mr-2"></i>Relaxation Techniques Effectiveness</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-white p-4 rounded-lg shadow-neu-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-semibold text-gray-800">Meditation</h3>
+                            <span class="text-sm text-green-500">+15%</span>
+                        </div>
+                        <div class="h-2 bg-neuborder rounded-full">
+                            <div class="h-full bg-green-400 rounded-full w-3/4"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">Effectiveness increased by 15% this week.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-neu-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-semibold text-gray-800">Deep Breathing</h3>
+                            <span class="text-sm text-blue-500">+10%</span>
+                        </div>
+                        <div class="h-2 bg-neuborder rounded-full">
+                            <div class="h-full bg-blue-400 rounded-full w-2/3"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">Effectiveness increased by 10% this week.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-neu-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-semibold text-gray-800">Yoga</h3>
+                            <span class="text-sm text-red-500">-5%</span>
+                        </div>
+                        <div class="h-2 bg-neuborder rounded-full">
+                            <div class="h-full bg-red-400 rounded-full w-1/3"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">Effectiveness decreased by 5% this week.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-neu-sm">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="font-semibold text-gray-800">Nature Walk</h3>
+                            <span class="text-sm text-green-500">+20%</span>
+                        </div>
+                        <div class="h-2 bg-neuborder rounded-full">
+                            <div class="h-full bg-green-400 rounded-full w-4/5"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">Effectiveness increased by 20% this week.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="md:col-span-2 lg:col-span-3 bg-neuprimary p-6 rounded-2xl shadow-neu flex flex-col">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4"><i class="fa-solid fa-chart-line mr-2"></i>Stress Level Over Time</h2>
+                <div class="h-64 bg-white rounded-lg shadow-neu-sm p-4 flex items-center justify-center text-gray-400">
+                    <i class="fa-solid fa-chart-area text-6xl"></i> Chart data visualization will be here
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const stressLevelSection = document.querySelector('.grid > section:nth-child(1)');
+            stressLevelSection.classList.add('animate__animated', 'animate__fadeIn');
+
+            const triggersSection = document.querySelector('.grid > section:nth-child(2)');
+            triggersSection.classList.add('animate__animated', 'animate__fadeInUp');
+
+            const relaxationSection = document.querySelector('.grid > section:nth-child(3)');
+            relaxationSection.classList.add('animate__animated', 'animate__fadeInRight');
+
+            const chartSection = document.querySelector('.grid > section:nth-child(4)');
+            chartSection.classList.add('animate__animated', 'animate__fadeIn');
+        });
+    </script>
+</body>
+</html>

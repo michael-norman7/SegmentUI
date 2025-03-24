@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudLens Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'custom': '0 5px 20px rgba(0, 0, 0, 0.05)',
+                    },
+                    transitionProperty: {
+                        'custom': 'background-color, border-color, color, fill, stroke, opacity, box-shadow, transform',
+                    },
+                }
+            },
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans antialiased">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <nav class="container mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-bold text-primary">
+                        <i class="fa-solid fa-shield- Halved mr-2"></i> FraudLens
+                    </div>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#" class="hover:text-secondary transition-colors duration-200">Dashboard</a>
+                        <a href="#" class="hover:text-secondary transition-colors duration-200">Transactions</a>
+                        <a href="#" class="hover:text-secondary transition-colors duration-200">Investigations</a>
+                        <a href="#" class="hover:text-secondary transition-colors duration-200">Reports</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Toggle menu">
+                            <i class="fa-solid fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="flex-1 p-6 container mx-auto">
+            <section class="mb-8 animate-fade-up">
+                <h2 class="text-2xl font-bold text-dark mb-4">Overview</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white shadow-custom rounded-lg p-6 border-l-4 border-primary transition-transform hover:scale-105">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full bg-primary-100 text-primary p-2 mr-3">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-dark">Anomalies Detected</h3>
+                        </div>
+                        <div class="text-3xl font-bold text-dark">32</div>
+                        <p class="text-gray-500 mt-1">New anomalies in the last 24 hours</p>
+                    </div>
+
+                    <div class="bg-white shadow-custom rounded-lg p-6 border-l-4 border-secondary transition-transform hover:scale-105">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full bg-secondary-100 text-secondary p-2 mr-3">
+                                <i class="fa-solid fa-tachometer- Halved"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-dark">Average Risk Score</h3>
+                        </div>
+                        <div class="text-3xl font-bold text-dark">4.7</div>
+                        <p class="text-gray-500 mt-1">Average risk score of recent transactions</p>
+                    </div>
+
+                    <div class="bg-white shadow-custom rounded-lg p-6 border-l-4 border-accent transition-transform hover:scale-105">
+                        <div class="flex items-center mb-4">
+                            <div class="rounded-full bg-accent-100 text-accent p-2 mr-3">
+                                <i class="fa-solid fa-list-check"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-dark">Investigations Open</h3>
+                        </div>
+                        <div class="text-3xl font-bold text-dark">15</div>
+                        <p class="text-gray-500 mt-1">Active fraud investigations currently open</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8 animate-fade-up">
+                <h2 class="text-2xl font-bold text-dark mb-4">Transaction Anomalies</h2>
+                <div class="bg-white shadow-custom rounded-lg overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Transaction ID</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Amount</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Risk Score</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                    <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-white divide-y divide-gray-200">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">#TRANS001</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">2024-03-15 10:30</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">$1,250.00</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                            High (8.9)
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                            Pending Review
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right font-medium">
+                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">View Details</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">#TRANS002</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">2024-03-15 09:15</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">$580.00</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
+                                            Medium (6.2)
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            Cleared
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right font-medium">
+                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">View Details</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">#TRANS003</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">2024-03-14 18:40</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">$2,100.00</td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                            High (9.5)
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                            Under Investigation
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right font-medium">
+                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">View Details</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8 animate-fade-up">
+                <h2 class="text-2xl font-bold text-dark mb-4">Investigation Workflows</h2>
+                <div class="bg-white shadow-custom rounded-lg p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-dark mb-3">Recent Investigations</h3>
+                            <ul class="divide-y divide-gray-200">
+                                <li class="py-4">
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-center">
+                                            <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                                                <img src="https://picsum.photos/id/237/200/300" alt="User Avatar" class="object-cover w-full h-full">
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-dark">Investigation #INV001</p>
+                                                <p class="text-gray-500 text-sm">Assigned to John Doe</p>
+                                            </div>
+                                        </div>
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                            In Progress
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="py-4">
+                                    <div class="flex justify-between items-center">
+                                        <div class="flex items-center">
+                                            <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                                                <img src="https://picsum.photos/id/238/200/300" alt="User Avatar" class="object-cover w-full h-full">
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-dark">Investigation #INV002</p>
+                                                <p class="text-gray-500 text-sm">Assigned to Jane Smith</p>
+                                            </div>
+                                        </div>
+                                        <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                            Resolved
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-dark mb-3">Investigation Status</h3>
+                            <div class="aspect-w-16 aspect-h-9">
+                                <img src="https://picsum.photos/id/239/200/300" alt="Placeholder Chart" class="object-cover rounded-lg">
+                            </div>
+                            <p class="text-center text-gray-500 text-sm mt-2">Investigation Status Chart</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-8 animate-fade-up">
+                <h2 class="text-2xl font-bold text-dark mb-4">Risk Score Distribution</h2>
+                <div class="bg-white shadow-custom rounded-lg p-6">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="https://picsum.photos/id/240/200/300" alt="Placeholder Chart" class="object-cover rounded-lg">
+                    </div>
+                    <p class="text-center text-gray-500 text-sm mt-2">Risk Score Distribution Chart</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="bg-neutral-100 py-4 text-center text-gray-600">
+            <div class="container mx-auto px-6">
+                <p>© 2024 FraudLens. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.animate-fade-up:not(.animate-fade-up)').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

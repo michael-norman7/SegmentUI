@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understated Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1d4ed8',
+                        'secondary': '#374151',
+                        'accent': '#6b7280',
+                        'background': '#f9fafb',
+                        'foreground': '#ffffff',
+                    },
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: '1rem',
+                            sm: '2rem',
+                            lg: '4rem',
+                            xl: '5rem',
+                            '2xl': '6rem',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+        }
+        .animate-delay-100 {
+            animation-delay: 100ms;
+        }
+        .animate-delay-200 {
+            animation-delay: 200ms;
+        }
+        .animate-delay-300 {
+            animation-delay: 300ms;
+        }
+    </style>
+</head>
+<body class="bg-background text-secondary">
+    <header class="bg-foreground sticky top-0 z-50 border-b border-accent/10">
+        <div class="container mx-auto px-4 py-6">
+            <nav class="flex items-center justify-between">
+                <a href="/" class="font-semibold text-xl text-primary">Minimal Blog</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="hover:text-primary transition-colors duration-200">Home</a>
+                    <a href="/articles" class="hover:text-primary transition-colors duration-200">Articles</a>
+                    <a href="/about" class="hover:text-primary transition-colors duration-200">About</a>
+                    <a href="/contact" class="hover:text-primary transition-colors duration-200">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-secondary hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <section class="mb-16">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mb-4 fade-in">Welcome to the Minimal Blog</h1>
+                <p class="text-lg text-accent mb-8 fade-in animate-delay-100">A space for thoughts and ideas, presented simply.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-foreground rounded-lg shadow-sm overflow-hidden fade-in animate-delay-200 hover:shadow-md transition-shadow duration-200">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Blog Post 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="font-semibold text-xl mb-2 hover:text-primary transition-colors duration-200"><a href="/article/1">The Essence of Minimalism</a></h2>
+                        <p class="text-accent mb-4">Exploring the core principles of minimalism in design and life.</p>
+                        <a href="/article/1" class="text-primary hover:underline">Read more</a>
+                    </div>
+                </div>
+                <div class="bg-foreground rounded-lg shadow-sm overflow-hidden fade-in animate-delay-300 hover:shadow-md transition-shadow duration-200">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Blog Post 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="font-semibold text-xl mb-2 hover:text-primary transition-colors duration-200"><a href="/article/2">Typography Matters</a></h2>
+                        <p class="text-accent mb-4">Understanding the impact of typography on readability and user experience.</p>
+                        <a href="/article/2" class="text-primary hover:underline">Read more</a>
+                    </div>
+                </div>
+                <div class="bg-foreground rounded-lg shadow-sm overflow-hidden fade-in animate-delay-300 hover:shadow-md transition-shadow duration-200">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Blog Post 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="font-semibold text-xl mb-2 hover:text-primary transition-colors duration-200"><a href="/article/3">Whitespace is Key</a></h2>
+                        <p class="text-accent mb-4">The importance of whitespace in creating a clean and digestible layout.</p>
+                        <a href="/article/3" class="text-primary hover:underline">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-2xl font-semibold mb-6 fade-in">Featured Articles</h2>
+            <div class="grid grid-cols-1 gap-6">
+                <div class="bg-foreground rounded-lg shadow-sm p-6 fade-in animate-delay-100 hover:shadow-md transition-shadow duration-200">
+                    <h3 class="font-semibold text-xl mb-2 hover:text-primary transition-colors duration-200"><a href="/article/featured-1">Content is King: A Deep Dive</a></h3>
+                    <p class="text-accent mb-3">Analyzing why high-quality content is the cornerstone of any successful online platform.</p>
+                    <a href="/article/featured-1" class="text-primary hover:underline">Read more</a>
+                </div>
+                <div class="bg-foreground rounded-lg shadow-sm p-6 fade-in animate-delay-200 hover:shadow-md transition-shadow duration-200">
+                    <h3 class="font-semibold text-xl mb-2 hover:text-primary transition-colors duration-200"><a href="/article/featured-2">The Art of Understatement in UI</a></h3>
+                    <p class="text-accent mb-3">Exploring how less can be more in user interface design, focusing on clarity and function.</p>
+                    <a href="/article/featured-2" class="text-primary hover:underline">Read more</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-2xl font-semibold mb-6 fade-in">Categories</h2>
+            <div class="flex space-x-4 fade-in animate-delay-100">
+                <a href="/category/design" class="bg-accent/10 text-accent px-4 py-2 rounded-full hover:bg-accent/20 hover:text-primary transition-colors duration-200">Design</a>
+                <a href="/category/ux" class="bg-accent/10 text-accent px-4 py-2 rounded-full hover:bg-accent/20 hover:text-primary transition-colors duration-200">UX</a>
+                <a href="/category/technology" class="bg-accent/10 text-accent px-4 py-2 rounded-full hover:bg-accent/20 hover:text-primary transition-colors duration-200">Technology</a>
+                <a href="/category/minimalism" class="bg-accent/10 text-accent px-4 py-2 rounded-full hover:bg-accent/20 hover:text-primary transition-colors duration-200">Minimalism</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-foreground border-t border-accent/10 py-8">
+        <div class="container mx-auto px-4 text-center text-accent">
+            <p>© 2024 Minimal Blog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

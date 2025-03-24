@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Access Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'satoshi': ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0d6efd',
+                        'secondary': '#6c757d',
+                        'success': '#198754',
+                        'danger': '#dc3545',
+                        'warning': '#ffc107',
+                        'info': '#0dcaf0',
+                        'light': '#f8f9fa',
+                        'dark': '#212529',
+                        'corporate-blue': '#1a237e',
+                        'corporate-light-blue': '#e8eaf6',
+                        'corporate-gold': '#ffb300',
+                        'corporate-gray': '#78909c',
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out',
+                        'fade-in': 'fade-in 0.3s ease-out',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    boxShadow: {
+                        'form-glow': '0 0 20px rgba(0, 123, 255, 0.3)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Satoshi', sans-serif;
+            background-color: theme('colors.corporate-light-blue');
+            color: theme('colors.dark');
+        }
+        .form-container {
+            animation: fade-in 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-corporate-light-blue font-satoshi">
+    <div class="form-container fadeInUp fixed inset-0 flex justify-center items-center overflow-y-auto z-50">
+        <div class="bg-white p-12 rounded-3xl shadow-2xl w-full max-w-2xl mx-4 my-8 animate-slide-up">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-corporate-blue mb-2">Access Confidential Resources</h2>
+                <p class="text-corporate-gray">Sign up to unlock exclusive business tools and insights.</p>
+            </div>
+            <form class="space-y-6">
+                <div>
+                    <label for="fullName" class="block mb-2 text-corporate-blue font-medium">Full Name</label>
+                    <div class="flex space-x-4">
+                        <input type="text" id="firstName" placeholder="First Name" required class="w-1/2 px-4 py-3 rounded-md border border-corporate-gray focus:ring-corporate-blue focus:border-corporate-blue transition-shadow shadow-sm hover:shadow-md">
+                        <input type="text" id="lastName" placeholder="Last Name" required class="w-1/2 px-4 py-3 rounded-md border border-corporate-gray focus:ring-corporate-blue focus:border-corporate-blue transition-shadow shadow-sm hover:shadow-md">
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-corporate-blue font-medium">Email Address</label>
+                    <div class="relative">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
+                            <i class="fa fa-envelope text-corporate-gray"></i>
+                        </div>
+                        <input type="email" id="email" placeholder="your@email.com" required class="pl-11 pr-4 py-3 rounded-md border border-corporate-gray focus:ring-corporate-blue focus:border-corporate-blue w-full transition-shadow shadow-sm hover:shadow-md">
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-corporate-blue font-medium">Password</label>
+                    <div class="relative">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
+                            <i class="fa fa-lock text-corporate-gray"></i>
+                        </div>
+                        <input type="password" id="password" placeholder="Create a strong password" required class="pl-11 pr-4 py-3 rounded-md border border-corporate-gray focus:ring-corporate-blue focus:border-corporate-blue w-full transition-shadow shadow-sm hover:shadow-md">
+                    </div>
+                </div>
+                <div>
+                    <label for="companyName" class="block mb-2 text-corporate-blue font-medium">Company Name</label>
+                    <div class="relative">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
+                            <i class="fa fa-building text-corporate-gray"></i>
+                        </div>
+                        <input type="text" id="companyName" placeholder="Company or Organization" required class="pl-11 pr-4 py-3 rounded-md border border-corporate-gray focus:ring-corporate-blue focus:border-corporate-blue w-full transition-shadow shadow-sm hover:shadow-md">
+                    </div>
+                </div>
+                <div>
+                    <label for="jobTitle" class="block mb-2 text-corporate-blue font-medium">Job Title</label>
+                    <div class="relative">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
+                            <i class="fa fa-briefcase text-corporate-gray"></i>
+                        </div>
+                        <input type="text" id="jobTitle" placeholder="Your Job Title" required class="pl-11 pr-4 py-3 rounded-md border border-corporate-gray focus:ring-corporate-blue focus:border-corporate-blue w-full transition-shadow shadow-sm hover:shadow-md">
+                    </div>
+                </div>
+                <div>
+                    <label for="phoneNumber" class="block mb-2 text-corporate-blue font-medium">Phone Number (Optional)</label>
+                    <div class="relative">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-4 flex items-center">
+                            <i class="fa fa-phone text-corporate-gray"></i>
+                        </div>
+                        <input type="tel" id="phoneNumber" placeholder="Phone Number" class="pl-11 pr-4 py-3 rounded-md border border-corporate-gray focus:ring-corporate-blue focus:border-corporate-blue w-full transition-shadow shadow-sm hover:shadow-md">
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="terms" required class="w-5 h-5 text-corporate-blue bg-gray-100 rounded border-corporate-gray focus:ring-corporate-blue focus:ring-2">
+                    <label for="terms" class="ml-2 text-sm font-medium text-corporate-gray">I agree to the <a href="#" class="text-corporate-blue hover:underline">Terms of Service</a> and <a href="#" class="text-corporate-blue hover:underline">Privacy Policy</a></label>
+                </div>
+                <button type="submit" class="w-full py-3 rounded-md bg-corporate-blue text-white font-bold hover:bg-corporate-blue-700 focus:ring-2 focus:ring-corporate-blue focus:ring-opacity-50 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Sign Up for Secure Access
+                </button>
+            </form>
+            <div class="mt-6 text-center">
+                <p class="text-sm text-corporate-gray">Already have an account? <a href="#" class="text-corporate-blue hover:underline">Log in</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formContainer = document.querySelector('.form-container');
+            formContainer.classList.add('animate-fade-in');
+        });
+    </script>
+</body>
+</html>

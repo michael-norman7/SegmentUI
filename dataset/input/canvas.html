@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nunito Sans', 'sans-serif'],
+                        handwritten: ['Caveat', 'cursive'],
+                    },
+                    colors: {
+                        canvas: '#f0e8d8',
+                        ink: '#333',
+                        accent: '#e2725b',
+                        lightAccent: '#f9a898',
+                        paleGreen: '#d7e9b9',
+                        paleBlue: '#a8d5e8',
+                    },
+                    backgroundImage: {
+                        'canvas-texture': "url('https://www.transparenttextures.com/patterns/paper-fibers.png')",
+                    },
+                    keyframes: {
+                        'sketch': {
+                            '0%': { strokeDashoffset: '100%' },
+                            '100%': { strokeDashoffset: '0' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'sketch': 'sketch 2s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'sketch-delay': 'sketch 2s 0.5s ease-out forwards',
+                    },
+                    boxShadow: {
+                        'sketch-md': '4px 4px 0px rgba(0, 0, 0, 0.2)',
+                        'sketch-lg': '6px 6px 0px rgba(0, 0, 0, 0.2)',
+                    },
+                    textShadow: {
+                        'handwritten-sm': '2px 2px 0px rgba(0, 0, 0, 0.1)',
+                        'handwritten-md': '3px 3px 0px rgba(0, 0, 0, 0.15)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.canvas');
+            background-image: theme('backgroundImage.canvas-texture');
+        }
+        .sketch-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .sketch-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: theme('colors.accent');
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.5s ease-out;
+        }
+
+        .sketch-underline:hover::after {
+            transform: scaleX(1);
+        }
+
+        .ql-editor {
+            @apply prose max-w-none;
+        }
+
+        .ql-editor > * {
+            @apply !mb-5;
+        }
+
+        .ql-editor h1 {
+            @apply text-4xl font-handwritten text-ink text-shadow-handwritten-sm !mb-6;
+        }
+
+        .ql-editor h2 {
+            @apply text-3xl font-handwritten text-ink text-shadow-handwritten-sm !mb-5;
+        }
+
+        .ql-editor h3 {
+            @apply text-2xl font-handwritten text-ink text-shadow-handwritten-sm !mb-4;
+        }
+
+        .ql-editor p, .ql-editor li {
+            @apply text-lg text-ink;
+        }
+
+        .ql-editor a {
+            @apply text-accent sketch-underline;
+        }
+
+        .ql-editor blockquote {
+            @apply pl-4 border-l-4 border-accent italic text-ink opacity-80;
+        }
+
+        .ql-editor ul {
+            @apply list-disc ml-6;
+        }
+
+        .ql-editor ol {
+            @apply list-decimal ml-6;
+        }
+
+        .ql-editor img {
+            @apply rounded-lg shadow-sketch-md max-w-full h-auto;
+        }
+
+        .ql-editor pre {
+            @apply bg-paleGreen p-4 rounded-md overflow-x-auto text-sm;
+        }
+
+        .ql-editor code {
+            @apply bg-paleGreen px-2 py-1 rounded-sm font-mono text-sm;
+        }
+
+        .ql-editor hr {
+            @apply border-t-2 border-accent my-8;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<header class="sticky top-0 bg-canvas bg-opacity-90 backdrop-blur-sm z-50 shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="#" class="text-xl font-handwritten text-accent text-shadow-handwritten-md">My Canvas Blog</a>
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-accent transition-colors duration-200">Home</a>
+            <a href="#" class="hover:text-accent transition-colors duration-200">Blog</a>
+            <a href="#" class="hover:text-accent transition-colors duration-200">About</a>
+            <a href="#" class="hover:text-accent transition-colors duration-200">Contact</a>
+        </nav>
+        <div class="md:hidden">
+            <button class="text-ink hover:text-accent focus:outline-none">
+                <i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto px-4 mt-20 mb-10">
+    <article class="bg-canvas p-8 rounded-lg shadow-sketch-lg animate-fade-in">
+        <div class="text-center mb-8">
+            <h1 class="text-5xl font-handwritten text-ink text-shadow-handwritten-md mb-4">The Art of Digital Sketching</h1>
+            <p class="text-gray-600 text-sm"><i class="fa-regular fa-calendar"></i> August 28, 2024 <span class="mx-2">•</span> <i class="fa-regular fa-clock"></i> 5 min read</p>
+            <div class="mt-4">
+                <span class="inline-block bg-lightAccent text-white px-3 py-1 rounded-full text-sm font-semibold mr-2 mb-2">#digitalart</span>
+                <span class="inline-block bg-paleBlue text-ink px-3 py-1 rounded-full text-sm font-semibold mr-2 mb-2">#sketching</span>
+                <span class="inline-block bg-paleGreen text-ink px-3 py-1 rounded-full text-sm font-semibold mr-2 mb-2">#creativity</span>
+            </div>
+        </div>
+
+        <img src="https://picsum.photos/800/400" alt="Blog Post Image" class="rounded-lg shadow-sketch-md mb-6 w-full object-cover aspect-video">
+
+        <div class="ql-editor">
+            <h1>Unleashing Creativity with Digital Tools</h1>
+            <p>In today's fast-paced world, the allure of digital art has never been stronger. It offers a unique blend of traditional artistic expression with the boundless possibilities of technology. This post delves into the captivating realm of digital sketching, exploring its tools, techniques, and transformative potential.</p>
+
+            <h2>The Digital Canvas: A World of Possibilities</h2>
+            <p>Gone are the days of limited mediums and messy cleanups. Digital sketching provides an endless canvas, an array of brushes at your fingertips, and the magical undo button. Whether you're a seasoned artist or a curious beginner, the digital space democratizes art creation, making it accessible and enjoyable for everyone.</p>
+
+            <blockquote>"Digital art is not just about pixels; it's about passion, innovation, and the evolution of artistic expression." - A Digital Art Enthusiast</blockquote>
+
+            <h3>Essential Tools for Digital Sketching</h3>
+            <p>Embarking on your digital sketching journey requires the right tools. Here's a quick guide:</p>
+            <ul>
+                <li><strong>Drawing Tablet:</strong> Your primary interface, choose one that suits your budget and needs. Wacom, Huion, and XP-Pen are popular brands.</li>
+                <li><strong>Stylus:</strong> An extension of your hand, allowing for pressure sensitivity and precise strokes.</li>
+                <li><strong>Software:</strong> From free options like Krita and Autodesk Sketchbook to professional suites like Adobe Photoshop and Procreate, the choices are vast.</li>
+            </ul>
+
+            <img src="https://picsum.photos/600/300" alt="Software Interfaces" class="mb-4">
+
+            <h3>Techniques to Master</h3>
+            <p>Digital sketching is more than just drawing on a screen; it's about understanding and applying fundamental art principles in a digital environment.</p>
+            <ol>
+                <li><strong>Layering:</strong> Embrace layers to separate elements, allowing for non-destructive editing and easy adjustments.</li>
+                <li><strong>Brush Control:</strong> Experiment with different brushes and settings to achieve various textures and effects.</li>
+                <li><strong>Color Theory:</strong> Digital tools make color manipulation a breeze. Learn basic color theory to enhance your sketches.</li>
+            </ol>
+
+            <pre><code class="language-javascript">
+// Example JavaScript code snippet for interactive art
+function drawCircle(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    const ctx = canvas.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+}
+            </code></pre>
+
+            <p>The beauty of digital art lies in its fluidity and forgiving nature. Don't be afraid to experiment, make mistakes, and learn from them. Each stroke, each color choice, is a step forward in your artistic journey.</p>
+
+            <hr>
+
+            <p class="text-center text-gray-700"><i class="fa-regular fa-heart"></i> Enjoyed this sketch? Share it with your friends!</p>
+        </div>
+
+        <div class="mt-12 pt-6 border-t border-paleGreen">
+            <h4 class="text-xl font-handwritten text-ink text-shadow-handwritten-sm mb-4">About the Author</h4>
+            <div class="flex items-center">
+                <img src="https://picsum.photos/50/50" alt="Author Avatar" class="rounded-full w-12 h-12 mr-4 shadow-sketch-md">
+                <div>
+                    <p class="font-semibold text-ink">Jane Doe</p>
+                    <p class="text-sm text-gray-700">Passionate digital artist and blogger sharing creative insights.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 pt-6 border-t border-paleGreen">
+            <h4 class="text-xl font-handwritten text-ink text-shadow-handwritten-sm mb-4">Comments</h4>
+            <div class="mb-4">
+                <div class="flex items-start mb-4">
+                    <img src="https://picsum.photos/40/40" alt="Commenter Avatar" class="rounded-full w-8 h-8 mr-2 shadow-sketch-md">
+                    <div>
+                        <p class="text-sm font-semibold text-ink">John Smith</p>
+                        <p class="text-xs text-gray-700 mb-1">August 28, 2024</p>
+                        <p class="text-sm text-ink">Great post! I'm just starting out with digital sketching and this was really helpful.</p>
+                    </div>
+                </div>
+                <div class="flex items-start mb-4">
+                    <img src="https://picsum.photos/41/41" alt="Commenter Avatar" class="rounded-full w-8 h-8 mr-2 shadow-sketch-md">
+                    <div>
+                        <p class="text-sm font-semibold text-ink">Alice Johnson</p>
+                        <p class="text-xs te
+content_copy
+download
+Use code with caution.
+Html

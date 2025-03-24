@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#64748b',
+                        'accent': '#fde047',
+                        'neutral': '#f3f4f6',
+                    },
+                    boxShadow: {
+                        'product': '0 10px 30px -5px rgba(0, 0, 0, 0.15)',
+                        'product-hover': '0 15px 45px -5px rgba(0, 0, 0, 0.25)',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.3s ease-in-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .product-item .product-details {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s ease-out;
+        }
+        .product-item:hover .product-details {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .product-item .product-image img {
+            transition: transform 0.3s ease-out;
+        }
+        .product-item:hover .product-image img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-neutral">
+    <div class="py-20 px-5 md:px-10 lg:px-20">
+        <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Featured Products</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div class="product-item bg-white rounded-xl shadow-product hover:shadow-product-hover transition-shadow duration-300 overflow-hidden relative group">
+                <div class="product-image aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Product 1" class="object-cover rounded-t-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product Title 1</h3>
+                    <p class="text-secondary text-sm mb-4">Short description of product 1.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-medium">$49.99</span>
+                        <button class="bg-accent text-gray-800 py-2 px-3 rounded-md text-sm font-semibold hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition-colors duration-200">
+                            <i class="fa-solid fa-cart-shopping mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-details absolute inset-0 bg-white bg-opacity-95 flex flex-col justify-center items-center rounded-xl p-10 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-opacity transition-visibility transition-transform duration-300">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 animate-slide-up">Product Title 1</h4>
+                    <p class="text-secondary text-center mb-6 animate-slide-up delay-100">Detailed description of product 1 with more information and benefits. High-quality materials and craftsmanship.</p>
+                    <ul class="mb-6 space-y-2 animate-slide-up delay-200">
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Feature 1</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Feature 2</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Feature 3</li>
+                    </ul>
+                    <button class="bg-primary text-white py-3 px-6 rounded-lg text-sm font-semibold hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-200 animate-slide-up delay-300">
+                        View Details <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="product-item bg-white rounded-xl shadow-product hover:shadow-product-hover transition-shadow duration-300 overflow-hidden relative group">
+                <div class="product-image aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Product 2" class="object-cover rounded-t-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product Title 2</h3>
+                    <p class="text-secondary text-sm mb-4">Another great product description here.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-medium">$59.99</span>
+                        <button class="bg-accent text-gray-800 py-2 px-3 rounded-md text-sm font-semibold hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition-colors duration-200">
+                            <i class="fa-solid fa-cart-shopping mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-details absolute inset-0 bg-white bg-opacity-95 flex flex-col justify-center items-center rounded-xl p-10 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-opacity transition-visibility transition-transform duration-300">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 animate-slide-up">Product Title 2</h4>
+                    <p class="text-secondary text-center mb-6 animate-slide-up delay-100">Detailed description of product 2 with more information and benefits. Innovative design and user-friendly interface.</p>
+                    <ul class="mb-6 space-y-2 animate-slide-up delay-200">
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Feature A</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Feature B</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Feature C</li>
+                    </ul>
+                    <button class="bg-primary text-white py-3 px-6 rounded-lg text-sm font-semibold hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-200 animate-slide-up delay-300">
+                        View Details <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+             <div class="product-item bg-white rounded-xl shadow-product hover:shadow-product-hover transition-shadow duration-300 overflow-hidden relative group">
+                <div class="product-image aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Product 3" class="object-cover rounded-t-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product Title 3</h3>
+                    <p class="text-secondary text-sm mb-4">Product 3 brief description.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-medium">$69.99</span>
+                        <button class="bg-accent text-gray-800 py-2 px-3 rounded-md text-sm font-semibold hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition-colors duration-200">
+                            <i class="fa-solid fa-cart-shopping mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-details absolute inset-0 bg-white bg-opacity-95 flex flex-col justify-center items-center rounded-xl p-10 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-opacity transition-visibility transition-transform duration-300">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 animate-slide-up">Product Title 3</h4>
+                    <p class="text-secondary text-center mb-6 animate-slide-up delay-100">More detailed description for product 3, highlighting key selling points and unique aspects. Durable and long-lasting.</p>
+                    <ul class="mb-6 space-y-2 animate-slide-up delay-200">
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Benefit X</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Benefit Y</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Benefit Z</li>
+                    </ul>
+                    <button class="bg-primary text-white py-3 px-6 rounded-lg text-sm font-semibold hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-200 animate-slide-up delay-300">
+                        View Details <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+             <div class="product-item bg-white rounded-xl shadow-product hover:shadow-product-hover transition-shadow duration-300 overflow-hidden relative group">
+                <div class="product-image aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Product 4" class="object-cover rounded-t-xl">
+                </div>
+                <div class="p-5">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Product Title 4</h3>
+                    <p class="text-secondary text-sm mb-4">Product 4 description.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-medium">$79.99</span>
+                        <button class="bg-accent text-gray-800 py-2 px-3 rounded-md text-sm font-semibold hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition-colors duration-200">
+                            <i class="fa-solid fa-cart-shopping mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="product-details absolute inset-0 bg-white bg-opacity-95 flex flex-col justify-center items-center rounded-xl p-10 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-opacity transition-visibility transition-transform duration-300">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4 animate-slide-up">Product Title 4</h4>
+                    <p class="text-secondary text-center mb-6 animate-slide-up delay-100">In-depth description of product 4, emphasizing its value proposition and target audience. Eco-friendly and sustainable.</p>
+                    <ul class="mb-6 space-y-2 animate-slide-up delay-200">
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Quality Material</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Easy to Use</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check-circle text-primary mr-2"></i> Great Value</li>
+                    </ul>
+                    <button class="bg-primary text-white py-3 px-6 rounded-lg text-sm font-semibold hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-200 animate-slide-up delay-300">
+                        View Details <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

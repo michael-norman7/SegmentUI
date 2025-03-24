@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolest Blog Post Ever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0EA5E9',
+                        'secondary': '#64748B',
+                        'accent': '#FDE047',
+                        'dark': '#0F172A',
+                        'light': '#F8FAFC',
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'slide-up': 'slide-up 0.6s ease-out forwards',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @layer utilities {
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-image: linear-gradient(to right, #0EA5E9, #3B82F6);
+            }
+            .aspect-custom {
+                aspect-ratio: 4 / 3;
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark antialiased">
+
+    <header class="sticky top-0 bg-white/90 backdrop-blur-sm z-50 shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-xl font-bold text-primary hover:text-secondary transition-colors duration-300">Awesome Blog</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300">Categories</a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300">About</a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="focus:outline-none">
+                        <i class="fa fa-bars text-xl text-secondary hover:text-primary transition-colors duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-20 px-6 md:px-12 lg:px-20">
+        <article class="mb-16">
+            <div class="relative rounded-xl overflow-hidden shadow-lg mb-8 animate-fade-in">
+                <img src="https://picsum.photos/1200/600" alt="Featured Blog Post" class="w-full aspect-video object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                    <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-2 text-gradient animate-slide-up delay-100">The Ultimate Guide to Modern Web Design</h1>
+                    <p class="text-sm md:text-base opacity-80 animate-slide-up delay-200">Published on <time datetime="2024-01-20">January 20, 2024</time> by <span class="font-semibold">Jane Doe</span></p>
+                </div>
+            </div>
+
+            <div class="prose prose-lg max-w-none mb-10 animate-fade-in delay-300">
+                <p>Welcome to the future of web design! In this comprehensive guide, we'll explore the latest trends, techniques, and tools that are shaping the digital landscape. From immersive user interfaces to cutting-edge technologies, prepare to be inspired and equipped with the knowledge to create truly exceptional web experiences.</p>
+
+                <h2>Embracing Minimalism and Clean Aesthetics</h2>
+                <p>Minimalism continues to reign supreme in modern web design. By stripping away unnecessary elements and focusing on core content, we create websites that are not only visually appealing but also highly functional and user-friendly. Whitespace is your friend – use it generously to enhance readability and visual hierarchy.</p>
+
+                <img src="https://picsum.photos/800/400" alt="Minimalist Web Design Example" class="rounded-lg shadow-md mt-6 mb-4">
+
+                <h3>The Power of Typography</h3>
+                <p>Typography is more than just choosing fonts; it's about crafting a visual language that communicates your brand's personality and enhances the user experience. Experiment with font pairings, sizes, and weights to create a harmonious and engaging typographic system. Consider using variable fonts for performance and flexibility.</p>
+
+                <ul>
+                    <li><strong>Choose a legible font for body text:</strong> Prioritize readability for extended content.</li>
+                    <li><strong>Use display fonts sparingly for headings:</strong> Create visual impact with bolder, more stylistic fonts.</li>
+                    <li><strong>Maintain consistent line height and letter spacing:</strong> Improve readability and visual appeal.</li>
+                </ul>
+
+                <h2>Interactive Elements and Micro-Interactions</h2>
+                <p>Engage your users with subtle yet meaningful interactions. Micro-interactions, such as button hover effects, loading animations, and form feedback, can significantly enhance the user experience and make your website feel more dynamic and alive. Use animations purposefully to guide users and provide feedback.</p>
+
+                <blockquote>
+                    "Good design is obvious. Great design is transparent." - Joe Sparano
+                </blockquote>
+
+                <h3>Accessibility is Key</h3>
+                <p>Designing for accessibility is not just a best practice; it's a necessity. Ensure your website is usable by everyone, including people with disabilities. Follow WCAG guidelines, use semantic HTML, provide alt text for images, and ensure sufficient color contrast. Accessibility benefits everyone and expands your reach.</p>
+
+                <ol>
+                    <li>Use semantic HTML5 tags for structure.</li>
+                    <li>Provide alternative text for all images.</li>
+                    <li>Ensure sufficient color contrast between text and background.</li>
+                    <li>Test your website with screen readers.</li>
+                    <li>Make keyboard navigation intuitive and logical.</li>
+                </ol>
+
+                <h2>Responsive Design and Mobile-First Approach</h2>
+                <p>In today's mobile-first world, responsive design is non-negotiable. Design and develop your website to adapt seamlessly to different screen sizes and devices. Prioritize mobile users and ensure a consistent and enjoyable experience across all platforms. Use flexible grids, fluid images, and media queries to create a truly responsive website.</p>
+
+                <p>This is just the beginning of our journey into modern web design. Stay tuned for more in-depth articles and tutorials. Happy designing!</p>
+            </div>
+
+            <div class="flex justify-between items-center mb-8 animate-fade-in delay-500">
+                <div class="flex space-x-4">
+                    <button class="flex items-center space-x-2 hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa fa-thumbs-up"></i>
+                        <span>Like</span>
+                        <span class="ml-1 text-secondary">(123)</span>
+                    </button>
+                    <button class="flex items-center space-x-2 hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa fa-thumbs-down"></i>
+                        <span>Dislike</span>
+                        <span class="ml-1 text-secondary">(12)</span>
+                    </button>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="flex items-center space-x-2 hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa fa-share-alt"></i>
+                        <span>Share</span>
+                    </button>
+                </div>
+            </div>
+
+            <hr class="mb-10 border-t border-secondary/20 animate-fade-in delay-600">
+
+            <section id="comments" class="animate-fade-in delay-700">
+                <h2 class="text-2xl font-bold mb-6">Comments (3)</h2>
+
+                <div class="space-y-6">
+                    <div class="flex space-x-4">
+                        <img src="https://picsum.photos/50/50" alt="User Avatar" class="rounded-full aspect-square object-cover">
+                        <div>
+                            <div class="font-semibold">John Smith</div>
+                            <div class="text-sm text-secondary">2 days ago</div>
+                            <p class="mt-1">Great article! I especially liked the section on typography. Very insightful.</p>
+                            <div class="mt-2 flex space-x-4">
+                                <button class="text-sm text-primary hover:underline focus:outline-none">Reply</button>
+                                <button class="text-sm text-secondary hover:underline focus:outline-none">Like</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ml-12 flex space-x-4">
+                        <img src="https://picsum.photos/50/50" alt="User Avatar" class="rounded-full aspect-square object-cover">
+                        <div>
+                            <div class="font-semibold">Alice Johnson</div>
+                            <div class="text-sm text-secondary">1 day ago</div>
+                            <p class="mt-1">Thanks for sharing these tips! Responsive design is definitely crucial.</p>
+                            <div class="mt-2 flex space-x-4">
+                                <button class="text-sm text-primary hover:underline focus:outline-none">Reply</button>
+                                <button class="text-sm text-secondary hover:underline focus:outline-none">Like</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-4">
+                        <img src="https://picsum.photos/50/50" alt="User Avatar" class="rounded-full aspect-square object-cover">
+                        <div>
+                            <div class="font-semibold">Peter Jones</div>
+                            <div class="text-sm text-secondary">1 day ago</div>
+                            <p class="mt-1">Could you elaborate more on micro-interactions? Examples would be helpful.</p>
+                            <div class="mt-2 flex space-x-4">
+                                <button class="text-sm text-primary hover:underline focus:outline-none">Reply</button>
+                                <button class="text-sm text-secondary hover:underline focus:outline-none">Like</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-xl font-bold mb-4">Leave a Comment</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-secondary text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="name" placeholder="Your Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-dark leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-secondary text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" placeholder="Your Email" class="shadow appearance-none border rounded w-full py-2 px-3 text-dark leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-6">
+                            <label for="comment" class="block text-secondary text-sm font-bold mb-2">Comment</label>
+                            <textarea id="comment" rows="4" placeholder="Your Comment" class="shadow appearance-none border rounded w-full py-2 px-3 text-dark leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                        </div>
+                        <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-300">
+                            Post Comment
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-light py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Awesome Blog. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fab fa-facebook-square text-2xl"></i></a>
+                <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fab fa-twitter-square text-2xl"></i></a>
+                <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fab fa-instagram-square text-2xl"></i></a>
+                <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            const heroSection = document.querySelector('.hero');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                        header.classList.add('shadow-md');
+                    } else {
+                        header.classList.remove('shadow-md');
+                    }
+                });
+            }, {
+                threshold: 0,
+                rootMargin: "-80px 0px 0px 0px" // Adjust rootMargin to trigger earlier/later
+            });
+
+            if(heroSection) {
+                observer.observe(heroSection);
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing - Cool Clothing Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0F172A;
+            --secondary-color: #CBD5E0;
+            --accent-color: #6366F1;
+            --background-color: #F9FAFB;
+            --text-color: #334155;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .product-card { transition: transform 0.3s, shadow-sm 0.3s; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+        .loading-skeleton { background-color: #E5E7EB; animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+    </style>
+</head>
+<body class="bg-background-color text-text-color">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-semibold text-primary-color">Cool Clothes</div>
+        <div class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-accent-color transition-colors">New Arrivals</a>
+            <a href="#" class="hover:text-accent-color transition-colors">Men</a>
+            <a href="#" class="hover:text-accent-color transition-colors">Women</a>
+            <a href="#" class="hover:text-accent-color transition-colors">Sale</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <button class="hidden md:block hover:text-accent-color transition-colors"><i class="fa fa-search"></i></button>
+            <button class="hover:text-accent-color transition-colors relative">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="absolute top-[-6px] right-[-6px] bg-accent-color text-white text-xs rounded-full px-2 py-0.5">3</span>
+            </button>
+            <div class="md:hidden">
+                <button class="mobile-menu-button"><i class="fa fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu hidden md:hidden p-4 bg-gray-50">
+        <a href="#" class="block py-2 hover:text-accent-color transition-colors">New Arrivals</a>
+        <a href="#" class="block py-2 hover:text-accent-color transition-colors">Men</a>
+        <a href="#" class="block py-2 hover:text-accent-color transition-colors">Women</a>
+        <a href="#" class="block py-2 hover:text-accent-color transition-colors">Sale</a>
+    </div>
+</header>
+
+<main class="container mx-auto px-6 py-12">
+    <section class="mb-8">
+        <h2 class="text-3xl font-bold text-primary-color mb-4">Shop All Products</h2>
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <span class="text-sm text-gray-500">Sort by:</span>
+                <select class="border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-accent-color">
+                    <option>Featured</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest Arrivals</option>
+                </select>
+            </div>
+            <div class="text-sm text-gray-500">Showing 1-12 of 144 products</div>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=1" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Cool Blue T-Shirt</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Comfortable cotton t-shirt for everyday wear.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$24.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=2" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Stylish Black Jeans</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Modern fit jeans perfect for any occasion.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$49.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=3" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Elegant White Dress</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Flowy white dress for summer days and evenings.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$59.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=4" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Cozy Knit Sweater</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Warm and soft knit sweater for colder weather.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$39.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=5" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Sporty Running Shoes</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Lightweight and breathable running shoes for active lifestyles.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$79.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=6" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Fashionable Leather Jacket</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Classic leather jacket for a timeless look.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$129.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=7" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Casual Checkered Shirt</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Versatile checkered shirt for casual outings.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$34.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=8" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Summer Beach Hat</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Wide brim beach hat for sun protection and style.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$19.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=9" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Winter Wool Scarf</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Warm wool scarf to keep you cozy in winter.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$29.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=10" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Denim Jacket Classic</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Timeless denim jacket that goes with everything.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$69.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=11" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Striped Long Sleeve</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Comfortable striped long sleeve shirt for layering.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$27.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-lg shadow-sm overflow-hidden">
+            <div class="aspect-w-3 aspect-h-4">
+                <img src="https://picsum.photos/200/300?random=12" alt="Product Image" class="object-cover w-full h-full">
+            </div>
+            <div class="p-4">
+                <h3 class="text-lg font-medium text-primary-color truncate mb-2">Formal Business Suit</h3>
+                <p class="text-gray-500 text-sm mb-3 truncate">Sharp formal business suit for professional settings.</p>
+                <div class="flex items-center justify-between">
+                    <span class="font-semibold text-accent-color">$199.99</span>
+                    <button class="bg-accent-color hover:bg-secondary-color text-white py-2 px-4 rounded-md text-sm transition-colors">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<footer class="bg-gray-100 py-12">
+    <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-500 text-sm">© 2024 Cool Clothing Store. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    document.querySelector('.mobile-menu-button').addEventListener('click', () => {
+        document.querySelector('.mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>

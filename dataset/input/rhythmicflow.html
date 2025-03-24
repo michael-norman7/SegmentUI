@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RhythmicFlow Dance Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF4081',
+                        secondary: '#D81B60',
+                        accent: '#FFAB40',
+                        neutral: '#F3F4F6',
+                        dark: '#1F2937',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    boxShadow: {
+                        'custom-light': '0 5px 15px rgba(0, 0, 0, 0.08)',
+                        'custom-medium': '0 10px 25px rgba(0, 0, 0, 0.15)',
+                        'custom-strong': '0 20px 50px rgba(0, 0, 0, 0.25)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/1920/1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-neutral text-dark">
+
+<header class="sticky top-0 z-50 bg-white shadow-custom-light">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-semibold text-primary">RhythmicFlow</div>
+        <ul class="hidden md:flex space-x-8">
+            <li><a href="#home" class="hover:text-secondary transition-colors duration-300">Home</a></li>
+            <li><a href="#classes" class="hover:text-secondary transition-colors duration-300">Classes</a></li>
+            <li><a href="#instructors" class="hover:text-secondary transition-colors duration-300">Instructors</a></li>
+            <li><a href="#testimonials" class="hover:text-secondary transition-colors duration-300">Testimonials</a></li>
+            <li><a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a></li>
+        </ul>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+                <i class="fa fa-bars text-xl text-dark"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="md:hidden hidden" id="mobile-menu">
+        <ul class="px-6 py-3">
+            <li class="py-2"><a href="#home" class="block hover:text-secondary transition-colors duration-300">Home</a></li>
+            <li class="py-2"><a href="#classes" class="block hover:text-secondary transition-colors duration-300">Classes</a></li>
+            <li class="py-2"><a href="#instructors" class="block hover:text-secondary transition-colors duration-300">Instructors</a></li>
+            <li class="py-2"><a href="#testimonials" class="block hover:text-secondary transition-colors duration-300">Testimonials</a></li>
+            <li class="py-2"><a href="#contact" class="block hover:text-secondary transition-colors duration-300">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<section id="home" class="parallax py-24 md:py-48 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-70"></div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="md:grid grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-7 fade-in">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Unleash Your Inner Rhythm</h1>
+                <p class="text-lg mb-12">Discover the joy of dance at RhythmicFlow Studio. Expert instructors, vibrant community, and classes for all levels.</p>
+                <a href="#classes" class="inline-block bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300 shadow-custom-medium">Explore Classes</a>
+            </div>
+            <div class="md:col-span-5 flex justify-center md:justify-end slide-in-right">
+                <img src="https://picsum.photos/400/400" alt="Dance Studio" class="rounded-full shadow-custom-strong animate-pulse-fast hover:animate-none transition-transform duration-300 hover:scale-105">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="classes" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Our Dance Classes</h2>
+            <p class="text-gray-600">Find the perfect class to ignite your passion and move your body.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="rounded-xl overflow-hidden shadow-custom-light hover:shadow-custom-medium transition-shadow duration-300">
+                <img src="https://picsum.photos/400/300" alt="Ballet Class" class="w-full h-60 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Ballet Basics</h3>
+                    <p class="text-gray-700 mb-4">Elegant and graceful, perfect for beginners.</p>
+                    <a href="#" class="inline-flex items-center text-primary hover:text-secondary font-semibold transition-colors duration-300">
+                        Learn More <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-custom-light hover:shadow-custom-medium transition-shadow duration-300">
+                <img src="https://picsum.photos/401/300" alt="Hip Hop Class" class="w-full h-60 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Hip Hop Fusion</h3>
+                    <p class="text-gray-700 mb-4">High energy and fun, explore urban dance styles.</p>
+                    <a href="#" class="inline-flex items-center text-primary hover:text-secondary font-semibold transition-colors duration-300">
+                        Learn More <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-custom-light hover:shadow-custom-medium transition-shadow duration-300">
+                <img src="https://picsum.photos/402/300" alt="Contemporary Class" class="w-full h-60 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Contemporary Flow</h3>
+                    <p class="text-gray-700 mb-4">Expressive and fluid, connect movement with emotion.</p>
+                    <a href="#" class="inline-flex items-center text-primary hover:text-secondary font-semibold transition-colors duration-300">
+                        Learn More <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300 shadow-custom-medium">View All Classes</a>
+        </div>
+    </div>
+</section>
+
+<section id="instructors" class="py-20 bg-neutral">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Meet Our Instructors</h2>
+            <p class="text-gray-600">Passionate and experienced dance professionals ready to guide you.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="text-center">
+                <img src="https://picsum.photos/200/200" alt="Instructor 1" class="w-40 h-40 rounded-full mx-auto mb-4 shadow-custom-light">
+                <h3 class="text-xl font-semibold mb-1">Elena Rodriguez</h3>
+                <p class="text-gray-500 mb-2">Ballet & Contemporary</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="https://picsum.photos/201/200" alt="Instructor 2" class="w-40 h-40 rounded-full mx-auto mb-4 shadow-custom-light">
+                <h3 class="text-xl font-semibold mb-1">Marcus Chen</h3>
+                <p class="text-gray-500 mb-2">Hip Hop & Jazz</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="text-center">
+                <img src="https://picsum.photos/202/200" alt="Instructor 3" class="w-40 h-40 rounded-full mx-auto mb-4 shadow-custom-light">
+                <h3 class="text-xl font-semibold mb-1">Sophia Davis</h3>
+                <p class="text-gray-500 mb-2">Latin & Ballroom</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What Our Students Say</h2>
+            <p class="text-gray-600">Hear from our amazing community about their RhythmicFlow experience.</p>
+        </div>
+        <div class="md:grid grid-cols-2 gap-8">
+            <div class="bg-neutral p-8 rounded-xl shadow-custom-light">
+                <div class="mb-4"><i class="fas fa-quote-left text-2xl text-primary"></i></div>
+                <p class="text-gray-700 mb-4">"Joining RhythmicFlow was the best decision! The instructors are incredible and I've learned so much in a fun and supportive environment."</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/50/50" alt="Student 1" class="w-10 h-10 rounded-full mr-3">
+                    <div class="text-sm">
+                        <p class="font-semibold">Jessica M.</p>
+                        <p class="text-gray-500">Ballet Student</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-neutral p-8 rounded-xl shadow-custom-light">
+                <div class="mb-4"><i class="fas fa-quote-left text-2xl text-primary"></i></div>
+                <p class="text-gray-700 mb-4">"The energy at RhythmicFlow is contagious! I always leave class feeling energized and inspired. Highly recommend for anyone looking to dance."</p>
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/51/50" alt="Student 2" class="w-10 h-10 rounded-full mr-3">
+                    <div class="text-sm">
+                        <p class="font-semibold">David L.</p>
+                        <p class="text-gray-500">Hip Hop Student</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-primary text-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Us</h2>
+            <p class="opacity-80">Get in touch to learn more or book your first class!</p>
+        </div>
+        <div class="md:grid grid-cols-2 gap-8 items-start">
+            <div>
+                <h3 class="text-xl font-semibold mb-6">Studio Information</h3>
+                <p class="mb-3"><i class="fas fa-map-marker-alt mr-2"></i> 123 Dance Street, Cityville</p>
+                <p class="mb-3"><i class="fas fa-phone mr-2"></i> (555) 123-4567</p>
+                <p class="mb-3"><i class="fas fa-envelope mr-2"></i> info@rhythmicflow.com</p>
+                <div class="flex space-x-6 mt-8 justify-center md:justify-start">
+                    <a href="#" class="hover:opacity-70"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="hover:opacity-70"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:opacity-70"><i class="fab fa-twitter text-xl"></i></a>
+                </div>
+            </div>
+            <div>
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium">Name</label>
+                        <input type="text" id="name" class="mt-1 p-3 w-full rounded-md bg-neutral text-dark focus:ring-secondary focus:border-secondary">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium">Email</label>
+                        <input type="email" id="email" class="mt-1 p-3 w-full rounded-md bg-neutral text-dark focus:ring-secondary focus:border-secondary">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium">Message</label>
+                        <textarea id="message" rows="4" class="mt-1 p-3 w-full rounded-md bg-neutral text-dark focus:ring-secondary focus:border-secondary"></textarea>
+                    </div>
+                    <button type="submit" class="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300 shadow-custom-medium w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-neutral py-8">
+    <div class="container mx-auto px-6 text-center">
+        <p>© 2024 RhythmicFlow Dance Studio. All rights reserved.</p>
+        <p class="mt-2">Designed with <i class="fas fa-heart text-primary"></i></p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

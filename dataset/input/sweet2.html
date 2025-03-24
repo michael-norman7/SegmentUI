@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Delights - Candy Catalog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #FF6F61;
+            --color-secondary: #FFD700;
+            --color-accent: #4CAF50;
+            --color-background: #F9F5F6;
+            --color-text-dark: #333333;
+            --color-text-light: #FFFFFF;
+        }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--color-background); color: var(--color-text-dark); }
+        .font-nunito { font-family: 'Nunito', sans-serif; }
+        .candy-shadow { box-shadow: 0 4px 8px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.08); }
+        .candy-shadow-lg { box-shadow: 0 10px 20px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.12); }
+        .transition-pop { transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1); }
+        .transition-pop:hover { transform: scale(1.05); }
+        .animate-drop { animation: drop 0.8s ease-out forwards; }
+        @keyframes drop {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-color-background">
+
+<header class="sticky top-0 bg-white shadow-md z-50">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold text-color-text-dark font-nunito"><i class="fas fa-candy-cane text-color-primary mr-2"></i> Sweet Delights</a>
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="#categories" class="hover:text-color-primary transition-colors">Categories</a>
+            <a href="#products" class="hover:text-color-primary transition-colors">Products</a>
+            <a href="#about" class="hover:text-color-primary transition-colors">About Us</a>
+            <button class="relative focus:outline-none">
+                <i class="fas fa-shopping-cart text-xl hover:text-color-primary transition-colors"></i>
+                <span id="cart-count" class="absolute top-[-6px] right-[-8px] bg-color-secondary text-color-text-light text-xs rounded-full px-2 py-0.5 animate-bounce">0</span>
+            </button>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+                <i class="fas fa-bars text-xl text-color-text-dark hover:text-color-primary transition-colors"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-6 py-4 space-y-3">
+            <a href="#categories" class="block py-2 hover:text-color-primary transition-colors">Categories</a>
+            <a href="#products" class="block py-2 hover:text-color-primary transition-colors">Products</a>
+            <a href="#about" class="block py-2 hover:text-color-primary transition-colors">About Us</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero container mx-auto px-6 py-24 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-color-text-dark mb-6 animate-drop">Indulge in Sweetness</h1>
+    <p class="text-lg text-gray-600 mb-12 animate-drop delay-100">Discover a world of delightful candies and treats.</p>
+    <button class="cta-button bg-color-primary hover:bg-color-secondary text-color-text-light font-bold py-3 px-8 rounded-full transition-colors animate-drop delay-200">Shop Now <i class="fas fa-arrow-right ml-2"></i></button>
+</section>
+
+<section id="categories" class="container mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold text-color-text-dark text-center mb-16 animate-fade-in">Shop by Category</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="category-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-100">
+            <img src="https://picsum.photos/200/300?random=1" alt="Chocolate" class="w-full h-56 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Chocolates</h3>
+                <p class="text-gray-600">Rich, creamy, and irresistible chocolate delights.</p>
+                <a href="#" class="inline-block mt-4 text-color-primary hover:text-color-secondary font-semibold transition-colors">Explore Chocolates <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+        <div class="category-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-200">
+            <img src="https://picsum.photos/200/300?random=2" alt="Gummies" class="w-full h-56 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Gummies & Jellies</h3>
+                <p class="text-gray-600">Chewy, fruity, and fun gummy candies for everyone.</p>
+                <a href="#" class="inline-block mt-4 text-color-primary hover:text-color-secondary font-semibold transition-colors">Discover Gummies <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+        <div class="category-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-300">
+            <img src="https://picsum.photos/200/300?random=3" alt="Hard Candies" class="w-full h-56 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Hard Candies</h3>
+                <p class="text-gray-600">Long-lasting flavors in a variety of shapes and sizes.</p>
+                <a href="#" class="inline-block mt-4 text-color-primary hover:text-color-secondary font-semibold transition-colors">Browse Hard Candies <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+        <div class="category-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-400">
+            <img src="https://picsum.photos/200/300?random=4" alt="Lollipops" class="w-full h-56 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Lollipops</h3>
+                <p class="text-gray-600">Colorful and flavorful lollipops, perfect for a sweet treat.</p>
+                <a href="#" class="inline-block mt-4 text-color-primary hover:text-color-secondary font-semibold transition-colors">See Lollipops <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+        <div class="category-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-500">
+            <img src="https://picsum.photos/200/300?random=5" alt="Novelty Candy" class="w-full h-56 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Novelty Candy</h3>
+                <p class="text-gray-600">Unique and fun candies that are sure to surprise and delight.</p>
+                <a href="#" class="inline-block mt-4 text-color-primary hover:text-color-secondary font-semibold transition-colors">View Novelty Candy <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+        <div class="category-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-600">
+            <img src="https://picsum.photos/200/300?random=6" alt="Sugar-Free" class="w-full h-56 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Sugar-Free</h3>
+                <p class="text-gray-600">Delicious sugar-free options for guilt-free indulgence.</p>
+                <a href="#" class="inline-block mt-4 text-color-primary hover:text-color-secondary font-semibold transition-colors">Explore Sugar-Free <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="products" class="container mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold text-color-text-dark text-center mb-16 animate-fade-in">Our Sweetest Products</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+        <div class="product-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-100">
+            <img src="https://picsum.photos/200/300?random=7" alt="Product 1" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Rainbow Swirl Lollipops</h3>
+                <p class="text-gray-600 mb-4">$2.99</p>
+                <button class="add-to-cart-btn bg-color-accent hover:bg-color-primary text-color-text-light font-bold py-2 px-4 rounded-full transition-colors focus:outline-none">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-200">
+            <img src="https://picsum.photos/200/300?random=8" alt="Product 2" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Fizzy Cola Gummies</h3>
+                <p class="text-gray-600 mb-4">$3.50</p>
+                <button class="add-to-cart-btn bg-color-accent hover:bg-color-primary text-color-text-light font-bold py-2 px-4 rounded-full transition-colors focus:outline-none">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-300">
+            <img src="https://picsum.photos/200/300?random=9" alt="Product 3" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Chocolate Fudge Bar</h3>
+                <p class="text-gray-600 mb-4">$4.25</p>
+                <button class="add-to-cart-btn bg-color-accent hover:bg-color-primary text-color-text-light font-bold py-2 px-4 rounded-full transition-colors focus:outline-none">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-400">
+            <img src="https://picsum.photos/200/300?random=10" alt="Product 4" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Sour Watermelon Belts</h3>
+                <p class="text-gray-600 mb-4">$2.75</p>
+                <button class="add-to-cart-btn bg-color-accent hover:bg-color-primary text-color-text-light font-bold py-2 px-4 rounded-full transition-colors focus:outline-none">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-500">
+            <img src="https://picsum.photos/200/300?random=11" alt="Product 5" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Strawberry Bonbons</h3>
+                <p class="text-gray-600 mb-4">$3.00</p>
+                <button class="add-to-cart-btn bg-color-accent hover:bg-color-primary text-color-text-light font-bold py-2 px-4 rounded-full transition-colors focus:outline-none">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product-card bg-white rounded-2xl candy-shadow overflow-hidden transition-pop animate-fade-in delay-600">
+            <img src="https://picsum.photos/200/300?random=12" alt="Product 6" class="w-full h-64 object-cover">
+            <div class="p-6">
+                <h3 class="text-xl font-bold text-color-text-dark mb-2">Peanut Butter Cups</h3>
+                <p class="text-gray-600 mb-4">$4.50</p>
+                <button class="add-to-cart-btn bg-color-accent hover:bg-color-primary text-color-text-light font-bold py-2 px-4 rounded-full transition-colors focus:outline-none">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="container mx-auto px-6 py-20 bg-color-secondary text-color-text-light">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold mb-8 animate-fade-in">About Sweet Delights</h2>
+        <p class="text-lg mb-8 animate-fade-in delay-100">We are passionate about bringing you the finest and most delightful candies from around the world. Our mission is to make every day a little sweeter.</p>
+        <p class="text-lg mb-12 animate-fade-in delay-200">From classic chocolates to exciting new gummies, we have something for every sweet tooth. Explore our collection and discover your new favorites!</p>
+        <button class="cta-button bg-color-text-light hover:bg-color-primary text-color-primary hover:text-color-text-light font-bold py-3 px-8 rounded-full transition-colors animate-fade-in delay-300">Learn More <i class="fas fa-info-circle ml-2"></i></button>
+    </div>
+</section>
+
+<footer class="bg-color-text-dark text-color-text-light py-12">
+    <div class="container mx-auto px-6 text-center">
+        <p>© 2024 Sweet Delights. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="#" class="hover:text-color-primary"><i class="fab fa-facebook-square text-2xl"></i></a>
+            <a href="#" class="hover:text-color-primary"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="hover:text-color-primary"><i class="fab fa-twitter-square text-2xl"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const cartCountSpan = document.getElementById('cart-count');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    let cartCount = 0;
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            cartCount++;
+            cartCountSpan.textContent = cartCount;
+            cartCountSpan.classList.add('animate-bounce');
+            setTimeout(() => {
+                cartCountSpan.classList.remove('animate-bounce');
+            }, 1000);
+        });
+    });
+</script>
+
+</body>
+</html>

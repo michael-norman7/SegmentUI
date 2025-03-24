@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic Blog Post - The Coolest Thing Ever</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['"Playfair Display"', 'serif'],
+                        'body': ['"Roboto Slab"', 'serif'],
+                        'handwritten': ['"Shadows Into Light"', 'cursive'],
+                    },
+                    colors: {
+                        'primary': '#f4f0ec',
+                        'secondary': '#333333',
+                        'accent': '#cfa671',
+                        'highlight': '#e0c097',
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    typography: (theme) => ({
+                        handwrittenBlog: {
+                            css: {
+                                '--tw-prose-body': theme('colors.secondary'),
+                                '--tw-prose-headings': theme('colors.secondary'),
+                                '--tw-prose-lead': theme('colors.gray.600'),
+                                '--tw-prose-links': theme('colors.accent'),
+                                '--tw-prose-bold': theme('colors.secondary'),
+                                '--tw-prose-counters': theme('colors.gray.500'),
+                                '--tw-prose-bullets': theme('colors.gray.500'),
+                                '--tw-prose-hr': theme('colors.gray.200'),
+                                '--tw-prose-quotes': theme('colors.gray.700'),
+                                '--tw-prose-quote-borders': theme('colors.gray.200'),
+                                '--tw-prose-captions': theme('colors.gray.500'),
+                                '--tw-prose-code': theme('colors.secondary'),
+                                '--tw-prose-pre-code': theme('colors.gray.100'),
+                                '--tw-prose-pre-bg': theme('colors.gray.900'),
+                                '--tw-prose-th-borders': theme('colors.gray.300'),
+                                '--tw-prose-td-borders': theme('colors.gray.200'),
+
+                                fontFamily: theme('fontFamily.body'),
+                                h1: { fontFamily: theme('fontFamily.display'), fontWeight: '800', letterSpacing: '-0.05em', fontSize: theme('fontSize.4xl') },
+                                h2: { fontFamily: theme('fontFamily.display'), fontWeight: '700', fontSize: theme('fontSize.3xl') },
+                                h3: { fontFamily: theme('fontFamily.display'), fontWeight: '600', fontSize: theme('fontSize.2xl') },
+                                h4: { fontFamily: theme('fontFamily.display'), fontWeight: '600', fontSize: theme('fontSize.xl') },
+                                'blockquote p:first-of-type::before': false,
+                                'blockquote p:last-of-type::after': false,
+                                blockquote: {
+                                    borderLeftWidth: '4px',
+                                    borderLeftColor: theme('colors.accent'),
+                                    fontStyle: 'italic',
+                                    color: theme('colors.gray.700'),
+                                },
+                                code: {
+                                    fontWeight: 'normal',
+                                    backgroundColor: theme('colors.gray.100'),
+                                    padding: '0.25rem 0.5rem',
+                                    borderRadius: '0.25rem',
+                                    fontFamily: 'monospace',
+                                },
+                                'pre code': {
+                                    backgroundColor: 'transparent',
+                                    padding: '0',
+                                    borderRadius: '0',
+                                },
+                                a: {
+                                    textDecoration: 'none',
+                                    fontWeight: '500',
+                                    '&:hover': {
+                                        textDecoration: 'underline',
+                                    },
+                                },
+                            },
+                        },
+                        handwrittenQuote: {
+                            css: {
+                                blockquote: {
+                                    fontFamily: theme('fontFamily.handwritten'),
+                                    fontSize: theme('fontSize.2xl'),
+                                    lineHeight: theme('lineHeight.relaxed'),
+                                    borderLeft: 'none',
+                                    textAlign: 'center',
+                                    quotes: 'none',
+                                    '& p::before': { content: '""' },
+                                    '& p::after': { content: '""' },
+                                    color: theme('colors.secondary'),
+                                    fontWeight: 'normal',
+                                    marginTop: theme('spacing.8'),
+                                    marginBottom: theme('spacing.8'),
+                                },
+                            }
+                        }
+                    }),
+                },
+            },
+            plugins: [
+                require('@tailwindcss/typography'),
+            ],
+        }
+    </script>
+    <style>
+        @keyframes pulse-highlight {
+            0%, 100% { background-color: rgba(207, 166, 113, 0.5); }
+            50% { background-color: rgba(207, 166, 113, 0.8); }
+        }
+        .pulse-highlight {
+            animation: pulse-highlight 2s infinite;
+        }
+        .handwritten-accent {
+            font-family: 'Shadows Into Light', cursive;
+            color: theme('colors.accent');
+        }
+    </style>
+</head>
+<body class="bg-primary text-secondary">
+
+    <header class="sticky top-0 bg-primary shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-display text-2xl font-bold handwritten-accent">Artistic Blog</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-accent transition-colors">Home</a>
+                <a href="#" class="hover:text-accent transition-colors">Categories</a>
+                <a href="#" class="hover:text-accent transition-colors">About</a>
+                <a href="#" class="hover:text-accent transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button type="button" class="text-secondary hover:text-accent focus:outline-none">
+                    <i class="fa fa-bars fa-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mx-auto px-6 pt-20 pb-12">
+        <article class="prose-handwrittenBlog prose-lg max-w-full">
+            <div class="mb-8 animate-slide-up">
+                <h1 class="text-4xl md:text-5xl font-display font-bold text-secondary mb-4">
+                    The Beauty of Typography in Web Design
+                </h1>
+                <div class="flex items-center text-gray-600 mb-2">
+                    <img src="https://picsum.photos/id/1005/50/50" alt="Author Avatar" class="rounded-full mr-2">
+                    <span>By <span class="font-semibold">Jane Doe</span></span>
+                    <span class="mx-2">•</span>
+                    <span>August 14, 2024</span>
+                </div>
+                <img src="https://picsum.photos/id/1015/1200/600" alt="Blog Post Featured Image" class="rounded-xl shadow-lg w-full object-cover aspect-video">
+            </div>
+
+            <section class="animate-fade-in">
+                <p>
+                    In the realm of web design, typography is more than just choosing fonts; it's about crafting a visual voice that resonates with your audience. The fonts we select, the spacing we apply, and the hierarchy we establish—all contribute to the user's experience and perception of our content.
+                </p>
+
+                <h2>The Art of Font Pairing</h2>
+                <p>
+                    Pairing fonts effectively is crucial for creating visual harmony and readability. Consider combining a <span class="font-display italic">Playfair Display</span> for headings with a robust and legible serif like <span class="font-body italic">Roboto Slab</span> for body text. This contrast creates visual interest while maintaining clarity.
+                </p>
+
+                <h3 class="font-handwritten text-accent">Embracing Handwritten Styles</h3>
+                <p>
+                    Handwritten fonts, like <span class="font-handwritten">Shadows Into Light</span>, can inject personality and warmth into a design. Use them sparingly for accents, quotes, or headings to emphasize a personal touch. However, ensure readability is not compromised.
+                </p>
+
+                <blockquote class="prose-handwrittenQuote">
+                    <p>“Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.”</p>
+                </blockquote>
+
+                <h2>Whitespace and Readability</h2>
+                <p>
+                    Whitespace, or negative space, is as important as the content itself. Generous spacing between lines, paragraphs, and around elements improves readability and allows the design to breathe. It guides the reader's eye and enhances comprehension.
+                </p>
+
+                <h3>Interactive Typography</h3>
+                <p>
+                    Animations and interactive elements can elevate typography from static text to dynamic experiences. Subtle hover effects on headings or text reveals can engage users and add a layer of sophistication.
+                </p>
+
+                <div class="my-8 p-6 bg-primary rounded-lg shadow-md border-2 border-highlight">
+                    <h4 class="font-display text-xl font-semibold mb-4">Code Example: CSS Animation</h4>
+                    <pre class="bg-gray-900 text-gray-100 p-4 rounded-md overflow-x-auto">
+                        <code>
+<span class="text-green-400">.animated-heading</span> {
+  <span class="text-yellow-500">font-family</span>: <span class="text-cyan-300">'Playfair Display'</span>, serif;
+  <span class="text-yellow-500">transition</span>: <span class="text-cyan-300">color 0.3s ease-in-out</span>;
+}
+
+<span class="text-green-400">.animated-heading:hover</span> {
+  <span class="text-yellow-500">color</span>: <span class="text-cyan-300">#cfa671</span>; <span class="text-gray-400">/* Accent color on hover */</span>
+  <span class="pulse-highlight"></span> <span class="text-gray-400">/* Highlight effect on hover */</span>
+}
+                        </code>
+                    </pre>
+                </div>
+
+                <h2>Conclusion</h2>
+                <p>
+                    Mastering typography in web design is a journey of continuous learning and experimentation. By thoughtfully selecting and combining fonts, embracing whitespace, and incorporating interactive elements, we can create websites that are not only visually stunning but also deeply engaging and user-friendly. Let your typography speak volumes.
+                </p>
+            </section>
+
+            <hr class="my-12 border-t-2 border-gray-200">
+
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex items-center">
+                    <img src="https://picsum.photos/id/1027/60/60" alt="Author Profile" class="rounded-full mr-4">
+                    <div>
+                        <h5 class="font-semibold text-lg">About Jane Doe</h5>
+                        <p class="text-gray-600 text-sm">Web Design Enthusiast & Typography Lover</p>
+                    </div>
+                </div>
+                <div class="space-x-3">
+                    <a href="#" class="text-gray-500 hover:text-accent"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-accent"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-accent"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-8 mt-8">
+                <h4 class="font-display text-2xl font-semibold mb-6">Comments</h4>
+                <div class="space-y-6">
+                    <div class="flex space-x-4">
+                        <img src="https://picsum.photos/id/1031/40/40" alt="Commenter Avatar" class="rounded-full">
+                        <div>
+                            <h6 class="font-semibold">Alex Johnson</h6>
+                            <p class="text-gray-700 text-sm">Great article! The typography examples are really inspiring. I'm going to try using Playfair Display on my next project.</p>
+                            <div class="text-gray-500 text-xs mt-1">Reply • 2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <img src="https://picsum.photos/id/1032/40/40" alt="Commenter Avatar" class="rounded-full">
+                        <div>
+                            <h6 class="font-semibold">Samantha Lee</h6>
+                            <p class="text-gray-700 text-sm">I love the handwritten font accent! It adds such a unique touch. Thanks for sharing!</p>
+                            <div class="text-gray-500 text-xs mt-1">Reply • 1 day ago</div>
+                        </div>
+                    </div>
+                    <div>
+                        <textarea class="w-full p-3 border rounded-md focus:ring-accent focus:border-accent" placeholder="Leave a comment"></textarea>
+                        <button class="mt-2 px-4 py-2 bg-accent text-primary rounded-md hover:bg-highlight transition-colors">Post Comment</button>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+    </div>
+
+    <footer class="bg-primary border-t border-gray-200 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-600">
+            <p>© 2024 Artistic Blog. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-accent">Privacy Policy</a>
+                <a href="#" class="hover:text-accent">Terms of Service</a>
+                <a href="#" class="hover:text-accent">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-slide-up, .animate-fade-in');
+            animatedElements.forEach(element => {
+                element.classList.add('animate__animated', 'animate__slideInUp', 'animate__faster');
+            });
+        });
+    </script>
+
+</body>
+</html>

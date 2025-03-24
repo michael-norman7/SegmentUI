@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflect & Grow - Daily Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#9ca3af',
+                        accent: '#f472b6',
+                        softBg: '#f9faff',
+                        softText: '#374151',
+                        softBorder: '#e5e7eb',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '5px 5px 15px rgba(0,0,0,0.05), -5px -5px 15px rgba(255,255,255,0.5)',
+                        'soft-inset': 'inset 5px 5px 10px #e0e0e0, inset -5px -5px 10px #ffffff',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: #f9faff;
+        }
+        .dashboard-card {
+            background-color: #f9faff;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.05), -5px -5px 15px rgba(255,255,255,0.5);
+        }
+        .dashboard-card-inset {
+            background-color: #f9faff;
+            box-shadow: inset 5px 5px 10px #e0e0e0, inset -5px -5px 10px #ffffff;
+        }
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background: #d4d4d4;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+            background: #c0c0c0;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+              opacity: 1;
+            }
+            50% {
+              opacity: .5;
+            }
+          }
+    </style>
+</head>
+<body class="bg-softBg text-softText">
+    <div class="min-h-screen">
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <nav class="container mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <a href="#" class="text-xl font-semibold text-primary">Reflect & Grow</a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-6">
+                        <a href="#" class="hover:text-primary transition-colors">Daily Reflection</a>
+                        <a href="#" class="hover:text-primary transition-colors">Goals</a>
+                        <a href="#" class="hover:text-primary transition-colors">Metrics</a>
+                        <a href="#" class="hover:text-primary transition-colors">Profile</a>
+                    </div>
+                    <div class="md:hidden">
+                        <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="toggle menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container mx-auto px-6 pt-16 pb-8">
+            <section class="mb-8">
+                <h1 class="text-3xl font-bold mb-4">Dashboard</h1>
+                <p class="text-secondary">Welcome back! Here's your daily overview.</p>
+            </section>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="dashboard-card rounded-2xl p-6 animate-slide-up">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-book-open text-primary text-2xl mr-3"></i>
+                        <h2 class="font-semibold text-xl">Today's Reflection</h2>
+                    </div>
+                    <div class="dashboard-card-inset rounded-xl p-4 h-40 overflow-y-auto scrollbar-thin">
+                        <p class="text-sm text-gray-700">
+                            Today, I focused on gratitude. I am thankful for the small joys, like the morning sun and a good cup of coffee. I also reflected on challenges and how they help me grow.
+                        </p>
+                    </div>
+                    <button class="w-full mt-4 bg-primary text-white py-2 rounded-xl hover:bg-secondary transition-colors focus:outline-none">
+                        View Entry
+                    </button>
+                </div>
+
+                <div class="dashboard-card rounded-2xl p-6 animate-slide-up delay-100">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-bullseye text-accent text-2xl mr-3"></i>
+                        <h2 class="font-semibold text-xl">Current Goals</h2>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium">Read 10 pages daily</span>
+                            <span class="text-sm text-secondary">80%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-1.5">
+                            <div class="bg-accent h-1.5 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium">Exercise 3 times a week</span>
+                            <span class="text-sm text-secondary">50%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-1.5">
+                            <div class="bg-accent h-1.5 rounded-full" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium">Meditate 5 minutes daily</span>
+                            <span class="text-sm text-secondary">100%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-1.5">
+                            <div class="bg-accent h-1.5 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-primary text-white py-2 rounded-xl hover:bg-secondary transition-colors focus:outline-none">
+                        View Goals
+                    </button>
+                </div>
+
+                <div class="dashboard-card rounded-2xl p-6 animate-slide-up delay-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-chart-line text-primary text-2xl mr-3"></i>
+                        <h2 class="font-semibold text-xl">Growth Metrics</h2>
+                    </div>
+                    <div class="dashboard-card-inset rounded-xl p-4 h-40 overflow-hidden relative">
+                        <img src="https://picsum.photos/200/100?random=1" alt="Growth Chart" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                        <div class="absolute inset-0 flex flex-col justify-center items-center">
+                            <p class="text-xl font-bold text-white drop-shadow-md">Consistent Progress</p>
+                            <p class="text-sm text-white/80 drop-shadow-sm">Keep going!</p>
+                        </div>
+                    </div>
+                    <button class="w-full mt-4 bg-primary text-white py-2 rounded-xl hover:bg-secondary transition-colors focus:outline-none">
+                        View Metrics
+                    </button>
+                </div>
+
+                <div class="dashboard-card rounded-2xl p-6 md:col-span-2 animate-slide-up delay-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-calendar text-accent text-2xl mr-3"></i>
+                        <h2 class="font-semibold text-xl">Reflection Calendar</h2>
+                    </div>
+                    <div class="dashboard-card-inset rounded-xl p-4 h-60 overflow-x-auto scrollbar-thin">
+                         <div class="flex space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <span class="text-sm text-secondary">Mon</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <span class="text-sm text-secondary">Tue</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <span class="text-sm text-secondary">Wed</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <span class="text-sm text-secondary">Thu</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                                <span class="text-sm text-primary">Fri</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                                <span class="text-sm text-primary">Sat</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center">
+                                <span class="text-sm text-primary">Sun</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <span class="text-sm text-secondary">Mon</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+                                <span class="text-sm text-secondary">Tue</span>
+                            </div>
+                         </div>
+                         <div class="flex mt-2 space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span class="text-sm text-gray-700">1</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span class="text-sm text-gray-700">2</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span class="text-sm text-gray-700">3</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span class="text-sm text-gray-700">4</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center cursor-pointer hover:scale-105 transition-transform pulse-slow">
+                                <span class="text-sm">5</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span class="text-sm text-gray-700">6</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span class="text-sm text-gray-700">7</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span class="text-sm text-gray-700">8</span>
+                            </div>
+                            <div class="w-12 h-12 rounded-xl bg-green-200 flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span class="text-sm text-gray-700">9</span>
+                            </div>
+                         </div>
+                    </div>
+                    <button class="w-full mt-4 bg-primary text-white py-2 rounded-xl hover:bg-secondary transition-colors focus:outline-none">
+                        View Calendar
+                    </button>
+                </div>
+
+                <div class="dashboard-card rounded-2xl p-6 animate-slide-up delay-400">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-user-circle text-secondary text-2xl mr-3"></i>
+                        <h2 class="font-semibold text-xl">Profile Summary</h2>
+                    </div>
+                    <div class="dashboard-card-inset rounded-xl p-4 h-40 overflow-hidden relative flex flex-col justify-center items-center">
+                        <img src="https://picsum.photos/200/300?random=2" alt="Profile Picture" class="rounded-full w-20 h-20 object-cover mb-2 border-2 border-white shadow-soft">
+                        <h3 class="font-semibold text-lg">John Doe</h3>
+                        <p class="text-sm text-secondary">Self-Improvement Journey</p>
+                    </div>
+                    <button class="w-full mt-4 bg-primary text-white py-2 rounded-xl hover:bg-secondary transition-colors focus:outline-none">
+                        View Profile
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="container mx-auto px-6 py-8 text-center text-secondary border-t border-softBorder mt-12">
+            <p>© 2024 Reflect & Grow. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            el.classList.add('opacity-0');
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0');
+                    entry.target.classList.add('animate-slide-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-slide-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

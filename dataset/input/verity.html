@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verity Accounting - Clarity in Numbers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'verity-blue': {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93ccea',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554',
+                        },
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.6s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-fade-slide-up {
+            animation: fade-slide-up 0.6s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+<header class="sticky top-0 bg-white shadow-md z-50">
+    <nav class="container mx-auto px-6 py-4 xl:px-0">
+        <div class="flex items-center justify-between">
+            <div class="text-xl font-semibold text-verity-blue-700">
+                Verity Accounting
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="hover:text-verity-blue-500 transition-colors duration-300">Services</a>
+                <a href="#about" class="hover:text-verity-blue-500 transition-colors duration-300">About Us</a>
+                <a href="#contact" class="hover:text-verity-blue-500 transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero container mx-auto px-6 py-24 xl:px-0">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+            <div class="hero-text fade-slide-up">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Precise Financial Solutions. <br/>
+                    <span class="text-verity-blue-600">Driving Your Business Forward.</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Verity Accounting provides expert financial services tailored to your business needs.
+                    From tax optimization to strategic financial planning, we ensure clarity and precision in every number.
+                </p>
+                <div class="space-x-4">
+                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-verity-blue-600 hover:bg-verity-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-verity-blue-500 transition-colors duration-300">
+                        Get a Free Consultation
+                    </a>
+                    <a href="#services" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-verity-blue-500 transition-colors duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image mt-12 lg:mt-0 animate-fade-slide-up">
+                <img src="https://picsum.photos/id/1025/800/600" alt="Modern office space" class="rounded-lg shadow-xl w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services bg-gray-100 py-20">
+        <div class="container mx-auto px-6 xl:px-0">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">Our Expertise, Your Advantage</h2>
+                <p class="text-gray-600 text-lg">Comprehensive accounting services designed for your success.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up">
+                    <div class="mb-4">
+                        <i class="fa fa-chart-line text-verity-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Tax Planning & Preparation</h3>
+                    <p class="text-gray-700">Minimize your tax liabilities and ensure compliance with expert tax planning and preparation services.</p>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-100">
+                    <div class="mb-4">
+                        <i class="fa fa-file-invoice-dollar text-verity-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Audit & Assurance</h3>
+                    <p class="text-gray-700">Gain stakeholder confidence with our rigorous audit and assurance services, ensuring financial integrity.</p>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-200">
+                    <div class="mb-4">
+                        <i class="fa fa-lightbulb text-verity-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Business Consulting</h3>
+                    <p class="text-gray-700">Strategic business consulting to optimize financial performance and drive sustainable growth.</p>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-300">
+                    <div class="mb-4">
+                        <i class="fa fa-book text-verity-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Bookkeeping & Accounting</h3>
+                    <p class="text-gray-700">Accurate and reliable bookkeeping and accounting services, freeing you to focus on your core business.</p>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-400">
+                    <div class="mb-4">
+                        <i class="fa fa-handshake text-verity-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Advisory Services</h3>
+                    <p class="text-gray-700">Expert financial advisory services to guide your business decisions and achieve your financial goals.</p>
+                </div>
+                <div class="service-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-500">
+                    <div class="mb-4">
+                        <i class="fa fa-users text-verity-blue-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Payroll Management</h3>
+                    <p class="text-gray-700">Streamline your payroll process with our efficient and compliant payroll management solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about py-20">
+        <div class="container mx-auto px-6 xl:px-0">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="about-image animate-fade-slide-up">
+                    <img src="https://picsum.photos/id/1024/800/600" alt="Team meeting" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+                <div class="about-text mt-12 lg:mt-0 animate-fade-slide-up delay-200">
+content_copy
+download
+Use code with caution.
+Html

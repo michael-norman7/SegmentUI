@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora Atelier - Exquisite Fashion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1e1b1a',
+                        'secondary': '#a3a3a3',
+                        'accent': '#f5f5f5',
+                        'brand': '#cda274',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        scaleUp: {
+                            '0%': { transform: 'scale(0.95)' },
+                            '100%': { transform: 'scale(1)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 0.7s ease-out forwards',
+                        'scale-up': 'scaleUp 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/1920/1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="antialiased bg-accent text-primary">
+    <header class="sticky top-0 z-50 bg-accent/90 backdrop-blur-sm shadow-md transition-shadow duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-display text-2xl font-bold text-primary hover:text-brand transition-colors duration-300">Aurora Atelier</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#collections" class="hover:text-brand transition-colors duration-300">Collections</a>
+                <a href="#about" class="hover:text-brand transition-colors duration-300">About</a>
+                <a href="#lookbook" class="hover:text-brand transition-colors duration-300">Lookbook</a>
+                <a href="#contact" class="hover:text-brand transition-colors duration-300">Contact</a>
+                <a href="/cart" class="hover:text-brand transition-colors duration-300 relative group">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="absolute -top-2 -right-2 bg-brand text-accent text-xs rounded-full px-2 py-0.5 group-hover:scale-110 transition-transform duration-200">0</span>
+                </a>
+            </nav>
+            <button class="md:hidden text-primary hover:text-brand transition-colors duration-300 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <section class="parallax h-screen flex items-center justify-center text-center text-white">
+        <div class="animate-fade-in">
+            <h1 class="font-display text-6xl md:text-8xl font-bold leading-tight mb-6">Exquisite Designs, <br> Crafted for You.</h1>
+            <p class="font-body text-lg md:text-xl mb-12 text-secondary">Discover the new collection inspired by timeless elegance.</p>
+            <a href="#collections" class="inline-block bg-brand text-accent font-semibold px-8 py-3 rounded-full hover:bg-brand/90 hover:scale-105 transition-all duration-300">Explore Now</a>
+        </div>
+    </section>
+
+    <section id="collections" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-semibold text-center mb-12 animate-slide-up">Featured Collections</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slide-up">
+                <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/600/800" alt="Collection 1" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-semibold mb-2">Summer Bloom</h3>
+                        <p class="font-body text-secondary mb-4">Light and airy dresses for sun-drenched days.</p>
+                        <a href="/collection/summer-bloom" class="inline-block bg-primary text-accent font-semibold px-6 py-2 rounded-full hover:bg-primary/90 hover:scale-105 transition-all duration-300">Shop Now</a>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/601/800" alt="Collection 2" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-semibold mb-2">Evening Star</h3>
+                        <p class="font-body text-secondary mb-4">Elegant gowns for unforgettable nights.</p>
+                        <a href="/collection/evening-star" class="inline-block bg-primary text-accent font-semibold px-6 py-2 rounded-full hover:bg-primary/90 hover:scale-105 transition-all duration-300">Shop Now</a>
+                    </div>
+                </div>
+                <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/602/800" alt="Collection 3" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-display text-2xl font-semibold mb-2">City Chic</h3>
+                        <p class="font-body text-secondary mb-4">Modern and stylish outfits for urban adventures.</p>
+                        <a href="/collection/city-chic" class="inline-block bg-primary text-accent font-semibold px-6 py-2 rounded-full hover:bg-primary/90 hover:scale-105 transition-all duration-300">Shop Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-accent py-20">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="animate-slide-up">
+                <img src="https://picsum.photos/600/700" alt="About Aurora Atelier" class="rounded-xl shadow-lg">
+            </div>
+            <div class="animate-slide-up">
+                <h2 class="font-display text-4xl font-semibold mb-6">About Aurora Atelier</h2>
+                <p class="font-body text-secondary mb-6">Aurora Atelier is born from a passion for timeless design and sustainable practices. We believe in creating garments that are not only beautiful but also kind to the planet. Our collections are handcrafted with meticulous attention to detail, using only the finest, ethically sourced materials.</p>
+                <p class="font-body text-secondary mb-6">Our designer, Isabella Rossi, draws inspiration from art, nature, and global cultures, resulting in unique pieces that empower women to express their individuality with grace and confidence.</p>
+                <a href="/about" class="inline-block border-2 border-primary text-primary font-semibold px-8 py-3 rounded-full hover:bg-primary hover:text-accent transition-all duration-300">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="lookbook" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-semibold text-center mb-12 animate-slide-up">Lookbook</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 animate-slide-up">
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/400/500" alt="Look 1" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/401/500" alt="Look 2" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/402/500" alt="Look 3" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/403/500" alt="Look 4" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/404/500" alt="Look 5" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/405/500" alt="Look 6" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/406/500" alt="Look 7" class="w-full h-full object-cover">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 scale-up">
+                    <img src="https://picsum.photos/407/500" alt="Look 8" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="text-center mt-12 animate-slide-up">
+                <a href="/lookbook" class="inline-block border-2 border-primary text-primary font-semibold px-8 py-3 rounded-full hover:bg-primary hover:text-accent transition-all duration-300">View Full Lookbook</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-primary py-20 text-accent">
+        <div class="container mx-auto px-6 text-center animate-slide-up">
+            <h2 class="font-display text-4xl font-semibold mb-12">Contact Us</h2>
+            <p class="font-body text-secondary text-lg mb-8">Have questions? We're here to help. Reach out to us for inquiries or assistance.</p>
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="mailto:info@auroraatelier.com" class="hover:text-brand transition-colors duration-300"><i class="fa-solid fa-envelope text-2xl"></i></a>
+                <a href="#" class="hover:text-brand transition-colors duration-300"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="hover:text-brand transition-colors duration-300"><i class="fa-brands fa-facebook text-2xl"></i></a>
+            </div>
+            <p class="font-body text-secondary">© 2024 Aurora Atelier. All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-scale-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.scale-up').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>

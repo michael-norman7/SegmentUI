@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toytopia - The Coolest Toy Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6F61',
+                        secondary: '#6B5B95',
+                        accent: '#88B04B',
+                        funky: '#F7CAC9',
+                        light: '#F2E8CF',
+                    },
+                    fontFamily: {
+                        'nunito': ['Nunito Sans', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        bounceSlow: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        }
+                    },
+                    animation: {
+                        wiggle: 'wiggle 1s ease-in-out infinite',
+                        bounceSlow: 'bounceSlow 2s ease-in-out infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .font-kiddo { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="font-nunito bg-light">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-primary font-kiddo animate-wiggle">Toytopia</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#categories" class="hover:text-secondary transition-colors">Categories</a>
+                <a href="#featured" class="hover:text-secondary transition-colors">Featured Toys</a>
+                <a href="#about" class="hover:text-secondary transition-colors">About Us</a>
+                <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Open menu">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4">
+                <a href="#categories" class="block py-2 hover:text-secondary transition-colors">Categories</a>
+                <a href="#featured" class="block py-2 hover:text-secondary transition-colors">Featured Toys</a>
+                <a href="#about" class="block py-2 hover:text-secondary transition-colors">About Us</a>
+                <a href="#contact" class="block py-2 hover:text-secondary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center justify-between">
+        <div class="md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
+            <h1 class="text-5xl md:text-6xl font-bold text-secondary font-kiddo mb-4">Unleash the Fun!</h1>
+            <p class="text-xl text-gray-700 mb-8">Discover a world of amazing toys for kids of all ages. Quality, fun, and adventure await!</p>
+            <a href="#categories" class="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-secondary transition-colors shadow-lg">Explore Toys <i class="fas fa-arrow-right ml-2"></i></a>
+        </div>
+        <div class="md:w-1/2 relative">
+            <img src="https://picsum.photos/id/1025/600/400" alt="Hero Toy" class="rounded-xl shadow-2xl hero-image">
+            <div class="absolute bottom-0 right-0 p-4 bg-white rounded-tr-xl rounded-bl-xl shadow-md">
+                <p class="text-sm text-gray-600">Featured Toy</p>
+                <p class="font-bold text-primary font-kiddo">Robo Explorer</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="bg-funky py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary font-kiddo mb-12">Shop by Category</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-8">
+                <div class="category-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/237/200/150" alt="Category 1" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 font-kiddo">Action Figures</h3>
+                        <a href="#" class="text-primary hover:text-secondary transition-colors block mt-2">Shop Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="category-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/100/200/150" alt="Category 2" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 font-kiddo">Building Blocks</h3>
+                        <a href="#" class="text-primary hover:text-secondary transition-colors block mt-2">Shop Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="category-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1021/200/150" alt="Category 3" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 font-kiddo">Dolls & Plush</h3>
+                        <a href="#" class="text-primary hover:text-secondary transition-colors block mt-2">Shop Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="category-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/1024/200/150" alt="Category 4" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 font-kiddo">Vehicles</h3>
+                        <a href="#" class="text-primary hover:text-secondary transition-colors block mt-2">Shop Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="category-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 hidden lg:block">
+                    <img src="https://picsum.photos/id/1029/200/150" alt="Category 5" class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg text-gray-800 font-kiddo">Puzzles & Games</h3>
+                        <a href="#" class="text-primary hover:text-secondary transition-colors block mt-2">Shop Now <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="featured" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary font-kiddo mb-12">Featured Toys</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="featured-toy-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/300/400/300" alt="Featured Toy 1" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-gray-800 font-kiddo mb-2">Adventure Train Set</h3>
+                        <p class="text-gray-600 mb-4">All aboard for endless adventures! This train set is perfect for creative play.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary font-kiddo">$49.99</span>
+                            <button class="bg-accent text-white px-4 py-2 rounded-full hover:bg-primary transition-colors"><i class="fas fa-shopping-cart mr-2"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-toy-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/301/400/300" alt="Featured Toy 2" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-gray-800 font-kiddo mb-2">Rainbow Stacking Rings</h3>
+                        <p class="text-gray-600 mb-4">Colorful and fun, these stacking rings are great for developing motor skills.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary font-kiddo">$24.99</span>
+                            <button class="bg-accent text-white px-4 py-2 rounded-full hover:bg-primary transition-colors"><i class="fas fa-shopping-cart mr-2"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="featured-toy-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/302/400/300" alt="Featured Toy 3" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl text-gray-800 font-kiddo mb-2">Dino Robot Transformer</h3>
+                        <p class="text-gray-600 mb-4">Roar into action with this amazing dino robot! Transforms and conquers!</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-lg font-bold text-primary font-kiddo">$39.99</span>
+                            <button class="bg-accent text-white px-4 py-2 rounded-full hover:bg-primary transition-colors"><i class="fas fa-shopping-cart mr-2"></i> Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="bg-funky py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary font-kiddo mb-12">About Toytopia</h2>
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg text-gray-700 mb-8">At Toytopia, we believe in the power of play. We curate a wide selection of high-quality toys that inspire creativity, learning, and endless fun for children of all ages. Our mission is to bring joy and wonder to every child's life through exceptional toys and outstanding customer service.</p>
+                <p class="text-lg text-gray-700">We are passionate about toys and dedicated to providing a magical shopping experience. Explore our collection and discover the perfect toy for your little one!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary font-kiddo mb-12">Contact Us</h2>
+            <p class="text-lg text-gray-700 mb-8">Have questions or need assistance? We're here to help! Reach out to us and our friendly team will get back to you.</p>
+            <div class="flex justify-center space-x-8">
+                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa fa-envelope fa-2x"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Toytopia. All rights reserved.</p>
+            <p class="mt-2">Designed with <i class="fas fa-heart text-funky"></i> by You</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

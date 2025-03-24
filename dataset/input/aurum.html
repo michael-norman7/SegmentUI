@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURUM - New Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'aurum-gold': '#D4AF37',
+                        'dark-grey': '#1E1E1E',
+                        'light-grey': '#F7F7F7',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideLeft: {
+                            '0%': { transform: 'translateX(20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 1s ease-out forwards',
+                        'slide-left': 'slideLeft 1s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
+        .animate-delay-600 { animation-delay: 0.6s; }
+        .animate-delay-800 { animation-delay: 0.8s; }
+        .animate-delay-1000 { animation-delay: 1s; }
+    </style>
+</head>
+<body class="bg-light-grey text-dark-grey font-body">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="font-display text-2xl font-bold text-dark-grey">AURUM</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#collection" class="hover:text-aurum-gold transition-colors duration-300">Collection</a>
+                    <a href="#about" class="hover:text-aurum-gold transition-colors duration-300">About</a>
+                    <a href="#lookbook" class="hover:text-aurum-gold transition-colors duration-300">Lookbook</a>
+                    <a href="#contact" class="hover:text-aurum-gold transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="absolute top-full right-0 left-0 bg-white shadow-md py-2">
+                    <a href="#collection" class="block px-4 py-2 hover:text-aurum-gold transition-colors duration-300">Collection</a>
+                    <a href="#about" class="block px-4 py-2 hover:text-aurum-gold transition-colors duration-300">About</a>
+                    <a href="#lookbook" class="block px-4 py-2 hover:text-aurum-gold transition-colors duration-300">Lookbook</a>
+                    <a href="#contact" class="block px-4 py-2 hover:text-aurum-gold transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero relative py-24 md:py-36 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="hero-text">
+                        <h1 class="font-display text-5xl md:text-6xl font-bold leading-tight mb-6 animate-fade-in animate-delay-200">
+                            Ethereal Bloom
+                        </h1>
+                        <p class="text-xl mb-8 animate-fade-in animate-delay-400">
+                            Discover the new Spring/Summer collection, inspired by the ephemeral beauty of nature. Delicate fabrics, flowing silhouettes, and timeless elegance.
+                        </p>
+                        <a href="#collection" class="inline-block bg-aurum-gold text-white px-8 py-3 rounded-full font-semibold hover:bg-dark-grey transition-colors duration-300 animate-slide-up animate-delay-600">
+                            Explore Collection
+                        </a>
+                    </div>
+                    <div class="hero-image relative animate-slide-left animate-delay-400">
+                        <img src="https://picsum.photos/id/1025/800/1000" alt="Ethereal Bloom Collection" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-20 rounded-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="collection" class="py-24 md:py-36 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="font-display text-4xl font-bold text-center mb-16 animate-fade-in">The Collection</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-200">
+                        <img src="https://picsum.photos/id/102/400/600" alt="Garment 1" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Silk Cascade Gown</h3>
+                            <p class="text-gray-700">Flowing silk gown with delicate floral embroidery.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-400">
+                        <img src="https://picsum.photos/id/103/400/600" alt="Garment 2" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Linen Day Dress</h3>
+                            <p class="text-gray-700">Elegant linen dress perfect for warm summer days.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-600">
+                        <img src="https://picsum.photos/id/104/400/600" alt="Garment 3" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Organza Evening Top</h3>
+                            <p class="text-gray-700">Sophisticated organza top with intricate detailing.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-200">
+                        <img src="https://picsum.photos/id/105/400/600" alt="Garment 4" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Tailored Wool Trousers</h3>
+                            <p class="text-gray-700">Perfectly tailored wool trousers for a polished look.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-400">
+                        <img src="https://picsum.photos/id/106/400/600" alt="Garment 5" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Cashmere Blend Coat</h3>
+                            <p class="text-gray-700">Luxurious cashmere blend coat for cooler evenings.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-600">
+                        <img src="https://picsum.photos/id/107/400/600" alt="Garment 6" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg mb-2">Embroidered Denim Jacket</h3>
+                            <p class="text-gray-700">Stylish denim jacket with unique floral embroidery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 md:py-36">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="about-text animate-slide-left animate-delay-200">
+                        <h2 class="font-display text-4xl font-bold mb-8">About AURUM</h2>
+                        <p class="text-lg mb-6">
+                            AURUM represents timeless elegance and modern sophistication. We are committed to creating high-quality garments that embody grace and style. Our new collection, Ethereal Bloom, is a celebration of nature's beauty and the delicate strength of femininity.
+                        </p>
+                        <p class="text-lg mb-6">
+                            Each piece is designed with meticulous attention to detail, using the finest fabrics and crafted by skilled artisans. We believe in sustainable luxury and creating pieces that are cherished for years to come.
+                        </p>
+                        <a href="#lookbook" class="inline-block text-aurum-gold font-semibold hover:underline transition-all duration-300">
+                            Explore Our Story <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="about-image relative animate-fade-in animate-delay-400">
+                        <img src="https://picsum.photos/id/1024/800/600" alt="About AURUM" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lookbook" class="py-24 md:py-36 bg-light-grey">
+            <div class="container mx-auto px-6">
+                <h2 class="font-display text-4xl font-bold text-center mb-16 animate-fade-in">Lookbook</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-200">
+                        <img src="https://picsum.photos/id/200/400/600" alt="Look 1" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-400">
+                        <img src="https://picsum.photos/id/201/400/600" alt="Look 2" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-600">
+                        <img src="https://picsum.photos/id/202/400/600" alt="Look 3" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-200">
+                        <img src="https://picsum.photos/id/203/400/600" alt="Look 4" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-400">
+                        <img src="https://picsum.photos/id/204/400/600" alt="Look 5" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="overflow-hidden rounded-lg shadow-md animate-slide-up animate-delay-600">
+                        <img src="https://picsum.photos/id/205/400/600" alt="Look 6" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 md:py-36 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-display text-4xl font-bold mb-8 animate-fade-in">Contact Us</h2>
+                <p class="text-lg mb-12 animate-fade-in animate-delay-200">
+                    For inquiries or collaborations, please reach out to us.
+                </p>
+                <div class="flex justify-center space-x-8 animate-slide-up animate-delay-400">
+                    <a href="#" class="text-aurum-gold hover:text-dark-grey transition-colors duration-300 text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-aurum-gold hover:text-dark-grey transition-colors duration-300 text-xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-aurum-gold hover:text-dark-grey transition-colors duration-300 text-xl"><i class="fa fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark-grey text-light-grey py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 AURUM. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (mobileMenu && !mobileMenu.classList.contains('hidden') && mobileMenuButton.offsetParent !== null) {
+                    mobileMenu.classList.add('hidden');
+                }
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

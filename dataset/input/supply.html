@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain & Logistics Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                        'heading': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#0284c7',
+                        'accent': '#64748b',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-down': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(10px)'
+                            },
+                        },
+                        'slide-left': {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        'slide-right': {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-down': 'fade-out-down 0.5s ease-in',
+                        'slide-left': 'slide-left 0.5s ease-out',
+                        'slide-right': 'slide-right 0.5s ease-out',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-sans antialiased bg-neutral text-dark;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-heading font-semibold;
+            }
+        }
+        @layer components {
+            .container {
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+            }
+            .btn-primary {
+                @apply bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300;
+            }
+            .card {
+                @apply bg-white rounded-lg shadow-md overflow-hidden;
+            }
+            .blog-post-card {
+                @apply card hover:shadow-xl transition-shadow duration-300;
+            }
+            .blog-sidebar-card {
+                @apply card p-6;
+            }
+            .input-field {
+                @apply shadow appearance-none border rounded w-full py-2 px-3 text-dark leading-tight focus:outline-none focus:shadow-outline;
+            }
+        }
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral">
+
+    <header class="sticky top-0 bg-white z-50 shadow-md transition-shadow duration-300">
+        <div class="container">
+            <nav class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <a href="/" class="font-heading text-xl text-primary font-bold text-shadow hover:text-secondary transition-colors duration-300">
+                        <i class="fa-solid fa-truck-fast mr-2"></i>LogiBlog
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300">Articles</a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300">Categories</a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300">About Us</a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl text-dark hover:text-primary transition-colors duration-300"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md absolute top-full left-0 right-0 animate-fade-in-down">
+            <div class="container py-4">
+                <a href="#" class="block py-2 hover:text-primary transition-colors duration-300">Home</a>
+                <a href="#" class="block py-2 hover:text-primary transition-colors duration-300">Articles</a>
+                <a href="#" class="block py-2 hover:text-primary transition-colors duration-300">Categories</a>
+                <a href="#" class="block py-2 hover:text-primary transition-colors duration-300">About Us</a>
+                <a href="#" class="block py-2 hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-12 lg:col-span-8">
+
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-heading text-dark mb-4">Latest Articles</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                            <div class="blog-post-card">
+                                <a href="#">
+                                    <img src="https://picsum.photos/600/400" alt="Blog Post Image" class="w-full h-64 object-cover rounded-t-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-heading text-dark mb-2 hover:text-primary transition-colors duration-300">The Future of Supply Chain Visibility</h3>
+                                        <p class="text-accent text-sm mb-3">Published on: 2024-03-15</p>
+                                        <p class="text-dark text-base mb-4">Explore how real-time data and advanced analytics are transforming supply chain management and creating unprecedented visibility.</p>
+                                        <div class="flex items-center">
+                                            <img src="https://picsum.photos/50/50" alt="Author Avatar" class="w-8 h-8 rounded-full mr-2">
+                                            <span class="text-sm text-accent">By John Doe</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="blog-post-card">
+                                <a href="#">
+                                    <img src="https://picsum.photos/601/400" alt="Blog Post Image" class="w-full h-64 object-cover rounded-t-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-heading text-dark mb-2 hover:text-primary transition-colors duration-300">Optimizing Logistics for E-commerce Growth</h3>
+                                        <p class="text-accent text-sm mb-3">Published on: 2024-03-10</p>
+                                        <p class="text-dark text-base mb-4">Discover strategies for streamlining logistics operations to meet the demands of rapidly expanding e-commerce businesses.</p>
+                                        <div class="flex items-center">
+                                            <img src="https://picsum.photos/51/50" alt="Author Avatar" class="w-8 h-8 rounded-full mr-2">
+                                            <span class="text-sm text-accent">By Jane Smith</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="blog-post-card">
+                                <a href="#">
+                                    <img src="https://picsum.photos/602/400" alt="Blog Post Image" class="w-full h-64 object-cover rounded-t-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-heading text-dark mb-2 hover:text-primary transition-colors duration-300">Sustainable Practices in Modern Warehousing</h3>
+                                        <p class="text-accent text-sm mb-3">Published on: 2024-03-05</p>
+                                        <p class="text-dark text-base mb-4">Learn about the latest sustainable warehousing techniques and technologies that are reducing environmental impact and improving efficiency.</p>
+                                        <div class="flex items-center">
+                                            <img src="https://picsum.photos/52/50" alt="Author Avatar" class="w-8 h-8 rounded-full mr-2">
+                                            <span class="text-sm text-accent">By Peter Jones</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="blog-post-card">
+                                <a href="#">
+                                    <img src="https://picsum.photos/603/400" alt="Blog Post Image" class="w-full h-64 object-cover rounded-t-lg">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-heading text-dark mb-2 hover:text-primary transition-colors duration-300">The Role of AI in Supply Chain Optimization</h3>
+                                        <p class="text-accent text-sm mb-3">Published on: 2024-02-28</p>
+                                        <p class="text-dark text-base mb-4">Examine the growing influence of artificial intelligence in optimizing supply chains, from predictive analytics to automated decision-making.</p>
+                                        <div class="flex items-center">
+                                            <img src="https://picsum.photos/53/50" alt="Author Avatar" class="w-8 h-8 rounded-full mr-2">
+                                            <span class="text-sm text-accent">By Alice Brown</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-8">
+                        <button class="btn-primary">View More Articles</button>
+                    </div>
+
+                </div>
+
+                <div class="col-span-12 lg:col-span-4">
+                    <div class="blog-sidebar-card mb-8">
+                        <h3 class="text-lg font-heading text-dark mb-4">Search Articles</h3>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <i class="fa-solid fa-search text-accent"></i>
+                            </div>
+                            <input type="text" class="input-field pl-10" placeholder="Search..." aria-label="Search">
+                        </div>
+                    </div>
+
+                    <div class="blog-sidebar-card mb-8">
+                        <h3 class="text-lg font-heading text-dark mb-4">Categories</h3>
+                        <ul>
+                            <li class="py-2 border-b border-neutral"><a href="#" class="hover:text-primary transition-colors duration-300 block">Warehousing (15)</a></li>
+                            <li class="py-2 border-b border-neutral"><a href="#" class="hover:text-primary transition-colors duration-300 block">Transportation (22)</a></li>
+                            <li class="py-2 border-b border-neutral"><a href="#" class="hover:text-primary transition-colors duration-300 block">Supply Chain Management (30)</a></li>
+                            <li class="py-2 border-b border-neutral"><a href="#" class="hover:text-primary transition-colors duration-300 block">Technology & Innovation (18)</a></li>
+                            <li class="py-2"><a href="#" class="hover:text-primary transition-colors duration-300 block">Sustainability (12)</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="blog-sidebar-card mb-8">
+                        <h3 class="text-lg font-heading text-dark mb-4">Stay Updated</h3>
+                        <p class="text-accent mb-4 text-sm">Subscribe to our newsletter to receive the latest articles and industry insights.</p>
+                        <input type="email" class="input-field mb-2" placeholder="Your Email" aria-label="Email Address">
+                        <button class="btn-primary w-full">Subscribe</button>
+                    </div>
+
+                    <div class="blog-sidebar-card">
+                        <h3 class="text-lg font-heading text-dark mb-4">Featured Posts</h3>
+                        <div class="mb-4">
+                            <a href="#" class="block hover:text-primary transition-colors duration-300">
+                                <h4 class="font-semibold text-dark">Top 5 Trends in Logistics for 2024</h4>
+                                <p class="text-accent text-sm">Published: 2024-01-20</p>
+                            </a>
+                        </div>
+                        <div class="mb-4">
+                            <a href="#" class="block hover:text-primary transition-colors duration-300">
+                                <h4 class="font-semibold text-dark">Improving Warehouse Efficiency with Automation</h4>
+                                <p class="text-accent text-sm">Published: 2023-12-15</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="block hover:text-primary transition-colors duration-300">
+                                <h4 class="font-semibold text-dark">The Impact of Geopolitics on Global Supply Chains</h4>
+                                <p class="text-accent text-sm">Published: 2023-11-30</p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-8">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-heading text-lg mb-4">About LogiBlog</h4>
+                    <p class="text-accent text-sm">Your go-to source for insights, trends, and news in the supply chain and logistics industry. We provide expert analysis and practical advice to help you navigate the complexities of modern logistics.</p>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-4">Quick Links</h4>
+                    <ul>
+                        <li class="py-1"><a href="#" class="hover:text-primary transition-colors duration-300 block text-sm">Home</a></li>
+                        <li class="py-1"><a href="#" class="hover:text-primary transition-colors duration-300 block text-sm">Articles</a></li>
+                        <li class="py-1"><a href="#" class="hover:text-primary transition-colors duration-300 block text-sm">Categories</a></li>
+                        <li class="py-1"><a href="#" class="hover:text-primary transition-colors duration-300 block text-sm">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-heading text-lg mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-neutral hover:text-primary transition-colors duration-300"><i class="fa-brands fa-facebook-square text-xl"></i></a>
+                        <a href="#" class="text-neutral hover:text-primary transition-colors duration-300"><i class="fa-brands fa-twitter-square text-xl"></i></a>
+                        <a href="#" class="text-neutral hover:text-primary transition-colors duration-300"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-accent text-sm">
+                © 2024 LogiBlog. All rights reserved. <a href="#" class="hover:text-primary transition-colors duration-300">Privacy Policy</a> | <a href="#" class="hover:text-primary transition-colors duration-300">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (!mobileM
+content_copy
+download
+Use code with caution.
+Html

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affirmation Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f0f9ff',
+                        secondary: '#e0f2fe',
+                        accent: '#bae6fd',
+                        neutral: '#cbd5e1',
+                        dark: '#334155',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '6px 6px 12px #cdd9e5, -6px -6px 12px #ffffff',
+                        'soft-inset': 'inset 6px 6px 12px #cdd9e5, inset -6px -6px 12px #ffffff',
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body class="bg-primary antialiased">
+    <div class="container mx-auto p-6 md:p-8 lg:p-10">
+        <header class="mb-8">
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-dark text-center animate-slide-in-right">Daily Dose of Positivity</h1>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <section class="bg-secondary p-6 rounded-2xl shadow-soft flex flex-col justify-center items-center text-center animate-slide-in-right">
+                <i class="fa-regular fa-sun text-4xl mb-4 text-accent"></i>
+                <h2 class="text-xl font-semibold text-dark mb-2">Daily Affirmation</h2>
+                <p id="affirmation" class="text-neutral text-md">Loading affirmation...</p>
+            </section>
+
+            <section class="bg-secondary p-6 rounded-2xl shadow-soft flex flex-col justify-center items-center text-center animate-slide-in-right">
+                <i class="fa-regular fa-face-smile text-4xl mb-4 text-accent"></i>
+                <h2 class="text-xl font-semibold text-dark mb-2">Mood Upliftment</h2>
+                <div class="flex items-center">
+                    <span id="moodScore" class="text-3xl font-bold text-dark mr-2">78</span>
+                    <span class="text-sm text-neutral">%</span>
+                </div>
+                <p class="text-neutral text-sm mt-1">Good mood today</p>
+            </section>
+
+            <section class="bg-secondary p-6 rounded-2xl shadow-soft flex flex-col justify-center items-center text-center animate-slide-in-right">
+                <i class="fa-solid fa-fire-flame-curved text-4xl mb-4 text-accent"></i>
+                <h2 class="text-xl font-semibold text-dark mb-2">Positivity Streak</h2>
+                <div class="flex items-center">
+                    <span id="streakDays" class="text-3xl font-bold text-dark mr-2">5</span>
+                    <span class="text-sm text-neutral">Days</span>
+                </div>
+                <p class="text-neutral text-sm mt-1">Keep it going!</p>
+            </section>
+
+            <section class="bg-secondary p-6 rounded-2xl shadow-soft animate-slide-in-right">
+                <h2 class="text-xl font-semibold text-dark mb-4">Visualize Your Day</h2>
+                <img src="https://picsum.photos/200/300?random=1" alt="Day Visualization" class="rounded-lg shadow-md w-full h-auto">
+            </section>
+
+            <section class="bg-secondary p-6 rounded-2xl shadow-soft animate-slide-in-right">
+                <h2 class="text-xl font-semibold text-dark mb-4">Gratitude Journal</h2>
+                <textarea placeholder="What are you grateful for today?" class="bg-primary p-4 rounded-lg shadow-soft-inset w-full h-32 focus:outline-none resize-none text-neutral"></textarea>
+                <button class="mt-4 bg-accent text-primary py-2 px-4 rounded-lg shadow-soft hover:bg-primary hover:text-accent transition-colors duration-300 w-full">Save Gratitude</button>
+            </section>
+
+            <section class="bg-secondary p-6 rounded-2xl shadow-soft animate-slide-in-right">
+                <h2 class="text-xl font-semibold text-dark mb-4">Quick Actions</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="bg-accent text-primary py-2 px-4 rounded-lg shadow-soft hover:bg-primary hover:text-accent transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-plus mr-2"></i> Add Note
+                    </button>
+                    <button class="bg-accent text-primary py-2 px-4 rounded-lg shadow-soft hover:bg-primary hover:text-accent transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-book-open mr-2"></i> Read Article
+                    </button>
+                    <button class="bg-accent text-primary py-2 px-4 rounded-lg shadow-soft hover:bg-primary hover:text-accent transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-headphones mr-2"></i> Listen Podcast
+                    </button>
+                    <button class="bg-accent text-primary py-2 px-4 rounded-lg shadow-soft hover:bg-primary hover:text-accent transition-colors duration-300 flex items-center justify-center">
+                        <i class="fa-solid fa-chart-line mr-2"></i> View Stats
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-12 text-center text-neutral text-sm">
+            <p>© 2024 Positive Vibes App. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const affirmations = [
+                "I am capable of handling anything life throws at me.",
+                "Today, I choose joy and positivity.",
+                "My potential to succeed is limitless.",
+                "I am grateful for all the good in my life.",
+                "I attract positive energy into my life.",
+                "I am confident and courageous.",
+                "Every day, I am getting stronger and better.",
+                "I am worthy of love and happiness.",
+                "I believe in my dreams and goals.",
+                "I am at peace with myself and my surroundings."
+            ];
+
+            function setAffirmation() {
+                const randomIndex = Math.floor(Math.random() * affirmations.length);
+                document.getElementById('affirmation').textContent = affirmations[randomIndex];
+            }
+
+            setAffirmation();
+        });
+    </script>
+</body>
+</html>

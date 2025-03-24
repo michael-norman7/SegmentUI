@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Forum Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#374151',
+                        accent: '#a78bfa',
+                        background: '#f3f4f6',
+                        card: '#ffffff',
+                        input: '#e5e7eb',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-blurred-top': {
+                            '0%': {
+                                transform: 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
+                                'transform-origin': '50% 0%',
+                                filter: 'blur(40px)',
+                                opacity: '0'
+                            },
+                            '100%': {
+                                transform: 'translateY(0) scaleY(1) scaleX(1)',
+                                'transform-origin': '50% 50%',
+                                filter: 'blur(0)',
+                                opacity: '1'
+                            },
+                        },
+                        'pulse-grow': {
+                            '0%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                            '100%': { transform: 'scale(1)' },
+                        },
+                        'tilt-shutter-out-horizontal': {
+                            '25%': { transform: 'translateX(12.5%) rotateY(2.5deg)' },
+                            '50%': { transform: 'translateX(50%) scaleY(0.8) rotateY(10deg)' },
+                            '75%': { transform: 'translateX(175%) rotateY(17.5deg)' },
+                            '100%': { transform: 'translateX(400%) scaleY(0.8) rotateY(25deg)' }
+                        },
+                        'shake-horizontal': {
+                            '0%, 100%': { transform: 'translateX(0)' },
+                            '10%, 30%, 50%, 70%': { transform: 'translateX(-10px)' },
+                            '20%, 40%, 60%, 80%': { transform: 'translateX(10px)' }
+                        }
+                    },
+                    animation: {
+                        'slide-in-blurred-top': 'slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)   both',
+                        'pulse-grow': 'pulse-grow 1.5s ease-in-out infinite',
+                        'tilt-shutter-out-horizontal': 'tilt-shutter-out-horizontal 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530)   both',
+                        'shake-horizontal': 'shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955)   both'
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('https://picsum.photos/id/1001/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(243, 244, 246, 0.8);
+            overflow: hidden;
+        }
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(0deg, theme(colors.accent) , theme(colors.primary), theme(colors.accent));
+            animation: pulse-grow 4s linear infinite;
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+
+        .login-container::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(0deg, theme(colors.primary) , theme(colors.accent), theme(colors.primary));
+            animation: pulse-grow 6s linear infinite;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .login-card {
+            position: relative;
+            z-index: 10;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-primary: 2px solid theme(colors.primary);
+            box-shadow: 0 0 0 2px rgba(theme(colors.primary), 0.3);
+        }
+
+        .form-icon {
+            pointer-events: none;
+            transition: color 0.3s ease;
+        }
+
+        input[type="text"]:focus + .form-icon,
+        input[type="password"]:focus + .form-icon {
+            color: theme(colors.primary);
+        }
+
+        .btn-primary {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-message {
+            animation: shake-horizontal 0.5s ease-in-out;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+    <div class="login-container relative flex items-center justify-center min-h-screen overflow-hidden">
+        <div class="login-card bg-card p-10 rounded-3xl shadow-2xl animate-slide-in-blurred-top max-w-md w-full">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-secondary mb-2">Welcome Back</h2>
+                <p class="text-gray-500">Log in to your community forum account</p>
+            </div>
+            <form id="loginForm" class="space-y-6">
+                <div>
+                    <label for="username" class="block mb-2 text-sm font-medium text-gray-700">Username or Email</label>
+                    <div class="relative">
+                        <input type="text" id="username" class="bg-input border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-4 pl-10" placeholder="Enter your username or email" required>
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center form-icon">
+                            <i class="fa-solid fa-user text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" class="bg-input border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-4 pl-10" placeholder="••••••••" required>
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center form-icon">
+                            <i class="fa-solid fa-lock text-gray-400"></i>
+                        </div>
+                        <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-3 flex items-center focus:outline-none hover:text-primary">
+                            <i id="passwordIcon" class="fa-solid fa-eye-slash text-gray-400"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary">
+                        </div>
+                        <label for="remember" class="ml-2 text-sm font-medium text-gray-700">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-primary hover:underline">Forgot Password?</a>
+                </div>
+                <div id="error-container" class="hidden mt-4">
+                    <p id="error-message" class="text-red-500 text-sm italic error-message"></p>
+                </div>
+                <button type="submit" class="btn-primary w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-4 text-center">Login to Forum</button>
+                <div class="text-sm font-medium text-gray-500 text-center">
+                    Not registered? <a href="#" class="text-primary hover:underline">Create an account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const passwordIcon = document.getElementById('passwordIcon');
+        const togglePasswordButton = document.getElementById('togglePassword');
+
+        togglePasswordButton.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordIcon.classList.remove('fa-eye-slash');
+                passwordIcon.classList.add('fa-eye');
+            } else {
+                passwordInput.type = 'password';
+                passwordIcon.classList.remove('fa-eye');
+                passwordIcon.classList.add('fa-eye-slash');
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorContainer = document.getElementById('error-container');
+            const errorMessage = document.getElementById('error-message');
+
+            if (!username || !password) {
+                errorMessage.textContent = 'Please fill in all fields.';
+                errorContainer.classList.remove('hidden');
+                return;
+            }
+
+            errorContainer.classList.add('hidden');
+
+            // Simulate login success (replace with actual login logic)
+            setTimeout(() => {
+                alert('Login Successful!\nUsername: ' + username);
+                // Redirect to forum or dashboard here
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

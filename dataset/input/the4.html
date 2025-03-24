@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Type | Bold & Experimental</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#FDE047',
+                        'secondary': '#3B82F6',
+                        'accent': '#EC4899',
+                        'neutral': '#F3F4F6',
+                        'dark': '#111827',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'text-reveal': {
+                            '0%': { 'clip-path': 'polygon(0 0, 0 0, 0 100%, 0% 100%)' },
+                            '100%': { 'clip-path': 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 1s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'text-reveal-short': 'text-reveal 0.5s ease-out forwards',
+                        'text-reveal-long': 'text-reveal 1s ease-out forwards',
+                    },
+                    transitionProperty: {
+                        'clip-path': 'clip-path',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @layer base {
+            h1 { @apply font-display text-6xl lg:text-8xl font-black leading-tight text-dark tracking-tight; }
+            h2 { @apply font-display text-4xl lg:text-5xl font-bold leading-tight text-dark tracking-tight; }
+            h3 { @apply font-display text-2xl lg:text-3xl font-semibold leading-tight text-dark tracking-tight; }
+            p { @apply font-body text-base lg:text-lg font-normal leading-relaxed text-dark; }
+            a { @apply font-body font-medium text-secondary hover:text-primary transition-colors; }
+            button { @apply font-body font-semibold rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary; }
+        }
+        @layer utilities {
+            .text-shadow-sm { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); }
+            .text-shadow-md { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); }
+            .text-shadow-lg { text-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); }
+            .bg-gradient-radial { background-image: radial-gradient(circle at center, var(--tw-gradient-stops)); }
+        }
+    </style>
+</head>
+<body class="bg-neutral antialiased">
+
+<header class="sticky top-0 z-50 bg-neutral/90 backdrop-blur-sm shadow-md transition-shadow duration-300" id="header">
+    <nav class="container mx-auto px-6 py-4 lg:px-8">
+        <div class="flex justify-between items-center">
+            <a href="#" class="font-display text-2xl font-bold text-dark">TypeCraft</a>
+            <div class="hidden lg:flex space-x-8">
+                <a href="#articles" class="hover:text-secondary">Articles</a>
+                <a href="#experiments" class="hover:text-secondary">Experiments</a>
+                <a href="#about" class="hover:text-secondary">About</a>
+                <a href="#contact" class="hover:text-secondary">Contact</a>
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-secondary focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="lg:hidden mt-4 hidden" id="mobile-menu">
+            <a href="#articles" class="block py-2 hover:text-secondary">Articles</a>
+            <a href="#experiments" class="block py-2 hover:text-secondary">Experiments</a>
+            <a href="#about" class="block py-2 hover:text-secondary">About</a>
+            <a href="#contact" class="block py-2 hover:text-secondary">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="relative py-24 lg:py-32 overflow-hidden">
+        <div class="container mx-auto px-6 lg:px-8 relative z-10">
+            <div class="lg:grid grid-cols-12 gap-8 items-center">
+                <div class="col-span-7">
+                    <h1 class="mb-6 animate-fade-in" style="animation-delay: 0.1s">Beyond Words: <span class="text-primary">Typography</span> as Art</h1>
+                    <p class="mb-8 text-xl animate-fade-in" style="animation-delay: 0.3s">Explore the dynamic world of typography, where letters transcend their functional role and become powerful visual expressions. Discover experimental pairings, bold styles, and the future of type in digital design.</p>
+                    <div class="space-x-4 animate-fade-in" style="animation-delay: 0.5s">
+                        <button class="bg-secondary hover:bg-primary text-neutral px-6 py-3 rounded-md transition-colors">Dive Deeper</button>
+                        <a href="#experiments" class="text-secondary hover:text-primary">Explore Experiments <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-span-5 relative">
+                    <div class="absolute -top-10 -right-20 lg:-right-40 w-[400px] h-[400px] lg:w-[600px] lg:h-[600px] bg-gradient-radial from-primary to-secondary opacity-20 rounded-full blur-3xl"></div>
+                    <img src="https://picsum.photos/id/25/400/600" alt="Abstract Typography" class="rounded-3xl shadow-xl relative z-20 animate-slide-in-right">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 lg:py-24 bg-dark text-neutral">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-neutral mb-4">Featured Experiments</h2>
+                <p class="text-neutral/70 max-w-2xl mx-auto">A curated selection of typography experiments pushing boundaries and exploring new visual languages.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-neutral rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/30/400/300" alt="Experiment 1" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="mb-2">Kinetic Type in WebGL</h3>
+                        <p class="text-dark/70">Interactive typography animations using WebGL for immersive experiences.</p>
+                        <a href="#" class="inline-block mt-4 text-secondary hover:text-primary">Explore <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-neutral rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/35/400/300" alt="Experiment 2" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="mb-2">Variable Fonts Unleashed</h3>
+                        <p class="text-dark/70">Harnessing the power of variable fonts for dynamic and responsive typography.</p>
+                        <a href="#" class="inline-block mt-4 text-secondary hover:text-primary">Explore <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-neutral rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/40/400/300" alt="Experiment 3" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="mb-2">3D Typography Landscapes</h3>
+                        <p class="text-dark/70">Creating surreal and captivating 3D typography compositions.</p>
+                        <a href="#" class="inline-block mt-4 text-secondary hover:text-primary">Explore <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 lg:py-24">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="lg:grid grid-cols-12 gap-16 items-center">
+                <div class="col-span-6">
+                    <img src="https://picsum.photos/id/50/600/400" alt="Typography Process" class="rounded-3xl shadow-xl">
+                </div>
+                <div class="col-span-6">
+                    <h2 class="mb-6">The Creative Process</h2>
+                    <p class="mb-8">Typography is more than just choosing fonts; it's a delicate dance of form and function. We delve into the experimental process, from initial concept to final execution, showcasing the iterations and inspirations behind groundbreaking typographic art.</p>
+                    <ul class="list-disc pl-5 space-y-3">
+                        <li><strong>Conceptualization:</strong>  Starting with a core idea and visual direction.</li>
+                        <li><strong>Font Pairing & Selection:</strong>  Choosing typefaces that resonate and contrast.</li>
+                        <li><strong>Layout & Composition:</strong>  Arranging elements for impact and readability.</li>
+                        <li><strong>Refinement & Iteration:</strong>  Polishing the details and exploring variations.</li>
+                    </ul>
+                    <button class="mt-8 bg-primary hover:bg-secondary text-neutral px-6 py-3 rounded-md transition-colors">Learn More About Our Process</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 lg:py-24 bg-accent text-neutral">
+        <div class="container mx-auto px-6 lg:px-8 text-center">
+            <h2 class="mb-8 text-neutral">Ready to Experiment?</h2>
+            <p class="text-neutral/80 max-w-2xl mx-auto mb-12">Join our community of type enthusiasts and explore the endless possibilities of visual language. Subscribe to our newsletter for exclusive content, tutorials, and early access to new experiments.</p>
+            <div class="max-w-md mx-auto">
+                <form class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <input type="email" placeholder="Your Email Address" class="rounded-md px-4 py-3 bg-neutral text-dark focus:outline-none focus:ring-2 focus:ring-primary flex-grow">
+                    <button type="submit" class="bg-secondary hover:bg-primary text-neutral px-6 py-3 rounded-md transition-colors">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="py-12 bg-neutral border-t border-neutral-200">
+    <div class="container mx-auto px-6 lg:px-8 text-center">
+        <p class="text-dark/70">© 2024 TypeCraft. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="#" class="hover:text-secondary"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="hover:text-secondary"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-secondary"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const header = document.getElementById('header');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-md');
+        } else {
+            header.classList.remove('shadow-md');
+        }
+    });
+</script>
+
+</body>
+</html>

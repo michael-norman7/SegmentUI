@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Design Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import "tailwindcss";
+    </style>
+    <style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1;
+        }
+        .project-card:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-hidden">
+
+    <div id="particles-js" class="fixed top-0 left-0 w-full h-full -z-10"></div>
+
+    <header class="sticky top-0 z-50 bg-gray-900 bg-opacity-70 backdrop-blur-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-blue-400">Designer.</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#projects" class="hover:text-blue-300 transition-colors duration-300">Projects</a>
+                <a href="#about" class="hover:text-blue-300 transition-colors duration-300">About</a>
+                <a href="#contact" class="hover:text-blue-300 transition-colors duration-300">Contact</a>
+            </div>
+            <button class="md:hidden text-gray-300 hover:text-white focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section id="hero" class="relative py-36 md:py-60 overflow-hidden">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+            <div class="hero-text">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Crafting <span class="text-blue-400">Interactive</span> Web Experiences That Captivate.</h1>
+                <p class="text-lg text-gray-300 mb-10">I design and develop unique digital experiences. Explore my interactive projects and let's build something amazing together.</p>
+                <a href="#projects" class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white bg-blue-500 hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 rounded-md transition-colors duration-300">
+                    View Projects <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="hero-image relative">
+                <div class="absolute -top-10 -left-10 w-48 h-48 bg-blue-500 rounded-full filter blur-2xl opacity-40"></div>
+                <div class="absolute bottom-20 right-0 w-32 h-32 bg-purple-500 rounded-full filter blur-2xl opacity-50"></div>
+                <img src="https://picsum.photos/400/600?random=4" alt="Web Designer" class="rounded-xl shadow-2xl relative z-10 hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 md:py-36">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Interactive Projects</h2>
+                <p class="text-gray-400 text-lg">A showcase of selected works that blend design and interactivity.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="project-card relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+                    <img src="https://picsum.photos/400/300?random=5" alt="Project 1" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-gray-900 to-transparent">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-blue-300 transition-colors duration-300">Project Title One</h3>
+                        <p class="text-gray-300 text-sm">Interactive Website Design</p>
+                    </div>
+                    <a href="#" class="absolute top-0 left-0 w-full h-full z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center text-white text-xl font-semibold">
+                        <i class="fa fa-eye mr-2"></i> View Project
+                    </a>
+                </div>
+
+                <div class="project-card relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+                    <img src="https://picsum.photos/400/300?random=6" alt="Project 2" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-gray-900 to-transparent">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-blue-300 transition-colors duration-300">Project Title Two</h3>
+                        <p class="text-gray-300 text-sm">Web Application Interface</p>
+                    </div>
+                    <a href="#" class="absolute top-0 left-0 w-full h-full z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center text-white text-xl font-semibold">
+                        <i class="fa fa-eye mr-2"></i> View Project
+                    </a>
+                </div>
+
+                <div class="project-card relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+                    <img src="https://picsum.photos/400/300?random=7" alt="Project 3" class="w-full h-60 object-cover transition-transform duration-300 group-hover:scale-110">
+                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-gray-900 to-transparent">
+                        <h3 class="font-bold text-xl mb-2 group-hover:text-blue-300 transition-colors duration-300">Project Title Three</h3>
+                        <p class="text-gray-300 text-sm">Mobile App Design</p>
+                    </div>
+                    <a href="#" class="absolute top-0 left-0 w-full h-full z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-blue-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center text-white text-xl font-semibold">
+                        <i class="fa fa-eye mr-2"></i> View Project
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 md:py-36 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-gray-400 text-lg">Get to know my background and approach to web design.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="about-image">
+                    <img src="https://picsum.photos/400/500?random=8" alt="Designer Portrait" class="rounded-xl shadow-lg">
+                </div>
+                <div class="about-text">
+                    <h3 class="text-2xl font-semibold mb-4">Driven by Design, Fueled by Interaction.</h3>
+                    <p class="text-gray-300 mb-6">I am a passionate web designer dedicated to creating engaging and user-centric digital experiences. With a focus on interactivity and visual storytelling, I strive to deliver websites that are not only beautiful but also highly functional and effective.</p>
+                    <p class="text-gray-300 mb-6">My expertise lies in front-end development, UI/UX design, and interactive animations. I believe in a collaborative approach, working closely with clients to bring their visions to life and exceed their expectations.</p>
+                    <div class="flex space-x-6 mt-8">
+                        <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors duration-300"><i class="fab fa-dribbble text-2xl"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors duration-300"><i class="fab fa-github text-2xl"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
+                    </div>
+content_copy
+download
+Use code with caution.
+Html

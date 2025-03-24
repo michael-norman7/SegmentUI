@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramics by [Artist Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        mono: ['"Roboto Mono"', 'monospace'],
+                    },
+                    colors: {
+                        clay: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e2',
+                            200: '#e5d5cc',
+                            300: '#d8c2b5',
+                            400: '#cab09e',
+                            500: '#bda08b',
+                            600: '#af9077',
+                            700: '#a18166',
+                            800: '#937255',
+                            900: '#856445',
+                        },
+                    },
+                    keyframes: {
+                        fadeDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(20px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        }
+                    },
+                    animation: {
+                        fadeDown: 'fadeDown 0.5s ease-out forwards',
+                        slideLeft: 'slideLeft 0.7s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .ceramic-image {
+            transition: transform 0.3s ease-out;
+        }
+        .ceramic-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-clay-50 text-clay-800 antialiased">
+
+<header class="sticky top-0 bg-clay-50 bg-opacity-90 backdrop-blur-sm z-50">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <a href="/" class="font-serif text-xl font-bold">Ceramics by [Artist Name]</a>
+        <nav class="hidden md:flex space-x-8 text-clay-700">
+            <a href="#shop" class="hover:text-clay-900 transition-colors">Shop</a>
+            <a href="#about" class="hover:text-clay-900 transition-colors">About</a>
+            <a href="#contact" class="hover:text-clay-900 transition-colors">Contact</a>
+        </nav>
+        <button class="md:hidden text-clay-700 hover:text-clay-900 focus:outline-none">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<section id="hero" class="pt-24 md:pt-32 pb-16 md:pb-24">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="md:order-2">
+            <img src="https://picsum.photos/id/1025/600/800" alt="Featured Ceramic Piece" class="rounded-2xl shadow-xl ceramic-image animation-slideLeft">
+        </div>
+        <div class="md:order-1 text-center md:text-left">
+            <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animation-fadeDown delay-100">Handcrafted Ceramics for Modern Living</h1>
+            <p class="text-lg text-clay-600 mb-8 animation-fadeDown delay-200">Discover unique, minimalist ceramic pieces, each carefully crafted with passion and intention.</p>
+            <a href="#shop" class="inline-block bg-clay-700 hover:bg-clay-900 text-clay-50 font-mono py-3 px-8 rounded-full transition-colors shadow-md animation-fadeDown delay-300">Explore the Shop</a>
+        </div>
+    </div>
+</section>
+
+<section id="shop" class="py-16 md:py-24 bg-clay-100">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold mb-12">Featured Collection</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            <div class=" керамический-item">
+                <img src="https://picsum.photos/id/237/400/500" alt="Ceramic Piece 1" class="rounded-xl shadow-md ceramic-image">
+                <h3 class="font-serif text-xl mt-4">Minimalist Vase</h3>
+                <p class="text-clay-600 mt-2">$45</p>
+            </div>
+            <div class=" керамический-item">
+                <img src="https://picsum.photos/id/238/400/500" alt="Ceramic Piece 2" class="rounded-xl shadow-md ceramic-image">
+                <h3 class="font-serif text-xl mt-4">Sculptural Bowl</h3>
+                <p class="text-clay-600 mt-2">$60</p>
+            </div>
+            <div class=" керамический-item">
+                <img src="https://picsum.photos/id/239/400/500" alt="Ceramic Piece 3" class="rounded-xl shadow-md ceramic-image">
+                <h3 class="font-serif text-xl mt-4">Elegant Mug</h3>
+                <p class="text-clay-600 mt-2">$30</p>
+            </div>
+        </div>
+        <a href="#" class="inline-block mt-12 bg-clay-500 hover:bg-clay-700 text-clay-50 font-mono py-3 px-8 rounded-full transition-colors shadow-md">View All Items</a>
+    </div>
+</section>
+
+<section id="about" class="py-16 md:py-24">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+            <img src="https://picsum.photos/id/433/600/400" alt="Artist Image" class="rounded-2xl shadow-xl">
+        </div>
+        <div>
+            <h2 class="font-serif text-3xl md:text-4xl font-bold mb-6">About the Artist</h2>
+            <p class="text-lg text-clay-700 mb-8">Meet [Artist Name], a ceramic artist passionate about creating functional art that brings beauty and tranquility to everyday life. Inspired by nature and minimalist design, each piece is handcrafted in their studio with meticulous attention to detail.</p>
+            <p class="text-lg text-clay-700 mb-8">Driven by a love for the craft and a desire to share the beauty of handmade ceramics, [Artist Name] established this online shop to connect with art lovers and bring their creations to homes around the world.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-16 md:py-24 bg-clay-100">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="font-serif text-3xl md:text-4xl font-bold mb-12">Connect with the Artist</h2>
+        <p class="text-lg text-clay-700 mb-8">For inquiries or custom orders, please reach out.</p>
+        <a href="mailto:artist@email.com" class="inline-block bg-clay-700 hover:bg-clay-900 text-clay-50 font-mono py-3 px-8 rounded-full transition-colors shadow-md">Contact Me</a>
+    </div>
+</section>
+
+<footer class="bg-clay-50 py-8 border-t border-clay-200">
+    <div class="container mx-auto px-4 text-center text-clay-500">
+        <p>© 2024 Ceramics by [Artist Name]. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

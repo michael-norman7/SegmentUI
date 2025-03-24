@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Travel Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'roboto': ['"Roboto Condensed"', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F5F5F5',
+                        'secondary': '#1E293B',
+                        'accent': '#D4AC0D',
+                        'background': '#0F172A',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        zoomIn: {
+                            '0%': { transform: 'scale(0.9)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                        'slide-up': 'slideUp 1s ease-out forwards',
+                        'zoom-in': 'zoomIn 1s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/1920/1080?luxury');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-background text-primary">
+
+    <header class="sticky top-0 z-50 bg-background bg-opacity-90 backdrop-blur-sm shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-playfair font-bold text-accent animate-fade-in">
+                <a href="#" class="hover:text-primary">Luxury Escapes</a>
+            </div>
+            <ul class="hidden md:flex space-x-8 text-lg">
+                <li><a href="#destinations" class="hover:text-accent transition-colors">Destinations</a></li>
+                <li><a href="#experiences" class="hover:text-accent transition-colors">Experiences</a></li>
+                <li><a href="#offers" class="hover:text-accent transition-colors">Exclusive Offers</a></li>
+                <li><a href="#contact" class="hover:text-accent transition-colors">Contact Us</a></li>
+            </ul>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-accent hover:text-primary focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-background py-2 px-6">
+            <ul class="text-lg">
+                <li class="py-2"><a href="#destinations" class="hover:text-accent transition-colors block">Destinations</a></li>
+                <li class="py-2"><a href="#experiences" class="hover:text-accent transition-colors block">Experiences</a></li>
+                <li class="py-2"><a href="#offers" class="hover:text-accent transition-colors block">Exclusive Offers</a></li>
+                <li class="py-2"><a href="#contact" class="hover:text-accent transition-colors block">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="parallax min-h-screen flex items-center justify-center text-center">
+        <div class="container mx-auto px-6">
+            <h1 class="font-playfair text-5xl md:text-7xl font-bold leading-tight mb-6 animate-fade-in">
+                Discover Your Dream Luxury Vacation
+            </h1>
+            <p class="text-xl md:text-2xl font-roboto mb-12 animate-slide-up delay-200">
+                Curated travel experiences to the world's most exclusive destinations.
+            </p>
+            <a href="#destinations" class="bg-accent text-secondary font-bold py-3 px-8 rounded-full text-lg hover:bg-primary hover:text-background transition-colors animate-zoom-in delay-500">
+                Explore Destinations
+            </a>
+        </div>
+    </section>
+
+    <section id="destinations" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-playfair text-4xl font-bold mb-12 text-accent animate-fade-in">
+                Popular Destinations
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-slide-up">
+                    <img src="https://picsum.photos/600/400?maldives" alt="Maldives" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-secondary">
+                        <h3 class="font-roboto text-xl font-bold mb-2 text-primary">Maldives</h3>
+                        <p class="text-primary opacity-75">Idyllic island escapes with overwater bungalows and turquoise waters.</p>
+                        <a href="#" class="inline-block mt-4 bg-accent text-secondary font-bold py-2 px-4 rounded-full text-sm hover:bg-primary hover:text-background transition-colors">Explore Maldives</a>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-slide-up delay-100">
+                    <img src="https://picsum.photos/600/400?santorini" alt="Santorini" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-secondary">
+                        <h3 class="font-roboto text-xl font-bold mb-2 text-primary">Santorini, Greece</h3>
+                        <p class="text-primary opacity-75">Breathtaking sunsets and iconic white-washed villages overlooking the Aegean Sea.</p>
+                        <a href="#" class="inline-block mt-4 bg-accent text-secondary font-bold py-2 px-4 rounded-full text-sm hover:bg-primary hover:text-background transition-colors">Explore Santorini</a>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-slide-up delay-200">
+                    <img src="https://picsum.photos/600/400?bali" alt="Bali" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-secondary">
+                        <h3 class="font-roboto text-xl font-bold mb-2 text-primary">Bali, Indonesia</h3>
+                        <p class="text-primary opacity-75">Spiritual retreats, lush landscapes, and vibrant culture in the Island of Gods.</p>
+                        <a href="#" class="inline-block mt-4 bg-accent text-secondary font-bold py-2 px-4 rounded-full text-sm hover:bg-primary hover:text-background transition-colors">Explore Bali</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-playfair text-4xl font-bold mb-12 text-accent animate-fade-in">
+                Unforgettable Experiences
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-slide-up">
+                    <img src="https://picsum.photos/600/400?safari" alt="Luxury Safari" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-primary">
+                        <h3 class="font-roboto text-xl font-bold mb-2 text-secondary">Luxury Safari</h3>
+                        <p class="text-secondary opacity-75">Experience the wild in style with private guided tours and exclusive lodges.</p>
+                        <a href="#" class="inline-block mt-4 bg-accent text-secondary font-bold py-2 px-4 rounded-full text-sm hover:bg-background hover:text-primary transition-colors">Discover Safari</a>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-slide-up delay-100">
+                    <img src="https://picsum.photos/600/400?cruise" alt="Private Yacht Cruise" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-primary">
+                        <h3 class="font-roboto text-xl font-bold mb-2 text-secondary">Private Yacht Cruise</h3>
+                        <p class="text-secondary opacity-75">Sail the high seas in ultimate luxury with bespoke itineraries and personalized service.</p>
+                        <a href="#" class="inline-block mt-4 bg-accent text-secondary font-bold py-2 px-4 rounded-full text-sm hover:bg-background hover:text-primary transition-colors">Explore Cruises</a>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-slide-up delay-200">
+                    <img src="https://picsum.photos/600/400?privateisland" alt="Private Island Retreat" class="w-full h-64 object-cover">
+                    <div class="p-6 bg-primary">
+                        <h3 class="font-roboto text-xl font-bold mb-2 text-secondary">Private Island Retreat</h3>
+                        <p class="text-secondary opacity-75">Escape to your own secluded paradise with unparalleled privacy and bespoke luxury.</p>
+                        <a href="#" class="inline-block mt-4 bg-accent text-secondary font-bold py-2 px-4 rounded-full text-sm hover:bg-background hover:text-primary transition-colors">Find Your Island</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="offers" class="py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-playfair text-4xl font-bold mb-12 text-accent animate-fade-in">
+                Exclusive Offers
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-primary rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-8 flex items-center animate-slide-up">
+                    <img src="https://picsum.photos/300/200?offer1" alt="Special Offer 1" class="rounded-xl mr-6 w-48 h-32 object-cover">
+                    <div>
+                        <h3 class="font-roboto text-xl font-bold mb-2 text-secondary">Honeymoon in Bora Bora</h3>
+                        <p class="text-secondary opacity-75 mb-4">7 nights in an overwater bungalow with private plunge pool. Includes spa treatments and gourmet dining.</p>
+                        <a href="#" class="inline-block bg-accent text-secondary font-bold py-2 px-4 rounded-full text-sm hover:bg-background hover:text-primary transition-colors">View Offer</a>
+                    </div>
+                </div>
+                <div class="bg-primary rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-8 flex items-center animate-slide-up delay-100">
+                    <img src="https://picsum.photos/300/200?offer2" alt="Special Offer 2" class="rounded-xl mr-6 w-48 h-32 object-cover">
+                    <div>
+                        <h3 class="font-roboto text-xl font-bold mb-2 text-secondary">Family Adventure in Costa Rica</h3>
+                        <p class="text-secondary opacity-75 mb-4">10 days of eco-luxury with rainforest tours, private beaches, and family activities.</p>
+                        <a href="#" class="inline-block bg-accent text-secondary font-bold py-2 px-4 rounded-full text-sm hover:bg-background hover:text-primary transition-colors">View Offer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-secondary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-playfair text-4xl font-bold mb-12 text-accent animate-fade-in">
+                Contact Us
+            </h2>
+            <p class="text-primary text-lg mb-8 animate-slide-up">
+                Let us help you plan your next luxury escape. Contact our travel experts today.
+            </p>
+            <a href="mailto:info@luxuryescapes.com" class="inline-flex items-center bg-accent text-secondary font-bold py-3 px-8 rounded-full text-lg hover:bg-primary hover:text-background transition-colors animate-zoom-in">
+                <i class="fa fa-envelope mr-2"></i> Email Us
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-background border-t border-primary border-opacity-20 py-8">
+        <div class="container mx-auto px-6 text-center text-sm text-primary opacity-75">
+            <p>© 2024 Luxury Escapes. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-accent transition-colors">Privacy Policy</a>
+                <span class="mx-2">·</span>
+                <a href="#" class="hover:text-accent transition-colors">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                if (this.getAttribute('href') === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

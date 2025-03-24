@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCamp - Launch Your Tech Career</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#6B7280',
+                        accent: '#A855F7',
+                        dark: '#111827',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'slide-left': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-right': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.8s ease-out',
+                        'slide-left': 'slide-left 1s ease-out',
+                        'slide-right': 'slide-right 1s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-poppins bg-gray-50 text-dark;
+            }
+            h1 {
+                @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
+            }
+            h2 {
+                @apply text-3xl md:text-4xl font-semibold;
+            }
+            h3 {
+                @apply text-2xl font-semibold;
+            }
+            p {
+                @apply text-secondary text-lg leading-relaxed;
+            }
+            button, .button {
+                @apply bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 transition-colors duration-300;
+            }
+        }
+        @layer components {
+            .container {
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+            }
+            .section-padding {
+                @apply py-20 md:py-24 lg:py-28;
+            }
+            .card {
+                @apply bg-white rounded-xl shadow-md p-6 md:p-8;
+            }
+            .feature-icon {
+                @apply w-12 h-12 rounded-xl bg-accent/10 text-accent text-2xl flex items-center justify-center mb-4;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<header class="sticky top-0 bg-white/90 backdrop-blur-sm z-50 shadow-md transition-shadow duration-300">
+    <div class="container">
+        <div class="flex items-center justify-between py-4">
+            <a href="#" class="text-2xl font-bold text-primary">CodeCamp</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#bootcamps" class="hover:text-primary transition-colors duration-300">Bootcamps</a>
+                <a href="#why-us" class="hover:text-primary transition-colors duration-300">Why CodeCamp</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors duration-300">Testimonials</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </nav>
+            <div class="md:hidden">
+                <button class="text-gray-500 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero section-padding">
+        <div class="container grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="hero-content animate-fade-slide-up">
+                <h1 class="mb-6">Launch Your Tech Career with Immersive Coding Bootcamps</h1>
+                <p class="mb-8">Transform your life in weeks. Learn to code, build your portfolio, and land your dream job in tech. Expert instructors, hands-on projects, and career support guaranteed.</p>
+                <button class="button">Explore Bootcamps</button>
+            </div>
+            <div class="hero-image animate-slide-right">
+                <img src="https://picsum.photos/800/600" alt="Coding Bootcamp Illustration" class="rounded-xl shadow-lg" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section id="bootcamps" class="bootcamps section-padding bg-gray-100">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2>Our Featured Bootcamps</h2>
+                <p class="mt-4">Become a job-ready developer in our intensive programs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card animate-fade-slide-up">
+                    <img src="https://picsum.photos/400/300" alt="Web Development Bootcamp" class="rounded-xl mb-6" loading="lazy">
+                    <h3>Web Development Bootcamp</h3>
+                    <p class="mb-6">Master front-end and back-end technologies. Build dynamic websites and web applications.</p>
+                    <ul class="list-disc list-inside mb-6">
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>React, Node.js</li>
+                        <li>Databases & APIs</li>
+                    </ul>
+                    <a href="#" class="button block text-center">Learn More</a>
+                </div>
+                <div class="card animate-fade-slide-up delay-100">
+                    <img src="https://picsum.photos/400/301" alt="Data Science Bootcamp" class="rounded-xl mb-6" loading="lazy">
+                    <h3>Data Science Bootcamp</h3>
+                    <p class="mb-6">Become a data expert. Analyze, visualize, and interpret complex datasets.</p>
+                    <ul class="list-disc list-inside mb-6">
+                        <li>Python, R</li>
+                        <li>Machine Learning</li>
+                        <li>Data Analysis & Visualization</li>
+                    </ul>
+                    <a href="#" class="button block text-center">Learn More</a>
+                </div>
+                <div class="card animate-fade-slide-up delay-200">
+                    <img src="https://picsum.photos/400/302" alt="UX/UI Design Bootcamp" class="rounded-xl mb-6" loading="lazy">
+                    <h3>UX/UI Design Bootcamp</h3>
+                    <p class="mb-6">Craft intuitive and beautiful user experiences. Design websites and apps users love.</p>
+                    <ul class="list-disc list-inside mb-6">
+                        <li>Figma, Adobe XD</li>
+                        <li>User Research</li>
+                        <li>Interaction Design</li>
+                    </ul>
+                    <a href="#" class="button block text-center">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="why-us section-padding">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2>Why Choose CodeCamp?</h2>
+                <p class="mt-4">We are dedicated to your success. Here's what sets us apart.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card animate-fade-slide-up">
+                    <div class="feature-icon"><i class="fa fa-chalkboard-teacher"></i></div>
+                    <h3>Expert Instructors</h3>
+                    <p>Learn from industry professionals with years of experience in tech.</p>
+                </div>
+                <div class="card animate-fade-slide-up delay-100">
+                    <div class="feature-icon"><i class="fa fa-hands-on"></i></div>
+                    <h3>Hands-On Learning</h3>
+                    <p>Build real-world projects and gain practical skills applicable to the job market.</p>
+                </div>
+                <div class="card animate-fade-slide-up delay-200">
+                    <div class="feature-icon"><i class="fa fa-graduation-cap"></i></div>
+                    <h3>Career Support</h3>
+                    <p>Get personalized career coaching, portfolio reviews, and job placement assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials section-padding bg-gray-100">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2>What Our Graduates Say</h2>
+                <p class="mt-4">Real stories from real people who transformed their careers with CodeCamp.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card animate-fade-slide-up">
+                    <div class="mb-4">
+                        <i class="fa fa-quote-left text-gray-400 text-2xl float-left mr-2 mt-1"></i>
+                        <p>CodeCamp was a game-changer for me. The intensive curriculum and amazing instructors helped me land a job at a top tech company within months of graduating!</p>
+                    </div>
+                    <div class="flex items-center mt-4">
+                        <img src="https://picsum.photos/50/50" alt="Testimonial 1" class="rounded-full mr-4" loading="lazy">
+                        <div>
+                            <h4 class="font-semibold">Sarah J.</h4>
+                            <p class="text-sm text-secondary">Web Developer at TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card animate-fade-slide-up delay-100">
+                    <div class="mb-4">
+                        <i class="fa fa-quote-left text-gray-400 text-2xl float-left mr-2 mt-1"></i>
+                        <p>The career support at CodeCamp is incredible. They helped me build a standout portfolio and prepare for interviews. I felt confident and ready for my new data science role.</p>
+                    </div>
+                    <div class="flex items-center mt-4">
+                        <img src="https://picsum.photos/51/51" alt="Testimonial 2" class="rounded-full mr-4" loading="lazy">
+                        <div>
+                            <h4 class="font-semibold">Michael B.</h4>
+                            <p class="text-sm text-secondary">Data Scientist at DataSolutions Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding">
+        <div class="container text-center">
+            <h2 class="mb-8">Ready to Start Your Journey?</h2>
+            <p class="mb-12">Join CodeCamp and take the first step towards a rewarding tech career. Limited seats available for our upcoming cohorts.</p>
+            <button class="button">Enroll Now</button>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark text-gray-300 py-12">
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+                <h4 class="text-white font-semibold mb-4">CodeCamp</h4>
+                <p>Your pathway to a successful tech career. Immersive coding bootcamps designed to transform beginners into industry-ready professionals.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Bootcamps</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-primary transition-colors duration-300">Web Development</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors duration-300">Data Science</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors duration-300">UX/UI Design</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#why-us" class="hover:text-primary transition-colors duration-300">Why CodeCamp</a></li>
+                    <li><a href="#testimonials" class="hover:text-primary transition-colors duration-300">Testimonials</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition-colors duration-300">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors duration-300">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Connect With Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fa fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 text-center border-t border-gray-700 pt-8">
+            <p>© 2024 CodeCamp. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

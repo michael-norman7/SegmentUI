@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Article</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark': '#0a0a0a',
+                        'light': '#f0f0f0',
+                        'accent': '#555555',
+                    },
+                    fontFamily: {
+                        'bebas': ['Bebas Neue', 'sans-serif'],
+                        'roboto-mono': ['Roboto Mono', 'monospace'],
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .animate-delay-100 {
+            animation-delay: 100ms;
+        }
+        .animate-delay-200 {
+            animation-delay: 200ms;
+        }
+        .animate-delay-300 {
+            animation-delay: 300ms;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <header class="sticky top-0 bg-light/90 backdrop-blur-md z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="font-bebas text-3xl tracking-wider uppercase">Minimal</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#articles" class="hover:text-accent transition-colors duration-200">Articles</a>
+                    <a href="#about" class="hover:text-accent transition-colors duration-200">About</a>
+                    <a href="#contact" class="hover:text-accent transition-colors duration-200">Contact</a>
+                </div>
+                <button class="md:hidden text-dark hover:text-accent focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        <article class="max-w-3xl mx-auto">
+            <div class="animate-fade-in">
+                <h1 class="font-bebas text-5xl md:text-7xl uppercase tracking-tight leading-tight mb-6">The Stark Beauty of Minimalism in Design</h1>
+                <div class="flex items-center text-sm text-accent mb-8 space-x-4">
+                    <img src="https://picsum.photos/id/25/50/50" alt="Author Avatar" class="rounded-full w-10 h-10">
+                    <span>By John Doe</span>
+                    <span>•</span>
+                    <span>January 1, 2024</span>
+                </div>
+            </div>
+
+            <div class="animate-slide-up">
+                <img src="https://picsum.photos/id/1/1200/600" alt="Article Cover Image" class="w-full rounded-xl mb-10 shadow-md">
+
+                <section class="prose prose-sm md:prose-lg text-dark max-w-none">
+                    <p>Minimalism isn't just an aesthetic; it's a philosophy. It's about stripping away the unnecessary to reveal the essence. In design, this translates to clean lines, ample whitespace, and a focus on functionality over frivolous ornamentation.</p>
+
+                    <h2>The Power of Black and White</h2>
+                    <p>A black and white color scheme is the epitome of minimalism. It's bold, timeless, and incredibly versatile. By removing color, we emphasize form, texture, and light. Contrast becomes king, and typography takes center stage.</p>
+
+                    <img src="https://picsum.photos/id/2/800/400" alt="Example Image" class="rounded-md shadow-sm">
+
+                    <h3>Typography as a Design Element</h3>
+                    <p>In a minimalist black and white design, typography isn't just about conveying words; it's a crucial visual element. Bold fonts, careful kerning, and considered hierarchy create visual interest and guide the reader through the content.  The choice of typeface speaks volumes, setting the tone and personality of the design.</p>
+
+                    <img src="https://picsum.photos/id/3/800/400" alt="Typography Example" class="rounded-md shadow-sm">
+
+                    <h2>Whitespace: The Unsung Hero</h2>
+                    <p>Whitespace, or negative space, is as important as the elements themselves. It provides breathing room, improves readability, and draws attention to the content. Minimalism embraces whitespace, using it strategically to create balance and visual harmony.</p>
+
+                    <blockquote>
+                        Less is more. But only if more is no good.
+                        <cite>Frank Lloyd Wright</cite>
+                    </blockquote>
+
+                    <h3>Interactive Elements</h3>
+                    <p>Even in minimalism, interaction is key. Subtle animations and hover effects can enhance user experience without cluttering the interface. A simple line animation on a link hover, or a gentle fade-in of content on scroll, can add a touch of sophistication.</p>
+
+                    <img src="https://picsum.photos/id/4/800/400" alt="Interactive Example" class="rounded-md shadow-sm">
+
+                    <h2>Conclusion: Embracing the Essential</h2>
+                    <p>Minimalist design, especially in black and white, is a powerful approach. It's not about doing less, but doing it with intention and precision. It's about creating designs that are both beautiful and functional, focusing on what truly matters and letting the essence shine through.</p>
+                </section>
+            </div>
+
+            <div class="mt-16 animate-slide-up animate-delay-100">
+                <h2 class="font-bebas text-3xl uppercase tracking-wider mb-6">Related Articles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="#" class="block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://picsum.photos/id/5/400/300" alt="Related Article 1" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-light">
+                            <h3 class="font-bebas text-xl uppercase tracking-wider mb-2">Clean Web Design Principles</h3>
+                            <p class="text-sm text-accent">Exploring the core principles of creating clean and effective web designs.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="block rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://picsum.photos/id/6/400/300" alt="Related Article 2" class="w-full h-48 object-cover">
+                        <div class="p-6 bg-light">
+                            <h3 class="font-bebas text-xl uppercase tracking-wider mb-2">Mastering White Space in UI</h3>
+                            <p class="text-sm text-accent">A deep dive into the strategic use of whitespace to enhance user interface design.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-dark text-light py-12 mt-24 animate-fade-in animate-delay-200">
+        <div class="container mx-auto px-6">
+            <div class="md:flex justify-between items-center mb-8">
+                <p class="text-sm text-light/70">© 2024 Minimalist Design. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-accent transition-colors duration-200"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <nav class="flex justify-center space-x-6 text-sm">
+                <a href="#" class="hover:text-accent transition-colors duration-200">Privacy Policy</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Terms of Service</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up');
+            animatedElements.forEach(element => {
+                element.classList.add('animate-fade-in', 'animate__animated', 'animate__faster');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Coolest Form Ever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#6366f1',
+                        'secondary': '#4f46e5',
+                        'accent': '#a78bfa',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1f2937',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
+                        'fade-in': 'fade-in 0.3s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .password-strength-bar {
+            transition: height 0.3s ease, background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans antialiased">
+    <div class="min-h-screen flex justify-center items-center bg-gradient-to-br from-primary to-secondary px-4">
+        <div class="w-full max-w-md p-6 bg-white rounded-xl shadow-2xl space-y-6 animate-fade-in">
+            <div>
+                <h2 class="text-3xl font-bold text-dark text-center mb-4 animate-slide-in-bottom" style="animation-delay: 0.1s;">Create Account</h2>
+                <p class="text-neutral-500 text-center animate-slide-in-bottom" style="animation-delay: 0.2s;">Join our community and unlock exclusive features.</p>
+            </div>
+            <form id="signupForm" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-dark">Full Name</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                            <i class="fa fa-user text-neutral-500"></i>
+                        </div>
+                        <input type="text" name="name" id="name" class="focus:ring-accent focus:border-accent block w-full pl-10 sm:text-sm border-neutral-300 rounded-md" placeholder="Your Name" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-dark">Email Address</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                            <i class="fa fa-envelope text-neutral-500"></i>
+                        </div>
+                        <input type="email" name="email" id="email" class="focus:ring-accent focus:border-accent block w-full pl-10 sm:text-sm border-neutral-300 rounded-md" placeholder="you@example.com" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-dark">Password</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                            <i class="fa fa-lock text-neutral-500"></i>
+                        </div>
+                        <input type="password" name="password" id="password" class="focus:ring-accent focus:border-accent block w-full pl-10 sm:text-sm border-neutral-300 rounded-md" placeholder="Create a strong password" required>
+                    </div>
+                    <div class="mt-2 h-2 bg-neutral-200 rounded-full overflow-hidden">
+                        <div id="passwordStrengthBar" class="password-strength-bar h-full bg-red-500" style="width: 0;"></div>
+                    </div>
+                    <p id="passwordStrengthText" class="mt-1 text-sm text-red-500"></p>
+                </div>
+                <div>
+                    <label for="confirmPassword" class="block text-sm font-medium text-dark">Confirm Password</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                            <i class="fa fa-lock text-neutral-500"></i>
+                        </div>
+                        <input type="password" name="confirmPassword" id="confirmPassword" class="focus:ring-accent focus:border-accent block w-full pl-10 sm:text-sm border-neutral-300 rounded-md" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="rememberMe" name="rememberMe" type="checkbox" class="h-4 w-4 text-primary focus:ring-accent border-neutral-300 rounded">
+                        <label for="rememberMe" class="ml-2 block text-sm text-neutral-700">Remember me</label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-primary hover:text-secondary">Forgot password?</a>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors duration-300">Sign Up</button>
+                </div>
+            </form>
+            <div class="text-sm text-center">
+                Already have an account? <a href="#" class="font-medium text-primary hover:text-secondary">Log in</a>
+            </div>
+            <div class="mt-6 pt-6 border-t border-neutral-200 text-center">
+                <p class="text-neutral-500">Or sign up with</p>
+                <div class="mt-4 flex justify-center space-x-3">
+                    <a href="#" class="inline-flex items-center justify-center p-2 border border-neutral-300 rounded-full hover:border-neutral-400 transition-colors">
+                        <i class="fa-brands fa-google text-neutral-600"></i>
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center p-2 border border-neutral-300 rounded-full hover:border-neutral-400 transition-colors">
+                        <i class="fa-brands fa-facebook-f text-neutral-600"></i>
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center p-2 border border-neutral-300 rounded-full hover:border-neutral-400 transition-colors">
+                        <i class="fa-brands fa-twitter text-neutral-600"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-neutral-200 text-center text-xs text-neutral-500">
+                <p>By signing up, you agree to our <a href="#" class="font-medium text-primary hover:text-secondary">Terms of Service</a> and <a href="#" class="font-medium text-primary hover:text-secondary">Privacy Policy</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const passwordStrengthBar = document.getElementById('passwordStrengthBar');
+        const passwordStrengthText = document.getElementById('passwordStrengthText');
+
+        passwordInput.addEventListener('input', function() {
+            const password = passwordInput.value;
+            const strength = calculatePasswordStrength(password);
+            updatePasswordStrengthIndicator(strength);
+        });
+
+        function calculatePasswordStrength(password) {
+            let strength = 0;
+            if (password.length > 6) strength += 1;
+            if (password.length > 8) strength += 1;
+            if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength += 1;
+            if (password.match(/[0-9]/)) strength += 1;
+            if (password.match(/[^a-zA-Z0-9]/)) strength += 1;
+            return strength;
+        }
+
+        function updatePasswordStrengthIndicator(strength) {
+            let strengthPercentage = (strength / 5) * 100;
+            passwordStrengthBar.style.width = `${strengthPercentage}%`;
+
+            if (strength <= 1) {
+                passwordStrengthBar.classList.remove('bg-yellow-500', 'bg-green-500');
+                passwordStrengthBar.classList.add('bg-red-500');
+                passwordStrengthText.textContent = 'Very Weak';
+                passwordStrengthText.classList.remove('text-yellow-500', 'text-green-500');
+                passwordStrengthText.classList.add('text-red-500');
+            } else if (strength <= 3) {
+                passwordStrengthBar.classList.remove('bg-red-500', 'bg-green-500');
+                passwordStrengthBar.classList.add('bg-yellow-500');
+                passwordStrengthText.textContent = 'Medium';
+                passwordStrengthText.classList.remove('text-red-500', 'text-green-500');
+                passwordStrengthText.classList.add('text-yellow-500');
+            } else {
+                passwordStrengthBar.classList.remove('bg-red-500', 'bg-yellow-500');
+                passwordStrengthBar.classList.add('bg-green-500');
+                passwordStrengthText.textContent = 'Strong';
+                passwordStrengthText.classList.remove('text-red-500', 'text-yellow-500');
+                passwordStrengthText.classList.add('text-green-500');
+            }
+        }
+    </script>
+     <script src="https://kit.fontawesome.com/your_fontawesome_kit.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - Bestselling Novel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'satoshi': ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#3b82f6',
+                        'accent': '#f0abfc',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
+                        'fade-in': 'fade-in 0.3s ease-out',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'satoshi', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-primary">BookStore</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-secondary transition-colors">Home</a>
+                <a href="#" class="hover:text-secondary transition-colors">Shop</a>
+                <a href="#" class="hover:text-secondary transition-colors">About</a>
+                <a href="#" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block hover:text-secondary transition-colors"><i class="fa fa-search"></i></button>
+                <button class="hover:text-secondary transition-colors"><i class="fa fa-shopping-cart"></i></button>
+                <button class="hover:text-secondary transition-colors"><i class="fa fa-user"></i></button>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none hover:text-secondary transition-colors">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="md:hidden hidden bg-white shadow-md" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-4">
+                <a href="#" class="hover:text-secondary transition-colors">Home</a>
+                <a href="#" class="hover:text-secondary transition-colors">Shop</a>
+                <a href="#" class="hover:text-secondary transition-colors">About</a>
+                <a href="#" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div class="md:sticky md:top-24">
+                <div class="shadow-lg rounded-xl overflow-hidden">
+                    <img src="https://picsum.photos/400/600" alt="Book Cover" class="w-full block">
+                </div>
+            </div>
+
+            <div>
+                <h1 class="text-3xl font-bold mb-4">The Shadowed Kingdom</h1>
+                <p class="text-gray-600 mb-2">By <a href="#" class="text-primary hover:underline">Anya Petrova</a></p>
+                <div class="flex items-center mb-4">
+                    <span class="text-yellow-500"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span>
+                    <span class="text-gray-500 ml-2">(4.8 / 5)</span>
+                    <span class="text-gray-500 ml-2">|</span>
+                    <a href="#" class="text-primary hover:underline ml-2">1,257 Reviews</a>
+                </div>
+                <p class="text-lg mb-6">In a realm teetering on the brink of chaos, Elara, a reluctant sorceress, must embrace her forbidden powers to confront a darkness that threatens to consume the Shadowed Kingdom. A tale of magic, mystery, and self-discovery.</p>
+
+                <div class="mb-8">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-semibold">Hardcover</span>
+                        <span class="text-lg font-bold">$24.99</span>
+                    </div>
+                    <button class="cta-button w-full mb-2">Add to Cart - Hardcover</button>
+
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-semibold">Paperback</span>
+                        <span class="text-lg font-bold">$14.99</span>
+                    </div>
+                    <button class="cta-button w-full mb-2">Add to Cart - Paperback</button>
+
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-semibold">eBook (Kindle, ePub)</span>
+                        <span class="text-lg font-bold">$9.99</span>
+                    </div>
+                    <button class="cta-button w-full mb-2">Add to Cart - eBook</button>
+
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="font-semibold">Audiobook (MP3)</span>
+                        <span class="text-lg font-bold">$19.99</span>
+                    </div>
+                    <button class="cta-button w-full mb-2">Add to Cart - Audiobook</button>
+                </div>
+
+                <button class="bg-accent text-white py-3 px-6 rounded-md hover:bg-fuchsia-500 transition-colors w-full mb-8">Read Sample</button>
+
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3">Synopsis</h2>
+                    <p class="text-gray-700">For centuries, the Shadowed Kingdom has been protected by an ancient magic, wielded by a lineage of powerful sorcerers. But now, the magic is fading, and a creeping darkness threatens to engulf the land. Elara, the last of her line, wants nothing to do with her heritage. Haunted by a tragic past and fearful of her own abilities, she has lived in hiding, among ordinary villagers. However, destiny has other plans. When shadows begin to stir and whispers of a forgotten evil resurface, Elara is drawn into a perilous journey. Guided by cryptic prophecies and aided by unlikely allies – a stoic knight, a mischievous rogue, and a wise old scholar – she must confront her fears and master her powers to save the kingdom from utter destruction. As Elara delves deeper into the mysteries of her ancestry, she uncovers secrets that could shatter everything she thought she knew, forcing her to make choices that will not only determine the fate of the kingdom but also her own.</p>
+                </div>
+
+                <div class="mb-8">
+                    <h2 class="text-xl font-bold mb-3">About the Author</h2>
+                    <div class="flex items-start">
+                        <img src="https://picsum.photos/100/100" alt="Author Anya Petrova" class="rounded-full mr-4">
+                        <div>
+                            <h3 class="font-semibold">Anya Petrova</h3>
+                            <p class="text-gray-700">Anya Petrova is a bestselling author of fantasy and adventure novels. Her intricate world-building and compelling characters have captivated readers worldwide. When not writing, Anya enjoys exploring ancient forests and sipping copious amounts of tea.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-bold mb-4">Customer Reviews</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                <span class="text-gray-500 ml-2">- John D.</span>
+                            </div>
+                            <p class="text-gray-700">Absolutely spellbinding! From the first page to the last, I was completely immersed in the Shadowed Kingdom. Anya Petrova has crafted a masterpiece of fantasy literature.</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span>
+                                <span class="text-gray-500 ml-2">- Sarah L.</span>
+                            </div>
+                            <p class="text-gray-700">A captivating read with rich world-building and characters that felt incredibly real. The plot twists kept me guessing until the very end. Highly recommend!</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-md shadow-sm">
+                            <div class="flex items-center mb-2">
+                                <span class="text-yellow-500"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span>
+                                <span class="text-yellow-500"><i class="fa fa-star-o"></i></span>
+                                <span class="text-gray-500 ml-2">- Michael B.</span>
+                            </div>
+                            <p class="text-gray-700">Great book! The magic system was well-developed and the story was engaging. I especially loved the author's writing style.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="#" class="text-primary hover:underline">Read All Reviews</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-6 text-center">You Might Also Like</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="shadow-md rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/200/300" alt="Book Cover" class="w-full block">
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-2">Echoes of the Past</h3>
+                        <p class="text-gray-600 text-sm">By Author Name</p>
+                    </div>
+                </div>
+                <div class="shadow-md rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/201/300" alt="Book Cover" class="w-full block">
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-2">The Forgotten City</h3>
+                        <p class="text-gray-600 text-sm">By Author Name</p>
+                    </div>
+                </div>
+                <div class="shadow-md rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/202/300" alt="Book Cover" class="w-full block">
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-2">Whispers in the Wind</h3>
+                        <p class="text-gray-600 text-sm">By Author Name</p>
+                    </div>
+                </div>
+                <div class="shadow-md rounded-xl overflow-hidden bg-white hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/203/300" alt="Book Cover" class="w-full block">
+                    <div class="p-4">
+                        <h3 class="font-semibold mb-2">The Last Guardian</h3>
+                        <p class="text-gray-600 text-sm">By Author Name</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-dark text-neutral py-12 mt-16">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-lg font-bold mb-4">BookStore</h4>
+                <p class="text-gray-400">Your online destination for bestselling novels and captivating stories. Explore our vast collection and discover your next favorite book.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Navigation</h4>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Shop</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-8 text-gray-500">
+            <p>© 2024 BookStore. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseover', () => {
+                button.classList.add('animate-fade-in', 'scale-105');
+            });
+            button.addEventListener('mouseout', () => {
+                button.classList.remove('animate-fade-in', 'scale-105');
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Capital - Investment Banking</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#115e59',
+                        'accent': '#34d399',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-down': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(10px)'
+                            },
+                        },
+                        'slide-in-left': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(-20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            },
+                        },
+                        'slide-out-left': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateX(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateX(-20px)'
+                            },
+                        },
+                        'gradient-move': {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' },
+                        },
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-down': 'fade-out-down 0.5s ease-in',
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'slide-out-left': 'slide-out-left 0.5s ease-in',
+                        'gradient-move': 'gradient-move 8s linear infinite',
+                    },
+                    boxShadow: {
+                        'custom-light': '0 5px 20px rgba(0,0,0,0.05)',
+                        'custom-dark': '0 5px 20px rgba(0,0,0,0.15)',
+                    },
+                    transitionProperty: {
+                        'height': 'height',
+                        'spacing': 'margin, padding',
+                      },
+                },
+            },
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(90deg, #0f766e, #115e59, #34d399, #0f766e);
+            background-size: 200% 200%;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+<header class="sticky top-0 z-50 bg-white border-b border-neutral-200 transition-shadow duration-300 shadow-custom-light">
+    <nav class="container mx-auto px-6 py-4 lg:px-8 xl:px-12">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="#" class="font-bold text-xl text-primary hover:text-secondary transition-colors duration-300">
+                    Apex Capital
+                </a>
+            </div>
+            <div class="hidden lg:flex space-x-8">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#expertise" class="nav-link">Expertise</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="#insights" class="nav-link">Insights</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden lg:hidden mt-4">
+            <a href="#services" class="block px-4 py-2 nav-link">Services</a>
+            <a href="#expertise" class="block px-4 py-2 nav-link">Expertise</a>
+            <a href="#team" class="block px-4 py-2 nav-link">Team</a>
+            <a href="#insights" class="block px-4 py-2 nav-link">Insights</a>
+            <a href="#contact" class="block px-4 py-2 nav-link">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section id="hero" class="gradient-bg py-20 lg:py-32 text-white overflow-hidden relative">
+        <div class="absolute inset-0 animate-gradient-move opacity-10"></div>
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="hero-text lg:order-2 animate__animated animate__fadeInRight">
+                    <h1 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                        Strategic Financial Solutions for a Complex World
+                    </h1>
+                    <p class="text-lg mb-8 text-neutral-100">
+                        Unlock unparalleled growth and navigate market complexities with Apex Capital. We deliver bespoke investment banking solutions, driven by deep industry expertise and a commitment to your success.
+                    </p>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-dark bg-accent hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-ring-offset-2 focus:ring-accent transition-colors duration-300">
+                        Get in Touch
+                        <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="hero-image relative mt-12 lg:mt-0 animate__animated animate__fadeInLeft">
+                    <img src="https://picsum.photos/800/600" alt="Abstract financial growth chart" class="rounded-xl shadow-2xl object-cover w-full h-auto aspect-video">
+                    <div class="absolute bottom-0 left-0 p-6 bg-neutral bg-opacity-70 rounded-tr-xl rounded-bl-xl">
+                        <p class="text-sm text-dark font-medium">Market Insights & Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 lg:py-24">
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Our Core Services</h2>
+                <p class="text-lg text-gray-600">Empowering your financial objectives with a comprehensive suite of services.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <i class="fa fa-chart-line text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Mergers & Acquisitions</h3>
+                    <p class="text-gray-500">Strategic advisory for buy-side and sell-side transactions, ensuring optimal deal structures and valuations.</p>
+                </div>
+                <div class="service-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <i class="fa fa-coins text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Capital Raising</h3>
+                    <p class="text-gray-500">Expert guidance in raising equity and debt capital, accessing global markets and diverse investor networks.</p>
+                </div>
+                <div class="service-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <i class="fa fa-building-columns text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Restructuring Advisory</h3>
+                    <p class="text-gray-500">Navigating complex financial challenges with tailored restructuring solutions and strategic repositioning.</p>
+                </div>
+                <div class="service-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <i class="fa fa-handshake text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Strategic Partnerships</h3>
+                    <p class="text-gray-500">Facilitating strategic alliances and joint ventures to expand market reach and enhance competitive advantage.</p>
+                </div>
+                <div class="service-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <i class="fa fa-lightbulb text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Innovation & Growth Strategies</h3>
+                    <p class="text-gray-500">Developing and implementing innovative strategies to drive sustainable growth and market leadership.</p>
+                </div>
+                <div class="service-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <i class="fa fa-globe text-3xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Global Market Expansion</h3>
+                    <p class="text-gray-500">Advisory services for companies seeking to expand their operations and investments into new global markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="py-20 lg:py-24 bg-neutral-100">
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="expertise-image relative mb-12 lg:mb-0">
+                    <img src="https://picsum.photos/800/601" alt="Team discussing strategy" class="rounded-xl shadow-2xl object-cover w-full h-auto aspect-video">
+                    <div class="absolute top-0 right-0 p-6 bg-white bg-opacity-80 rounded-bl-xl rounded-tr-xl text-right">
+                        <p class="text-sm text-dark font-medium">Decades of Combined Experience</p>
+                    </div>
+                </div>
+                <div class="expertise-text animate__animated animate__fadeInLeft">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6 leading-tight">Deep Sector Expertise, Tailored Solutions</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Our team comprises industry veterans and financial experts with a proven track record across diverse sectors. We leverage this deep expertise to provide tailored solutions that address your unique challenges and opportunities.
+                    </p>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li class="mb-2">Technology & Innovation</li>
+                        <li class="mb-2">Healthcare & Life Sciences</li>
+                        <li class="mb-2">Energy & Infrastructure</li>
+                        <li class="mb-2">Consumer & Retail</li>
+                        <li>Financial Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-20 lg:py-24">
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Meet Our Leadership Team</h2>
+                <p class="text-lg text-gray-600">Driven by excellence, committed to your success.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="team-member-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <img src="https://picsum.photos/200/301" alt="Team Member 1" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-semibold text-dark text-center mb-1">Alex Johnson</h3>
+                    <p class="text-gray-500 text-center mb-3">Managing Director</p>
+                    <p class="text-sm text-gray-600 text-center">Over 20 years of experience in investment banking and financial advisory.</p>
+                </div>
+                <div class="team-member-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <img src="https://picsum.photos/200/302" alt="Team Member 2" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-semibold text-dark text-center mb-1">Sarah Chen</h3>
+                    <p class="text-gray-500 text-center mb-3">Partner</p>
+                    <p class="text-sm text-gray-600 text-center">Specializes in capital markets and cross-border transactions.</p>
+                </div>
+                <div class="team-member-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <img src="https://picsum.photos/200/303" alt="Team Member 3" class="rounded-full w-24 h-24 mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-semibold text-dark text-center mb-1">Michael Davis</h3>
+                    <p class="text-gray-500 text-center mb-3">Vice President</p>
+                    <p class="text-sm text-gray-600 text-center">Expert in financial modeling and valuation analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="py-20 lg:py-24 bg-neutral-100">
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-4">Latest Insights</h2>
+                <p class="text-lg text-gray-600">Stay ahead with our market analysis and industry perspectives.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="insight-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <img src="https://picsum.photos/400/301" alt="Insight 1" class="rounded-xl mb-4 object-cover w-full h-48">
+                    <h3 class="text-xl font-semibold text-dark mb-2">Market Outlook 2024</h3>
+                    <p class="text-gray-500 mb-4">Analysis of key trends shaping the global financial landscape in the coming year.</p>
+                    <a href="#" class="text-accent hover:text-secondary font-medium transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="insight-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <img src="https://picsum.photos/400/302" alt="Insight 2" class="rounded-xl mb-4 object-cover w-full h-48">
+                    <h3 class="text-xl font-semibold text-dark mb-2">The Future of Tech Investments</h3>
+                    <p class="text-gray-500 mb-4">Exploring the evolving landscape of technology investments and emerging opportunities.</p>
+                    <a href="#" class="text-accent hover:text-secondary font-medium transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="insight-card p-6 rounded-xl shadow-custom-light hover:shadow-md transition-shadow duration-300 bg-white">
+                    <img src="https://picsum.photos/400/303" alt="Insight 3" class="rounded-xl mb-4 object-cover w-full h-48">
+                    <h3 class="text-xl font-semibold text-dark mb-2">Sustainable Finance Growth</h3>
+                    <p class="text-gray-500 mb-4">Examining the rapid expansion of sustainable finance and its impact on investment strategies.</p>
+                    <a href="#" class="text-accent hover:text-secondary font-medium transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 lg:py-24">
+        <div class="container mx-auto px-6 lg:px-8 xl:px-12">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="contact-text animate__animated animate__fadeInLeft">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-dark mb-6 leading-tight">Let's Discuss Your Financial Goals</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Ready to take your business to the next level? Contact us today to explore how Apex Capital can help you achieve your strategic and financial objectives.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fa fa-map-marker-alt text-accent mr-4"></i>
+                            <p class="text-gray-700">123 Main Street, Suite 400, New York, NY 10001</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-phone text-accent mr-4"></i>
+                            <p class="text-gray-700">+1 (212) 555-APEX</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fa fa-envelope text-accent mr-4"></i>
+                            <p class="text-gray-700">info@apexcapital.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form animate__animated animate__fadeInRight">
+                    <div class="bg-white shadow-custom-light rounded-xl p-8">
+                        <h3 class="text-xl font-semibold text-dark mb-6">Send us a message</h3>
+                        <form action="#" method="POST">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="shadow ap
+content_copy
+download
+Use code with caution.
+Html

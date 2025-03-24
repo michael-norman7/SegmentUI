@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumio - Modern Furniture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f4f0ec',
+                        secondary: '#374151',
+                        accent: '#9ca3af',
+                        brand: '#78350f',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 1s ease-out',
+                        'fade-in': 'fade-in 1s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-primary text-secondary">
+
+<header class="sticky top-0 z-50 bg-primary shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="text-xl font-bold text-brand">Lumio</div>
+        <div class="hidden md:flex space-x-8">
+            <a href="#" class="hover:text-accent transition-colors duration-300">Home</a>
+            <a href="#collections" class="hover:text-accent transition-colors duration-300">Collections</a>
+            <a href="#about" class="hover:text-accent transition-colors duration-300">About Us</a>
+            <a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-secondary hover:text-accent focus:outline-none">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-primary px-6 py-4">
+        <a href="#" class="block py-2 hover:text-accent transition-colors duration-300">Home</a>
+        <a href="#collections" class="block py-2 hover:text-accent transition-colors duration-300">Collections</a>
+        <a href="#about" class="block py-2 hover:text-accent transition-colors duration-300">About Us</a>
+        <a href="#contact" class="block py-2 hover:text-accent transition-colors duration-300">Contact</a>
+    </div>
+</header>
+
+<main>
+    <section class="hero container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between">
+        <div class="hero-text md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Discover Furniture That Speaks To You</h1>
+            <p class="text-lg text-accent mb-8">Crafted for comfort, designed for life. Explore our curated collections and find pieces that perfectly blend style and functionality for your modern home.</p>
+            <a href="#collections" class="inline-block bg-brand text-primary px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300">Explore Collections</a>
+        </div>
+        <div class="hero-image md:w-1/2 animate-slide-in-right">
+            <img src="https://picsum.photos/id/100/800/600" alt="Modern Living Room Furniture" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+        </div>
+    </section>
+
+    <section id="collections" class="collections container mx-auto px-6 py-24">
+        <h2 class="text-3xl font-bold text-center mb-16">Featured Collections</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="collection-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/200/400/300" alt="Living Room Collection" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Living Room</h3>
+                    <p class="text-accent text-sm mb-4">Elegant sofas, coffee tables, and more.</p>
+                    <a href="#" class="inline-block bg-brand text-primary px-6 py-2 rounded-full font-semibold text-sm hover:bg-secondary transition-colors duration-300">Shop Now <i class="fa fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+            <div class="collection-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/300/400/300" alt="Dining Room Collection" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Dining Room</h3>
+                    <p class="text-accent text-sm mb-4">Stylish dining sets for memorable meals.</p>
+                    <a href="#" class="inline-block bg-brand text-primary px-6 py-2 rounded-full font-semibold text-sm hover:bg-secondary transition-colors duration-300">Shop Now <i class="fa fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+            <div class="collection-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/400/400/300" alt="Bedroom Collection" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Bedroom</h3>
+                    <p class="text-accent text-sm mb-4">Comfortable beds, dressers, and nightstands.</p>
+                    <a href="#" class="inline-block bg-brand text-primary px-6 py-2 rounded-full font-semibold text-sm hover:bg-secondary transition-colors duration-300">Shop Now <i class="fa fa-arrow-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about container mx-auto px-6 py-24 bg-secondary text-primary">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="about-image">
+                <img src="https://picsum.photos/id/500/600/400" alt="Modern Showroom" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+            </div>
+            <div class="about-text">
+                <h2 class="text-3xl font-bold mb-8">About Lumio Furniture</h2>
+                <p class="text-lg mb-6">At Lumio, we believe that furniture is more than just objects; it's an integral part of your life's story. We are dedicated to crafting pieces that are not only beautiful but also functional and sustainable. Our designs are inspired by modern living, with a focus on clean lines, natural materials, and exceptional craftsmanship.</p>
+                <p class="text-lg mb-6">From our sustainably sourced wood to our eco-friendly finishes, every detail is thoughtfully considered. We strive to create furniture that you'll love for years to come, pieces that become a part of your home and your memories.</p>
+                <a href="#" class="inline-block bg-primary text-secondary px-8 py-3 rounded-full font-semibold hover:bg-accent hover:text-primary transition-colors duration-300">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact container mx-auto px-6 py-24">
+        <h2 class="text-3xl font-bold text-center mb-16">Contact Us</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div>
+                <p class="text-lg text-accent mb-8">Have questions or need assistance? Reach out to our team. We're here to help you create your dream home.</p>
+                <div class="mb-4">
+                    <i class="fa fa-map-marker-alt text-brand mr-2"></i> 123 Main Street, Cityville, USA
+                </div>
+                <div class="mb-4">
+                    <i class="fa fa-phone text-brand mr-2"></i> (123) 456-7890
+                </div>
+                <div>
+                    <i class="fa fa-envelope text-brand mr-2"></i> support@lumiofurniture.com
+                </div>
+            </div>
+            <div>
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-secondary">Name</label>
+                        <input type="text" id="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand focus:ring-brand sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-secondary">Email</label>
+                        <input type="email" id="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand focus:ring-brand sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-secondary">Message</label>
+                        <textarea id="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brand focus:ring-brand sm:text-sm"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-primary bg-brand hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-secondary text-primary py-12">
+    <div class="container mx-auto px-6 text-center">
+        <div class="mb-4">
+            <a href="#" class="text-primary hover:text-accent mr-4"><i class="fab fa-facebook-square fa-lg"></i></a>
+            <a href="#" class="text-primary hover:text-accent mr-4"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-primary hover:text-accent"><i class="fab fa-twitter-square fa-lg"></i></a>
+        </div>
+        <p class="text-sm">© 2024 Lumio Furniture. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            if (this.getAttribute('href') === '#') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+
+
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

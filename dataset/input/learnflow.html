@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnFlow Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4ade80',
+                        'secondary': '#a7f3d0',
+                        'glass': 'rgba(255, 255, 255, 0.25)',
+                        'glass-border': 'rgba(255, 255, 255, 0.5)',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glassmorphism': '0 8px 32px 0 rgba(31, 38, 135, 0.17)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background: #e0f7fa;
+            overflow: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .animate-fade-in {
+            animation: fadein 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadein {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-teal-100 to-cyan-100 -z-10"></div>
+    <div class="flex h-screen">
+        <aside class="w-64 glass p-6 flex flex-col justify-between animate-fade-in">
+            <div>
+                <div class="text-2xl font-semibold text-gray-800 mb-8">LearnFlow</div>
+                <nav>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 mb-2 active-nav">
+                        <i class="fa fa-home mr-3"></i>Dashboard
+                    </a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 mb-2">
+                        <i class="fa fa-book-open mr-3"></i>Topics
+                    </a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 mb-2">
+                        <i class="fa fa-chart-line mr-3"></i>Progress
+                    </a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200 mb-2">
+                        <i class="fa fa-bullseye mr-3"></i>Goals
+                    </a>
+                    <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-200">
+                        <i class="fa fa-cog mr-3"></i>Settings
+                    </a>
+                </nav>
+            </div>
+            <div class="pb-4">
+                <div class="flex items-center space-x-3">
+                    <img src="https://picsum.photos/200/300?random=1" alt="User Avatar" class="w-10 h-10 rounded-full">
+                    <div>
+                        <div class="font-semibold text-gray-800">John Doe</div>
+                        <div class="text-sm text-gray-500">Beginner</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-8">
+            <header class="mb-6">
+                <h1 class="text-3xl font-bold text-gray-800 animate-fade-in">Dashboard</h1>
+            </header>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 animate-fade-in">
+                <div class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-book-open text-2xl text-primary mr-3"></i>
+                        <h2 class="text-lg font-semibold text-gray-800">Current Topic</h2>
+                    </div>
+                    <div class="text-gray-600 mb-4">Introduction to React</div>
+                    <img src="https://picsum.photos/200/150?random=2" alt="Topic Image" class="rounded-md w-full h-40 object-cover mb-4">
+                    <div class="flex justify-between items-center">
+                        <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-200">Continue Learning</button>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-chart-line text-2xl text-primary mr-3"></i>
+                        <h2 class="text-lg font-semibold text-gray-800">Learning Progress</h2>
+                    </div>
+                    <div class="text-gray-600 mb-6">Overall progress in your learning journey.</div>
+                    <div class="relative pt-1">
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-secondary">
+                            <div style="width: 70%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-primary transition-all duration-500"></div>
+                        </div>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <div>0%</div>
+                            <div>70%</div>
+                            <div>100%</div>
+                        </div>
+                    </div>
+                    <div class="text-center text-primary font-bold text-xl">70% Complete</div>
+                </div>
+
+                <div class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fa fa-bullseye text-2xl text-primary mr-3"></i>
+                        <h2 class="text-lg font-semibold text-gray-800">Learning Goals</h2>
+                    </div>
+                    <div class="text-gray-600 mb-4">Your goals for this week.</div>
+                    <ul>
+                        <li class="flex items-center py-2">
+                            <input type="checkbox" id="goal1" class="mr-2 rounded text-primary focus:ring-primary">
+                            <label for="goal1" class="text-gray-700">Complete React Basics</label>
+                        </li>
+                        <li class="flex items-center py-2">
+                            <input type="checkbox" id="goal2" class="mr-2 rounded text-primary focus:ring-primary" checked>
+                            <label for="goal2" class="text-gray-700 line-through text-gray-500">Practice JSX</label>
+                        </li>
+                        <li class="flex items-center py-2">
+                            <input type="checkbox" id="goal3" class="mr-2 rounded text-primary focus:ring-primary">
+                            <label for="goal3" class="text-gray-700">Understand Components</label>
+                        </li>
+                    </ul>
+                    <button class="mt-4 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow focus:outline-none focus:shadow-outline transition-colors duration-200 w-full">View All Goals</button>
+                </div>
+            </section>
+
+            <section class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300 animate-fade-in">
+                <div class="flex items-center mb-4">
+                    <i class="fa fa-lightbulb text-2xl text-primary mr-3"></i>
+                    <h2 class="text-lg font-semibold text-gray-800">Quick Insights</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-4 rounded-md bg-glass border border-glass-border">
+                        <div class="text-xl font-bold text-gray-800">15</div>
+                        <div class="text-sm text-gray-600">Topics Completed</div>
+                    </div>
+                    <div class="p-4 rounded-md bg-glass border border-glass-border">
+                        <div class="text-xl font-bold text-gray-800">30 Hours</div>
+                        <div class="text-sm text-gray-600">Learned This Month</div>
+                    </div>
+                    <div class="p-4 rounded-md bg-glass border border-glass-border">
+                        <div class="text-xl font-bold text-gray-800">92%</div>
+                        <div class="text-sm text-gray-600">Average Quiz Score</div>
+                    </div>
+                    <div class="p-4 rounded-md bg-glass border border-glass-border">
+                        <div class="text-xl font-bold text-gray-800">5</div>
+                        <div class="text-sm text-gray-600">Goals Achieved</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('aside nav a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove('active-nav', 'bg-gray-100'));
+                    link.classList.add('active-nav', 'bg-gray-100');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

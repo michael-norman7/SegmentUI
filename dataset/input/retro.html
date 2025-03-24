@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Article Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        retroBg: '#f0e68c',
+                        retroPrimary: '#ff4500',
+                        retroSecondary: '#00ced1',
+                        retroAccent: '#9400d3',
+                        retroText: '#333333',
+                        retroWhite: '#f8f8ff',
+                    },
+                    fontFamily: {
+                        'bebas': ['Bebas Neue', 'sans-serif'],
+                        'open': ['Open Sans', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-retro': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                        'pulse-retro': 'pulse-retro 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    boxShadow: {
+                        'retro': '10px 10px 0 rgba(0, 0, 0, 0.2)',
+                        'retro-md': '15px 15px 0 rgba(0, 0, 0, 0.2)',
+                        'retro-lg': '20px 20px 0 rgba(0, 0, 0, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.retroBg');
+            color: theme('colors.retroText');
+        }
+        .article-content > *:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+    </style>
+</head>
+<body class="font-open">
+    <header class="bg-retroBg sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-retroPrimary font-bebas text-3xl uppercase tracking-wider animate-pulse-retro">Retro News</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-retroPrimary transition-colors duration-200">Home</a>
+                <a href="#" class="hover:text-retroPrimary transition-colors duration-200">Articles</a>
+                <a href="#" class="hover:text-retroPrimary transition-colors duration-200">About</a>
+                <a href="#" class="hover:text-retroPrimary transition-colors duration-200">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-retroText hover:text-retroPrimary focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <article class="bg-retroWhite rounded-lg shadow-retro-lg overflow-hidden">
+            <div class="aspect-w-16 aspect-h-9">
+                <img src="https://picsum.photos/1200/675" alt="Article Hero" class="object-cover w-full h-full">
+            </div>
+            <div class="p-8 article-content">
+                <h1 class="font-bebas text-5xl text-retroPrimary uppercase tracking-wider mb-4 animate-slide-in-right">
+                    The Bold Future of Retro Design
+                </h1>
+                <p class="text-retroText leading-relaxed mb-6 animate-fade-in">
+                    Step into a world where the past meets the future. Retro design is not just a nostalgic nod; it's a vibrant, dynamic movement pushing the boundaries of modern aesthetics. We delve into the resurgence of bold colors, geometric shapes, and the typography that defines this exciting trend.
+                </p>
+
+                <section class="mb-8">
+                    <h2 class="font-bebas text-3xl text-retroSecondary uppercase tracking-wider mb-3 animate-slide-in-right">
+                        Geometric Typography: Shapes Speak Louder
+                    </h2>
+                    <p class="text-retroText leading-relaxed mb-4 animate-fade-in">
+                        Forget subtle serifs; retro typography is about making a statement. Bold, geometric fonts are at the forefront, echoing the Art Deco era and the punchy styles of the 80s. Think strong lines, sharp angles, and typefaces that command attention.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                        <img src="https://picsum.photos/200/300?random=1" alt="Geometric Type Example 1" class="rounded-md shadow-md hover:shadow-retro-md transition-shadow duration-300">
+                        <img src="https://picsum.photos/200/300?random=2" alt="Geometric Type Example 2" class="rounded-md shadow-md hover:shadow-retro-md transition-shadow duration-300">
+                        <img src="https://picsum.photos/200/300?random=3" alt="Geometric Type Example 3" class="rounded-md shadow-md hover:shadow-retro-md transition-shadow duration-300">
+                        <img src="https://picsum.photos/200/300?random=4" alt="Geometric Type Example 4" class="rounded-md shadow-md hover:shadow-retro-md transition-shadow duration-300">
+                    </div>
+                    <p class="text-retroText leading-relaxed animate-fade-in">
+                        These typefaces aren't just for headlines; they permeate every aspect of retro design, from body text to interactive elements, creating a cohesive and impactful visual language.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="font-bebas text-3xl text-retroAccent uppercase tracking-wider mb-3 animate-slide-in-right">
+                        Vibrant Color Palettes: Electrify Your Senses
+                    </h2>
+                    <p class="text-retroText leading-relaxed mb-4 animate-fade-in">
+                        Retro is synonymous with color. Forget muted tones; we're talking electric blues, hot pinks, sunshine yellows, and deep purples. These palettes are not for the faint of heart, but they are essential for capturing the true essence of retro vibrancy.
+                    </p>
+                    <div class="flex space-x-4 mb-4 animate-slide-in-bottom">
+                        <div class="w-24 h-24 bg-retroPrimary rounded-md shadow-md"></div>
+                        <div class="w-24 h-24 bg-retroSecondary rounded-md shadow-md"></div>
+                        <div class="w-24 h-24 bg-retroAccent rounded-md shadow-md"></div>
+                        <div class="w-24 h-24 bg-yellow-500 rounded-md shadow-md"></div>
+                        <div class="w-24 h-24 bg-green-400 rounded-md shadow-md"></div>
+                    </div>
+                    <p class="text-retroText leading-relaxed animate-fade-in">
+                        The key is contrast and boldness. Don't shy away from unexpected combinations. Retro design thrives on pushing boundaries, and color is your most potent tool.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="font-bebas text-3xl text-retroPrimary uppercase tracking-wider mb-3 animate-slide-in-right">
+                        Interactive Retro: Functionality with Flair
+                    </h2>
+                    <p class="text-retroText leading-relaxed mb-4 animate-fade-in">
+                        Retro design isn't just about looks; it's about experience. Interactive elements are infused with retro charm, from button styles reminiscent of arcade games to loading animations that echo vintage technology.
+                    </p>
+                    <div class="flex justify-center mb-6 animate-fade-in">
+                        <button class="bg-retroSecondary hover:bg-retroAccent text-retroWhite font-bold py-3 px-6 rounded-full shadow-retro hover:shadow-retro-md transition-shadow duration-300">
+                            Explore More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                    <p class="text-retroText leading-relaxed animate-fade-in">
+                        These interactive details add a layer of playfulness and engagement, making the user experience both visually appealing and deeply satisfying.
+                    </p>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="font-bebas text-3xl text-retroSecondary uppercase tracking-wider mb-3 animate-slide-in-right">
+                        The Accessibility of Retro: Design for Everyone
+                    </h2>
+                    <p class="text-retroText leading-relaxed mb-4 animate-fade-in">
+                        While embracing the retro aesthetic, accessibility remains paramount. Ensuring sufficient color contrast, clear typography, and keyboard navigation makes retro design inclusive and user-friendly for everyone.
+                    </p>
+                    <ul class="list-disc list-inside text-retroText leading-relaxed animate-fade-in">
+                        <li><strong>Color Contrast:</strong> Carefully selected color pairs to ensure readability.</li>
+                        <li><strong>Typography Clarity:</strong> Geometric fonts chosen for impact and legibility.</li>
+                        <li><strong>Keyboard Navigation:</strong> Intuitive navigation for all users.</li>
+                        <li><strong>Responsive Design:</strong> Adapting retro styles to all screen sizes.</li>
+                    </ul>
+                </section>
+
+                <footer class="pt-8 border-t border-retroAccent">
+                    <p class="text-sm text-retroText">Published on October 26, 2024</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-retroPrimary hover:text-retroAccent transition-colors duration-200"><i class="fab fa-facebook-square fa-lg"></i></a>
+                        <a href="#" class="text-retroPrimary hover:text-retroAccent transition-colors duration-200"><i class="fab fa-twitter-square fa-lg"></i></a>
+                        <a href="#" class="text-retroPrimary hover:text-retroAccent transition-colors duration-200"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <footer class="bg-retroBg py-6 text-center text-retroText">
+        <p>© 2024 Retro News. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleContent = document.querySelector('.article-content');
+            articleContent.querySelectorAll('.animate-slide-in-right, .animate-fade-in, .animate-slide-in-bottom').forEach(element => {
+                element.classList.add('animate__animated', 'animate__faster');
+            });
+        });
+    </script>
+</body>
+</html>

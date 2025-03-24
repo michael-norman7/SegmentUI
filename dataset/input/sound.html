@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Artist | Immersive Audio Experiences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FDE047',
+                        secondary: '#3B82F6',
+                        accent: '#EC4899',
+                        dark: '#111827',
+                        light: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        grotesk: ['Space Grotesk', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 0.75s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
+                        'slide-in-right': 'slide-in-right 0.5s ease-out forwards',
+                        'slide-out-right': 'slide-out-right 0.5s ease-in forwards',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'fade-out': 'fade-out 0.5s ease-in forwards',
+                    },
+                    keyframes: {
+                        'pulse': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.5 },
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: 0 },
+                            '100%': { transform: 'translateX(0)', opacity: 1 },
+                        },
+                        'slide-out-right': {
+                            '0%': { transform: 'translateX(0)', opacity: 1 },
+                            '100%': { transform: 'translateX(100%)', opacity: 0 },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: 0 },
+                            '100%': { opacity: 1 },
+                        },
+                        'fade-out': {
+                            '0%': { opacity: 1 },
+                            '100%': { opacity: 0 },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .aspect-video-custom {
+            aspect-ratio: 16 / 7;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light overflow-hidden">
+
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10">
+    <canvas id="visualizerCanvas" class="absolute top-0 left-0 w-full h-full"></canvas>
+</div>
+
+<header class="absolute top-0 left-0 w-full px-6 py-4 md:px-12 md:py-8 z-20">
+    <nav class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-xl md:text-2xl font-bold text-primary hover:text-secondary transition-colors">
+            <span class="uppercase">Sound</span><span class="text-secondary">Waves</span>
+        </a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#about" class="hover:text-primary transition-colors">About</a>
+            <a href="#portfolio" class="hover:text-primary transition-colors">Portfolio</a>
+            <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-light hover:text-primary focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full right-0 mt-2 bg-dark shadow-lg rounded-md p-4 animate-slide-in-right origin-top-right">
+        <div class="flex flex-col space-y-3">
+            <a href="#about" class="hover:text-primary transition-colors block px-3 py-2 rounded-md">About</a>
+            <a href="#portfolio" class="hover:text-primary transition-colors block px-3 py-2 rounded-md">Portfolio</a>
+            <a href="#contact" class="hover:text-primary transition-colors block px-3 py-2 rounded-md">Contact</a>
+        </div>
+    </div>
+</header>
+
+<main class="relative h-screen flex flex-col justify-center items-center px-6 md:px-12 z-10">
+    <section class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+            Immersive Soundscapes <br/> Crafted for You
+        </h1>
+        <p class="text-lg md:text-xl text-light/70 mb-8">
+            Experience sound in a new dimension. Explore the art of sonic innovation.
+        </p>
+        <button id="playButton" class="group relative inline-flex items-center overflow-hidden rounded-full bg-accent px-8 py-3 text-white focus:outline-none hover:bg-accent/90 active:bg-accent/80 transition-colors duration-300">
+            <span class="absolute right-0 translate-x-full transition-transform group-hover:-translate-x-2 group-focus:-translate-x-4 motion-reduce:transform-none">
+              <i class="fa fa-arrow-right"></i>
+            </span>
+            <span class="text-sm font-bold sm:text-base transition-all duration-200 group-hover:mr-4">
+                Explore Sounds
+            </span>
+        </button>
+    </section>
+</main>
+
+<section id="about" class="bg-light text-dark py-20 px-6 md:px-12">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+            <img src="https://picsum.photos/id/100/800/600" alt="Sound Artist" class="rounded-xl shadow-lg">
+        </div>
+        <div>
+            <h2 class="text-3xl font-bold mb-6">About the Artist</h2>
+            <p class="text-lg mb-4">
+                Passionate sound artist dedicated to creating unique and immersive audio experiences.
+                Blending technology with artistic vision to produce soundscapes that resonate and captivate.
+            </p>
+            <p class="text-lg">
+                From ambient textures to rhythmic compositions, exploring the vast spectrum of sound.
+                Committed to pushing boundaries and innovating in the realm of audio art.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="bg-dark text-light py-20 px-6 md:px-12">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Portfolio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="rounded-xl shadow-lg overflow-hidden bg-light/10">
+                <img src="https://picsum.photos/id/200/400/300" alt="Sound Artwork 1" class="w-full block aspect-video-custom object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Ambient Echoes</h3>
+                    <p class="text-light/70">A journey through ethereal soundscapes.</p>
+                    <button class="mt-4 inline-flex items-center text-secondary hover:text-primary transition-colors font-medium group focus:outline-none">
+                        Listen
+                        <i class="fa fa-headphones ml-2 group-hover:ml-3 transition-ml"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="rounded-xl shadow-lg overflow-hidden bg-light/10">
+                <img src="https://picsum.photos/id/300/400/300" alt="Sound Artwork 2" class="w-full block aspect-video-custom object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Rhythmic Pulse</h3>
+                    <p class="text-light/70">An exploration of percussive sound and rhythm.</p>
+                    <button class="mt-4 inline-flex items-center text-secondary hover:text-primary transition-colors font-medium group focus:outline-none">
+                        Listen
+                        <i class="fa fa-headphones ml-2 group-hover:ml-3 transition-ml"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="rounded-xl shadow-lg overflow-hidden bg-light/10">
+                <img src="https://picsum.photos/id/400/400/300" alt="Sound Artwork 3" class="w-full block aspect-video-custom object-cover">
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2">Textural Harmony</h3>
+                    <p class="text-light/70">Layered sounds creating rich textures.</p>
+                    <button class="mt-4 inline-flex items-center text-secondary hover:text-primary transition-colors font-medium group focus:outline-none">
+                        Listen
+                        <i class="fa fa-headphones ml-2 group-hover:ml-3 transition-ml"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="bg-secondary text-light py-20 px-6 md:px-12">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-8">Get in Touch</h2>
+        <p class="text-lg mb-12">
+            Interested in collaborations or custom sound projects? Reach out and let's create something amazing together.
+        </p>
+        <a href="mailto:contact@soundartist.com" class="inline-block bg-primary text-dark px-8 py-3 rounded-full font-bold hover:bg-primary/90 transition-colors focus:outline-none">
+            <i class="fa fa-envelope mr-2"></i> Email Me
+        </a>
+    </div>
+</section>
+
+<footer class="bg-dark/90 text-light/50 py-6 px-6 md:px-12 text-center">
+    <p>© 2024 Sound Artist. All rights reserved.</p>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const playButton = document.getElementById('playButton');
+    const canvas = document.getElementById('visualizerCanvas');
+    const ctx = canvas.getContext('2d');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.remove('animate-slide-out-right');
+            mobileMenu.classList.add('animate-slide-in-right');
+        } else {
+            mobileMenu.classList.remove('animate-slide-in-right');
+            mobileMenu.classList.add('animate-slide-out-right');
+        }
+    });
+
+    let audioContext;
+    let analyser;
+    let audioSource;
+    let isPlaying = false;
+
+    playButton.addEventListener('click', async () => {
+        if (!isPlaying) {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                analyser.fftSize = 2048;
+                const bufferLength = analyser.frequencyBinCount;
+                const dataArray = new Uint8Array(bufferLength);
+
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    audioSource = audioContext.createMediaStreamSource(stream);
+                    audioSource.connect(analyser);
+                    isPlaying = true;
+                    playButton.textContent = 'Listening...';
+                    playButton.disabled = true;
+                    visualize(analyser, dataArray, bufferLength);
+
+                } catch (err) {
+                    console.error('Error accessing microphone:', err);
+                    playButton.textContent = 'Error: Mic Access Denied';
+                    playButton.disabled = true;
+                }
+            } else {
+                isPlaying = true;
+                playButton.textContent = 'Listening...';
+                playButton.disabled = true;
+                // If context exists, just start visualization again - implement if needed.
+                // visualize(analyser, dataArray, bufferLength);
+            }
+        }
+    });
+
+
+    function visualize(analyser, dataArray, bufferLength) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function draw() {
+            if (!isPlaying) return;
+            requestAnimationFrame(draw);
+
+            analyser.getByteFrequencyData(dataArray);
+
+            ctx.fillStyle = 'rgba(20, 20, 20, 0.2)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.lineWidth = 3;
+            ctx.strokeStyle = '#FDE047';
+            ctx.beginPath();
+
+            let sliceWidth = canvas.width * 1.0 / bufferLength;
+            let x = 0;
+
+            for (let i = 0; i < bufferLength; i++) {
+                let v = dataArray[i] / 128.0;
+                let y = canvas.height - (v * canvas.height/2);
+
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+
+                x += sliceWidth;
+            }
+
+            ctx.lineTo(canvas.width, canvas.height/2);
+            ctx.stroke();
+        }
+
+        draw();
+    }
+
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+
+</script>
+
+</body>
+</html>

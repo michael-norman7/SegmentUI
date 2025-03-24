@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Gallery - [Painter's Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f5f0ec',
+                        secondary: '#e0cab9',
+                        accent: '#d7b377',
+                        dark: '#333333',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(20px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-down': 'fadeDown 0.5s ease-out forwards',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-left': 'slideLeft 0.7s ease-out forwards',
+                        'slide-up': 'slideUp 0.7s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: theme('colors.primary');
+            color: theme('colors.dark');
+        }
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .artwork-item {
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out;
+        }
+        .artwork-item:hover {
+            transform: scale(1.05);
+        }
+        .artwork-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="sticky top-0 bg-primary z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-semibold text-dark animate-fade-down"><a href="#" class="hover:text-accent">Artisan Gallery</a></div>
+            <div class="hidden md:flex space-x-8 animate-fade-down">
+                <a href="#gallery" class="text-dark hover:text-accent transition-colors duration-300">Gallery</a>
+                <a href="#about" class="text-dark hover:text-accent transition-colors duration-300">About</a>
+                <a href="#contact" class="text-dark hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button type="button" class="text-dark hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent" aria-controls="mobile-menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#gallery" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-secondary hover:text-accent">Gallery</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-secondary hover:text-accent">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-secondary hover:text-accent">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="relative overflow-hidden">
+            <div class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-dark leading-tight animate-slide-left">
+                        Explore the World Through <span class="text-accent">Brushstrokes</span>
+                    </h1>
+                    <p class="mt-4 text-lg text-gray-700 animate-slide-left delay-100">
+                        Welcome to the online gallery of a passionate painter. Discover a curated collection of original artworks, each telling a unique story.
+                    </p>
+                    <a href="#gallery" class="inline-block mt-8 px-8 py-3 bg-accent text-primary font-semibold rounded-md hover:bg-secondary transition-colors duration-300 animate-slide-up delay-200">
+                        View Gallery
+                    </a>
+                </div>
+                <div class="md:w-1/2 relative animate-fade-in">
+                    <div class="rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://picsum.photos/800/600?random=1" alt="Featured Artwork" class="w-full block artwork-image" loading="lazy">
+                    </div>
+                    <div class="absolute bottom-0 right-0 p-4 bg-gradient-to-tr from-primary to-transparent text-right rounded-tl-lg">
+                        <p class="text-sm text-gray-600">Featured Piece</p>
+                        <h3 class="text-lg font-semibold text-dark">Serene Landscape</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-primary"></div>
+        </section>
+
+        <section id="gallery" class="py-20 bg-primary">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-dark mb-12 animate-fade-down">Art Gallery</h2>
+                <div class="artwork-grid animate-fade-in delay-100">
+                    <div class="artwork-item">
+                        <img src="https://picsum.photos/300/400?random=2" alt="Artwork 1" class="artwork-image" loading="lazy">
+                    </div>
+                    <div class="artwork-item">
+                        <img src="https://picsum.photos/300/400?random=3" alt="Artwork 2" class="artwork-image" loading="lazy">
+                    </div>
+                    <div class="artwork-item">
+                        <img src="https://picsum.photos/300/400?random=4" alt="Artwork 3" class="artwork-image" loading="lazy">
+                    </div>
+                    <div class="artwork-item">
+                        <img src="https://picsum.photos/300/400?random=5" alt="Artwork 4" class="artwork-image" loading="lazy">
+                    </div>
+                    <div class="artwork-item">
+                        <img src="https://picsum.photos/300/400?random=6" alt="Artwork 5" class="artwork-image" loading="lazy">
+                    </div>
+                    <div class="artwork-item">
+                        <img src="https://picsum.photos/300/400?random=7" alt="Artwork 6" class="artwork-image" loading="lazy">
+                    </div>
+                    <div class="artwork-item">
+                        <img src="https://picsum.photos/300/400?random=8" alt="Artwork 7" class="artwork-image" loading="lazy">
+                    </div>
+                    <div class="artwork-item">
+                        <img src="https://picsum.photos/300/400?random=9" alt="Artwork 8" class="artwork-image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-secondary">
+            <div class="container mx-auto px-6 md:px-20 flex flex-col md:flex-row items-center justify-around">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-slide-left">
+                    <h2 class="text-3xl font-bold text-primary mb-6">About the Artist</h2>
+                    <p class="text-primary text-lg leading-relaxed">
+                        [Painter's Name] is a contemporary painter known for their evocative landscapes and abstract compositions. With a career spanning over [Number] years, [he/she] has developed a distinctive style characterized by [mention key style elements, e.g., bold brushstrokes, vibrant color palettes, subtle textures].
+                    </p>
+                    <p class="text-primary text-lg leading-relaxed mt-4">
+                        Driven by a passion for capturing the essence of nature and emotion, [Painter's Name]'s work invites viewers to contemplate the beauty and complexity of the world around us. [He/She] has exhibited in galleries across [Regions/Countries] and is collected both privately and publicly.
+                    </p>
+                </div>
+                <div class="md:w-1/3 animate-fade-in">
+                    <div class="rounded-full overflow-hidden shadow-lg">
+                        <img src="https://picsum.photos/400/400?random=10" alt="Painter's Portrait" class="w-full block" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-primary">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-dark mb-12 animate-fade-down">Contact Me</h2>
+                <div class="max-w-md mx-auto animate-slide-up">
+                    <p class="text-lg text-gray-700 mb-8">
+                        For inquiries about purchasing artwork, commissions, or collaborations, please feel free to reach out.
+                    </p>
+                    <div class="space-y-4">
+                        <p class="text-gray-700 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-envelope text-accent"></i>
+                            <span><a href="mailto:info@artisangallery.com" class="hover:text-accent">info@artisangallery.com</a></span>
+                        </p>
+                        <p class="text-gray-700 flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-phone text-accent"></i>
+                            <span>+1 555-123-4567</span>
+                        </p>
+                        <div class="flex justify-center space-x-6 mt-6">
+                            <a href="#" class="text-gray-700 hover:text-accent"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                            <a href="#" class="text-gray-700 hover:text-accent"><i class="fa-brands fa-facebook text-2xl"></i></a>
+                            <a href="#" class="text-gray-700 hover:text-accent"><i class="fa-brands fa-twitter text-2xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark py-8 text-center text-primary">
+        <p>© 2024 Artisan Gallery. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

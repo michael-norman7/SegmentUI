@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veridia Wealth Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-fade-in {
+            animation: fadein 1s ease-in-out forwards;
+            opacity: 0;
+        }
+        @keyframes fadein {
+            to { opacity: 1; }
+        }
+        .bg-gradient-radial {
+            background-image: radial-gradient(circle at center center, rgba(255,255,255,0.2), rgba(255,255,255,0));
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .tilt {
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .tilt:hover {
+            transform: rotateX(10deg) rotateY(10deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+<header class="sticky top-0 z-50 bg-white shadow-md bg-opacity-95 backdrop-blur-sm">
+    <nav class="container mx-auto px-6 py-4 xl:px-0">
+        <div class="flex items-center justify-between">
+            <div class="text-xl font-bold text-blue-600">
+                Veridia Wealth
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="hover:text-blue-600 transition-colors duration-300">Services</a>
+                <a href="#approach" class="hover:text-blue-600 transition-colors duration-300">Approach</a>
+                <a href="#team" class="hover:text-blue-600 transition-colors duration-300">Team</a>
+                <a href="#insights" class="hover:text-blue-600 transition-colors duration-300">Insights</a>
+                <a href="#contact" class="hover:text-blue-600 transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero relative py-24 md:py-32 lg:py-48 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 opacity-25"></div>
+        <div class="container mx-auto px-6 xl:px-0 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                <div class="hero-text animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Navigate Your Financial Future with Clarity and Confidence
+                    </h1>
+                    <p class="text-lg text-gray-700 mb-8">
+                        Personalized wealth management strategies designed to achieve your unique financial goals.
+                    </p>
+                    <div class="space-x-4">
+                        <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+                            Get Started
+                        </a>
+                        <a href="#services" class="inline-block bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-300">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image mt-12 lg:mt-0 animate-fade-in">
+                    <img src="https://picsum.photos/id/1025/800/600" alt="Wealth Management Illustration" class="rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 tilt">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 xl:px-0 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Our Expertise, Your Financial Success</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa fa-chart-line text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Investment Management</h3>
+                    <p class="text-gray-700">Strategic investment portfolios tailored to your risk tolerance and financial objectives.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa fa-piggy-bank text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Retirement Planning</h3>
+                    <p class="text-gray-700">Comprehensive retirement strategies to secure your financial future and enjoy your golden years.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa fa-briefcase text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Estate Planning</h3>
+                    <p class="text-gray-700">Guidance on estate planning to ensure your assets are managed and distributed according to your wishes.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa fa-home text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Real Estate Advisory</h3>
+                    <p class="text-gray-700">Expert advice on real estate investments as part of a diversified wealth strategy.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa fa-hand-holding-usd text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Tax Optimization</h3>
+                    <p class="text-gray-700">Strategies to minimize your tax liabilities and maximize your wealth accumulation.</p>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa fa-graduation-cap text-blue-600 text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Education Planning</h3>
+                    <p class="text-gray-700">Planning and investment solutions to fund your children's or grandchildren's education.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach" class="py-20 parallax" style="background-image: url('https://picsum.photos/id/1044/1600/900');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-6 xl:px-0 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Our Client-Centric Approach</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                <div class="text-white p-6 md:p-8">
+                    <i class="fa fa-user-tie text-blue-300 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Personalized Strategies</h3>
+                    <p>We understand that every client is unique. Our strategies are tailored to your individual circumstances and aspirations.</p>
+                </div>
+                <div class="text-white p-6 md:p-8">
+                    <i class="fa fa-search-dollar text-blue-300 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Transparent Process</h3>
+                    <p>We believe in clear and open communication. You'll always know where your investments stand and why decisions are made.</p>
+                </div>
+                <div class="text-white p-6 md:p-8">
+                    <i class="fa fa-chart-pie text-blue-300 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Long-Term Partnership</h3>
+                    <p>We are committed to building lasting relationships with our clients, guiding you through every stage of your financial journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 xl:px-0 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-16">Meet Our Experienced Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/237/400/300" alt="Team Member 1" class="rounded-t-2xl w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Jane Doe, CFA</h3>
+                        <p class="text-gray-600 mb-4">Chief Investment Officer</p>
+                        <p class="text-gray-700">With over 15 years of experience, Jane leads our investment strategy and portfolio management.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/239/400/300" alt="Team Member 2" class="rounded-t-2xl w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">John Smith, CFP</h3>
+                        <p class="text-gray-600 mb-4">Senior Financial Advisor</p>
+                        <p class="text-gray-700">John specializes in retirement and estate planning, helping clients secure their financial future.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/241/400/300" alt="Team Member 3" class="rounded-t-2xl w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Emily White, MBA</h3>
+                        <p class="text-gray-600 mb-4">Wealth Management Advisor</p>
+                        <p class="text-gray-700">Emily is dedicated to providing personalized financial advice and building strong client relationships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 xl:px-0 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Latest Insights & Market Commentary</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                    <img src="https://picsum.photos/id/300/600/400" alt="Insight 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Navigating Market Volatility</h3>
+                        <p class="text-gray-700 mb-4">Strategies to protect your portfolio during uncertain economic times.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                    <img src="https://picsum.photos/id/302/600/400" alt="Insight 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">The Future of Sustainable Investing</h3>
+                        <p class="text-gray-700 mb-4">Exploring ESG factors and their impact on long-term investment performance.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
+                    <img src="https://picsum.photos/id/304/600/400" alt="Insight 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Optimizing Your Retirement Savings</h3>
+                        <p class="text-gray-700 mb-4">Tips and strategies to maximize your retirement funds and plan for a comfortable future.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-300">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-blue-50">
+        <div class="container mx-auto px-6 xl:px-0 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Let's Discuss Your Financial Goals</h2>
+            <div class="max-w-lg mx-auto bg-white rounded-2xl shadow-xl p-8">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Message</label>
+                        <textarea id="message" rows="4" placeholder="How can we help you?" class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="container mx-auto px-6 xl:px-0 text-center">
+        <div class="mb-4">
+            <p>© 2024 Veridia Wealth Management. All rights reserved.</p>
+        </div>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="hover:text-white"><i class="fab fa-facebook-square text-xl"></i></a>
+            <a href="#" class="hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+            <a href="#" class="hover:text-white"><i class="fab fa-twitter-square text-xl"></i></a>
+        </div>
+        <div class="mt-4 text-sm">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <span class="mx-2">|</span>
+            <a href="#" class="hover:text-white">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        });
+
+        const fadeElements = document.querySelectorAll('.animate-fade-in');
+        fadeElements.forEach((el) => observer.observe(el));
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

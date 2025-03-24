@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neumorphic Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-gray': '#F0F2F5',
+                        'custom-dark-gray': '#D9DDE4',
+                        'custom-text': '#2D3748',
+                        'custom-accent': '#4299E1',
+                    },
+                    boxShadow: {
+                        'neumorphic-light': '6px 6px 12px #D1D9E6, -6px -6px 12px #FAFBFF',
+                        'neumorphic-dark': '4px 4px 8px #D1D9E6 inset, -4px -4px 8px #FAFBFF inset',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F0F2F5;
+            color: #2D3748;
+        }
+    </style>
+</head>
+<body class="bg-custom-gray flex items-center justify-center h-screen">
+    <div class="bg-custom-gray p-10 rounded-3xl shadow-neumorphic-light w-full max-w-md">
+        <h2 class="text-3xl font-bold text-center mb-8 text-custom-text animate__animated animate__fadeInDown">Sign Up</h2>
+        <form id="signupForm" class="space-y-6 animate__animated animate__fadeIn">
+            <div class="space-y-2">
+                <label for="name" class="block text-sm font-semibold text-custom-text">Full Name</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa fa-user text-custom-accent"></i>
+                    </div>
+                    <input type="text" id="name" placeholder="Your Name" class="py-3 pl-10 pr-4 w-full rounded-xl shadow-neumorphic-dark bg-custom-gray focus:outline-none focus:ring-2 focus:ring-custom-accent transition-shadow duration-300" required>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label for="email" class="block text-sm font-semibold text-custom-text">Email Address</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa fa-envelope text-custom-accent"></i>
+                    </div>
+                    <input type="email" id="email" placeholder="Your Email" class="py-3 pl-10 pr-4 w-full rounded-xl shadow-neumorphic-dark bg-custom-gray focus:outline-none focus:ring-2 focus:ring-custom-accent transition-shadow duration-300" required>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label for="password" class="block text-sm font-semibold text-custom-text">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa fa-lock text-custom-accent"></i>
+                    </div>
+                    <input type="password" id="password" placeholder="Password" class="py-3 pl-10 pr-4 w-full rounded-xl shadow-neumorphic-dark bg-custom-gray focus:outline-none focus:ring-2 focus:ring-custom-accent transition-shadow duration-300" required>
+                </div>
+            </div>
+            <div class="space-y-2">
+                <label for="confirmPassword" class="block text-sm font-semibold text-custom-text">Confirm Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa fa-lock text-custom-accent"></i>
+                    </div>
+                    <input type="password" id="confirmPassword" placeholder="Confirm Password" class="py-3 pl-10 pr-4 w-full rounded-xl shadow-neumorphic-dark bg-custom-gray focus:outline-none focus:ring-2 focus:ring-custom-accent transition-shadow duration-300" required>
+                </div>
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-xl bg-custom-accent text-white font-semibold shadow-neumorphic-light hover:shadow-neumorphic-dark focus:outline-none focus:ring-2 focus:ring-custom-accent active:shadow-neumorphic-dark transition-all duration-300">
+                Sign Up
+            </button>
+        </form>
+        <div id="successMessage" class="mt-6 text-green-500 text-center font-semibold hidden animate__animated animate__fadeIn">
+            Signup Successful!
+        </div>
+        <div id="errorMessage" class="mt-6 text-red-500 text-center font-semibold hidden animate__animated animate__fadeIn">
+        </div>
+        <div class="mt-4 text-center">
+            <p class="text-sm text-custom-text">Already have an account? <a href="#" class="text-custom-accent font-semibold hover:underline">Log in</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorMessageDiv = document.getElementById('errorMessage');
+            const successMessageDiv = document.getElementById('successMessage');
+
+            if (password !== confirmPassword) {
+                errorMessageDiv.textContent = "Passwords do not match.";
+                errorMessageDiv.classList.remove('hidden');
+                successMessageDiv.classList.add('hidden');
+                return;
+            }
+
+            successMessageDiv.classList.remove('hidden');
+            errorMessageDiv.classList.add('hidden');
+            this.reset();
+
+            setTimeout(() => {
+                successMessageDiv.classList.add('hidden');
+            }, 3000);
+        });
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</body>
+</html>

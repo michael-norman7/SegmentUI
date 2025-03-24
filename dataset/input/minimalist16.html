@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#115e59',
+                        'accent': '#34d399',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        slideInLeft: {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slideOutLeft: {
+                            '0%': { transform: 'translateX(0)', opacity: '1' },
+                            '100%': { transform: 'translateX(-100%)', opacity: '0' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-left': 'slideInLeft 0.3s ease-out forwards',
+                        'slide-out-left': 'slideOutLeft 0.3s ease-in forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .sidebar-expanded {
+            animation: slideInLeft 0.3s ease-out forwards;
+        }
+
+        .sidebar-collapsed {
+            animation: slideOutLeft 0.3s ease-in forwards;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+<header class="sticky top-0 bg-neutral/90 backdrop-blur-sm z-50 shadow-md">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <a href="#" class="font-bold text-xl text-primary">Minimalist Blog</a>
+        <button id="sidebar-toggle" class="lg:hidden text-dark hover:text-primary focus:outline-none">
+            <i class="fa-solid fa-bars fa-xl"></i>
+        </button>
+        <nav class="hidden lg:flex space-x-6">
+            <a href="#" class="hover:text-primary">Home</a>
+            <a href="#" class="hover:text-primary">Categories</a>
+            <a href="#" class="hover:text-primary">About</a>
+            <a href="#" class="hover:text-primary">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container mx-auto px-4 lg:px-8 mt-16 lg:mt-24 flex">
+
+    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 h-full lg:h-auto w-72 bg-neutral lg:bg-transparent shadow-lg lg:shadow-none p-6 lg:p-0 transform -translate-x-full lg:translate-x-0 lg:col-span-1 transition-transform lg:transition-none z-40">
+        <div class="lg:hidden absolute top-4 right-4">
+            <button id="sidebar-close" class="text-dark hover:text-primary focus:outline-none">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+            </button>
+        </div>
+        <div class="lg:px-6">
+            <h3 class="font-bold text-lg mb-4">Categories</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="block hover:text-primary">Technology</a></li>
+                <li><a href="#" class="block hover:text-primary">Design</a></li>
+                <li><a href="#" class="block hover:text-primary">Travel</a></li>
+                <li><a href="#" class="block hover:text-primary">Lifestyle</a></li>
+                <li><a href="#" class="block hover:text-primary">Personal</a></li>
+            </ul>
+            <hr class="my-6">
+            <h3 class="font-bold text-lg mb-4">Follow</h3>
+            <div class="flex space-x-4">
+                <a href="#" class="text-dark hover:text-primary"><i class="fa-brands fa-facebook-square fa-xl"></i></a>
+                <a href="#" class="text-dark hover:text-primary"><i class="fa-brands fa-twitter-square fa-xl"></i></a>
+                <a href="#" class="text-dark hover:text-primary"><i class="fa-brands fa-instagram-square fa-xl"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 lg:ml-72">
+        <article class="mb-12">
+            <img src="https://picsum.photos/1200/600" alt="Blog Post Image" class="rounded-lg w-full mb-6 shadow-md">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">The Beauty of Minimalist Design in Blogging</h2>
+                <p class="text-gray-600 mb-3">Published on <time datetime="2024-01-28">January 28, 2024</time> by <a href="#" class="text-primary hover:underline">John Doe</a></p>
+                <div class="prose prose-lg max-w-none">
+                    <p>Minimalism is not just a design trend; it's a philosophy that emphasizes simplicity and functionality. In the realm of blogging, minimalist design can significantly enhance user experience, making content more accessible and engaging. This post explores the principles of minimalist design and how they can be applied to create a blog that is both beautiful and effective.</p>
+                    <h3>Why Minimalism Matters</h3>
+                    <p>In a world saturated with information, clarity is key. A minimalist blog strips away unnecessary clutter, allowing readers to focus on what truly matters: the content. By reducing visual distractions, you improve readability and ensure that your message is not lost in a sea of visual noise.</p>
+                    <ul>
+                        <li><strong>Improved Readability:</strong> Clean typography and ample whitespace make text easier to read.</li>
+                        <li><strong>Faster Loading Times:</strong> Fewer design elements mean faster page loads, crucial for retaining readers.</li>
+                        <li><strong>Enhanced Focus:</strong> Minimal distractions help readers concentrate on the content.</li>
+                        <li><strong>Mobile-Friendly:</strong> Simplicity translates well to mobile devices, ensuring a consistent experience across platforms.</li>
+                    </ul>
+                    <h3>Key Elements of Minimalist Blog Design</h3>
+                    <p>Creating a minimalist blog involves careful consideration of several design elements:</p>
+                    <ol>
+                        <li><strong>Whitespace:</strong> Generous use of whitespace is paramount. It provides visual breathing room and improves content hierarchy.</li>
+                        <li><strong>Typography:</strong> Choose a legible and clean font. Limit the number of font families to maintain consistency.</li>
+                        <li><strong>Color Palette:</strong> Opt for a restrained color palette, often featuring neutral tones with an accent color.</li>
+                        <li><strong>Imagery:</strong> Use high-quality, relevant images sparingly. Let the content take center stage.</li>
+                        <li><strong>Navigation:</strong> Keep navigation simple and intuitive. A hidden sidebar menu is an excellent minimalist approach for smaller screens.</li>
+                    </ol>
+                    <h3>Implementing a Hidden Sidebar Menu</h3>
+                    <p>A hidden sidebar menu is a hallmark of minimalist design, especially effective for responsive layouts. It keeps navigation readily available without cluttering the main content area on larger screens, and collapses neatly on smaller screens, accessible via a toggle button.</p>
+                    <p>To implement this, we use CSS to initially hide the sidebar off-screen and JavaScript to toggle its visibility when the hamburger icon is clicked. Transitions and animations can be added for a smooth and engaging user experience.</p>
+                    <p>Minimalist design in blogging is about intention and purpose. Every element should serve a function, contributing to the overall goal of delivering content effectively and beautifully. By embracing minimalism, you can create a blog that stands out for its clarity, elegance, and user-friendliness, ultimately fostering a deeper connection with your audience.</p>
+                    <figure>
+                        <img src="https://picsum.photos/800/400" alt="Example Image" class="rounded-lg shadow-md">
+                        <figcaption>Example of Minimalist Design Principles</figcaption>
+                    </figure>
+                    <p>This is just the beginning. Explore further, experiment with different layouts, and discover the minimalist style that best represents your blog's personality and content. The journey towards minimalism is a continuous refinement, always aiming for less but better.</p>
+                </div>
+            </div>
+        </article>
+
+        <div class="max-w-3xl mx-auto mb-12">
+            <h3 class="text-xl font-bold mb-4">Related Posts</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/400/200" alt="Related Post 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold mb-2"><a href="#" class="hover:text-primary">Post Title One</a></h4>
+                        <p class="text-gray-600 text-sm">Short excerpt from post one...</p>
+                    </div>
+                </div>
+                <div class="rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/400/201" alt="Related Post 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold mb-2"><a href="#" class="hover:text-primary">Post Title Two</a></h4>
+                        <p class="text-gray-600 text-sm">Short excerpt from post two...</p>
+                    </div>
+                </div>
+                <div class="rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/400/202" alt="Related Post 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h4 class="font-bold mb-2"><a href="#" class="hover:text-primary">Post Title Three</a></h4>
+                        <p class="text-gray-600 text-sm">Short excerpt from post three...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+<footer class="bg-dark text-neutral py-12">
+    <div class="container mx-auto px-4 text-center">
+        <p>© 2024 Minimalist Blog. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarClose = document.getElementById('sidebar-close');
+    const sidebar = document.getElementById('sidebar');
+    let isSidebarOpen = false;
+
+    sidebarToggle.addEventListener('click', () => {
+        if (!isSidebarOpen) {
+            sidebar.classList.remove('translate-x-full');
+            sidebar.classList.add('sidebar-expanded');
+            sidebar.classList.remove('sidebar-collapsed');
+            isSidebarOpen = true;
+        }
+    });
+
+    sidebarClose.addEventListener('click', () => {
+        if (isSidebarOpen) {
+            sidebar.classList.add('translate-x-full');
+            sidebar.classList.remove('sidebar-expanded');
+            sidebar.classList.add('sidebar-collapsed');
+            isSidebarOpen = false;
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (isSidebarOpen && !sidebar.contains(event.target) && !sidebarToggle.contains(event.target) && window.innerWidth < 1024) {
+            sidebar.classList.add('translate-x-full');
+            sidebar.classList.remove('sidebar-expanded');
+            sidebar.classList.add('sidebar-collapsed');
+            isSidebarOpen = false;
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            sidebar.classList.remove('translate-x-full');
+            sidebar.classList.remove('sidebar-expanded');
+            sidebar.classList.remove('sidebar-collapsed');
+            isSidebarOpen = false;
+        } else if (isSidebarOpen) {
+            sidebar.classList.remove('translate-x-full');
+            sidebar.classList.add('sidebar-expanded');
+            sidebar.classList.remove('sidebar-collapsed');
+        }
+    });
+</script>
+
+</body>
+</html>

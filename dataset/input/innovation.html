@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Law Firm - Protecting Your Technological Advancements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#115e59',
+                        'accent': '#38bdf8',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'fade-out': {
+                            '0%': { opacity: '1' },
+                            '100%': { opacity: '0' },
+                        },
+                        'pulse-fast': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                        'slide-in-left': 'slide-in-left 0.7s ease-out forwards',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'fade-out': 'fade-out 0.3s ease-in forwards',
+                        'pulse-fast': 'pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .bg-gradient-radial {
+            background-image: radial-gradient(circle at center center, rgba(15, 118, 110, 0.05), transparent 50%);
+        }
+        .animate-delay-100 {
+            animation-delay: 100ms;
+        }
+        .animate-delay-200 {
+            animation-delay: 200ms;
+        }
+        .animate-delay-300 {
+            animation-delay: 300ms;
+        }
+    </style>
+</head>
+<body class="bg-neutral font-inter antialiased">
+
+<header class="sticky top-0 z-50 bg-white shadow-md transition-shadow duration-300">
+    <nav class="container mx-auto px-6 py-4 xl:px-0">
+        <div class="flex items-center justify-between">
+            <div class="text-xl font-bold text-primary">
+                <a href="/" class="hover:text-secondary transition-colors duration-300">Innovation Law</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-primary transition-colors duration-300">About Us</a>
+                <a href="#services" class="hover:text-primary transition-colors duration-300">Services</a>
+                <a href="#attorneys" class="hover:text-primary transition-colors duration-300">Attorneys</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl text-dark hover:text-primary transition-colors duration-300"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-neutral rounded-md">About Us</a>
+            <a href="#services" class="block py-2 px-4 text-sm hover:bg-neutral rounded-md">Services</a>
+            <a href="#attorneys" class="block py-2 px-4 text-sm hover:bg-neutral rounded-md">Attorneys</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-neutral rounded-md">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero relative bg-gradient-radial overflow-hidden pt-24 pb-16 md:pb-24">
+        <div class="container mx-auto px-6 xl:px-0">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="hero-text lg:order-1 animate-slide-in-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6">
+                        Protecting the Future of Innovation.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Navigating the complexities of patent law to secure your technological advancements. Expert legal counsel for innovators and businesses.
+                    </p>
+                    <div class="space-x-4">
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                            Get Started <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#services" class="inline-flex items-center px-4 py-2 border border-primary text-base font-medium rounded-md text-primary hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image relative animate-slide-in-right">
+                    <img src="https://picsum.photos/id/102/800/600" alt="Abstract technology image" class="rounded-xl shadow-2xl" />
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-neutral to-transparent"></div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 xl:px-0">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">About Innovation Law Firm</h2>
+                <p class="text-gray-600 text-lg">
+                    We are a dedicated team of patent attorneys specializing in technology and innovation. Our mission is to empower inventors and businesses by providing strategic and effective patent legal services.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in animate-delay-100">
+                    <i class="fa fa-landmark text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Deep Expertise</h3>
+                    <p class="text-gray-500">Specialized knowledge in technology patent law across various industries.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in animate-delay-200">
+                    <i class="fa fa-lightbulb text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Strategic Approach</h3>
+                    <p class="text-gray-500">Tailored patent strategies to align with your business goals and maximize impact.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in animate-delay-300">
+                    <i class="fa fa-shield-halved text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Proven Results</h3>
+                    <p class="text-gray-500">Track record of successfully securing and defending patents for our clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 xl:px-0">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Services</h2>
+                <p class="text-gray-600 text-lg">
+                    Comprehensive patent legal services to guide you through every step of the patent process.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-file-contract text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Patent Prosecution</h3>
+                    <p class="text-gray-500">Drafting, filing, and prosecuting patent applications to secure patent grants.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-semibold mt-4 inline-block transition-colors duration-300">Learn more <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-scale-balanced text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Patent Litigation</h3>
+                    <p class="text-gray-500">Representing clients in patent disputes, enforcement, and defense.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-semibold mt-4 inline-block transition-colors duration-300">Learn more <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-magnifying-glass text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Patent Search & Analysis</h3>
+                    <p class="text-gray-500">Conducting thorough patent searches and providing strategic analysis.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-semibold mt-4 inline-block transition-colors duration-300">Learn more <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-comments-dollar text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">IP Strategy & Consulting</h3>
+                    <p class="text-gray-500">Developing comprehensive IP strategies and providing expert consulting.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-semibold mt-4 inline-block transition-colors duration-300">Learn more <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-globe text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">International Patent Filings</h3>
+                    <p class="text-gray-500">Assisting with international patent protection and global portfolio management.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-semibold mt-4 inline-block transition-colors duration-300">Learn more <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-handshake-angle text-3xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Licensing & Agreements</h3>
+                    <p class="text-gray-500">Negotiating and drafting licensing agreements and IP-related contracts.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-semibold mt-4 inline-block transition-colors duration-300">Learn more <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="attorneys" class="py-20 bg-white">
+        <div class="container mx-auto px-6 xl:px-0">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Meet Our Attorneys</h2>
+                <p class="text-gray-600 text-lg">
+                    Our team of experienced patent attorneys is dedicated to providing exceptional legal services.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <img src="https://picsum.photos/id/25/300/300" alt="Attorney 1" class="rounded-full w-48 h-48 mx-auto mb-4 shadow-md" />
+                    <h3 class="text-xl font-semibold text-dark mb-1">Dr. Emily Carter</h3>
+                    <p class="text-gray-500 mb-2">Ph.D., Lead Patent Attorney</p>
+                    <p class="text-sm text-gray-600">Expertise in Biotechnology and Pharmaceutical Patents.</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/id/40/300/300" alt="Attorney 2" class="rounded-full w-48 h-48 mx-auto mb-4 shadow-md" />
+                    <h3 class="text-xl font-semibold text-dark mb-1">Michael Rodriguez</h3>
+                    <p class="text-gray-500 mb-2">J.D., Senior Patent Attorney</p>
+                    <p class="text-sm text-gray-600">Specializing in Software and Electrical Engineering Patents.</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/id/50/300/300" alt="Attorney 3" class="rounded-full w-48 h-48 mx-auto mb-4 shadow-md" />
+                    <h3 class="text-xl font-semibold text-dark mb-1">Sophia Lee</h3>
+                    <p class="text-gray-500 mb-2">M.S., Patent Attorney</p>
+                    <p class="text-sm text-gray-600">Focus on Mechanical and Aerospace Engineering Patents.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 xl:px-0">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Client Testimonials</h2>
+                <p class="text-gray-600 text-lg">
+                    Hear from our satisfied clients about their experiences with Innovation Law Firm.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <div class="mb-4">
+                        <i class="fa fa-quote-left text-2xl text-primary opacity-50"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "Innovation Law Firm provided exceptional service in securing our patent. Their expertise and attention to detail were invaluable throughout the process."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/id/60/50/50" alt="Client 1" class="rounded-full w-12 h-12 mr-3" />
+                        <div>
+                            <p class="font-semibold text-dark">John Smith</p>
+                            <p class="text-gray-500 text-sm">CEO, Tech Company</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <div class="mb-4">
+                        <i class="fa fa-quote-left text-2xl text-primary opacity-50"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        "We highly recommend Innovation Law Firm for their strategic approach to patent law. They truly understand the needs of innovative businesses."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/id/70/50/50" alt="Client 2" class="rounded-full w-12 h-12 mr-3" />
+                        <div>
+                            <p class="font-semibold text-dark">Jane Doe</p>
+                            <p class="text-gray-500 text-sm">Founder, Startup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 xl:px-0">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Contact Us</h2>
+                <p class="text-gray-600 text-lg">
+                    Reach out to us to discuss your patent needs and how we can assist you.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <img src="https://picsum.photos/id/90/600/400" alt="Contact Office" class="rounded-xl shadow-2xl" />
+                </div>
+                <div class="lg:pl-12">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                            <div class="mt-1">
+                                <input type="text" id="name" class="shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your Name">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                            <div class="mt-1">
+                                <input type="email" id="email" class="shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md" placeholder="you@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <div class="mt-1">
+                                <textarea id="message" rows="4" class="shadow-sm focus:ring-primary focus:border-primary block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Your Message"></textarea>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                                Send Message <i class="fa fa-paper-plane ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-dark text-neutral py-8">
+    <div class="container mx-auto px-6 xl:px-0 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm">© 2024 Innovation Law Firm. All rights reserved.</p>
+        <div class="mt-4 md:mt-0 space-x-4">
+            <a href="#" class="text-sm hover:text-primary transition-colors duration-300">Privacy Policy</a>
+            <a href="#" class="text-sm hover:text-primary transition-colors duration-300">Terms of Service</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            if (this.getAttribute('href') === '#') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('shadow-lg');
+            header.classList.remove('shadow-md');
+        } else {
+            header.classList.add('shadow-md');
+            header.classList.remove('shadow-lg');
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPulse - Enterprise Cybersecurity Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="output.css">
+    <style>
+        @layer utilities {
+            @utility container {
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+            }
+            @utility gradient-text {
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter antialiased">
+
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <nav class="container flex justify-between items-center py-4">
+        <a href="/" class="text-2xl font-bold gradient-text from-blue-600 to-purple-600 bg-gradient-to-r">CyberPulse</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#solutions" class="hover:text-blue-600 transition-colors">Solutions</a>
+            <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
+            <a href="#resources" class="hover:text-blue-600 transition-colors">Resources</a>
+            <a href="#company" class="hover:text-blue-600 transition-colors">Company</a>
+            <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button type="button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="hero relative py-24 overflow-hidden">
+        <div class="container flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 md:pr-16 mb-10 md:mb-0">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold gradient-text from-blue-600 to-purple-600 bg-gradient-to-r mb-6">
+                     защитите свой бизнес с помощью кибербезопасности экспертного уровня
+                </h1>
+                <p class="text-lg text-gray-700 mb-8">
+                    Обеспечьте надежную защиту вашей цифровой инфраструктуры с помощью передовых решений безопасности CyberPulse.
+                </p>
+                <div class="flex space-x-4">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                        Узнать больше
+                    </button>
+                    <button class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors">
+                        Связаться с нами
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://picsum.photos/600/400" alt="Cybersecurity Illustration" class="rounded-xl shadow-2xl" />
+                <div class="absolute -bottom-10 left-10 bg-white p-6 rounded-lg shadow-xl animate-slide-in-right">
+                    <p class="text-xl font-semibold mb-2">Угроза обнаружена!</p>
+                    <p class="text-gray-600 text-sm">Попытка несанкционированного доступа заблокирована.</p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-gray-50 to-transparent"></div>
+    </section>
+
+    <section id="solutions" class="py-20 bg-gray-100">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Наши решения для кибербезопасности</h2>
+                <p class="text-gray-600 text-lg">Комплексные решения для защиты от современных киберугроз.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-shield-alt fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Защита от угроз</h3>
+                    <p class="text-gray-600">Обнаружение и нейтрализация угроз в режиме реального времени.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-green-600 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-lock fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Безопасность данных</h3>
+                    <p class="text-gray-600">Шифрование и защита конфиденциальных данных.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-purple-600 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-cloud fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Облачная безопасность</h3>
+                    <p class="text-gray-600">Защита облачных сред и приложений.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-red-600 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-fire-alt fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Реагирование на инциденты</h3>
+                    <p class="text-gray-600">Быстрое реагирование и восстановление после инцидентов.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-yellow-600 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-user-shield fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Обучение безопасности</h3>
+                    <p class="text-gray-600">Повышение осведомленности сотрудников о безопасности.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-8 hover:shadow-lg transition-shadow">
+                    <div class="w-12 h-12 bg-teal-600 text-white rounded-lg flex items-center justify-center mb-4">
+                        <i class="fa fa-search fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Оценка уязвимостей</h3>
+                    <p class="text-gray-600">Регулярное сканирование и оценка уязвимостей.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Наши услуги</h2>
+                <p class="text-gray-600 text-lg">Персонализированные услуги кибербезопасности для вашего бизнеса.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <img src="https://picsum.photos/400/300" alt="Services Illustration" class="rounded-xl shadow-2xl mb-6" />
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Управляемые услуги безопасности</h3>
+                    <p class="text-gray-700 mb-6">
+                        Полное управление безопасностью, мониторинг 24/7 и экспертная поддержка.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>Мониторинг безопасности 24/7</li>
+                        <li>Регулярные отчеты о безопасности</li>
+                        <li>Экспертная поддержка и консультации</li>
+                        <li>Обновление систем безопасности</li>
+                    </ul>
+                    <button class="mt-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                        Подробнее об услугах
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="py-20 bg-gray-100">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Ресурсы и знания</h2>
+                <p class="text-gray-600 text-lg">Будьте в курсе последних новостей и знаний в области кибербезопасности.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/400/200" alt="Resource 1" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Блог кибербезопасности</h3>
+                        <p class="text-gray-600 mb-4">Последние статьи, аналитика и советы экспертов.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Читать блог</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/401/200" alt="Resource 2" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Электронные книги и руководства</h3>
+                        <p class="text-gray-600 mb-4">Глубокие руководства по ключевым темам безопасности.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Скачать руководства</a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://picsum.photos/402/200" alt="Resource 3" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Вебинары и мероприятия</h3>
+                        <p class="text-gray-600 mb-4">Присоединяйтесь к нашим онлайн и оффлайн мероприятиям.</p>
+                        <a href="#" class="text-blue-600 hover:underline">Узнать о мероприятиях</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="company" class="py-20">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">О компании CyberPulse</h2>
+                <p class="text-gray-600 text-lg">Узнайте больше о нашей миссии и команде.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Наша миссия</h3>
+                    <p class="text-gray-700 mb-6">
+                        Мы стремимся сделать цифровой мир безопаснее для каждого бизнеса. Наша миссия заключается в предоставлении передовых решений кибербезопасности, которые защищают наших клиентов от постоянно развивающихся угроз.
+                    </p>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Наша команда</h3>
+                    <p class="text-gray-700 mb-6">
+                        Наша команда состоит из опытных профессионалов в области кибербезопасности, которые увлечены своей работой и стремятся к совершенству. Мы постоянно совершенствуем свои навыки и знания, чтобы предоставлять лучшие решения для наших клиентов.
+                    </p>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/403/300" alt="Company Team" class="rounded-xl shadow-2xl" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Связаться с нами</h2>
+                <p class="text-gray-600 text-lg">Готовы начать защищать свой бизнес? Свяжитесь с нами сегодня.</p>
+            </div>
+            <div class="max-w-lg mx-auto bg-white rounded-xl shadow-md p-8">
+                <form>
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Имя</label>
+                        <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ваше имя">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                        <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ваш email">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Сообщение</label>
+                        <textarea id="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Ваше сообщение"></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                            Отправить сообщение
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-900 text-gray-300 py-12">
+    <div class="container text-center">
+        <p>© 2024 CyberPulse. Все права защищены.</p>
+        <p class="mt-4">
+            <a href="#" class="hover:text-white">Условия использования</a> | <a href="#" class="hover:text-white">Политика конфиденциальности</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.hero, #solutions, #services, #resources, #company, #contact').forEach(section => {
+            observer.observe(section);
+        });
+    });
+</script>
+
+</body>
+</html>

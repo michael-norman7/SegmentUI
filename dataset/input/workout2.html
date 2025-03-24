@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neu-background': '#f0f2f5',
+                        'neu-primary': '#e0e5ec',
+                        'neu-secondary': '#a3b1c6',
+                        'neu-text': '#334155',
+                        'neu-accent': '#6b7280',
+                    },
+                    boxShadow: {
+                        'neu-inner': 'inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff',
+                        'neu-outer': '3px 3px 7px #b8b9be, -5px -5px 10px #fff',
+                        'neu-outer-sm': '2px 2px 4px #b8b9be, -3px -3px 6px #fff',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '128': '32rem',
+                    }
+                },
+                fontFamily: {
+                    'poppins': ['Poppins', 'sans-serif'],
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .neumorphic-card {
+            background-color: #f0f2f5;
+            box-shadow: 3px 3px 7px #b8b9be, -5px -5px 10px #fff;
+            border-radius: 12px;
+        }
+        .neumorphic-btn {
+            background-color: #e0e5ec;
+            box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+            border-radius: 8px;
+        }
+        .neumorphic-btn:hover {
+            box-shadow: 3px 3px 7px #b8b9be, -5px -5px 10px #fff;
+        }
+        .neumorphic-input {
+            background-color: #f0f2f5;
+            box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+            border-radius: 8px;
+        }
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background-color: #f0f2f5;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background-color: #a3b1c6;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+            background-color: #6b7280;
+        }
+    </style>
+</head>
+<body class="bg-neu-background text-neu-text">
+    <div class="container mx-auto px-4 md:px-8 lg:px-16 py-10">
+        <header class="mb-8">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-semibold">Workout Dashboard</h1>
+                <div class="space-x-4">
+                    <button class="neumorphic-btn px-4 py-2 text-sm focus:outline-none transition-shadow duration-200 hover:shadow-neu-outer-sm"><i class="fa-solid fa-calendar-week"></i> Schedule</button>
+                    <button class="neumorphic-btn px-4 py-2 text-sm focus:outline-none transition-shadow duration-200 hover:shadow-neu-outer-sm"><i class="fa-solid fa-dumbbell"></i> Logs</button>
+                    <button class="neumorphic-btn px-4 py-2 text-sm focus:outline-none transition-shadow duration-200 hover:shadow-neu-outer-sm"><i class="fa-solid fa-chart-line"></i> Progress</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <section class="lg:col-span-2">
+                <div class="neumorphic-card p-6 mb-6">
+                    <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-calendar-day mr-2"></i> Today's Workout</h2>
+                    <div class="overflow-x-auto scrollbar-thin">
+                        <table class="min-w-full table-fixed">
+                            <thead class="text-left">
+                                <tr>
+                                    <th class="pb-2 w-1/4">Exercise</th>
+                                    <th class="pb-2 w-1/4">Sets</th>
+                                    <th class="pb-2 w-1/4">Reps</th>
+                                    <th class="pb-2 w-1/4">Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-neu-primary transition-colors duration-200">
+                                    <td class="py-2">Bench Press</td>
+                                    <td class="py-2">3</td>
+                                    <td class="py-2">8-12</td>
+                                    <td class="py-2">150 lbs</td>
+                                </tr>
+                                <tr class="hover:bg-neu-primary transition-colors duration-200">
+                                    <td class="py-2">Squats</td>
+                                    <td class="py-2">4</td>
+                                    <td class="py-2">10-15</td>
+                                    <td class="py-2">225 lbs</td>
+                                </tr>
+                                <tr class="hover:bg-neu-primary transition-colors duration-200">
+                                    <td class="py-2">Pull-ups</td>
+                                    <td class="py-2">3</td>
+                                    <td class="py-2">As many as possible</td>
+                                    <td class="py-2">Bodyweight</td>
+                                </tr>
+                                <tr class="hover:bg-neu-primary transition-colors duration-200">
+                                    <td class="py-2">Dumbbell Rows</td>
+                                    <td class="py-2">3</td>
+                                    <td class="py-2">12-15</td>
+                                    <td class="py-2">50 lbs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="neumorphic-card p-6 mb-6">
+                    <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-list-check mr-2"></i> Exercise Log</h2>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <input type="date" class="neumorphic-input p-2 focus:outline-none">
+                        <select class="neumorphic-input p-2 focus:outline-none">
+                            <option>All Exercises</option>
+                            <option>Bench Press</option>
+                            <option>Squats</option>
+                            <option>Pull-ups</option>
+                            <option>Dumbbell Rows</option>
+                        </select>
+                    </div>
+                    <div class="overflow-x-auto scrollbar-thin">
+                        <table class="min-w-full table-fixed">
+                            <thead class="text-left">
+                                <tr>
+                                    <th class="pb-2 w-1/5">Date</th>
+                                    <th class="pb-2 w-1/5">Exercise</th>
+                                    <th class="pb-2 w-1/5">Sets</th>
+                                    <th class="pb-2 w-1/5">Reps</th>
+                                    <th class="pb-2 w-1/5">Weight</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-neu-primary transition-colors duration-200">
+                                    <td class="py-2">2024-07-15</td>
+                                    <td class="py-2">Bench Press</td>
+                                    <td class="py-2">3</td>
+                                    <td class="py-2">10</td>
+                                    <td class="py-2">155 lbs</td>
+                                </tr>
+                                <tr class="hover:bg-neu-primary transition-colors duration-200">
+                                    <td class="py-2">2024-07-15</td>
+                                    <td class="py-2">Squats</td>
+                                    <td class="py-2">4</td>
+                                    <td class="py-2">12</td>
+                                    <td class="py-2">230 lbs</td>
+                                </tr>
+                                <tr class="hover:bg-neu-primary transition-colors duration-200">
+                                    <td class="py-2">2024-07-14</td>
+                                    <td class="py-2">Pull-ups</td>
+                                    <td class="py-2">3</td>
+                                    <td class="py-2">8, 7, 6</td>
+                                    <td class="py-2">Bodyweight</td>
+                                </tr>
+                                <tr class="hover:bg-neu-primary transition-colors duration-200">
+                                    <td class="py-2">2024-07-14</td>
+                                    <td class="py-2">Dumbbell Rows</td>
+                                    <td class="py-2">3</td>
+                                    <td class="py-2">15</td>
+                                    <td class="py-2">55 lbs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="lg:col-span-1">
+                <div class="neumorphic-card p-6 mb-6">
+                    <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-chart-line mr-2"></i> Progress Chart</h2>
+                    <img src="https://picsum.photos/200/150" alt="Progress Chart" class="w-full rounded-md">
+                </div>
+
+                <div class="neumorphic-card p-6 mb-6">
+                    <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-fire mr-2"></i> Workout Summary</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-semibold">Workouts Completed</p>
+                            <p class="text-lg">35</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Hours Trained</p>
+                            <p class="text-lg">52 hrs</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Avg Workout Time</p>
+                            <p class="text-lg">1.5 hrs</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">Longest Streak</p>
+                            <p class="text-lg">12 days</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neumorphic-card p-6">
+                    <h2 class="text-xl font-semibold mb-4"><i class="fa-solid fa-gear mr-2"></i> Settings</h2>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <label class="block text-sm font-medium">Dark Mode</label>
+                            <button class="neumorphic-btn relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" role="switch" aria-checked="false" aria-labelledby="dark-mode-label">
+                                <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition-transform duration-200 ease-in-out translate-x-0"></span>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <label class="block text-sm font-medium">Notifications</label>
+                            <button class="neumorphic-btn relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" role="switch" aria-checked="true" aria-labelledby="notifications-label">
+                                <span class="pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition-transform duration-200 ease-in-out translate-x-5"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+        </main>
+    </div>
+
+    <footer class="text-center py-4 text-sm text-neu-secondary">
+        <p>© 2024 Workout Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.neumorphic-btn[role="switch"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const span = button.querySelector('span');
+                let isChecked = button.getAttribute('aria-checked') === 'true';
+                isChecked = !isChecked;
+                button.setAttribute('aria-checked', isChecked);
+                if (isChecked) {
+                    span.classList.remove('translate-x-0');
+                    span.classList.add('translate-x-5');
+                } else {
+                    span.classList.remove('translate-x-5');
+                    span.classList.add('translate-x-0');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

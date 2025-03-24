@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Diary Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#9ca3af',
+                        accent: '#e0f2fe',
+                        softWhite: '#f8fafc',
+                        darkText: '#1e293b',
+                        softBlue: '#dbeafe',
+                        graphite: '#4b5563',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        soft: '6px 6px 12px #d1d5db, -6px -6px 12px #ffffff',
+                        softInset: 'inset 6px 6px 10px #d1d5db, inset -6px -6px 10px #ffffff',
+                    },
+                    keyframes: {
+                        'pulse-soft': '0% { transform: scale(1); } 50% { transform: scale(1.05); box-shadow: 6px 6px 12px #d1d5db, -6px -6px 12px #ffffff; } 100% { transform: scale(1); }',
+                        'slide-up': '0% { transform: translateY(20px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; }',
+                        'fade-in': '0% { opacity: 0; } 100% { opacity: 1; }',
+                    },
+                    animation: {
+                        'pulse-soft': 'pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .radial-gradient {
+            background: radial-gradient(60% 60% at 50% 50%, rgba(219, 234, 254, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-softWhite font-poppins dark:bg-graphite dark:text-softWhite no-scrollbar">
+    <div class="container mx-auto p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-16 radial-gradient">
+        <header class="mb-8 animate-slide-up">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-2xl font-bold text-darkText dark:text-softWhite">Mood Dashboard</h1>
+                </div>
+                <div class="space-x-4 hidden md:block">
+                    <button class="px-4 py-2 rounded-lg bg-softWhite shadow-soft hover:shadow-softInset focus:outline-none transition-shadow duration-200">Today</button>
+                    <button class="px-4 py-2 rounded-lg bg-softWhite shadow-soft hover:shadow-softInset focus:outline-none transition-shadow duration-200">Week</button>
+                    <button class="px-4 py-2 rounded-lg bg-softWhite shadow-soft hover:shadow-softInset focus:outline-none transition-shadow duration-200">Month</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+
+            <section class="bg-softWhite rounded-2xl shadow-soft p-6 md:p-8 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl font-semibold text-darkText dark:text-softWhite mb-4"><i class="fa-solid fa-chart-line mr-2 text-primary"></i>Mood Trend</h2>
+                    <div class="h-48 bg-softBlue rounded-xl shadow-softInset mb-4">
+                        <img src="https://picsum.photos/200/100?random=1" alt="Mood Trend Chart" class="w-full h-full object-cover rounded-xl">
+                    </div>
+                    <p class="text-secondary dark:text-secondary text-sm">Visual representation of your mood fluctuations over time. Track patterns to understand your emotional journey.</p>
+                </div>
+                <div class="mt-4">
+                    <button class="w-full px-4 py-3 rounded-lg bg-primary text-softWhite font-semibold shadow-soft hover:shadow-softInset focus:outline-none transition-shadow duration-200"><i class="fa-solid fa-expand-alt mr-2"></i>View Full Trend</button>
+                </div>
+            </section>
+
+            <section class="bg-softWhite rounded-2xl shadow-soft p-6 md:p-8 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl font-semibold text-darkText dark:text-softWhite mb-4"><i class="fa-solid fa-heart-pulse mr-2 text-primary"></i>Emotion Triggers</h2>
+                    <ul class="space-y-3 mb-4">
+                        <li class="flex items-center bg-accent bg-opacity-20 rounded-lg p-3 shadow-softInset">
+                            <i class="fa-solid fa-sun text-yellow-500 mr-3"></i>
+                            <span class="font-medium text-darkText dark:text-softWhite">Sunshine</span>
+                            <span class="ml-auto text-sm text-secondary dark:text-secondary">+2 Positive</span>
+                        </li>
+                        <li class="flex items-center bg-accent bg-opacity-20 rounded-lg p-3 shadow-softInset">
+                            <i class="fa-solid fa-coffee text-orange-500 mr-3"></i>
+                            <span class="font-medium text-darkText dark:text-softWhite">Morning Coffee</span>
+                            <span class="ml-auto text-sm text-secondary dark:text-secondary">+1 Positive</span>
+                        </li>
+                        <li class="flex items-center bg-accent bg-opacity-20 rounded-lg p-3 shadow-softInset">
+                            <i class="fa-solid fa-traffic-light text-red-500 mr-3"></i>
+                            <span class="font-medium text-darkText dark:text-softWhite">Traffic Jam</span>
+                            <span class="ml-auto text-sm text-secondary dark:text-secondary">-3 Negative</span>
+                        </li>
+                    </ul>
+                    <p class="text-secondary dark:text-secondary text-sm">Identify key factors influencing your emotions. Understand what uplifts or downlifts your mood.</p>
+                </div>
+                <div class="mt-4">
+                    <button class="w-full px-4 py-3 rounded-lg bg-primary text-softWhite font-semibold shadow-soft hover:shadow-softInset focus:outline-none transition-shadow duration-200"><i class="fa-solid fa-list-alt mr-2"></i>See All Triggers</button>
+                </div>
+            </section>
+
+            <section class="bg-softWhite rounded-2xl shadow-soft p-6 md:p-8 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl font-semibold text-darkText dark:text-softWhite mb-4"><i class="fa-solid fa-gauge-high mr-2 text-primary"></i>Well-being Score</h2>
+                    <div class="flex items-center justify-center h-48 rounded-full bg-softBlue shadow-softInset mb-4 relative">
+                        <img src="https://picsum.photos/150/150?random=3" alt="Well-being Avatar" class="absolute inset-0 w-full h-full object-cover rounded-full animate-pulse-soft">
+                        <div class="text-center absolute">
+                            <span class="text-4xl font-bold text-primary block">78</span>
+                            <span class="text-sm text-secondary dark:text-secondary">Good</span>
+                        </div>
+                    </div>
+                    <p class="text-secondary dark:text-secondary text-sm">Overall well-being score based on your mood entries. Aim for a balanced and positive emotional state.</p>
+                </div>
+                <div class="mt-4">
+                    <button class="w-full px-4 py-3 rounded-lg bg-primary text-softWhite font-semibold shadow-soft hover:shadow-softInset focus:outline-none transition-shadow duration-200"><i class="fa-solid fa-chart-pie mr-2"></i>Detailed Breakdown</button>
+                </div>
+            </section>
+
+            <section class="bg-softWhite rounded-2xl shadow-soft p-6 md:p-8 col-span-1 md:col-span-2 lg:col-span-3 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-xl font-semibold text-darkText dark:text-softWhite mb-4"><i class="fa-solid fa-calendar-day mr-2 text-primary"></i>Daily Mood Log</h2>
+                    <div class="overflow-x-auto no-scrollbar">
+                        <table class="min-w-full table-auto">
+                            <thead class="bg-accent bg-opacity-30 rounded-t-xl">
+                                <tr>
+                                    <th class="px-4 py-2 text-left text-darkText dark:text-softWhite font-semibold">Date</th>
+                                    <th class="px-4 py-2 text-left text-darkText dark:text-softWhite font-semibold">Mood</th>
+                                    <th class="px-4 py-2 text-left text-darkText dark:text-softWhite font-semibold">Emotions</th>
+                                    <th class="px-4 py-2 text-left text-darkText dark:text-softWhite font-semibold">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="hover:bg-accent hover:bg-opacity-10 transition-colors duration-200">
+                                    <td class="px-4 py-3">2024-03-15</td>
+                                    <td class="px-4 py-3"><i class="fa-solid fa-face-smile text-green-500 mr-1"></i>Happy</td>
+                                    <td class="px-4 py-3">Joyful, Content</td>
+                                    <td class="px-4 py-3 text-secondary dark:text-secondary text-sm">Productive day at work.</td>
+                                </tr>
+                                <tr class="hover:bg-accent hover:bg-opacity-10 transition-colors duration-200">
+                                    <td class="px-4 py-3">2024-03-14</td>
+                                    <td class="px-4 py-3"><i class="fa-solid fa-face-meh text-yellow-500 mr-1"></i>Neutral</td>
+                                    <td class="px-4 py-3">Calm, Indifferent</td>
+                                    <td class="px-4 py-3 text-secondary dark:text-secondary text-sm">Regular day. Nothing much happened.</td>
+                                </tr>
+                                <tr class="hover:bg-accent hover:bg-opacity-10 transition-colors duration-200">
+                                    <td class="px-4 py-3">2024-03-13</td>
+                                    <td class="px-4 py-3"><i class="fa-solid fa-face-frown text-red-500 mr-1"></i>Sad</td>
+                                    <td class="px-4 py-3">Anxious, Down</td>
+                                    <td class="px-4 py-3 text-secondary dark:text-secondary text-sm">Felt a bit under the weather.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-secondary dark:text-secondary text-sm mt-4">Your recent mood entries. Review your daily logs to reflect on your emotional patterns.</p>
+                </div>
+                <div class="mt-4">
+                    <button class="w-full px-4 py-3 rounded-lg bg-primary text-softWhite font-semibold shadow-soft hover:shadow-softInset focus:outline-none transition-shadow duration-200"><i class="fa-solid fa-calendar-alt mr-2"></i>View Full Calendar</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const card = document.querySelector('.radial-gradient');
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.background = `radial-gradient(60% 60% at ${x}px ${y}px, rgba(219, 234, 254, 0.5) 0%, rgba(255, 255, 255, 0) 100%)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.background = `radial-gradient(60% 60% at 50% 50%, rgba(219, 234, 254, 0.5) 0%, rgba(255, 255, 255, 0) 100%)`;
+            });
+        });
+    </script>
+</body>
+</html>

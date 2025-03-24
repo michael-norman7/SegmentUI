@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexFlow - Online Legal Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="output.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-blue-600">LexFlow</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#services" class="hover:text-blue-500 transition-colors">Services</a>
+                <a href="#why-us" class="hover:text-blue-500 transition-colors">Why LexFlow</a>
+                <a href="#testimonials" class="hover:text-blue-500 transition-colors">Testimonials</a>
+                <a href="#contact" class="hover:text-blue-500 transition-colors">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors">Get Started</a>
+            <div class="md:hidden">
+                <button class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero bg-gradient-to-br from-blue-100 to-white py-20 md:py-32">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="hero-text fade-in-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Legal Services, Simplified.</h1>
+                    <p class="text-lg text-gray-600 mb-8">Access expert legal assistance online. From contracts to consultations, LexFlow provides clarity and confidence.</p>
+                    <div class="flex space-x-4">
+                        <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors">Explore Services</a>
+                        <a href="#contact" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors">
+                            <i class="fa fa-question-circle mr-2"></i> Need Help?
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in-right">
+                    <img src="https://picsum.photos/id/1020/800/600" alt="Legal Services Illustration" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">Our Legal Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card bg-gray-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/1021/200/300" alt="Contract Review" class="rounded-md mx-auto">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Contract Review</h3>
+                    <p class="text-gray-600">Expert review of your contracts to ensure clarity and protect your interests.</p>
+                    <a href="#contact" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-semibold transition-colors">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="service-card bg-gray-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/1022/200/300" alt="Legal Consultation" class="rounded-md mx-auto">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Legal Consultation</h3>
+                    <p class="text-gray-600">Get professional legal advice and guidance tailored to your specific needs.</p>
+                    <a href="#contact" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-semibold transition-colors">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="service-card bg-gray-50 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/1023/200/300" alt="Document Drafting" class="rounded-md mx-auto">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Document Drafting</h3>
+                    <p class="text-gray-600">Professionally drafted legal documents to meet your personal or business requirements.</p>
+                    <a href="#contact" class="inline-block mt-4 text-blue-600 hover:text-blue-700 font-semibold transition-colors">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">Why Choose LexFlow?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-item">
+                    <div class="icon-wrapper bg-blue-100 text-blue-600 rounded-full inline-flex items-center justify-center mb-4">
+                        <i class="fa fa- Legal Tech company name
+scale text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Expert Legal Team</h3>
+                    <p class="text-gray-600">Access a network of experienced and vetted legal professionals.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-wrapper bg-blue-100 text-blue-600 rounded-full inline-flex items-center justify-center mb-4">
+                        <i class="fa fa-clock text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Convenient & Fast</h3>
+                    <p class="text-gray-600">Get legal help online, anytime, anywhere, without delays.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-wrapper bg-blue-100 text-blue-600 rounded-full inline-flex items-center justify-center mb-4">
+                        <i class="fa fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Secure & Confidential</h3>
+                    <p class="text-gray-600">Your information is protected with the highest security standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-gray-50 rounded-xl shadow-md p-6">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/1024/50/50" alt="Client 1" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-gray-700 mb-4">"LexFlow made legal consultation so easy and accessible. I received clear advice and felt supported throughout the process."</p>
+                    <p class="font-semibold text-blue-600">- Sarah M.</p>
+                </div>
+                <div class="testimonial-card bg-gray-50 rounded-xl shadow-md p-6">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/1025/50/50" alt="Client 2" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-gray-700 mb-4">"The contract review service was incredibly thorough and helped me avoid potential issues. Highly recommend LexFlow!"</p>
+                    <p class="font-semibold text-blue-600">- John B.</p>
+                </div>
+                <div class="testimonial-card bg-gray-50 rounded-xl shadow-md p-6">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/id/1026/50/50" alt="Client 3" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-gray-700 mb-4">"I needed a legal document drafted quickly, and LexFlow delivered perfectly. Professional, efficient, and affordable."</p>
+                    <p class="font-semibold text-blue-600">- Emily L.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-gradient-to-br from-blue-50 to-blue-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Ready to Get Started?</h2>
+            <p class="text-lg text-gray-600 mb-12">Connect with our legal experts today and discover how LexFlow can assist you.</p>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-md">Contact Us Now</a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <a href="#" class="text-xl font-bold text-white">LexFlow</a>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-gray-100 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-gray-100 transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-gray-100 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-gray-100 transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-sm">© 2024 LexFlow. All rights reserved.</p>
+            <p class="text-sm mt-2"><a href="#" class="hover:text-gray-100 transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-gray-100 transition-colors">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeInElements = document.querySelectorAll('.fade-in-left, .fade-in-right');
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            fadeInElements.forEach(element => {
+                observer.observe(element);
+            });
+
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Corporate Travel | Seamless & Efficient</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#3b82f6',
+                        accent: '#bae6fd',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-slide-in-right {
+            animation: slide-in-right 0.5s ease-out forwards;
+        }
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-semibold text-primary">
+                    <a href="#" class="hover:text-secondary transition-colors duration-300">
+                        <i class="fa-solid fa-plane-departure mr-2"></i> Corporate Travel Pro
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#solutions" class="hover:text-secondary transition-colors duration-300">Solutions</a>
+                    <a href="#features" class="hover:text-secondary transition-colors duration-300">Features</a>
+                    <a href="#pricing" class="hover:text-secondary transition-colors duration-300">Pricing</a>
+                    <a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="Toggle menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold text-dark leading-tight mb-6">
+                        Effortless Corporate Travel Management for Modern Businesses
+                    </h1>
+                    <p class="text-xl text-gray-700 mb-8">
+                        Streamline your business travel, reduce costs, and enhance employee satisfaction with our all-in-one platform.
+                    </p>
+                    <div class="space-x-4">
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary md:py-4 md:text-lg md:px-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                            Request a Demo
+                        </a>
+                        <a href="#features" class="inline-flex items-center px-6 py-2 border border-primary text-base font-medium rounded-md text-primary hover:bg-accent hover:text-secondary md:py-3 md:px-8 md:text-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="animate-slide-in-right hidden md:block">
+                    <img src="https://picsum.photos/600/400" alt="Corporate Travel Management Platform" class="rounded-xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="py-16 md:py-24 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold text-dark mb-12">
+                Our Comprehensive Travel Solutions
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-plane text-secondary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Flight & Hotel Booking</h3>
+                    <p class="text-gray-700">Access a vast inventory of flights and hotels with competitive corporate rates.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-briefcase text-secondary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Expense Management</h3>
+                    <p class="text-gray-700">Automate expense tracking and reporting, saving time and reducing errors.</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <i class="fa-solid fa-chart-line text-secondary text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Travel Analytics</h3>
+                    <p class="text-gray-700">Gain insights into your travel spending and optimize your corporate travel policies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-semibold text-dark text-center mb-16">
+                Key Features for Seamless Travel
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <div class="flex flex-col items-center text-center">
+                    <div class="p-4 bg-accent rounded-full text-secondary mb-4">
+                        <i class="fa-solid fa-user-shield text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Enhanced Security</h3>
+                    <p class="text-gray-700">Protect your data and ensure secure transactions with our platform.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="p-4 bg-accent rounded-full text-secondary mb-4">
+                        <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Mobile Accessibility</h3>
+                    <p class="text-gray-700">Manage your travel on-the-go with our intuitive mobile app.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="p-4 bg-accent rounded-full text-secondary mb-4">
+                        <i class="fa-solid fa-headphones text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">24/7 Support</h3>
+                    <p class="text-gray-700">Get round-the-clock assistance from our dedicated support team.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="p-4 bg-accent rounded-full text-secondary mb-4">
+                        <i class="fa-solid fa-hand-holding-dollar text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Cost Savings</h3>
+                    <p class="text-gray-700">Reduce your travel expenses with negotiated rates and efficient booking tools.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="p-4 bg-accent rounded-full text-secondary mb-4">
+                        <i class="fa-solid fa-route text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Trip Planning</h3>
+                    <p class="text-gray-700">Simplify complex itineraries with our advanced trip planning features.</p>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="p-4 bg-accent rounded-full text-secondary mb-4">
+                        <i class="fa-solid fa-gear text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Customizable Platform</h3>
+                    <p class="text-gray-700">Tailor the platform to meet your specific corporate travel needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-16 md:py-24 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold text-dark mb-12">
+                Flexible Pricing Plans
+            </h2>
+            <p class="text-xl text-gray-700 mb-16">
+                Choose a plan that fits your business size and travel volume.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-4">Basic</h3>
+                        <div class="text-4xl font-bold text-primary mb-4">$49 <span class="text-gray-500 text-base font-normal">/ month</span></div>
+                        <p class="text-gray-700 mb-6">For small teams getting started with corporate travel management.</p>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-secondary mr-2"></i>
+                                Flight & Hotel Booking
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-secondary mr-2"></i>
+                                Basic Reporting
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-xmark text-gray-400 mr-2"></i>
+                                24/7 Support
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary hover:bg-accent hover:text-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                            Select Basic
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-4">Standard</h3>
+                        <div class="text-4xl font-bold text-primary mb-4">$99 <span class="text-gray-500 text-base font-normal">/ month</span></div>
+                        <p class="text-gray-700 mb-6">For growing businesses needing comprehensive travel solutions.</p>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-secondary mr-2"></i>
+                                All Basic Features
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-secondary mr-2"></i>
+                                Expense Management
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-secondary mr-2"></i>
+                                24/7 Support
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary hover:bg-accent hover:text-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                            Select Standard
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-4">Premium</h3>
+                        <div class="text-4xl font-bold text-primary mb-4">Custom <span class="text-gray-500 text-base font-normal">/ month</span></div>
+                        <p class="text-gray-700 mb-6">Tailored solutions for large enterprises with advanced travel needs.</p>
+                        <ul class="mb-6 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-secondary mr-2"></i>
+                                All Standard Features
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-secondary mr-2"></i>
+                                Advanced Analytics
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa-solid fa-check text-secondary mr-2"></i>
+                                Dedicated Account Manager
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block text-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary hover:bg-accent hover:text-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                            Contact Us for Premium
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-primary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold text-white mb-8">
+                Ready to Elevate Your Corporate Travel?
+            </h2>
+            <p class="text-xl text-neutral mb-12">
+                Get in touch with us today to schedule a demo or discuss your specific needs.
+            </p>
+            <a href="mailto:sales@corporatetravelpro.com" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-accent hover:bg-neutral md:py-4 md:text-lg md:px-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors duration-300">
+                Contact Sales
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Corporate Travel Pro. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-accent transition-colors duration-300">Privacy Policy</a> | <a href="#" class="hover:text-accent transition-colors duration-300">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+content_copy
+download
+Use code with caution.
+Html

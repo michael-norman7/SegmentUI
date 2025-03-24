@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Corporate Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#3b82f6',
+                        accent: '#bae6fd',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow-primary': '0 0 20px -5px rgba(37, 99, 235, 0.6)',
+                        'glow-secondary': '0 0 15px -3px rgba(59, 130, 246, 0.5)',
+                    },
+                    keyframes: {
+                        'pulse-bg': {
+                            '0%, 100%': { backgroundColor: '#f3f4f6' },
+                            '50%': { backgroundColor: '#e5e7eb' },
+                        },
+                        'gradient-move': {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' },
+                        }
+                    },
+                    animation: {
+                        'pulse-bg': 'pulse-bg 2s ease-in-out infinite',
+                        'gradient-move': 'gradient-move 15s linear infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+    <div class="relative h-screen overflow-hidden">
+        <div class="absolute inset-0 animate-gradient-move bg-gradient-to-r from-primary via-secondary to-accent opacity-10"></div>
+        <div class="absolute inset-0 bg-neutral opacity-90 backdrop-blur-sm"></div>
+        <div class="relative z-10 flex justify-center items-center h-full px-6">
+            <div class="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div class="bg-primary py-12 px-10 text-center border-b border-neutral-200">
+                    <h2 class="text-3xl font-bold text-white tracking-tight">Corporate Login</h2>
+                    <p class="mt-2 text-neutral-100">Secure access to your enterprise applications</p>
+                </div>
+                <div class="p-10">
+                    <div class="mb-8 text-center">
+                        <img src="https://picsum.photos/200/100" alt="Company Logo" class="mx-auto h-16">
+                    </div>
+                    <form class="space-y-6">
+                        <div>
+                            <label for="username" class="block mb-2 text-sm font-medium text-dark">Username or Email</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <i class="fa fa-user text-neutral-500"></i>
+                                </div>
+                                <input type="text" id="username" class="bg-neutral border border-neutral-300 text-dark text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" placeholder="Your username or email" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="password" class="block mb-2 text-sm font-medium text-dark">Password</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <i class="fa fa-lock text-neutral-500"></i>
+                                </div>
+                                <input type="password" id="password" class="bg-neutral border border-neutral-300 text-dark text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" placeholder="••••••••" required>
+                                <button type="button" class="absolute inset-y-0 right-0 flex items-center pr-3 focus:outline-none">
+                                    <i class="fa fa-eye-slash text-neutral-500 hover:text-neutral-700 cursor-pointer"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-neutral-300 rounded bg-neutral focus:ring-primary focus:ring-2" required>
+                            </div>
+                            <label for="remember" class="ml-2 text-sm font-medium text-neutral-700">Remember me</label>
+                        </div>
+                        <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300">Login</button>
+                        <div class="text-sm font-medium text-neutral-500 text-center">
+                            <a href="#" class="text-primary hover:underline focus:ring-primary focus:ring-offset-2">Forgot password?</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="py-4 px-10 bg-neutral-100 border-t border-neutral-200 text-center">
+                    <p class="text-sm text-neutral-500">© 2024 Your Company. All rights reserved.</p>
+                    <a href="#" class="inline-flex items-center text-sm text-primary hover:underline focus:ring-primary focus:ring-offset-2">
+                        <i class="fa fa-shield-alt mr-1"></i> Privacy & Security
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.fa-eye-slash').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = this;
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            }
+        });
+    </script>
+</body>
+</html>

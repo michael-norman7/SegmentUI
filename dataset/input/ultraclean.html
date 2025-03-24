@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra-Clean Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0EA5E9',
+                        'primary-dark': '#0284C7',
+                        'brand-gray': '#F9FAFB',
+                        'brand-text': '#111827',
+                        'brand-subtext': '#6B7280',
+                        'brand-border': '#E5E7EB',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'button': '0 2px 5px rgba(0, 0, 0, 0.1)',
+                        'input': '0 1px 3px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-brand-gray flex items-center justify-center min-h-screen animate-fade-in">
+    <div class="relative bg-white rounded-2xl shadow-xl p-10 md:p-20 w-full max-w-md overflow-hidden">
+        <div class="absolute inset-0 -z-10 bg-cover bg-center blur-3xl opacity-30" style="background-image: url('https://picsum.photos/id/1003/200/300');"></div>
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-brand-text mb-2">Join Us</h2>
+            <p class="text-brand-subtext">Create your account and start exploring.</p>
+        </div>
+        <form id="signupForm" class="space-y-6">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-brand-text">Email Address</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-envelope text-brand-subtext"></i>
+                    </div>
+                    <input type="email" id="email" class="bg-brand-gray border border-brand-border text-brand-text text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3 pl-10" placeholder="Your email" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-brand-text">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-lock text-brand-subtext"></i>
+                    </div>
+                    <input type="password" id="password" class="bg-brand-gray border border-brand-border text-brand-text text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3 pl-10" placeholder="••••••••" required>
+                </div>
+            </div>
+            <button type="submit" class="w-full text-white bg-primary hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-primary-dark font-medium rounded-lg text-sm px-5 py-3 text-center shadow-button transition-colors duration-300">
+                Sign up
+            </button>
+            <div class="text-sm font-medium text-brand-text text-center">
+                Already have an account? <a href="#" class="text-primary hover:underline">Log in</a>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const emailInput = document.getElementById('email');
+            const passwordInput = document.getElementById('password');
+
+            if (!emailInput.value) {
+                alert('Please enter your email address.');
+                return;
+            }
+            if (!passwordInput.value) {
+                alert('Please enter your password.');
+                return;
+            }
+
+            alert('Signup successful! (Simulated)');
+            // In a real application, you would send the data to a server here.
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fontastic - Premium Fonts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F0F4F8',
+                        secondary: '#E0E7FF',
+                        accent: '#60A5FA',
+                        textPrimary: '#1E293B',
+                        textSecondary: '#4B5563',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '6px 6px 12px #D1D9E6, -6px -6px 12px #FFFFFF',
+                        'soft-inset': 'inset 6px 6px 12px #D1D9E6, inset -6px -6px 12px #FFFFFF',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: theme('colors.primary');
+            color: theme('colors.textPrimary');
+        }
+        .category-card {
+            animation: slide-up 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        @keyframes slide-up {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="bg-primary">
+    <header class="sticky top-0 bg-primary shadow-soft z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold text-textPrimary">Fontastic</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-accent transition-colors duration-200">Fonts</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Browse</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">About</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button type="button" class="text-textPrimary hover:text-accent focus:outline-none focus:text-accent">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero container mx-auto px-6 py-24 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-textPrimary mb-4 animate-fade-in" style="animation-delay: 0.1s;">Discover Premium Fonts</h1>
+        <p class="text-lg text-textSecondary mb-8 animate-fade-in" style="animation-delay: 0.2s;">Elevate your designs with our curated collection of high-quality fonts.</p>
+        <div class="flex justify-center space-x-4 animate-fade-in" style="animation-delay: 0.3s;">
+            <button class="bg-accent hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full shadow-soft focus:outline-none focus:shadow-soft-inset transition-transform active:scale-95">
+                Explore Fonts
+            </button>
+            <button class="bg-secondary hover:bg-gray-200 text-textPrimary font-semibold py-2 px-6 rounded-full shadow-soft focus:outline-none focus:shadow-soft-inset transition-transform active:scale-95">
+                Learn More
+            </button>
+        </div>
+    </section>
+
+    <section class="categories container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-semibold text-textPrimary mb-12 text-center">Font Categories</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="category-card p-6 bg-primary shadow-soft rounded-2xl hover:shadow-soft-inset transition-shadow duration-300">
+                <img src="https://picsum.photos/200/300?random=1" alt="Serif Fonts" class="rounded-xl mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold text-textPrimary mb-2">Serif</h3>
+                <p class="text-textSecondary">Classic and elegant fonts with serifs, perfect for formal designs.</p>
+                <a href="#" class="inline-block mt-4 text-accent hover:text-blue-700 font-medium">Explore Serif Fonts <i class="fa fa-arrow-right ml-1"></i></a>
+            </div>
+
+            <div class="category-card p-6 bg-primary shadow-soft rounded-2xl hover:shadow-soft-inset transition-shadow duration-300" style="animation-delay: 0.1s;">
+                <img src="https://picsum.photos/200/300?random=2" alt="Sans-Serif Fonts" class="rounded-xl mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold text-textPrimary mb-2">Sans-Serif</h3>
+                <p class="text-textSecondary">Modern and clean fonts without serifs, ideal for digital interfaces.</p>
+                <a href="#" class="inline-block mt-4 text-accent hover:text-blue-700 font-medium">Explore Sans-Serif Fonts <i class="fa fa-arrow-right ml-1"></i></a>
+            </div>
+
+            <div class="category-card p-6 bg-primary shadow-soft rounded-2xl hover:shadow-soft-inset transition-shadow duration-300" style="animation-delay: 0.2s;">
+                <img src="https://picsum.photos/200/300?random=3" alt="Script Fonts" class="rounded-xl mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold text-textPrimary mb-2">Script</h3>
+                <p class="text-textSecondary">Decorative and flowing fonts that mimic handwriting, great for branding.</p>
+                <a href="#" class="inline-block mt-4 text-accent hover:text-blue-700 font-medium">Explore Script Fonts <i class="fa fa-arrow-right ml-1"></i></a>
+            </div>
+
+            <div class="category-card p-6 bg-primary shadow-soft rounded-2xl hover:shadow-soft-inset transition-shadow duration-300" style="animation-delay: 0.3s;">
+                <img src="https://picsum.photos/200/300?random=4" alt="Slab Serif Fonts" class="rounded-xl mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold text-textPrimary mb-2">Slab Serif</h3>
+                <p class="text-textSecondary">Bold and impactful fonts with thick serifs, excellent for headlines.</p>
+                <a href="#" class="inline-block mt-4 text-accent hover:text-blue-700 font-medium">Explore Slab Serif Fonts <i class="fa fa-arrow-right ml-1"></i></a>
+            </div>
+
+            <div class="category-card p-6 bg-primary shadow-soft rounded-2xl hover:shadow-soft-inset transition-shadow duration-300" style="animation-delay: 0.4s;">
+                <img src="https://picsum.photos/200/300?random=5" alt="Display Fonts" class="rounded-xl mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold text-textPrimary mb-2">Display</h3>
+                <p class="text-textSecondary">Unique and stylized fonts designed for large sizes, perfect for logos and posters.</p>
+                <a href="#" class="inline-block mt-4 text-accent hover:text-blue-700 font-medium">Explore Display Fonts <i class="fa fa-arrow-right ml-1"></i></a>
+            </div>
+
+            <div class="category-card p-6 bg-primary shadow-soft rounded-2xl hover:shadow-soft-inset transition-shadow duration-300" style="animation-delay: 0.5s;">
+                <img src="https://picsum.photos/200/300?random=6" alt="Monospace Fonts" class="rounded-xl mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-semibold text-textPrimary mb-2">Monospace</h3>
+                <p class="text-textSecondary">Fonts where each character occupies the same horizontal space, great for coding and technical documents.</p>
+                <a href="#" class="inline-block mt-4 text-accent hover:text-blue-700 font-medium">Explore Monospace Fonts <i class="fa fa-arrow-right ml-1"></i></a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-primary shadow-soft-inset py-8">
+        <div class="container mx-auto px-6 text-center text-textSecondary">
+            <p>© 2024 Fontastic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const categoryCards = document.querySelectorAll('.category-card');
+            categoryCards.forEach((card, index) => {
+                card.style.animationDelay = `${0.05 * index}s`;
+                card.style.opacity = 1;
+            });
+        });
+    </script>
+</body>
+</html>

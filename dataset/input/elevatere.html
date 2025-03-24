@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElevateRE | Commercial Real Estate Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0d47a1',
+                        secondary: '#1976d2',
+                        accent: '#42a5f5',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.6s ease-out forwards',
+                        'fade-in': 'fade-in 0.4s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-fade-slide-up {
+            animation: fade-slide-up 0.6s ease-out forwards;
+        }
+        .animate-fade-in {
+            animation: fade-in 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-neutral text-dark">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-semibold text-primary">ElevateRE</div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#services" class="hover:text-secondary transition-colors">Services</a></li>
+                <li><a href="#properties" class="hover:text-secondary transition-colors">Properties</a></li>
+                <li><a href="#about" class="hover:text-secondary transition-colors">About Us</a></li>
+                <li><a href="#contact" class="hover:text-secondary transition-colors">Contact</a></li>
+            </ul>
+            <button class="hidden md:block bg-primary hover:bg-secondary text-white font-semibold py-2 px-4 rounded-md transition-colors">Get Started</button>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-6 py-4">
+                <li class="py-2"><a href="#services" class="block hover:text-secondary transition-colors">Services</a></li>
+                <li class="py-2"><a href="#properties" class="block hover:text-secondary transition-colors">Properties</a></li>
+                <li class="py-2"><a href="#about" class="block hover:text-secondary transition-colors">About Us</a></li>
+                <li class="py-2"><a href="#contact" class="block hover:text-secondary transition-colors">Contact</a></li>
+                <li class="py-2"><button class="block bg-primary hover:bg-secondary text-white font-semibold py-2 px-4 rounded-md transition-colors w-full text-center">Get Started</button></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 fade-slide-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-dark leading-tight mb-6">Find Your Ideal Commercial Space with ElevateRE</h1>
+                <p class="text-lg text-gray-700 mb-8">Expert commercial real estate services tailored to elevate your business. Discover properties that inspire growth and success.</p>
+                <div class="flex space-x-4">
+                    <button class="bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-colors">Explore Properties</button>
+                    <button class="bg-white hover:bg-neutral-200 text-primary font-semibold py-3 px-6 rounded-md transition-colors border border-primary">Our Services</button>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 animate-fade-in">
+                <img src="https://picsum.photos/800/600" alt="Modern Commercial Building" class="rounded-xl shadow-lg" />
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Our Comprehensive Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up">
+                    <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-building fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Property Acquisition</h3>
+                    <p class="text-gray-700">Strategic property sourcing and negotiation to secure the best locations for your business.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-100">
+                    <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-chart-line fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Market Analysis</h3>
+                    <p class="text-gray-700">In-depth market insights and analysis to inform your investment decisions and maximize returns.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-200">
+                    <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-handshake fa-lg"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Lease & Tenant Representation</h3>
+                    <p class="text-gray-700">Expert representation for lease negotiations and tenant placements, ensuring favorable terms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="properties" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Featured Properties</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Property 1" class="w-full h-60 object-cover" />
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Modern Office Space</h3>
+                        <p class="text-gray-700 mb-4">Downtown location, fully renovated, ready for occupancy.</p>
+                        <button class="bg-accent hover:bg-primary text-white font-semibold py-2 px-4 rounded-md transition-colors">View Details</button>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-100">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Property 2" class="w-full h-60 object-cover" />
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Retail Storefront</h3>
+                        <p class="text-gray-700 mb-4">High traffic area, perfect for retail businesses and showrooms.</p>
+                        <button class="bg-accent hover:bg-primary text-white font-semibold py-2 px-4 rounded-md transition-colors">View Details</button>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-slide-up delay-200">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Property 3" class="w-full h-60 object-cover" />
+                    <div class="p-6 bg-white">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Industrial Warehouse</h3>
+                        <p class="text-gray-700 mb-4">Large warehouse space with loading docks and ample parking.</p>
+                        <button class="bg-accent hover:bg-primary text-white font-semibold py-2 px-4 rounded-md transition-colors">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 animate-fade-in">
+                <img src="https://picsum.photos/600/400?random=4" alt="About Us Team" class="rounded-xl shadow-lg" />
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 md:ml-12 fade-slide-up">
+                <h2 class="text-3xl font-bold text-dark mb-6">About ElevateRE</h2>
+                <p class="text-lg text-gray-700 mb-8">ElevateRE is a premier commercial real estate agency dedicated to providing exceptional service and expertise. Our team of experienced professionals is committed to understanding your unique business needs and delivering tailored solutions that drive success. We pride ourselves on our integrity, market knowledge, and client-focused approach.</p>
+                <p class="text-lg text-gray-700 mb-8">Whether you are looking to acquire, lease, or sell commercial property, ElevateRE is your trusted partner in navigating the complexities of the real estate market. We are here to elevate your real estate experience and help you achieve your business objectives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-dark mb-12">Get in Touch</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6 animate-fade-slide-up">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="4" class="w-full px-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-accent focus:border-accent outline-none"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-colors">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 ElevateRE. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-neutral hover:text-accent"><i class="fab fa-facebook-square fa-lg"></i></a>
+                <a href="#" class="text-neutral hover:text-accent"><i class="fab fa-linkedin fa-lg"></i></a>
+                <a href="#" class="text-neutral hover:text-accent"><i class="fab fa-twitter-square fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector('#' + this.getAttribute('href').substring(1)).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                if (mobileMenu.classList.contains('hidden') === false) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

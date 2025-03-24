@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlay - Fun Learning for Kids</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ade80',
+                        secondary: '#22c55e',
+                        accent: '#facc15',
+                        background: '#f0fdf4',
+                        textPrimary: '#0f172a',
+                        textSecondary: '#4b5563',
+                    },
+                    fontFamily: {
+                        sans: ['Nunito Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 1s ease-out forwards',
+                        'slide-down': 'slide-down 1s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'spin-slow': 'spin 3s linear infinite',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'slide-down': {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    boxShadow: {
+                        'button': '0 5px 15px rgba(0, 0, 0, 0.1)',
+                        'card': '0 10px 25px -5px rgba(0, 0, 0, 0.1)',
+                        'feature': '0 8px 12px rgba(0, 0, 0, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            perspective: 1000px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+            height: 100vh;
+        }
+
+        .parallax-group {
+            position: relative;
+            height: 100vh;
+            transform-style: preserve-3d;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .parallax-layer-base {
+            transform: translateZ(0);
+            z-index: 1;
+        }
+
+        .parallax-layer-back {
+            transform: translateZ(-500px) scale(1.5);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-background text-textPrimary overflow-x-hidden">
+    <header class="sticky top-0 z-50 bg-background shadow-md backdrop-blur-sm bg-opacity-90">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-xl text-primary">
+                <i class="fa-solid fa-graduation-cap text-secondary mr-2"></i> EduPlay
+            </a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#features" class="hover:text-secondary transition-colors duration-300">Features</a></li>
+                <li><a href="#about" class="hover:text-secondary transition-colors duration-300">About Us</a></li>
+                <li><a href="#testimonials" class="hover:text-secondary transition-colors duration-300">Testimonials</a></li>
+                <li><a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a></li>
+            </ul>
+            <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full shadow-button transition-colors duration-300 hidden md:inline-flex">
+                Get Started <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <ul class="px-6 py-4">
+                <li class="py-2"><a href="#features" class="block hover:text-secondary transition-colors duration-300">Features</a></li>
+                <li class="py-2"><a href="#about" class="block hover:text-secondary transition-colors duration-300">About Us</a></li>
+                <li class="py-2"><a href="#testimonials" class="block hover:text-secondary transition-colors duration-300">Testimonials</a></li>
+                <li class="py-2"><a href="#contact" class="block hover:text-secondary transition-colors duration-300">Contact</a></li>
+                <li class="py-2"><button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-full shadow-button transition-colors duration-300 w-full text-center">Get Started <i class="fa-solid fa-arrow-right ml-2"></i></button></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="parallax hero relative pt-20">
+        <div class="parallax-group">
+            <div class="parallax-layer parallax-layer-back">
+                <img src="https://picsum.photos/1920/1080?blur=5" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="parallax-layer parallax-layer-base">
+                <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between min-h-screen">
+                    <div class="md:w-1/2 fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-textPrimary">
+                            Learning is an <span class="text-primary">Adventure</span>!
+                        </h1>
+                        <p class="text-lg text-textSecondary mb-8">
+                            Make education fun and engaging for your child with EduPlay. Our interactive app is designed to spark curiosity and foster a love for learning.
+                        </p>
+                        <button class="bg-accent hover:bg-yellow-500 text-textPrimary font-bold py-3 px-6 rounded-full shadow-button transition-colors duration-300">
+                            Start Your Free Trial <i class="fa-solid fa-play ml-2"></i>
+                        </button>
+                    </div>
+                    <div class="md:w-1/2 mt-12 md:mt-0 slide-up">
+                        <img src="https://picsum.photos/600/400" alt="App Interface" class="rounded-2xl shadow-card">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-textPrimary">
+                Explore the <span class="text-secondary">Amazing Features</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card p-6 rounded-2xl shadow-feature bg-background hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fa-solid fa-puzzle-piece text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-textPrimary">Interactive Games</h3>
+                    <p class="text-textSecondary">Engaging games that make learning math, science, and more exciting.</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl shadow-feature bg-background hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fa-solid fa-book-open text-textPrimary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-textPrimary">Curriculum-Based Content</h3>
+                    <p class="text-textSecondary">Aligned with school curriculum to support and enhance classroom learning.</p>
+                </div>
+                <div class="feature-card p-6 rounded-2xl shadow-feature bg-background hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-secondary rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fa-solid fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-textPrimary">Progress Tracking</h3>
+                    <p class="text-textSecondary">Monitor your child's progress and identify areas for improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-background">
+        <div class="container mx-auto px-6 md:flex items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/600/450" alt="About EduPlay Team" class="rounded-2xl shadow-card">
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <h2 class="text-3xl font-bold mb-6 text-textPrimary">
+                    About <span class="text-primary">EduPlay</span>
+                </h2>
+                <p class="text-textSecondary mb-6">
+                    EduPlay was created by a team of educators and game developers passionate about making learning accessible and enjoyable for children. We believe that education should be an exciting journey, and our app is designed to make that a reality.
+                </p>
+                <p class="text-textSecondary mb-6">
+                    Our mission is to empower the next generation of learners by providing them with the tools they need to succeed in a fun and supportive environment.
+                </p>
+                <ul class="list-disc list-inside text-textSecondary">
+                    <li>Engaging and interactive learning experience</li>
+                    <li>Safe and ad-free environment for children</li>
+                    <li>Developed by educational experts</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-textPrimary">
+                What <span class="text-secondary">Parents are Saying</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card p-6 rounded-2xl shadow-feature bg-background hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/50/50" alt="Parent 1" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-textSecondary mb-4 italic">"EduPlay has transformed my child's attitude towards learning. He now looks forward to his study time!"</p>
+                    <h4 class="font-bold text-textPrimary">- Sarah M.</h4>
+                </div>
+                <div class="testimonial-card p-6 rounded-2xl shadow-feature bg-background hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/51/51" alt="Parent 2" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-textSecondary mb-4 italic">"I love that EduPlay is curriculum-based. It's a great supplement to what my daughter is learning in school."</p>
+                    <h4 class="font-bold text-textPrimary">- John B.</h4>
+                </div>
+                <div class="testimonial-card p-6 rounded-2xl shadow-feature bg-background hover:shadow-lg transition-shadow duration-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/52/52" alt="Parent 3" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-textSecondary mb-4 italic">"The progress tracking feature is fantastic. I can see exactly where my son is excelling and where he needs extra help."</p>
+                    <h4 class="font-bold text-textPrimary">- Emily L.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-background">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-textPrimary">
+                Ready to <span class="text-secondary">Start Learning</span>?
+            </h2>
+            <p class="text-lg text-textSecondary mb-8">
+                Download EduPlay today and unlock a world of fun and educational adventures for your child.
+            </p>
+            <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-full shadow-button transition-colors duration-300">
+                Download Now <i class="fa-solid fa-download ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <footer class="bg-textPrimary text-white py-8">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <p>© 2024 EduPlay. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-gray-300 transition-colors duration-300">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-300 transition-colors duration-300">Terms of Service</a>
+                <a href="#" class="hover:text-gray-300 transition-colors duration-300">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                if (mobileMenu.classList.contains('hidden') === false) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

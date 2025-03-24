@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspire Co-Work - Elevate Your Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#f97316',
+                        'accent': '#bae6fd',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    spacing: {
+                        '128': '32rem',
+                        '144': '36rem',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-down': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(10px)'
+                            },
+                        },
+                        'slide-in-left': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(-20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            },
+                        },
+                        'slide-out-left': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateX(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateX(-20px)'
+                            },
+                        },
+                        'slide-in-right': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            },
+                        },
+                        'slide-out-right': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateX(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateX(20px)'
+                            },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': {
+                                opacity: 1,
+                            },
+                            '50%': {
+                                opacity: .5,
+                            }
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-down': 'fade-out-down 0.5s ease-in',
+                        'slide-in-left': 'slide-in-left 0.3s ease-out',
+                        'slide-out-left': 'slide-out-left 0.3s ease-in',
+                        'slide-in-right': 'slide-in-right 0.3s ease-out',
+                        'slide-out-right': 'slide-out-right 0.3s ease-in',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .animate-fade-in-down {
+            animation: fade-in-down 0.5s ease-out;
+        }
+
+        .animate-fade-out-down {
+            animation: fade-out-down 0.5s ease-in;
+        }
+
+        .animate-slide-in-left {
+            animation: slide-in-left 0.3s ease-out;
+        }
+
+        .animate-slide-out-left {
+            animation: slide-out-left 0.3s ease-in;
+        }
+        .animate-slide-in-right {
+            animation: slide-in-right 0.3s ease-out;
+        }
+
+        .animate-slide-out-right {
+            animation: slide-out-right 0.3s ease-in;
+        }
+        .animate-pulse-custom {
+            animation: pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-primary">Inspire Co-Work</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#spaces" class="hover:text-primary transition-colors">Spaces</a>
+                    <a href="#community" class="hover:text-primary transition-colors">Community</a>
+                    <a href="#pricing" class="hover:text-primary transition-colors">Pricing</a>
+                    <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <a href="#spaces" class="block py-2 hover:text-primary transition-colors">Spaces</a>
+                <a href="#community" class="block py-2 hover:text-primary transition-colors">Community</a>
+                <a href="#pricing" class="block py-2 hover:text-primary transition-colors">Pricing</a>
+                <a href="#contact" class="block py-2 hover:text-primary transition-colors">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="py-20 md:py-32 bg-neutral overflow-hidden">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 md:pr-16 mb-10 md:mb-0 animate-slide-in-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6">
+                    Work Inspired. <br>
+                    Grow Together.
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Discover a vibrant coworking space designed to fuel your productivity and foster connections. Join a community of innovators, creators, and entrepreneurs.
+                </p>
+                <a href="#contact" class="inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                    Book a Tour <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 animate-slide-in-right relative">
+                <img src="https://picsum.photos/id/100/800/600" alt="Modern Coworking Space" class="rounded-2xl shadow-xl object-cover w-full h-auto aspect-video">
+                <div class="absolute bottom-0 right-0 p-6 bg-white rounded-xl shadow-md transform translate-x-1/4 translate-y-1/4 md:translate-y-1/2 animate-pulse-custom">
+                    <p class="text-sm text-gray-700">Experience the <span class="font-semibold text-primary">Inspire</span> difference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="spaces" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Explore Our Spaces
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                    <img src="https://picsum.photos/id/200/400/300" alt="Dedicated Desks" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Dedicated Desks</h3>
+                        <p class="text-gray-600">Your own permanent workspace in a shared environment.</p>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                    <img src="https://picsum.photos/id/300/400/300" alt="Private Offices" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Private Offices</h3>
+                        <p class="text-gray-600">Secure and fully equipped offices for teams of all sizes.</p>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+                    <img src="https://picsum.photos/id/400/400/300" alt="Meeting Rooms" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">Meeting Rooms</h3>
+                        <p class="text-gray-600">Professional spaces for presentations, workshops, and client meetings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Join Our Thriving Community
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow flex flex-col items-center">
+                    <i class="fa-solid fa-users text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Networking Events</h3>
+                    <p class="text-gray-600">Connect with like-minded professionals at our regular events.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow flex flex-col items-center">
+                    <i class="fa-solid fa-lightbulb text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Workshops & Seminars</h3>
+                    <p class="text-gray-600">Expand your skills and knowledge with expert-led sessions.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-shadow flex flex-col items-center">
+                    <i class="fa-solid fa-coffee text-4xl text-primary mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Social Gatherings</h3>
+                    <p class="text-gray-600">Relax and unwind with our community during casual meetups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Flexible Pricing Plans
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-neutral rounded-2xl shadow-lg hover:shadow-2xl transition-shadow p-8 flex flex-col">
+                    <h3 class="text-xl font-semibold text-dark mb-4">Hot Desk</h3>
+                    <div class="text-4xl font-bold text-primary mb-4">$199<span class="text-lg text-gray-600">/month</span></div>
+                    <p class="text-gray-600 mb-6">Access to open workspaces, high-speed internet, and community events.</p>
+                    <ul class="mb-6 flex-grow">
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary mr-2"></i>Flexible Access</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary mr-2"></i>High-Speed Wifi</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i>Community Access</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                        Get Started
+                    </a>
+                </div>
+                <div class="bg-neutral rounded-2xl shadow-lg hover:shadow-2xl transition-shadow p-8 flex flex-col">
+                    <h3 class="text-xl font-semibold text-dark mb-4">Dedicated Desk</h3>
+                    <div class="text-4xl font-bold text-primary mb-4">$399<span class="text-lg text-gray-600">/month</span></div>
+                    <p class="text-gray-600 mb-6">Your own dedicated desk, 24/7 access, and meeting room credits.</p>
+                    <ul class="mb-6 flex-grow">
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary mr-2"></i>Dedicated Workspace</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary mr-2"></i>24/7 Access</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary mr-2"></i>Meeting Room Credits</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i>All Hot Desk Benefits</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                        Get Started
+                    </a>
+                </div>
+                <div class="bg-neutral rounded-2xl shadow-lg hover:shadow-2xl transition-shadow p-8 flex flex-col">
+                    <h3 class="text-xl font-semibold text-dark mb-4">Private Office</h3>
+                    <div class="text-4xl font-bold text-primary mb-4">Contact Us</div>
+                    <p class="text-gray-600 mb-6">Customizable private offices for teams, with premium amenities and support.</p>
+                    <ul class="mb-6 flex-grow">
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary mr-2"></i>Private & Secure</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary mr-2"></i>Customizable Spaces</li>
+                        <li class="mb-2"><i class="fa-solid fa-check text-primary mr-2"></i>Premium Amenities</li>
+                        <li><i class="fa-solid fa-check text-primary mr-2"></i>All Dedicated Desk Benefits</li>
+                    </ul>
+                    <a href="#contact" class="mt-auto inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Ready to Get Started?
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+                Book a tour or get in touch with our team to find the perfect workspace for you.
+            </p>
+            <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+                Contact Us <i class="fa-solid fa-envelope ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Inspire Co-Work. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-primary"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for header height if needed
+                        behavior: 'smooth'
+                    });
+
+                    if (mobileMenu.classList.contains('hidden') === false) {
+                        mobileMenu.classList.add('hidden'); // Close mobile menu after click
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

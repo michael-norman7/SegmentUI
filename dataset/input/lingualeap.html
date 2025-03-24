@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaLeap - Learn Languages Effortlessly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#6B7280',
+                        accent: '#A855F7',
+                        neutral: '#F3F4F6',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.7s ease-out',
+                        'fade-in': 'fade-in 1s ease-out',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'inter', sans-serif;
+        }
+        .animate-delay-100 {
+            animation-delay: 100ms;
+        }
+        .animate-delay-200 {
+            animation-delay: 200ms;
+        }
+        .animate-delay-300 {
+            animation-delay: 300ms;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-secondary">
+
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary">LinguaLeap</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="hover:text-primary transition-colors">Features</a>
+                <a href="#how-it-works" class="hover:text-primary transition-colors">How it works</a>
+                <a href="#testimonials" class="hover:text-primary transition-colors">Testimonials</a>
+                <a href="#download" class="hover:text-primary transition-colors">Download</a>
+            </div>
+            <button class="md:hidden text-gray-500 hover:text-primary focus:outline-none">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero bg-neutral py-20">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text fade-in animate-delay-100">
+                <h1 class="text-5xl font-bold text-gray-800 mb-6">Unlock a World of Languages</h1>
+                <p class="text-xl text-secondary mb-12">Learn Spanish, French, German, and more with our engaging and effective app. Start your language journey today!</p>
+                <div class="flex space-x-4">
+                    <a href="#download" class="bg-primary hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md">
+                        Get Started Free
+                    </a>
+                    <a href="#features" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-6 rounded-lg transition-colors shadow-md">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image animate-slide-in-right">
+                <img src="https://picsum.photos/400/600" alt="App Interface Example" class="rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">Key Features to Enhance Your Learning</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-card p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fa fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Interactive Lessons</h3>
+                    <p class="text-secondary">Engaging lessons designed by language experts to make learning fun and effective.</p>
+                </div>
+                <div class="feature-card p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fa fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Progress Tracking</h3>
+                    <p class="text-secondary">Monitor your progress and stay motivated with detailed learning statistics.</p>
+                </div>
+                <div class="feature-card p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <div class="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mb-4 mx-auto">
+                        <i class="fa fa-comments text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Community Support</h3>
+                    <p class="text-secondary">Connect with fellow learners and native speakers for practice and support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">How LinguaLeap Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <div class="w-24 h-24 rounded-full bg-primary text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6 pulse-custom">
+                        1
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Choose Your Language</h3>
+                    <p class="text-secondary">Select from a wide range of languages you want to learn.</p>
+                </div>
+                <div>
+                    <div class="w-24 h-24 rounded-full bg-primary text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6 pulse-custom">
+                        2
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Engage in Lessons</h3>
+                    <p class="text-secondary">Participate in interactive lessons and exercises tailored to your level.</p>
+                </div>
+                <div>
+                    <div class="w-24 h-24 rounded-full bg-primary text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6 pulse-custom">
+                        3
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Track Your Progress</h3>
+                    <p class="text-secondary">See your improvement and celebrate milestones as you advance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-12">What Our Learners Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <img src="https://picsum.photos/200/200" alt="User 1" class="rounded-full w-20 h-20 mx-auto mb-4">
+                    <p class="text-secondary italic mb-4">"LinguaLeap has made learning French so much fun! The interactive lessons are fantastic and I can see my progress every day."</p>
+                    <h4 class="text-gray-800 font-semibold">- Jane Doe</h4>
+                </div>
+                <div class="testimonial-card p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <img src="https://picsum.photos/201/200" alt="User 2" class="rounded-full w-20 h-20 mx-auto mb-4">
+                    <p class="text-secondary italic mb-4">"I love the community aspect of LinguaLeap. Practicing with other learners has boosted my confidence and speaking skills."</p>
+                    <h4 class="text-gray-800 font-semibold">- Alex Smith</h4>
+                </div>
+                <div class="testimonial-card p-8 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-neutral">
+                    <img src="https://picsum.photos/200/201" alt="User 3" class="rounded-full w-20 h-20 mx-auto mb-4">
+                    <p class="text-secondary italic mb-4">"The progress tracking feature is incredibly motivating. It's satisfying to see how far I've come in learning German thanks to LinguaLeap."</p>
+                    <h4 class="text-gray-800 font-semibold">- Maria Garcia</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="py-20 bg-primary">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-12">Start Learning Today!</h2>
+            <p class="text-neutral text-xl mb-8">Download LinguaLeap and begin your language adventure. Available on iOS and Android.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-white hover:bg-gray-100 text-primary font-bold py-4 px-8 rounded-lg transition-colors shadow-md">
+                    <i class="fab fa-apple mr-2"></i> App Store
+                </a>
+                <a href="#" class="bg-white hover:bg-gray-100 text-primary font-bold py-4 px-8 rounded-lg transition-colors shadow-md">
+                    <i class="fab fa-google-play mr-2"></i> Google Play
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-neutral py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 LinguaLeap. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <span class="mx-2">|</span>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 60, // Offset for sticky header
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

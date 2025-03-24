@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#e0e5ec',
+                        'secondary': '#bec8e4',
+                        'accent': '#6366f1',
+                        'neu-shadow-light': '#ffffff',
+                        'neu-shadow-dark': '#c0c0c0',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neu': '4px 4px 8px #c0c0c0, -4px -4px 8px #ffffff',
+                        'neu-inset': 'inset 4px 4px 8px #c0c0c0, inset -4px -4px 8px #ffffff',
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-poppins bg-primary text-gray-800 antialiased;
+            }
+            .neu-card {
+                @apply bg-primary rounded-2xl shadow-neu p-6;
+            }
+            .neu-btn {
+                @apply bg-primary rounded-lg shadow-neu px-4 py-2 hover:shadow-neu-inset focus:outline-none;
+            }
+            .neu-input {
+                @apply bg-primary rounded-lg shadow-neu px-4 py-2 focus:outline-none focus:shadow-neu-inset;
+            }
+        }
+    </style>
+</head>
+<body class="p-6">
+    <div class="max-w-7xl mx-auto">
+
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-accent">MindfulFlow</h1>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <section class="neu-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold">Meditation Minutes</h2>
+                    <i class="fas fa-clock text-xl text-accent"></i>
+                </div>
+                <div class="text-4xl font-bold text-center">45 <span class="text-lg text-gray-500">min</span></div>
+                <div class="mt-6">
+                    <div class="bg-secondary rounded-full h-2 relative overflow-hidden">
+                        <div class="bg-accent h-full w-3/4 rounded-full" style="width: 75%;"></div>
+                    </div>
+                    <div class="flex justify-between text-sm text-gray-500 mt-1">
+                        <span>Goal: 60 min</span>
+                        <span>75%</span>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="neu-btn">Start Session</button>
+                </div>
+            </section>
+
+            <section class="neu-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold">Session History</h2>
+                    <i class="fas fa-history text-xl text-accent"></i>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-medium">Morning Calm</h3>
+                            <p class="text-sm text-gray-500">Yesterday, 8:00 AM</p>
+                        </div>
+                        <span class="text-accent font-semibold">15 min</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-medium">Afternoon Focus</h3>
+                            <p class="text-sm text-gray-500">2 days ago, 2:30 PM</p>
+                        </div>
+                        <span class="text-accent font-semibold">20 min</span>
+                    </li>
+                    <li class="flex items-center justify-between">
+                        <div>
+                            <h3 class="font-medium">Evening Relax</h3>
+                            <p class="text-sm text-gray-500">3 days ago, 9:00 PM</p>
+                        </div>
+                        <span class="text-accent font-semibold">10 min</span>
+                    </li>
+                </ul>
+                <div class="mt-4 text-center">
+                    <button class="neu-btn">View All</button>
+                </div>
+            </section>
+
+            <section class="neu-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold">Mindfulness Progress</h2>
+                    <i class="fas fa-chart-line text-xl text-accent"></i>
+                </div>
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="https://picsum.photos/300/200" alt="Progress Chart Example" class="rounded-lg object-cover">
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="neu-btn">Detailed Analytics</button>
+                </div>
+            </section>
+
+            <section class="neu-card md:col-span-2 lg:col-span-1">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold">Daily Quote</h2>
+                    <i class="fas fa-quote-right text-xl text-accent"></i>
+                </div>
+                <div class="text-center text-gray-700 italic">
+                    "The mind is everything. What you think you become."
+                </div>
+                <div class="mt-2 text-right text-sm text-gray-500">- Buddha</div>
+                <div class="mt-4 text-center">
+                    <button class="neu-btn">Share Quote</button>
+                </div>
+            </section>
+
+            <section class="neu-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold">Guided Meditation</h2>
+                    <i class="fas fa-headphones text-xl text-accent"></i>
+                </div>
+                <div class="aspect-w-16 aspect-h-9">
+                    <img src="https://picsum.photos/301/200" alt="Guided Meditation Image" class="rounded-lg object-cover">
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="neu-btn">Explore Sessions</button>
+                </div>
+            </section>
+
+            <section class="neu-card">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold">Journal Entry</h2>
+                    <i class="fas fa-book text-xl text-accent"></i>
+                </div>
+                <textarea class="neu-input w-full h-24 resize-none" placeholder="Write your thoughts here..."></textarea>
+                <div class="mt-4 text-right">
+                    <button class="neu-btn">Save Entry</button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-8 text-center text-gray-500">
+            <p>© 2024 MindfulFlow. All rights reserved.</p>
+        </footer>
+
+    </div>
+</body>
+</html>

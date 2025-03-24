@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Crusaders - Mobile Game Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F97316',
+                        secondary: '#EA580C',
+                        accent: '#FB923C',
+                        background: '#FEEBC8',
+                        textDark: '#334155',
+                        textLight: '#6B7280',
+                        card: '#FFEDD5',
+                    },
+                    fontFamily: {
+                        sans: ['Nunito Sans', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'bounce-slow': {
+                            '0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8,0,1,1)' },
+                            '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0,0,0.2,1)' },
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce-slow 1.5s infinite',
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-textDark no-scrollbar">
+    <header class="sticky top-0 bg-background/90 backdrop-blur-sm z-50 shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="font-bold text-xl text-primary">Cosmic Crusaders</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="hover:text-secondary transition-colors">Features</a>
+                <a href="#characters" class="hover:text-secondary transition-colors">Characters</a>
+                <a href="#download" class="hover:text-secondary transition-colors">Download</a>
+                <a href="#support" class="hover:text-secondary transition-colors">Support</a>
+            </div>
+            <button class="md:hidden text-gray-500 hover:text-primary focus:outline-none">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative overflow-hidden pt-24 pb-16 md:pb-32">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h1 class="font-black text-4xl md:text-5xl lg:text-6xl text-textDark leading-tight mb-6 animate-fade-in">
+                        Join the Epic Space Adventure!
+                    </h1>
+                    <p class="text-lg text-textLight mb-8 animate-fade-in delay-200">
+                         команду отважных героев и спасите галактику от зловещих сил в нашей новой мобильной игре!
+                    </p>
+                    <div class="space-x-4 animate-fade-in delay-400">
+                        <button class="bg-primary hover:secondary text-white font-bold py-3 px-8 rounded-full transition-colors">
+                            <i class="fab fa-google-play mr-2"></i> Get it on Play Store
+                        </button>
+                        <button class="bg-accent hover:bg-orange-400 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                            <i class="fab fa-app-store-ios mr-2"></i> Download on App Store
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end animate-slide-in-right">
+                    <img src="https://picsum.photos/400/600" alt="Game Mockup" class="rounded-3xl shadow-2xl hover:animate-bounce-slow transition-transform duration-300" />
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background to-transparent"></div>
+        </section>
+
+        <section id="features" class="py-16 md:py-24 bg-card">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="font-bold text-3xl md:text-4xl text-textDark mb-12">Key Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-rocket fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-textDark mb-2">Epic Space Battles</h3>
+                        <p class="text-textLight">Engage in thrilling battles against alien invaders and cosmic creatures.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-textDark mb-2">Team of Heroes</h3>
+                        <p class="text-textLight">Collect and upgrade a diverse team of cosmic crusaders with unique abilities.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-globe fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-textDark mb-2">Vast Universe to Explore</h3>
+                        <p class="text-textLight">Journey through stunning galaxies, planets, and mysterious nebulae.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-wrench fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-textDark mb-2">Customize Your Squad</h3>
+                        <p class="text-textLight">Equip your heroes with powerful gear and customize their skills for victory.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-textDark mb-2">Progress and Rewards</h3>
+                        <p class="text-textLight">Level up your heroes, unlock new content, and earn amazing rewards.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hand-holding-heart fa-2x"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-textDark mb-2">Engaging Storyline</h3>
+                        <p class="text-textLight">Immerse yourself in a captivating story filled with twists, turns, and memorable characters.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="characters" class="py-16 md:py-24">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="font-bold text-3xl md:text-4xl text-textDark mb-12">Meet the Crusaders</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
+                    <div>
+                        <img src="https://picsum.photos/200/300" alt="Character 1" class="rounded-2xl shadow-md mb-4 mx-auto hover:scale-105 transition-transform duration-300" />
+                        <h3 class="font-bold text-xl text-textDark">Captain Nova</h3>
+                        <p class="text-textLight">Brave leader with laser sword.</p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/200/301" alt="Character 2" class="rounded-2xl shadow-md mb-4 mx-auto hover:scale-105 transition-transform duration-300" />
+                        <h3 class="font-bold text-xl text-textDark">Stellaris</h3>
+                        <p class="text-textLight">Mystic healer with cosmic powers.</p>
+                    </div>
+                    <div>
+                        <img src="https://picsum.photos/200/302" alt="Character 3" class="rounded-2xl shadow-md mb-4 mx-auto hover:scale-105 transition-transform duration-300" />
+                        <h3 class="font-bold text-xl text-textDark">Rex Rocket</h3>
+                        <p class="text-textLight">Tech expert with rocket boots.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="py-24 bg-card">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="font-bold text-3xl md:text-4xl text-textDark mb-12">Ready to Join the Crusade?</h2>
+                <p class="text-lg text-textLight mb-8">Download Cosmic Crusaders today and start your space adventure!</p>
+                <div class="space-x-4">
+                    <button class="bg-primary hover:secondary text-white font-bold py-4 px-10 rounded-full text-lg transition-colors">
+                        <i class="fab fa-google-play mr-2"></i> Get it on Play Store
+                    </button>
+                    <button class="bg-accent hover:bg-orange-400 text-white font-bold py-4 px-10 rounded-full text-lg transition-colors">
+                        <i class="fab fa-app-store-ios mr-2"></i> Download on App Store
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-background py-8 text-center text-textLight border-t border-gray-200">
+        <p>© 2024 Cosmic Crusaders. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

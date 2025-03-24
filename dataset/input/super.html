@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Sporty Stuff for Super Kids!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Nunito Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#FF6F61',
+                        'secondary': '#FFD700',
+                        'accent': '#4CAF50',
+                        'neutral': '#F4F4F4',
+                        'fun': '#9C27B0',
+                    },
+                    keyframes: {
+                        'bounce-slow': {
+                            '0%, 100%': { transform: 'translateY(-5%)' },
+                            '50%': { transform: 'translateY(0)' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-out-right': {
+                            '0%': { transform: 'translateX(0)', opacity: '1' },
+                            '100%': { transform: 'translateX(100%)', opacity: '0' },
+                        }
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce-slow 1.5s ease-in-out infinite',
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'slide-out-right': 'slide-out-right 0.5s ease-in',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @layer utilities {
+            .text-shadow-sm {
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            }
+            .text-shadow-md {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            }
+            .text-shadow-lg {
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            }
+            .bg-gradient-fun {
+                background-image: linear-gradient(135deg, theme('colors.fun'), theme('colors.primary'));
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans overflow-x-hidden">
+
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary hover:text-secondary transition-colors duration-300">
+                <i class="fa-solid fa-rocket text-secondary mr-2"></i> KidSport Zone
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-primary transition-colors duration-300">Home</a>
+                <a href="#" class="hover:text-primary transition-colors duration-300">Shop</a>
+                <a href="#" class="hover:text-primary transition-colors duration-300">About Us</a>
+                <a href="#" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl text-primary"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-24 p-6">
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="slide-in-left">
+                <img src="https://picsum.photos/500/700" alt="Kids Basketball" class="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+            </div>
+            <div class="slide-in-left">
+                <h2 class="text-4xl font-bold text-primary mb-4 text-shadow-md">Zoom Zoom Basketball - Level Up Your Game!</h2>
+                <p class="text-gray-700 text-lg mb-6">Get ready to swish and score with the Zoom Zoom Basketball! Perfect for little hoop stars, this ball is bouncy, bright, and built for fun.  Durable for outdoor courts and soft enough for indoor play. Let's get ballin'!</p>
+                <ul class="list-disc list-inside text-gray-700 mb-6">
+                    <li><i class="fa-solid fa-check-circle text-accent mr-2"></i> Super Bouncy for Maximum Fun</li>
+                    <li><i class="fa-solid fa-check-circle text-accent mr-2"></i> Bright Colors - Easy to Spot!</li>
+                    <li><i class="fa-solid fa-check-circle text-accent mr-2"></i> Durable for Indoor & Outdoor Play</li>
+                    <li><i class="fa-solid fa-check-circle text-accent mr-2"></i> Perfect Size for Little Hands</li>
+                </ul>
+                <div class="flex items-center justify-between mb-8">
+                    <span class="text-3xl font-bold text-fun text-shadow-sm">$24.99</span>
+                    <div class="flex space-x-2">
+                        <button class="bg-secondary hover:bg-yellow-500 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-secondary transition-colors duration-300">
+                            <i class="fa-solid fa-cart-plus mr-2"></i> Add to Cart
+                        </button>
+                        <button class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-300">
+                            <i class="fa-solid fa-heart mr-2"></i> Wishlist
+                        </button>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fa-solid fa-truck-fast text-accent text-2xl"></i>
+                    <p class="text-sm text-gray-500">Fast & Fun Shipping Available!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-16 py-12 bg-gradient-to-br from-neutral to-white rounded-3xl shadow-lg p-8">
+            <h3 class="text-3xl font-bold text-center text-primary mb-8 text-shadow-md">More Awesome Gear You'll Love!</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 bg-white">
+                    <img src="https://picsum.photos/300/400" alt="Kids Soccer Ball" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-secondary mb-2">Super Kick Soccer Ball</h4>
+                        <p class="text-gray-700 text-sm mb-4">Score big goals with this super kickin' soccer ball!</p>
+                        <button class="bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-300">
+                            <i class="fa-solid fa-cart-plus mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 bg-white">
+                    <img src="https://picsum.photos/300/401" alt="Kids Scooter" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-secondary mb-2">Zip Zap Scooter</h4>
+                        <p class="text-gray-700 text-sm mb-4">Zoom around the neighborhood on the super speedy Zip Zap Scooter!</p>
+                        <button class="bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-300">
+                            <i class="fa-solid fa-cart-plus mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 bg-white">
+                    <img src="https://picsum.photos/300/402" alt="Kids Baseball Glove" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-secondary mb-2">Catch-It Baseball Glove</h4>
+                        <p class="text-gray-700 text-sm mb-4">Catch every fly ball with the amazing Catch-It Baseball Glove!</p>
+                        <button class="bg-accent hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:ring-2 focus:ring-accent transition-colors duration-300">
+                            <i class="fa-solid fa-cart-plus mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">© 2024 KidSport Zone. All rights reserved. <a href="#" class="text-primary hover:underline">Privacy Policy</a> | <a href="#" class="text-primary hover:underline">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.add('animate-bounce-slow');
+                setTimeout(() => {
+                    button.classList.remove('animate-bounce-slow');
+                }, 1500);
+            });
+        });
+    </script>
+
+</body>
+</html>

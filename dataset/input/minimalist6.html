@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Magazine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#115e59',
+                        'accent': '#38bdf8',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: '1rem',
+                            sm: '2rem',
+                            lg: '4rem',
+                            xl: '5rem',
+                            '2xl': '6rem',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .article-card {
+            transition: transform 0.3s ease-out;
+        }
+        .article-card:hover {
+            transform: translateY(-0.25rem);
+        }
+        .loading-skeleton {
+            background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+            animation: skeleton-loading 1.5s linear infinite;
+            background-size: 200% 100%;
+        }
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+
+    <header class="sticky top-0 bg-neutral/90 backdrop-blur-sm z-50 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="/" class="font-bold text-xl text-primary hover:text-secondary transition-colors">Magazine</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-primary transition-colors">Home</a>
+                <a href="/world" class="hover:text-primary transition-colors">World</a>
+                <a href="/politics" class="hover:text-primary transition-colors">Politics</a>
+                <a href="/business" class="hover:text-primary transition-colors">Business</a>
+                <a href="/tech" class="hover:text-primary transition-colors">Tech</a>
+                <a href="/culture" class="hover:text-primary transition-colors">Culture</a>
+            </nav>
+            <button class="md:hidden text-dark hover:text-primary focus:outline-none transition-colors" aria-label="Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-16">
+
+        <section class="mb-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="lg:col-span-1">
+                    <article class="overflow-hidden rounded-xl shadow-md article-card">
+                        <img src="https://picsum.photos/id/10/800/600" alt="Featured Article" class="w-full h-auto block">
+                        <div class="p-6">
+                            <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors"><a href="/article/featured">Breaking: Global Leaders Meet to Discuss Climate Crisis</a></h2>
+                            <p class="text-gray-700 mb-4">World leaders are convening in Geneva to address the escalating climate crisis. Discussions are expected to be intense as nations grapple with setting ambitious new targets for emissions reduction...</p>
+                            <a href="/article/featured" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                                Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="lg:col-span-1 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <article class="overflow-hidden rounded-xl shadow-md article-card">
+                        <img src="https://picsum.photos/id/20/400/300" alt="Article" class="w-full h-auto block">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/tech-breakthrough">Tech Breakthrough: AI Revolutionizes Healthcare Diagnostics</a></h3>
+                            <p class="text-gray-700">A new AI algorithm has shown groundbreaking accuracy in diagnosing diseases, potentially transforming healthcare. Experts believe this could lead to earlier detection and more effective treatments...</p>
+                            <a href="/article/tech-breakthrough" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                                Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="overflow-hidden rounded-xl shadow-md article-card">
+                        <img src="https://picsum.photos/id/30/400/300" alt="Article" class="w-full h-auto block">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/economic-outlook">Global Economic Outlook: Mixed Signals and Uncertainties</a></h3>
+                            <p class="text-gray-700">The global economy presents a mixed picture as inflation persists in some regions while others show signs of recovery. Economists are closely monitoring key indicators for clearer trends...</p>
+                            <a href="/article/economic-outlook" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                                Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="overflow-hidden rounded-xl shadow-md article-card">
+                        <img src="https://picsum.photos/id/40/400/300" alt="Article" class="w-full h-auto block">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/cultural-shift">Cultural Shift: The Rise of Remote Work and its Societal Impact</a></h3>
+                            <p class="text-gray-700">Remote work is no longer a trend but a significant cultural shift, reshaping urban landscapes and work-life balance. Sociologists are studying the long-term effects on community and individual well-being...</p>
+                            <a href="/article/cultural-shift" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                                Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="overflow-hidden rounded-xl shadow-md article-card">
+                        <img src="https://picsum.photos/id/50/400/300" alt="Article" class="w-full h-auto block">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/political-tension">Political Tension: Diplomatic Efforts to Ease Border Standoff</a></h3>
+                            <p class="text-gray-700">Diplomatic efforts are underway to de-escalate tensions at a contested border region. International mediators are involved in talks aimed at finding a peaceful resolution and preventing further conflict...</p>
+                            <a href="/article/political-tension" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                                Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="font-bold text-3xl mb-8">Latest Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="overflow-hidden rounded-xl shadow-md article-card">
+                    <img src="https://picsum.photos/id/60/400/300" alt="Article" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/article-6">The Future of Urban Mobility: Sustainable Transport Solutions</a></h3>
+                        <p class="text-gray-700">Cities worldwide are exploring sustainable transport solutions to combat pollution and congestion. Innovations in electric vehicles, public transport, and urban planning are at the forefront...</p>
+                        <a href="/article/article-6" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                            Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-xl shadow-md article-card">
+                    <img src="https://picsum.photos/id/70/400/300" alt="Article" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/article-7">Science and Discovery: New Insights into the Human Brain</a></h3>
+                        <p class="text-gray-700">Scientists have uncovered new insights into the complexities of the human brain, shedding light on cognitive functions and neurological disorders. These discoveries could pave the way for advanced treatments...</p>
+                        <a href="/article/article-7" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                            Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-xl shadow-md article-card">
+                    <img src="https://picsum.photos/id/80/400/300" alt="Article" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/article-8">Art and Culture: The Resurgence of Traditional Crafts in Modern Society</a></h3>
+                        <p class="text-gray-700">Traditional crafts are experiencing a resurgence as people seek authenticity and connection in an increasingly digital world. Artisans are blending age-old techniques with contemporary designs...</p>
+                        <a href="/article/article-8" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                            Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-xl shadow-md article-card">
+                    <img src="https://picsum.photos/id/90/400/300" alt="Article" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/article-9">Health and Wellness: The Impact of Mindfulness on Mental Health</a></h3>
+                        <p class="text-gray-700">Mindfulness practices are gaining recognition for their positive impact on mental health and well-being. Studies show that regular mindfulness can reduce stress and improve emotional regulation...</p>
+                        <a href="/article/article-9" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                            Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-xl shadow-md article-card">
+                    <img src="https://picsum.photos/id/100/400/300" alt="Article" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/article-10">Sports and Events: Highlights from the International Games</a></h3>
+                        <p class="text-gray-700">The International Games concluded with thrilling performances and record-breaking achievements. Athletes from around the world showcased exceptional talent and sportsmanship in a variety of disciplines...</p>
+                        <a href="/article/article-10" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                            Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                <article class="overflow-hidden rounded-xl shadow-md article-card">
+                    <img src="https://picsum.photos/id/110/400/300" alt="Article" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors"><a href="/article/article-11">Travel and Exploration: Discovering Hidden Gems in Southeast Asia</a></h3>
+                        <p class="text-gray-700">Southeast Asia continues to captivate travelers with its rich culture, stunning landscapes, and hidden gems. Off-the-beaten-path destinations offer unique experiences and unforgettable adventures...</p>
+                        <a href="/article/article-11" class="inline-flex items-center font-medium text-primary hover:text-secondary transition-colors">
+                            Read more <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-neutral py-12 mt-20">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="font-bold text-lg mb-4">About Us</h4>
+                <p class="text-gray-400">Minimalist Magazine is a leading online publication delivering insightful analysis and breaking news on global events. We strive for clarity, accuracy, and impactful storytelling.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Sections</h4>
+                <ul class="text-gray-400 space-y-2">
+                    <li><a href="/world" class="hover:text-neutral-light transition-colors">World</a></li>
+                    <li><a href="/politics" class="hover:text-neutral-light transition-colors">Politics</a></li>
+                    <li><a href="/business" class="hover:text-neutral-light transition-colors">Business</a></li>
+                    <li><a href="/tech" class="hover:text-neutral-light transition-colors">Tech</a></li>
+                    <li><a href="/culture" class="hover:text-neutral-light transition-colors">Culture</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-neutral-light transition-colors"><i class="fa-brands fa-facebook-square text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-neutral-light transition-colors"><i class="fa-brands fa-twitter-square text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-neutral-light transition-colors"><i class="fa-brands fa-instagram-square text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-8 border-t border-gray-700 pt-8 text-center text-gray-400">
+            <p>© 2024 Minimalist Magazine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleCards = document.querySelectorAll('.article-card');
+            articleCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+content_copy
+download
+Use code with caution.
+Html

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Artist - [Your Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F9A8D4',
+                        secondary: '#C471ED',
+                        accent: '#FFD4E8',
+                        neutral: '#FAF0E6',
+                        dark: '#1E1B1A',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                        '144': '36rem',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-down': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(10px)'
+                            },
+                        },
+                        'slide-in-left': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(-20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            },
+                        },
+                        'slide-out-left': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateX(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateX(-20px)'
+                            },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': {
+                                opacity: 1,
+                            },
+                            '50%': {
+                                opacity: .5,
+                            }
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-down': 'fade-out-down 0.5s ease-in',
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'slide-out-left': 'slide-out-left 0.5s ease-in',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+            plugins: [],
+        }
+    </script>
+    <style>
+        .hover-underline-animation {
+            position: relative;
+        }
+
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: theme('colors.primary');
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .grid-portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .grid-portfolio {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-portfolio {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark font-body antialiased">
+
+<header class="sticky top-0 z-50 bg-neutral/90 backdrop-blur-sm shadow-md transition-shadow duration-300" id="header">
+    <div class="container mx-auto px-4 py-6 md:py-8 flex justify-between items-center">
+        <a href="#" class="font-display text-2xl font-bold text-primary hover:text-secondary transition-colors duration-300">
+            [Your Name]
+        </a>
+        <nav class="hidden md:flex space-x-8">
+            <a href="#about" class="hover-underline-animation text-lg font-medium text-dark hover:text-primary transition-colors duration-300">About</a>
+            <a href="#portfolio" class="hover-underline-animation text-lg font-medium text-dark hover:text-primary transition-colors duration-300">Portfolio</a>
+            <a href="#services" class="hover-underline-animation text-lg font-medium text-dark hover:text-primary transition-colors duration-300">Services</a>
+            <a href="#contact" class="hover-underline-animation text-lg font-medium text-dark hover:text-primary transition-colors duration-300">Contact</a>
+        </nav>
+        <button class="md:hidden text-dark hover:text-primary focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+    </div>
+</header>
+
+<section id="hero" class="relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-24">
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="hero-text pb-12 md:pb-0">
+            <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-dark leading-tight mb-6 animate-fade-in-down">
+                Unleash Your Inner Radiance
+            </h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-8 animate-fade-in-down delay-100">
+                Elevating beauty, one face at a time. Professional makeup artistry for every occasion.
+            </p>
+            <div class="flex space-x-4 animate-fade-in-down delay-200">
+                <a href="#portfolio" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-neutral bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    View Portfolio
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-transparent hover:text-secondary hover:bg-accent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors duration-300">
+                    Book Now
+                </a>
+            </div>
+        </div>
+        <div class="hero-image relative animate-slide-in-left">
+            <div class="aspect-w-1 aspect-h-1 md:aspect-w-4 md:aspect-h-3 rounded-2xl overflow-hidden shadow-xl">
+                <img src="https://picsum.photos/id/1025/800/600" alt="Example Makeup Look" class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"/>
+            </div>
+            <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-dark to-transparent text-neutral rounded-bl-2xl rounded-tr-2xl">
+                <p class="text-sm md:text-base font-medium">Flawless Bridal Glam</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20 bg-accent/50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4">About Me</h2>
+            <p class="text-gray-700 text-lg">
+                A passionate makeup artist dedicated to enhancing your natural beauty and creating stunning looks for any occasion. With years of experience and a keen eye for detail, I strive to make every client feel confident and beautiful.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <div class="aspect-w-1 aspect-h-1 rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://picsum.photos/id/333/600/600" alt="Makeup Artist Portrait" class="object-cover w-full h-full"/>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-display text-2xl font-semibold text-primary mb-4">My Philosophy</h3>
+                <p class="text-gray-700 mb-6">
+                    I believe makeup is more than just cosmetics; it's a form of art and self-expression. My approach is to understand your unique features and personal style to create a look that not only enhances your beauty but also reflects your personality.
+                </p>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li class="mb-2">Personalized consultations to understand your vision</li>
+                    <li class="mb-2">Use of high-quality, professional makeup products</li>
+                    <li class="mb-2">Comfortable and relaxing makeup experience</li>
+                    <li>Commitment to hygiene and client satisfaction</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4">Portfolio</h2>
+            <p class="text-gray-700 text-lg">
+                A glimpse into my creative work. Explore a range of makeup styles from bridal to editorial.
+            </p>
+        </div>
+        <div class="grid-portfolio">
+            <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+                <img src="https://picsum.photos/id/1020/400/600" alt="Portfolio Image 1" class="object-cover w-full h-full"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-neutral opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-semibold text-lg">Editorial Look</h3>
+                    <p class="text-sm">Bold & Dramatic</p>
+                </div>
+            </div>
+            <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+                <img src="https://picsum.photos/id/1021/400/600" alt="Portfolio Image 2" class="object-cover w-full h-full"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-neutral opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-semibold text-lg">Bridal Makeup</h3>
+                    <p class="text-sm">Soft & Elegant</p>
+                </div>
+            </div>
+            <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+                <img src="https://picsum.photos/id/1022/400/600" alt="Portfolio Image 3" class="object-cover w-full h-full"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-neutral opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-semibold text-lg">Special Occasion</h3>
+                    <p class="text-sm">Glamorous & Defined</p>
+                </div>
+            </div>
+            <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+                <img src="https://picsum.photos/id/1023/400/600" alt="Portfolio Image 4" class="object-cover w-full h-full"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-neutral opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-semibold text-lg">Natural Look</h3>
+                    <p class="text-sm">Fresh & Radiant</p>
+                </div>
+            </div>
+            <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+                <img src="https://picsum.photos/id/1024/400/600" alt="Portfolio Image 5" class="object-cover w-full h-full"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-neutral opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-semibold text-lg">Runway Ready</h3>
+                    <p class="text-sm">Avant-Garde</p>
+                </div>
+            </div>
+            <div class="portfolio-item relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group">
+                <img src="https://picsum.photos/id/1026/400/600" alt="Portfolio Image 6" class="object-cover w-full h-full"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div class="absolute bottom-4 left-4 text-neutral opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="font-semibold text-lg">Soft Glam</h3>
+                    <p class="text-sm">Day to Night</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-20 bg-accent/50">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4">Services</h2>
+            <p class="text-gray-700 text-lg">
+                Offering a range of professional makeup services tailored to your needs.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="service-card p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center text-neutral">
+                    <i class="fa-solid fa-heart text-2xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl text-dark mb-2">Bridal Makeup</h3>
+                <p class="text-gray-700">
+                    Create your dream bridal look for your special day. Includes consultation and trial session.
+                </p>
+            </div>
+            <div class="service-card p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center text-neutral">
+                    <i class="fa-solid fa-camera text-2xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl text-dark mb-2">Editorial & Photoshoot</h3>
+                <p class="text-gray-700">
+                    High-fashion and creative makeup for photoshoots, magazines, and portfolios.
+                </p>
+            </div>
+            <div class="service-card p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 text-center">
+                <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-accent flex items-center justify-center text-neutral">
+                    <i class="fa-solid fa-star text-2xl"></i>
+                </div>
+                <h3 class="font-semibold text-xl text-dark mb-2">Special Occasion</h3>
+                <p class="text-gray-700">
+                    Glamorous makeup for parties, events, proms, and special celebrations.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-20">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4">Testimonials</h2>
+            <p class="text-gray-700 text-lg">
+                What clients are saying about their experience.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="testimonial-card p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-quote-left text-primary text-2xl opacity-50"></i>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                    "[Your Name] is an incredibly talented makeup artist! She made me feel so comfortable and beautiful on my wedding day. I highly recommend her services."
+                </p>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="https://picsum.photos/id/25/100/100" alt="Client 1" class="object-cover w-full h-full"/>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-dark">Jane Doe</p>
+                        <p class="text-sm text-gray-500">Bride</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-quote-left text-primary text-2xl opacity-50"></i>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                    "I had a photoshoot and [Your Name]'s makeup was absolutely perfect. It lasted all day and looked amazing in photos. Professional and skilled!"
+                </p>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="https://picsum.photos/id/26/100/100" alt="Client 2" class="object-cover w-full h-full"/>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-dark">Alex Smith</p>
+                        <p class="text-sm text-gray-500">Model</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <div class="mb-4">
+                    <i class="fa-solid fa-quote-left text-primary text-2xl opacity-50"></i>
+                </div>
+                <p class="text-gray-700 mb-4 italic">
+                    "Amazing experience getting my makeup done for a party. [Your Name] listened to what I wanted and created a stunning look. Will definitely book again!"
+                </p>
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                        <img src="https://picsum.photos/id/27/100/100" alt="Client 3" class="object-cover w-full h-full"/>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-dark">Sarah Johnson</p>
+                        <p class="text-sm text-gray-500">Event Attendee</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-primary/10">
+    <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-dark mb-4">Contact</h2>
+            <p class="text-gray-700 text-lg">
+                Book your appointment or inquire about services.
+            </p>
+        </div>
+        <div class="max-w-lg mx-auto">
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
+                    <input type="text" id="name" class="shadow-sm bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
+                    <input type="email" id="email" class="shadow-sm bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Your Email" required>
+                </div>
+                <div>
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your Message</label>
+                    <textarea id="message" rows="5" class="shadow-sm bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-neutral rounded-lg bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary">
+                    Send Message
+                </button>
+            </form>
+            <div class="mt-8 text-center">
+content_copy
+download
+Use code with caution.
+Html

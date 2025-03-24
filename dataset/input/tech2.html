@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Insights - Industry Analysis Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#115e59',
+                        accent: '#34d399',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+    </style>
+</head>
+<body class="bg-neutral font-sans text-dark">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-primary">
+                    <a href="/" class="hover:text-secondary transition-colors duration-300">Tech Insights</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="hover:text-secondary transition-colors duration-300">Home</a>
+                    <a href="/categories" class="hover:text-secondary transition-colors duration-300">Categories</a>
+                    <a href="/archive" class="hover:text-secondary transition-colors duration-300">Archive</a>
+                    <a href="/about" class="hover:text-secondary transition-colors duration-300">About</a>
+                    <a href="/contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden md:hidden mt-4" id="mobile-menu">
+                <a href="/" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">Home</a>
+                <a href="/categories" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">Categories</a>
+                <a href="/archive" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">Archive</a>
+                <a href="/about" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">About</a>
+                <a href="/contact" class="block py-2 px-4 hover:bg-neutral transition-colors duration-200">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 pb-12 mt-10">
+        <section class="hero mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4">Exploring the Future of Technology</h1>
+                    <p class="text-lg text-gray-700 mb-6">Dive deep into insightful analysis and expert opinions on the latest trends shaping the tech industry. From AI to Web3, stay ahead with Tech Insights.</p>
+                    <a href="/categories" class="inline-block bg-accent text-white py-3 px-6 rounded-md hover:bg-primary transition-colors duration-300 font-semibold">Browse Categories <i class="fa fa-arrow-right ml-2"></i></a>
+                </div>
+                <div class="animate-slide-up">
+                    <img src="https://picsum.photos/800/600" alt="Hero Image" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-posts mb-12">
+            <h2 class="text-3xl font-bold text-secondary mb-6">Featured Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-slide-up animate-delay-100">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Featured Post 1" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors duration-300"><a href="/post-1">The Rise of Quantum Computing</a></h3>
+                        <p class="text-gray-700 mb-4">A detailed look into the potential and challenges of quantum computing in the modern era.</p>
+                        <a href="/post-1" class="text-accent hover:text-secondary transition-colors duration-300 font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-slide-up animate-delay-200">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Featured Post 2" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors duration-300"><a href="/post-2">AI Ethics: Navigating the Moral Maze</a></h3>
+                        <p class="text-gray-700 mb-4">Exploring the ethical considerations and dilemmas posed by advancements in artificial intelligence.</p>
+                        <a href="/post-2" class="text-accent hover:text-secondary transition-colors duration-300 font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden animate-slide-up animate-delay-300">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Featured Post 3" class="w-full h-52 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors duration-300"><a href="/post-3">Web3 and the Decentralized Future</a></h3>
+                        <p class="text-gray-700 mb-4">Understanding the transformative potential of Web3 technologies and their impact on the internet.</p>
+                        <a href="/post-3" class="text-accent hover:text-secondary transition-colors duration-300 font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-posts">
+            <h2 class="text-2xl font-bold text-secondary mb-6">Latest Articles</h2>
+            <div class="grid grid-cols-1 gap-8">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="md:flex">
+                        <img src="https://picsum.photos/200/300?random=4" alt="Latest Post 1" class="w-full md:w-48 h-48 md:h-full object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors duration-300"><a href="/latest-post-1">The Impact of 5G on IoT Devices</a></h3>
+                            <p class="text-gray-700 mb-4">Exploring how 5G technology is revolutionizing the Internet of Things ecosystem and its applications.</p>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-gray-500 text-sm">Published on October 25, 2024</span>
+                                <a href="/latest-post-1" class="text-accent hover:text-secondary transition-colors duration-300 font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="md:flex">
+                        <img src="https://picsum.photos/200/300?random=5" alt="Latest Post 2" class="w-full md:w-48 h-48 md:h-full object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors duration-300"><a href="/latest-post-2">Cybersecurity Trends in 2025</a></h3>
+                            <p class="text-gray-700 mb-4">An overview of the emerging cybersecurity threats and strategies to protect your digital assets in the coming year.</p>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-gray-500 text-sm">Published on October 20, 2024</span>
+                                <a href="/latest-post-2" class="text-accent hover:text-secondary transition-colors duration-300 font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="md:flex">
+                        <img src="https://picsum.photos/200/300?random=6" alt="Latest Post 3" class="w-full md:w-48 h-48 md:h-full object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 hover:text-primary transition-colors duration-300"><a href="/latest-post-3">The Metaverse: Hype vs. Reality</a></h3>
+                            <p class="text-gray-700 mb-4">Analyzing the current state of the metaverse, separating the hype from the real opportunities and challenges.</p>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="text-gray-500 text-sm">Published on October 15, 2024</span>
+                                <a href="/latest-post-3" class="text-accent hover:text-secondary transition-colors duration-300 font-semibold">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-4">About Tech Insights</h4>
+                    <p class="text-gray-300">Your go-to source for in-depth analysis and expert perspectives on the technology industry. We provide reliable and insightful content to keep you informed.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="text-gray-300">
+                        <li class="mb-2"><a href="/" class="hover:text-accent transition-colors duration-300">Home</a></li>
+                        <li class="mb-2"><a href="/categories" class="hover:text-accent transition-colors duration-300">Categories</a></li>
+                        <li class="mb-2"><a href="/archive" class="hover:text-accent transition-colors duration-300">Archive</a></li>
+                        <li class="mb-2"><a href="/about" class="hover:text-accent transition-colors duration-300">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-accent transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Stay Connected</h4>
+                    <p class="text-gray-300 mb-4">Subscribe to our newsletter for the latest tech analysis and updates.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300"><i class="fa-brands fa-facebook-square fa-lg"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300"><i class="fa-brands fa-twitter-square fa-lg"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-8">
+            <p class="text-center text-gray-400">© 2024 Tech Insights. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

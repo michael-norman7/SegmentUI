@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafty Kids - Unleash Creativity!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF6F61',
+                        'secondary': '#FFD700',
+                        'accent': '#4ECDC4',
+                        'neutral': '#F7F7F7',
+                        'dark': '#333333',
+                    },
+                    fontFamily: {
+                        'sans': ['Nunito Sans', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'bounce-slow': {
+                            '0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
+                            '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' },
+                        },
+                        'float': {
+                            '0%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                            '100%': { transform: 'translateY(0px)' },
+                        },
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce-slow 1.5s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-neutral text-dark">
+
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary hover:text-secondary transition-colors duration-300">
+                Crafty Kids
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#kits" class="hover:text-primary transition-colors duration-300">Our Kits</a>
+                <a href="#about" class="hover:text-primary transition-colors duration-300">About Us</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md py-2">
+            <a href="#kits" class="block px-4 py-2 hover:bg-neutral transition-colors duration-200">Our Kits</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-neutral transition-colors duration-200">About Us</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-neutral transition-colors duration-200">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container mx-auto px-6 py-20 md:py-32 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-4 animate-bounce-slow">Unleash Your Child's Inner Artist!</h1>
+                <p class="text-lg text-gray-700 mb-8">Discover fun and educational craft kits designed to spark creativity and imagination in kids of all ages.</p>
+                <a href="#kits" class="bg-secondary text-white py-3 px-8 rounded-full font-bold hover:bg-primary transition-colors duration-300 shadow-lg">
+                    Explore Craft Kits <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://picsum.photos/id/1025/400/300" alt="Colorful Craft Supplies" class="rounded-xl shadow-lg animate-float" />
+            </div>
+        </section>
+
+        <section id="kits" class="bg-white py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-primary mb-12">Featured Craft Kits</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://picsum.photos/id/1040/400/300" alt="DIY Birdhouse Kit" class="w-full h-60 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">DIY Birdhouse Kit</h3>
+                            <p class="text-gray-700 mb-4">Build and decorate your own birdhouse. Everything included!</p>
+                            <a href="#" class="bg-accent text-white py-2 px-6 rounded-full font-bold hover:bg-primary transition-colors duration-300 inline-block">
+                                Shop Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://picsum.photos/id/1074/400/300" alt="Friendship Bracelet Kit" class="w-full h-60 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Friendship Bracelet Kit</h3>
+                            <p class="text-gray-700 mb-4">Create colorful bracelets for you and your friends. Easy and fun!</p>
+                            <a href="#" class="bg-accent text-white py-2 px-6 rounded-full font-bold hover:bg-primary transition-colors duration-300 inline-block">
+                                Shop Now
+                            </a>
+                        </div>
+                    </div>
+                    <div class="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                        <img src="https://picsum.photos/id/1069/400/300" alt="Mini Garden Kit" class="w-full h-60 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Mini Garden Kit</h3>
+                            <p class="text-gray-700 mb-4">Grow your own mini garden indoors. Seeds, soil, and pot included.</p>
+                            <a href="#" class="bg-accent text-white py-2 px-6 rounded-full font-bold hover:bg-primary transition-colors duration-300 inline-block">
+                                Shop Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-neutral">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-primary mb-12">Why Choose Crafty Kids?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-palette text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Spark Creativity</h3>
+                        <p class="text-gray-700">Our kits are designed to encourage imaginative play and artistic expression.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-graduation-cap text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Educational Fun</h3>
+                        <p class="text-gray-700">Crafting is a great way to develop fine motor skills and problem-solving abilities.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-box-open text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">All-Inclusive Kits</h3>
+                        <p class="text-gray-700">Each kit comes with all the materials and instructions needed for hours of crafting fun.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-white py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-primary mb-12">Contact Us</h2>
+                <p class="text-lg text-gray-700 mb-8">Have questions or need assistance? We'd love to hear from you!</p>
+                <a href="mailto:support@craftykids.com" class="bg-primary text-white py-3 px-8 rounded-full font-bold hover:bg-secondary transition-colors duration-300 shadow-lg">
+                    Email Us <i class="fa fa-envelope ml-2"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-neutral py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Crafty Kids. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="#" class="text-neutral hover:text-primary mx-2"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-neutral hover:text-primary mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-neutral hover:text-primary mx-2"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

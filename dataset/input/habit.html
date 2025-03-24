@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ab6ff',
+                        secondary: '#a0cfff',
+                        glass: 'rgba(255, 255, 255, 0.25)',
+                        glassBorder: 'rgba(255, 255, 255, 0.35)',
+                    },
+                    fontFamily: {
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glassmorphism': '0 8px 32px 0 rgba(31, 38, 135, 0.17)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+        }
+        .radial-progress {
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .radial-progress::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            z-index: 0;
+        }
+
+        .radial-progress svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .radial-progress svg circle {
+            fill: none;
+            stroke-width: 6;
+            stroke-linecap: round;
+            stroke: theme('colors.primary');
+            transition: stroke-dashoffset 0.3s ease-out;
+            transform: translate(5px, 5px);
+            transform-origin: 50% 50%;
+        }
+
+        .radial-progress .percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: theme('colors.gray.800');
+            z-index: 2;
+        }
+
+        .task-checkbox:checked + .task-label {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .animate-pulse-fast {
+            animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-10">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2 animate-pulse-fast">Your Habit Dashboard</h1>
+            <p class="text-gray-600">Stay consistent, track your progress, and build amazing routines.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <section class="glass p-6 rounded-lg shadow-glassmorphism transition-transform hover:scale-105">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fa-solid fa-fire-flame-curved mr-2 text-primary"></i> Habit Streaks</h2>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-gray-700 mb-1">Morning Workout</h3>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-bold text-primary mr-2">7</span>
+                            <span class="text-gray-500">days streak</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-gray-700 mb-1">Daily Meditation</h3>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-bold text-primary mr-2">14</span>
+                            <span class="text-gray-500">days streak</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-gray-700 mb-1">No Snooze</h3>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-bold text-primary mr-2">21</span>
+                            <span class="text-gray-500">days streak</span>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold text-gray-700 mb-1">Read 30 mins</h3>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-bold text-primary mr-2">5</span>
+                            <span class="text-gray-500">days streak</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <img src="https://picsum.photos/200/150" alt="Habit Streak Visualization" class="rounded-md mx-auto glass border border-glassBorder">
+                </div>
+            </section>
+
+            <section class="glass p-6 rounded-lg shadow-glassmorphism transition-transform hover:scale-105">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fa-solid fa-calendar-check mr-2 text-secondary"></i> Routine Adherence</h2>
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-semibold text-gray-700">Morning Routine</h3>
+                        <span class="text-sm text-gray-500">80%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-secondary h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-semibold text-gray-700">Evening Routine</h3>
+                        <span class="text-sm text-gray-500">92%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-secondary h-2.5 rounded-full" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-semibold text-gray-700">Weekly Routine</h3>
+                        <span class="text-sm text-gray-500">75%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-secondary h-2.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-around">
+                    <div class="radial-progress" data-percentage="85">
+                        <svg>
+                            <circle cx="50" cy="50" r="45" stroke-dasharray="282.74" stroke-dashoffset="42.41"></circle>
+                        </svg>
+                        <div class="percentage">85%</div>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-gray-700 font-semibold mb-1">Overall Adherence</p>
+                        <p class="text-sm text-gray-500">Average routine completion</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="glass p-6 rounded-lg shadow-glassmorphism transition-transform hover:scale-105">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center"><i class="fa-solid fa-list-check mr-2 text-primary"></i> Daily Tasks</h2>
+                <ul class="mb-6">
+                    <li class="py-2 border-b border-gray-200 last:border-b-0">
+                        <div class="flex items-center">
+                            <input id="task-1" type="checkbox" class="task-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                            <label for="task-1" class="task-label ml-2 text-sm text-gray-700">Prepare for meeting</label>
+                        </div>
+                    </li>
+                    <li class="py-2 border-b border-gray-200 last:border-b-0">
+                        <div class="flex items-center">
+                            <input id="task-2" type="checkbox" class="task-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" checked>
+                            <label for="task-2" class="task-label ml-2 text-sm text-gray-700">Send daily report</label>
+                        </div>
+                    </li>
+                    <li class="py-2 border-b border-gray-200 last:border-b-0">
+                        <div class="flex items-center">
+                            <input id="task-3" type="checkbox" class="task-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                            <label for="task-3" class="task-label ml-2 text-sm text-gray-700">Follow up with clients</label>
+                        </div>
+                    </li>
+                    <li class="py-2 border-b border-gray-200 last:border-b-0">
+                        <div class="flex items-center">
+                            <input id="task-4" type="checkbox" class="task-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" checked>
+                            <label for="task-4" class="task-label ml-2 text-sm text-gray-700">Plan next week tasks</label>
+                        </div>
+                    </li>
+                </ul>
+                <div class="text-center">
+                    <img src="https://picsum.photos/200/150?random=1" alt="Daily Tasks Illustration" class="rounded-md mx-auto glass border border-glassBorder">
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.radial-progress').forEach(progress => {
+            const percentage = progress.getAttribute('data-percentage');
+            const circle = progress.querySelector('circle');
+            const circumference = 2 * Math.PI * circle.getAttribute('r');
+            const offset = circumference - (percentage / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+        });
+    </script>
+</body>
+</html>

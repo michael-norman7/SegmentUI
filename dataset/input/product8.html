@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing - Coolest Thing Ever</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Bubblegum Sans', cursive;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        .product-card:focus-within .product-image,
+        .product-card:active .product-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-yellow-50">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-3xl font-bold text-blue-600"><i class="fas fa-store text-purple-500 mr-2"></i> FunStore</a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Products</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="focus:outline-none">
+                        <i class="fas fa-bars text-xl text-gray-700"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-12 px-6 pb-16">
+        <section class="mb-12 text-center">
+            <h1 class="text-4xl font-bold text-purple-700 mb-4 animate__animated animate__bounceIn">Amazing Products Just For You!</h1>
+            <p class="text-lg text-gray-600 animate__animated animate__fadeInUp animate__delay-1s">Explore our vibrant collection of fun and exciting items. Get ready to smile!</p>
+        </section>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+            <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl focus-within:shadow-xl active:shadow-xl">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Product 1" class="product-image w-full h-64 object-cover transition-transform duration-300 rounded-t-2xl">
+                    <div class="absolute top-2 left-2 bg-pink-500 text-white text-sm px-2 py-1 rounded-full font-semibold">New</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Funny Plush Toy</h3>
+                    <p class="text-gray-600 text-sm mb-4">Super soft and cuddly, perfect for kids and adults!</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-green-600">$19.99</span>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline active:bg-blue-800 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl focus-within:shadow-xl active:shadow-xl">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Product 2" class="product-image w-full h-64 object-cover transition-transform duration-300 rounded-t-2xl">
+                    <div class="absolute top-2 left-2 bg-green-500 text-white text-sm px-2 py-1 rounded-full font-semibold">Sale</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Rainbow Puzzle Cube</h3>
+                    <p class="text-gray-600 text-sm mb-4">Challenge your mind with this colorful and twisty puzzle.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-green-600">$14.99</span>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline active:bg-blue-800 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl focus-within:shadow-xl active:shadow-xl">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Product 3" class="product-image w-full h-64 object-cover transition-transform duration-300 rounded-t-2xl">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Giggle Stress Ball</h3>
+                    <p class="text-gray-600 text-sm mb-4">Squeeze away your stress with this hilarious giggle ball.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-green-600">$9.99</span>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline active:bg-blue-800 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl focus-within:shadow-xl active:shadow-xl">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Product 4" class="product-image w-full h-64 object-cover transition-transform duration-300 rounded-t-2xl">
+                    <div class="absolute top-2 left-2 bg-yellow-400 text-gray-800 text-sm px-2 py-1 rounded-full font-semibold">Popular</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Crazy Straw Glasses</h3>
+                    <p class="text-gray-600 text-sm mb-4">Drink in style with these wacky and fun straw glasses!</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-green-600">$12.99</span>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline active:bg-blue-800 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl focus-within:shadow-xl active:shadow-xl">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=5" alt="Product 5" class="product-image w-full h-64 object-cover transition-transform duration-300 rounded-t-2xl">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Bouncing Putty</h3>
+                    <p class="text-gray-600 text-sm mb-4">Stretch it, bounce it, mold it - endless fun with putty.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-green-600">$7.99</span>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline active:bg-blue-800 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card bg-white rounded-2xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl focus-within:shadow-xl active:shadow-xl">
+                <div class="relative">
+                    <img src="https://picsum.photos/200/300?random=6" alt="Product 6" class="product-image w-full h-64 object-cover transition-transform duration-300 rounded-t-2xl">
+                    <div class="absolute top-2 left-2 bg-red-500 text-white text-sm px-2 py-1 rounded-full font-semibold">Limited</div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-2">Robot Eraser Set</h3>
+                    <p class="text-gray-600 text-sm mb-4">Adorable robot erasers to make homework a bit more fun.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-green-600">$15.99</span>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline active:bg-blue-800 transition-colors duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-purple-100 py-8 mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-700">© 2024 FunStore. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fab fa-facebook-square text-2xl"></i></a>
+                <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fab fa-twitter-square text-2xl"></i></a>
+                <a href="#" class="text-gray-700 hover:text-blue-600"><i class="fab fa-instagram-square text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', () => {
+                alert('Added to cart!');
+            });
+        });
+    </script>
+</body>
+</html>

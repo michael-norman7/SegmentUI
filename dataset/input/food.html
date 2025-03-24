@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Blog - Recipe Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F45B69',
+                        'secondary': '#A239CA',
+                        'accent': '#4717F6',
+                        'light-gray': '#F3F4F6',
+                        'dark-gray': '#6B7280',
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-delay-100 { animation-delay: 100ms; }
+        .animate-delay-200 { animation-delay: 200ms; }
+        .animate-delay-300 { animation-delay: 300ms; }
+    </style>
+</head>
+<body class="font-poppins bg-light-gray text-dark-gray">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-semibold text-primary hover:text-secondary transition-colors">FlavorVerse</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-primary transition-colors">Home</a>
+                <a href="/recipes" class="hover:text-primary transition-colors">Recipes</a>
+                <a href="/tips" class="hover:text-primary transition-colors">Cooking Tips</a>
+                <a href="/about" class="hover:text-primary transition-colors">About</a>
+                <a href="/contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4 space-y-4">
+                <a href="/" class="block hover:text-primary transition-colors">Home</a>
+                <a href="/recipes" class="block hover:text-primary transition-colors">Recipes</a>
+                <a href="/tips" class="block hover:text-primary transition-colors">Cooking Tips</a>
+                <a href="/about" class="block hover:text-primary transition-colors">About</a>
+                <a href="/contact" class="block hover:text-primary transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-10 px-6 md:px-8 lg:px-12">
+        <article class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="relative">
+                <img src="https://picsum.photos/1200/400" alt="Delicious Recipe" class="w-full h-80 object-cover">
+                <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent text-white w-full">
+                    <h1 class="text-3xl font-bold mb-2 animate-fade-in">Ultimate Chocolate Chip Cookies</h1>
+                    <p class="text-sm animate-fade-in animate-delay-100">Published on November 15, 2024 | By <a href="#" class="hover:underline">Jane Doe</a></p>
+                </div>
+            </div>
+
+            <div class="p-6 md:p-8">
+                <div class="mb-6 animate-fade-in animate-delay-200">
+                    <h2 class="text-2xl font-semibold mb-4 text-secondary">Recipe Overview</h2>
+                    <p>These aren't just any chocolate chip cookies; they're the ultimate indulgence. Crispy edges, chewy centers, and pools of melted chocolate in every bite. Perfect for satisfying your sweet tooth or impressing guests. Get ready to bake up a batch of pure happiness!</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 animate-fade-in animate-delay-300">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-secondary"><i class="fa-solid fa-list-check mr-2"></i> Ingredients</h3>
+                        <ul class="list-disc pl-5">
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 2 1/4 cups all-purpose flour</label></li>
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 1 tsp baking soda</label></li>
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 1 tsp salt</label></li>
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 1 cup (2 sticks) unsalted butter, softened</label></li>
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 3/4 cup granulated sugar</label></li>
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 3/4 cup packed brown sugar</label></li>
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 1 tsp vanilla extract</label></li>
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 2 large eggs</label></li>
+                            <li class="mb-2"><label><input type="checkbox" class="mr-2"> 2 cups chocolate chips</label></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-secondary"><i class="fa-regular fa-clock mr-2"></i> Instructions</h3>
+                        <ol class="list-decimal pl-5">
+                            <li class="mb-4">Preheat oven to 375°F (190°C).</li>
+                            <li class="mb-4">In a small bowl, whisk together flour, baking soda, and salt. Set aside.</li>
+                            <li class="mb-4">In a large bowl, cream together the butter, granulated sugar, and brown sugar until smooth. Beat in vanilla extract and then eggs, one at a time.</li>
+                            <li class="mb-4">Gradually add the dry ingredients to the wet ingredients, mixing until just combined. Stir in the chocolate chips.</li>
+                            <li class="mb-4">Drop by rounded tablespoons onto ungreased baking sheets.</li>
+                            <li class="mb-4">Bake for 9-11 minutes, or until golden brown. Let cool on baking sheets for a few minutes before transferring to wire racks to cool completely.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="mb-8 animate-fade-in animate-delay-100">
+                    <h2 class="text-2xl font-semibold mb-4 text-secondary"><i class="fa-solid fa-lightbulb mr-2"></i> Cooking Tips & Tricks</h2>
+                    <ul class="list-disc pl-5">
+                        <li class="mb-2"><strong>Use Room Temperature Butter:</strong> Softened butter creams better with sugar, leading to a smoother dough and chewier cookies.</li>
+                        <li class="mb-2"><strong>Don't Overmix:</strong> Overmixing develops gluten, which can make cookies tough. Mix until just combined.</li>
+                        <li class="mb-2"><strong>Chill the Dough (Optional):</strong> For thicker cookies, chill the dough for 30 minutes before baking.</li>
+                        <li class="mb-2"><strong>Underbake Slightly:</strong> Cookies continue to bake as they cool. Take them out when the edges are golden but the centers are still slightly soft.</li>
+                        <li class="mb-2"><strong>High-Quality Chocolate:</strong> Use good quality chocolate chips or chunks for the best flavor.</li>
+                    </ul>
+                </div>
+
+                <div class="flex justify-between items-center mt-10 animate-fade-in animate-delay-200">
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-pinterest"></i></a>
+                        <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-regular fa-envelope"></i></a>
+                    </div>
+                    <button onclick="window.print()" class="bg-primary hover:bg-secondary text-white font-semibold py-2 px-4 rounded-md transition-colors"><i class="fa-solid fa-print mr-2"></i> Print Recipe</button>
+                </div>
+            </div>
+        </article>
+
+        <aside class="mt-10 md:mt-10 lg:mt-16">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8 animate-slide-in-bottom">
+                <h3 class="text-xl font-semibold mb-4 text-secondary">About the Author</h3>
+                <div class="flex items-center space-x-4 mb-4">
+                    <img src="https://picsum.photos/100/100" alt="Author Jane Doe" class="rounded-full w-16 h-16">
+                    <div>
+                        <h4 class="font-semibold">Jane Doe</h4>
+                        <p class="text-sm text-dark-gray">Food Blogger & Enthusiast</p>
+                    </div>
+                </div>
+                <p class="text-sm">Jane is a passionate home cook who loves to share her favorite recipes and cooking tips. With years of experience in the kitchen, she aims to make cooking accessible and enjoyable for everyone.</p>
+                <a href="/about" class="inline-block mt-4 text-primary hover:text-secondary transition-colors">Read More <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8 animate-slide-in-bottom animate-delay-100">
+                <h3 class="text-xl font-semibold mb-4 text-secondary">Popular Recipes</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-center space-x-4">
+                        <img src="https://picsum.photos/80/80" alt="Recipe 1" class="rounded-md w-20 h-20 object-cover">
+                        <div>
+                            <a href="#" class="hover:text-primary transition-colors font-semibold">Delicious Pasta Primavera</a>
+                            <p class="text-sm text-dark-gray">Easy & flavorful</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <img src="https://picsum.photos/80/80" alt="Recipe 2" class="rounded-md w-20 h-20 object-cover">
+                        <div>
+                            <a href="#" class="hover:text-primary transition-colors font-semibold">Spicy Chicken Stir-Fry</a>
+                            <p class="text-sm text-dark-gray">Quick weeknight meal</p>
+                        </div>
+                    </li>
+                    <li class="flex items-center space-x-4">
+                        <img src="https://picsum.photos/80/80" alt="Recipe 3" class="rounded-md w-20 h-20 object-cover">
+                        <div>
+                            <a href="#" class="hover:text-primary transition-colors font-semibold">Homemade Apple Pie</a>
+                            <p class="text-sm text-dark-gray">Classic comfort dessert</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 animate-slide-in-bottom animate-delay-200">
+                <h3 class="text-xl font-semibold mb-4 text-secondary">Categories</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-primary transition-colors"><i class="fa-solid fa-tag mr-2 text-sm"></i> Baking</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors"><i class="fa-solid fa-tag mr-2 text-sm"></i> Desserts</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors"><i class="fa-solid fa-tag mr-2 text-sm"></i> Main Courses</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors"><i class="fa-solid fa-tag mr-2 text-sm"></i> Vegetarian</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors"><i class="fa-solid fa-tag mr-2 text-sm"></i> Quick Meals</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="bg-white mt-16 py-8 border-t border-light-gray">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm text-dark-gray">© 2024 FlavorVerse. All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-facebook text-lg"></i></a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-twitter text-lg"></i></a>
+                <a href="#" class="text-primary hover:text-secondary transition-colors"><i class="fa-brands fa-pinterest text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

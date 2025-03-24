@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Asset Marketplace</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumo-light': '#f0f2f5',
+                        'neumo-dark': '#d9dbe1',
+                        'primary': '#4f46e5',
+                        'primary-dark': '#3730a3',
+                    },
+                    boxShadow: {
+                        'neumo-light': '6px 6px 12px #d1d9e6, -6px -6px 12px #f9f9f9',
+                        'neumo-darker': '4px 4px 8px #c0c4cc, -4px -4px 8px #ffffff',
+                        'neumo-inset': 'inset 2px 2px 5px #c0c4cc, inset -2px -2px 5px #ffffff',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-down': {
+                            '0%': { transform: 'translateY(-10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(0)', opacity: '1' },
+                            '100%': { transform: 'translateY(-10px)', opacity: '0' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'fade-out': {
+                            '0%': { opacity: '1' },
+                            '100%': { opacity: '0' },
+                        }
+                    },
+                    animation: {
+                        'slide-down': 'slide-down 0.3s ease-out forwards',
+                        'slide-up': 'slide-up 0.3s ease-in forwards',
+                        'fade-in': 'fade-in 0.2s ease-out forwards',
+                        'fade-out': 'fade-out 0.2s ease-in forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .neumorphic-card {
+            background: theme('colors.neumo-light');
+            box-shadow: theme('boxShadow.neumo-light');
+            border-radius: 12px;
+        }
+        .neumorphic-btn {
+            background: theme('colors.neumo-light');
+            box-shadow: theme('boxShadow.neumo-light');
+            border-radius: 8px;
+        }
+        .neumorphic-btn:hover {
+            box-shadow: theme('boxShadow.neumo-darker');
+        }
+        .neumorphic-input {
+            background: theme('colors.neumo-light');
+            box-shadow: theme('boxShadow.neumo-inset');
+            border-radius: 8px;
+        }
+        .neumorphic-input:focus {
+            box-shadow: theme('boxShadow.neumo-darker');
+            outline: none;
+        }
+        .loading-spinner {
+            border-top-color: theme('colors.primary');
+            animation: spinner 1.5s linear infinite;
+        }
+
+        @keyframes spinner {
+            to {transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body class="bg-neumo-light font-poppins">
+
+<header class="sticky top-0 bg-neumo-light neumorphic-card z-50 mx-auto w-full p-4 md:px-8 lg:px-16 transition-shadow duration-300" id="header">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-xl font-semibold text-primary">Assetia</a>
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-primary transition-colors duration-200">Icons</a>
+            <a href="#" class="hover:text-primary transition-colors duration-200">Templates</a>
+            <a href="#" class="hover:text-primary transition-colors duration-200">3D Models</a>
+            <a href="#" class="hover:text-primary transition-colors duration-200">More Assets</a>
+        </nav>
+        <button class="neumorphic-btn p-2 rounded-full md:hidden" aria-label="Open menu">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="hidden md:block">
+            <button class="neumorphic-btn px-4 py-2 font-medium hover:bg-neumo-dark transition-colors duration-200">Sign In</button>
+            <button class="bg-primary text-white neumorphic-btn px-4 py-2 font-medium hover:bg-primary-dark transition-colors duration-200">Sign Up</button>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto mt-20 px-4 md:px-8 lg:px-16">
+
+    <section class="mb-12">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2 md:mb-0">Explore Assets</h2>
+            <div class="flex space-x-2">
+                <div class="relative w-64">
+                    <input type="text" placeholder="Search assets..." class="neumorphic-input w-full px-4 py-2 rounded-lg focus:ring-0" />
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <select class="neumorphic-input px-4 py-2 rounded-lg appearance-none bg-neumo-light pr-8">
+                    <option>All Categories</option>
+                    <option>Icons</option>
+                    <option>Templates</option>
+                    <option>3D Models</option>
+                </select>
+                <button class="neumorphic-btn p-2 rounded-lg">
+                    <i class="fa fa-filter"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+            <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down">
+                <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/200/300" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">Minimalist Icon Set v1</h3>
+                <p class="text-sm text-gray-600 mb-2 truncate">A set of beautifully crafted minimalist icons for your projects.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-primary font-semibold">$19.99</span>
+                    <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0.1s;">
+                <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/201/300" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">Website Template - SaaS Landing</h3>
+                <p class="text-sm text-gray-600 mb-2 truncate">A modern landing page template perfect for SaaS businesses.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-primary font-semibold">$49.99</span>
+                    <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0.2s;">
+                <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/202/300" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">3D Model - Abstract Sculpture</h3>
+                <p class="text-sm text-gray-600 mb-2 truncate">High-quality 3D model of an abstract sculpture, ready to render.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-primary font-semibold">$29.99</span>
+                    <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0.3s;">
+                <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/203/300" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">Presentation Template - Business</h3>
+                <p class="text-sm text-gray-600 mb-2 truncate">Professional business presentation template for impactful presentations.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-primary font-semibold">$39.99</span>
+                    <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0.4s;">
+                <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/204/300" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">Illustrations - Vector Pack</h3>
+                <p class="text-sm text-gray-600 mb-2 truncate">Collection of vector illustrations for various design needs.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-primary font-semibold">$24.99</span>
+                    <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0.5s;">
+                <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/205/300" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">Mobile UI Kit - E-commerce</h3>
+                <p class="text-sm text-gray-600 mb-2 truncate">Complete mobile UI kit for creating e-commerce applications.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-primary font-semibold">$59.99</span>
+                    <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0.6s;">
+                <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/206/300" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">Icon Pack - Social Media</h3>
+                <p class="text-sm text-gray-600 mb-2 truncate">A set of popular social media icons in various styles.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-primary font-semibold">$14.99</span>
+                    <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0.7s;">
+                <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                    <img src="https://picsum.photos/207/300" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">Dashboard Template - Admin Panel</h3>
+                <p class="text-sm text-gray-600 mb-2 truncate">Fully responsive admin dashboard template with various components.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-primary font-semibold">$69.99</span>
+                    <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                        <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="loading-indicator" class="hidden justify-center mt-8">
+            <div class="w-8 h-8 border-4 border-dashed rounded-full loading-spinner"></div>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="bg-neumo-light neumorphic-card mt-12 p-8 text-center">
+    <p class="text-gray-500 text-sm">© 2024 Assetia. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const productGrid = document.getElementById('product-grid');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        // Simulate loading more products on scroll (infinite scroll)
+        let loading = false;
+        let page = 1;
+
+        const loadMoreProducts = async () => {
+            if (loading) return;
+            loading = true;
+            loadingIndicator.classList.remove('hidden');
+
+            // Simulate network request delay
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            const newProductsHTML = `
+                <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0s;">
+                    <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                        <img src="https://picsum.photos/208/300?page=${page}" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">New Asset ${page}-1</h3>
+                    <p class="text-sm text-gray-600 mb-2 truncate">Description for new asset ${page}-1.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-semibold">$29.99</span>
+                        <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                            <i class="fa fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="neumorphic-card p-4 hover:shadow-neumo-darker transition-shadow duration-200 animate-slide-down" style="animation-delay: 0.1s;">
+                    <div class="aspect-w-4 aspect-h-3 mb-4 overflow-hidden rounded-lg">
+                        <img src="https://picsum.photos/209/300?page=${page}" alt="Product Image" class="object-cover w-full h-full transition-transform duration-300 hover:scale-105">
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 truncate mb-1">New Asset ${page}-2</h3>
+                    <p class="text-sm text-gray-600 mb-2 truncate">Description for new asset ${page}-2.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-semibold">$34.99</span>
+                        <button class="neumorphic-btn p-2 rounded-md hover:bg-neumo-dark transition-colors duration-200" aria-label="Add to cart">
+                            <i class="fa fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            productGrid.innerHTML += newProductsHTML;
+            loadingIndicator.classList.add('hidden');
+            loading = false;
+            page++;
+        };
+
+
+        const handleScroll = () => {
+            const documentHeight = document.documentElement.scrollHeight;
+            const windowHeight = window.innerHeight;
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollPercent = (scrollTop + windowHeight) / documentHeight;
+
+            if (scrollPercent > 0.9 && !loading) {
+                loadMoreProducts();
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+    });
+
+
+    const header = document.getElementById('header');
+    let lastScrollTop = 0;
+
+    window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop){
+            header.classList.remove('neumorphic-card');
+            header.classList.add('shadow-md');
+        } else {
+            header.classList.add('neumorphic-card');
+            header.classList.remove('shadow-md');
+        }
+        lastScrollTop = scrollTop;
+    });
+
+
+</script>
+
+</body>
+</html>

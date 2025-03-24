@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Software - Enterprise Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007bff',
+                        secondary: '#6c757d',
+                        accent: '#ffc107',
+                        neutral: '#f8f9fa',
+                        dark: '#343a40',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .animate-pulse-fast {
+            animation: pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark">
+    <header class="sticky top-0 bg-neutral shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold text-primary">Elevate Software</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="hover:text-primary transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-primary transition-colors">Portfolio</a>
+                <a href="#about" class="hover:text-primary transition-colors">About Us</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 fade-in animate-fade-in mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-dark leading-tight">
+                    Crafting Digital Excellence for Enterprise.
+                </h1>
+                <p class="text-lg text-secondary mt-6">
+                    Elevate your business with bespoke software solutions. We design, develop, and deploy cutting-edge technology tailored to your enterprise needs.
+                </p>
+                <div class="mt-10">
+                    <button class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors animate-pulse-fast">
+                        Get Started <i class="fa fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 slide-in-right animate-slide-in-right">
+                <img src="https://picsum.photos/600/400" alt="Software Development Illustration" class="rounded-xl shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Our Expertise, Your Advantage</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-code fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Custom Software Development</h3>
+                    <p class="text-secondary">Tailored solutions to meet your unique business challenges and drive innovation.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-accent text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-cloud fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Cloud & DevOps Solutions</h3>
+                    <p class="text-secondary">Scalable, secure, and efficient cloud infrastructures and DevOps practices.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-mobile-alt fa-2x"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2">Mobile Application Development</h3>
+                    <p class="text-secondary">Engaging and high-performance mobile applications for iOS and Android platforms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Our Successful Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div>
+                    <img src="https://picsum.photos/400/300" alt="Project 1" class="rounded-xl shadow-md mb-4">
+                    <h3 class="text-xl font-semibold text-dark mb-2">Enterprise CRM System</h3>
+                    <p class="text-secondary">Developed a robust CRM system for a leading financial institution.</p>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/401/300" alt="Project 2" class="rounded-xl shadow-md mb-4">
+                    <h3 class="text-xl font-semibold text-dark mb-2">E-commerce Platform</h3>
+                    <p class="text-secondary">Created a scalable e-commerce platform for a global retail brand.</p>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/402/300" alt="Project 3" class="rounded-xl shadow-md mb-4">
+                    <h3 class="text-xl font-semibold text-dark mb-2">Healthcare Management App</h3>
+                    <p class="text-secondary">Built an innovative healthcare management application for patient care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2">
+                <img src="https://picsum.photos/500/400" alt="About Us Image" class="rounded-xl shadow-2xl">
+            </div>
+            <div class="md:w-1/2 md:ml-10 mt-10 md:mt-0">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Driven by Innovation, Rooted in Expertise</h2>
+                <p class="text-lg text-secondary mb-6">
+                    At Elevate Software, we are passionate about transforming businesses through technology. Our team of seasoned developers, designers, and strategists are committed to delivering exceptional software solutions.
+                </p>
+                <p class="text-lg text-secondary">
+                    We pride ourselves on our client-centric approach, ensuring every project aligns perfectly with your business objectives. Let us be your technology partner in driving growth and achieving digital transformation.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Let's Discuss Your Project</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg border border-secondary focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg border border-secondary focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div>
+                        <textarea placeholder="Your Message" rows="4" class="w-full p-3 rounded-lg border border-secondary focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="bg-primary hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors w-full">
+                            Send Message <i class="fa fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-10">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Elevate Software. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-primary"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Wonders Zoo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Nunito Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        'zoo-primary': '#4CAF50',
+                        'zoo-secondary': '#8BC34A',
+                        'zoo-accent': '#FFC107',
+                        'zoo-background': '#F0F4F8',
+                        'zoo-text-primary': '#212121',
+                        'zoo-text-secondary': '#757575',
+                    },
+                    keyframes: {
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        wiggle: 'wiggle 1s ease-in-out infinite',
+                        slideIn: 'slideIn 0.5s ease-out forwards',
+                        fadeIn: 'fadeIn 0.5s ease-out forwards',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        @keyframes zoomIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animate-zoom-in {
+            animation: zoomIn 0.3s ease-out forwards;
+        }
+    </style>
+
+</head>
+<body class="bg-zoo-background font-body text-zoo-text-primary">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-2xl font-bold text-zoo-primary hover:text-zoo-secondary transition-colors">Wild Wonders Zoo</a>
+            <button class="lg:hidden text-zoo-text-secondary hover:text-zoo-primary focus:outline-none">
+                <i class="fa fa-bars fa-xl"></i>
+            </button>
+            <div class="hidden lg:flex space-x-8">
+                <a href="#animals" class="hover:text-zoo-primary transition-colors">Animals</a>
+                <a href="#activities" class="hover:text-zoo-primary transition-colors">Activities</a>
+                <a href="#plan" class="hover:text-zoo-primary transition-colors">Plan Your Visit</a>
+                <a href="#support" class="hover:text-zoo-primary transition-colors">Support Us</a>
+                <a href="#tickets" class="bg-zoo-primary hover:bg-zoo-secondary text-white py-2 px-4 rounded-full transition-colors">Get Tickets</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="relative py-24 overflow-hidden">
+            <div class="absolute inset-0 bg-zoo-primary opacity-5"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="lg:flex lg:items-center">
+                    <div class="lg:w-1/2 mb-12 lg:mb-0">
+                        <h1 class="font-display text-5xl font-bold text-zoo-text-primary mb-6 animate-slideIn">Discover the Wild Within</h1>
+                        <p class="text-xl text-zoo-text-secondary mb-8 animate-slideIn delay-100">Embark on an unforgettable adventure and meet amazing animals from around the globe. Explore, learn, and connect with wildlife.</p>
+                        <a href="#animals" class="inline-block bg-zoo-accent hover:bg-yellow-500 text-white py-3 px-8 rounded-full font-semibold transition-colors animate-slideIn delay-200">Explore Animals</a>
+                    </div>
+                    <div class="lg:w-1/2 lg:pl-12 flex justify-center">
+                        <img src="https://picsum.photos/600/400?animal" alt="Zoo Animals" class="rounded-xl shadow-lg animate-fadeIn">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="animals" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-display text-4xl font-bold text-center mb-12">Meet Our Amazing Animals</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="https://picsum.photos/200/300?animal=1" alt="Lion" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl mb-2">Lion</h3>
+                            <p class="text-zoo-text-secondary">The majestic king of the jungle. Observe their strength and beauty.</p>
+                            <button class="mt-4 bg-zoo-primary hover:bg-zoo-secondary text-white py-2 px-4 rounded-full transition-colors">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="https://picsum.photos/200/300?animal=2" alt="Elephant" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl mb-2">Elephant</h3>
+                            <p class="text-zoo-text-secondary">Gentle giants with incredible intelligence and social bonds.</p>
+                            <button class="mt-4 bg-zoo-primary hover:bg-zoo-secondary text-white py-2 px-4 rounded-full transition-colors">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+                        <img src="https://picsum.photos/200/300?animal=3" alt="Penguin" class="w-full h-60 object-cover">
+                        <div class="p-6">
+                            <h3 class="font-semibold text-xl mb-2">Penguin</h3>
+                            <p class="text-zoo-text-secondary">Playful and adorable birds adapted to survive in cold climates.</p>
+                            <button class="mt-4 bg-zoo-primary hover:bg-zoo-secondary text-white py-2 px-4 rounded-full transition-colors">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="bg-zoo-background py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-display text-4xl font-bold text-center mb-12">Fun Activities for Everyone</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col justify-between">
+                        <div>
+                            <img src="https://picsum.photos/200/300?activity=1" alt="Feeding Time" class="w-full h-60 object-cover rounded-t-xl">
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-2">Animal Feeding Sessions</h3>
+                                <p class="text-zoo-text-secondary">Get up close and personal during our supervised feeding sessions.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="#" class="inline-block bg-zoo-accent hover:bg-yellow-500 text-white py-2 px-4 rounded-full font-semibold transition-colors">Join a Session</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col justify-between">
+                        <div>
+                            <img src="https://picsum.photos/200/300?activity=2" alt="Educational Talks" class="w-full h-60 object-cover rounded-t-xl">
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-2">Educational Talks</h3>
+                                <p class="text-zoo-text-secondary">Learn fascinating facts about wildlife from our expert zookeepers.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="#" class="inline-block bg-zoo-accent hover:bg-yellow-500 text-white py-2 px-4 rounded-full font-semibold transition-colors">View Schedule</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow flex flex-col justify-between">
+                        <div>
+                            <img src="https://picsum.photos/200/300?activity=3" alt="Safari Adventure" class="w-full h-60 object-cover rounded-t-xl">
+                            <div class="p-6">
+                                <h3 class="font-semibold text-xl mb-2">Safari Adventure Ride</h3>
+                                <p class="text-zoo-text-secondary">Explore vast habitats in our open-air safari adventure vehicle.</p>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0">
+                            <a href="#" class="inline-block bg-zoo-accent hover:bg-yellow-500 text-white py-2 px-4 rounded-full font-semibold transition-colors">Book Your Ride</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plan" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-display text-4xl font-bold text-center mb-12">Plan Your Visit</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://picsum.photos/400/300?zoo" alt="Zoo Map" class="rounded-xl shadow-lg w-full">
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-2xl mb-4">Opening Hours</h3>
+                        <p class="text-zoo-text-secondary mb-4">Monday - Sunday: 9:00 AM - 6:00 PM</p>
+                        <h3 class="font-semibold text-2xl mb-4">Ticket Information</h3>
+                        <p class="text-zoo-text-secondary mb-4">Adults: $25 | Children (3-12): $15 | Seniors (65+): $20</p>
+                        <a href="#tickets" class="inline-block bg-zoo-primary hover:bg-zoo-secondary text-white py-3 px-8 rounded-full font-semibold transition-colors">Get Tickets Online</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="bg-zoo-background py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="font-display text-4xl font-bold text-center mb-12">Support Wildlife Conservation</h2>
+                <div class="text-center">
+                    <p class="text-xl text-zoo-text-secondary mb-8">Your support helps us protect endangered species and their habitats. Donate today to make a difference.</p>
+                    <a href="#" class="inline-block bg-zoo-accent hover:bg-yellow-500 text-white py-3 px-8 rounded-full font-semibold transition-colors">Donate Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-zoo-primary py-12 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Wild Wonders Zoo. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-zoo-accent"><i class="fab fa-facebook-square fa-lg"></i></a>
+                <a href="#" class="hover:text-zoo-accent"><i class="fab fa-twitter-square fa-lg"></i></a>
+                <a href="#" class="hover:text-zoo-accent"><i class="fab fa-instagram-square fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

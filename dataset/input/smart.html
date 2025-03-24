@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3490dc',
+                        secondary: '#edf2f7',
+                        accent: '#4dc0b5',
+                        neutral: '#cbd5e0',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'custom': '0 5px 20px rgba(0,0,0,0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-secondary font-sans antialiased overflow-hidden">
+    <div class="flex h-screen">
+
+        <aside class="bg-white w-64 flex-none p-6 animate-fade-in">
+            <div class="mb-8">
+                <h1 class="text-xl font-bold text-primary">City<span class="text-neutral-500">OS</span></h1>
+            </div>
+            <nav>
+                <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-secondary hover:text-primary rounded-md transition-colors duration-200 mb-2">
+                    <i class="fa fa-tachometer-alt mr-2"></i> Dashboard
+                </a>
+                <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-secondary hover:text-primary rounded-md transition-colors duration-200 mb-2">
+                    <i class="fa fa-map-marker-alt mr-2"></i> City Overview
+                </a>
+                <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-secondary hover:text-primary rounded-md transition-colors duration-200 mb-2">
+                    <i class="fa fa-chart-line mr-2"></i> Analytics
+                </a>
+                <a href="#" class="block py-2 px-4 text-gray-700 hover:bg-secondary hover:text-primary rounded-md transition-colors duration-200 mb-2">
+                    <i class="fa fa-cog mr-2"></i> Settings
+                </a>
+            </nav>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-white p-4 shadow-sm animate-fade-in">
+                <div class="container mx-auto flex justify-between items-center">
+                    <div class="font-semibold text-gray-800">Dashboard Overview</div>
+                    <div class="flex items-center space-x-4">
+                        <button class="bg-neutral px-3 py-2 rounded-md text-gray-600 hover:bg-neutral-200 focus:outline-none">
+                            <i class="fa fa-bell"></i>
+                        </button>
+                        <button class="bg-neutral px-3 py-2 rounded-md text-gray-600 hover:bg-neutral-200 focus:outline-none">
+                            <i class="fa fa-user-circle"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 p-6 overflow-y-auto animate-fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+
+                    <div class="bg-white shadow-custom rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-thermometer-half text-2xl text-primary mr-2"></i>
+                            <h3 class="text-lg font-semibold text-gray-800">Temperature</h3>
+                        </div>
+                        <div class="text-4xl font-bold text-primary">25°C</div>
+                        <div class="text-sm text-gray-500 mt-1">Real-time sensor data</div>
+                        <div class="mt-4">
+                            <img src="https://picsum.photos/200/100?random=1" alt="Temperature Chart" class="rounded-md">
+                        </div>
+                    </div>
+
+                    <div class="bg-white shadow-custom rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-traffic-light text-2xl text-accent mr-2"></i>
+                            <h3 class="text-lg font-semibold text-gray-800">Traffic Flow</h3>
+                        </div>
+                        <div class="text-4xl font-bold text-accent">Moderate</div>
+                        <div class="text-sm text-gray-500 mt-1">City-wide traffic status</div>
+                        <div class="mt-4">
+                            <img src="https://picsum.photos/200/100?random=2" alt="Traffic Chart" class="rounded-md">
+                        </div>
+                    </div>
+
+                    <div class="bg-white shadow-custom rounded-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fa fa-cloud-rain text-2xl text-neutral mr-2"></i>
+                            <h3 class="text-lg font-semibold text-gray-800">Air Quality</h3>
+                        </div>
+                        <div class="text-4xl font-bold text-neutral">Good</div>
+                        <div class="text-sm text-gray-500 mt-1">Pollution levels</div>
+                        <div class="mt-4">
+                            <img src="https://picsum.photos/200/100?random=3" alt="Air Quality Chart" class="rounded-md">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-white shadow-custom rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Public Services Status</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fa fa-power-off text-xl text-primary mr-2"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-700">Electricity</div>
+                                    <div class="text-sm text-green-500">Online</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-tint text-xl text-accent mr-2"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-700">Water Supply</div>
+                                    <div class="text-sm text-green-500">Online</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-bus text-xl text-neutral mr-2"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-700">Public Transport</div>
+                                    <div class="text-sm text-yellow-500">Minor Delays</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-wifi text-xl text-primary mr-2"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-700">Internet Services</div>
+                                    <div class="text-sm text-green-500">Online</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white shadow-custom rounded-lg p-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Resource Allocation</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fa fa-bolt text-xl text-accent mr-2"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-700">Energy Consumption</div>
+                                    <div class="text-sm text-gray-500">240 MW</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-faucet text-xl text-neutral mr-2"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-700">Water Usage</div>
+                                    <div class="text-sm text-gray-500">1.5 ML</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-recycle text-xl text-primary mr-2"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-700">Waste Management</div>
+                                    <div class="text-sm text-gray-500">350 Tons</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-tree text-xl text-accent mr-2"></i>
+                                <div>
+                                    <div class="font-semibold text-gray-700">Green Space</div>
+                                    <div class="text-sm text-gray-500">45% Utilized</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white shadow-custom rounded-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">City Map</h3>
+                    <div>
+                        <img src="https://picsum.photos/600/300?random=4" alt="City Map" class="rounded-md w-full">
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>

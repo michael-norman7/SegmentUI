@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumineux Cosmetics - Product Listing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'lumineux-primary': '#FDE68A',
+                        'lumineux-secondary': '#374151',
+                        'lumineux-accent': '#FECACA',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
+                        'fade-in': 'fade-in 0.3s ease-out',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+        }
+        .animate-slide-in-bottom {
+            animation: slide-in-bottom 0.5s ease-out;
+        }
+        .animate-fade-in {
+            animation: fade-in 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-lumineux-secondary">
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-bold text-xl text-lumineux-secondary hover:text-lumineux-primary transition-colors duration-300">Lumineux</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-lumineux-primary transition-colors duration-300">Products</a>
+                <a href="#" class="hover:text-lumineux-primary transition-colors duration-300">About</a>
+                <a href="#" class="hover:text-lumineux-primary transition-colors duration-300">Learn</a>
+                <a href="#" class="hover:text-lumineux-primary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md py-2">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Products</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">About</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Learn</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-24 px-6 pb-12">
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="animate-fade-in">
+                <h1 class="text-4xl font-bold mb-4">Radiant Glow Serum</h1>
+                <p class="text-gray-600 mb-6">Unlock your skin's natural radiance with our revolutionary serum. Formulated with potent botanical extracts and vitamin C, it diminishes dark spots, evens skin tone, and boosts luminosity. Experience visible results in just weeks.</p>
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="text-xl font-semibold">$49.99</span>
+                    <span class="text-gray-500 line-through">$59.99</span>
+                    <span class="bg-lumineux-accent text-lumineux-secondary px-2 py-1 rounded-full text-sm font-medium">Sale</span>
+                </div>
+                <div class="flex space-x-4 mb-8">
+                    <button class="bg-lumineux-primary hover:bg-yellow-400 text-lumineux-secondary font-bold py-3 px-8 rounded-full transition-colors duration-300 focus:outline-none">Add to Cart</button>
+                    <button class="bg-transparent border border-lumineux-primary hover:bg-lumineux-primary hover:text-white text-lumineux-primary font-bold py-3 px-8 rounded-full transition-colors duration-300 focus:outline-none">Learn More</button>
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-700">
+                    <i class="fa fa-shield-check text-lumineux-primary"></i>
+                    <span>Secure Checkout</span>
+                </div>
+                <div class="flex items-center space-x-2 text-sm text-gray-700 mt-1">
+                    <i class="fa fa-truck text-lumineux-primary"></i>
+                    <span>Free Shipping on Orders Over $50</span>
+                </div>
+            </div>
+
+            <div class="relative animate-slide-in-bottom">
+                <div class="aspect-w-1 aspect-h-1 rounded-3xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/237/600/600" alt="Radiant Glow Serum" class="object-cover w-full h-full transition-transform duration-500 hover:scale-105">
+                </div>
+                <div class="absolute bottom-6 left-6 bg-white bg-opacity-75 backdrop-blur-sm p-4 rounded-xl shadow-md">
+                    <h3 class="font-semibold text-lg">Discover the Glow</h3>
+                    <p class="text-sm text-gray-600">See real results from our community.</p>
+                    <button class="mt-2 text-lumineux-primary hover:text-yellow-400 text-sm font-medium transition-colors duration-300 flex items-center group focus:outline-none">
+                        View Reviews
+                        <i class="fa fa-arrow-right ml-1 group-hover:ml-2 transition-all duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-20">
+            <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-lumineux-primary rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fa fa-star text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Brightening Power</h3>
+                    <p class="text-gray-600">Vitamin C and botanical extracts work synergistically to diminish dark spots and enhance skin's natural radiance.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-lumineux-primary rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fa fa-droplet text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Hydrating Formula</h3>
+                    <p class="text-gray-600">Lightweight and fast-absorbing, our serum deeply hydrates without leaving a greasy residue, perfect for all skin types.</p>
+                </div>
+                <div class="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-lumineux-primary rounded-xl mb-4 flex items-center justify-center">
+                        <i class="fa fa-plant-wilt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Natural Ingredients</h3>
+                    <p class="text-gray-600">Formulated with carefully selected natural ingredients, free from parabens, sulfates, and phthalates. Cruelty-free and vegan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-20 bg-gray-100 py-16 rounded-3xl">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-8">Customer Reviews</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full overflow-hidden">
+                                <img src="https://picsum.photos/id/238/100/100" alt="Reviewer 1" class="object-cover w-full h-full">
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold">Sarah J.</h4>
+                                <div class="flex items-center text-sm text-yellow-500">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"This serum is a game-changer! My skin feels so much brighter and smoother. I've noticed a significant reduction in my dark spots. Highly recommend!"</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full overflow-hidden">
+                                <img src="https://picsum.photos/id/239/100/100" alt="Reviewer 2" class="object-cover w-full h-full">
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold">Michael B.</h4>
+                                <div class="flex items-center text-sm text-yellow-500">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa-regular fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"I was skeptical at first, but this serum truly delivers. It's lightweight, absorbs quickly, and has improved my skin tone. Great product!"</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 rounded-full overflow-hidden">
+                                <img src="https://picsum.photos/id/240/100/100" alt="Reviewer 3" class="object-cover w-full h-full">
+                            </div>
+                            <div class="ml-3">
+                                <h4 class="font-semibold">Emily L.</h4>
+                                <div class="flex items-center text-sm text-yellow-500">
+                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600">"Love this serum! It's gentle yet effective. My skin feels hydrated and looks more radiant. Will definitely repurchase."</p>
+                    </div>
+                </div>
+                <button class="mt-8 bg-lumineux-primary hover:bg-yellow-400 text-lumineux-secondary font-bold py-3 px-8 rounded-full transition-colors duration-300 focus:outline-none">Read All Reviews</button>
+            </div>
+        </section>
+
+        <section class="mt-20 text-center">
+            <h2 class="text-3xl font-bold mb-8">Ready to Glow?</h2>
+            <p class="text-gray-600 mb-12">Experience the Lumineux difference and unlock your skin's radiant potential.</p>
+            <button class="bg-lumineux-primary hover:bg-yellow-400 text-lumineux-secondary font-bold py-4 px-12 rounded-full text-xl transition-colors duration-300 focus:outline-none animate-pulse-custom">Shop Now & Get 15% Off</button>
+        </section>
+    </main>
+
+    <footer class="bg-lumineux-secondary text-white py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="font-bold text-xl mb-4">Lumineux Cosmetics</h4>
+                    <p class="text-gray-300">Your destination for radiant and healthy skin. Discover our curated collection of skincare essentials.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-4">Quick Links</h4>
+                    <ul class="text-gray-300 space-y-2">
+                        <li><a href="#" class="hover:text-lumineux-primary transition-colors duration-300">Products</a></li>
+                        <li><a href="#" class="hover:text-lumineux-primary transition-colors duration-300">About Us</a></li>
+                        <li><a href="#" class="hover:text-lumineux-primary transition-colors duration-300">Customer Support</a></li>
+                        <li><a href="#" class="hover:text-lumineux-primary transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-lumineux-primary transition-colors duration-300">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xl mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-lumineux-primary transition-colors duration-300"><i class="fa-brands fa-facebook-f text-lg"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-lumineux-primary transition-colors duration-300"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-lumineux-primary transition-colors duration-300"><i class="fa-brands fa-twitter text-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-300">
+                <p>© 2024 Lumineux Cosmetics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

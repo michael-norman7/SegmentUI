@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to FunZone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#F472B6',
+                        secondary: '#8B5CF6',
+                        accent: '#38BDF8',
+                        background: '#FEEBC8',
+                        card: '#FFFFFF',
+                        textPrimary: '#374151',
+                        textSecondary: '#6B7280',
+                    },
+                    fontFamily: {
+                        bubblegum: ['Bubblegum Sans', 'cursive'],
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2s linear infinite',
+                        'slide-in-bottom': 'slide-in-bottom 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': {
+                                transform: 'translateY(100%)',
+                                opacity: '0',
+                            },
+                            '100%': {
+                                transform: 'translateY(0)',
+                                opacity: '1',
+                            },
+                        }
+                    },
+                    boxShadow: {
+                        'fun': '0 10px 20px rgba(0, 0, 0, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes cloud-move {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 200% 0, 10% 0; }
+        }
+
+        .cloud-bg {
+            background-image:
+                url('https://picsum.photos/id/1005/200/300'), /* example image block 1 */
+                url('https://picsum.photos/id/1025/200/300'); /* example image block 2 */
+            background-repeat: repeat-x, repeat-x;
+            background-size: 50%, 60%;
+            animation: cloud-move 60s linear infinite;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="bg-background font-bubblegum overflow-hidden h-screen">
+<div class="cloud-bg absolute inset-0 -z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-background to-pink-100 opacity-30 -z-20"></div>
+
+<div class="flex justify-center items-center h-full px-6">
+    <div class="relative bg-card p-8 rounded-3xl shadow-fun w-full max-w-md animate-slide-in-bottom">
+        <div class="absolute top-0 left-0 w-full h-20 rounded-t-3xl overflow-hidden">
+            <img src="https://picsum.photos/id/1018/400/200" alt="Banner" class="w-full h-full object-cover">
+        </div>
+        <div class="mt-12 text-center">
+            <h2 class="text-3xl font-bold text-primary mb-4">Welcome to FunZone!</h2>
+            <p class="text-textSecondary mb-6">Log in to start your adventure.</p>
+        </div>
+        <form class="space-y-6">
+            <div>
+                <label for="username" class="block mb-2 text-textPrimary">Username</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa fa-user text-gray-400"></i>
+                    </div>
+                    <input type="text" id="username" class="shadow-sm bg-gray-50 border border-gray-300 text-textPrimary text-sm rounded-lg focus:ring-accent focus:border-accent block w-full pl-10 p-2.5" placeholder="Enter your username" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-textPrimary">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa fa-lock text-gray-400"></i>
+                    </div>
+                    <input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-textPrimary text-sm rounded-lg focus:ring-accent focus:border-accent block w-full pl-10 p-2.5" placeholder="••••••••" required>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-accent accent-primary">
+                    </div>
+                    <label for="remember" class="ml-2 text-sm text-textSecondary">Remember me</label>
+                </div>
+                <a href="#" class="text-sm text-accent hover:underline">Forgot password?</a>
+            </div>
+            <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-accent font-medium rounded-lg text-sm px-5 py-2.5 text-center">Log in</button>
+            <div class="text-sm text-textSecondary text-center">
+                Don't have an account? <a href="#" class="text-accent hover:underline">Sign up</a>
+            </div>
+        </form>
+        <div class="absolute bottom-4 right-4 animate-bounce-slow">
+            <i class="fa-solid fa-star text-accent text-2xl"></i>
+        </div>
+        <div class="absolute top-4 left-4 animate-bounce-slow">
+            <i class="fa-solid fa-heart text-primary text-2xl"></i>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Login Form Submitted! (No actual login implemented)');
+        // In a real application, you would handle form submission here.
+    });
+</script>
+
+</body>
+</html>

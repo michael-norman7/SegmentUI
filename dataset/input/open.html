@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Data Portal - Government Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                        'mono': ['Roboto Mono', 'monospace'],
+                    },
+                    colors: {
+                        'primary': '#004AAD',
+                        'secondary': '#002966',
+                        'accent': '#007BFF',
+                        'neutral': '#F3F4F6',
+                        'dark': '#1E293B',
+                    },
+                    animation: {
+                        'slide-down': 'slideDown 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .data-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .data-card:hover {
+            transform: scale(1.05);
+        }
+        .report-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .report-card:hover {
+            transform: scale(1.05);
+        }
+        .indicator-card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .indicator-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans text-dark">
+
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fa-solid fa-database text-primary text-2xl mr-2"></i>
+                <a href="#" class="text-xl font-bold text-primary">Open Data Portal</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#datasets" class="hover:text-secondary transition-colors">Data Sets</a>
+                <a href="#reports" class="hover:text-secondary transition-colors">Reports</a>
+                <a href="#indicators" class="hover:text-secondary transition-colors">Indicators</a>
+                <a href="#about" class="hover:text-secondary transition-colors">About</a>
+                <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-secondary focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-3">
+                <a href="#datasets" class="hover:text-secondary transition-colors block">Data Sets</a>
+                <a href="#reports" class="hover:text-secondary transition-colors block">Reports</a>
+                <a href="#indicators" class="hover:text-secondary transition-colors block">Indicators</a>
+                <a href="#about" class="hover:text-secondary transition-colors block">About</a>
+                <a href="#contact" class="hover:text-secondary transition-colors block">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero py-20 bg-gradient-to-br from-neutral to-white animate-fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-4">
+                Access Authoritative Government Data
+            </h1>
+            <p class="text-lg text-gray-600 mb-8">
+                Explore public data sets, statistical reports, and policy performance indicators to inform decisions and drive transparency.
+            </p>
+            <div class="max-w-lg mx-auto">
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fa-solid fa-search text-gray-400"></i>
+                    </div>
+                    <input type="text" placeholder="Search data sets, reports, indicators..." class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent">
+                </div>
+            </div>
+            <div class="mt-12 flex justify-center space-x-4 animate-slide-down">
+                <a href="#datasets" class="inline-flex items-center px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-primary transition-colors">
+                    <i class="fa-solid fa-database mr-2"></i> Explore Data Sets
+                </a>
+                <a href="#reports" class="inline-flex items-center px-6 py-3 rounded-lg bg-white text-primary font-semibold hover:bg-neutral transition-colors border border-gray-300">
+                    <i class="fa-solid fa-chart-line mr-2"></i> View Reports
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="datasets" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-secondary">Featured Data Sets</h2>
+                <a href="#" class="text-accent hover:text-primary font-semibold text-sm">View All Data Sets <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="data-card bg-neutral rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Data Set 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Population Statistics</h3>
+                        <p class="text-gray-700 text-base mb-4">Detailed data on population demographics, distribution, and growth trends.</p>
+                        <a href="#" class="inline-block px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-primary transition-colors">
+                            <i class="fa-solid fa-download mr-2"></i> Download Data
+                        </a>
+                    </div>
+                </div>
+                <div class="data-card bg-neutral rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/200/301?random=2" alt="Data Set 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Economic Indicators</h3>
+                        <p class="text-gray-700 text-base mb-4">Key economic indicators including GDP, inflation, employment, and trade data.</p>
+                        <a href="#" class="inline-block px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-primary transition-colors">
+                            <i class="fa-solid fa-download mr-2"></i> Download Data
+                        </a>
+                    </div>
+                </div>
+                <div class="data-card bg-neutral rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/200/302?random=3" alt="Data Set 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Environmental Data</h3>
+                        <p class="text-gray-700 text-base mb-4">Data on air quality, water resources, climate change, and conservation efforts.</p>
+                        <a href="#" class="inline-block px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-primary transition-colors">
+                            <i class="fa-solid fa-download mr-2"></i> Download Data
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reports" class="py-16 bg-neutral">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-secondary">Statistical Reports</h2>
+                <a href="#" class="text-accent hover:text-primary font-semibold text-sm">View All Reports <i class="fa-solid fa-arrow-right ml-1"></i></a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="report-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/200/303?random=4" alt="Report 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Annual Economic Report 2023</h3>
+                        <p class="text-gray-700 text-base mb-4">Comprehensive analysis of the nation's economic performance over the past year.</p>
+                        <a href="#" class="inline-block px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-primary transition-colors">
+                            <i class="fa-solid fa-file-pdf mr-2"></i> View Report
+                        </a>
+                    </div>
+                </div>
+                <div class="report-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/200/304?random=5" alt="Report 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Healthcare Statistics Report</h3>
+                        <p class="text-gray-700 text-base mb-4">Detailed statistics on healthcare access, quality, and outcomes across regions.</p>
+                        <a href="#" class="inline-block px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-primary transition-colors">
+                            <i class="fa-solid fa-file-pdf mr-2"></i> View Report
+                        </a>
+                    </div>
+                </div>
+                <div class="report-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://picsum.photos/200/305?random=6" alt="Report 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Education Sector Analysis</h3>
+                        <p class="text-gray-700 text-base mb-4">In-depth analysis of the education sector, including enrollment, performance, and funding.</p>
+                        <a href="#" class="inline-block px-4 py-2 rounded-lg bg-accent text-white text-sm font-semibold hover:bg-primary transition-colors">
+                            <i class="fa-solid fa-file-pdf mr-2"></i> View Report
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="indicators" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-secondary text-center mb-12">Policy Performance Indicators</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="indicator-card bg-neutral rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-xl text-dark">GDP Growth</h3>
+                        <i class="fa-solid fa-chart-area text-accent text-2xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-4xl font-bold text-primary">3.2%</span>
+                        <p class="text-gray-600 text-sm">Year-over-year</p>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700 text-base">Track the nation's economic growth compared to previous periods.</p>
+                    </div>
+                </div>
+                <div class="indicator-card bg-neutral rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-xl text-dark">Unemployment Rate</h3>
+                        <i class="fa-solid fa-users text-accent text-2xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-4xl font-bold text-primary">4.5%</span>
+                        <p class="text-gray-600 text-sm">Current Rate</p>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700 text-base">Monitor the percentage of the labor force that is unemployed.</p>
+                    </div>
+                </div>
+                <div class="indicator-card bg-neutral rounded-lg shadow-md p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-bold text-xl text-dark">Inflation Rate</h3>
+                        <i class="fa-solid fa-arrow-up-right-dots text-accent text-2xl"></i>
+                    </div>
+                    <div class="text-center">
+                        <span class="text-4xl font-bold text-primary">2.8%</span>
+                        <p class="text-gray-600 text-sm">Annual Change</p>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700 text-base">Measure the rate at which the general level of prices for goods and services is rising.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 bg-neutral">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-secondary mb-8">About Open Data Portal</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                The Open Data Portal is your central source for accessing public government data. Our mission is to promote transparency, accountability, and data-driven decision-making by providing easy access to a wide range of data sets, reports, and indicators.
+            </p>
+            <p class="text-lg text-gray-700">
+                We are committed to making government data accessible to everyone, fostering innovation, research, and public engagement.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-secondary mb-8">Contact Us</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                Have questions or need support? Reach out to our data portal team.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-accent hover:text-primary"><i class="fa-solid fa-envelope text-2xl"></i></a>
+                <a href="#" class="text-accent hover:text-primary"><i class="fa-solid fa-phone text-2xl"></i></a>
+                <a href="#" class="text-accent hover:text-primary"><i class="fa-solid fa-location-dot text-2xl"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-secondary text-neutral py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Government Agency. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-accent">Privacy Policy</a>
+                <a href="#" class="hover:text-accent">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

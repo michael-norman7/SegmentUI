@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elegant Signup</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumo-100': '#f0f2f5',
+                        'neumo-200': '#e2e5ea',
+                        'neumo-300': '#d4d8dd',
+                        'neumo-400': '#c6cacd',
+                        'neumo-500': '#babdc0',
+                        'neumo-600': '#aeb0b3',
+                        'neumo-700': '#a0a2a5',
+                        'neumo-800': '#929497',
+                        'neumo-900': '#848689',
+                    },
+                    boxShadow: {
+                        'neumo-light': '6px 6px 10px #cbced1, -6px -6px 10px #ffffff',
+                        'neumo-dark': '4px 4px 6px #cbced1 inset, -4px -4px 6px #ffffff inset',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.3s ease-in-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body class="bg-neumo-100 flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+    <div class="w-full max-w-md space-y-8 p-8 bg-neumo-100 rounded-2xl shadow-neumo-light animate-fade-in">
+        <div>
+            <h2 class="mt-6 text-center text-3xl font-bold text-gray-900 animate-slide-up delay-100">
+                Create your Account
+            </h2>
+            <p class="mt-2 text-center text-sm text-gray-600 animate-slide-up delay-200">
+                Join our community and discover a world of possibilities.
+            </p>
+        </div>
+        <div class="mt-8 space-y-6">
+            <form class="mt-8 space-y-6" action="#" method="POST">
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div class="mb-4 animate-slide-up delay-300">
+                        <label for="name" class="sr-only">Full Name</label>
+                        <div class="relative">
+                            <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                                <i class="fa fa-user text-gray-500"></i>
+                            </div>
+                            <input type="text" id="name" name="name" class="appearance-none rounded-md relative block w-full px-3 py-2 pl-10 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm border-none bg-neumo-100 shadow-neumo-dark" placeholder="Full Name" required>
+                        </div>
+                    </div>
+                    <div class="mb-4 animate-slide-up delay-400">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <div class="relative">
+                            <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                                <i class="fa fa-envelope text-gray-500"></i>
+                            </div>
+                            <input id="email-address" name="email" type="email" autocomplete="email" class="appearance-none rounded-md relative block w-full px-3 py-2 pl-10 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm border-none bg-neumo-100 shadow-neumo-dark" placeholder="Email address" required>
+                        </div>
+                    </div>
+                    <div class="mb-6 animate-slide-up delay-500">
+                        <label for="password" class="sr-only">Password</label>
+                        <div class="relative">
+                            <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                                <i class="fa fa-lock text-gray-500"></i>
+                            </div>
+                            <input id="password" name="password" type="password" autocomplete="current-password" class="appearance-none rounded-md relative block w-full px-3 py-2 pl-10 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm border-none bg-neumo-100 shadow-neumo-dark" placeholder="Password" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between animate-slide-up delay-600">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded bg-neumo-100 shadow-neumo-dark focus:ring-offset-0">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">
+                            Remember me
+                        </label>
+                    </div>
+
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Forgot password?
+                        </a>
+                    </div>
+                </div>
+
+                <div class="animate-slide-up delay-700">
+                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 bg-gradient-to-r from-indigo-500 to-blue-500 shadow-neumo-light hover:shadow-neumo-dark transition-shadow duration-300">
+                        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                            <svg class="h-5 w-5 text-indigo-50 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                            </svg>
+                        </span>
+                        Sign up
+                    </button>
+                </div>
+            </form>
+            <div class="mt-6 relative animate-slide-up delay-800">
+                <div class="absolute inset-0 flex items-center" aria-hidden="true">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-neumo-100 text-gray-500">
+                        Or continue with
+                    </span>
+                </div>
+            </div>
+
+            <div class="animate-slide-up delay-900">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <button type="button" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-neumo-light hover:shadow-neumo-dark transition-shadow duration-300">
+                            <span class="sr-only">Sign in with Google</span>
+                            <i class="fa-brands fa-google text-red-500"></i>
+                        </button>
+                    </div>
+
+                    <div>
+                        <button type="button" class="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-gray-500 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 shadow-neumo-light hover:shadow-neumo-dark transition-shadow duration-300">
+                            <span class="sr-only">Sign in with Facebook</span>
+                            <i class="fa-brands fa-facebook-f text-blue-600"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.classList.remove('shadow-neumo-dark');
+                input.classList.add('shadow-neumo-light');
+                input.style.backgroundColor = '#ffffff';
+            });
+            input.addEventListener('blur', () => {
+                input.classList.remove('shadow-neumo-light');
+                input.classList.add('shadow-neumo-dark');
+                input.style.backgroundColor = '#f0f2f5';
+            });
+        });
+        document.querySelector('button[type="submit"]').addEventListener('mouseover', () => {
+            document.querySelector('button[type="submit"]').classList.remove('shadow-neumo-light');
+            document.querySelector('button[type="submit"]').classList.add('shadow-neumo-dark');
+        });
+        document.querySelector('button[type="submit"]').addEventListener('mouseout', () => {
+            document.querySelector('button[type="submit"]').classList.remove('shadow-neumo-dark');
+            document.querySelector('button[type="submit"]').classList.add('shadow-neumo-light');
+        });
+        document.querySelectorAll('button:not([type="submit"])').forEach(button => {
+            button.addEventListener('mouseover', () => {
+                button.classList.remove('shadow-neumo-light');
+                button.classList.add('shadow-neumo-dark');
+            });
+            button.addEventListener('mouseout', () => {
+                button.classList.remove('shadow-neumo-dark');
+                button.classList.add('shadow-neumo-light');
+            });
+        });
+    </script>
+</body>
+</html>

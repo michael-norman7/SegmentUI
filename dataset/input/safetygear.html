@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafetyGear Hub - Your Trusted Source for Safety Equipment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#06b6d4',
+                        'secondary': '#2dd4cf',
+                        'accent': '#a7f3d0',
+                        'neutral': '#f3f4f6',
+                        'dark': '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-down': 'slideDown 0.5s ease-out',
+                        'fade-in': 'fadeIn 0.3s ease-in-out',
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-neutral text-dark font-sans">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold text-primary hover:text-secondary transition-colors"><i class="fa-solid fa-shield-halved mr-2"></i>SafetyGear Hub</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#products" class="hover:text-primary transition-colors">Products</a>
+                <a href="#categories" class="hover:text-primary transition-colors">Categories</a>
+                <a href="#about" class="hover:text-primary transition-colors">About Us</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md py-2">
+            <a href="#products" class="block px-4 py-2 hover:bg-neutral transition-colors">Products</a>
+            <a href="#categories" class="block px-4 py-2 hover:bg-neutral transition-colors">Categories</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-neutral transition-colors">About Us</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-neutral transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <section class="hero bg-primary/5 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4 animate-slide-down">Equip Yourself for Safety</h1>
+            <p class="text-lg text-gray-700 mb-8 animate-slide-down delay-100">Your one-stop shop for reliable and high-quality safety equipment.</p>
+            <div class="space-x-4 animate-fade-in delay-200">
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-lg transition-colors"><i class="fa-solid fa-search mr-2"></i>Browse Products</button>
+                <button class="bg-accent hover:bg-secondary text-dark font-bold py-3 px-8 rounded-lg transition-colors"><i class="fa-solid fa-life-ring mr-2"></i>Learn More</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-dark mb-12">Shop by Category</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="category-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Head Protection" class="w-full h-48 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Head Protection</h3>
+                        <p class="text-gray-700 text-base">Helmets, Hard Hats, Bump Caps</p>
+                        <a href="#" class="inline-block mt-4 bg-accent hover:bg-secondary text-dark font-bold py-2 px-4 rounded-full transition-colors">Shop Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="category-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Eye & Face Protection" class="w-full h-48 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Eye & Face Protection</h3>
+                        <p class="text-gray-700 text-base">Safety Glasses, Face Shields, Goggles</p>
+                        <a href="#" class="inline-block mt-4 bg-accent hover:bg-secondary text-dark font-bold py-2 px-4 rounded-full transition-colors">Shop Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="category-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Hand Protection" class="w-full h-48 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Hand Protection</h3>
+                        <p class="text-gray-700 text-base">Work Gloves, Chemical Resistant Gloves</p>
+                        <a href="#" class="inline-block mt-4 bg-accent hover:bg-secondary text-dark font-bold py-2 px-4 rounded-full transition-colors">Shop Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="category-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Respiratory Protection" class="w-full h-48 object-cover">
+                    <div class="p-6 bg-white">
+                        <h3 class="font-bold text-xl mb-2 text-dark">Respiratory Protection</h3>
+                        <p class="text-gray-700 text-base">Masks, Respirators, Filters</p>
+                        <a href="#" class="inline-block mt-4 bg-accent hover:bg-secondary text-dark font-bold py-2 px-4 rounded-full transition-colors">Shop Now <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="bg-neutral py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-dark mb-12">Featured Safety Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <a href="#">
+                        <img src="https://picsum.photos/200/300?random=5" alt="Product Image" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <a href="#">
+                            <h3 class="font-bold text-xl mb-2 text-dark hover:text-primary transition-colors">Heavy Duty Work Gloves</h3>
+                        </a>
+                        <p class="text-gray-700 text-base mb-4">Premium leather work gloves for maximum hand protection.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-primary">$29.99</span>
+                            <button class="bg-accent hover:bg-secondary text-dark font-bold py-2 px-4 rounded-full transition-colors"><i class="fa-solid fa-cart-plus mr-2"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <a href="#">
+                        <img src="https://picsum.photos/200/300?random=6" alt="Product Image" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <a href="#">
+                            <h3 class="font-bold text-xl mb-2 text-dark hover:text-primary transition-colors">Safety Glasses - Anti-Scratch</h3>
+                        </a>
+                        <p class="text-gray-700 text-base mb-4">Clear safety glasses with anti-scratch and UV protection.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-primary">$14.99</span>
+                            <button class="bg-accent hover:bg-secondary text-dark font-bold py-2 px-4 rounded-full transition-colors"><i class="fa-solid fa-cart-plus mr-2"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <a href="#">
+                        <img src="https://picsum.photos/200/300?random=7" alt="Product Image" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <a href="#">
+                            <h3 class="font-bold text-xl mb-2 text-dark hover:text-primary transition-colors">Full Face Shield - Industrial Grade</h3>
+                        </a>
+                        <p class="text-gray-700 text-base mb-4">Industrial grade full face shield for comprehensive protection.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-primary">$39.99</span>
+                            <button class="bg-accent hover:bg-secondary text-dark font-bold py-2 px-4 rounded-full transition-colors"><i class="fa-solid fa-cart-plus mr-2"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <a href="#">
+                        <img src="https://picsum.photos/200/300?random=8" alt="Product Image" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <a href="#">
+                            <h3 class="font-bold text-xl mb-2 text-dark hover:text-primary transition-colors">N95 Respirator Masks (Pack of 20)</h3>
+                        </a>
+                        <p class="text-gray-700 text-base mb-4">Pack of 20 N95 respirator masks for reliable respiratory protection.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xl font-bold text-primary">$49.99</span>
+                            <button class="bg-accent hover:bg-secondary text-dark font-bold py-2 px-4 rounded-full transition-colors"><i class="fa-solid fa-cart-plus mr-2"></i>Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 SafetyGear Hub. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-facebook-square text-xl"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-twitter-square text-xl"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i class="fa-brands fa-instagram-square text-xl"></i></a>
+            </div>
+            <p class="mt-4 text-sm">
+                <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a> |
+                <a href="#" class="hover:text-primary transition-colors">Terms of Service</a> |
+                <a href="#" class="hover:text-primary transition-colors">Contact Us</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

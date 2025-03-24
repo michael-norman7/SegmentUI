@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leading Commercial Property Management - ElevateRE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .custom-container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 2rem; padding-right: 2rem; }
+        .bg-gradient-custom { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); }
+        .animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+        @keyframes fade-in { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .pulse-icon { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }
+        .slide-from-left { animation: slide-left 1s ease-out forwards; }
+        @keyframes slide-left { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
+        .slide-from-right { animation: slide-right 1s ease-out forwards; }
+        @keyframes slide-right { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+        .zoom-in-on-hover { transition: transform 0.3s ease-in-out; }
+        .zoom-in-on-hover:hover { transform: scale(1.05); }
+        .shadow-card { box-shadow: 0 15px 25px rgba(0, 0, 0, 0.08); }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <nav class="custom-container py-4">
+        <div class="flex justify-between items-center">
+            <a href="/" class="font-bold text-xl text-blue-600 hover:text-blue-800 transition-colors">ElevateRE</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
+                <a href="#about" class="hover:text-blue-600 transition-colors">About Us</a>
+                <a href="#testimonials" class="hover:text-blue-600 transition-colors">Testimonials</a>
+                <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors">Get Started</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2">
+            <a href="#services" class="block py-2 px-4 hover:bg-gray-100 rounded-md">Services</a>
+            <a href="#about" class="block py-2 px-4 hover:bg-gray-100 rounded-md">About Us</a>
+            <a href="#testimonials" class="block py-2 px-4 hover:bg-gray-100 rounded-md">Testimonials</a>
+            <a href="#contact" class="block py-2 px-4 hover:bg-gray-100 rounded-md">Contact</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-100 rounded-md bg-blue-600 text-white text-center">Get Started</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero bg-gradient-custom py-24">
+    <div class="custom-container grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="animate-fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Expert Property Management for Commercial Success</h1>
+            <p class="text-lg text-gray-600 mb-8">Maximize your property's potential with ElevateRE. We deliver comprehensive management solutions tailored to your unique needs.</p>
+            <div class="flex space-x-4">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-semibold transition-colors">Get a Quote</a>
+                <a href="#services" class="bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 px-6 rounded-md font-semibold transition-colors">Learn More</a>
+            </div>
+        </div>
+        <div class="relative justify-self-end">
+            <img src="https://picsum.photos/600/400" alt="Commercial Property" class="rounded-lg shadow-xl zoom-in-on-hover" />
+            <div class="absolute bottom-0 right-4 p-4 bg-white rounded-lg shadow-md transform translate-y-1/2 animate-slide-from-right">
+                <p class="text-sm text-gray-700">Trusted by leading brands</p>
+                <div class="flex items-center space-x-2 mt-2">
+                    <img src="https://picsum.photos/50/50" alt="Client Logo 1" class="rounded-full w-8 h-8">
+                    <img src="https://picsum.photos/50/50" alt="Client Logo 2" class="rounded-full w-8 h-8">
+                    <img src="https://picsum.photos/50/50" alt="Client Logo 3" class="rounded-full w-8 h-8">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-20 bg-white">
+    <div class="custom-container">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Our Comprehensive Services</h2>
+            <p class="text-gray-600 text-lg">Elevating your property management experience with tailored solutions.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="shadow-card rounded-lg p-6 hover:shadow-lg transition-shadow zoom-in-on-hover">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <i class="fa fa-building text-2xl pulse-icon"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Property Maintenance</h3>
+                <p class="text-gray-600">Regular upkeep and preventative maintenance to ensure your property remains in top condition.</p>
+            </div>
+            <div class="shadow-card rounded-lg p-6 hover:shadow-lg transition-shadow zoom-in-on-hover">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <i class="fa fa-user-tie text-2xl pulse-icon"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Tenant Relations</h3>
+                <p class="text-gray-600">Expert handling of tenant communication, from leasing to issue resolution, ensuring satisfaction and retention.</p>
+            </div>
+            <div class="shadow-card rounded-lg p-6 hover:shadow-lg transition-shadow zoom-in-on-hover">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-4">
+                    <i class="fa fa-chart-line text-2xl pulse-icon"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Financial Management</h3>
+                <p class="text-gray-600">Detailed financial reporting, budgeting, and rent collection to optimize your property's financial performance.</p>
+            </div>
+        </div>
+        <div class="mt-12 text-center">
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-semibold transition-colors">Explore All Services</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20 bg-gray-50">
+    <div class="custom-container grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="slide-from-left">
+            <img src="https://picsum.photos/500/600" alt="About ElevateRE Team" class="rounded-lg shadow-xl zoom-in-on-hover">
+        </div>
+        <div class="slide-from-right">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">About ElevateRE</h2>
+            <p class="text-gray-700 text-lg mb-6">At ElevateRE, we are passionate about transforming commercial properties into thriving spaces. With years of experience and a dedicated team, we provide unparalleled property management services.</p>
+            <p class="text-gray-700 text-lg mb-6">Our commitment to excellence, transparency, and client satisfaction sets us apart. We understand the complexities of commercial real estate and are equipped to handle every challenge, ensuring your investment is in capable hands.</p>
+            <ul class="list-disc list-inside text-gray-600">
+                <li>Experienced and dedicated management team</li>
+                <li>Customized solutions for diverse property types</li>
+                <li>Proactive and transparent communication</li>
+                <li>Commitment to maximizing property value</li>
+            </ul>
+            <div class="mt-8">
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-semibold transition-colors">Meet Our Team</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-20 bg-white">
+    <div class="custom-container">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+            <p class="text-gray-600 text-lg">Real feedback from businesses we've partnered with.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="shadow-card rounded-lg p-6 zoom-in-on-hover">
+                <div class="mb-4">
+                    <i class="fa fa-quote-left text-gray-400 text-2xl"></i>
+                    <p class="text-gray-700 italic">ElevateRE has transformed our property. Their proactive management and attention to detail are exceptional.</p>
+                </div>
+                <div class="flex items-center mt-2">
+                    <img src="https://picsum.photos/50/50" alt="Client 1" class="rounded-full w-10 h-10 mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-800">John Smith</p>
+                        <p class="text-sm text-gray-500">CEO, Acme Corp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-card rounded-lg p-6 zoom-in-on-hover">
+                <div class="mb-4">
+                    <i class="fa fa-quote-left text-gray-400 text-2xl"></i>
+                    <p class="text-gray-700 italic">The team at ElevateRE is incredibly responsive and professional. They make property management seamless.</p>
+                </div>
+                <div class="flex items-center mt-2">
+                    <img src="https://picsum.photos/50/50" alt="Client 2" class="rounded-full w-10 h-10 mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-800">Jane Doe</p>
+                        <p class="text-sm text-gray-500">Owner, Premier Retail</p>
+                    </div>
+                </div>
+            </div>
+            <div class="shadow-card rounded-lg p-6 zoom-in-on-hover">
+                <div class="mb-4">
+                    <i class="fa fa-quote-left text-gray-400 text-2xl"></i>
+                    <p class="text-gray-700 italic">Financial reporting is clear and insightful. ElevateRE has helped us optimize our property investments effectively.</p>
+                </div>
+                <div class="flex items-center mt-2">
+                    <img src="https://picsum.photos/50/50" alt="Client 3" class="rounded-full w-10 h-10 mr-4">
+                    <div>
+                        <p class="font-semibold text-gray-800">David Lee</p>
+                        <p class="text-sm text-gray-500">CFO, Global Industries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-gray-50">
+    <div class="custom-container">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Get in Touch</h2>
+            <p class="text-gray-600 text-lg">Ready to elevate your property management? Contact us today.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <img src="https://picsum.photos/400/500" alt="Contact Us" class="rounded-lg shadow-xl zoom-in-on-hover">
+            </div>
+            <div class="slide-from-right">
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md font-semibold transition-colors w-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="mt-12 text-center">
+            <p class="text-gray-700">Or call us directly at <span class="font-semibold text-blue-600">1-800-ELEVATE</span></p>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-gray-800 text-gray-300 py-12">
+    <div class="custom-container grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+            <h4 class="font-bold text-white mb-4">ElevateRE</h4>
+            <p class="text-sm">Your trusted partner in commercial property management. Elevating spaces, maximizing potential.</p>
+        </div>
+        <div>
+            <h4 class="font-bold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+                <li><a href="#services" class="hover:text-gray-100 transition-colors text-sm">Services</a></li>
+                <li><a href="#about" class="hover:text-gray-100 transition-colors text-sm">About Us</a></li>
+                <li><a href="#testimonials" class="hover:text-gray-100 transition-colors text-sm">Testimonials</a></li>
+                <li><a href="#contact" class="hover:text-gray-100 transition-colors text-sm">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold text-white mb-4">Contact Us</h4>
+            <p class="text-sm">123 Main Street, Suite 400</p>
+            <p class="text-sm">Cityville, State 12345</p>
+            <p class="text-sm">Email: <a href="mailto:info@elevatere.com" class="hover:text-gray-100 transition-colors">info@elevatere.com</a></p>
+            <p class="text-sm">Phone: 1-800-ELEVATE</p>
+        </div>
+    </div>
+    <div class="mt-12 text-center text-gray-400 border-t border-gray-700 pt-8">
+        <p>© 2024 ElevateRE. All rights reserved.</p>
+        <p class="text-xs mt-2"><a href="#" class="hover:text-gray-100 transition-colors">Privacy Policy</a> | <a href="#" class="hover:text-gray-100 transition-colors">Terms of Service</a></p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+            if (document.getElementById('mobile-menu')) {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

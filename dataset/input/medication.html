@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Reminder Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4ade80',
+                        'secondary': '#a7f3d0',
+                        'glass': 'rgba(255, 255, 255, 0.25)',
+                        'glass-border': 'rgba(255, 255, 255, 0.35)',
+                        'glass-shadow': 'rgba(0, 0, 0, 0.1)',
+                        'dark-text': '#374151',
+                        'light-text': '#6b7280',
+                    },
+                    boxShadow: {
+                        'glassmorphism': '0 8px 32px 0 rgba(31, 38, 135, 0.17)',
+                    },
+                    keyframes: {
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'pulse-bg': {
+                            '0%, 100%': { backgroundColor: 'rgba(255, 255, 255, 0.25)' },
+                            '50%': { backgroundColor: 'rgba(255, 255, 255, 0.35)' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'fade-in': 'fade-in 0.3s ease-in-out',
+                        'pulse-bg': 'pulse-bg 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f3f4f6;
+            overflow: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.17);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-poppins antialiased">
+    <div class="fixed top-0 left-0 w-full h-full bg-gradient-to-br from-green-100 to-blue-100 -z-10"></div>
+    <div class="flex h-screen">
+        <aside class="w-64 bg-glass border-r border-glass-border glass shadow-glass-shadow p-6 flex flex-col justify-between animate-slide-in-left">
+            <div>
+                <div class="text-xl font-semibold mb-8 text-dark-text">PillPal</div>
+                <nav>
+                    <a href="#" class="flex items-center py-2 px-4 text-dark-text hover:text-primary rounded-md transition-colors mb-2 group">
+                        <i class="fa-solid fa-calendar-check mr-4 group-hover:text-primary transition-colors"></i>
+                        <span class="group-hover:text-primary transition-colors">Schedule</span>
+                    </a>
+                    <a href="#" class="flex items-center py-2 px-4 text-dark-text hover:text-primary rounded-md transition-colors mb-2 group">
+                        <i class="fa-solid fa-chart-line mr-4 group-hover:text-primary transition-colors"></i>
+                        <span class="group-hover:text-primary transition-colors">Dosage</span>
+                    </a>
+                    <a href="#" class="flex items-center py-2 px-4 text-dark-text hover:text-primary rounded-md transition-colors mb-2 group">
+                        <i class="fa-solid fa-bell mr-4 group-hover:text-primary transition-colors"></i>
+                        <span class="group-hover:text-primary transition-colors">Refills</span>
+                    </a>
+                    <a href="#" class="flex items-center py-2 px-4 text-dark-text hover:text-primary rounded-md transition-colors mb-2 group">
+                        <i class="fa-solid fa-cog mr-4 group-hover:text-primary transition-colors"></i>
+                        <span class="group-hover:text-primary transition-colors">Settings</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="text-sm text-light-text">© 2024 PillPal</div>
+        </aside>
+
+        <main class="flex-1 p-8 animate-fade-in">
+            <header class="mb-6 flex justify-between items-center">
+                <h1 class="text-3xl font-bold text-dark-text">Medication Schedule</h1>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-glass hover:bg-glass-border glass-border border border-glass-border rounded-full p-2 transition-colors">
+                        <i class="fa-solid fa-plus text-dark-text"></i>
+                    </button>
+                    <img src="https://picsum.photos/50/50" alt="User Avatar" class="rounded-full w-10 h-10 object-cover border-2 border-primary">
+                </div>
+            </header>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-md bg-primary flex items-center justify-center text-white">
+                            <i class="fa-solid fa-pills text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-dark-text">Medication A</h3>
+                            <p class="text-sm text-light-text">200mg</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm text-dark-text">Schedule: <span class="font-medium">Daily, 8:00 AM</span></p>
+                        <p class="text-sm text-dark-text">Dosage: <span class="font-medium">1 tablet</span></p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-secondary text-white py-2 px-4 rounded-md hover:bg-primary transition-colors">Taken</button>
+                        <span class="text-xs text-light-text">Due in 1 hour</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-md bg-secondary flex items-center justify-center text-white">
+                            <i class="fa-solid fa-capsules text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-dark-text">Medication B</h3>
+                            <p class="text-sm text-light-text">50mg</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm text-dark-text">Schedule: <span class="font-medium">Twice Daily, 12:00 PM & 8:00 PM</span></p>
+                        <p class="text-sm text-dark-text">Dosage: <span class="font-medium">2 capsules</span></p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-secondary text-white py-2 px-4 rounded-md hover:bg-primary transition-colors">Taken</button>
+                        <span class="text-xs text-light-text">Due in 4 hours</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-md bg-primary flex items-center justify-center text-white">
+                            <i class="fa-solid fa-syringe text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-dark-text">Medication C</h3>
+                            <p class="text-sm text-light-text">100 units</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm text-dark-text">Schedule: <span class="font-medium">Morning, 7:00 AM</span></p>
+                        <p class="text-sm text-dark-text">Dosage: <span class="font-medium">1 injection</span></p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-secondary text-white py-2 px-4 rounded-md hover:bg-primary transition-colors">Taken</button>
+                        <span class="text-xs text-light-text">Completed</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-md bg-secondary flex items-center justify-center text-white">
+                            <i class="fa-solid fa-prescription-bottle-medical text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-dark-text">Medication D</h3>
+                            <p class="text-sm text-light-text">Vitamins</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm text-dark-text">Schedule: <span class="font-medium">Daily, 9:00 AM</span></p>
+                        <p class="text-sm text-dark-text">Dosage: <span class="font-medium">1 multivitamin</span></p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-secondary text-white py-2 px-4 rounded-md hover:bg-primary transition-colors">Taken</button>
+                        <span class="text-xs text-light-text">Missed</span>
+                    </div>
+                </div>
+
+                <div class="glass p-6 rounded-lg shadow-glassmorphism hover:shadow-lg transition-shadow duration-300 animate-pulse-bg bg-opacity-50">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-md bg-white bg-opacity-20 flex items-center justify-center text-white">
+                            <i class="fa-solid fa-hourglass-half text-xl text-white"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-semibold text-dark-text">Medication E</h3>
+                            <p class="text-sm text-light-text">Pending</p>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <p class="text-sm text-dark-text">Schedule: <span class="font-medium">Evening, 6:00 PM</span></p>
+                        <p class="text-sm text-dark-text">Dosage: <span class="font-medium">As needed</span></p>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button class="bg-glass-border text-dark-text py-2 px-4 rounded-md hover:bg-glass transition-colors" disabled>Pending</button>
+                        <span class="text-xs text-light-text">Due soon</span>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('aside nav a');
+            const mainHeader = document.querySelector('main header h1');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    const sectionName = this.querySelector('span').textContent;
+                    mainHeader.textContent = `${sectionName} Dashboard`;
+                    if (sectionName === 'Schedule') {
+                        mainHeader.textContent = 'Medication Schedule';
+                    } else if (sectionName === 'Dosage') {
+                        mainHeader.textContent = 'Dosage Tracking';
+                    } else if (sectionName === 'Refills') {
+                        mainHeader.textContent = 'Refill Reminders';
+                    } else if (sectionName === 'Settings') {
+                        mainHeader.textContent = 'Settings';
+                    }
+                    // Implement content update based on navigation here (e.g., fetch data and update main content)
+                });
+            });
+        });
+    </script>
+</body>
+</html>

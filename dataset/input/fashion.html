@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Forward - The Ultimate Style Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#111827',
+                        'secondary': '#6b7280',
+                        'accent': '#fde047',
+                        'background': '#f9f8f7',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '72': '18rem',
+                        '84': '21rem',
+                        '96': '24rem',
+                        '120': '30rem',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-down': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(10px)'
+                            },
+                        },
+                        'slide-left': {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        'slide-right': {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-down': 'fade-out-down 0.5s ease-out',
+                        'slide-left': 'slide-left 0.5s ease-out',
+                        'slide-right': 'slide-right 0.5s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .blog-post-image {
+            transition: transform 0.3s ease-out;
+        }
+        .blog-post-image:hover {
+            transform: scale(1.05);
+        }
+        .category-link {
+            transition: color 0.2s ease-in-out;
+        }
+        .category-link:hover {
+            color: theme('colors.accent');
+        }
+        .nav-link-animate {
+            position: relative;
+        }
+
+        .nav-link-animate::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: theme('colors.accent');
+            visibility: hidden;
+            transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .nav-link-animate:hover::after {
+            visibility: visible;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-background text-primary font-body">
+
+    <header class="sticky top-0 z-50 bg-background shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="font-display text-2xl font-bold tracking-tight">FashionForward</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="nav-link-animate hover:text-accent">Style</a>
+                <a href="#" class="nav-link-animate hover:text-accent">Trends</a>
+                <a href="#" class="nav-link-animate hover:text-accent">Beauty</a>
+                <a href="#" class="nav-link-animate hover:text-accent">Inspiration</a>
+                <a href="#" class="nav-link-animate hover:text-accent">Shop</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-background shadow-md py-2">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Style</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Trends</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Beauty</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Inspiration</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-100">Shop</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-20 px-6">
+
+        <section class="mb-16">
+            <div class="relative">
+                <img src="https://picsum.photos/id/1025/1920/1080" alt="Featured Post" class="w-full h-96 object-cover rounded-xl shadow-xl">
+                <div class="absolute bottom-6 left-6 p-6 bg-white bg-opacity-75 rounded-lg backdrop-blur-sm">
+                    <h2 class="font-display text-3xl font-bold mb-2 leading-tight">
+                        <a href="#" class="hover:text-accent">The Art of Minimalist Fashion: Less is More</a>
+                    </h2>
+                    <p class="text-secondary text-sm mb-3">By <a href="#" class="font-medium hover:text-accent">Olivia Wilde</a> | August 15, 2024</p>
+                    <a href="#" class="inline-block bg-accent text-primary px-4 py-2 rounded-md font-medium hover:bg-yellow-400 transition-colors">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <article class="shadow-lg rounded-xl overflow-hidden bg-white">
+                <a href="#">
+                    <img src="https://picsum.photos/id/100/600/400" alt="Blog Post Image" class="w-full h-72 object-cover blog-post-image">
+                </a>
+                <div class="p-6">
+                    <h3 class="font-display text-xl font-semibold mb-2 leading-tight">
+                        <a href="#" class="hover:text-accent">Summer Trends: Bright Colors and Bold Prints</a>
+                    </h3>
+                    <p class="text-secondary text-sm mb-4">Explore the hottest fashion trends for summer 2024.</p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:underline">Read More</a>
+                        <span class="text-secondary text-sm"><i class="fa fa-heart mr-1"></i> 245</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="shadow-lg rounded-xl overflow-hidden bg-white">
+                <a href="#">
+                    <img src="https://picsum.photos/id/1010/600/400" alt="Blog Post Image" class="w-full h-72 object-cover blog-post-image">
+                </a>
+                <div class="p-6">
+                    <h3 class="font-display text-xl font-semibold mb-2 leading-tight">
+                        <a href="#" class="hover:text-accent">Capsule Wardrobe Essentials for Every Woman</a>
+                    </h3>
+                    <p class="text-secondary text-sm mb-4">Build a versatile and stylish wardrobe with these key pieces.</p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:underline">Read More</a>
+                        <span class="text-secondary text-sm"><i class="fa fa-heart mr-1"></i> 189</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="shadow-lg rounded-xl overflow-hidden bg-white">
+                <a href="#">
+                    <img src="https://picsum.photos/id/1020/600/400" alt="Blog Post Image" class="w-full h-72 object-cover blog-post-image">
+                </a>
+                <div class="p-6">
+                    <h3 class="font-display text-xl font-semibold mb-2 leading-tight">
+                        <a href="#" class="hover:text-accent">Sustainable Fashion: Making Eco-Friendly Choices</a>
+                    </h3>
+                    <p class="text-secondary text-sm mb-4">Learn how to embrace sustainable fashion and reduce your impact.</p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:underline">Read More</a>
+                        <span class="text-secondary text-sm"><i class="fa fa-heart mr-1"></i> 312</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="shadow-lg rounded-xl overflow-hidden bg-white">
+                <a href="#">
+                    <img src="https://picsum.photos/id/103/600/400" alt="Blog Post Image" class="w-full h-72 object-cover blog-post-image">
+                </a>
+                <div class="p-6">
+                    <h3 class="font-display text-xl font-semibold mb-2 leading-tight">
+                        <a href="#" class="hover:text-accent">The Ultimate Guide to Layering Outfits for Fall</a>
+                    </h3>
+                    <p class="text-secondary text-sm mb-4">Master the art of layering to stay stylish and warm in autumn.</p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:underline">Read More</a>
+                        <span class="text-secondary text-sm"><i class="fa fa-heart mr-1"></i> 276</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="shadow-lg rounded-xl overflow-hidden bg-white">
+                <a href="#">
+                    <img src="https://picsum.photos/id/104/600/400" alt="Blog Post Image" class="w-full h-72 object-cover blog-post-image">
+                </a>
+                <div class="p-6">
+                    <h3 class="font-display text-xl font-semibold mb-2 leading-tight">
+                        <a href="#" class="hover:text-accent">Beauty Secrets: Natural Skincare for Glowing Skin</a>
+                    </h3>
+                    <p class="text-secondary text-sm mb-4">Discover natural skincare routines for a healthy and radiant complexion.</p>
+                    <div class="flex justify-between items-center">
+                        <a href="#" class="text-accent font-medium hover:un
+content_copy
+download
+Use code with caution.
+Html

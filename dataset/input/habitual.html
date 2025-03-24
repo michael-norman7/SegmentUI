@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitual - Your Personal Habit Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumo-light': '#f0f2f5',
+                        'neumo-dark': '#d9dbe1',
+                        'primary': '#4f46e5',
+                        'accent': '#6366f1',
+                    },
+                    boxShadow: {
+                        'neumo-inner': 'inset 5px 5px 10px #d9dbe1, inset -5px -5px 10px #f0f2f5',
+                        'neumo': '5px 5px 10px #d9dbe1, -5px -5px 10px #f0f2f5',
+                        'neumo-sm': '3px 3px 7px #d9dbe1, -3px -3px 7px #f0f2f5',
+                        'neumo-lg': '7px 7px 14px #d9dbe1, -7px -7px 14px #f0f2f5',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+    </style>
+</head>
+<body class="bg-neumo-light">
+    <div class="container mx-auto p-6 min-h-screen flex flex-col">
+        <header class="mb-8">
+            <h1 class="text-3xl font-semibold text-gray-800 text-center">Habitual</h1>
+        </header>
+
+        <main class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <section class="bg-neumo-light rounded-2xl p-6 shadow-neumo overflow-hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-semibold text-gray-700">Daily Habits</h2>
+                    <button class="bg-accent hover:bg-primary text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition-colors duration-300">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <div class="space-y-4">
+
+                    <div class="bg-neumo-light p-4 rounded-xl shadow-neumo-inner flex items-center justify-between transition-shadow duration-300 hover:shadow-neumo">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                <img src="https://picsum.photos/id/1/100/100" alt="Habit Icon" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Morning Exercise</h3>
+                                <p class="text-sm text-gray-500">15 minutes</p>
+                            </div>
+                        </div>
+                        <button aria-label="Mark as completed" class="rounded-full w-8 h-8 flex items-center justify-center bg-neumo-light shadow-neumo-inner hover:shadow-neumo focus:outline-none transition-shadow duration-300">
+                            <i class="fa-regular fa-circle text-gray-400"></i>
+                        </button>
+                    </div>
+
+                    <div class="bg-neumo-light p-4 rounded-xl shadow-neumo-inner flex items-center justify-between transition-shadow duration-300 hover:shadow-neumo">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                <img src="https://picsum.photos/id/2/100/100" alt="Habit Icon" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Read 20 Pages</h3>
+                                <p class="text-sm text-gray-500">Daily Reading</p>
+                            </div>
+                        </div>
+                        <button aria-label="Mark as completed" class="rounded-full w-8 h-8 flex items-center justify-center bg-neumo-light shadow-neumo-inner hover:shadow-neumo focus:outline-none transition-shadow duration-300">
+                            <i class="fa-solid fa-check-circle text-primary"></i>
+                        </button>
+                    </div>
+
+                    <div class="bg-neumo-light p-4 rounded-xl shadow-neumo-inner flex items-center justify-between transition-shadow duration-300 hover:shadow-neumo">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                <img src="https://picsum.photos/id/3/100/100" alt="Habit Icon" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Drink Water</h3>
+                                <p class="text-sm text-gray-500">8 Glasses</p>
+                            </div>
+                        </div>
+                        <button aria-label="Mark as completed" class="rounded-full w-8 h-8 flex items-center justify-center bg-neumo-light shadow-neumo-inner hover:shadow-neumo focus:outline-none transition-shadow duration-300">
+                            <i class="fa-regular fa-circle text-gray-400"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="bg-neumo-light rounded-2xl p-6 shadow-neumo">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Progress Streaks</h2>
+                <div class="bg-neumo-light p-6 rounded-xl shadow-neumo-inner text-center">
+                    <i class="fa-solid fa-fire-flame-curved text-3xl text-orange-500 mb-2"></i>
+                    <p class="text-4xl font-bold text-gray-800">7 Days</p>
+                    <p class="text-sm text-gray-500">Current Streak</p>
+                </div>
+                <div class="mt-4 bg-neumo-light p-6 rounded-xl shadow-neumo-inner text-center">
+                    <i class="fa-solid fa-chart-line text-3xl text-green-500 mb-2"></i>
+                    <p class="text-4xl font-bold text-gray-800">28 Days</p>
+                    <p class="text-sm text-gray-500">Longest Streak</p>
+                </div>
+            </section>
+
+            <section class="bg-neumo-light rounded-2xl p-6 shadow-neumo">
+                <h2 class="text-xl font-semibold text-gray-700 mb-4">Personal Bests</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-neumo-light p-4 rounded-xl shadow-neumo-inner text-center">
+                        <i class="fa-solid fa-book-open text-2xl text-blue-500 mb-2"></i>
+                        <p class="text-2xl font-bold text-gray-800">50 Pages</p>
+                        <p class="text-sm text-gray-500">Reading Day</p>
+                    </div>
+                    <div class="bg-neumo-light p-4 rounded-xl shadow-neumo-inner text-center">
+                        <i class="fa-solid fa-dumbbell text-2xl text-red-500 mb-2"></i>
+                        <p class="text-2xl font-bold text-gray-800">60 min</p>
+                        <p class="text-sm text-gray-500">Workout</p>
+                    </div>
+                    <div class="bg-neumo-light p-4 rounded-xl shadow-neumo-inner text-center">
+                        <i class="fa-solid fa-glass-water text-2xl text-teal-500 mb-2"></i>
+                        <p class="text-2xl font-bold text-gray-800">12 Glasses</p>
+                        <p class="text-sm text-gray-500">Water Intake</p>
+                    </div>
+                    <div class="bg-neumo-light p-4 rounded-xl shadow-neumo-inner text-center">
+                        <i class="fa-solid fa-clock text-2xl text-yellow-500 mb-2"></i>
+                        <p class="text-2xl font-bold text-gray-800">7 Hrs</p>
+                        <p class="text-sm text-gray-500">Sleep</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-8 text-center text-gray-500">
+            <p>© 2024 Habitual. All rights reserved.</p>
+        </footer>
+    </div>
+
+<script>
+    document.querySelectorAll('.bg-neumo-light.p-4.rounded-xl.shadow-neumo-inner.flex.items-center.justify-between.transition-shadow.duration-300.hover\:shadow-neumo button').forEach(button => {
+        button.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular', 'fa-circle', 'text-gray-400');
+                icon.classList.add('fa-solid', 'fa-check-circle', 'text-primary');
+            } else {
+                icon.classList.remove('fa-solid', 'fa-check-circle', 'text-primary');
+                icon.classList.add('fa-regular', 'fa-circle', 'text-gray-400');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

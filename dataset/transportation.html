@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transportation Network Optimization Dashboard</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3490dc",
+              secondary: "#edf2f7",
+              accent: "#4dc0b5",
+              neutral: "#cbd5e0",
+            },
+            fontFamily: { sans: ["Roboto", "sans-serif"] },
+            boxShadow: { custom: "0 5px 20px rgba(0, 0, 0, 0.1)" },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      .dashboard-container {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+      }
+      .dashboard-container.loaded {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .animate-fade-in {
+        animation: fadein 1s ease-out forwards;
+      }
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .chart-container {
+        background-image: url("https://picsum.photos/300/200");
+        background-size: cover;
+        background-position: center;
+        min-height: 200px;
+      }
+      .map-container {
+        background-image: url("https://picsum.photos/400/300");
+        background-size: cover;
+        background-position: center;
+        min-height: 300px;
+      }
+    </style>
+  </head>
+  <body class="bg-secondary">
+    <div class="dashboard-container">
+      <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+          <div class="flex justify-between items-center">
+            <div class="text-xl font-bold text-primary">
+              <i class="fas fa-route mr-2"></i> OptiRoute Dashboard
+            </div>
+            <div class="hidden md:flex space-x-6">
+              <a
+                href="#"
+                class="hover:text-primary transition-colors duration-200"
+                >Dashboard</a
+              >
+              <a
+                href="#"
+                class="hover:text-primary transition-colors duration-200"
+                >Routes</a
+              >
+              <a
+                href="#"
+                class="hover:text-primary transition-colors duration-200"
+                >Vehicles</a
+              >
+              <a
+                href="#"
+                class="hover:text-primary transition-colors duration-200"
+                >Reports</a
+              >
+              <a
+                href="#"
+                class="hover:text-primary transition-colors duration-200"
+                >Settings</a
+              >
+            </div>
+            <div class="md:hidden">
+              <button class="focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main class="container mx-auto px-6 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white shadow-custom rounded-lg p-6 animate-fade-in">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-traffic-light text-2xl text-primary mr-3"></i>
+              <h2 class="text-xl font-semibold">Traffic Flow</h2>
+            </div>
+            <div class="map-container rounded-md"></div>
+            <p class="mt-4 text-sm text-gray-600">
+              Real-time traffic density across the network.
+            </p>
+          </div>
+          <div
+            class="bg-white shadow-custom rounded-lg p-6 animate-fade-in delay-100"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-chart-line text-2xl text-accent mr-3"></i>
+              <h2 class="text-xl font-semibold">Route Efficiency</h2>
+            </div>
+            <div class="chart-container rounded-md"></div>
+            <p class="mt-4 text-sm text-gray-600">
+              Performance metrics for optimal route suggestions.
+            </p>
+          </div>
+          <div
+            class="bg-white shadow-custom rounded-lg p-6 animate-fade-in delay-200"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-truck text-2xl text-neutral mr-3"></i>
+              <h2 class="text-xl font-semibold">Vehicle Tracking</h2>
+            </div>
+            <div class="relative overflow-x-auto shadow-md sm:rounded-md mt-2">
+              <table
+                class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+              >
+                <thead
+                  class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+                >
+                  <tr>
+                    <th scope="col" class="px-6 py-3">Vehicle ID</th>
+                    <th scope="col" class="px-6 py-3">Status</th>
+                    <th scope="col" class="px-6 py-3">Location</th>
+                    <th scope="col" class="px-6 py-3">Route</th>
+                    <th scope="col" class="px-6 py-3">ETA</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      VEH-123
+                    </th>
+                    <td class="px-6 py-4 text-accent">
+                      <i class="fas fa-circle text-xs mr-2"></i> In Transit
+                    </td>
+                    <td class="px-6 py-4">City Center</td>
+                    <td class="px-6 py-4">Route A</td>
+                    <td class="px-6 py-4">10:30 AM</td>
+                  </tr>
+                  <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      VEH-456
+                    </th>
+                    <td class="px-6 py-4 text-primary">
+                      <i class="fas fa-circle text-xs mr-2"></i> In Transit
+                    </td>
+                    <td class="px-6 py-4">Suburb X</td>
+                    <td class="px-6 py-4">Route B</td>
+                    <td class="px-6 py-4">11:15 AM</td>
+                  </tr>
+                  <tr
+                    class="bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-600"
+                  >
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      VEH-789
+                    </th>
+                    <td class="px-6 py-4 text-neutral">
+                      <i class="fas fa-circle text-xs mr-2"></i> Idle
+                    </td>
+                    <td class="px-6 py-4">Depot</td>
+                    <td class="px-6 py-4">-</td>
+                    <td class="px-6 py-4">-</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="mt-4 text-sm text-gray-600">
+              Current status and location of vehicles in the fleet.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div
+            class="bg-white shadow-custom rounded-lg p-6 animate-fade-in delay-300"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-chart-bar text-2xl text-primary mr-3"></i>
+              <h3 class="text-lg font-semibold">Avg. Traffic Density</h3>
+            </div>
+            <p class="text-2xl font-bold text-gray-800">75%</p>
+            <p class="mt-2 text-sm text-gray-600">Compared to last week</p>
+          </div>
+          <div
+            class="bg-white shadow-custom rounded-lg p-6 animate-fade-in delay-400"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-check-circle text-2xl text-accent mr-3"></i>
+              <h3 class="text-lg font-semibold">Optimal Routes</h3>
+            </div>
+            <p class="text-2xl font-bold text-gray-800">92%</p>
+            <p class="mt-2 text-sm text-gray-600">
+              Of suggested routes are optimal
+            </p>
+          </div>
+          <div
+            class="bg-white shadow-custom rounded-lg p-6 animate-fade-in delay-500"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-clock text-2xl text-neutral mr-3"></i>
+              <h3 class="text-lg font-semibold">On-Time Arrival</h3>
+            </div>
+            <p class="text-2xl font-bold text-gray-800">98%</p>
+            <p class="mt-2 text-sm text-gray-600">
+              Vehicles arriving on schedule
+            </p>
+          </div>
+          <div
+            class="bg-white shadow-custom rounded-lg p-6 animate-fade-in delay-600"
+          >
+            <div class="flex items-center mb-4">
+              <i class="fas fa-tachometer-alt text-2xl text-secondary mr-3"></i>
+              <h3 class="text-lg font-semibold">System Load</h3>
+            </div>
+            <p class="text-2xl font-bold text-gray-800">Low</p>
+            <p class="mt-2 text-sm text-gray-600">
+              System performance is nominal
+            </p>
+          </div>
+        </div>
+      </main>
+      <footer class="bg-gray-100 py-4 mt-8">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+          © 2024 OptiRoute. All rights reserved.
+        </div>
+      </footer>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector(".dashboard-container").classList.add("loaded");
+      });
+    </script>
+  </body>
+</html>

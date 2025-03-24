@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Lifestyle Magazine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1e293b',
+                        'secondary': '#f3f0ea',
+                        'accent': '#a855f7',
+                        'neutral': '#6b7280',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideLeft: {
+                            '0%': { transform: 'translateX(20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.7s ease-out forwards',
+                        'slide-left': 'slideLeft 0.7s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-poppins bg-secondary text-primary antialiased;
+            }
+            h1, h2, h3 {
+                @apply font-playfair font-bold tracking-tight;
+            }
+        }
+        @layer components {
+            .container-article {
+                @apply max-w-7xl mx-auto px-6 lg:px-8 py-12;
+            }
+            .article-section {
+                @apply mb-16;
+            }
+            .article-title {
+                @apply text-4xl lg:text-5xl mb-6 animate-slide-up;
+            }
+            .article-meta {
+                @apply flex items-center text-neutral mb-8 animate-slide-left;
+            }
+            .article-author-image {
+                @apply w-10 h-10 rounded-full mr-3;
+            }
+            .article-author-name {
+                @apply font-medium;
+            }
+            .article-date {
+                @apply text-sm ml-auto;
+            }
+            .article-cover-image {
+                @apply w-full rounded-xl overflow-hidden mb-12 animate-fade-in;
+            }
+            .article-content {
+                @apply prose prose-lg max-w-none animate-fade-in;
+            }
+            .article-content h2 {
+                @apply text-3xl mt-12 mb-6;
+            }
+            .article-content h3 {
+                @apply text-2xl mt-10 mb-4;
+            }
+            .article-content p {
+                @apply mb-6;
+            }
+            .article-content ul {
+                @apply list-disc pl-5 mb-6;
+            }
+            .article-content ol {
+                @apply list-decimal pl-5 mb-6;
+            }
+            .article-content blockquote {
+                @apply border-l-4 border-accent pl-4 italic mb-6;
+            }
+            .article-content img {
+                @apply rounded-lg mb-6;
+            }
+            .article-content a {
+                @apply text-accent hover:underline;
+            }
+            .related-articles-section {
+                @apply mt-20 pt-8 border-t border-neutral-200;
+            }
+            .related-articles-title {
+                @apply text-2xl font-bold mb-8;
+            }
+            .related-article-grid {
+                @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+            }
+            .related-article-card {
+                @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300;
+            }
+            .related-article-image {
+                @apply w-full h-56 object-cover;
+            }
+            .related-article-content {
+                @apply p-6;
+            }
+            .related-article-title-small {
+                @apply text-xl font-bold mb-2 hover:text-accent transition-colors duration-300;
+            }
+            .related-article-excerpt {
+                @apply text-neutral text-sm;
+            }
+            .footer-magazine {
+                @apply bg-primary text-secondary py-12;
+            }
+            .footer-content {
+                @apply container-article flex flex-col md:flex-row justify-between items-center;
+            }
+            .footer-logo {
+                @apply text-2xl font-bold mb-4 md:mb-0;
+            }
+            .footer-socials {
+                @apply flex space-x-4;
+            }
+            .footer-social-link {
+                @apply text-secondary hover:text-accent transition-colors duration-300;
+            }
+            .header-magazine {
+                @apply bg-secondary sticky top-0 z-50 shadow-md;
+            }
+            .header-container {
+                @apply container-article flex justify-between items-center py-4;
+            }
+            .header-logo {
+                @apply text-2xl font-bold;
+            }
+            .header-nav {
+                @apply hidden lg:flex space-x-8;
+            }
+            .header-nav-link {
+                @apply font-medium hover:text-accent transition-colors duration-300;
+            }
+            .mobile-menu-button {
+                @apply lg:hidden text-primary hover:text-accent focus:outline-none;
+            }
+            .mobile-menu {
+                @apply lg:hidden fixed top-0 right-0 w-64 h-full bg-secondary shadow-lg p-8 transform translate-x-full transition-transform duration-300 ease-in-out z-50;
+            }
+            .mobile-menu.open {
+                @apply translate-x-0;
+            }
+            .mobile-nav-list {
+                @apply space-y-4;
+            }
+            .mobile-nav-link {
+                @apply block py-2 font-medium hover:text-accent transition-colors duration-300;
+            }
+            .close-menu-button {
+                @apply absolute top-4 right-4 text-primary hover:text-accent focus:outline-none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-magazine">
+        <div class="header-container">
+            <div class="header-logo">Magazine</div>
+            <nav class="header-nav">
+                <a href="#" class="header-nav-link">Fashion</a>
+                <a href="#" class="header-nav-link">Travel</a>
+                <a href="#" class="header-nav-link">Culture</a>
+                <a href="#" class="header-nav-link">Lifestyle</a>
+            </nav>
+            <button class="mobile-menu-button" id="mobile-menu-toggle">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <button class="close-menu-button" id="close-menu-toggle">
+                <i class="fa fa-times fa-lg"></i>
+            </button>
+            <nav class="mobile-nav-list">
+                <a href="#" class="mobile-nav-link">Fashion</a>
+                <a href="#" class="mobile-nav-link">Travel</a>
+                <a href="#" class="mobile-nav-link">Culture</a>
+                <a href="#" class="mobile-nav-link">Lifestyle</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container-article">
+        <article>
+            <section class="article-section">
+                <h1 class="article-title">The Serene Shores of Santorini: A Travelogue</h1>
+                <div class="article-meta">
+                    <img src="https://picsum.photos/200/301" alt="Author" class="article-author-image">
+                    <span class="article-author-name">By John Doe</span>
+                    <span class="article-date">October 26, 2024</span>
+                </div>
+                <div class="article-cover-image">
+                    <img src="https://picsum.photos/1200/600" alt="Santorini Landscape" class="w-full rounded-xl">
+                </div>
+            </section>
+
+            <section class="article-section">
+                <div class="article-content">
+                    <h2>Whispers of the Aegean</h2>
+                    <p>Santorini, a jewel in the Aegean Sea, is more than just an island; it's an experience. From the moment you set foot on its volcanic shores, you're enveloped in an atmosphere of unparalleled beauty and tranquility. The iconic white-washed villages clinging to the caldera cliffs, the sapphire waters stretching out to the horizon, and the sunsets that paint the sky in hues of gold and crimson – Santorini is a feast for the senses.</p>
+
+                    <img src="https://picsum.photos/800/400" alt="Oia Village">
+
+                    <h3>A Journey Through Oia</h3>
+                    <p>Oia, perhaps the most famous village in Santorini, is a labyrinth of narrow pathways, luxury boutiques, and art galleries. Every corner turned reveals a postcard-perfect vista. The village is renowned for its sunsets, and as the day wanes, crowds gather to witness the spectacle as the sun dips below the horizon, casting a magical glow over the caldera.</p>
+
+                    <blockquote>
+                        "To travel is to live." - Hans Christian Andersen
+                    </blockquote>
+
+                    <p>Beyond the visual splendor, Santorini offers a rich tapestry of experiences. Explore ancient archaeological sites, indulge in wine tasting at local vineyards, or set sail on a catamaran cruise to discover hidden coves and volcanic hot springs. The island's culinary scene is equally captivating, with fresh seafood and local delicacies served in restaurants with breathtaking views.</p>
+
+                    <h3>Things to Do in Santorini:</h3>
+                    <ul>
+                        <li>Visit the archaeological site of Akrotiri.</li>
+                        <li>Explore the Museum of Prehistoric Thera.</li>
+                        <li>Take a boat trip to the volcanic island of Nea Kameni.</li>
+                        <li>Relax on the black sand beaches of Perissa and Perivolos.</li>
+                        <li>Enjoy a wine tasting tour at a local winery.</li>
+                    </ul>
+
+                    <img src="https://picsum.photos/800/500" alt="Santorini Beaches">
+
+                    <p>Santorini is not just a destination; it's an escape, a dream woven into reality. It's a place where time slows down, and every moment is savored. Whether you're seeking adventure, relaxation, or simply a dose of breathtaking beauty, Santorini promises an unforgettable journey.</p>
+                </div>
+            </section>
+        </article>
+
+        <section class="related-articles-section">
+            <h2 class="related-articles-title">Related Articles</h2>
+            <div class="related-article-grid">
+                <div class="related-article-card">
+                    <img src="https://picsum.photos/400/300" alt="Related Article 1" class="related-article-image">
+                    <div class="related-article-content">
+                        <a href="#" class="related-article-title-small">Luxury Stays in the Maldives</a>
+                        <p class="related-article-excerpt">Discover the ultimate in luxury with our curated list of overwater bungalows and private island resorts in the Maldives.</p>
+                    </div>
+                </div>
+                <div class="related-article-card">
+                    <img src="https://picsum.photos/400/301" alt="Related Article 2" class="related-article-image">
+                    <div class="related-article-content">
+                        <a href="#" class="related-article-title-small">The Art of Italian Leather Craftsmanship</a>
+                        <p class="related-article-excerpt">Explore the heritage and meticulous process behind Italy's world-renowned leather goods.</p>
+                    </div>
+                </div>
+                <div class="related-article-card">
+                    <img src="https://picsum.photos/400/302" alt="Related Article 3" class="related-article-image">
+                    <div class="related-article-content">
+                        <a href="#" class="related-article-title-small">Paris Fashion Week Highlights</a>
+                        <p class="related-article-excerpt">A recap of the most stunning collections and trends from the latest Paris Fashion Week.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-magazine">
+        <div class="footer-content">
+            <div class="footer-logo">Magazine</div>
+            <div class="footer-socials">
+                <a href="#" class="footer-social-link"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                <a href="#" class="footer-social-link"><i class="fa-brands fa-twitter fa-lg"></i></a>
+                <a href="#" class="footer-social-link"><i class="fa-brands fa-facebook-f fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-toggle');
+        const closeMenuButton = document.getElementById('close-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    </script>
+
+</body>
+</html>

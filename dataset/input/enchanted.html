@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enchanted Tales Festival</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@200;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-amber-100 to-pink-100 overflow-x-hidden">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-shadow duration-300" id="header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-2xl font-semibold text-gray-800 hover:text-gray-900 transition-colors duration-300">Enchanted Tales</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-gray-800 transition-colors duration-300">About</a>
+                <a href="#schedule" class="text-gray-600 hover:text-gray-800 transition-colors duration-300">Schedule</a>
+                <a href="#speakers" class="text-gray-600 hover:text-gray-800 transition-colors duration-300">Storytellers</a>
+                <a href="#tickets" class="text-gray-600 hover:text-gray-800 transition-colors duration-300">Tickets</a>
+            </div>
+            <button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero relative py-24 md:py-36 overflow-hidden">
+        <div class="absolute inset-0 -z-10 animate-pulse">
+            <img src="https://picsum.photos/1920/1080" alt="Festival Background" class="object-cover w-full h-full opacity-20 blur-sm">
+        </div>
+        <div class="container mx-auto px-6 text-center md:text-left relative">
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-gray-900 leading-tight mb-6 animate-fade-in-up">
+                Unleash Your Imagination at the <br> <span class="text-amber-600">Enchanted Tales Festival</span>
+            </h1>
+            <p class="text-xl text-gray-700 mb-12 animate-fade-in-up delay-200">
+                Step into a world where stories come alive. Join us for a magical journey of words, wonder, and community.
+            </p>
+            <a href="#tickets" class="cta-button animate-fade-in-up delay-400">
+                Get Your Tickets <i class="fa fa-ticket ml-2"></i>
+            </a>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-pink-100 to-transparent"></div>
+        <div class="hidden md:block absolute top-1/2 right-10 -translate-y-1/2 animate-float-right">
+            <img src="https://picsum.photos/400/600" alt="Playful Illustration" class="rounded-xl shadow-2xl hover:shadow-amber-500/50 transition-shadow duration-300">
+        </div>
+    </section>
+
+    <section id="about" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="md:order-2">
+                    <img src="https://picsum.photos/600/400" alt="Storytelling Scene" class="rounded-xl shadow-lg hover:shadow-amber-500/50 transition-shadow duration-300">
+                </div>
+                <div class="md:order-1">
+                    <h2 class="font-display text-4xl font-semibold text-gray-800 mb-6">About the Festival</h2>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Enchanted Tales Festival is a celebration of storytelling in all its forms. From captivating spoken word performances to immersive visual narratives, we bring together storytellers and audiences of all ages.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        Our festival is more than just events; it's a community. A place where imagination is nurtured, creativity is sparked, and connections are forged through the power of stories.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-amber-600 hover:text-amber-800 font-semibold transition-colors duration-300">
+                        Learn More <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="py-20 md:py-32 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-semibold text-gray-800 text-center mb-12">Festival Schedule Highlights</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="font-semibold text-xl text-gray-800 mb-2">Opening Night Gala</h3>
+                    <p class="text-gray-600 mb-4">Kick off the festival with a spectacular evening of storytelling, music, and dance.</p>
+                    <span class="text-sm text-gray-500"><i class="fa fa-calendar mr-1"></i> October 27th, 7:00 PM</span>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="font-semibold text-xl text-gray-800 mb-2">Interactive Storytelling Workshop</h3>
+                    <p class="text-gray-600 mb-4">Learn the art of interactive storytelling and create your own narratives.</p>
+                    <span class="text-sm text-gray-500"><i class="fa fa-calendar mr-1"></i> October 28th, 10:00 AM</span>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="font-semibold text-xl text-gray-800 mb-2">Grand Finale Story Concert</h3>
+                    <p class="text-gray-600 mb-4">Experience a mesmerizing concert featuring renowned storytellers.</p>
+                    <span class="text-sm text-gray-500"><i class="fa fa-calendar mr-1"></i> October 29th, 8:00 PM</span>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-amber-600 hover:text-amber-800 font-semibold transition-colors duration-300">
+                    View Full Schedule <i class="fa fa-calendar-alt ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-semibold text-gray-800 text-center mb-16">Meet Our Storytellers</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="text-center">
+                    <img src="https://picsum.photos/200/300" alt="Storyteller 1" class="rounded-full w-40 h-40 object-cover mx-auto mb-4 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h4 class="font-semibold text-lg text-gray-800 mb-1">Eleanor Vance</h4>
+                    <p class="text-gray-500 text-sm">Fantasy & Folklore</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/201/300" alt="Storyteller 2" class="rounded-full w-40 h-40 object-cover mx-auto mb-4 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h4 class="font-semibold text-lg text-gray-800 mb-1">Jasper Thorne</h4>
+                    <p class="text-gray-500 text-sm">Adventure Tales</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/200/301" alt="Storyteller 3" class="rounded-full w-40 h-40 object-cover mx-auto mb-4 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h4 class="font-semibold text-lg text-gray-800 mb-1">Aisha Khan</h4>
+                    <p class="text-gray-500 text-sm">Mythology & Legends</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://picsum.photos/201/301" alt="Storyteller 4" class="rounded-full w-40 h-40 object-cover mx-auto mb-4 shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h4 class="font-semibold text-lg text-gray-800 mb-1">Caleb Rivers</h4>
+                    <p class="text-gray-500 text-sm">Mystery & Suspense</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tickets" class="py-20 md:py-32 bg-pink-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-semibold text-gray-800 mb-12">Get Your Tickets & Join the Magic</h2>
+            <p class="text-gray-700 text-lg mb-10">
+                Don't miss out on this unforgettable experience. Secure your spot at the Enchanted Tales Festival today!
+            </p>
+            <a href="#" class="cta-button cta-button--alt">
+                Buy Tickets Now <i class="fa fa-shopping-cart ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 mb-4">© 2024 Enchanted Tales Festival. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-500 hover:text-amber-600 transition-colors duration-300"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="text-gray-500 hover:text-amber-600 transition-colors duration-300"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-gray-500 hover:text-amber-600 transition-colors duration-300"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+            <p class="mt-4 text-gray-500 text-sm">Contact us: <a href="mailto:info@enchantedtales.com" class="hover:text-amber-600 transition-colors duration-300">info@enchantedtales.com</a></p>
+        </div>
+    </footer>
+
+    <style>
+        .cta-button {
+            @apply inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-colors duration-300;
+        }
+        .cta-button--alt {
+            @apply bg-pink-600 hover:bg-pink-700 focus:ring-pink-500;
+        }
+        .animate-fade-in-up {
+            animation: fade-in-up 1s ease-out forwards;
+            opacity: 0;
+        }
+        .animate-fade-in-up.delay-200 {
+            animation-delay: 0.2s;
+        }
+        .animate-fade-in-up.delay-400 {
+            animation-delay: 0.4s;
+        }
+        .animate-float-right {
+            animation: float-right 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float-right {
+            0% {
+                transform: translateY(-10px) translateX(0);
+            }
+            100% {
+                transform: translateY(10px) translateX(-10px);
+            }
+        }
+    </style>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

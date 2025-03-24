@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Coolest Service Ever</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#4f46e5',
+                        accent: '#c084fc',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-blurred-top': {
+                            '0%': {
+                                transform: 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
+                                'transform-origin': '50% 0%',
+                                filter: 'blur(40px)',
+                                opacity: '0'
+                            },
+                            '100%': {
+                                transform: 'translateY(0) scaleY(1) scaleX(1)',
+                                'transform-origin': '50% 50%',
+                                filter: 'blur(0px)',
+                                opacity: '1'
+                            },
+                        },
+                        'pulse-fast': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: .5 }
+                        }
+                    },
+                    animation: {
+                        'slide-in-blurred-top': 'slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)   both',
+                        'pulse-fast': 'pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        .password-toggle-icon {
+            cursor: pointer;
+        }
+        .animate-slide-in-blurred-top {
+            animation: slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+        }
+    </style>
+</head>
+<body class="bg-neutral flex justify-center items-center h-screen overflow-hidden">
+
+<div class="animate-slide-in-blurred-top relative bg-white shadow-2xl rounded-3xl overflow-hidden max-w-md w-full m-6">
+
+    <div class="absolute inset-0 bg-primary opacity-50 rotate-180 transform origin-bottom-left pointer-events-none"></div>
+    <div class="absolute inset-0 bg-accent opacity-20 rotate-180 transform origin-bottom-right pointer-events-none"></div>
+
+    <div class="px-10 py-12">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-dark mb-2">Log In</h2>
+            <p class="text-gray-500">Access your account and continue where you left off.</p>
+        </div>
+
+        <form id="loginForm" class="space-y-6">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 sr-only">Your email</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-envelope text-gray-500"></i>
+                    </div>
+                    <input type="email" id="email" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary" placeholder="Email Address" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 sr-only">Your password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-lock text-gray-500"></i>
+                    </div>
+                    <input type="password" id="password" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary focus:border-primary" placeholder="Password" required>
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                        <i id="passwordToggle" class="password-toggle-icon fas fa-eye text-gray-500 hover:text-gray-700"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary">
+                    </div>
+                    <label for="remember" class="ml-2 text-sm font-medium text-gray-900">Remember me</label>
+                </div>
+                <a href="#" class="text-sm text-primary hover:underline">Forgot password?</a>
+            </div>
+            <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center">Log In</button>
+            <div class="text-sm font-medium text-gray-500 text-center">
+                Not registered? <a href="#" class="text-primary hover:underline">Create account</a>
+            </div>
+        </form>
+    </div>
+
+    <div class="bg-neutral/50 px-10 py-6 border-t border-neutral">
+        <div class="flex justify-between items-center">
+            <div>
+                <p class="text-sm text-gray-600">Securely powered by</p>
+            </div>
+            <div class="flex items-center space-x-3">
+                <img src="https://picsum.photos/id/222/50/50" alt="Company Logo 1" class="rounded-full h-8 w-8 object-cover">
+                <img src="https://picsum.photos/id/223/50/50" alt="Company Logo 2" class="rounded-full h-8 w-8 object-cover">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const passwordInput = document.getElementById('password');
+    const passwordToggle = document.getElementById('passwordToggle');
+
+    passwordToggle.addEventListener('click', function () {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordToggle.classList.remove('fa-eye');
+            passwordToggle.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            passwordToggle.classList.remove('fa-eye-slash');
+            passwordToggle.classList.add('fa-eye');
+        }
+    });
+
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (!email || !password) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        const submitButton = loginForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Logging In...';
+        submitButton.classList.add('animate-pulse-fast');
+
+        setTimeout(() => {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+            submitButton.classList.remove('animate-pulse-fast');
+            alert('Login successful! (Simulated)');
+            // In a real application, you would handle the actual login process here.
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>

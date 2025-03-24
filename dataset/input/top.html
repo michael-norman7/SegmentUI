@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 0.01% UI Website Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'satoshi': ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        background: '#f8fafc',
+                        text: '#1e293b',
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-satoshi bg-background text-text;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-bold;
+            }
+            a {
+                @apply transition-colors duration-200;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">Logo</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#features" class="hover:text-blue-600">Features</a></li>
+                <li><a href="#pricing" class="hover:text-blue-600">Pricing</a></li>
+                <li><a href="#testimonials" class="hover:text-blue-600">Testimonials</a></li>
+                <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+            </ul>
+            <button class="md:hidden block">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Our Core Features</h2>
+            <p class="text-gray-700 mb-8">Explore the features that make our product stand out.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <img src="https://picsum.photos/200/301" alt="Feature 1" class="w-16 h-16 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Feature One</h3>
+                    <p class="text-gray-600">Description of feature one.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <img src="https://picsum.photos/200/302" alt="Feature 2" class="w-16 h-16 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Feature Two</h3>
+                    <p class="text-gray-600">Description of feature two.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+                    <img src="https://picsum.photos/200/303" alt="Feature 3" class="w-16 h-16 mx-auto mb-4 rounded-full">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Feature Three</h3>
+                    <p class="text-gray-600">Description of feature three.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4" id="accessibility-section">Accessibility Focused Design</h2>
+            <p class="text-gray-700 mb-8">We are committed to making our website accessible to everyone.</p>
+            <ul class="list-disc list-inside">
+                <li><strong>Semantic HTML:</strong> Using appropriate tags for content structure.</li>
+                <li><strong>Keyboard Navigation:</strong> Ensuring full keyboard operability.</li>
+                <li><strong>Screen Reader Support:</strong> ARIA attributes for enhanced accessibility.</li>
+                <li><strong>Color Contrast:</strong> Meeting WCAG guidelines for text readability.</li>
+                <li><strong>Alternative Text:</strong> Descriptive alt text for all images.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 container mx-auto px-6 py-12">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <img src="https://picsum.photos/200/305" alt="Responsive Image 1" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Responsive Design Example 1</h3>
+            <p class="text-gray-600">This card adapts to different screen sizes.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <img src="https://picsum.photos/200/306" alt="Responsive Image 2" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Responsive Design Example 2</h3>
+            <p class="text-gray-600">Another example of responsive content.</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <img src="https://picsum.photos/200/307" alt="Responsive Image 3" class="w-full h-48 object-cover rounded-md mb-4">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Responsive Design Example 3</h3>
+            <p class="text-gray-600">Demonstrating flexible grid layout.</p>
+        </div>
+    </div>
+
+    <form class="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Contact Us</h2>
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+        </div>
+        <div class="mb-6">
+            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+            <textarea id="message" name="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Send Message</button>
+    </form>
+
+    <div class="bg-gradient-to-r from-blue-400 to-blue-600 py-20 text-white text-center">
+        <h2 class="text-4xl font-extrabold mb-6 animate-pulse">Visually Stunning Design</h2>
+        <p class="text-lg mb-8">Experience a website that is both beautiful and functional.</p>
+        <button class="bg-white text-blue-600 font-bold py-3 px-6 rounded-full hover:bg-gray-100 transition-colors">Explore More</button>
+    </div>
+
+    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-green-500 active:bg-green-800 transition-colors duration-200">
+        Submit
+    </button>
+    <div class="mt-4" id="loading-indicator" style="display: none;">
+        Loading...
+    </div>
+    <div class="mt-4 text-red-500" id="error-message" style="display: none;">
+        An error occurred. Please try again.
+    </div>
+    <div class="mt-4 text-green-500" id="success-message" style="display: none;">
+        Success!
+    </div>
+    <script>
+        const submitButton = document.querySelector('button');
+        const loadingIndicator = document.getElementById('loading-indicator');
+        const errorMessage = document.getElementById('error-message');
+        const successMessage = document.getElementById('success-message');
+
+        submitButton.addEventListener('click', () => {
+            loadingIndicator.style.display = 'block';
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            setTimeout(() => {
+                loadingIndicator.style.display = 'none';
+                const isSuccess = Math.random() > 0.5;
+                if (isSuccess) {
+                    successMessage.style.display = 'block';
+                } else {
+                    errorMessage.style.display = 'block';
+                }
+            }, 2000);
+        });
+    </script>
+
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Clear and Concise Content</h2>
+            <p class="text-gray-700 mb-8">Our content is designed to be easily understood and actionable.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Headline that Grabs Attention</h3>
+                    <p class="text-gray-600">Short, impactful paragraph that highlights the key benefit. Use bullet points for scannable features.</p>
+                    <ul class="list-disc list-inside mt-4">
+                        <li>Benefit Point 1</li>
+                        <li>Benefit Point 2</li>
+                        <li>Benefit Point 3</li>
+                    </ul>
+                    <button class="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Learn More</button>
+                </div>
+                <div>
+                    <img src="https://picsum.photos/200/308" alt="Content Example" class="rounded-lg shadow-md">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-200 py-8 text-gray-700">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="space-y-2">
+                <p>© 2024 Secure Company. All rights reserved.</p>
+                <a href="/privacy" class="hover:text-blue-600">Privacy Policy</a>
+                <a href="/terms" class="hover:text-blue-600">Terms of Service</a>
+            </div>
+            <div class="flex space-x-4">
+                <img src="https://picsum.photos/50/53" alt="Security Badge 1" class="rounded-full">
+                <img src="https://picsum.photos/50/54" alt="Security Badge 2" class="rounded-full">
+                <img src="https://picsum.photos/50/55" alt="Security Badge 3" class="rounded-full">
+            </div>
+        </div>
+    </footer>
+
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">What Our Users Say</h2>
+            <p class="text-gray-700 mb-8">Real testimonials from satisfied customers.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="https://picsum.photos/50/53" alt="User 1" class="w-12 h-12 mx-auto mb-4 rounded-full">
+                    <p class="text-gray-800 italic mb-4">"This website is amazing! It's so easy to use and the design is beautiful."</p>
+                    <p class="font-semibold text-blue-600">- Jane Doe</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="https://picsum.photos/50/54" alt="User 2" class="w-12 h-12 mx-auto mb-4 rounded-full">
+                    <p class="text-gray-800 italic mb-4">"I love the speed and responsiveness of this site. It's a pleasure to use on all my devices."</p>
+                    <p class="font-semibold text-blue-600">- John Smith</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <img src="https://picsum.photos/50/55" alt="User 3" class="w-12 h-12 mx-auto mb-4 rounded-full">
+                    <p class="text-gray-800 italic mb-4">"The support team is fantastic and always ready to help. Highly recommend this service!"</p>
+                    <p class="font-semibold text-blue-600">- Alice Johnson</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-blue-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Ready to Get Started?</h2>
+            <p class="text-gray-700 mb-8">Sign up today and experience the best features.</p>
+            <div class="inline-flex space-x-4">
+                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline">Sign Up Free</button>
+                <button class="bg-transparent border border-green-500 hover:bg-green-500 hover:text-white text-green-500 font-bold py-3 px-6 rounded-full focus:outline-none focus:shadow-outline transition-colors">Learn More</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

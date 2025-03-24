@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscape Architect Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4ade80',
+                        secondary: '#16a34a',
+                        accent: '#ccfbf1',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'scale-up': {
+                            '0%': { transform: 'scale(0.95)' },
+                            '100%': { transform: 'scale(1)' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.7s ease-out forwards',
+                        'slide-in-left': 'slide-in-left 0.7s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'scale-up': 'scale-up 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-image: url('https://picsum.photos/1920/1080');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+    <header class="sticky top-0 z-50 bg-neutral/90 backdrop-blur-sm shadow-md transition-shadow duration-300" id="header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-primary hover:text-secondary transition-colors duration-300">VerdantScape</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#portfolio" class="hover:text-primary transition-colors duration-300">Portfolio</a>
+                <a href="#services" class="hover:text-primary transition-colors duration-300">Services</a>
+                <a href="#about" class="hover:text-primary transition-colors duration-300">About</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
+            </div>
+            <button class="md:hidden text-dark hover:text-primary focus:outline-none transition-colors duration-300" aria-label="Menu">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="parallax text-white py-36 md:py-64 relative overflow-hidden">
+            <div class="absolute inset-0 bg-dark/50"></div>
+            <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-center md:justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left" style="animation-delay: 0.2s; animation-duration: 1s;"  >
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in" style="animation-delay: 0.3s;">Crafting Landscapes That Inspire</h1>
+                    <p class="text-lg md:text-xl mb-8 animate-fade-in" style="animation-delay: 0.5s;">We design and build breathtaking outdoor spaces, blending nature and innovation.</p>
+                    <a href="#portfolio" class="bg-primary text-white py-3 px-8 rounded-full font-semibold hover:bg-secondary focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-300 animate-scale-up inline-block" style="animation-delay: 0.7s;">Explore Portfolio</a>
+                </div>
+                <div class="md:w-1/2 flex justify-center" style="animation-delay: 0.4s;">
+                    <img src="https://picsum.photos/600/400" alt="Landscape Design Example" class="rounded-xl shadow-2xl animate-slide-in-right" style="animation-delay: 0.8s;">
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-20 bg-accent">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Our Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+                        <img src="https://picsum.photos/400/300?random=1" alt="Project 1" class="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-semibold text-dark mb-2">Serene Garden Retreat</h3>
+                            <p class="text-gray-600">A tranquil garden designed for relaxation and peace.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Project 2" class="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-semibold text-dark mb-2">Modern Urban Oasis</h3>
+                            <p class="text-gray-600">Bringing nature into the city with a contemporary design.</p>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Project 3" class="w-full h-60 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                        <div class="p-6 bg-white">
+                            <h3 class="text-xl font-semibold text-dark mb-2">Rustic Countryside Estate</h3>
+                            <p class="text-gray-600">Harmonizing with the natural beauty of the countryside.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="mt-10 inline-flex items-center font-semibold text-primary hover:text-secondary transition-colors duration-300 group">
+                    View All Projects
+                    <i class="fa fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                </a>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 bg-neutral">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Our Expertise</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-tree fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">Landscape Design</h3>
+                        <p class="text-gray-600">Creative and sustainable designs tailored to your vision and environment.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-faucet fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">Irrigation Systems</h3>
+                        <p class="text-gray-600">Efficient water management solutions for healthy and thriving landscapes.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa fa-tools fa-2x"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-dark mb-3">Construction & Installation</h3>
+                        <p class="text-gray-600">Expert construction and planting services to bring your design to life with precision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-accent">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-8">About VerdantScape</h2>
+                    <p class="text-lg text-gray-700 mb-6">At VerdantScape, we believe in creating outdoor spaces that not only enhance the beauty of your property but also enrich your life. With years of experience in landscape architecture, our team is passionate about blending innovative design with environmental sensitivity.</p>
+                    <p class="text-lg text-gray-700 mb-6">We work closely with our clients to understand their needs and aspirations, ensuring that every project is a unique reflection of their personal style and the surrounding landscape. From initial concept to final installation, we are committed to excellence and sustainability.</p>
+                    <a href="#contact" class="inline-block bg-primary text-white py-3 px-8 rounded-full font-semibold hover:bg-secondary focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-300">Let's Discuss Your Project</a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://picsum.photos/600/450?random=4" alt="About Us" class="rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-neutral">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Get in Touch</h2>
+                <p class="text-lg text-gray-700 mb-8">Ready to transform your outdoor space? Contact us today for a consultation.</p>
+                <div class="flex justify-center space-x-8 mb-10">
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300"><i class="fa fa-phone fa-2x"></i></a>
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300"><i class="fa fa-envelope fa-2x"></i></a>
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300"><i class="fa fa-map-marker-alt fa-2x"></i></a>
+                </div>
+                <form class="max-w-lg mx-auto">
+                    <div class="mb-6">
+                        <input type="text" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-6">
+                        <input type="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-6">
+                        <textarea rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary focus:border-primary" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 VerdantScape. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fa-brands fa-facebook-f"></i></a>
+content_copy
+download
+Use code with caution.
+Html

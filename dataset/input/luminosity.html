@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminosity Glass Art</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'lumigray': '#f3f4f6',
+                        'lumiblue': '#3b82f6',
+                        'lumidarkblue': '#1e40af',
+                        'lumiaccent': '#bae6fd',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'zoom-in-out': {
+                            '0%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                            '100%': { transform: 'scale(1)' },
+                        },
+                        'slide-left': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-right': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        }
+
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'zoom-in-out': 'zoom-in-out 3s ease-in-out infinite',
+                        'slide-left': 'slide-left 0.7s ease-out',
+                        'slide-right': 'slide-right 0.7s ease-out',
+                    },
+                    boxShadow: {
+                        'lumi': '0 10px 30px -5px rgba(0, 0, 0, 0.15)',
+                        'lumiprofile': '0 15px 50px -10px rgba(0, 0, 0, 0.25)',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-15deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .waving-hand {
+            animation: wave 2.5s linear infinite;
+            display: inline-block;
+            transform-origin: 70% 70%;
+        }
+    </style>
+</head>
+<body class="bg-lumigray font-body antialiased">
+<header class="sticky top-0 z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-md transition-shadow duration-300" id="header">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div>
+                <a href="#" class="font-display text-2xl font-bold text-lumidarkblue hover:text-lumiblue transition-colors duration-300">Luminosity Glass</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#gallery" class="text-gray-700 hover:text-lumiblue transition-colors duration-300">Gallery</a>
+                <a href="#about" class="text-gray-700 hover:text-lumiblue transition-colors duration-300">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-lumiblue transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-lumiblue focus:outline-none focus:text-lumiblue">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden mt-4 hidden" id="mobile-menu">
+            <a href="#gallery" class="block py-2 px-4 text-sm hover:bg-lumigray hover:text-lumiblue transition-colors duration-300">Gallery</a>
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-lumigray hover:text-lumiblue transition-colors duration-300">About</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-lumigray hover:text-lumiblue transition-colors duration-300">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<section class="hero relative overflow-hidden pb-24 md:pb-32 lg:pb-48" style="background-image: url('https://picsum.photos/1920/1080?blur=5'); background-blend-mode: overlay; background-color: rgba(243, 244, 246, 0.3);">
+    <div class="container mx-auto px-6 pt-24 md:pt-32 lg:pt-48 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text md:order-1 animate-fade-in-down">
+                <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-lumidarkblue leading-tight mb-6">
+                    Experience the Dance of Light <br> Through Glass Art.
+                </h1>
+                <p class="text-gray-700 text-lg mb-8">
+                    Welcome to Luminosity Glass, where each piece is a symphony of light and form. Discover handcrafted glass art that captures the ethereal beauty of molten creation. <span class="animate-pulse"><i class="fa-regular fa-hand-wave waving-hand"></i></span>
+                </p>
+                <div class="space-x-4">
+                    <a href="#gallery" class="inline-flex items-center justify-center px-6 py-3 bg-lumiblue hover:bg-lumidarkblue text-white font-medium rounded-md transition-colors duration-300">
+                        Explore Gallery <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#about" class="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-lumiblue text-lumiblue font-medium rounded-md hover:bg-lumiblue hover:text-white transition-colors duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image md:order-2 flex justify-center animate-zoom-in-out">
+                <img src="https://picsum.photos/500/600" alt="Featured Glass Art Piece" class="rounded-xl shadow-lumi max-w-md md:max-w-lg lg:max-w-xl" style="clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);">
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-lumigray to-transparent"></div>
+</section>
+
+<section id="gallery" class="py-24 md:py-32 lg:py-48">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl font-semibold text-lumidarkblue mb-4">
+                Featured Glass Artworks
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                A curated selection of our most captivating glass pieces, each telling a unique story of craftsmanship and artistry.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lumi hover:shadow-lumiprofile transition-shadow duration-300 animate-slide-left">
+                <img src="https://picsum.photos/400/500?random=1" alt="Glass Sculpture 1" class="w-full h-80 object-cover object-center">
+                <div class="p-6 bg-white">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Serene Bloom</h3>
+                    <p class="text-gray-500 text-sm">Intricately crafted floral glass sculpture.</p>
+                    <a href="#" class="inline-block mt-4 text-lumiblue hover:text-lumidarkblue font-medium transition-colors duration-300">View Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lumi hover:shadow-lumiprofile transition-shadow duration-300 animate-slide-left delay-100">
+                <img src="https://picsum.photos/400/500?random=2" alt="Glass Bowl 1" class="w-full h-80 object-cover object-center">
+                <div class="p-6 bg-white">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Azure Wave Bowl</h3>
+                    <p class="text-gray-500 text-sm">Hand-blown blue glass bowl, reminiscent of ocean waves.</p>
+                    <a href="#" class="inline-block mt-4 text-lumiblue hover:text-lumidarkblue font-medium transition-colors duration-300">View Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lumi hover:shadow-lumiprofile transition-shadow duration-300 animate-slide-left delay-200">
+                <img src="https://picsum.photos/400/500?random=3" alt="Glass Figurine 1" class="w-full h-80 object-cover object-center">
+                <div class="p-6 bg-white">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Crystal Spirit</h3>
+                    <p class="text-gray-500 text-sm">Elegant clear glass figurine, embodying grace.</p>
+                    <a href="#" class="inline-block mt-4 text-lumiblue hover:text-lumidarkblue font-medium transition-colors duration-300">View Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lumi hover:shadow-lumiprofile transition-shadow duration-300 animate-slide-right">
+                <img src="https://picsum.photos/400/500?random=4" alt="Glass Vase 1" class="w-full h-80 object-cover object-center">
+                <div class="p-6 bg-white">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Emberglow Vase</h3>
+                    <p class="text-gray-500 text-sm">Vibrant red and orange glass vase, capturing warmth.</p>
+                    <a href="#" class="inline-block mt-4 text-lumiblue hover:text-lumidarkblue font-medium transition-colors duration-300">View Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lumi hover:shadow-lumiprofile transition-shadow duration-300 animate-slide-right delay-100">
+                <img src="https://picsum.photos/400/500?random=5" alt="Glass Ornament 1" class="w-full h-80 object-cover object-center">
+                <div class="p-6 bg-white">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Starlight Orb</h3>
+                    <p class="text-gray-500 text-sm">Delicate iridescent glass ornament, shimmering with light.</p>
+                    <a href="#" class="inline-block mt-4 text-lumiblue hover:text-lumidarkblue font-medium transition-colors duration-300">View Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+            <div class="gallery-item rounded-xl overflow-hidden shadow-lumi hover:shadow-lumiprofile transition-shadow duration-300 animate-slide-right delay-200">
+                <img src="https://picsum.photos/400/500?random=6" alt="Glass Plate 1" class="w-full h-80 object-cover object-center">
+                <div class="p-6 bg-white">
+                    <h3 class="font-semibold text-lg text-gray-800 mb-2">Opalescent Tide Plate</h3>
+                    <p class="text-gray-500 text-sm">Large decorative glass plate with swirling colors.</p>
+                    <a href="#" class="inline-block mt-4 text-lumiblue hover:text-lumidarkblue font-medium transition-colors duration-300">View Details <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="#" class="inline-flex items-center justify-center px-6 py-3 bg-lumiaccent hover:bg-lumiblue text-lumidarkblue hover:text-white font-medium rounded-md transition-colors duration-300">
+                View Full Gallery <i class="fa-solid fa-images ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-24 md:py-32 lg:py-48 bg-white">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="about-image rounded-xl overflow-hidden shadow-lumiprofile animate-slide-right">
+                <img src="https://picsum.photos/600/700?grayscale" alt="Artist at Work" class="w-full h-full object-cover object-center">
+            </div>
+            <div class="about-text animate-slide-left">
+                <h2 class="font-display text-3xl md:text-4xl font-semibold text-lumidarkblue mb-6">
+                    About the Artist
+                </h2>
+                <p class="text-gray-700 text-lg mb-8">
+                    Driven by a lifelong fascination with glass, our artist meticulously crafts each piece, drawing inspiration from nature's forms and the play of light. With over 15 years of experience, they have honed their skills to create glass art that is both technically masterful and emotionally resonant.
+                </p>
+                <p class="text-gray-700 text-lg mb-8">
+                    From initial sketch to the final polish, every step is executed with precision and passion. We believe in sustainable practices, utilizing recycled glass whenever possible and minimizing our environmental footprint.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-lumiblue text-lumiblue font-medium rounded-md hover:bg-lumiblue hover:text-white transition-colors duration-300">
+                        Our Process
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-24 md:py-32 lg:py-48 bg-lumigray">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="font-display text-3xl md:text-4xl font-semibold text-lumidarkblue mb-4">
+                Get in Touch
+            </h2>
+            <p class="text-gray-600 max-w-md mx-auto">
+                We'd love to hear from you. For inquiries, custom orders, or just to say hello, reach out to us.
+            </p>
+        </div>
+        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lumi p-12 animate-fade-in-down">
+            <form class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Your Name</label>
+                    <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lumiblue focus:border-lumiblue block w-full p-2.5" placeholder="Your name" required>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your Email</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lumiblue focus:border-lumiblue block w-full p-2.5" placeholder="name@example.com" required>
+                </div>
+                <div>
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Your Message</label>
+                    <textarea id="message" rows="5" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-lumiblue focus:border-lumiblue block w-full p-2.5" placeholder="Leave your message here"></textarea>
+                </div>
+                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-lumiblue hover:bg-lumidarkblue focus:ring-4 focus:outline-none focus:ring-lumiblue">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-white py-12 border-t border-gray-200">
+    <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-500 text-sm mb-4">
+            © 2024 Luminosity Glass Art. All rights reserved.
+        </p>
+        <div class="flex justify-center space-x-6">
+            <a href="#" class="text-gray-500 hover:text-lumiblue transition-colors duration-300"><i class="fa-brands fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-gray-500 hover:text-lumiblue transition-colors duration-300"><i class="fa-brands fa-facebook fa-lg"></i></a>
+            <a href="#" class="text-gray-500 hover:text-lumiblue transition-colors duration-300"><i class="fa-brands fa-pinterest fa-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.getElementById('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+
+                if (mobileMenu.classList.contains('hidden') === false){
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leading Pharmaceutical Research - Innovating for a Healthier Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1e40af',
+                        'brand-blue-light': '#3b82f6',
+                        'brand-gray': '#f3f4f6',
+                        'brand-dark-gray': '#6b7280',
+                    },
+                    fontFamily: {
+                        'sans': ['Nunito Sans', 'sans-serif'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-brand-gray font-sans">
+    <header class="sticky top-0 bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-semibold text-brand-blue">
+                <a href="/" class="hover:text-brand-blue-light">PharmaResearch</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-brand-blue-light transition-colors duration-200">About Us</a>
+                <a href="#research" class="hover:text-brand-blue-light transition-colors duration-200">Research</a>
+                <a href="#pipeline" class="hover:text-brand-blue-light transition-colors duration-200">Pipeline</a>
+                <a href="#careers" class="hover:text-brand-blue-light transition-colors duration-200">Careers</a>
+                <a href="#contact" class="hover:text-brand-blue-light transition-colors duration-200">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="text-brand-blue hover:text-brand-blue-light focus:outline-none">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="bg-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 animate-fade-up">
+                <h1 class="text-4xl md:text-5xl font-bold text-brand-blue leading-tight mb-6">
+                    Pioneering Drug Discovery for a Healthier World
+                </h1>
+                <p class="text-xl text-brand-dark-gray mb-12">
+                    Advancing innovative therapies through cutting-edge research and development.
+                </p>
+                <a href="#research" class="inline-block bg-brand-blue hover:bg-brand-blue-light text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300">
+                    Explore Our Research
+                </a>
+            </div>
+            <div class="md:w-1/2 mt-10 md:mt-0 animate-fade-up md:animate-none">
+                <img src="https://picsum.photos/id/10/800/600" alt="Pharmaceutical Research" class="rounded-xl shadow-lg" />
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-brand-gray">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-brand-blue mb-8">About PharmaResearch</h2>
+            <p class="text-lg text-brand-dark-gray mb-12">
+                Driven by a passion for scientific excellence, PharmaResearch is dedicated to discovering and developing novel therapeutics to address unmet medical needs. Our team of world-class scientists and researchers are committed to improving patient lives through innovative pharmaceutical solutions.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-start md:space-x-8 space-y-8 md:space-y-0">
+                <div class="bg-white p-8 rounded-xl shadow-md text-left">
+                    <i class="fa fa-flask text-3xl text-brand-blue mb-4"></i>
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Our Mission</h3>
+                    <p class="text-brand-dark-gray">To advance human health by translating scientific breakthroughs into life-changing medicines.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md text-left">
+                    <i class="fa fa-lightbulb text-3xl text-brand-blue mb-4"></i>
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Our Vision</h3>
+                    <p class="text-brand-dark-gray">To be a global leader in pharmaceutical innovation, recognized for our scientific rigor and commitment to patients.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md text-left">
+                    <i class="fa fa-values-of text-3xl text-brand-blue mb-4"></i>
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Our Values</h3>
+                    <p class="text-brand-dark-gray">Integrity, Innovation, Collaboration, and Patient Focus guide everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-brand-blue mb-12">Our Research Areas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-brand-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/20/400/300" alt="Oncology Research" class="rounded-md mb-4 w-full h-48 object-cover" />
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Oncology</h3>
+                    <p class="text-brand-dark-gray">Developing targeted therapies and immunotherapies to combat cancer.</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/30/400/300" alt="Neurology Research" class="rounded-md mb-4 w-full h-48 object-cover" />
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Neurology</h3>
+                    <p class="text-brand-dark-gray">Pioneering treatments for neurodegenerative and neurological disorders.</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/40/400/300" alt="Immunology Research" class="rounded-md mb-4 w-full h-48 object-cover" />
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Immunology</h3>
+                    <p class="text-brand-dark-gray">Modulating the immune system to treat autoimmune diseases and inflammatory conditions.</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/50/400/300" alt="Cardiology Research" class="rounded-md mb-4 w-full h-48 object-cover" />
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Cardiology</h3>
+                    <p class="text-brand-dark-gray">Advancing cardiovascular health through innovative therapeutic approaches.</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/60/400/300" alt="Infectious Diseases Research" class="rounded-md mb-4 w-full h-48 object-cover" />
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Infectious Diseases</h3>
+                    <p class="text-brand-dark-gray">Developing novel antibiotics and antivirals to combat global health threats.</p>
+                </div>
+                <div class="bg-brand-gray p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                    <img src="https://picsum.photos/id/70/400/300" alt="Genetic Research" class="rounded-md mb-4 w-full h-48 object-cover" />
+                    <h3 class="text-xl font-semibold text-brand-blue mb-2">Genetic Medicine</h3>
+                    <p class="text-brand-dark-gray">Exploring gene therapies and precision medicine for inherited disorders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pipeline" class="py-20 bg-brand-gray">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-brand-blue mb-12">Our Drug Development Pipeline</h2>
+            <div class="flex flex-col md:flex-row justify-around items-center mb-12">
+                <div class="flex flex-col items-center">
+                    <div class="rounded-full bg-brand-blue text-white w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fa fa-microscope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-blue">Preclinical</h3>
+                    <p class="text-brand-dark-gray">Discovery and early-stage research.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="rounded-full bg-brand-blue text-white w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fa fa-file-medical-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-blue">Phase 1</h3>
+                    <p class="text-brand-dark-gray">Safety and dosage studies.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="rounded-full bg-brand-blue text-white w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fa fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-blue">Phase 2</h3>
+                    <p class="text-brand-dark-gray">Efficacy and side effects evaluation.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="rounded-full bg-brand-blue text-white w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fa fa-stethoscope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-blue">Phase 3</h3>
+                    <p class="text-brand-dark-gray">Large-scale clinical trials.</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="rounded-full bg-brand-blue text-white w-16 h-16 flex items-center justify-center mb-4">
+                        <i class="fa fa-check-circle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-brand-blue">Approval</h3>
+                    <p class="text-brand-dark-gray">Regulatory review and market launch.</p>
+                </div>
+            </div>
+            <a href="#contact" class="inline-block bg-brand-blue hover:bg-brand-blue-light text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300">
+                Learn More About Our Pipeline
+            </a>
+        </div>
+    </section>
+
+    <section id="careers" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold text-brand-blue mb-12">Join Our Team</h2>
+            <p class="text-lg text-brand-dark-gray mb-12">
+                We are always looking for talented and passionate individuals to join us in our mission to advance pharmaceutical research. Explore career opportunities and contribute to life-changing discoveries.
+            </p>
+            <a href="#contact" class="inline-block bg-brand-blue hover:bg-brand-blue-light text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300">
+                View Open Positions
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-brand-gray">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-brand-blue mb-4">Contact Us</h2>
+                <p class="text-lg text-brand-dark-gray">
+                    Have questions or want to learn more? Reach out to our team.
+                </p>
+            </div>
+            <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-md">
+                <form>
+                    <div class="mb-6">
+                        <label for="name" class="block text-brand-dark-gray text-sm font-semibold mb-2">Name</label>
+                        <input type="text" id="name" class="shadow-sm bg-brand-gray border border-brand-gray text-brand-dark-gray text-sm rounded-lg focus:ring-brand-blue focus:border-brand-blue block w-full p-2.5" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-brand-dark-gray text-sm font-semibold mb-2">Email</label>
+                        <input type="email" id="email" class="shadow-sm bg-brand-gray border border-brand-gray text-brand-dark-gray text-sm rounded-lg focus:ring-brand-blue focus:border-brand-blue block w-full p-2.5" placeholder="Your Email" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-brand-dark-gray text-sm font-semibold mb-2">Message</label>
+                        <textarea id="message" rows="5" class="shadow-sm bg-brand-gray border border-brand-gray text-brand-dark-gray text-sm rounded-lg focus:ring-brand-blue focus:border-brand-blue block w-full p-2.5" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="bg-brand-blue hover:bg-brand-blue-light text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 w-full">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-blue text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 PharmaResearch. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="#" class="hover:text-brand-gray">Privacy Policy</a> | <a href="#" class="hover:text-brand-gray">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = ['hero', 'about', 'research', 'pipeline', 'careers', 'contact'];
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.classList.add('animate-fade-up');
+                }
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for header height if needed
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

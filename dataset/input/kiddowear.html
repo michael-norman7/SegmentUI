@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiddoWear - Cool Clothes for Awesome Kids</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kiddo-primary': '#FF6F61',
+                        'kiddo-secondary': '#FFD700',
+                        'kiddo-accent': '#4ECDC4',
+                        'kiddo-bg': '#F7F7F7',
+                        'kiddo-text': '#333333',
+                        'kiddo-muted': '#777777',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(100%)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'bounce-slow': {
+                            '0%, 100%': { transform: 'translateY(-5%)', animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)' },
+                            '50%': { transform: 'translateY(0)', animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)' }
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 1s ease-out forwards',
+                        'slide-in-bottom': 'slide-in-bottom 1s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'bounce-slow': 'bounce-slow 2s infinite',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            perspective: 1px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .parallax__group {
+            position: relative;
+            height: 100vh;
+            transform-style: preserve-3d;
+        }
+
+        .parallax__layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .parallax__layer--base {
+            transform: translateZ(0);
+            z-index: 1;
+        }
+
+        .parallax__layer--back {
+            transform: translateZ(-1px) scale(2);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="font-poppins bg-kiddo-bg text-kiddo-text overflow-x-hidden">
+
+<header class="sticky top-0 z-50 bg-white shadow-md transition-shadow duration-300">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold text-kiddo-primary hover:text-kiddo-secondary transition-colors duration-300">KiddoWear</a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#new-arrivals" class="hover:text-kiddo-primary transition-colors duration-300">New Arrivals</a>
+            <a href="#collections" class="hover:text-kiddo-primary transition-colors duration-300">Collections</a>
+            <a href="#about-us" class="hover:text-kiddo-primary transition-colors duration-300">About Us</a>
+            <a href="#contact-us" class="hover:text-kiddo-primary transition-colors duration-300">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-kiddo-text hover:text-kiddo-primary focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-6 py-4 space-y-4">
+            <a href="#new-arrivals" class="block hover:text-kiddo-primary transition-colors duration-300">New Arrivals</a>
+            <a href="#collections" class="block hover:text-kiddo-primary transition-colors duration-300">Collections</a>
+            <a href="#about-us" class="block hover:text-kiddo-primary transition-colors duration-300">About Us</a>
+            <a href="#contact-us" class="block hover:text-kiddo-primary transition-colors duration-300">Contact</a>
+        </div>
+    </div>
+</header>
+
+<section class="parallax hero relative overflow-hidden">
+    <div class="parallax__group">
+        <div class="parallax__layer parallax__layer--back bg-kiddo-bg"></div>
+        <div class="parallax__layer parallax__layer--base">
+            <div class="container mx-auto px-6 py-24 lg:py-32 flex flex-col lg:flex-row items-center justify-between">
+                <div class="lg:w-1/2 fade-in animate-once">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-kiddo-text mb-6 leading-tight">
+                        Unleash Your Kid's <span class="text-kiddo-primary">Style</span>
+                    </h1>
+                    <p class="text-lg text-kiddo-muted mb-12">
+                        Trendy, comfy, and made for play. Discover our new collection of kids' clothing that's as vibrant and energetic as they are!
+                    </p>
+                    <a href="#new-arrivals" class="inline-block bg-kiddo-primary hover:bg-kiddo-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">
+                        Shop New Arrivals <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="lg:w-1/2 lg:pl-12 mt-12 lg:mt-0 slide-in-right animate-once">
+                    <img src="https://picsum.photos/600/800" alt="Kids in stylish clothes" class="rounded-2xl shadow-xl" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="new-arrivals" class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-kiddo-text mb-12 animate-fade-in">
+            <span class="text-kiddo-primary">New Arrivals</span> - Fresh Styles Just Dropped!
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-slide-in-bottom delay-100">
+                <img src="https://picsum.photos/200/300?random=1" alt="Product 1" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-kiddo-text">Rainbow Sparkle Dress</h3>
+                    <p class="text-kiddo-muted">Adorable dress for your little star.</p>
+                    <button class="mt-4 bg-kiddo-accent hover:bg-kiddo-primary text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                        View Details
+                    </button>
+                </div>
+            </div>
+            <div class="rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-slide-in-bottom delay-200">
+                <img src="https://picsum.photos/200/300?random=2" alt="Product 2" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-kiddo-text">Adventure Ready Tee</h3>
+                    <p class="text-kiddo-muted">Durable and fun for everyday adventures.</p>
+                    <button class="mt-4 bg-kiddo-accent hover:bg-kiddo-primary text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                        View Details
+                    </button>
+                </div>
+            </div>
+            <div class="rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-slide-in-bottom delay-300">
+                <img src="https://picsum.photos/200/300?random=3" alt="Product 3" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-kiddo-text">Cozy Dino Hoodie</h3>
+                    <p class="text-kiddo-muted">Stay warm and stylish with this cute hoodie.</p>
+                    <button class="mt-4 bg-kiddo-accent hover:bg-kiddo-primary text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+        <a href="#collections" class="inline-block mt-12 bg-transparent border-2 border-kiddo-primary hover:bg-kiddo-primary hover:text-white text-kiddo-primary font-bold py-3 px-8 rounded-full transition-colors duration-300">
+            Explore All Collections <i class="fa fa-arrow-right ml-2"></i>
+        </a>
+    </div>
+</section>
+
+<section id="collections" class="py-20 bg-kiddo-bg">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-kiddo-text mb-12 animate-fade-in">
+            Our <span class="text-kiddo-primary">Collections</span> - Something for Every Kid
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-slide-in-bottom delay-100">
+                <img src="https://picsum.photos/200/300?random=4" alt="Collection 1" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-kiddo-text">Summer Fun Collection</h3>
+                    <p class="text-kiddo-muted">Bright and breezy outfits for sunny days.</p>
+                    <a href="#" class="inline-block mt-4 text-kiddo-accent hover:text-kiddo-primary font-bold transition-colors duration-300">
+                        Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-slide-in-bottom delay-200">
+                <img src="https://picsum.photos/200/300?random=5" alt="Collection 2" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-kiddo-text">Winter Warmers</h3>
+                    <p class="text-kiddo-muted">Cozy and snug clothing to beat the cold.</p>
+                    <a href="#" class="inline-block mt-4 text-kiddo-accent hover:text-kiddo-primary font-bold transition-colors duration-300">
+                        Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 animate-slide-in-bottom delay-300">
+                <img src="https://picsum.photos/200/300?random=6" alt="Collection 3" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                    <h3 class="font-bold text-xl mb-2 text-kiddo-text">Playtime Essentials</h3>
+                    <p class="text-kiddo-muted">Durable and comfortable for active kids.</p>
+                    <a href="#" class="inline-block mt-4 text-kiddo-accent hover:text-kiddo-primary font-bold transition-colors duration-300">
+                        Shop Now <i class="fa fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about-us" class="py-20 bg-white">
+    <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center justify-center gap-12">
+        <div class="lg:w-1/2 animate-fade-in">
+            <img src="https://picsum.photos/400/600" alt="About Us Image" class="rounded-2xl shadow-xl" />
+        </div>
+        <div class="lg:w-1/2 animate-slide-in-right">
+            <h2 class="text-3xl font-bold text-kiddo-text mb-6">
+                About <span class="text-kiddo-primary">KiddoWear</span>
+            </h2>
+            <p class="text-lg text-kiddo-muted mb-8">
+                At KiddoWear, we believe that kids' clothing should be fun, functional, and expressive. We're passionate about creating high-quality, stylish clothes that kids love to wear and parents can trust. Our designs are inspired by the boundless energy and creativity of children, ensuring every piece is ready for adventure and imagination.
+            </p>
+            <p class="text-lg text-kiddo-muted mb-8">
+                We are committed to sustainability and ethical production, using eco-friendly materials and ensuring fair labor practices. Join us in making fashion that's good for kids and the planet!
+            </p>
+            <a href="#contact-us" class="inline-block bg-kiddo-secondary hover:bg-kiddo-primary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg">
+                Learn More <i class="fa fa-info-circle ml-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="contact-us" class="py-20 bg-kiddo-bg">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-kiddo-text mb-12 animate-fade-in">
+            Get in <span class="text-kiddo-primary">Touch</span>
+        </h2>
+        <p class="text-lg text-kiddo-muted mb-8 animate-fade-in delay-200">
+            Have questions or need assistance? We'd love to hear from you!
+        </p>
+        <div class="flex justify-center space-x-8 mb-12 animate-fade-in delay-300">
+            <a href="#" class="text-kiddo-primary hover:text-kiddo-secondary transition-colors duration-300 text-2xl"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-kiddo-primary hover:text-kiddo-secondary transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-kiddo-primary hover:text-kiddo-secondary transition-colors duration-300 text-2xl"><i class="fab fa-twitter"></i></a>
+        </div>
+        <a href="mailto:support@kiddowear.com" class="inline-block bg-kiddo-primary hover:bg-kiddo-secondary text-white font-bold py-3 px-8 rounded-full transition-colors duration-300 shadow-lg animate-bounce-slow">
+            Email Us: support@kiddowear.com
+        </a>
+    </div>
+</section>
+
+<footer class="bg-kiddo-text text-white py-12">
+    <div class="container mx-auto px-6 text-center">
+        <p>© 2024 KiddoWear. All rights reserved.</p>
+        <p class="mt-4 text-sm text-kiddo-muted">
+            <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a> | <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            mobileMenu.classList.add('hidden');
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

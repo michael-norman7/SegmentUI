@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Chronicles - Discover the Hidden Gems of Santorini</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#a3c4bc',
+                        'secondary': '#e8d5c4',
+                        'accent': '#e2c044',
+                        'neutral': '#f8f8ff',
+                        'dark': '#333333',
+                    },
+                    keyframes: {
+                        'slide-in-bottom': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'sketch': {
+                            '0%': { strokeDashoffset: '1000' },
+                            '100%': { strokeDashoffset: '0' }
+                        }
+
+                    },
+                    animation: {
+                        'slide-in-bottom': 'slide-in-bottom 0.7s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'sketch-map': 'sketch 2s ease-out forwards'
+                    },
+                    backgroundImage: {
+                        'santorini-hero': "url('https://picsum.photos/1920/1080')",
+                        'paper-texture': "url('https://www.transparenttextures.com/patterns/paper.png')",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .hand-drawn-map {
+            filter: grayscale(100%) brightness(90%) contrast(110%);
+        }
+        .sketch-lines path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: sketch 2s ease-out forwards;
+        }
+
+    </style>
+</head>
+<body class="bg-neutral text-dark font-body">
+
+    <header class="sticky top-0 z-50 bg-neutral/90 backdrop-blur-sm shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-2xl font-bold text-primary">Wanderlust Chronicles</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#explore" class="hover:text-accent transition-colors">Explore</a>
+                <a href="#map" class="hover:text-accent transition-colors">Map</a>
+                <a href="#sketches" class="hover:text-accent transition-colors">Sketches</a>
+                <a href="#tips" class="hover:text-accent transition-colors">Travel Tips</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-accent focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral shadow-md py-2">
+            <a href="#explore" class="block px-4 py-2 hover:bg-gray-100">Explore</a>
+            <a href="#map" class="block px-4 py-2 hover:bg-gray-100">Map</a>
+            <a href="#sketches" class="block px-4 py-2 hover:bg-gray-100">Sketches</a>
+            <a href="#tips" class="block px-4 py-2 hover:bg-gray-100">Travel Tips</a>
+        </div>
+    </header>
+
+    <section class="relative h-screen flex items-center justify-center bg-santorini-hero bg-cover bg-center">
+        <div class="absolute inset-0 bg-dark/50"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="font-display text-neutral text-5xl md:text-6xl font-bold mb-4 animate-slide-in-bottom">Santorini: A Hand-Drawn Journey</h1>
+            <p class="text-neutral text-lg md:text-xl mb-8 animate-slide-in-bottom delay-100">Unveiling the Cycladic Gem Through Art and Exploration</p>
+            <a href="#explore" class="bg-accent text-neutral font-bold py-3 px-8 rounded-full hover:bg-secondary transition-colors animate-slide-in-bottom delay-200">Start Exploring</a>
+        </div>
+    </section>
+
+    <section id="explore" class="py-20 bg-paper-texture">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <h2 class="font-display text-4xl font-bold mb-6 text-primary">Oia's Iconic Caldera Views</h2>
+                    <p class="text-lg mb-8">Oia, perched on the northern edge of Santorini, is renowned for its breathtaking caldera views. Imagine whitewashed houses cascading down the cliffside, blue-domed churches contrasting against the azure Aegean Sea, and the fiery sunset painting the sky in vibrant hues. It's a scene straight out of a postcard, or perhaps, a hand-drawn masterpiece.</p>
+                    <p class="text-lg mb-8">Wander through the narrow, winding streets, discover hidden courtyards adorned with bougainvillea, and let the charm of Oia captivate your senses. Every corner turned reveals a new vista, a new perspective, a new inspiration for your own travel sketches.</p>
+                    <a href="#map" class="inline-flex items-center bg-secondary text-neutral font-bold py-2 px-6 rounded-full hover:bg-accent transition-colors">
+                        <i class="fa fa-map-marked-alt mr-2"></i> View on Map
+                    </a>
+                </div>
+                <div class="shadow-lg rounded-xl overflow-hidden animate-fade-in delay-200">
+                    <img src="https://picsum.photos/600/800" alt="Oia Caldera View" class="w-full h-auto block hand-drawn-map">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-12 text-center text-primary animate-fade-in">Hand-Drawn Map of Santorini</h2>
+            <div class="relative rounded-xl overflow-hidden shadow-xl animate-fade-in delay-200">
+                <img src="https://picsum.photos/1200/800" alt="Hand-drawn map of Santorini" class="w-full h-auto block hand-drawn-map">
+                <div class="absolute inset-0 sketch-lines pointer-events-none">
+                    <svg viewBox="0 0 1200 800" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M100 150 L250 100 L400 180 L550 120 L700 200 L850 150 L1000 220" stroke="#e2c044"/>
+                        <path d="M150 250 L300 200 L450 280 L600 220 L750 300 L900 250 L1050 320" stroke="#a3c4bc"/>
+                        <path d="M200 350 L350 300 L500 380 L650 320 L800 400 L950 350 L1100 420" stroke="#e8d5c4"/>
+                        <path d="M120 450 L270 400 L420 480 L570 420 L720 500 L870 450 L1020 520" stroke="#a3c4bc"/>
+                        <path d="M170 550 L320 500 L470 580 L620 520 L770 600 L920 550 L1070 620" stroke="#e2c044"/>
+                        <path d="M220 650 L370 600 L520 680 L670 620 L820 700 L970 650 L1120 720" stroke="#e8d5c4"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="sketches" class="py-20 bg-paper-texture">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-12 text-center text-primary animate-fade-in">Travel Sketches from Santorini</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="shadow-md rounded-lg overflow-hidden animate-fade-in">
+                    <img src="https://picsum.photos/400/600" alt="Sketch of Santorini Village" class="w-full h-auto block hand-drawn-map">
+                </div>
+                <div class="shadow-md rounded-lg overflow-hidden animate-fade-in delay-100">
+                    <img src="https://picsum.photos/400/601" alt="Sketch of Santorini Coastline" class="w-full h-auto block hand-drawn-map">
+                </div>
+                <div class="shadow-md rounded-lg overflow-hidden animate-fade-in delay-200">
+                    <img src="https://picsum.photos/400/602" alt="Sketch of Santorini Sunset" class="w-full h-auto block hand-drawn-map">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips" class="py-20 bg-neutral">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-12 text-center text-primary animate-fade-in">Essential Travel Tips for Santorini</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-secondary animate-fade-in delay-100">Best Time to Visit</h3>
+                    <p class="text-lg mb-6 animate-fade-in delay-150">The shoulder seasons (April-May & September-October) offer pleasant weather, fewer crowds, and better prices compared to the peak summer months (June-August).</p>
+
+                    <h3 class="font-display text-2xl font-bold mb-4 text-secondary animate-fade-in delay-200">Getting Around</h3>
+                    <p class="text-lg mb-6 animate-fade-in delay-250">Renting a car or scooter is recommended for exploring the island at your own pace. Buses are also available but can be crowded. Walking is ideal for navigating villages like Oia and Fira.</p>
+
+                    <h3 class="font-display text-2xl font-bold mb-4 text-secondary animate-fade-in delay-300">Where to Stay</h3>
+                    <p class="text-lg animate-fade-in delay-350">Consider staying in Oia or Imerovigli for caldera views, Fira for nightlife and accessibility, or Perissa/Perivolos for beach vibes. Book accommodations well in advance, especially during peak season.</p>
+                </div>
+                <div>
+                    <h3 class="font-display text-2xl font-bold mb-4 text-secondary animate-fade-in delay-100">Must-Do Activities</h3>
+                    <ul class="list-disc list-inside text-lg mb-6 animate-fade-in delay-150">
+                        <li>Watch the sunset in Oia.</li>
+                        <li>Hike from Fira to Oia.</li>
+                        <li>Explore the volcanic beaches (Red Beach, Black Beach).</li>
+                        <li>Visit Akrotiri archaeological site.</li>
+                        <li>Take a boat tour to the volcano and hot springs.</li>
+                        <li>Wine tasting at local vineyards.</li>
+                    </ul>
+
+                    <h3 class="font-display text-2xl font-bold mb-4 text-secondary animate-fade-in delay-200">Food & Drink</h3>
+                    <p class="text-lg animate-fade-in delay-250">Indulge in fresh seafood, fava, tomato fritters, and local wines like Assyrtiko. Enjoy meals with caldera views for an unforgettable dining experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-neutral py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Wanderlust Chronicles. All Rights Reserved.</p>
+            <p class="mt-2">Crafted with <i class="fa fa-heart text-accent"></i> and wanderlust.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

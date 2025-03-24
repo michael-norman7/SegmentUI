@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Transformation Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#1d4ed8',
+                        accent: '#bae6fd',
+                        neutral: '#f3f4f6',
+                        darkText: '#1e293b',
+                        lightText: '#ffffff',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                        '144': '36rem',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'slide-left': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateX(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateX(0)'
+                            },
+                        },
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'slide-left': 'slide-left 0.5s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .animate-fade-in-down {
+            animation: fade-in-down 0.5s ease-out;
+        }
+        .animate-slide-left {
+            animation: slide-left 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-neutral font-sans text-darkText">
+
+<header class="sticky top-0 bg-neutral shadow-md z-50">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="text-xl font-bold text-primary">
+                <a href="#" class="hover:text-secondary">Transform Consulting</a>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="hover:text-primary transition-colors">Services</a>
+                <a href="#approach" class="hover:text-primary transition-colors">Approach</a>
+                <a href="#clients" class="hover:text-primary transition-colors">Clients</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button type="button" class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" aria-label="Menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="hero" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0 animate-fade-in-down">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight text-darkText">
+                    Unlock Your Business Potential
+                </h1>
+                <p class="mt-4 text-xl text-gray-700">
+                    Expert consulting to drive transformative growth and innovation.
+                </p>
+                <div class="mt-8">
+                    <a href="#contact" class="inline-flex items-center px-6 py-3 rounded-md bg-primary hover:bg-secondary text-lightText font-semibold transition-colors">
+                        Get Started
+                        <i class="fa fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 animate-slide-left">
+                <img src="https://picsum.photos/800/600" alt="Business Transformation" class="rounded-lg shadow-xl" />
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 md:py-32 bg-lightText">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-darkText mb-12">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="mb-4">
+                        <i class="fa fa-lightbulb fa-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkText mb-2">Strategy & Planning</h3>
+                    <p class="text-gray-700">Develop clear strategies and actionable plans to achieve your business goals.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="mb-4">
+                        <i class="fa fa-wrench fa-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkText mb-2">Process Optimization</h3>
+                    <p class="text-gray-700">Streamline operations and enhance efficiency through process improvement.</p>
+                </div>
+                <div class="p-6 bg-neutral rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                    <div class="mb-4">
+                        <i class="fa fa-chart-line fa-2x text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-darkText mb-2">Digital Transformation</h3>
+                    <p class="text-gray-700">Leverage technology to innovate and transform your business for the digital age.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="approach" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-darkText mb-4">Our Approach</h2>
+                <p class="text-xl text-gray-700">A tailored and collaborative approach to business transformation.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://picsum.photos/600/400" alt="Our Approach" class="rounded-lg shadow-xl" />
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-darkText mb-4">Client-Centric Methodology</h3>
+                    <p class="text-gray-700 mb-6">
+                        We prioritize understanding your unique challenges and objectives. Our consulting approach is highly collaborative, ensuring that our strategies are perfectly aligned with your business vision. We work closely with your team every step of the way to ensure successful implementation and lasting results.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li>Deep Dive Analysis</li>
+                        <li>Customized Solutions</li>
+                        <li>Collaborative Partnership</li>
+                        <li>Results-Driven Focus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="py-20 md:py-32 bg-lightText">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-darkText mb-12">Trusted By</h2>
+            <div class="flex flex-wrap justify-around items-center gap-8">
+                <div class="grayscale hover:grayscale-0 transition-filter">
+                    <img src="https://picsum.photos/100/50" alt="Client Logo 1" class="h-12 object-contain" />
+                </div>
+                <div class="grayscale hover:grayscale-0 transition-filter">
+                    <img src="https://picsum.photos/100/50" alt="Client Logo 2" class="h-12 object-contain" />
+                </div>
+                <div class="grayscale hover:grayscale-0 transition-filter">
+                    <img src="https://picsum.photos/100/50" alt="Client Logo 3" class="h-12 object-contain" />
+                </div>
+                <div class="grayscale hover:grayscale-0 transition-filter">
+                    <img src="https://picsum.photos/100/50" alt="Client Logo 4" class="h-12 object-contain" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-32 bg-neutral">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-darkText mb-4">Contact Us</h2>
+                <p class="text-xl text-gray-700">Ready to transform your business? Reach out today.</p>
+            </div>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Your Name</label>
+                        <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Your Email</label>
+                        <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Your Email" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-medium text-gray-700">Your Message</label>
+                        <textarea id="message" rows="5" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="inline-flex items-center px-6 py-3 rounded-md bg-primary hover:bg-secondary text-lightText font-semibold transition-colors w-full justify-center">
+                        Send Message
+                        <i class="fa fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-darkText text-lightText py-8">
+    <div class="container mx-auto px-6 text-center">
+        <p>© 2024 Transform Consulting. All rights reserved.</p>
+        <p class="mt-2">
+            <a href="#" class="text-accent hover:underline">Privacy Policy</a>
+            <span class="mx-2">|</span>
+            <a href="#" class="text-accent hover:underline">Terms of Service</a>
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

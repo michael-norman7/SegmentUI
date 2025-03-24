@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Canvas - [Chef's Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F5F5DC',
+                        'secondary': '#A9A9A9',
+                        'accent': '#D3D3D3',
+                        'dark': '#1A1A1A',
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.8s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-primary text-dark">
+
+    <header class="sticky top-0 z-50 bg-primary shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-playfair text-xl font-bold">Culinary Canvas</div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#about" class="hover:text-secondary transition-colors">About</a></li>
+                <li><a href="#creations" class="hover:text-secondary transition-colors">Creations</a></li>
+                <li><a href="#menu" class="hover:text-secondary transition-colors">Menu</a></li>
+                <li><a href="#contact" class="hover:text-secondary transition-colors">Contact</a></li>
+            </ul>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark hover:text-secondary focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-primary py-2 px-6">
+            <a href="#about" class="block py-2 hover:text-secondary transition-colors">About</a>
+            <a href="#creations" class="block py-2 hover:text-secondary transition-colors">Creations</a>
+            <a href="#menu" class="block py-2 hover:text-secondary transition-colors">Menu</a>
+            <a href="#contact" class="block py-2 hover:text-secondary transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <section id="hero" class="parallax bg-center bg-cover h-screen flex items-center justify-center text-center" style="background-image: url('https://picsum.photos/1920/1080?blur=2')">
+        <div class="container mx-auto px-6">
+            <h1 class="font-playfair text-5xl md:text-7xl font-bold text-white drop-shadow-lg animate-fade-slide-up">
+                [Chef's Name]
+            </h1>
+            <p class="font-poppins text-lg md:text-xl text-white mt-4 mb-8 drop-shadow-lg animate-fade-slide-up delay-200">
+                Crafting Culinary Masterpieces
+            </p>
+            <a href="#creations" class="bg-accent text-dark font-poppins font-semibold py-3 px-8 rounded-full hover:bg-secondary hover:text-white transition-colors animate-fade-slide-up delay-400">
+                Explore Creations
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="animate-fade-in">
+                <img src="https://picsum.photos/600/400" alt="Chef Image" class="rounded-lg shadow-xl">
+            </div>
+            <div class="font-poppins animate-fade-slide-up">
+                <h2 class="font-playfair text-4xl font-bold mb-4">About [Chef's Name]</h2>
+                <p class="text-gray-700 mb-6">
+                    [Chef's Short Bio - Passion for food, culinary journey, philosophy, unique approach. Highlight key skills and inspiration. Example: "Driven by a lifelong passion for gastronomy, Chef [Name] blends traditional techniques with innovative flair to create unforgettable dining experiences. Inspired by nature's bounty and global flavors, each dish is a testament to their dedication to culinary excellence." ]
+                </p>
+                <p class="text-gray-700 mb-6">
+                    [More detailed info - Awards, recognitions, specializations, collaborations, etc.  Example: "With over 15 years of experience in Michelin-starred kitchens, Chef [Name] has honed their skills in [Cuisine Type]. Awarded 'Chef of the Year' in [Year] by [Organization], their commitment to sourcing local, sustainable ingredients is unwavering.  They believe in creating dishes that not only tantalize the palate but also tell a story." ]
+                </p>
+                <a href="#contact" class="inline-flex items-center bg-primary text-dark font-semibold py-2 px-6 rounded-full hover:bg-accent hover:text-dark transition-colors">
+                    Learn More <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="creations" class="py-20 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="font-playfair text-4xl font-bold text-center mb-12 animate-fade-slide-up">Culinary Creations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden animate-fade-slide-up">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Creation 1" class="w-full h-60 object-cover">
+                    <div class="p-6 font-poppins">
+                        <h3 class="font-semibold text-xl mb-2">Dish Name 1</h3>
+                        <p class="text-gray-700">Short description of dish 1. Ingredients, inspiration, etc.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden animate-fade-slide-up delay-200">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Creation 2" class="w-full h-60 object-cover">
+                    <div class="p-6 font-poppins">
+                        <h3 class="font-semibold text-xl mb-2">Dish Name 2</h3>
+                        <p class="text-gray-700">Short description of dish 2.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden animate-fade-slide-up delay-400">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Creation 3" class="w-full h-60 object-cover">
+                    <div class="p-6 font-poppins">
+                        <h3 class="font-semibold text-xl mb-2">Dish Name 3</h3>
+                        <p class="text-gray-700">Short description of dish 3.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden animate-fade-slide-up">
+                    <img src="https://picsum.photos/400/300?random=4" alt="Creation 4" class="w-full h-60 object-cover">
+                    <div class="p-6 font-poppins">
+                        <h3 class="font-semibold text-xl mb-2">Dish Name 4</h3>
+                        <p class="text-gray-700">Short description of dish 4.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden animate-fade-slide-up delay-200">
+                    <img src="https://picsum.photos/400/300?random=5" alt="Creation 5" class="w-full h-60 object-cover">
+                    <div class="p-6 font-poppins">
+                        <h3 class="font-semibold text-xl mb-2">Dish Name 5</h3>
+                        <p class="text-gray-700">Short description of dish 5.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden animate-fade-slide-up delay-400">
+                    <img src="https://picsum.photos/400/300?random=6" alt="Creation 6" class="w-full h-60 object-cover">
+                    <div class="p-6 font-poppins">
+                        <h3 class="font-semibold text-xl mb-2">Dish Name 6</h3>
+                        <p class="text-gray-700">Short description of dish 6.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-playfair text-4xl font-bold text-center mb-12 animate-fade-slide-up">Sample Menu</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-poppins">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Starters</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between">
+                            <span>Appetizer 1</span>
+                            <span class="text-secondary">$XX</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Appetizer 2</span>
+                            <span class="text-secondary">$YY</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Appetizer 3</span>
+                            <span class="text-secondary">$ZZ</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Main Courses</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between">
+                            <span>Main Dish 1</span>
+                            <span class="text-secondary">$AA</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Main Dish 2</span>
+                            <span class="text-secondary">$BB</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Main Dish 3</span>
+                            <span class="text-secondary">$CC</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Desserts</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between">
+                            <span>Dessert 1</span>
+                            <span class="text-secondary">$DD</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Dessert 2</span>
+                            <span class="text-secondary">$EE</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Dessert 3</span>
+                            <span class="text-secondary">$FF</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Drinks</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between">
+                            <span>Drink 1</span>
+                            <span class="text-secondary">$GG</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Drink 2</span>
+                            <span class="text-secondary">$HH</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Drink 3</span>
+                            <span class="text-secondary">$II</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+             <div class="mt-12 text-center animate-fade-slide-up">
+                <a href="#contact" class="inline-flex items-center bg-accent text-dark font-semibold py-3 px-8 rounded-full hover:bg-secondary hover:text-white transition-colors">
+                    Book a Consultation <i class="fa fa-calendar-check ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 bg-primary">
+        <div class="container mx-auto px-6">
+            <h2 class="font-playfair text-4xl font-bold text-center mb-12 animate-fade-slide-up">Testimonials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-poppins">
+                <div class="bg-white rounded-lg shadow-md p-6 animate-fade-slide-up">
+                    <div class="mb-4">
+                        <i class="fa fa-quote-left text-secondary"></i>
+                        <p class="italic text-gray-700">"[Testimonial 1 excerpt...]"</p>
+                        <i class="fa fa-quote-right text-secondary"></i>
+                    </div>
+                    <p class="font-semibold text-accent">- Testimonial Source 1</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 animate-fade-slide-up delay-200">
+                    <div class="mb-4">
+                        <i class="fa fa-quote-left text-secondary"></i>
+                        <p class="italic text-gray-700">"[Testimonial 2 excerpt...]"</p>
+                        <i class="fa fa-quote-right text-secondary"></i>
+                    </div>
+                    <p class="font-semibold text-accent">- Testimonial Source 2</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 animate-fade-slide-up delay-400">
+                    <div class="mb-4">
+                        <i class="fa fa-quote-left text-secondary"></i>
+                        <p class="italic text-gray-700">"[Testimonial 3 excerpt...]"</p>
+                        <i class="fa fa-quote-right text-secondary"></i>
+                    </div>
+                    <p class="font-semibold text-accent">- Testimonial Source 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="font-playfair text-4xl font-bold text-center mb-12 animate-fade-slide-up">Contact [Chef's Name]</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-poppins">
+                <div class="animate-fade-slide-up">
+                    <p class="text-gray-700 mb-6">
+                        For bookings, collaborations, or inquiries, please reach out.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope text-secondary mr-4"></i> <a href="mailto:email@example.com" class="hover:text-secondary transition-colors">email@example.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone text-secondary mr-4"></i> <a href="tel:+1234567890" class="hover:text-secondary transition-colors">+123-456-7890</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-map-marker-alt text-secondary mr-4"></i> [City, State]
+                        </li>
+                    </ul>
+                </div>
+                <div class="animate-fade-slide-up delay-200">
+                    <form class="space-y-4">
+                        <div>
+content_copy
+download
+Use code with caution.
+Html

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Chair Product View</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F9F5F0',
+                        'secondary': '#374151',
+                        'accent': '#6B7280',
+                        'brand': '#2563EB',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-primary font-sans text-secondary">
+    <div class="min-h-screen flex flex-col">
+        <header class="sticky top-0 bg-primary shadow-md z-50">
+            <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+                <a href="#" class="font-semibold text-xl text-brand">Minimalist Chair</a>
+                <button class="lg:hidden text-secondary focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#" class="hover:text-brand transition-colors">Home</a>
+                    <a href="#" class="hover:text-brand transition-colors">Products</a>
+                    <a href="#" class="hover:text-brand transition-colors">About Us</a>
+                    <a href="#" class="hover:text-brand transition-colors">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <div class="container mx-auto px-4 py-12 lg:py-24">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-8 items-start">
+
+                    <div class="product-images mb-8 lg:mb-0">
+                        <div class="relative mb-4 rounded-2xl overflow-hidden shadow-lg">
+                            <img id="product-image-main" src="https://picsum.photos/id/1025/600/800" alt="Main product image" class="w-full h-auto block">
+                            <div class="absolute top-2 right-2 flex space-x-2">
+                                <button id="zoom-in" class="bg-white bg-opacity-75 hover:bg-opacity-90 rounded-full p-2 text-secondary focus:outline-none" aria-label="Zoom In">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                                <button id="zoom-out" class="bg-white bg-opacity-75 hover:bg-opacity-90 rounded-full p-2 text-secondary focus:outline-none" aria-label="Zoom Out">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                                <button id="rotate-360" class="bg-white bg-opacity-75 hover:bg-opacity-90 rounded-full p-2 text-secondary focus:outline-none" aria-label="360 Rotate">
+                                    <i class="fa fa-sync-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="flex space-x-2 overflow-x-auto pb-2" id="image-thumbnails">
+                            <img src="https://picsum.photos/id/1025/100/100" alt="Thumbnail 1" class="w-20 h-20 rounded-lg cursor-pointer hover:opacity-90 active:opacity-75 thumbnail-image" data-image="https://picsum.photos/id/1025/600/800">
+                            <img src="https://picsum.photos/id/1026/100/100" alt="Thumbnail 2" class="w-20 h-20 rounded-lg cursor-pointer hover:opacity-90 active:opacity-75 thumbnail-image" data-image="https://picsum.photos/id/1026/600/800">
+                            <img src="https://picsum.photos/id/1027/100/100" alt="Thumbnail 3" class="w-20 h-20 rounded-lg cursor-pointer hover:opacity-90 active:opacity-75 thumbnail-image" data-image="https://picsum.photos/id/1027/600/800">
+                            <img src="https://picsum.photos/id/1028/100/100" alt="Thumbnail 4" class="w-20 h-20 rounded-lg cursor-pointer hover:opacity-90 active:opacity-75 thumbnail-image" data-image="https://picsum.photos/id/1028/600/800">
+                        </div>
+                    </div>
+
+                    <div class="product-details">
+                        <h1 class="text-3xl lg:text-4xl font-semibold mb-4">Modern Ergonomic Chair</h1>
+                        <p class="text-accent mb-6">Designed for comfort and style.</p>
+
+                        <div class="flex items-center mb-6">
+                            <span class="text-2xl font-bold mr-4">$249.99</span>
+                            <span class="text-sm text-gray-500 line-through">$299.99</span>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="font-semibold mb-2">Color Options</h3>
+                            <div class="flex space-x-3">
+                                <button class="w-8 h-8 rounded-full bg-gray-200 hover:ring-2 ring-gray-400 focus:outline-none color-option" data-color="gray"></button>
+                                <button class="w-8 h-8 rounded-full bg-black hover:ring-2 ring-gray-400 focus:outline-none color-option" data-color="black"></button>
+                                <button class="w-8 h-8 rounded-full bg-brand hover:ring-2 ring-gray-400 focus:outline-none color-option" data-color="brand"></button>
+                                <button class="w-8 h-8 rounded-full bg-white border border-gray-300 hover:ring-2 ring-gray-400 focus:outline-none color-option" data-color="white"></button>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <h3 class="font-semibold mb-2">Features</h3>
+                            <ul class="list-disc list-inside text-accent">
+                                <li>Ergonomic lumbar support</li>
+                                <li>Breathable mesh back</li>
+                                <li>Adjustable height and tilt</li>
+                                <li>Premium quality materials</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex space-x-4 mb-8">
+                            <button class="bg-brand hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
+                                Add to Cart
+                            </button>
+                            <button class="bg-primary border border-accent hover:border-brand text-secondary font-semibold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors flex items-center justify-center">
+                                <i class="fa fa-heart mr-2"></i> Wishlist
+                            </button>
+                        </div>
+
+                        <div class="border-t border-gray-200 pt-8">
+                            <h3 class="font-semibold mb-4">Dimensions</h3>
+                            <p class="text-accent">Height: 90-100cm</p>
+                            <p class="text-accent">Width: 65cm</p>
+                            <p class="text-accent">Depth: 60cm</p>
+                            <p class="text-accent">Weight: 12kg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-gray-100 py-12">
+            <div class="container mx-auto px-4 text-center text-accent">
+                <p>© 2024 Minimalist Furniture. All rights reserved.</p>
+                <nav class="mt-4 space-x-4 justify-center flex">
+                    <a href="#" class="hover:text-brand transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-brand transition-colors">Privacy Policy</a>
+                </nav>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const mainImage = document.getElementById('product-image-main');
+        const thumbnailImages = document.querySelectorAll('.thumbnail-image');
+        const zoomInButton = document.getElementById('zoom-in');
+        const zoomOutButton = document.getElementById('zoom-out');
+        const rotate360Button = document.getElementById('rotate-360');
+        const colorOptions = document.querySelectorAll('.color-option');
+
+        thumbnailImages.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                mainImage.src = thumb.dataset.image;
+            });
+        });
+
+        let zoomLevel = 1;
+        zoomInButton.addEventListener('click', () => {
+            zoomLevel += 0.2;
+            mainImage.style.transform = `scale(${zoomLevel})`;
+        });
+
+        zoomOutButton.addEventListener('click', () => {
+            zoomLevel -= 0.2;
+            if (zoomLevel < 1) zoomLevel = 1;
+            mainImage.style.transform = `scale(${zoomLevel})`;
+        });
+
+        let rotationAngle = 0;
+        let isRotating = false;
+        let rotationInterval;
+
+        rotate360Button.addEventListener('click', () => {
+            if (!isRotating) {
+                isRotating = true;
+                rotationInterval = setInterval(() => {
+                    rotationAngle += 5;
+                    mainImage.style.transform = `rotate(${rotationAngle}deg) scale(${zoomLevel})`;
+                }, 30);
+                rotate360Button.classList.add('bg-brand', 'text-white');
+                rotate360Button.classList.remove('bg-white', 'text-secondary');
+            } else {
+                isRotating = false;
+                clearInterval(rotationInterval);
+                rotate360Button.classList.remove('bg-brand', 'text-white');
+                rotate360Button.classList.add('bg-white', 'text-secondary');
+            }
+        });
+
+
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const color = option.dataset.color;
+                // In a real application, you would update product images based on color here.
+                // For this example, we'll just visually indicate selection.
+                colorOptions.forEach(opt => opt.classList.remove('ring-2', 'ring-brand'));
+                option.classList.add('ring-2', 'ring-brand');
+                console.log(`Color selected: ${color}`);
+            });
+        });
+
+    </script>
+</body>
+</html>

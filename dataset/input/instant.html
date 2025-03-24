@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#115e59',
+                        accent: '#34d399',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes pulse-bg {
+            0% { background-color: rgba(243, 244, 246, 0.5); }
+            50% { background-color: rgba(243, 244, 246, 0.8); }
+            100% { background-color: rgba(243, 244, 246, 0.5); }
+        }
+        .animate-pulse-bg {
+            animation: pulse-bg 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased overflow-hidden">
+    <div class="absolute inset-0 animate-pulse-bg bg-neutral"></div>
+    <div class="relative z-10 flex items-center justify-center min-h-screen px-4">
+        <div class="w-full max-w-md p-8 bg-white rounded-3xl shadow-2xl animate-slide-up">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-primary">Get Instant Access</h2>
+                <p class="mt-2 text-gray-500">Unlock premium features in seconds.</p>
+            </div>
+            <form id="registration-form" class="space-y-6">
+                <div>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-700">Full Name</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fa fa-user text-gray-500"></i>
+                        </div>
+                        <input type="text" id="name" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" placeholder="Your Name" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-700">Email Address</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fa fa-envelope text-gray-500"></i>
+                        </div>
+                        <input type="email" id="email" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-700">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <i class="fa fa-lock text-gray-500"></i>
+                        </div>
+                        <input type="password" id="password" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5" placeholder="••••••••" required>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="terms" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-neutral focus:ring-3 focus:ring-primary" required>
+                    </div>
+                    <label for="terms" class="ml-2 text-sm font-medium text-gray-700">I agree to the <a href="#" class="text-primary hover:underline">Terms and Conditions</a></label>
+                </div>
+                <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-colors duration-300">Register Now</button>
+            </form>
+            <div class="mt-6 text-center text-sm">
+                <p class="text-gray-500">Already have an account? <a href="#" class="text-primary hover:underline">Log in</a></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (!name || !email || !password) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            alert('Registration Successful!\nName: ' + name + '\nEmail: ' + email);
+        });
+    </script>
+</body>
+</html>

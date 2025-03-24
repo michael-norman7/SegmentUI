@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Storyteller - Photography Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@4.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .blog-post-content > * + * { margin-top: 1.5em; }
+        .blog-post-content h2 { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; }
+        .blog-post-content h3 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; }
+        .blog-post-content p { font-size: 1rem; line-height: 1.75rem; }
+        .blog-post-content img { border-radius: 0.75rem; }
+        .blog-post-content blockquote { font-style: italic; border-left: 4px solid theme('colors.gray.300'); padding-left: 1rem; color: theme('colors.gray.700'); }
+        .blog-post-content ul { list-style-type: disc; margin-left: 1.5rem; }
+        .blog-post-content ol { list-style-type: decimal; margin-left: 1.5rem; }
+        .blog-post-content a { color: theme('colors.blue.500'); text-decoration: underline; }
+        .blog-post-content strong { font-weight: 600; }
+        .aspect-video-custom { aspect-ratio: 16 / 9; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+
+<header class="sticky top-0 bg-white border-b border-gray-200 z-50">
+    <div class="container mx-auto px-4 py-6 md:py-8 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-blue-600 hover:text-blue-700 transition-colors duration-300">
+            Visual Storyteller
+        </a>
+        <nav class="hidden md:flex space-x-8">
+            <a href="/category/stories" class="hover:text-gray-700 transition-colors duration-300">Stories</a>
+            <a href="/category/techniques" class="hover:text-gray-700 transition-colors duration-300">Techniques</a>
+            <a href="/category/gear" class="hover:text-gray-700 transition-colors duration-300">Gear</a>
+            <a href="/about" class="hover:text-gray-700 transition-colors duration-300">About</a>
+            <a href="/contact" class="hover:text-gray-700 transition-colors duration-300">Contact</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-50 border-b border-gray-200 py-2">
+        <div class="container mx-auto px-4 flex flex-col space-y-2">
+            <a href="/category/stories" class="block py-2 hover:bg-gray-100 transition-colors duration-200">Stories</a>
+            <a href="/category/techniques" class="block py-2 hover:bg-gray-100 transition-colors duration-200">Techniques</a>
+            <a href="/category/gear" class="block py-2 hover:bg-gray-100 transition-colors duration-200">Gear</a>
+            <a href="/about" class="block py-2 hover:bg-gray-100 transition-colors duration-200">About</a>
+            <a href="/contact" class="block py-2 hover:bg-gray-100 transition-colors duration-200">Contact</a>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto mt-12 md:mt-20 px-4 md:px-8 lg:px-12 xl:px-20">
+    <article class="mb-16">
+        <div class="relative">
+            <img src="https://picsum.photos/id/10/1200/600" alt="Featured Image" class="w-full rounded-xl shadow-lg aspect-video-custom object-cover transform hover:scale-105 transition-transform duration-500 ease-in-out">
+            <div class="absolute bottom-4 left-4 bg-white bg-opacity-75 rounded-md px-3 py-2 backdrop-blur-sm">
+                <span class="text-sm text-gray-700"><i class="fa fa-camera mr-1"></i> Photography Story</span>
+            </div>
+        </div>
+
+        <header class="mt-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                Capturing the Soul of Street: A Day in the Life of New York City
+            </h1>
+            <div class="flex items-center text-gray-600 text-sm space-x-4">
+                <div class="flex items-center">
+                    <i class="fa fa-user-circle mr-2"></i>
+                    <span>By <a href="/author/jane-doe" class="hover:text-blue-500 hover:underline">Jane Doe</a></span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa fa-calendar-alt mr-2"></i>
+                    <span>Published on <time datetime="2024-03-15">March 15, 2024</time></span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fa fa-tag mr-2"></i>
+                    <span>Categories: <a href="/category/street-photography" class="hover:text-blue-500 hover:underline">Street Photography</a>, <a href="/category/cityscape" class="hover:text-blue-500 hover:underline">Cityscape</a></span>
+                </div>
+            </div>
+        </header>
+
+        <section class="blog-post-content mt-10 md:mt-14">
+            <p class="text-lg">
+                New York City. A symphony of sirens, a ballet of yellow cabs, and a million untold stories etched onto every corner. Today, I set out to capture a sliver of this vibrant chaos, to freeze moments in time that whisper of the city's relentless pulse.
+            </p>
+
+            <h2 class="mt-8">Morning Rush</h2>
+            <p>
+                The day begins before dawn truly breaks. The city is already stirring, a low hum of anticipation in the air. I find myself in Times Square, usually a sensory overload, but now, in the pre-dawn light, it possesses a different kind of energy.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <img src="https://picsum.photos/id/100/600/400" alt="Times Square Morning" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/101/600/400" alt="Subway Entrance" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            </div>
+            <p>
+                The subway entrances breathe steam, exhaling the city's workforce into the cool morning air. Faces are etched with determination, coffee cups clutched tightly, each person a protagonist in their own urban narrative.
+            </p>
+
+            <h2 class="mt-8">Lunchtime in the Park</h2>
+            <p>
+                By midday, the frantic pace softens, replaced by a more relaxed rhythm. I wander into Central Park, an oasis of green amidst the concrete jungle.
+            </p>
+            <div class="grid grid-cols-1 gap-6 mt-6">
+                <img src="https://picsum.photos/id/102/1200/500" alt="Central Park Lunch" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            </div>
+            <p>
+                Sunlight filters through the leaves, dappling the paths where people stroll, eat lunch, or simply escape the office for a moment of tranquility. Street performers entertain, children laugh, and for a brief hour, the city seems to exhale.
+            </p>
+
+            <h2 class="mt-8">Golden Hour Glow</h2>
+            <p>
+                As evening approaches, the city transforms again. Golden hour bathes the skyscrapers in a warm, ethereal light, softening the hard edges of steel and glass.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <img src="https://picsum.photos/id/103/600/400" alt="Golden Hour Skyline" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <img src="https://picsum.photos/id/104/600/400" alt="Street Musician Evening" class="rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+            </div>
+            <p>
+                Street musicians emerge, their melodies weaving through the evening air, providing a soundtrack to the city's twilight dance. Couples walk hand-in-hand, tourists pause to capture the breathtaking views, and another day in New York City slowly fades into night.
+            </p>
+
+            <blockquote class="mt-12">
+                "The city seen from the Queensboro Bridge is always the city seen for the first time, in its first wild promise of all the mystery and the beauty in the world." - F. Scott Fitzgerald
+            </blockquote>
+
+            <h2 class="mt-8">Reflections</h2>
+            <p>
+                Spending a day documenting New York City is like trying to capture a river in a bottle. It's impossible to contain its entirety, but in each photograph, I hope to have captured a droplet, a glimpse of its ever-flowing essence. Until next time, city of dreams.
+            </p>
+
+            <div class="mt-12 border-t border-gray-200 pt-8">
+                <h3 class="text-xl font-semibold mb-4">Share this story</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-blue-500 hover:text-blue-600"><i class="fab fa-facebook-square fa-2x"></i></a>
+                    <a href="#" class="text-blue-500 hover:text-blue-600"><i class="fab fa-twitter-square fa-2x"></i></a>
+                    <a href="#" class="text-red-500 hover:text-red-600"><i class="fab fa-pinterest-square fa-2x"></i></a>
+                    <a href="#" class="text-gray-700 hover:text-gray-800"><i class="fa fa-envelope-square fa-2x"></i></a>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <aside class="md:float-right md:ml-8 mb-16 w-full md:w-96">
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8 sticky top-24">
+            <h3 class="text-lg font-semibold mb-4">About the Author</h3>
+            <div class="flex items-center mb-4">
+                <img src="https://picsum.photos/id/200/50/50" alt="Jane Doe" class="rounded-full w-12 h-12 mr-4">
+                <div class="font-medium">
+                    Jane Doe
+                    <div class="text-sm text-gray-500">Photographer & Storyteller</div>
+                </div>
+            </div>
+            <p class="text-sm text-gray-700">
+                Jane is a passionate street photographer capturing the beauty of everyday life. Based in New York City, she explores the city's soul through her lens.
+            </p>
+            <a href="/author/jane-doe" class="inline-block mt-4 text-blue-500 hover:text-blue-600 hover:underline text-sm">
+                Read more about Jane
+            </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <h3 class="text-lg font-semibold mb-4">Popular Stories</h3>
+            <ul class="space-y-3">
+                <li>
+                    <a href="#" class="block hover:bg-gray-50 rounded-md p-2 transition-colors duration-200">
+                        <img src="https://picsum.photos/id/21/300/200" alt="Popular Post 1" class="rounded-md mb-2 aspect-video object-cover">
+                        <span class="text-gray-800 font-medium text-sm">The Serenity of Iceland's Landscapes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block hover:bg-gray-50 rounded-md p-2 transition-colors duration-200">
+                        <img src="https://picsum.photos/id/22/300/200" alt="Popular Post 2" class="rounded-md mb-2 aspect-video object-cover">
+                        <span class="text-gray-800 font-medium text-sm">Urban Geometry: Finding Patterns in Concrete</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block hover:bg-gray-50 rounded-md p-2 transition-colors duration-200">
+                        <img src="https://picsum.photos/id/23/300/200" alt="Popular Post 3" class="rounded-md mb-2 aspect-video object-cover">
+                        <span class="text-gray-800 font-medium text-sm">Portraits of Provence: Faces of the French Countryside</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-lg font-semibold mb-4">Categories</h3>
+            <ul class="space-y-2">
+                <li><a href="/category/street-photography" class="block hover:bg-gray-50 rounded-md p-2 transition-colors duration-200"><i class="fa fa-chevron-right mr-2 text-sm"></i> Street Photography</a></li>
+                <li><a href="/category/landscape" class="block hover:bg-gray-50 rounded-md p-2 transition-colors duration-200"><i class="fa fa-chevron-right mr-2 text-sm"></i> Landscape Photography</a></li>
+                <li><a href="/category/portrait" class="block hover:bg-gray-50 rounded-md p-2 transition-colors duration-200"><i class="fa fa-chevron-right mr-2 text-sm"></i> Portrait Photography</a></li>
+                <li><a href="/category/travel" class="block hover:bg-gray-50 rounded-md p-2 transition-colors duration-200"><i class="fa fa-chevron-right mr-2 text-sm"></i> Travel Photography</a></li>
+                <li><a href="/category/black-and-white" class="block hover:bg-gray-50 rounded-md p-2 transition-colors duration-200"><i class="fa fa-chevron-right mr-2 text-sm"></i> Black and White</a></li>
+            </ul>
+        </div>
+    </aside>
+
+</main>
+
+<footer class="bg-gray-100 border-t border-gray-200 py-12 mt-20">
+    <div class="container mx-auto px-4 md:px-8 lg:px-12 xl:px-20 text-center text-gray-600">
+        <p>© 2024 Visual Storyteller. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-6">
+            <a href="#" class="hover:text-gray-700"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="hover:text-gray-700"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="hover:text-gray-700"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" class="hover:text-gray-700"><i class="fab fa-pinterest fa-lg"></i></a>
+        </div>
+        <p class="mt-4 text-sm">
+            <a href="/privacy-policy" class="hover:text-gray-700 hover:underline">Privacy Policy</a> | <a href="/terms-of-service" class="hover:text-gray-700 hover:underline">Terms of Service</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>

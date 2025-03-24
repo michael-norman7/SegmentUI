@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Product Listing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#1e293b',
+                        'secondary': '#f3f4f6',
+                        'accent': '#a3a3a3',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '128': '32rem',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'slide-left': {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        'slide-right': {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'slide-left': 'slide-left 0.5s ease-out',
+                        'slide-right': 'slide-right 0.5s ease-out',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-secondary font-sans">
+
+    <header class="bg-white sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif text-xl font-bold text-primary">LuxuryRetail</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-accent transition-colors">New Arrivals</a>
+                <a href="#" class="hover:text-accent transition-colors">Collections</a>
+                <a href="#" class="hover:text-accent transition-colors">About</a>
+                <a href="#" class="hover:text-accent transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-primary focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-6 py-4 flex flex-col space-y-4">
+                <a href="#" class="hover:text-accent transition-colors block">New Arrivals</a>
+                <a href="#" class="hover:text-accent transition-colors block">Collections</a>
+                <a href="#" class="hover:text-accent transition-colors block">About</a>
+                <a href="#" class="hover:text-accent transition-colors block">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-24 px-6 pb-12">
+
+        <section class="text-center mb-16">
+            <h2 class="font-serif text-3xl font-bold text-primary mb-4 animate-fade-in-down">Explore Our Exquisite Collection</h2>
+            <p class="text-accent text-lg animate-fade-in-down delay-100">Discover timeless elegance and unparalleled craftsmanship.</p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden animate-fade-in-down">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Product Image" class="object-cover w-full h-full hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-semibold text-primary mb-2 truncate">Elegant Leather Handbag</h3>
+                    <p class="text-accent mb-4">Crafted from the finest Italian leather, this handbag exudes sophistication.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">$1,200</span>
+                        <button class="bg-primary text-secondary px-4 py-2 rounded-md hover:bg-accent hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden animate-fade-in-down delay-100">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Product Image" class="object-cover w-full h-full hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-semibold text-primary mb-2 truncate">Classic Diamond Watch</h3>
+                    <p class="text-accent mb-4">A timeless timepiece featuring ethically sourced diamonds and Swiss movement.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">$5,500</span>
+                        <button class="bg-primary text-secondary px-4 py-2 rounded-md hover:bg-accent hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden animate-fade-in-down delay-200">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Product Image" class="object-cover w-full h-full hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-semibold text-primary mb-2 truncate">Luxury Silk Scarf</h3>
+                    <p class="text-accent mb-4">Woven from 100% pure silk, this scarf adds a touch of elegance to any ensemble.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">$350</span>
+                        <button class="bg-primary text-secondary px-4 py-2 rounded-md hover:bg-accent hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden animate-fade-in-down delay-300">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Product Image" class="object-cover w-full h-full hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-semibold text-primary mb-2 truncate">Artisan Crafted Belt</h3>
+                    <p class="text-accent mb-4">Handcrafted leather belt with a solid brass buckle, a testament to fine craftsmanship.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">$480</span>
+                        <button class="bg-primary text-secondary px-4 py-2 rounded-md hover:bg-accent hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden animate-fade-in-down delay-400">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=5" alt="Product Image" class="object-cover w-full h-full hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-semibold text-primary mb-2 truncate">Exclusive Perfume Set</h3>
+                    <p class="text-accent mb-4">A curated collection of our signature fragrances, presented in an elegant box.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">$620</span>
+                        <button class="bg-primary text-secondary px-4 py-2 rounded-md hover:bg-accent hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden animate-fade-in-down delay-500">
+                <div class="aspect-w-4 aspect-h-3">
+                    <img src="https://picsum.photos/200/300?random=6" alt="Product Image" class="object-cover w-full h-full hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-semibold text-primary mb-2 truncate">Designer Sunglasses</h3>
+                    <p class="text-accent mb-4">Stylish sunglasses with UV protection and a lightweight, comfortable frame.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-primary">$580</span>
+                        <button class="bg-primary text-secondary px-4 py-2 rounded-md hover:bg-accent hover:text-white transition-colors">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="bg-primary text-secondary py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 LuxuryRetail. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-accent transition-colors"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

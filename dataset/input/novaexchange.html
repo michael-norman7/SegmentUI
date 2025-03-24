@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaExchange - The Future of Crypto Trading</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#007BFF',
+                        secondary: '#6c757d',
+                        accent: '#ffc107',
+                        dark: '#212529',
+                        light: '#f8f9fa',
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'slide-up': 'slide-up 1s ease-out',
+                        'fade-in': 'fade-in 1s ease-out',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes gradient-x {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-light text-dark">
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-shadow duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold text-primary">
+                    <a href="#" class="hover:text-primary transition-colors duration-200">NovaExchange</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="hover:text-primary transition-colors duration-200">Features</a>
+                    <a href="#markets" class="hover:text-primary transition-colors duration-200">Markets</a>
+                    <a href="#security" class="hover:text-primary transition-colors duration-200">Security</a>
+                    <a href="#pricing" class="hover:text-primary transition-colors duration-200">Pricing</a>
+                    <a href="#faq" class="hover:text-primary transition-colors duration-200">FAQ</a>
+                </div>
+                <div class="hidden md:block">
+                    <button class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-200">
+                        Get Started
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                         <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+                    <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-gray-100 hover:text-primary">Features</a>
+                    <a href="#markets" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-gray-100 hover:text-primary">Markets</a>
+                    <a href="#security" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-gray-100 hover:text-primary">Security</a>
+                    <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-gray-100 hover:text-primary">Pricing</a>
+                    <a href="#faq" class="block px-3 py-2 rounded-md text-base font-medium text-dark hover:bg-gray-100 hover:text-primary">FAQ</a>
+                    <button class="w-full text-center bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors duration-200">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero relative overflow-hidden bg-gradient-to-r from-blue-100 via-blue-50 to-white py-24 md:py-32">
+        <div class="absolute inset-0 animate-gradient-x" style="background: linear-gradient(90deg, #e0f7fa, #c2e0f7, #e0f7fa, #f0f8ff);"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="hero-text fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 leading-tight">
+                        Securely Trade <span class="text-primary">Cryptocurrencies</span> with Confidence
+                    </h1>
+                    <p class="text-lg text-gray-700 mb-8">
+                        NovaExchange is the next-generation cryptocurrency exchange. Buy, sell, and trade Bitcoin, Ethereum, and more with the lowest fees and highest security.
+                    </p>
+                    <div class="space-x-4">
+                        <button class="cta-button bg-primary hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200 slide-up">
+                            Get Started Now
+                        </button>
+                        <button class="cta-button bg-light hover:bg-gray-300 text-dark font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200 slide-up">
+                            Learn More <i class="fa fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image slide-up">
+                    <img src="https://picsum.photos/800/600" alt="Cryptocurrency Trading Platform" class="rounded-xl shadow-2xl hover:shadow-lg transition-shadow duration-300" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Explore Our Powerful Features
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-item p-6 bg-light rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="feature-icon mb-4 text-primary text-5xl">
+                        <i class="fa fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Real-time Market Data</h3>
+                    <p class="text-gray-700">Access up-to-the-second market data and charts for informed trading decisions.</p>
+                </div>
+                <div class="feature-item p-6 bg-light rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="feature-icon mb-4 text-primary text-5xl">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Advanced Security</h3>
+                    <p class="text-gray-700">Multi-layered security measures to protect your assets and personal information.</p>
+                </div>
+                <div class="feature-item p-6 bg-light rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="feature-icon mb-4 text-primary text-5xl">
+                        <i class="fa fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Lightning-Fast Transactions</h3>
+                    <p class="text-gray-700">Experience rapid transaction processing for quick and efficient trading.</p>
+                </div>
+                <div class="feature-item p-6 bg-light rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="feature-icon mb-4 text-primary text-5xl">
+                        <i class="fa fa-user-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">User-Friendly Interface</h3>
+                    <p class="text-gray-700">Intuitive and easy-to-navigate platform for both beginners and experienced traders.</p>
+                </div>
+                <div class="feature-item p-6 bg-light rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="feature-icon mb-4 text-primary text-5xl">
+                        <i class="fa fa-coins"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Wide Range of Cryptocurrencies</h3>
+                    <p class="text-gray-700">Trade a diverse selection of cryptocurrencies and digital assets.</p>
+                </div>
+                <div class="feature-item p-6 bg-light rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="feature-icon mb-4 text-primary text-5xl">
+                        <i class="fa fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">24/7 Customer Support</h3>
+                    <p class="text-gray-700">Dedicated support team available around the clock to assist you with any queries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="markets" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Explore Our Markets
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="market-item p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/200/300" alt="Bitcoin" class="rounded-xl mb-4 mx-auto" loading="lazy">
+                    <h3 class="text-xl font-bold text-dark mb-2">Bitcoin (BTC)</h3>
+                    <p class="text-gray-700">The world's leading cryptocurrency, pioneering decentralized digital currency.</p>
+                    <button class="mt-4 cta-button bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200">Trade BTC</button>
+                </div>
+                <div class="market-item p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/201/300" alt="Ethereum" class="rounded-xl mb-4 mx-auto" loading="lazy">
+                    <h3 class="text-xl font-bold text-dark mb-2">Ethereum (ETH)</h3>
+                    <p class="text-gray-700">The leading platform for decentralized applications and smart contracts.</p>
+                    <button class="mt-4 cta-button bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200">Trade ETH</button>
+                </div>
+                <div class="market-item p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/202/300" alt="Litecoin" class="rounded-xl mb-4 mx-auto" loading="lazy">
+                    <h3 class="text-xl font-bold text-dark mb-2">Litecoin (LTC)</h3>
+                    <p class="text-gray-700">A fast and cost-effective cryptocurrency for everyday transactions.</p>
+                    <button class="mt-4 cta-button bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200">Trade LTC</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="security" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Uncompromising Security
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="https://picsum.photos/600/400" alt="Security Features" class="rounded-xl shadow-2xl hover:shadow-lg transition-shadow duration-300" loading="lazy">
+                </div>
+                <div class="text-left">
+                    <h3 class="text-2xl font-bold text-dark mb-4">Protecting Your Digital Assets is Our Priority</h3>
+                    <p class="text-gray-700 mb-6">
+                        At NovaExchange, we employ state-of-the-art security measures to ensure the safety of your funds and data. Our platform is built with multiple layers of protection, including:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700">
+                        <li class="mb-2">Cold Storage for the majority of digital assets</li>
+                        <li class="mb-2">Two-Factor Authentication (2FA) for account protection</li>
+                        <li class="mb-2">Regular security audits and penetration testing</li>
+                        <li>Encryption of sensitive data both in transit and at rest</li>
+                    </ul>
+                    <button class="mt-8 cta-button bg-primary hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200">Learn More About Security</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Transparent Pricing
+            </h2>
+            <p class="text-lg text-gray-700 mb-8">
+                We believe in fair and transparent pricing. See our competitive fee structure below.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="pricing-card p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h4 class="text-xl font-bold text-dark mb-4">Basic</h4>
+                    <div class="text-4xl font-bold text-primary mb-4">Free</div>
+                    <p class="text-gray-700 mb-4">For beginners exploring crypto trading.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-6">
+                        <li>Limited trading volume</li>
+                        <li>Standard transaction fees</li>
+                        <li>Basic customer support</li>
+                    </ul>
+                    <button class="cta-button bg-secondary hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200">Get Started Free</button>
+                </div>
+                <div class="pricing-card p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h4 class="text-xl font-bold text-dark mb-4">Standard</h4>
+                    <div class="text-4xl font-bold text-primary mb-4">$9.99/month</div>
+                    <p class="text-gray-700 mb-4">For active traders seeking more features.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-6">
+                        <li>Increased trading volume</li>
+                        <li>Reduced transaction fees</li>
+                        <li>Priority customer support</li>
+                    </ul>
+                    <button class="cta-button bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200">Upgrade to Standard</button>
+                </div>
+                <div class="pricing-card p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <h4 class="text-xl font-bold text-dark mb-4">Premium</h4>
+                    <div class="text-4xl font-bold text-primary mb-4">$29.99/month</div>
+                    <p class="text-gray-700 mb-4">For professional traders with high volume needs.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-6">
+                        <li>Unlimited trading volume</li>
+                        <li>Lowest transaction fees</li>
+                        <li>Dedicated account manager</li>
+                    </ul>
+                    <button class="cta-button bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors duration-200">Upgrade to Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">
+                Frequently Asked Questions
+            </h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="faq-item border-b border-gray-200 py-4">
+                    <button class="faq-question text-left w-full flex items-center justify-between text-lg font-semibold text-dark hover:text-primary focus:outline-none" onclick="toggleFAQ('faq1')">
+                        What cryptocurrencies can I trade on NovaExchange?
+                        <i class="fa fa-chevron-down transition-transform" id="faq1-icon"></i>
+                    </button>
+                    <div class="faq-answer hidden text-gray-700 mt-2" id="faq1-answer">
+                        NovaExchange supports a wide range of cryptocurrencies including Bitcoin, Ethereum, Litecoin, Ripple, and many more. We are constantly adding new currencies to our platform.
+                    </div>
+                </div>
+                <div class="faq-item border-b border-gray-200 py-4">
+                    <button class="faq-question text-left w-full flex items-center justify-between text-lg font-semibold text-dark hover:text-primary focus:outline-none" onclick="toggleFAQ('faq2')">
+                        How secure is NovaExchange?
+                        <i class="fa fa-chevron-down transition-transform" id="faq2-icon"></i>
+                    </button>
+                    <div class="faq-answer hidden text-gray-700 mt-2" id="faq2-answer">
+                        Security is our top priority. NovaExchange employs industry-leading security practices, including cold storage, two-factor authentication, and regular security audits to protect your assets.
+                    </div>
+                </div>
+                <div class="faq-item border-b border-gray-200 py-4">
+                    <button class="faq-question text-left w-full flex items-center justify-between text-lg font-semibold text-dark hover:text-primary focus:outline-none" onclick="toggleFAQ('faq3')">
+                        What are the trading fees on NovaExchange?
+                        <i class="fa fa-chevron-down transition-transform" id="faq3-icon"></i>
+                    </button>
+                    <div class="faq-answer hidden text-gray-700 mt-2" id="faq3-answer">
+                        NovaExchange offers competitive and transparent trading fees. Our fee structure varies based on your trading volume and account tier. Please refer to our pricing page for detailed information.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-light py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4">
+                <a href="#" class="text-primary text-xl font-bold">NovaExchange</a>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-primary"><i class="fab fa-facebook-f text-lg"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fab fa-twitter text-lg"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fab fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-primary"><i class="fab fa-linkedin-in text-lg"></i></a>
+            </div>
+            <p class="text-gray-400">© 2024 NovaExchange. All rights reserved.</p>
+            <p class="text-gray-400 mt-2">
+                <a href="#" class="hover:text-primary">Terms of Service</a> | <a href="#" class="hover:text-primary">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleFAQ(faqId) {
+            const answer = document.getElementById(faqId + '-answer');
+            const icon = document.getElementById(faqId + '-icon');
+            answer.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>

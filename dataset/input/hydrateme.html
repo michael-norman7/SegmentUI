@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HydrateMe Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'satoshi': ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#e0f7fa',
+                        'secondary': '#b2ebf2',
+                        'accent': '#4dd0e1',
+                        'soft-blue': '#dde5ff',
+                        'soft-green': '#d7fada',
+                        'soft-pink': '#ffe4e6',
+                        'dark-text': '#334155',
+                        'light-text': '#6b7280',
+                    },
+                    boxShadow: {
+                        'soft': '6px 6px 12px #cddde5, -6px -6px 12px #ffffff',
+                        'soft-inset': 'inset 6px 6px 12px #cddde5, inset -6px -6px 12px #ffffff',
+                    },
+                    keyframes: {
+                        'wave': {
+                            '0%': { transform: 'rotate(0.0deg)' },
+                            '10%': { transform: 'rotate(14.0deg)' },
+                            '20%': { transform: 'rotate(-8.0deg)' },
+                            '30%': { transform: 'rotate(14.0deg)' },
+                            '40%': { transform: 'rotate(-4.0deg)' },
+                            '50%': { transform: 'rotate(10.0deg)' },
+                            '60%': { transform: 'rotate(0.0deg)' },
+                            '100%': { transform: 'rotate(0.0deg)' },
+                        },
+                        'fill-up': {
+                            '0%': { height: '0%' },
+                            '100%': { height: '100%' },
+                        },
+                    },
+                    animation: {
+                        'wave': 'wave 2s linear infinite',
+                        'fill-up': 'fill-up 1s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Satoshi', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .chart-bar {
+            animation: fill-up 1s ease-out forwards;
+            background: linear-gradient(to top, #4dd0e1, #80deea);
+        }
+    </style>
+</head>
+<body class="bg-primary font-satoshi dark-text">
+    <div class="container mx-auto p-6 md:p-8 lg:p-10">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-center md:text-left">HydrateMe</h1>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+            <section class="lg:col-span-2">
+                <div class="bg-soft-blue rounded-3xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-xl font-semibold">Today's Intake</h2>
+                        <span class="text-light-text text-sm"> <i class="fa-regular fa-calendar"></i>  </span>
+                    </div>
+
+                    <div class="flex items-center justify-center">
+                        <div class="relative w-64 h-64">
+                            <div class="absolute inset-0 bg-secondary rounded-full shadow-soft"></div>
+                            <div class="absolute inset-4 bg-primary rounded-full flex flex-col justify-center items-center">
+                                <i class="fa-solid fa-glass-water text-3xl mb-2 text-accent animate-wave"></i>
+                                <div id="current-intake" class="text-3xl font-bold">2.2L</div>
+                                <div class="text-light-text text-sm">of 3L Goal</div>
+                            </div>
+                            <div class="absolute inset-0 rounded-full border-8 border-accent border-opacity-20"></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex justify-around">
+                        <button onclick="adjustIntake(-0.25)" class="bg-red-200 hover:bg-red-300 text-red-700 font-bold py-2 px-4 rounded-full shadow-soft-inset focus:outline-none active:shadow-soft">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <button onclick="adjustIntake(0.25)" class="bg-green-200 hover:bg-green-300 text-green-700 font-bold py-2 px-4 rounded-full shadow-soft-inset focus:outline-none active:shadow-soft">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="bg-soft-green rounded-3xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300">
+                    <h2 class="text-xl font-semibold mb-4">Daily Goal</h2>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="text-4xl font-bold">3L</div>
+                        <i class="fa-solid fa-bullseye text-accent text-2xl"></i>
+                    </div>
+                    <div class="text-light-text text-sm">Customize your daily hydration target.</div>
+                    <div class="mt-4">
+                        <div class="relative">
+                            <input type="range" min="1" max="5" value="3" class="slider w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer dark:bg-gray-700 focus:outline-none" id="goalRange" oninput="updateGoal(this.value)">
+                            <span id="goalValue" class="absolute -top-8 left-1/2 -translate-x-1/2 text-sm text-light-text">3L</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lg:col-span-3">
+                <div class="bg-soft-pink rounded-3xl p-6 shadow-soft hover:shadow-md transition-shadow duration-300">
+                    <h2 class="text-xl font-semibold mb-6">Weekly Progress</h2>
+                    <div class="grid grid-cols-7 gap-4 text-center">
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                        <div>Sun</div>
+
+                        <div class="relative h-20 bg-secondary rounded-md overflow-hidden">
+                            <div class="chart-bar absolute bottom-0 left-0 right-0 rounded-md" style="height: 60%;"></div>
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 text-sm">2.1L</span>
+                        </div>
+                        <div class="relative h-20 bg-secondary rounded-md overflow-hidden">
+                            <div class="chart-bar absolute bottom-0 left-0 right-0 rounded-md" style="height: 85%;"></div>
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 text-sm">2.7L</span>
+                        </div>
+                        <div class="relative h-20 bg-secondary rounded-md overflow-hidden">
+                            <div class="chart-bar absolute bottom-0 left-0 right-0 rounded-md" style="height: 70%;"></div>
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 text-sm">2.4L</span>
+                        </div>
+                        <div class="relative h-20 bg-secondary rounded-md overflow-hidden">
+                            <div class="chart-bar absolute bottom-0 left-0 right-0 rounded-md" style="height: 95%;"></div>
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 text-sm">2.9L</span>
+                        </div>
+                        <div class="relative h-20 bg-secondary rounded-md overflow-hidden">
+                            <div class="chart-bar absolute bottom-0 left-0 right-0 rounded-md" style="height: 100%;"></div>
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 text-sm">3.0L</span>
+                        </div>
+                        <div class="relative h-20 bg-secondary rounded-md overflow-hidden">
+                            <div class="chart-bar absolute bottom-0 left-0 right-0 rounded-md" style="height: 50%;"></div>
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 text-sm">1.8L</span>
+                        </div>
+                        <div class="relative h-20 bg-secondary rounded-md overflow-hidden">
+                            <div class="chart-bar absolute bottom-0 left-0 right-0 rounded-md" style="height: 75%;"></div>
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 text-sm">2.5L</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button class="bg-accent hover:bg-teal-400 text-white font-bold py-2 px-6 rounded-full shadow-soft-inset focus:outline-none active:shadow-soft">View More</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="mt-12 text-center text-light-text text-sm">
+            <p>© 2024 HydrateMe. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentIntake = 2.2;
+        let dailyGoal = 3;
+
+        function updateIntakeDisplay() {
+            document.getElementById('current-intake').textContent = currentIntake.toFixed(1) + 'L';
+        }
+
+        function adjustIntake(amount) {
+            currentIntake += amount;
+            if (currentIntake < 0) currentIntake = 0;
+            if (currentIntake > dailyGoal + 1) currentIntake = dailyGoal + 1;
+            updateIntakeDisplay();
+        }
+
+        function updateGoal(value) {
+            dailyGoal = parseInt(value);
+            document.getElementById('goalValue').textContent = dailyGoal + 'L';
+        }
+
+        updateIntakeDisplay();
+    </script>
+</body>
+</html>

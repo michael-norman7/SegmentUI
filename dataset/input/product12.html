@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing - Neumorphic UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light': '#F0F0F0',
+                        'dark': '#D0D0D0',
+                        'accent': '#3490dc',
+                    },
+                    boxShadow: {
+                        'neumorphic-light': '6px 6px 12px #C8C8C8, -6px -6px 12px #FFFFFF',
+                        'neumorphic-dark': '6px 6px 12px #B0B0B0, -6px -6px 12px #E0E0E0',
+                        'neumorphic-inner-light': 'inset 6px 6px 12px #C8C8C8, inset -6px -6px 12px #FFFFFF',
+                        'neumorphic-inner-dark': 'inset 6px 6px 12px #B0B0B0, inset -6px -6px 12px #E0E0E0',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+        }
+        .neumorphic-card {
+            background: #f0f0f0;
+            box-shadow:  6px 6px 12px #c8c8c8,
+                         -6px -6px 12px #ffffff;
+        }
+        .neumorphic-card-inset {
+            background: #f0f0f0;
+            box-shadow: inset 6px 6px 12px #c8c8c8,
+                        inset -6px -6px 12px #ffffff;
+        }
+        .neumorphic-btn {
+            background: #f0f0f0;
+            box-shadow:  6px 6px 12px #c8c8c8,
+                         -6px -6px 12px #ffffff;
+        }
+        .neumorphic-btn:hover {
+            box-shadow:  inset 2px 2px 5px #c8c8c8,
+                         inset -2px -2px 5px #ffffff;
+        }
+        .group:hover .neumorphic-card {
+            box-shadow:  inset 6px 6px 12px #c8c8c8,
+                         inset -6px -6px 12px #ffffff;
+        }
+        .transition-neumorphic {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-light font-poppins">
+
+    <header class="bg-light sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="font-bold text-xl text-gray-800">Neumorphic Store</div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="hover:text-accent transition-colors duration-200">Home</a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200">Products</a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200">About</a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200">Contact</a>
+                    <button class="neumorphic-btn px-4 py-2 rounded-lg focus:outline-none transition-neumorphic">
+                        <i class="fa-solid fa-shopping-cart"></i> Cart
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button class="focus:outline-none">
+                        <i class="fa-solid fa-bars text-gray-800 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-10 p-6">
+        <section class="mb-12">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6 text-center">Featured Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="group relative">
+                    <div class="neumorphic-card rounded-2xl p-6 transition-neumorphic hover:shadow-neumorphic-inner-light">
+                        <img src="https://picsum.photos/200/300?random=1" alt="Product 1" class="rounded-xl w-full h-64 object-cover mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Awesome Product 1</h3>
+                        <p class="text-gray-600 mb-3">This is a brief description of product 1.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold text-accent">$49.99</span>
+                            <button class="neumorphic-btn px-3 py-1.5 rounded-md text-sm focus:outline-none transition-neumorphic">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-light rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+
+                <div class="group relative">
+                    <div class="neumorphic-card rounded-2xl p-6 transition-neumorphic hover:shadow-neumorphic-inner-light">
+                        <img src="https://picsum.photos/200/300?random=2" alt="Product 2" class="rounded-xl w-full h-64 object-cover mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Incredible Product 2</h3>
+                        <p class="text-gray-600 mb-3">Check out the features of product number two.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold text-accent">$79.99</span>
+                            <button class="neumorphic-btn px-3 py-1.5 rounded-md text-sm focus:outline-none transition-neumorphic">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-light rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+
+                <div class="group relative">
+                    <div class="neumorphic-card rounded-2xl p-6 transition-neumorphic hover:shadow-neumorphic-inner-light">
+                        <img src="https://picsum.photos/200/300?random=3" alt="Product 3" class="rounded-xl w-full h-64 object-cover mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Fantastic Product 3</h3>
+                        <p class="text-gray-600 mb-3">Product three is waiting for you to discover it.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold text-accent">$59.99</span>
+                            <button class="neumorphic-btn px-3 py-1.5 rounded-md text-sm focus:outline-none transition-neumorphic">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-light rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+
+                <div class="group relative">
+                    <div class="neumorphic-card rounded-2xl p-6 transition-neumorphic hover:shadow-neumorphic-inner-light">
+                        <img src="https://picsum.photos/200/300?random=4" alt="Product 4" class="rounded-xl w-full h-64 object-cover mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Superior Product 4</h3>
+                        <p class="text-gray-600 mb-3">Description for product number four goes here.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold text-accent">$89.99</span>
+                            <button class="neumorphic-btn px-3 py-1.5 rounded-md text-sm focus:outline-none transition-neumorphic">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-light rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+
+                <div class="group relative">
+                    <div class="neumorphic-card rounded-2xl p-6 transition-neumorphic hover:shadow-neumorphic-inner-light">
+                        <img src="https://picsum.photos/200/300?random=5" alt="Product 5" class="rounded-xl w-full h-64 object-cover mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Excellent Product 5</h3>
+                        <p class="text-gray-600 mb-3">Product number five with a great description.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold text-accent">$69.99</span>
+                            <button class="neumorphic-btn px-3 py-1.5 rounded-md text-sm focus:outline-none transition-neumorphic">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-light rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+
+                <div class="group relative">
+                    <div class="neumorphic-card rounded-2xl p-6 transition-neumorphic hover:shadow-neumorphic-inner-light">
+                        <img src="https://picsum.photos/200/300?random=6" alt="Product 6" class="rounded-xl w-full h-64 object-cover mb-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Premium Product 6</h3>
+                        <p class="text-gray-600 mb-3">The sixth product and its detailed information.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-semibold text-accent">$99.99</span>
+                            <button class="neumorphic-btn px-3 py-1.5 rounded-md text-sm focus:outline-none transition-neumorphic">
+                                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-light rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Product Categories</h2>
+            <div class="flex space-x-4 overflow-x-auto pb-4">
+                <button class="neumorphic-btn px-4 py-2 rounded-lg text-sm focus:outline-none transition-neumorphic">Category 1</button>
+                <button class="neumorphic-btn px-4 py-2 rounded-lg text-sm focus:outline-none transition-neumorphic">Category 2</button>
+                <button class="neumorphic-btn px-4 py-2 rounded-lg text-sm focus:outline-none transition-neumorphic">Category 3</button>
+                <button class="neumorphic-btn px-4 py-2 rounded-lg text-sm focus:outline-none transition-neumorphic">Category 4</button>
+                <button class="neumorphic-btn px-4 py-2 rounded-lg text-sm focus:outline-none transition-neumorphic">Category 5</button>
+            </div>
+        </section>
+
+        <section>
+            <div class="neumorphic-card-inset rounded-2xl p-8 text-center">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Subscribe to our Newsletter</h2>
+                <p class="text-gray-600 mb-6">Get updates on new products and special offers.</p>
+                <div class="flex justify-center">
+                    <input type="email" placeholder="Your email address" class="neumorphic-card-inset rounded-lg px-4 py-2 focus:outline-none w-full md:w-auto">
+                    <button class="neumorphic-btn px-6 py-2 rounded-lg ml-2 focus:outline-none transition-neumorphic">Subscribe</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-light py-8 mt-10">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600">© 2024 Neumorphic Store. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-600 hover:text-accent"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text-gray-600 hover:text-accent"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-gray-600 hover:text-accent"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.group').forEach(item => {
+            item.addEventListener('mouseenter', event => {
+                item.querySelector('.neumorphic-card').classList.add('shadow-neumorphic-inner-light');
+                item.querySelector('.neumorphic-card').classList.remove('shadow-neumorphic-light');
+            });
+            item.addEventListener('mouseleave', event => {
+                item.querySelector('.neumorphic-card').classList.remove('shadow-neumorphic-inner-light');
+                item.querySelector('.neumorphic-card').classList.add('shadow-neumorphic-light');
+            });
+        })
+    </script>
+
+</body>
+</html>

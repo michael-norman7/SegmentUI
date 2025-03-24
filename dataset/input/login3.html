@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Client Management Platform</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#1e40af',
+                        accent: '#3b82f6',
+                        neutral: '#f8fafc',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral dark:bg-dark flex items-center justify-center min-h-screen">
+    <div class="animate-fade-in bg-white dark:bg-gray-900 shadow-2xl rounded-3xl p-8 md:p-16 w-full max-w-md md:max-w-lg flex flex-col space-y-6">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-dark dark:text-neutral mb-4 animate-slide-up">Login to Your Account</h2>
+            <p class="text-gray-500 dark:text-gray-400 animate-slide-up delay-100">Access your client management platform.</p>
+        </div>
+        <form id="loginForm" class="space-y-4 md:space-y-6 animate-slide-up delay-200">
+            <div>
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa-solid fa-envelope text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary" placeholder="name@company.com" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fa-solid fa-lock text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                    <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary focus:border-primary block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary dark:focus:border-primary" required>
+                    <button type="button" id="password-toggle" class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer">
+                        <i id="password-eye" class="fa-solid fa-eye text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary dark:ring-offset-gray-800" >
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="remember" class="text-gray-500 dark:text-gray-400">Remember me</label>
+                    </div>
+                </div>
+                <a href="#" class="text-sm font-medium text-primary hover:underline dark:text-accent">Forgot password?</a>
+            </div>
+            <button type="submit" class="w-full text-white bg-primary hover:bg-secondary focus:ring-4 focus:outline-none focus:ring-primary font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-accent dark:hover:bg-primary dark:focus:ring-secondary">Login</button>
+            <div id="form-error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Error!</strong>
+                <span class="block sm:inline" id="error-message"></span>
+            </div>
+            <div id="form-success" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                <strong class="font-bold">Success!</strong>
+                <span class="block sm:inline" id="success-message">Login Successful!</span>
+            </div>
+            <div id="loading-indicator" class="hidden text-center">
+                <i class="fa-solid fa-spinner fa-spin text-primary text-2xl dark:text-accent"></i>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Logging in...</p>
+            </div>
+        </form>
+        <div class="text-sm font-light text-gray-500 dark:text-gray-400 animate-slide-up delay-300 text-center">
+            Don’t have an account yet? <a href="#" class="font-medium text-primary hover:underline dark:text-accent">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        const passwordInput = document.getElementById('password');
+        const passwordToggle = document.getElementById('password-toggle');
+        const passwordEyeIcon = document.getElementById('password-eye');
+        const loginForm = document.getElementById('loginForm');
+        const formError = document.getElementById('form-error');
+        const errorMessage = document.getElementById('error-message');
+        const formSuccess = document.getElementById('form-success');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        passwordToggle.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordEyeIcon.classList.remove('fa-eye');
+                passwordEyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                passwordEyeIcon.classList.remove('fa-eye-slash');
+                passwordEyeIcon.classList.add('fa-eye');
+            }
+        });
+
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            formError.classList.add('hidden');
+            formSuccess.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+
+            const email = loginForm.email.value;
+            const password = loginForm.password.value;
+
+            if (!email || !password) {
+                loadingIndicator.classList.add('hidden');
+                formError.classList.remove('hidden');
+                errorMessage.textContent = 'Please fill in all fields.';
+                return;
+            }
+
+            setTimeout(() => {
+                loadingIndicator.classList.add('hidden');
+                if (email === 'test@example.com' && password === 'password') {
+                    formSuccess.classList.remove('hidden');
+                    loginForm.reset();
+content_copy
+download
+Use code with caution.
+Html

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabelle Moreau - Choreographer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F5F5F5',
+                        'secondary': '#1A202C',
+                        'accent': '#C77849',
+                        'neutral': '#E5E7EB',
+                    },
+                    keyframes: {
+                        'fade-slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        'fade-slide-up': 'fade-slide-up 0.8s ease-out forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: theme('colors.primary');
+            color: theme('colors.secondary');
+        }
+        .grid-custom {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .animate-delay-100 {
+            animation-delay: 0.1s;
+        }
+        .animate-delay-200 {
+            animation-delay: 0.2s;
+        }
+        .animate-delay-300 {
+            animation-delay: 0.3s;
+        }
+        .animate-delay-400 {
+            animation-delay: 0.4s;
+        }
+        .animate-delay-500 {
+            animation-delay: 0.5s;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+<header class="sticky top-0 z-50 bg-primary shadow-md">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="font-playfair text-xl font-semibold text-secondary">
+                Isabelle Moreau
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="hover:text-accent transition-colors duration-300">About</a>
+                <a href="#portfolio" class="hover:text-accent transition-colors duration-300">Portfolio</a>
+                <a href="#services" class="hover:text-accent transition-colors duration-300">Services</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="absolute left-0 right-0 mt-2 bg-primary shadow-md rounded-md p-4">
+                <a href="#about" class="block py-2 hover:text-accent transition-colors duration-300">About</a>
+                <a href="#portfolio" class="block py-2 hover:text-accent transition-colors duration-300">Portfolio</a>
+                <a href="#services" class="block py-2 hover:text-accent transition-colors duration-300">Services</a>
+                <a href="#contact" class="block py-2 hover:text-accent transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="hero" class="relative overflow-hidden pb-24 md:pb-36">
+    <div class="absolute inset-0">
+        <img src="https://picsum.photos/1920/1080?blur=2" alt="Abstract dance background" class="object-cover w-full h-full opacity-70">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary to-neutral opacity-20"></div>
+    </div>
+    <div class="container mx-auto px-6 relative pt-32 md:pt-48">
+        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+            <div class="fade-slide-up animate-delay-100">
+                <h1 class="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-secondary mb-6">
+                    Evoke Emotion Through Movement.
+                </h1>
+                <p class="text-lg text-secondary opacity-80 mb-10">
+                    Crafting compelling narratives and breathtaking visuals through the art of choreography. Let's bring your vision to life, step by step.
+                </p>
+                <a href="#portfolio" class="inline-block bg-accent text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors duration-300">
+                    Explore Portfolio
+                </a>
+            </div>
+            <div class="hidden md:block fade-in animate-delay-300">
+                <img src="https://picsum.photos/600/800" alt="Isabelle Moreau in dance pose" class="rounded-xl shadow-2xl">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-24 md:py-36 bg-neutral">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="font-playfair text-3xl md:text-4xl font-semibold text-secondary mb-4">About Isabelle</h2>
+            <p class="text-lg text-secondary opacity-70 max-w-2xl mx-auto">
+                Driven by passion and artistry, Isabelle Moreau is an award-winning choreographer dedicated to pushing the boundaries of dance. With years of experience in diverse styles, she brings a unique vision to every project.
+            </p>
+        </div>
+        <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+            <div class="fade-in animate-delay-200">
+                <img src="https://picsum.photos/600/400" alt="Isabelle Moreau portrait" class="rounded-xl shadow-xl">
+            </div>
+            <div class="fade-slide-up animate-delay-300">
+                <h3 class="font-playfair text-2xl font-semibold text-secondary mb-4">My Choreography Philosophy</h3>
+                <p class="text-secondary opacity-80 mb-6">
+                    I believe in dance as a universal language, capable of expressing the deepest human emotions. My choreography is rooted in storytelling, musicality, and dynamic movement, creating experiences that resonate with audiences on an emotional level.
+                </p>
+                <ul class="list-disc list-inside text-secondary opacity-70">
+                    <li>Innovative and Creative Approach</li>
+                    <li>Collaboration and Personalized Service</li>
+                    <li>Commitment to Excellence</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="py-24 md:py-36">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="font-playfair text-3xl md:text-4xl font-semibold text-secondary mb-4">Portfolio Highlights</h2>
+            <p class="text-lg text-secondary opacity-70 max-w-2xl mx-auto">
+                A glimpse into some of my most impactful and creative choreography projects.
+            </p>
+        </div>
+        <div class="grid-custom">
+            <div class="fade-slide-up animate-delay-200">
+                <div class="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Project 1" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl text-secondary mb-2">Project Title One</h3>
+                        <p class="text-secondary opacity-70">Brief description of project one.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-slide-up animate-delay-300">
+                <div class="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Project 2" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl text-secondary mb-2">Project Title Two</h3>
+                        <p class="text-secondary opacity-70">Brief description of project two.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-slide-up animate-delay-400">
+                <div class="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Project 3" class="w-full h-auto block">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl text-secondary mb-2">Project Title Three</h3>
+                        <p class="text-secondary opacity-70">Brief description of project three.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-24 md:py-36 bg-neutral">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="font-playfair text-3xl md:text-4xl font-semibold text-secondary mb-4">My Services</h2>
+            <p class="text-lg text-secondary opacity-70 max-w-2xl mx-auto">
+                Offering a range of choreography services tailored to meet your unique needs.
+            </p>
+        </div>
+        <div class="grid-custom">
+            <div class="fade-slide-up animate-delay-200">
+                <div class="p-6 rounded-xl bg-primary shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-video text-3xl text-accent mb-4"></i>
+                    <h3 class="font-semibold text-xl text-secondary mb-2">Film & Media Choreography</h3>
+                    <p class="text-secondary opacity-70">Expertise in creating dynamic and visually stunning choreography for films, commercials, and music videos.</p>
+                </div>
+            </div>
+            <div class="fade-slide-up animate-delay-300">
+                <div class="p-6 rounded-xl bg-primary shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-theater-masks text-3xl text-accent mb-4"></i>
+                    <h3 class="font-semibold text-xl text-secondary mb-2">Stage & Live Performance</h3>
+                    <p class="text-secondary opacity-70">Crafting memorable and impactful choreography for theater productions, live events, and dance shows.</p>
+                </div>
+            </div>
+            <div class="fade-slide-up animate-delay-400">
+                <div class="p-6 rounded-xl bg-primary shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <i class="fa fa-users text-3xl text-accent mb-4"></i>
+                    <h3 class="font-semibold text-xl text-secondary mb-2">Workshops & Masterclasses</h3>
+                    <p class="text-secondary opacity-70">Inspiring and educating dancers of all levels through engaging workshops and masterclasses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-24 md:py-36">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="font-playfair text-3xl md:text-4xl font-semibold text-secondary mb-4">Get in Touch</h2>
+            <p class="text-lg text-secondary opacity-70 max-w-2xl mx-auto">
+                Ready to collaborate or have a project in mind? Let's connect!
+            </p>
+        </div>
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div class="fade-slide-up animate-delay-200">
+                <img src="https://picsum.photos/600/500?random=4" alt="Contact Isabelle" class="rounded-xl shadow-xl">
+            </div>
+            <div class="fade-slide-up animate-delay-300">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 text-secondary font-medium">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 rounded-md border border-neutral-300 focus:border-accent focus:ring-accent focus:ring-1" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-secondary font-medium">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 rounded-md border border-neutral-300 focus:border-accent focus:ring-accent focus:ring-1" placeholder="Your Email">
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-secondary font-medium">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-md border border-neutral-300 focus:border-accent focus:ring-accent focus:ring-1" placeholder="Your Message"></textarea>
+                    </div>
+                    <button type="submit" class="bg-accent text-primary px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors duration-300 w-full md:w-auto">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-secondary text-primary py-12">
+    <div class="container mx-auto px-6 text-center">
+        <p>© 2024 Isabelle Moreau Choreography. All rights reserved.</p>
+        <div class="mt-4 space-x-4">
+            <a href="#" class="hover:text-accent"><i class="fab fa-instagram text-lg"></i></a>
+            <a href="#" class="hover:text-accent"><i class="fab fa-linkedin text-lg"></i></a>
+            <a href="#" class="hover:text-accent"><i class="fab fa-twitter text-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            mobileMenu.classList.add('hidden');
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

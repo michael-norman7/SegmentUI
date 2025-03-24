@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Chronicle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'headline': ['Playfair Display', 'serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'paper': '#f8f4e3',
+                        'ink': '#1a1a1a',
+                        'accent': '#b91c1c',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: theme('colors.paper');
+            color: theme('colors.ink');
+        }
+        .newspaper-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    </style>
+</head>
+<body class="font-body">
+    <div class="newspaper-container">
+        <header class="py-6 border-b-2 border-ink">
+            <div class="flex justify-between items-center">
+                <div class="font-headline text-3xl font-bold tracking-tight animate-fade-in">
+                    <h1 class="text-ink">The Daily Chronicle</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6 animate-slide-up">
+                    <a href="#" class="hover:text-accent transition-colors duration-200">World</a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200">Politics</a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200">Business</a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200">Technology</a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200">Sports</a>
+                    <a href="#" class="hover:text-accent transition-colors duration-200">Culture</a>
+                </nav>
+                <button class="md:hidden text-ink hover:text-accent focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <main class="md:col-span-2">
+                <article class="mb-12">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/10/800/400" alt="World Leaders Summit" class="w-full rounded-md shadow-md aspect-video object-cover">
+                        <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent p-6 text-white rounded-b-md">
+                            <h2 class="font-headline text-2xl font-bold mb-2 animate-slide-up delay-100">World Leaders Convene for Climate Summit</h2>
+                            <p class="text-sm opacity-70 animate-slide-up delay-200">By Eleanor Roosevelt | Published 1924-03-15</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700 leading-relaxed animate-fade-in delay-300">
+                            <i class="fa-solid fa-quote-left text-2xl text-accent float-left mr-2 mt-1"></i>
+                            Delegates from across the globe gathered in Geneva this week to address the escalating climate crisis. The summit, aimed at forging a unified global strategy, saw passionate speeches and tense negotiations as leaders grappled with the urgency of the situation.  "We stand at a crossroads," declared Secretary-General Anya Sharma, "The choices we make today will define the future for generations to come."
+                        </p>
+                        <p class="mt-4 text-gray-700 leading-relaxed animate-fade-in delay-400">
+                            The primary focus of the summit was the implementation of the Paris Agreement, with discussions revolving around carbon emission reductions, renewable energy investments, and financial aid for developing nations.  Disagreements arose particularly concerning the responsibility of industrialized nations in assisting less developed countries to transition to sustainable economies.
+                        </p>
+                        <p class="mt-4 text-gray-700 leading-relaxed animate-fade-in delay-500">
+                            Despite the challenges, there was a palpable sense of urgency and determination.  Several nations pledged new commitments to reduce emissions, and initiatives for cross-border collaboration on green technologies were proposed.  The summit is expected to conclude with a joint declaration outlining a roadmap for global climate action over the next decade.
+                        </p>
+                        <button class="inline-flex items-center mt-6 px-4 py-2 border border-ink rounded-md text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition-colors duration-200 animate-slide-up delay-600">
+                            <i class="fa fa-newspaper mr-2"></i> Continue Reading
+                        </button>
+                    </div>
+                </article>
+
+                <section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                    <article class="animate-fade-in delay-700">
+                        <div class="relative">
+                            <img src="https://picsum.photos/id/20/400/200" alt="Political Debate" class="w-full rounded-md shadow-md aspect-video object-cover">
+                            <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent p-4 text-white rounded-b-md">
+                                <h3 class="font-headline text-lg font-bold mb-1">Presidential Candidates Clash in Heated Debate</h3>
+                                <p class="text-xs opacity-70">Politics | By James Smith</p>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-700 leading-relaxed">
+                            The two leading presidential candidates engaged in a fiery debate last night, sparring over economic policy and healthcare reform.
+                        </p>
+                        <a href="#" class="inline-block mt-2 text-accent hover:underline text-sm font-medium">Read More</a>
+                    </article>
+
+                    <article class="animate-fade-in delay-800">
+                        <div class="relative">
+                            <img src="https://picsum.photos/id/30/400/200" alt="Stock Market Ticker" class="w-full rounded-md shadow-md aspect-video object-cover">
+                            <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent p-4 text-white rounded-b-md">
+                                <h3 class="font-headline text-lg font-bold mb-1">Dow Jones Soars to Record High After Tech Rally</h3>
+                                <p class="text-xs opacity-70">Business | By Emily Carter</p>
+                            </div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-700 leading-relaxed">
+                            The Dow Jones Industrial Average surged to an unprecedented high today, fueled by a robust rally in technology stocks.
+                        </p>
+                        <a href="#" class="inline-block mt-2 text-accent hover:underline text-sm font-medium">Read More</a>
+                    </article>
+                </section>
+
+                 <article class="mb-12 animate-fade-in delay-900">
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/40/800/400" alt="Tech Conference" class="w-full rounded-md shadow-md aspect-video object-cover">
+                        <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent p-6 text-white rounded-b-md">
+                            <h2 class="font-headline text-2xl font-bold mb-2">Innovations Unveiled at Global Tech Conference</h2>
+                            <p class="text-sm opacity-70">By David Lee | Published 1924-03-14</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-700 leading-relaxed">
+                           <i class="fa-solid fa-quote-left text-2xl text-accent float-left mr-2 mt-1"></i>
+                            The annual Global Tech Conference in San Francisco played host to groundbreaking announcements and futuristic prototypes this week.  From advancements in artificial intelligence to the latest in virtual reality, the conference showcased the cutting edge of technological innovation.
+                        </p>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            Keynote speakers included industry titans and visionary entrepreneurs, all sharing their insights on the trajectory of technology and its impact on society.  Among the most anticipated reveals were new AI algorithms promising to revolutionize data processing and immersive VR experiences set to redefine entertainment and communication.
+                        </p>
+                        <p class="mt-4 text-gray-700 leading-relaxed">
+                            The conference also highlighted the growing ethical considerations surrounding rapid technological advancement, with panels dedicated to discussing responsible AI development and the societal implications of increasingly interconnected technologies.  The event concluded with a consensus that collaboration and ethical frameworks are crucial to harnessing the positive potential of technology while mitigating potential risks.
+                        </p>
+                        <button class="inline-flex items-center mt-6 px-4 py-2 border border-ink rounded-md text-sm font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50 transition-colors duration-200">
+                            <i class="fa fa-newspaper mr-2"></i> Continue Reading
+                        </button>
+                    </div>
+                </article>
+
+            </main>
+
+            <aside class="animate-slide-up delay-200">
+                <div class="mb-8 p-4 border border-ink rounded-md">
+                    <h3 class="font-headline text-xl font-bold mb-4">Featured Stories</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="block hover:text-accent transition-colors duration-200">
+                                <h4 class="font-semibold">Local Community Celebrates Centennial Anniversary</h4>
+                                <p class="text-sm text-gray-600">Community News</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block hover:text-accent transition-colors duration-200">
+                                <h4 class="font-semibold">Scientists Discover New Species of Deep-Sea Fish</h4>
+                                <p class="text-sm text-gray-600">Science & Nature</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="block hover:text-accent transition-colors duration-200">
+                                <h4 class="font-semibold">Art Exhibition Showcases Emerging Local Artists</h4>
+                                <p class="text-sm text-gray-600">Arts & Culture</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-8 p-4 border border-ink rounded-md">
+                    <h3 class="font-headline text-xl font-bold mb-4">Weather Forecast</h3>
+                    <div class="flex items-center mb-2">
+                        <i class="fa fa-sun fa-2x mr-3 text-yellow-500"></i>
+                        <div>
+                            <p class="font-medium">Sunny</p>
+                            <p class="text-sm text-gray-600">High 75°F, Low 55°F</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-700">
+                        Expect clear skies and sunshine throughout the day. Gentle breeze from the west.
+                    </p>
+                </div>
+
+                <div class="p-4 border border-ink rounded-md">
+                    <h3 class="font-headline text-xl font-bold mb-4">Advertisement</h3>
+                    <img src="https://picsum.photos/id/50/300/250" alt="Advertisement" class="w-full rounded-md shadow-sm">
+                    <p class="text-xs text-gray-600 mt-2 text-center">Your Ad Here</p>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="mt-12 py-4 border-t-2 border-ink text-center text-sm text-gray-700 animate-fade-in delay-300">
+            <p>© 1924 The Daily Chronicle. All Rights Reserved.</p>
+            <nav class="mt-2 space-x-4">
+                <a href="#" class="hover:text-accent transition-colors duration-200">Privacy Policy</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Terms of Service</a>
+                <a href="#" class="hover:text-accent transition-colors duration-200">Contact Us</a>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

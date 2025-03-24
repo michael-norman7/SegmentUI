@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understated Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#115e59',
+                        'accent': '#34d399',
+                        'neutral': '#f3f4f6',
+                        'text-primary': '#1e293b',
+                        'text-secondary': '#6b7280',
+                    },
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: '1rem',
+                            sm: '2rem',
+                            lg: '4rem',
+                            xl: '5rem',
+                            '2xl': '6rem',
+                        },
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .blog-post img {
+            border-radius: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-neutral text-text-primary">
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <nav class="container flex justify-between items-center py-4">
+            <a href="/" class="font-bold text-xl text-primary hover:text-secondary transition-colors">Minimal Blog</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/" class="hover:text-secondary transition-colors">Home</a>
+                <a href="/blog" class="hover:text-secondary transition-colors">Blog</a>
+                <a href="/about" class="hover:text-secondary transition-colors">About</a>
+                <a href="/contact" class="hover:text-secondary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-100">Home</a>
+                <a href="/blog" class="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-100">Blog</a>
+                <a href="/about" class="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-100">About</a>
+                <a href="/contact" class="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mt-12 mb-24 animate-fade-in">
+        <section class="mb-16">
+            <h1 class="text-4xl font-bold mb-4">Latest Articles</h1>
+            <p class="text-text-secondary">Stay up-to-date with our latest insights and stories.</p>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <a href="/post-1">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Blog Post 1" class="w-full h-56 object-cover">
+                </a>
+                <div class="p-6">
+                    <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">
+                        <a href="/post-1">The Beauty of Minimalist Design</a>
+                    </h2>
+                    <p class="text-text-secondary mb-4">Exploring the core principles of minimalism and how it enhances user experience.</p>
+                    <a href="/post-1" class="text-primary hover:text-secondary transition-colors font-medium">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+
+            <article class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <a href="/post-2">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Blog Post 2" class="w-full h-56 object-cover">
+                </a>
+                <div class="p-6">
+                    <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">
+                        <a href="/post-2">Optimizing Website Performance</a>
+                    </h2>
+                    <p class="text-text-secondary mb-4">Learn practical techniques to boost your website's speed and improve user satisfaction.</p>
+                    <a href="/post-2" class="text-primary hover:text-secondary transition-colors font-medium">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+
+            <article class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <a href="/post-3">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Blog Post 3" class="w-full h-56 object-cover">
+                </a>
+                <div class="p-6">
+                    <h2 class="font-bold text-2xl mb-2 hover:text-primary transition-colors">
+                        <a href="/post-3">The Importance of Accessibility</a>
+                    </h2>
+                    <p class="text-text-secondary mb-4">Why web accessibility is crucial and how to make your site inclusive for everyone.</p>
+                    <a href="/post-3" class="text-primary hover:text-secondary transition-colors font-medium">Read More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-neutral-200 py-8">
+        <div class="container text-center text-text-secondary">
+            <p>© 2024 Minimal Blog. All rights reserved.</p>
+            <nav class="mt-4 space-x-4">
+                <a href="/privacy" class="hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="/terms" class="hover:text-primary transition-colors">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

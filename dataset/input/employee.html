@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Login - Streamline Access</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#b9e0fa',
+                            300: '#87cefa',
+                            400: '#4dcafa',
+                            500: '#1ea7fa',
+                            600: '#0384e6',
+                            700: '#0269c4',
+                            800: '#0354a3',
+                            900: '#054481',
+                            950: '#032e5c',
+                        },
+                        secondary: '#64748b',
+                        accent: '#facc15',
+                        success: '#34d399',
+                        error: '#f87171',
+                    },
+                    keyframes: {
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-out-right': {
+                            '0%': { transform: 'translateX(0)', opacity: '1' },
+                            '100%': { transform: 'translateX(100%)', opacity: '0' },
+                        },
+                        'pulse-fast': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.5 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'slide-out-right': 'slide-out-right 0.5s ease-in',
+                        'pulse-fast': 'pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900">
+
+<div class="flex items-center justify-center h-screen">
+    <div class="fixed top-0 left-0 w-full h-full bg-primary-50 dark:bg-gray-900 overflow-hidden z-0">
+        <div class="absolute inset-0 animate-pulse-fast bg-primary-100 dark:bg-gray-800 opacity-20"></div>
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary-200 dark:bg-gray-700 blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-primary-300 dark:bg-gray-600 blur-3xl"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-md p-6 bg-white rounded-xl shadow-xl dark:bg-gray-800 animate__animated animate__slideInUp">
+        <div class="flex justify-center mb-8">
+            <img src="https://picsum.photos/200/80" alt="Company Logo" class="h-12 object-contain">
+        </div>
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-6">Employee Login</h2>
+        <form id="loginForm" class="space-y-4">
+            <div>
+                <label for="employeeId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white sr-only">Employee ID</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-user-shield text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                    <input type="text" id="employeeId" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Employee ID" required>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white sr-only">Password</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <i class="fas fa-lock text-gray-500 dark:text-gray-400"></i>
+                    </div>
+                    <input type="password" id="password" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" >
+                    </div>
+                    <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                </div>
+                <a href="#" class="text-sm font-semibold text-primary-500 hover:underline dark:text-primary-400">Forgot password?</a>
+            </div>
+            <button type="submit" class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-500 dark:hover:bg-primary-600 dark:focus:ring-primary-800">Login</button>
+            <div id="loginError" class="hidden text-sm text-error-500 dark:text-error-400"><i class="fas fa-exclamation-circle mr-1"></i> Invalid credentials. Please try again.</div>
+            <div id="loginSuccess" class="hidden text-sm text-success-500 dark:text-success-400"><i class="fas fa-check-circle mr-1"></i> Login successful! Redirecting...</div>
+        </form>
+    </div>
+</div>
+
+<script>
+    const loginForm = document.getElementById('loginForm');
+    const loginError = document.getElementById('loginError');
+    const loginSuccess = document.getElementById('loginSuccess');
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        loginError.classList.add('hidden');
+        loginSuccess.classList.add('hidden');
+
+        const employeeId = document.getElementById('employeeId').value;
+        const password = document.getElementById('password').value;
+
+        if (employeeId === 'employee123' && password === 'password123') {
+            loginSuccess.classList.remove('hidden');
+            setTimeout(() => {
+                loginSuccess.classList.add('animate__animated', 'animate__fadeOut');
+                setTimeout(() => {
+                    window.location.href = '/dashboard';
+                }, 500);
+            }, 1500);
+
+        } else {
+            loginError.classList.remove('hidden');
+            loginError.classList.add('animate__animated', 'animate__shakeX');
+            loginError.addEventListener('animationend', () => {
+                loginError.classList.remove('animate__animated', 'animate__shakeX');
+            }, { once: true });
+        }
+    });
+</script>
+
+</body>
+</html>

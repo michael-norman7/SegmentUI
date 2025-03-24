@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink & Canvas - Tattoo Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['"Playfair Display"', 'serif'],
+                        'body': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'ink': '#1a1a1a',
+                        'canvas': '#f5f5f5',
+                        'accent': '#c084fc',
+                        'dark-accent': '#a855f7',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'fade-out-up': {
+                            'from': {
+                                opacity: '1',
+                                transform: 'translateY(0px)'
+                            },
+                            'to': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                        },
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'fade-out-up': 'fade-out-up 0.5s ease-out',
+                    },
+                }
+            },
+        }
+    </script>
+    <style>
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .gallery-item img {
+            transition: transform 0.3s ease-out;
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+            cursor: pointer;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 50;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation-name: fade;
+            animation-duration: 0.6s;
+            position: relative;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: #f8f8f8;
+            font-size: 40px;
+            font-weight: bold;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .modal-close:hover,
+        .modal-close:focus {
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @keyframes fade {
+            from {opacity: .4;}
+            to {opacity: 1;}
+        }
+
+    </style>
+</head>
+<body class="bg-canvas text-ink">
+
+    <header class="sticky top-0 bg-canvas shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-display font-semibold">Ink & Canvas</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#gallery" class="hover:text-accent transition-colors duration-200">Gallery</a>
+                <a href="#about" class="hover:text-accent transition-colors duration-200">About</a>
+                <a href="#styles" class="hover:text-accent transition-colors duration-200">Styles</a>
+                <a href="#contact" class="hover:text-accent transition-colors duration-200">Contact</a>
+            </div>
+            <button class="md:hidden text-ink hover:text-accent focus:outline-none">
+                <i class="fa fa-bars fa-lg"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section id="hero" class="py-24 md:py-36 bg-canvas">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 md:pr-16 mb-10 md:mb-0 text-center md:text-left">
+                <h1 class="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-down">Crafting Stories on Skin.</h1>
+                <p class="font-body text-lg mb-8 animate-fade-in-down delay-100">Unique and bespoke tattoo artistry. Specializing in realism, blackwork, and custom designs.</p>
+                <a href="#gallery" class="inline-block bg-accent hover:bg-dark-accent text-canvas font-semibold py-3 px-8 rounded-full transition-colors duration-300 animate-fade-in-down delay-200">View Gallery</a>
+            </div>
+            <div class="md:w-1/2 relative">
+                <img src="https://picsum.photos/id/1025/600/800" alt="Tattoo Artist Example" class="rounded-lg shadow-xl w-full h-auto object-cover animate-fade-in-down delay-300">
+                <div class="absolute bottom-0 right-0 p-4 bg-canvas bg-opacity-75 rounded-tl-lg">
+                    <p class="font-semibold text-ink">By <span class="text-accent">Artist Name</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-canvas">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold text-center mb-12">Tattoo Gallery</h2>
+            <div class="grid-gallery">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/237/300/400" alt="Tattoo 1">
+                    <div class="gallery-overlay" onclick="openModal('https://picsum.photos/id/237/800/1200')">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/238/300/400" alt="Tattoo 2">
+                    <div class="gallery-overlay" onclick="openModal('https://picsum.photos/id/238/800/1200')">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/239/300/400" alt="Tattoo 3">
+                    <div class="gallery-overlay" onclick="openModal('https://picsum.photos/id/239/800/1200')">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/240/300/400" alt="Tattoo 4">
+                    <div class="gallery-overlay" onclick="openModal('https://picsum.photos/id/240/800/1200')">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/241/300/400" alt="Tattoo 5">
+                    <div class="gallery-overlay" onclick="openModal('https://picsum.photos/id/241/800/1200')">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/id/242/300/400" alt="Tattoo 6">
+                    <div class="gallery-overlay" onclick="openModal('https://picsum.photos/id/242/800/1200')">
+                        <i class="fa fa-search-plus fa-2x"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-around">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <img src="https://picsum.photos/id/322/500/500" alt="Artist Portrait" class="rounded-full shadow-lg w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 md:pl-16 text-center md:text-left">
+                <h2 class="font-display text-4xl font-bold mb-6">About the Artist</h2>
+                <p class="font-body text-lg mb-8">With over 10 years of experience, I specialize in creating unique and meaningful tattoos tailored to each client's vision. My passion is to transform ideas into lasting works of art on skin. I am dedicated to providing a safe, comfortable, and inspiring environment for every tattoo experience.</p>
+                <a href="#contact" class="inline-block bg-accent hover:bg-dark-accent text-canvas font-semibold py-3 px-8 rounded-full transition-colors duration-300">Book a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="styles" class="py-20 bg-canvas">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold text-center mb-12">Specialized Tattoo Styles</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
+                    <i class="fa-solid fa-feather-pointed fa-3x mb-4 text-accent"></i>
+                    <h3 class="font-semibold text-xl mb-2">Realism</h3>
+                    <p class="font-body">Highly detailed and lifelike tattoos, capturing the essence of photographs and portraits.</p>
+                </div>
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
+                    <i class="fa-solid fa-paintbrush fa-3x mb-4 text-accent"></i>
+                    <h3 class="font-semibold text-xl mb-2">Blackwork</h3>
+                    <p class="font-body">Bold designs using only black ink, focusing on linework, geometric patterns, and powerful imagery.</p>
+                </div>
+                <div class="p-6 bg-gray-100 rounded-lg shadow-md text-center">
+                    <i class="fa-solid fa-water fa-3x mb-4 text-accent"></i>
+                    <h3 class="font-semibold text-xl mb-2">Watercolor</h3>
+                    <p class="font-body">Soft, vibrant tattoos with a fluid and painterly style, mimicking the delicate washes of watercolor art.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold mb-12">Contact & Booking</h2>
+            <p class="font-body text-lg mb-8">Ready to bring your tattoo vision to life? Contact me for consultations and bookings.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-ink hover:text-accent transition-colors duration-200"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-ink hover:text-accent transition-colors duration-200"><i class="fa-brands fa-facebook fa-2x"></i></a>
+                <a href="#" class="text-ink hover:text-accent transition-colors duration-200"><i class="fa-solid fa-envelope fa-2x"></i></a>
+            </div>
+            <p class="font-body">Email: <a href="mailto:info@inkandcanvas.com" class="text-accent hover:underline">info@inkandcanvas.com</a></p>
+            <p class="font-body">Phone: <span class="text-accent">+1 555-123-4567</span></p>
+            <button class="mt-8 bg-accent hover:bg-dark-accent text-canvas font-semibold py-3 px-8 rounded-full transition-colors duration-300">Book an Appointment</button>
+        </div>
+    </section>
+
+    <footer class="bg-ink text-canvas py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 Ink & Canvas. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">×</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

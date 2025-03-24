@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Storage - Secure Cloud Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'nebula-primary': '#a8b8d8',
+                        'nebula-secondary': '#d0dde9',
+                        'nebula-accent': '#7a8ca3',
+                        'nebula-dark': '#24292f',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .animate-delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .animate-delay-500 {
+            animation-delay: 0.5s;
+        }
+
+        .animate-delay-700 {
+            animation-delay: 0.7s;
+        }
+    </style>
+</head>
+<body class="bg-nebula-secondary overflow-hidden">
+
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://picsum.photos/1920/1080?blur=5')"></div>
+<div class="absolute inset-0 bg-gradient-to-br from-nebula-secondary to-white opacity-30"></div>
+
+<header class="sticky top-0 z-50">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="text-xl font-bold text-nebula-dark glassmorphism px-4 py-2 rounded-xl">
+                <a href="#" class="hover:text-nebula-primary transition-colors duration-300">Nebula Storage</a>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#features" class="text-nebula-dark hover:text-nebula-primary transition-colors duration-300">Features</a>
+                <a href="#pricing" class="text-nebula-dark hover:text-nebula-primary transition-colors duration-300">Pricing</a>
+                <a href="#testimonials" class="text-nebula-dark hover:text-nebula-primary transition-colors duration-300">Testimonials</a>
+                <a href="#faq" class="text-nebula-dark hover:text-nebula-primary transition-colors duration-300">FAQ</a>
+            </div>
+            <div class="hidden md:block">
+                <button class="glassmorphism px-4 py-2 rounded-lg text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300">
+                    Sign Up
+                </button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-nebula-dark focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="md:hidden mt-4 hidden" id="mobile-menu">
+            <a href="#features" class="block px-4 py-2 text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300 glassmorphism rounded-lg mb-2">Features</a>
+            <a href="#pricing" class="block px-4 py-2 text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300 glassmorphism rounded-lg mb-2">Pricing</a>
+            <a href="#testimonials" class="block px-4 py-2 text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300 glassmorphism rounded-lg mb-2">Testimonials</a>
+            <a href="#faq" class="block px-4 py-2 text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300 glassmorphism rounded-lg mb-2">FAQ</a>
+            <button class="block w-full text-center px-4 py-2 rounded-lg text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300 glassmorphism">
+                Sign Up
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main class="relative">
+    <section id="hero" class="py-20 md:py-36">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 md:mr-8 fade-in-left animate__animated">
+                <h1 class="text-4xl md:text-5xl font-bold text-nebula-dark mb-6">Securely Store and Share Your Digital World.</h1>
+                <p class="text-lg text-nebula-accent mb-10">Experience seamless cloud storage with Nebula. Protect your precious memories, important documents, and creative projects with our robust and intuitive platform.</p>
+                <div class="flex space-x-4">
+                    <button class="cta-button glassmorphism px-8 py-3 rounded-lg font-semibold text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300">
+                        Get Started Free
+                    </button>
+                    <button class="glassmorphism px-6 py-3 rounded-lg font-semibold text-nebula-dark hover:text-nebula-primary transition-colors duration-300 flex items-center space-x-2">
+                        <i class="fa fa-play-circle"></i>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center md:justify-end fade-in-right animate__animated">
+                <div class="relative glassmorphism p-8 rounded-3xl shadow-glass animate__animated animate__pulse animate__infinite animate__slow">
+                    <img src="https://picsum.photos/400/600" alt="Cloud Storage Interface" class="rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-nebula-dark mb-12">Powerful Features for Ultimate Control</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <div class="feature-card glassmorphism p-6 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-300">
+                    <div class="w-16 h-16 bg-nebula-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-nebula-dark mb-2">Unrivaled Security</h3>
+                    <p class="text-nebula-accent">Military-grade encryption ensures your data is always safe and protected from unauthorized access.</p>
+                </div>
+                <div class="feature-card glassmorphism p-6 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-500">
+                    <div class="w-16 h-16 bg-nebula-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-cloud-upload-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-nebula-dark mb-2">Seamless Syncing</h3>
+                    <p class="text-nebula-accent">Access your files from any device, anywhere in the world, with automatic and instant synchronization.</p>
+                </div>
+                <div class="feature-card glassmorphism p-6 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-700">
+                    <div class="w-16 h-16 bg-nebula-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fa fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-nebula-dark mb-2">Blazing Fast Speed</h3>
+                    <p class="text-nebula-accent">Experience lightning-fast upload and download speeds, making file management a breeze.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 md:py-32 bg-nebula-secondary bg-opacity-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-nebula-dark mb-12">Flexible Pricing Plans for Everyone</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                <div class="pricing-card glassmorphism p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-300">
+                    <h4 class="text-2xl font-semibold text-nebula-dark mb-4">Basic</h4>
+                    <div class="text-4xl font-bold text-nebula-primary mb-4">$9.99 <span class="text-sm text-nebula-accent font-normal">/ month</span></div>
+                    <p class="text-nebula-accent mb-6">100GB Storage</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> Secure Storage</li>
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> File Sharing</li>
+                        <li class="flex items-center text-nebula-accent line-through"><i class="fa fa-times-circle text-red-500 mr-2"></i> Advanced Features</li>
+                        <li class="flex items-center text-nebula-accent line-through"><i class="fa fa-times-circle text-red-500 mr-2"></i> Priority Support</li>
+                    </ul>
+                    <button class="cta-button glassmorphism px-6 py-3 rounded-lg font-semibold text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300 w-full">Choose Basic</button>
+                </div>
+                <div class="pricing-card glassmorphism p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-500">
+                    <h4 class="text-2xl font-semibold text-nebula-dark mb-4">Pro</h4>
+                    <div class="text-4xl font-bold text-nebula-primary mb-4">$19.99 <span class="text-sm text-nebula-accent font-normal">/ month</span></div>
+                    <p class="text-nebula-accent mb-6">1TB Storage</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> Secure Storage</li>
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> File Sharing</li>
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> Advanced Features</li>
+                        <li class="flex items-center text-nebula-accent line-through"><i class="fa fa-times-circle text-red-500 mr-2"></i> Priority Support</li>
+                    </ul>
+                    <button class="cta-button glassmorphism px-6 py-3 rounded-lg font-semibold text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300 w-full">Choose Pro</button>
+                </div>
+                <div class="pricing-card glassmorphism p-8 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-700">
+                    <h4 class="text-2xl font-semibold text-nebula-dark mb-4">Enterprise</h4>
+                    <div class="text-4xl font-bold text-nebula-primary mb-4">Contact Us</div>
+                    <p class="text-nebula-accent mb-6">Custom Storage</p>
+                    <ul class="mb-6 space-y-2">
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> Secure Storage</li>
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> File Sharing</li>
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> Advanced Features</li>
+                        <li class="flex items-center text-nebula-dark"><i class="fa fa-check-circle text-green-500 mr-2"></i> Priority Support</li>
+                    </ul>
+                    <button class="cta-button glassmorphism px-6 py-3 rounded-lg font-semibold text-nebula-dark hover:bg-nebula-primary hover:text-white transition-colors duration-300 w-full">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-nebula-dark mb-16">Trusted by Thousands of Users Worldwide</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                <div class="testimonial-card glassmorphism p-6 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-300">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/50/50" alt="User Avatar" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-nebula-dark mb-4">"Nebula Storage has been a game-changer for my business. The security and speed are unmatched, and the interface is incredibly user-friendly."</p>
+                    <h5 class="font-semibold text-nebula-primary">- Sarah M., Entrepreneur</h5>
+                </div>
+                <div class="testimonial-card glassmorphism p-6 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-500">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/51/51" alt="User Avatar" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-nebula-dark mb-4">"I was looking for a secure cloud storage solution for my personal photos and videos, and Nebula Storage exceeded my expectations. Highly recommended!"</p>
+                    <h5 class="font-semibold text-nebula-primary">- John K., Photographer</h5>
+                </div>
+                <div class="testimonial-card glassmorphism p-6 rounded-2xl hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-700">
+                    <div class="mb-4">
+                        <img src="https://picsum.photos/52/52" alt="User Avatar" class="rounded-full mx-auto">
+                    </div>
+                    <p class="text-nebula-dark mb-4">"The customer support team at Nebula Storage is fantastic. They are always ready to help and resolve any issues quickly. The service itself is top-notch."</p>
+                    <h5 class="font-semibold text-nebula-primary">- Emily L., Designer</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 md:py-32 bg-nebula-secondary bg-opacity-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-nebula-dark mb-16 text-center">Frequently Asked Questions</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <div>
+                    <div class="faq-item glassmorphism p-6 rounded-2xl mb-4 hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-300">
+                        <h5 class="font-semibold text-nebula-dark mb-2">What makes Nebula Storage different from other cloud services?</h5>
+                        <p class="text-nebula-accent">Nebula Storage prioritizes security, speed, and user experience. Our military-grade encryption, seamless syncing, and intuitive interface set us apart.</p>
+                    </div>
+                    <div class="faq-item glassmorphism p-6 rounded-2xl mb-4 hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-500">
+                        <h5 class="font-semibold text-nebula-dark mb-2">Is my data really secure with Nebula Storage?</h5>
+                        <p class="text-nebula-accent">Absolutely. We use advanced encryption methods to protect your data at rest and in transit. Your privacy and security are our top priorities.</p>
+                    </div>
+                    <div class="faq-item glassmorphism p-6 rounded-2xl mb-4 hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-700">
+                        <h5 class="font-semibold text-nebula-dark mb-2">Can I access my files from multiple devices?</h5>
+                        <p class="text-nebula-accent">Yes, Nebula Storage offers seamless syncing across all your devices. Access your files from your computer, tablet, or smartphone anytime, anywhere.</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="faq-item glassmorphism p-6 rounded-2xl mb-4 hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-300">
+                        <h5 class="font-semibold text-nebula-dark mb-2">What kind of customer support do you offer?</h5>
+                        <p class="text-nebula-accent">We provide 24/7 customer support via email and live chat. Our dedicated support team is always ready to assist you with any questions or issues.</p>
+                    </div>
+                    <div class="faq-item glassmorphism p-6 rounded-2xl mb-4 hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-500">
+                        <h5 class="font-semibold text-nebula-dark mb-2">Do you offer a free trial or plan?</h5>
+                        <p class="text-nebula-accent">Yes, we offer a free plan with limited storage to get you started. You can also try our premium plans with a free trial period. Click "Get Started Free" to learn more.</p>
+                    </div>
+                    <div class="faq-item glassmorphism p-6 rounded-2xl mb-4 hover:shadow-xl transition-shadow duration-300 animate__animated animate__fadeInUp animate-delay-700">
+                        <h5 class="font-semibold text-nebula-dark mb-2">How do I get started with Nebula Storage?</h5>
+                        <p class="text-nebula-accent">Getting started is easy! Simply click the "Get Started Free" button on our homepage and follow the simple signup process. You'll be up and running in minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="py-12 bg-nebula-secondary bg-opacity-10">
+    <div class="container mx-auto px-6 text-center text-nebula-accent">
+        <p>© 2024 Nebula Storage. All rights reserved.</p>
+        <p class="mt-2">
+            <a href="#" class="hover:text-nebula-primary transition-colors duration-300">Privacy Policy</a>
+            <span class="mx-2">•</span>
+content_copy
+download
+Use code with caution.
+Html

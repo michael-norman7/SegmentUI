@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Journey - Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#b9e0fa',
+                            300: '#87cefa',
+                            400: '#46b7f1',
+                            500: '#1e90ff',
+                            600: '#0b84f5',
+                            700: '#0374db',
+                            800: '#055cb8',
+                            900: '#07488f',
+                            950: '#083a72',
+                        },
+                        softGray: {
+                            100: '#f7f7f7',
+                            200: '#e8e8e8',
+                            300: '#d1d1d1',
+                            400: '#b0b0b0',
+                            500: '#949494',
+                            600: '#7a7a7a',
+                            700: '#636363',
+                            800: '#4d4d4d',
+                            900: '#3d3d3d',
+                        },
+                    },
+                    boxShadow: {
+                        soft: '2px 2px 5px rgba(0,0,0,0.05), -2px -2px 5px rgba(255,255,255,0.5)',
+                        softInset: 'inset 2px 2px 5px rgba(0,0,0,0.05), inset -2px -2px 5px rgba(255,255,255,0.5)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-softGray-100 font-poppins smooth-scroll">
+    <div class="min-h-screen flex flex-col">
+        <header class="bg-white shadow-soft sticky top-0 z-50">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-xl font-semibold text-primary-700">Gratitude Journey</a>
+                <div class="flex items-center space-x-4">
+                    <button class="relative rounded-full focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <img src="https://picsum.photos/id/225/200/200" alt="User Avatar" class="h-8 w-8 rounded-full object-cover">
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container mx-auto px-6 pb-12 pt-6">
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-md transition-shadow duration-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-journal-heart text-2xl text-primary-500 mr-2"></i>
+                        <h2 class="text-lg font-semibold">Daily Gratitude</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-check-circle text-green-500 mr-2"></i>
+                            <p class="text-gray-700 text-sm">Family time this evening</p>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-check-circle text-green-500 mr-2"></i>
+                            <p class="text-gray-700 text-sm">Sunny weather today</p>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-regular fa-check-circle text-green-500 mr-2"></i>
+                            <p class="text-gray-700 text-sm">Delicious morning coffee</p>
+                        </li>
+                        <li class="flex items-center justify-center mt-4">
+                            <button class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-lg shadow-soft hover:shadow-md transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400">
+                                View All Entries
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-md transition-shadow duration-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-sun text-2xl text-yellow-500 mr-2"></i>
+                        <h2 class="text-lg font-semibold">Positive Affirmations</h2>
+                    </div>
+                    <div class="text-center py-4">
+                        <p class="text-gray-800 italic">"I am capable of handling anything life throws at me."</p>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                        <button class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-lg shadow-soft hover:shadow-md transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400">
+                            Generate New
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-md transition-shadow duration-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-chart-line text-2xl text-green-500 mr-2"></i>
+                        <h2 class="text-lg font-semibold">Mood Tracker</h2>
+                    </div>
+                    <div class="flex justify-around py-6">
+                        <div class="text-center">
+                            <i class="fa-regular fa-face-smile-beam text-3xl text-green-500 block mb-2"></i>
+                            <span class="font-medium text-gray-700">Good</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa-regular fa-face-meh text-3xl text-yellow-500 block mb-2"></i>
+                            <span class="font-medium text-gray-700">Neutral</span>
+                        </div>
+                        <div class="text-center">
+                            <i class="fa-regular fa-face-frown text-3xl text-red-500 block mb-2"></i>
+                            <span class="font-medium text-gray-700">Bad</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <canvas id="moodChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-soft hover:shadow-md transition-shadow duration-200 md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <i class="fa-solid fa-image text-2xl text-purple-500 mr-2"></i>
+                        <h2 class="text-lg font-semibold">Inspirational Image</h2>
+                    </div>
+                    <div class="overflow-hidden rounded-lg">
+                        <img src="https://picsum.photos/id/10/400/300" alt="Inspirational" class="w-full h-auto block">
+                    </div>
+                    <div class="mt-4 text-center">
+                        <button class="bg-primary-500 hover:bg-primary-700 text-white font-bold py-2 px-4 rounded-lg shadow-soft hover:shadow-md transition-shadow duration-200 focus:outline-none focus:ring-2 focus:ring-primary-400">
+                            Refresh Image
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="bg-softGray-100 text-softGray-700 text-center py-4 mt-8">
+            <p>© 2024 Gratitude Journey. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const moodChartCanvas = document.getElementById('moodChart');
+        if (moodChartCanvas) {
+            const moodChart = new Chart(moodChartCanvas, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Mood Level',
+                        data: [3, 4, 4.5, 5, 4, 5, 4.8],
+                        borderColor: '#1e90ff',
+                        borderWidth: 2,
+                        fill: false,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 5,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

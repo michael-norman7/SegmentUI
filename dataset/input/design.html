@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Inspiration Blog - Article</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#64748b',
+                        accent: '#fde047',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: '1rem',
+                            sm: '2rem',
+                            lg: '4rem',
+                            xl: '5rem',
+                            '2xl': '6rem',
+                        },
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @layer utilities {
+            .link-underline {
+                @apply relative;
+            }
+            .link-underline::after {
+                content: '';
+                @apply absolute left-0 bottom-0 w-full h-[2px] bg-primary transform scale-x-0 transition-transform duration-300 origin-left;
+            }
+            .link-underline:hover::after {
+                @apply transform-scale-x-100;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <a href="/" class="font-bold text-xl text-primary hover:text-secondary transition-colors">Inspire Blog</a>
+        <nav class="hidden md:flex space-x-8">
+            <a href="/" class="hover:text-primary transition-colors link-underline">Home</a>
+            <a href="/inspiration" class="hover:text-primary transition-colors link-underline">Inspiration</a>
+            <a href="/categories" class="hover:text-primary transition-colors link-underline">Categories</a>
+            <a href="/about" class="hover:text-primary transition-colors link-underline">About</a>
+        </nav>
+        <button class="md:hidden text-gray-500 hover:text-gray-700 focus:outline-none">
+            <i class="fa fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<main class="container mx-auto mt-16 mb-8 px-4">
+    <article class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="aspect-w-16 aspect-h-9">
+            <img src="https://picsum.photos/1920/1080" alt="Article Featured Image" class="object-cover w-full h-full">
+        </div>
+        <div class="p-8">
+            <h1 class="text-4xl font-bold text-dark mb-4">The Beauty of Minimalist Design</h1>
+            <div class="flex items-center text-secondary mb-6">
+                <div class="w-10 h-10 rounded-full overflow-hidden mr-2">
+                    <img src="https://picsum.photos/200/200" alt="Author Avatar" class="object-cover w-full h-full">
+                </div>
+                <span>By John Doe</span>
+                <span class="mx-2">•</span>
+                <span>Published on January 1, 2024</span>
+            </div>
+            <div class="prose max-w-none mb-8">
+                <p>Minimalism in design is more than just a trend; it's a philosophy that emphasizes simplicity and functionality. It's about stripping away the unnecessary to reveal the essence of an object or idea. In a world saturated with information and visual clutter, minimalist design offers a breath of fresh air.</p>
+                <h2>The Core Principles</h2>
+                <p>At its heart, minimalist design is guided by several key principles:</p>
+                <ul>
+                    <li><strong>Simplicity:</strong> Favoring clean lines, basic shapes, and a limited color palette.</li>
+                    <li><strong>Functionality:</strong> Every element serves a purpose. Decoration for decoration's sake is avoided.</li>
+                    <li><strong>Whitespace:</strong> Also known as negative space, it's as important as the elements themselves, providing visual breathing room.</li>
+                    <li><strong>Clarity:</strong> Easy to understand and navigate, with a clear visual hierarchy.</li>
+                </ul>
+                <img src="https://picsum.photos/800/600" alt="Minimalist Design Example">
+                <h3>Why Minimalism Matters</h3>
+                <p>In today's fast-paced world, minimalism offers several benefits:</p>
+                <ol>
+                    <li><strong>Reduced Visual Noise:</strong> Allows users to focus on what's important.</li>
+                    <li><strong>Improved User Experience:</strong> Simpler interfaces are often easier to use and more intuitive.</li>
+                    <li><strong>Timeless Aesthetic:</strong> Minimalism transcends trends, ensuring longevity and relevance.</li>
+                    <li><strong>Enhanced Performance:</strong> Less visual elements can lead to faster loading times and better performance, especially on the web.</li>
+                </ol>
+                <p>Embracing minimalism is not about doing less, but about doing more with less. It's about intentionality and focusing on what truly matters.</p>
+                <blockquote>
+                    "Less is more." - Mies van der Rohe
+                </blockquote>
+                <p>Consider incorporating minimalist principles into your next design project. You might be surprised at the impact simplicity can have.</p>
+                <img src="https://picsum.photos/800/450" alt="Another Minimalist Design Example">
+                <p>Let us know your thoughts on minimalist design in the comments below!</p>
+            </div>
+
+            <div class="flex justify-between items-center">
+                <div class="flex space-x-4">
+                    <button class="hover:text-primary transition-colors focus:outline-none">
+                        <i class="fa fa-heart text-xl"></i>
+                    </button>
+                    <button class="hover:text-primary transition-colors focus:outline-none">
+                        <i class="fa fa-comment text-xl"></i>
+                    </button>
+                    <button class="hover:text-primary transition-colors focus:outline-none">
+                        <i class="fa fa-share-alt text-xl"></i>
+                    </button>
+                </div>
+                <a href="/" class="inline-flex items-center px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white focus:outline-none transition-colors rounded-md font-medium">
+                    <i class="fa fa-arrow-left mr-2"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </article>
+</main>
+
+<footer class="bg-dark text-neutral py-12">
+    <div class="container mx-auto px-4 text-center">
+        <p>© 2024 Inspire Blog. All rights reserved.</p>
+        <nav class="mt-4 space-x-4">
+            <a href="/privacy" class="hover:text-primary transition-colors link-underline">Privacy Policy</a>
+            <a href="/terms" class="hover:text-primary transition-colors link-underline">Terms of Service</a>
+            <a href="/contact" class="hover:text-primary transition-colors link-underline">Contact</a>
+        </nav>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const article = document.querySelector('article');
+        article.classList.add('animate-fade-in');
+    });
+</script>
+
+</body>
+</html>

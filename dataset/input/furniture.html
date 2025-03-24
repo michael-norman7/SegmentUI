@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture Product Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0f766e',
+                        'secondary': '#374151',
+                        'accent': '#6ee7b7',
+                        'neutral': '#f3f4f6',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.3s ease-in-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-poppins bg-neutral antialiased">
+
+<header class="sticky top-0 bg-neutral/90 backdrop-blur-sm z-50 shadow-md">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <a href="#" class="text-xl font-semibold text-primary">FurniVerse</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-primary transition-colors">Home</a>
+                <a href="#" class="hover:text-primary transition-colors">Products</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+                <a href="#" class="hover:text-primary transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-500 hover:text-primary focus:outline-none focus:text-primary">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div class="hidden md:hidden" id="mobile-menu">
+        <div class="px-6 py-4 space-y-4">
+            <a href="#" class="block py-2 hover:text-primary transition-colors">Home</a>
+            <a href="#" class="block py-2 hover:text-primary transition-colors">Products</a>
+            <a href="#" class="block py-2 hover:text-primary transition-colors">About</a>
+            <a href="#" class="block py-2 hover:text-primary transition-colors">Contact</a>
+        </div>
+    </div>
+</header>
+
+<main class="container mx-auto px-6 py-20">
+    <section class="mb-12 text-center">
+        <h2 class="text-3xl font-bold text-secondary mb-4 animate-slide-up">Explore Our Furniture Collection</h2>
+        <p class="text-gray-600 animate-slide-up delay-100">Discover handcrafted pieces to elevate your living space.</p>
+    </section>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-in">
+
+        <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-4 aspect-h-3">
+                <img src="https://picsum.photos/200/300?random=1" alt="Modern Sofa" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-secondary mb-2 truncate group-hover:underline group-hover:decoration-primary group-hover:underline-offset-2">
+                    <a href="#" aria-label="Modern Sofa Details">Modern Sofa</a>
+                </h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-2">Elegant and comfortable sofa for modern living rooms.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-primary">$499</span>
+                    <button class="relative overflow-hidden bg-primary hover:bg-accent text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 group-hover:ring-2 group-hover:ring-accent focus:outline-none focus:ring-2 focus:ring-primary active:bg-primary">
+                        <span class="absolute inset-y-0 left-0 w-0 bg-accent transition-all duration-500 group-hover:w-full group-active:w-1/2 group-focus:w-full"></span>
+                        <span class="relative group-hover:text-primary group-active:text-white group-focus:text-primary">View Details</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-4 aspect-h-3">
+                <img src="https://picsum.photos/200/301?random=2" alt="Minimalist Chair" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-secondary mb-2 truncate group-hover:underline group-hover:decoration-primary group-hover:underline-offset-2">
+                    <a href="#" aria-label="Minimalist Chair Details">Minimalist Chair</a>
+                </h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-2">Stylish and ergonomic chair, perfect for any room.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-primary">$199</span>
+                    <button class="relative overflow-hidden bg-primary hover:bg-accent text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 group-hover:ring-2 group-hover:ring-accent focus:outline-none focus:ring-2 focus:ring-primary active:bg-primary">
+                        <span class="absolute inset-y-0 left-0 w-0 bg-accent transition-all duration-500 group-hover:w-full group-active:w-1/2 group-focus:w-full"></span>
+                        <span class="relative group-hover:text-primary group-active:text-white group-focus:text-primary">View Details</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-4 aspect-h-3">
+                <img src="https://picsum.photos/200/302?random=3" alt="Wooden Coffee Table" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-secondary mb-2 truncate group-hover:underline group-hover:decoration-primary group-hover:underline-offset-2">
+                    <a href="#" aria-label="Wooden Coffee Table Details">Wooden Coffee Table</a>
+                </h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-2">Classic coffee table made from solid wood, adding warmth to your space.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-primary">$249</span>
+                    <button class="relative overflow-hidden bg-primary hover:bg-accent text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 group-hover:ring-2 group-hover:ring-accent focus:outline-none focus:ring-2 focus:ring-primary active:bg-primary">
+                        <span class="absolute inset-y-0 left-0 w-0 bg-accent transition-all duration-500 group-hover:w-full group-active:w-1/2 group-focus:w-full"></span>
+                        <span class="relative group-hover:text-primary group-active:text-white group-focus:text-primary">View Details</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-4 aspect-h-3">
+                <img src="https://picsum.photos/200/303?random=4" alt="Dining Table Set" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-secondary mb-2 truncate group-hover:underline group-hover:decoration-primary group-hover:underline-offset-2">
+                    <a href="#" aria-label="Dining Table Set Details">Dining Table Set</a>
+                </h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-2">Perfect dining set for family gatherings and dinners, seating up to 6 people.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-primary">$799</span>
+                    <button class="relative overflow-hidden bg-primary hover:bg-accent text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 group-hover:ring-2 group-hover:ring-accent focus:outline-none focus:ring-2 focus:ring-primary active:bg-primary">
+                        <span class="absolute inset-y-0 left-0 w-0 bg-accent transition-all duration-500 group-hover:w-full group-active:w-1/2 group-focus:w-full"></span>
+                        <span class="relative group-hover:text-primary group-active:text-white group-focus:text-primary">View Details</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-4 aspect-h-3">
+                <img src="https://picsum.photos/200/304?random=5" alt="Bookshelf" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-secondary mb-2 truncate group-hover:underline group-hover:decoration-primary group-hover:underline-offset-2">
+                    <a href="#" aria-label="Bookshelf Details">Bookshelf</a>
+                </h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-2">Organize your books and decor with this stylish and functional bookshelf.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-primary">$349</span>
+                    <button class="relative overflow-hidden bg-primary hover:bg-accent text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 group-hover:ring-2 group-hover:ring-accent focus:outline-none focus:ring-2 focus:ring-primary active:bg-primary">
+                        <span class="absolute inset-y-0 left-0 w-0 bg-accent transition-all duration-500 group-hover:w-full group-active:w-1/2 group-focus:w-full"></span>
+                        <span class="relative group-hover:text-primary group-active:text-white group-focus:text-primary">View Details</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="group relative bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+            <div class="aspect-w-4 aspect-h-3">
+                <img src="https://picsum.photos/200/305?random=6" alt="Bed Frame" class="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105">
+            </div>
+            <div class="p-6">
+                <h3 class="text-lg font-semibold text-secondary mb-2 truncate group-hover:underline group-hover:decoration-primary group-hover:underline-offset-2">
+                    <a href="#" aria-label="Bed Frame Details">Bed Frame</a>
+                </h3>
+                <p class="text-gray-500 text-sm mb-4 line-clamp-2">Sturdy and elegant bed frame to complete your bedroom setup.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold text-primary">$599</span>
+                    <button class="relative overflow-hidden bg-primary hover:bg-accent text-white font-medium py-2 px-4 rounded-md transition-colors duration-300 group-hover:ring-2 group-hover:ring-accent focus:outline-none focus:ring-2 focus:ring-primary active:bg-primary">
+                        <span class="absolute inset-y-0 left-0 w-0 bg-accent transition-all duration-500 group-hover:w-full group-active:w-1/2 group-focus:w-full"></span>
+                        <span class="relative group-hover:text-primary group-active:text-white group-focus:text-primary">View Details</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="bg-secondary text-neutral py-12">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Explore</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-accent transition-colors">New Arrivals</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors">Best Sellers</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors">Sale</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Customer Service</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-accent transition-colors">FAQs</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors">Shipping & Returns</a></li>
+                    <li><a href="#" class="hover:text-accent transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-facebook-square text-2xl"></i></a>
+                    <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-instagram-square text-2xl"></i></a>
+                    <a href="#" class="hover:text-accent transition-colors"><i class="fa-brands fa-twitter-square text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 text-center border-t border-neutral/20 pt-6">
+            <p>© 2024 FurniVerse. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevate Insights - Business Analytics Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f766e',
+                        secondary: '#115e59',
+                        accent: '#34d399',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-sans antialiased bg-neutral text-dark;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply font-bold;
+            }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+<header class="sticky top-0 z-50 bg-white shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-bold text-primary">
+            <i class="fa-solid fa-chart-line mr-2"></i> Elevate Insights
+        </a>
+        <div class="hidden md:flex space-x-8">
+            <a href="#services" class="hover:text-secondary transition-colors">Services</a>
+            <a href="#about" class="hover:text-secondary transition-colors">About Us</a>
+            <a href="#testimonials" class="hover:text-secondary transition-colors">Testimonials</a>
+            <a href="#contact" class="hover:text-secondary transition-colors">Contact</a>
+        </div>
+        <button class="hidden md:inline-flex bg-primary hover:bg-secondary text-white font-semibold py-2 px-6 rounded-full transition-colors">
+            Get Started
+        </button>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md py-2">
+        <a href="#services" class="block px-4 py-2 hover:bg-neutral">Services</a>
+        <a href="#about" class="block px-4 py-2 hover:bg-neutral">About Us</a>
+        <a href="#testimonials" class="block px-4 py-2 hover:bg-neutral">Testimonials</a>
+        <a href="#contact" class="block px-4 py-2 hover:bg-neutral">Contact</a>
+        <button class="block w-full text-left px-4 py-2 hover:bg-neutral bg-primary text-white font-semibold">Get Started</button>
+    </div>
+</header>
+
+<section class="hero relative py-24 overflow-hidden">
+    <div class="absolute inset-0 -z-10 animate-fade-in">
+        <img src="https://picsum.photos/1920/1080" alt="Abstract background" class="object-cover w-full h-full opacity-20">
+    </div>
+    <div class="container mx-auto px-6 text-center md:text-left grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="hero-text fade-in animate-slide-in-right">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-dark mb-6">Unlock Data's Hidden Potential</h1>
+            <p class="text-lg text-gray-700 mb-10">Transform raw data into actionable insights with our expert business analytics consulting. Drive growth, optimize operations, and gain a competitive edge.</p>
+            <button class="cta-button bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full transition-colors">
+                Explore Our Services
+            </button>
+        </div>
+        <div class="hero-image relative justify-self-end">
+            <img src="https://picsum.photos/600/400" alt="Data Visualization" class="rounded-xl shadow-2xl animate-fade-in">
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-12">Our Expert Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="service-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-16 w-16 bg-accent text-white rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-chart-bar fa-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Data Visualization & Reporting</h3>
+                <p class="text-gray-700">Transform complex data into clear, compelling visuals and reports that drive informed decisions.</p>
+            </div>
+            <div class="service-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-16 w-16 bg-accent text-white rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-database fa-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Data Warehousing & Integration</h3>
+                <p class="text-gray-700">Consolidate and integrate your data from various sources for a unified and accessible data ecosystem.</p>
+            </div>
+            <div class="service-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-16 w-16 bg-accent text-white rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-chart-line fa-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Predictive Analytics & Forecasting</h3>
+                <p class="text-gray-700">Leverage advanced analytics to predict future trends, optimize strategies, and stay ahead of the curve.</p>
+            </div>
+            <div class="service-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-16 w-16 bg-accent text-white rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-gear fa-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Business Process Optimization</h3>
+                <p class="text-gray-700">Identify inefficiencies and optimize your business processes using data-driven insights for maximum efficiency.</p>
+            </div>
+            <div class="service-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-16 w-16 bg-accent text-white rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-users fa-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Customer Analytics & Insights</h3>
+                <p class="text-gray-700">Understand your customers better through in-depth analytics, personalize experiences, and build stronger relationships.</p>
+            </div>
+            <div class="service-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="h-16 w-16 bg-accent text-white rounded-xl flex items-center justify-center mb-4 mx-auto md:mx-0">
+                    <i class="fa-solid fa-shield-halved fa-2x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-dark mb-2">Data Security & Governance</h3>
+                <p class="text-gray-700">Ensure the security and compliance of your data with robust governance frameworks and security measures.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-20 bg-neutral">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="about-image">
+            <img src="https://picsum.photos/600/450" alt="Team Collaboration" class="rounded-xl shadow-2xl">
+        </div>
+        <div class="about-text">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">About Elevate Insights</h2>
+            <p class="text-lg text-gray-700 mb-8">We are a team of passionate data scientists, analysts, and consultants dedicated to helping businesses of all sizes harness the power of their data. With years of experience across various industries, we bring a wealth of knowledge and a proven track record of delivering impactful results.</p>
+            <p class="text-lg text-gray-700 mb-8">Our approach is client-centric, focusing on understanding your unique challenges and goals to develop tailored analytics solutions that drive measurable outcomes. We believe in transparency, collaboration, and empowering our clients to become data-driven organizations.</p>
+            <button class="cta-button bg-primary hover:bg-secondary text-white font-semibold py-3 px-8 rounded-full transition-colors">
+                Learn More About Us
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-dark mb-16">What Our Clients Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="testimonial-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="mb-4">
+                    <i class="fa-solid fa-quote-left text-accent text-2xl"></i>
+                </div>
+                <p class="text-gray-700 mb-4">"Elevate Insights transformed our understanding of customer behavior. Their data visualization services were exceptional, making complex data easily digestible and actionable."</p>
+                <div class="flex items-center justify-center mt-4">
+                    <img src="https://picsum.photos/50/50" alt="Client 1" class="rounded-full mr-2">
+                    <div class="text-left">
+                        <p class="font-semibold text-dark">Jane Doe</p>
+                        <p class="text-sm text-gray-500">Marketing Director, Company ABC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="mb-4">
+                    <i class="fa-solid fa-quote-left text-accent text-2xl"></i>
+                </div>
+                <p class="text-gray-700 mb-4">"The predictive analytics solutions provided by Elevate Insights helped us optimize our inventory and reduce costs significantly. Their expertise is invaluable."</p>
+                <div class="flex items-center justify-center mt-4">
+                    <img src="https://picsum.photos/50/50" alt="Client 2" class="rounded-full mr-2">
+                    <div class="text-left">
+                        <p class="font-semibold text-dark">John Smith</p>
+                        <p class="text-sm text-gray-500">CEO, Company XYZ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card p-8 bg-neutral rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <div class="mb-4">
+                    <i class="fa-solid fa-quote-left text-accent text-2xl"></i>
+                </div>
+                <p class="text-gray-700 mb-4">"Working with Elevate Insights has been a game-changer for our business. Their data-driven approach has led to significant improvements in our operational efficiency."</p>
+                <div class="flex items-center justify-center mt-4">
+                    <img src="https://picsum.photos/50/50" alt="Client 3" class="rounded-full mr-2">
+                    <div class="text-left">
+                        <p class="font-semibold text-dark">Alice Johnson</p>
+                        <p class="text-sm text-gray-500">Operations Manager, Company 123</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-primary">
+    <div class="container mx-auto px-6 text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Ready to Elevate Your Business?</h2>
+        <p class="text-lg mb-10 opacity-80">Contact us today to discuss your business analytics needs and discover how Elevate Insights can help you achieve your goals.</p>
+        <button class="cta-button bg-white hover:bg-neutral text-primary font-semibold py-3 px-8 rounded-full transition-colors">
+            Contact Us Now
+        </button>
+    </div>
+</section>
+
+<footer class="bg-dark py-12 text-white">
+    <div class="container mx-auto px-6 text-center">
+        <p>© 2024 Elevate Insights. All rights reserved.</p>
+        <div class="mt-4 flex justify-center space-x-6">
+            <a href="#" class="hover:text-accent"><i class="fa-brands fa-facebook-square fa-lg"></i></a>
+            <a href="#"
+content_copy
+download
+Use code with caution.
+Html

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#64748b',
+                        'accent': '#f43f5e',
+                        'neutral': '#f8fafc',
+                        'dark': '#1e293b',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '128': '32rem',
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    boxShadow: {
+                        'hero': '0 15px 30px -5px rgba(0, 0, 0, 0.15)',
+                        'card': '0 10px 20px rgba(0, 0, 0, 0.08)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes pulse-fast {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark antialiased">
+
+<header class="bg-white sticky top-0 z-50 shadow-md transition-shadow duration-300">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <a href="/" class="font-bold text-xl text-primary hover:text-primary-dark transition-colors duration-300">Awesome Blog</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-secondary transition-colors duration-300">Home</a>
+                <a href="#" class="hover:text-secondary transition-colors duration-300">Categories</a>
+                <a href="#" class="hover:text-secondary transition-colors duration-300">About</a>
+                <a href="#" class="hover:text-secondary transition-colors duration-300">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container mx-auto mt-16 px-6 md:px-12 lg:px-24">
+
+    <article class="mb-16">
+        <div class="relative">
+            <img src="https://picsum.photos/1200/600" alt="Blog Post Cover" class="w-full rounded-xl shadow-hero aspect-[2/1] object-cover">
+            <div class="absolute bottom-4 left-4 bg-white bg-opacity-75 backdrop-blur-sm rounded-md px-3 py-2">
+                <span class="text-sm text-secondary">Category</span>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <h1 class="text-4xl font-bold text-dark leading-tight mb-4 animate-slide-up">The Ultimate Guide to Modern Web Design in 2024</h1>
+            <p class="text-secondary text-lg mb-6 animate-slide-up delay-100">Published on January 1, 2024 by <a href="#author-bio" class="text-primary hover:underline">John Doe</a></p>
+
+            <div class="prose prose-lg max-w-none mb-10 animate-fade-in delay-200">
+                <p>Welcome to the definitive guide on modern web design for 2024. In this ever-evolving digital landscape, staying ahead of the curve is crucial. This article delves into the core principles, trends, and practical techniques that will define exceptional web experiences in the coming year.</p>
+
+                <h2>Embracing Minimalism and Clean Aesthetics</h2>
+                <p>Minimalism continues to reign supreme in web design. A clean, uncluttered interface not only enhances visual appeal but also improves usability. Focus on whitespace, clear typography, and a limited color palette to create a sophisticated and user-friendly website.</p>
+
+                <h3>Key Aspects of Minimalist Design:</h3>
+                <ul>
+                    <li><strong>Whitespace Mastery:</strong> Utilize negative space to draw attention to key elements and improve readability.</li>
+                    <li><strong>Typography as a Design Element:</strong> Choose fonts that are both legible and aesthetically pleasing. Experiment with font pairings and sizes to create hierarchy and visual interest.</li>
+                    <li><strong>Limited Color Palettes:</strong> Stick to a cohesive color scheme with a few carefully selected colors. Monochromatic and duotone palettes are particularly effective for minimalist designs.</li>
+                </ul>
+
+                <img src="https://picsum.photos/800/400" alt="Example of Minimalist Web Design" class="rounded-lg shadow-md">
+                <p class="mt-2 text-sm text-gray-500">An example of a minimalist website design.</p>
+
+                <h2>Interactive Storytelling and Engaging Animations</h2>
+                <p>In 2024, websites are no longer static brochures. They are interactive experiences that tell stories and engage users on a deeper level. Micro-interactions, parallax scrolling, and subtle animations can transform a website from ordinary to extraordinary.</p>
+
+                <h3>Techniques for Interactive Storytelling:</h3>
+                <ol>
+                    <li><strong>Micro-interactions:</strong> Small animations that provide feedback and enhance user engagement (e.g., button hover effects, loading animations).</li>
+                    <li><strong>Parallax Scrolling:</strong> Create depth and visual interest as users scroll through your website. Use it sparingly to avoid overwhelming users.</li>
+                    <li><strong>Scroll-Triggered Animations:</strong> Animate elements as they come into view, guiding the user's attention and creating a dynamic reading experience.</li>
+                </ol>
+
+                <img src="https://picsum.photos/800/400" alt="Example of Interactive Web Design" class="rounded-lg shadow-md">
+                <p class="mt-2 text-sm text-gray-500">An example of interactive elements on a website.</p>
+
+                <h2>Accessibility and Inclusivity as Core Principles</h2>
+                <p>Web design in 2024 must be accessible to everyone, regardless of their abilities. Accessibility is not just a checklist; it's a fundamental aspect of ethical and user-centered design. Adhering to WCAG guidelines ensures your website is usable by people with disabilities.</p>
+
+                <h3>Accessibility Best Practices:</h3>
+                <ol>
+                    <li><strong>Semantic HTML:</strong> Use HTML tags semantically to structure content and improve screen reader compatibility.</li>
+                    <li><strong>Color Contrast:</strong> Ensure sufficient color contrast between text and background for readability.</li>
+                    <li><strong>Keyboard Navigation:</strong> Make sure your website is fully navigable using the keyboard.</li>
+                    <li><strong>Alt Text for Images:</strong> Provide descriptive alt text for all images for screen reader users.</li>
+                    <li><strong>ARIA Attributes:</strong> Use ARIA attributes to enhance accessibility for complex interactive elements.</li>
+                </ol>
+
+                <p>By embracing these principles and trends, you can create web designs that are not only visually stunning but also user-friendly, accessible, and future-proof. The key to success in 2024 web design is to blend creativity with functionality, always keeping the user experience at the forefront.</p>
+            </div>
+
+            <div class="flex justify-between items-center mt-12 animate-fade-in delay-300">
+                <div class="flex space-x-4">
+                    <button class="hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa-regular fa-heart text-xl"></i> <span class="align-middle ml-1">Like</span>
+                    </button>
+                    <button class="hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa-regular fa-comment text-xl"></i> <span class="align-middle ml-1">Comment</span>
+                    </button>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa-brands fa-facebook-f text-xl"></i>
+                    </button>
+                    <button class="hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa-brands fa-twitter text-xl"></i>
+                    </button>
+                    <button class="hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    </button>
+                    <button class="hover:text-primary transition-colors duration-300 focus:outline-none">
+                        <i class="fa-regular fa-envelope text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr class="my-12 border-t border-secondary border-opacity-20">
+
+    <div id="author-bio" class="flex items-center mb-24 animate-fade-in delay-300">
+        <img src="https://picsum.photos/200/200" alt="Author Avatar" class="rounded-full w-24 h-24 mr-6 shadow-card">
+        <div>
+            <h2 class="text-2xl font-bold text-dark mb-2">About John Doe</h2>
+            <p class="text-secondary">John Doe is a seasoned web designer and technology enthusiast with over 10 years of experience in creating stunning and user-centric digital experiences. He is passionate about the intersection of design, technology, and user psychology.</p>
+            <div class="flex space-x-4 mt-3">
+                <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fa-brands fa-twitter text-lg"></i></a>
+                <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                <a href="#" class="hover:text-primary transition-colors duration-300"><i class="fa-solid fa-globe text-lg"></i></a>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="bg-dark text-neutral py-12 mt-24">
+    <div class="container mx-auto px-6">
+        <div class="md:flex justify-between items-start">
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-lg font-bold mb-4">About Us</h4>
+                <p class="text-secondary text-sm">Your go-to source for the latest in web design, development, and digital trends. We aim to inspire and educate.</p>
+            </div>
+            <div class="mb-6 md:mb-0">
+                <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                <ul class="text-secondary text-sm">
+                    <li class="mb-2"><a href="#" class="hover:text-neutral transition-colors duration-300">Home</a></li>
+                    <li class="mb-2"><a href="#" class="hover:text-neutral transition-colors duration-300">Categories</a></li>
+                    <li class="mb-2"><a href="#" class="hover:text-neutral transition-colors duration-300">Contact</a></li>
+                    <li><a href="#" class="hover:text-neutral transition-colors duration-300">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Connect</h4>
+                <div class="flex space-x-4 text-secondary text-lg">
+                    <a href="#" class="hover:text-neutral transition-colors duration-300"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-neutral transition-colors duration-300"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="hover:text-neutral transition-colors duration-300"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="hover:text-neutral transition-colors duration-300"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-secondary border-opacity-20 pt-6 text-center text-secondary text-sm">
+            © 2024 Awesome Blog. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector('header');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    header.classList.add('shadow-lg');
+                } else {
+                    header.classList.remove('shadow-lg');
+                }
+            });
+        }, {
+            rootMargin: '-80px 0px 0px 0px' // Adjust this value as needed to trigger shadow before header fully offscreen
+        });
+
+        observer.observe(document.querySelector('main'));
+    });
+</script>
+
+</body>
+</html>

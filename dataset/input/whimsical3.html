@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whimsical Birthday Party Planners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'bubblegum': ['Bubblegum Sans', 'cursive'],
+                    },
+                    colors: {
+                        'party-pink': '#F9AED9',
+                        'party-yellow': '#FCEE81',
+                        'party-blue': '#A0E9FF',
+                        'party-green': '#B5F1CC',
+                        'dark-purple': '#383CC1',
+                    },
+                    keyframes: {
+                        balloonFloat: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        confettiRain: {
+                            '0%': { transform: 'translateY(0) rotateX(0)' },
+                            '100%': { transform: 'translateY(100vh) rotateX(720deg)' },
+                        }
+                    },
+                    animation: {
+                        'balloon': 'balloonFloat 3s ease-in-out infinite',
+                        'confetti': 'confettiRain 1s linear infinite'
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .confetti {
+            animation: confettiRain 1s linear infinite;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="font-bubblegum bg-party-pink overflow-x-hidden">
+    <header class="sticky top-0 bg-white bg-opacity-70 backdrop-blur-md z-50 shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-dark-purple">PartyVerse</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#services" class="hover:text-party-blue transition-colors">Services</a>
+                <a href="#about" class="hover:text-party-blue transition-colors">About Us</a>
+                <a href="#gallery" class="hover:text-party-blue transition-colors">Gallery</a>
+                <a href="#contact" class="hover:text-party-blue transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-dark-purple focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero relative overflow-hidden pt-20 md:pt-32 pb-12 md:pb-24">
+        <div class="absolute inset-0 animate-confetti pointer-events-none">
+            <div class="confetti absolute bg-party-yellow w-2 h-2 rounded-full top-1/4 left-1/4"></div>
+            <div class="confetti absolute bg-party-blue w-3 h-3 rounded-full top-1/2 left-1/2"></div>
+            <div class="confetti absolute bg-party-green w-1 h-1 rounded-full top-3/4 right-1/4"></div>
+            <div class="confetti absolute bg-party-pink w-2 h-2 rounded-full bottom-1/4 right-1/2"></div>
+        </div>
+        <div class="container mx-auto px-6 text-center md:text-left relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="hero-text pb-8 md:pb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-purple leading-tight mb-6">Let's Plan a <span class="text-party-yellow">Party</span> to Remember!</h1>
+                    <p class="text-lg text-gray-700 mb-8">Stress-free birthday party planning. We bring the fun, you enjoy the memories.</p>
+                    <a href="#contact" class="inline-block bg-party-yellow text-dark-purple py-3 px-8 rounded-full font-semibold hover:bg-party-blue transition-colors shadow-md">Get Started <i class="fa fa-arrow-right ml-2"></i></a>
+                </div>
+                <div class="hero-image relative">
+                    <img src="https://picsum.photos/400/600" alt="Birthday Party Setup" class="rounded-3xl shadow-lg relative z-10">
+                    <div class="absolute -bottom-10 -right-10 animate-balloon">
+                        <img src="https://picsum.photos/100/100" alt="Balloon" class="w-24 h-24 rounded-full shadow-md">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 md:py-24 bg-party-yellow">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-dark-purple mb-12">Our Party Planning Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fa fa-cake-candles text-3xl text-party-pink mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark-purple mb-2">Themed Parties</h3>
+                    <p class="text-gray-700">From pirates to princesses, we create magical themed parties.</p>
+                    <img src="https://picsum.photos/200/200" alt="Themed Party" class="mt-4 rounded-xl">
+                </div>
+                <div class="service-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fa fa-gamepad text-3xl text-party-blue mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark-purple mb-2">Entertainment & Activities</h3>
+                    <p class="text-gray-700">Games, clowns, magicians, and more to keep everyone entertained.</p>
+                    <img src="https://picsum.photos/200/201" alt="Entertainment" class="mt-4 rounded-xl">
+                </div>
+                <div class="service-card bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+                    <i class="fa fa-utensils text-3xl text-party-green mb-4"></i>
+                    <h3 class="text-xl font-semibold text-dark-purple mb-2">Catering & Treats</h3>
+                    <p class="text-gray-700">Delicious food, birthday cakes, and treat tables that delight.</p>
+                    <img src="https://picsum.photos/200/202" alt="Catering" class="mt-4 rounded-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-party-pink">
+        <div class="container mx-auto px-6 text-center md:text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="about-image">
+                    <img src="https://picsum.photos/400/300" alt="About Us Team" class="rounded-3xl shadow-lg">
+                </div>
+                <div class="about-text">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark-purple mb-6">About PartyVerse</h2>
+                    <p class="text-lg text-gray-700 mb-8">We are a team of passionate party planners dedicated to creating unforgettable birthday experiences. We believe every birthday should be magical and stress-free for parents. Let us handle the details while you celebrate!</p>
+                    <a href="#gallery" class="inline-block bg-party-blue text-white py-3 px-8 rounded-full font-semibold hover:bg-dark-purple transition-colors shadow-md">View Our Gallery <i class="fa fa-images ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-16 md:py-24 bg-party-blue">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Party Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <img src="https://picsum.photos/300/300" alt="Party 1" class="rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://picsum.photos/300/301" alt="Party 2" class="rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://picsum.photos/300/302" alt="Party 3" class="rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://picsum.photos/300/303" alt="Party 4" class="rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://picsum.photos/300/304" alt="Party 5" class="rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                <img src="https://picsum.photos/300/305" alt="Party 6" class="rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 md:py-24 bg-party-green">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Let's Start Planning Your Party!</h2>
+            <div class="max-w-lg mx-auto bg-white rounded-2xl p-8 shadow-lg">
+                <form class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                        <input type="text" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Email">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Phone:</label>
+                        <input type="tel" id="phone" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Your Phone Number">
+                    </div>
+                    <div>
+                        <label for="details" class="block text-gray-700 text-sm font-bold mb-2">Party Details:</label>
+                        <textarea id="details" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tell us about your party"></textarea>
+                    </div>
+                    <button type="submit" class="bg-party-pink text-white py-3 px-8 rounded-full font-semibold hover:bg-dark-purple transition-colors shadow-md w-full">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark-purple text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 PartyVerse. All rights reserved.</p>
+            <p class="mt-2">Let's make your next party magical!</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

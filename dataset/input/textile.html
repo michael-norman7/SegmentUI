@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textile Artistry - [Artist Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        'textile-beige': '#F5F5DC',
+                        'textile-brown': '#A0522D',
+                        'textile-gray': '#808080',
+                        'textile-gold': '#FFD700',
+                        'textile-ivory': '#FFFFF0',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'scale-up': {
+                            '0%': { transform: 'scale(0.95)' },
+                            '100%': { transform: 'scale(1)' },
+                        }
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 1s ease-out forwards',
+                        'fade-in': 'fade-in 1.5s ease-out forwards',
+                        'scale-up': 'scale-up 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-15deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .waving-hand {
+            animation: wave 2.5s linear infinite;
+            display: inline-block;
+            transform-origin: 70% 70%;
+        }
+    </style>
+</head>
+<body class="bg-textile-beige text-textile-brown antialiased">
+    <header class="sticky top-0 z-50 bg-opacity-90 bg-textile-beige backdrop-blur-md shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-xl font-bold hover:text-textile-gold transition-colors">
+                [Artist Name]
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#designs" class="hover:text-textile-gold transition-colors">Designs</a>
+                <a href="#about" class="hover:text-textile-gold transition-colors">About</a>
+                <a href="#contact" class="hover:text-textile-gold transition-colors">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-textile-brown hover:text-textile-gold focus:outline-none">
+                    <i class="fa fa-bars fa-lg"></i>
+                </button>
+            </div>
+        </nav>
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#designs" class="block hover:text-textile-gold transition-colors">Designs</a>
+                <a href="#about" class="block hover:text-textile-gold transition-colors">About</a>
+                <a href="#contact" class="block hover:text-textile-gold transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="py-20 md:py-32 relative overflow-hidden">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="hero-text md:order-1 animate-fade-in">
+                <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Welcome to the World of <span class="text-textile-gold">[Artist Name]'s</span> Textile Art
+                </h1>
+                <p class="text-lg mb-8">
+                    Discover unique fabric designs that blend traditional techniques with contemporary vision. Each piece tells a story, woven with passion and precision. <span class="waving-hand">👋</span>
+                </p>
+                <a href="#designs" class="inline-block bg-textile-brown text-textile-beige py-3 px-8 rounded-full font-semibold hover:bg-textile-gold hover:text-textile-brown transition-colors shadow-md">
+                    Explore Designs
+                </a>
+            </div>
+            <div class="hero-image relative animate-slide-in-right">
+                <div class="aspect-w-1 aspect-h-1 md:aspect-w-3 md:aspect-h-4 rounded-xl overflow-hidden shadow-xl">
+                    <img src="https://picsum.photos/id/1025/600/800" alt="Artist's Featured Textile Design" class="object-cover w-full h-full scale-105 hover:scale-110 transition-transform duration-300 ease-out">
+                </div>
+                <div class="absolute bottom-0 right-0 bg-textile-beige bg-opacity-70 p-4 rounded-tl-xl rounded-br-xl">
+                    <p class="text-sm italic">"Art is not what you see, but what you make others see."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="designs" class="py-20 md:py-32 bg-textile-ivory">
+        <div class="container mx-auto px-6">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center mb-12">
+                Featured Fabric Designs
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="design-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out animate-scale-up">
+                    <img src="https://picsum.photos/id/237/400/300" alt="Textile Design 1" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Design Title One</h3>
+                        <p class="text-textile-gray">Elegant floral pattern on silk.</p>
+                    </div>
+                </div>
+                <div class="design-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out animate-scale-up">
+                    <img src="https://picsum.photos/id/238/400/300" alt="Textile Design 2" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Design Title Two</h3>
+                        <p class="text-textile-gray">Abstract geometric design on cotton.</p>
+                    </div>
+                </div>
+                <div class="design-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out animate-scale-up">
+                    <img src="https://picsum.photos/id/239/400/300" alt="Textile Design 3" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Design Title Three</h3>
+                        <p class="text-textile-gray">Modern stripe pattern on linen.</p>
+                    </div>
+                </div>
+                <div class="design-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out animate-scale-up">
+                    <img src="https://picsum.photos/id/240/400/300" alt="Textile Design 4" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Design Title Four</h3>
+                        <p class="text-textile-gray">Detailed nature inspired print on rayon.</p>
+                    </div>
+                </div>
+                <div class="design-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out animate-scale-up">
+                    <img src="https://picsum.photos/id/241/400/300" alt="Textile Design 5" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Design Title Five</h3>
+                        <p class="text-textile-gray">Bold color block design on blend fabric.</p>
+                    </div>
+                </div>
+                <div class="design-item rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 ease-in-out animate-scale-up">
+                    <img src="https://picsum.photos/id/242/400/300" alt="Textile Design 6" class="w-full h-60 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-semibold text-xl mb-2">Design Title Six</h3>
+                        <p class="text-textile-gray">Minimalist textured weave on wool.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 md:py-32">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="about-image rounded-xl overflow-hidden shadow-xl">
+                <img src="https://picsum.photos/id/322/600/400" alt="Artist in Studio" class="w-full h-full object-cover">
+            </div>
+            <div class="about-text">
+                <h2 class="font-display text-3xl md:text-4xl font-bold mb-6">
+                    About [Artist Name]
+                </h2>
+                <p class="text-lg mb-6">
+                    [Artist Name] is a textile artist with a passion for creating unique and expressive fabric designs. Drawing inspiration from nature, culture, and personal experiences, [he/she] crafts textiles that are both visually stunning and deeply meaningful.
+                </p>
+                <p class="text-lg mb-6">
+                    With years of experience in [mention specific techniques like weaving, printing, dyeing], [Artist Name] combines traditional methods with innovative approaches to achieve distinctive textures, patterns, and color palettes. Each design is a testament to [his/her] dedication to craftsmanship and artistic vision.
+                </p>
+                <a href="#contact" class="inline-block bg-textile-beige text-textile-brown py-3 px-8 rounded-full font-semibold hover:bg-textile-gold hover:text-textile-beige transition-colors border-2 border-textile-brown shadow-md">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-32 bg-textile-ivory">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-3xl md:text-4xl font-bold mb-12">
+                Contact [Artist Name]
+            </h2>
+            <p class="text-lg mb-8">
+                For inquiries about commissions, collaborations, or purchasing designs, please reach out.
+            </p>
+            <div class="flex justify-center space-x-8 mb-12">
+                <a href="#" class="text-textile-brown hover:text-textile-gold transition-colors"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-textile-brown hover:text-textile-gold transition-colors"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" class="text-textile-brown hover:text-textile-gold transition-colors"><i class="fab fa-pinterest fa-2x"></i></a>
+            </div>
+            <div>
+                <p class="mb-2">Email: <a href="mailto:artist@email.com" class="hover:text-textile-gold transition-colors">artist@email.com</a></p>
+                <p>Phone: <a href="tel:+1234567890" class="hover:text-textile-gold transition-colors">+1 234 567 890</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-textile-brown text-textile-beige py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 [Artist Name]. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

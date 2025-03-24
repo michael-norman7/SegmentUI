@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Premium Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neumo-light': '#f0f2f5',
+                        'neumo-dark-shadow': '#bebebe',
+                        'neumo-light-shadow': '#ffffff',
+                        'brand-purple': '#6366f1',
+                    },
+                    boxShadow: {
+                        'neumo-lg': '6px 6px 12px #bebebe, -6px -6px 12px #ffffff',
+                        'neumo-sm': '4px 4px 8px #bebebe, -4px -4px 8px #ffffff',
+                        'neumo-xl': '8px 8px 16px #bebebe, -8px -8px 16px #ffffff',
+                        'neumo-inset': 'inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'poppins', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .form-container {
+            animation: slide-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-neumo-light flex justify-center items-center h-screen">
+    <div class="form-container p-12 bg-neumo-light rounded-xl shadow-neumo-lg w-full max-w-md">
+        <div class="text-center mb-8 animate-fade-in">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-2">Create Account</h2>
+            <p class="text-gray-500 text-sm">Join our premium service today.</p>
+        </div>
+        <form class="space-y-6">
+            <div class="space-y-1">
+                <label for="name" class="block text-gray-700 text-sm font-medium">Name</label>
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                        <i class="fa fa-user text-gray-400"></i>
+                    </div>
+                    <input type="text" id="name" placeholder="Your Name" class="py-2 pl-10 pr-4 bg-neumo-light shadow-neumo-inset rounded-lg w-full border-none focus:outline-none focus:shadow-neumo-lg transition-shadow duration-300"/>
+                </div>
+            </div>
+            <div class="space-y-1">
+                <label for="email" class="block text-gray-700 text-sm font-medium">Email</label>
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                        <i class="fa fa-envelope text-gray-400"></i>
+                    </div>
+                    <input type="email" id="email" placeholder="Email Address" class="py-2 pl-10 pr-4 bg-neumo-light shadow-neumo-inset rounded-lg w-full border-none focus:outline-none focus:shadow-neumo-lg transition-shadow duration-300"/>
+                </div>
+            </div>
+            <div class="space-y-1">
+                <label for="password" class="block text-gray-700 text-sm font-medium">Password</label>
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                        <i class="fa fa-lock text-gray-400"></i>
+                    </div>
+                    <input type="password" id="password" placeholder="Password" class="py-2 pl-10 pr-4 bg-neumo-light shadow-neumo-inset rounded-lg w-full border-none focus:outline-none focus:shadow-neumo-lg transition-shadow duration-300"/>
+                </div>
+            </div>
+            <div class="space-y-1">
+                <label for="confirm-password" class="block text-gray-700 text-sm font-medium">Confirm Password</label>
+                <div class="relative">
+                    <div class="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
+                        <i class="fa fa-lock text-gray-400"></i>
+                    </div>
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" class="py-2 pl-10 pr-4 bg-neumo-light shadow-neumo-inset rounded-lg w-full border-none focus:outline-none focus:shadow-neumo-lg transition-shadow duration-300"/>
+                </div>
+            </div>
+            <button type="submit" class="w-full py-3 bg-brand-purple text-white rounded-lg shadow-neumo-lg hover:shadow-neumo-xl focus:outline-none focus:ring-2 focus:ring-brand-purple focus:ring-opacity-50 transition-all duration-300">
+                Sign Up
+            </button>
+        </form>
+        <div class="mt-6 text-center animate-fade-in">
+            <p class="text-gray-600 text-sm">Already have an account? <a href="#" class="text-brand-purple font-medium hover:underline">Log in</a></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formContainer = document.querySelector('.form-container');
+            formContainer.style.opacity = '1';
+            formContainer.style.transform = 'translateY(0)';
+        });
+    </script>
+</body>
+</html>

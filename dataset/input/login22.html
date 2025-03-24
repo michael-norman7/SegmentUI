@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cool Teen Social App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        grotesk: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#a855f7',
+                        accent: '#f472b6',
+                        neutral: '#f3f4f6',
+                        dark: '#1e293b',
+                    },
+                    keyframes: {
+                        'slide-in-blurred-top': {
+                            '0%': {
+                                transform: 'translateY(-1000px) scaleY(2.5) scaleX(0.2)',
+                                'transform-origin': '50% 0%',
+                                filter: 'blur(40px)',
+                                opacity: '0'
+                            },
+                            '100%': {
+                                transform: 'translateY(0) scaleY(1) scaleX(1)',
+                                'transform-origin': '50% 50%',
+                                filter: 'blur(0px)',
+                                opacity: '1'
+                            },
+                        },
+                        'pulse-custom': {
+                            '0%, 100%': { opacity: 1 },
+                            '50%': { opacity: 0.6 },
+                        }
+                    },
+                    animation: {
+                        'slide-in-blurred-top': 'slide-in-blurred-top 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000)   both',
+                        'pulse-custom': 'pulse-custom 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral min-h-screen flex items-center justify-center overflow-hidden">
+
+<div class="relative w-full max-w-lg bg-white rounded-3xl shadow-xl overflow-hidden md:max-w-2xl animate-slide-in-blurred-top">
+
+    <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary opacity-20"></div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2">
+
+        <div class="relative p-10 flex flex-col justify-center items-center">
+            <div class="absolute inset-0 overflow-hidden">
+                <img src="https://picsum.photos/400/600" alt="Abstract Background" class="absolute top-0 left-0 w-full h-full object-cover animate-pulse-custom opacity-20">
+            </div>
+            <div class="relative z-10 text-center md:text-left">
+                <h2 class="text-3xl font-bold text-dark mb-4">Join the <span class="text-primary">Coolest</span> Teen Community</h2>
+                <p class="text-neutral-700 mb-8">Connect, share, and explore with friends. Let's make memories together!</p>
+                <img src="https://picsum.photos/200/200" alt="App Preview 1" class="rounded-2xl shadow-md mb-4">
+                <img src="https://picsum.photos/200/200" alt="App Preview 2" class="rounded-2xl shadow-md">
+            </div>
+        </div>
+
+        <div class="p-12 flex flex-col justify-center">
+            <h2 class="text-2xl font-bold text-dark mb-8 text-center">Log in to Your Account</h2>
+
+            <form class="space-y-6">
+                <div>
+                    <label for="username" class="block mb-2 text-sm font-medium text-neutral-900">Username or Email</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <i class="fa fa-user text-neutral-500"></i>
+                        </div>
+                        <input type="text" id="username" class="bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full ps-10 p-2.5  dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter username or email" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="password" class="block mb-2 text-sm font-medium text-neutral-900">Password</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <i class="fa fa-lock text-neutral-500"></i>
+                        </div>
+                        <input type="password" id="password" placeholder="••••••••" class="bg-neutral-50 border border-neutral-300 text-neutral-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full ps-10 p-2.5  dark:bg-neutral-700 dark:border-neutral-600 dark:placeholder-neutral-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                        <button type="button" class="absolute inset-y-0 end-0 flex items-center pe-3 focus:outline-none">
+                            <i class="fa fa-eye text-neutral-500 hover:text-neutral-700 cursor-pointer"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-neutral-300 rounded bg-neutral-50 focus:ring-3 focus:ring-primary-300 dark:bg-neutral-700 dark:border-neutral-600 dark:focus:ring-primary-600 dark:ring-offset-neutral-800 dark:focus:ring-offset-neutral-800" >
+                        </div>
+                        <label for="remember" class="ms-2 text-sm font-medium text-neutral-900 dark:text-neutral-300">Remember me</label>
+                    </div>
+                    <a href="#" class="text-sm text-primary hover:underline dark:text-primary-500">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="w-full text-white bg-primary hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Log In</button>
+
+                <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400">
+                    Not registered? <a href="#" class="text-primary hover:underline dark:text-primary-500">Create account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.fa-eye').addEventListener('click', function() {
+        const passwordInput = document.getElementById('password');
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        this.classList.toggle('fa-eye-slash');
+        this.classList.toggle('fa-eye');
+    });
+</script>
+
+</body>
+</html>

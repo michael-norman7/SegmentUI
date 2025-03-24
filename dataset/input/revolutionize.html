@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revolutionize Payments | FinTech Mobile Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#3b82f6',
+                        'accent': '#bae6fd',
+                        'dark-blue': '#1e40af',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'slide-in-right': 'slide-in-right 0.5s ease-out',
+                        'slide-in-left': 'slide-in-left 0.5s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                    },
+                    keyframes: {
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'slide-in-left': {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .feature-icon {
+            background-image: linear-gradient(to right, #2563eb, #3b82f6);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-xl font-bold text-primary">PayWise</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#features" class="hover:text-secondary transition-colors duration-300">Features</a>
+                    <a href="#solutions" class="hover:text-secondary transition-colors duration-300">Solutions</a>
+                    <a href="#pricing" class="hover:text-secondary transition-colors duration-300">Pricing</a>
+                    <a href="#contact" class="hover:text-secondary transition-colors duration-300">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="focus:outline-none">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+                    <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-secondary">Features</a>
+                    <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-secondary">Solutions</a>
+                    <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-secondary">Pricing</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-white hover:bg-secondary">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero bg-gray-50 py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="hero-text md:animation-slide-in-left">
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Seamless Mobile Payments for a Connected World</h1>
+                    <p class="text-xl text-gray-600 mb-8">Empower your business with our cutting-edge mobile payment solutions. Fast, secure, and globally accessible.</p>
+                    <button class="bg-primary hover:bg-dark-blue text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">
+                        Get Started <i class="fa fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+                <div class="hero-image md:animation-slide-in-right flex justify-center">
+                    <img src="https://picsum.photos/600/400" alt="Mobile Payment Illustration" class="rounded-xl shadow-2xl" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features bg-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Explore Our Powerful Features</h2>
+                <p class="text-gray-600 text-lg">Unlock a suite of features designed to streamline your payment processes and enhance user experience.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-50">
+                    <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa fa-shield-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Secure Transactions</h3>
+                    <p class="text-gray-600">Advanced encryption and fraud detection ensure every transaction is safe and protected.</p>
+                </div>
+                <div class="feature-card p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-50">
+                    <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa fa-mobile-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile-First Design</h3>
+                    <p class="text-gray-600">Optimized for mobile, providing a seamless payment experience on any device.</p>
+                </div>
+                <div class="feature-card p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-50">
+                    <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa fa-globe text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Global Reach</h3>
+                    <p class="text-gray-600">Accept payments from customers around the world with multi-currency support.</p>
+                </div>
+                <div class="feature-card p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-50">
+                    <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Real-time Analytics</h3>
+                    <p class="text-gray-600">Track your transactions and gain valuable insights with our comprehensive analytics dashboard.</p>
+                </div>
+                <div class="feature-card p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-50">
+                    <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa fa-cog text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Easy Integration</h3>
+                    <p class="text-gray-600">Simple API and SDKs for quick and hassle-free integration into your existing platform.</p>
+                </div>
+                <div class="feature-card p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-50">
+                    <div class="feature-icon w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fa fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Dedicated Support</h3>
+                    <p class="text-gray-600">Our expert support team is always ready to assist you with any questions or issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solutions" class="solutions bg-gray-100 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Solutions for Every Business</h2>
+                <p class="text-gray-600 text-lg">Whether you're a startup or a large enterprise, we have a payment solution tailored for you.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="solution-card p-8 rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/300" alt="E-commerce Solution" class="rounded-xl mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">E-commerce Payments</h3>
+                    <p class="text-gray-600 mb-4">Accept online payments seamlessly and securely. Integrate with your e-commerce platform for a smooth checkout experience.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-semibold transition-colors duration-300">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="solution-card p-8 rounded-xl bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://picsum.photos/400/301" alt="In-App Payments" class="rounded-xl mb-4 w-full h-auto">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">In-App Payments</h3>
+                    <p class="text-gray-600 mb-4">Enhance your app with integrated payment capabilities. Offer a frictionless payment experience within your mobile application.</p>
+                    <a href="#" class="text-primary hover:text-secondary font-semibold transition-colors duration-300">Learn More <i class="fa fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing bg-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Transparent and Flexible Pricing</h2>
+                <p class="text-gray-600 text-lg">Choose a plan that fits your business needs. No hidden fees, just straightforward pricing.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="pricing-card p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-50">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-4">Basic</h4>
+                    <div class="text-4xl font-extrabold text-primary mb-4">$19 <span class="text-lg font-normal text-gray-600">/ month</span></div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>Up to 100 Transactions</li>
+                        <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>Standard Support</li>
+                        <li class="flex items-center"><i class="fa fa-times text-red-500 mr-2"></i>Analytics Dashboard</li>
+                    </ul>
+                    <button class="bg-secondary hover:bg-primary text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 w-full">Choose Plan</button>
+                </div>
+                <div class="pricing-card p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-primary text-white transform scale-105">
+                    <h4 class="text-2xl font-bold text-white mb-4">Pro</h4>
+                    <div class="text-4xl font-extrabold text-white mb-4">$49 <span class="text-lg font-normal text-white opacity-80">/ month</span></div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fa fa-check text-accent mr-2"></i>Up to 500 Transactions</li>
+                        <li class="flex items-center"><i class="fa fa-check text-accent mr-2"></i>Priority Support</li>
+                        <li class="flex items-center"><i class="fa fa-check text-accent mr-2"></i>Advanced Analytics</li>
+                    </ul>
+                    <button class="bg-dark-blue hover:bg-secondary text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 w-full">Choose Plan</button>
+                </div>
+                <div class="pricing-card p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-50">
+                    <h4 class="text-2xl font-bold text-gray-900 mb-4">Enterprise</h4>
+                    <div class="text-4xl font-extrabold text-primary mb-4">Custom</div>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>Unlimited Transactions</li>
+                        <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>Dedicated Account Manager</li>
+                        <li class="flex items-center"><i class="fa fa-check text-green-500 mr-2"></i>Custom Solutions</li>
+                    </ul>
+                    <button class="bg-secondary hover:bg-primary text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 w-full">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact bg-gray-100 py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+                <p class="text-gray-600 text-lg">Have questions? Our team is here to help. Reach out to us today.</p>
+            </div>
+            <div class="max-w-lg mx-auto bg-white rounded-xl shadow-md p-8">
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" placeholder="Your Name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" placeholder="Your Email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" rows="5" placeholder="Your Message" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="bg-primary hover:bg-dark-blue text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2024 PayWise. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-accent"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-accent"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-accent"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="hover:text-accent"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                mobileMenu.classList.add('hidden');
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

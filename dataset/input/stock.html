@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Photo & Video - Glassmorphism Grid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#4ab6ff',
+                        'secondary': '#a8f0de',
+                        'glass': 'rgba(255, 255, 255, 0.25)',
+                        'glass-border': 'rgba(255, 255, 255, 0.35)',
+                    },
+                    boxShadow: {
+                        'glassmorphism': '0 8px 32px 0 rgba(31, 38, 135, 0.17)',
+                    },
+                    keyframes: {
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.5s ease-out forwards',
+                        'fade-in': 'fade-in 0.5s ease-out forwards',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass {
+                @apply bg-glass backdrop-blur-md shadow-glassmorphism border border-glass-border;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-poppins">
+    <header class="sticky top-0 bg-white/70 backdrop-blur-sm z-50 shadow-md">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
+            <div class="text-xl font-semibold text-gray-800">PixelStock</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-primary transition-colors">Photos</a>
+                <a href="#" class="hover:text-primary transition-colors">Videos</a>
+                <a href="#" class="hover:text-primary transition-colors">Pricing</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+            </div>
+            <button class="md:hidden text-gray-600 hover:text-primary focus:outline-none">
+                <i class="fa fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container mx-auto mt-20 p-4">
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Explore Premium Stock Media</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <div class="glass rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up">
+                    <img src="https://picsum.photos/200/300?random=1" alt="Stock Photo 1" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Abstract Cityscape</h3>
+                        <p class="text-gray-600 text-sm">Urban landscape with vibrant colors.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-700 font-medium">$15</span>
+                            <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg focus:outline-none transition-colors">
+                                <i class="fa fa-download mr-2"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up delay-100">
+                    <img src="https://picsum.photos/200/300?random=2" alt="Stock Photo 2" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Mountain Serenity</h3>
+                        <p class="text-gray-600 text-sm">Peaceful mountain range at sunset.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-700 font-medium">$20</span>
+                            <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg focus:outline-none transition-colors">
+                                <i class="fa fa-download mr-2"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up delay-200">
+                    <img src="https://picsum.photos/200/300?random=3" alt="Stock Photo 3" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Forest Path</h3>
+                        <p class="text-gray-600 text-sm">Sunlight filtering through a dense forest.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-700 font-medium">$18</span>
+                            <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg focus:outline-none transition-colors">
+                                <i class="fa fa-download mr-2"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up delay-300">
+                    <img src="https://picsum.photos/200/300?random=4" alt="Stock Photo 4" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Ocean Waves</h3>
+                        <p class="text-gray-600 text-sm">Powerful waves crashing on the shore.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-700 font-medium">$25</span>
+                            <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg focus:outline-none transition-colors">
+                                <i class="fa fa-download mr-2"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up delay-400">
+                    <img src="https://picsum.photos/200/300?random=5" alt="Stock Photo 5" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Desert Landscape</h3>
+                        <p class="text-gray-600 text-sm">Vast desert with sand dunes and clear sky.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-700 font-medium">$12</span>
+                            <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg focus:outline-none transition-colors">
+                                <i class="fa fa-download mr-2"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 animate-slide-up delay-500">
+                    <img src="https://picsum.photos/200/300?random=6" alt="Stock Photo 6" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Northern Lights</h3>
+                        <p class="text-gray-600 text-sm">Aurora borealis dancing across the night sky.</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-gray-700 font-medium">$30</span>
+                            <button class="bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded-lg focus:outline-none transition-colors">
+                                <i class="fa fa-download mr-2"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 py-8 text-center text-gray-500 border-t mt-12">
+        <p>© 2024 PixelStock. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const gridItems = document.querySelectorAll('.animate-slide-up');
+            gridItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>

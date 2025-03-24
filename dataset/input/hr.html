@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR & Talent Management Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#0d6efd',
+                        'secondary': '#6c757d',
+                        'accent': '#ffc107',
+                        'light': '#f8f9fa',
+                        'dark': '#343a40',
+                    },
+                    container: {
+                        center: true,
+                        padding: {
+                            DEFAULT: '1rem',
+                            sm: '2rem',
+                            lg: '4rem',
+                            xl: '5rem',
+                            '2xl': '6rem',
+                        },
+                    },
+                    animation: {
+                        'slide-down': 'slideDown 0.5s ease-out forwards',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        slideDown: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        @keyframes pulse-border {
+            0% {
+                border-width: 2px;
+            }
+            50% {
+                border-width: 4px;
+            }
+            100% {
+                border-width: 2px;
+            }
+        }
+        .pulse-border {
+            animation: pulse-border 2s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-light font-inter">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-primary hover:text-secondary transition-colors duration-300">
+            HR Blog
+        </a>
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="hover:text-primary transition-colors duration-300">Articles</a>
+            <a href="#" class="hover:text-primary transition-colors duration-300">Categories</a>
+            <a href="#" class="hover:text-primary transition-colors duration-300">About Us</a>
+            <a href="#" class="hover:text-primary transition-colors duration-300">Contact</a>
+        </nav>
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-2">
+            <a href="#" class="block py-2 px-4 hover:bg-gray-100 transition-colors duration-300">Articles</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-100 transition-colors duration-300">Categories</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-100 transition-colors duration-300">About Us</a>
+            <a href="#" class="block py-2 px-4 hover:bg-gray-100 transition-colors duration-300">Contact</a>
+        </div>
+    </div>
+</header>
+
+<div class="container mx-auto mt-16">
+
+    <section class="hero mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="animate-slide-down">
+                <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">
+                    The Future of Talent Management is Here
+                </h1>
+                <p class="text-lg text-secondary mb-6">
+                    Explore the latest trends, strategies, and insights in Human Resources and Talent Management.
+                    Stay ahead in the evolving world of work.
+                </p>
+                <a href="#" class="inline-block bg-primary hover:bg-secondary text-white font-semibold py-3 px-6 rounded-md transition-colors duration-300">
+                    Read More <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="animate-fade-in">
+                <img src="https://picsum.photos/800/600" alt="Featured Article" class="rounded-xl shadow-lg w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <main class="lg:col-span-2">
+            <section class="blog-posts">
+                <h2 class="text-2xl font-bold text-dark mb-6">Recent Articles</h2>
+
+                <article class="mb-8 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <a href="#">
+                        <img src="https://picsum.photos/600/400" alt="Blog Post Image" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">
+                            <a href="#" class="hover:text-primary transition-colors duration-300">
+                                Top 5 HR Trends in 2024 You Need to Know
+                            </a>
+                        </h3>
+                        <p class="text-secondary mb-4">
+                            Discover the most impactful HR trends shaping the workplace this year. From AI in recruitment to remote work policies, stay informed and adapt your strategies.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/50/50" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-700">By John Smith</span>
+                            </div>
+                            <span class="text-sm text-gray-500">Nov 15, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mb-8 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <a href="#">
+                        <img src="https://picsum.photos/601/400" alt="Blog Post Image" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">
+                            <a href="#" class="hover:text-primary transition-colors duration-300">
+                                Building a Resilient Workforce: Strategies for Employee Wellbeing
+                            </a>
+                        </h3>
+                        <p class="text-secondary mb-4">
+                            Learn how to prioritize employee wellbeing and build a resilient workforce. Explore practical strategies to support mental health, reduce burnout, and foster a positive work environment.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/51/50" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-700">By Jane Doe</span>
+                            </div>
+                            <span class="text-sm text-gray-500">Nov 10, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mb-8 bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <a href="#">
+                        <img src="https://picsum.photos/602/400" alt="Blog Post Image" class="w-full h-64 object-cover">
+                    </a>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-dark mb-2">
+                            <a href="#" class="hover:text-primary transition-colors duration-300">
+                                The Art of Effective Remote Team Management
+                            </a>
+                        </h3>
+                        <p class="text-secondary mb-4">
+                            Master the skills needed to manage remote teams effectively. From communication tools to performance management, discover best practices for leading distributed teams to success.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center">
+                                <img src="https://picsum.photos/52/50" alt="Author Avatar" class="rounded-full w-8 h-8 mr-2">
+                                <span class="text-sm text-gray-700">By Peter Jones</span>
+                            </div>
+                            <span class="text-sm text-gray-500">Nov 5, 2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="text-center mt-8">
+                    <a href="#" class="inline-block bg-light hover:bg-gray-200 text-secondary font-semibold py-3 px-6 rounded-md transition-colors duration-300">
+                        View All Articles <i class="fa fa-external-link-alt ml-2"></i>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <aside class="lg:col-span-1">
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-lg font-semibold text-dark mb-4">Categories</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="block hover:text-primary transition-colors duration-300"><i class="fa fa-folder-open mr-2"></i> Recruitment</a></li>
+                    <li><a href="#" class="block hover:text-primary transition-colors duration-300"><i class="fa fa-folder-open mr-2"></i> Employee Wellbeing</a></li>
+                    <li><a href="#" class="block hover:text-primary transition-colors duration-300"><i class="fa fa-folder-open mr-2"></i> Remote Work</a></li>
+                    <li><a href="#" class="block hover:text-primary transition-colors duration-300"><i class="fa fa-folder-open mr-2"></i> Leadership</a></li>
+                    <li><a href="#" class="block hover:text-primary transition-colors duration-300"><i class="fa fa-folder-open mr-2"></i> HR Tech</a></li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-lg font-semibold text-dark mb-4">Stay Updated</h3>
+                <p class="text-secondary mb-4">Subscribe to our newsletter to receive the latest articles and HR insights directly in your inbox.</p>
+                <input type="email" placeholder="Your Email Address" class="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring-primary focus:border-primary mb-2">
+                <button class="w-full bg-primary hover:bg-secondary text-white font-semibold py-2 rounded-md transition-colors duration-300">Subscribe</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-lg font-semibold text-dark mb-4">About Us</h3>
+                <img src="https://picsum.photos/300/200" alt="About Us Image" class="rounded-md mb-4 w-full h-auto object-cover">
+                <p class="text-secondary">
+                    We are a team of HR professionals and talent management experts dedicated to sharing knowledge and best practices to help organizations thrive.
+                </p>
+                <a href="#" class="inline-block mt-4 text-primary hover:text-secondary transition-colors duration-300 font-semibold">
+                    Learn More <i class="fa fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+                <h3 class="text-lg font-semibold text-dark mb-4">Popular Posts</h3>
+                <ul class="space-y-4">
+                    <li class="flex">
+                        <img src="https://picsum.photos/100/100" alt="Popular Post Image" class="rounded-md w-20 h-20 object-cover mr-4">
+                        <div>
+                            <a href="#" class="text-secondary hover:text-primary font-semibold transition-colors duration-300">
+                                The Importance of Diversity and Inclusion in the Workplace
+                            </a>
+                            <p class="text-sm text-gray-500">Nov 1, 2024</p>
+                        </div>
+                    </li>
+                    <li class="flex">
+                        <img src="https://picsum.photos/101/100" alt="Popular Post Image" class="rounded-md w-20 h-20 object-cover mr-4">
+                        <div>
+                            <a href="#" class="text-secondary hover:text-primary font-semibold transition-colors duration-300">
+                                Mastering the Art of Employee Feedback
+                            </a>
+                            <p class="text-sm text-gray-500">Oct 25, 2024</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+</div>
+
+<footer class="bg-dark text-light py-8 mt-16">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+                <h4 class="text-lg font-semibold mb-3">About HR Blog</h4>
+                <p class="text-gray-400">Your go-to resource for the latest trends and insights in Human Resources and Talent Management. We empower HR professionals and business leaders with knowledge to build successful organizations.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-primary transition-colors duration-300">Articles</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors duration-300">Categories</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors duration-300">About Us</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors duration-300">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-semibold mb-3">Connect With Us</h4>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300"><i class="fab fa-facebook-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300"><i class="fab fa-twitter-square text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300"><i class="fab fa-linkedin text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 border-t border-gray-700 pt-8 text-center">
+            <p class="text-gray-400">© 2024 HR Blog. All rights reserved.</p>
+            <p class="text-gray-500 mt-2">
+                <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a> | <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
+</body>
+</html>

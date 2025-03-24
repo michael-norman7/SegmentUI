@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Learning Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'glass-white': 'rgba(255, 255, 255, 0.6)',
+                        'glass-border': 'rgba(255, 255, 255, 0.3)',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.05)',
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f3f4f6;
+            overflow: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dashboard-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 400px;
+            height: 400px;
+            background: #4369A3;
+            border-radius: 50%;
+            opacity: 0.3;
+            filter: blur(150px);
+            z-index: -1;
+        }
+
+        .dashboard-container::after {
+            content: '';
+            position: absolute;
+            bottom: 10%;
+            left: 0%;
+            width: 500px;
+            height: 500px;
+            background: #A0CFEC;
+            border-radius: 50%;
+            opacity: 0.2;
+            filter: blur(200px);
+            z-index: -1;
+        }
+
+        .skill-item {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .course-progress-bar {
+            transition: width 1s ease-out;
+        }
+
+        .course-card:hover .course-progress-bar {
+            width: 100% !important;
+        }
+
+
+    </style>
+</head>
+<body class="antialiased">
+    <div class="dashboard-container relative min-h-screen flex flex-col justify-center items-center p-8 md:p-16 lg:p-24">
+        <header class="absolute top-0 left-0 w-full p-6">
+            <nav class="container mx-auto px-4 flex justify-between items-center">
+                <div class="text-xl font-semibold text-gray-800">Learning Dashboard</div>
+                <div class="space-x-4 hidden md:block">
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Overview</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Courses</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Skills</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800 transition-colors">Settings</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 mt-24">
+
+            <section class="lg:col-span-1 glass p-6 rounded-xl shadow-glass hover:shadow-lg transition-shadow duration-300">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4"><i class="fa-solid fa-brain text-xl mr-2"></i> Skills Learned</h2>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="skill-item glass px-3 py-1 rounded-full text-sm text-gray-700 shadow-inner cursor-pointer">
+                        <i class="fa-brands fa-html5 text-red-500 mr-1"></i> HTML
+                    </span>
+                    <span class="skill-item glass px-3 py-1 rounded-full text-sm text-gray-700 shadow-inner cursor-pointer">
+                        <i class="fa-brands fa-css3-alt text-blue-500 mr-1"></i> CSS
+                    </span>
+                    <span class="skill-item glass px-3 py-1 rounded-full text-sm text-gray-700 shadow-inner cursor-pointer">
+                        <i class="fa-brands fa-js text-yellow-500 mr-1"></i> JavaScript
+                    </span>
+                    <span class="skill-item glass px-3 py-1 rounded-full text-sm text-gray-700 shadow-inner cursor-pointer">
+                        <i class="fa-brands fa-react text-cyan-500 mr-1"></i> React
+                    </span>
+                    <span class="skill-item glass px-3 py-1 rounded-full text-sm text-gray-700 shadow-inner cursor-pointer">
+                        <i class="fa-brands fa-node-js text-green-500 mr-1"></i> Node.js
+                    </span>
+                    <span class="skill-item glass px-3 py-1 rounded-full text-sm text-gray-700 shadow-inner cursor-pointer">
+                        <i class="fa-solid fa-database text-purple-500 mr-1"></i> SQL
+                    </span>
+                    <span class="skill-item glass px-3 py-1 rounded-full text-sm text-gray-700 shadow-inner cursor-pointer">
+                        <i class="fa-solid fa-cloud text-sky-500 mr-1"></i> Cloud Computing
+                    </span>
+                </div>
+            </section>
+
+            <section class="lg:col-span-2 glass p-6 rounded-xl shadow-glass hover:shadow-lg transition-shadow duration-300">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4"><i class="fa-solid fa-graduation-cap text-xl mr-2"></i> Course Progress</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+
+                    <div class="course-card glass p-4 rounded-lg shadow-inner hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center mb-3">
+                            <img src="https://picsum.photos/200/100?random=1" alt="Course Image" class="w-20 h-12 object-cover rounded-md mr-3">
+                            <h3 class="text-lg font-medium text-gray-800">Web Development Bootcamp</h3>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 relative overflow-hidden">
+                            <div class="course-progress-bar bg-blue-500 h-full rounded-full" style="width: 65%;"></div>
+                            <span class="absolute right-2 top-0 text-xs text-gray-600">65%</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2 text-sm text-gray-600">
+                            <span>8 of 12 modules completed</span>
+                            <span class="hover:text-blue-700 cursor-pointer transition-colors">Continue <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="course-card glass p-4 rounded-lg shadow-inner hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center mb-3">
+                            <img src="https://picsum.photos/200/100?random=2" alt="Course Image" class="w-20 h-12 object-cover rounded-md mr-3">
+                            <h3 class="text-lg font-medium text-gray-800">Data Science Fundamentals</h3>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 relative overflow-hidden">
+                            <div class="course-progress-bar bg-green-500 h-full rounded-full" style="width: 30%;"></div>
+                            <span class="absolute right-2 top-0 text-xs text-gray-600">30%</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2 text-sm text-gray-600">
+                            <span>3 of 10 modules completed</span>
+                            <span class="hover:text-green-700 cursor-pointer transition-colors">Continue <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="course-card glass p-4 rounded-lg shadow-inner hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center mb-3">
+                            <img src="https://picsum.photos/200/100?random=3" alt="Course Image" class="w-20 h-12 object-cover rounded-md mr-3">
+                            <h3 class="text-lg font-medium text-gray-800">Mobile App Development with React Native</h3>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 relative overflow-hidden">
+                            <div class="course-progress-bar bg-purple-500 h-full rounded-full" style="width: 85%;"></div>
+                            <span class="absolute right-2 top-0 text-xs text-gray-600">85%</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2 text-sm text-gray-600">
+                            <span>17 of 20 modules completed</span>
+                            <span class="hover:text-purple-700 cursor-pointer transition-colors">Continue <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="course-card glass p-4 rounded-lg shadow-inner hover:shadow-md transition-shadow duration-300">
+                        <div class="flex items-center mb-3">
+                            <img src="https://picsum.photos/200/100?random=4" alt="Course Image" class="w-20 h-12 object-cover rounded-md mr-3">
+                            <h3 class="text-lg font-medium text-gray-800">UI/UX Design Principles</h3>
+                        </div>
+                        <div class="bg-gray-200 rounded-full h-2 relative overflow-hidden">
+                            <div class="course-progress-bar bg-orange-500 h-full rounded-full" style="width: 45%;"></div>
+                            <span class="absolute right-2 top-0 text-xs text-gray-600">45%</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2 text-sm text-gray-600">
+                            <span>5 of 11 modules completed</span>
+                            <span class="hover:text-orange-700 cursor-pointer transition-colors">Continue <i class="fa-solid fa-arrow-right ml-1"></i></span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="lg:col-span-1 glass p-6 rounded-xl shadow-glass hover:shadow-lg transition-shadow duration-300">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4"><i class="fa-solid fa-clock text-xl mr-2"></i> Learning Hours Logged</h2>
+                <div class="text-center mt-6">
+                    <div class="text-4xl md:text-5xl font-bold text-blue-700">145 <span class="text-gray-600 text-xl font-medium">Hours</span></div>
+                    <p class="text-sm text-gray-500 mt-2">This Month</p>
+                </div>
+                <div class="mt-6">
+                    <div class="flex justify-between text-xs text-gray-600 mb-1">
+                        <span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span>
+                    </div>
+                    <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+                        <div class="bg-blue-300 h-full rounded-full" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <button class="glass px-4 py-2 rounded-lg text-sm font-medium hover:bg-glass-white transition-colors">
+                        <i class="fa-solid fa-plus mr-1"></i> Log More Hours
+                    </button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="absolute bottom-0 left-0 w-full p-6 text-center text-gray-500 text-sm">
+            <p>© 2024 Personal Learning Tracker. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.course-card').forEach(card => {
+            const progressBar = card.querySelector('.course-progress-bar');
+            const initialWidth = progressBar.style.width;
+            progressBar.style.width = '0%';
+            setTimeout(() => {
+                progressBar.style.width = initialWidth;
+            }, 100);
+        });
+    </script>
+</body>
+</html>

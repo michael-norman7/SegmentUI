@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic Design Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#F5F5F5',
+                        'secondary': '#1A202C',
+                        'accent': '#64748B',
+                        'highlight': '#FF7F50',
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '128': '32rem',
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        },
+                        'slide-left': {
+                            '0%': {
+                                transform: 'translateX(100%)'
+                            },
+                            '100%': {
+                                transform: 'translateX(0)'
+                            },
+                        },
+                        'slide-up': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.5s ease-out',
+                        'slide-left': 'slide-left 0.5s ease-out',
+                        'slide-up': 'slide-up 0.7s ease-out',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply font-poppins bg-primary text-secondary antialiased;
+            }
+        }
+        @layer components {
+            .container-main {
+                @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+            }
+            .section-title {
+                @apply text-3xl font-bold text-secondary mb-8;
+            }
+            .blog-card {
+                @apply bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300;
+            }
+            .blog-card-image {
+                @apply w-full h-56 object-cover;
+            }
+            .blog-card-content {
+                @apply p-6 flex flex-col flex-grow;
+            }
+            .blog-card-title {
+                @apply text-xl font-semibold text-secondary mb-2 hover:text-highlight transition-colors duration-200;
+            }
+            .blog-card-text {
+                @apply text-accent text-base mb-4 flex-grow;
+            }
+            .blog-card-button {
+                @apply inline-flex items-center text-highlight hover:text-secondary font-semibold transition-colors duration-200;
+            }
+            .sidebar-widget {
+                @apply bg-white rounded-xl shadow-md p-6 mb-6;
+            }
+            .sidebar-widget-title {
+                @apply text-xl font-semibold text-secondary mb-4;
+            }
+            .sidebar-link {
+                @apply block text-accent hover:text-highlight py-2 transition-colors duration-200;
+            }
+        }
+        @layer utilities {
+             .text-balance {
+                text-wrap: balance;
+            }
+        }
+    </style>
+</head>
+<body class="bg-primary">
+
+    <header class="sticky top-0 bg-primary shadow-md z-50">
+        <div class="container-main py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-secondary hover:text-highlight transition-colors duration-200">Art Blog</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/" class="hover:text-highlight transition-colors duration-200">Home</a>
+                    <a href="/categories" class="hover:text-highlight transition-colors duration-200">Categories</a>
+                    <a href="/inspiration" class="hover:text-highlight transition-colors duration-200">Inspiration</a>
+                    <a href="/submit" class="hover:text-highlight transition-colors duration-200">Submit Your Work</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-secondary hover:text-highlight focus:outline-none">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-primary shadow-md">
+            <div class="container-main py-4 flex flex-col space-y-4">
+                <a href="/" class="hover:text-highlight transition-colors duration-200 block">Home</a>
+                <a href="/categories" class="hover:text-highlight transition-colors duration-200 block">Categories</a>
+                <a href="/inspiration" class="hover:text-highlight transition-colors duration-200 block">Inspiration</a>
+                <a href="/submit" class="hover:text-highlight transition-colors duration-200 block">Submit Your Work</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero py-20">
+        <div class="container-main">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="hero-text">
+                    <h1 class="text-5xl md:text-6xl font-bold text-secondary mb-6 text-balance animate-fade-in-down">Unleash Your Creative Spirit</h1>
+                    <p class="text-xl text-accent mb-12 animate-fade-in-down delay-100">Dive into a world of design inspiration, explore groundbreaking projects, and discover the latest trends in the creative industry.</p>
+                    <a href="/explore" class="bg-highlight text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors duration-300 animate-slide-up">Explore Now</a>
+                </div>
+                <div class="hero-image animate-slide-left">
+                    <img src="https://picsum.photos/id/1025/800/600" alt="Hero Image" class="rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-posts py-16 bg-gray-50">
+        <div class="container-main">
+            <h2 class="section-title text-center">Featured Inspiration</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="blog-card animate-slide-up">
+                    <img src="https://picsum.photos/id/237/400/300" alt="Featured Post 1" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Minimalist Design Trends for 2024</h3>
+                        <p class="blog-card-text">Explore the beauty of simplicity with the latest minimalist design trends that are taking over the industry.</p>
+                        <a href="/post/minimalist-design" class="blog-card-button">Read More <i class="fa fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card animate-slide-up delay-100">
+                    <img src="https://picsum.photos/id/239/400/300" alt="Featured Post 2" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">The Art of Branding: Creating Lasting Impressions</h3>
+                        <p class="blog-card-text">Learn how to build a powerful brand identity that resonates with your audience and stands the test of time.</p>
+                        <a href="/post/art-of-branding" class="blog-card-button">Read More <i class="fa fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card animate-slide-up delay-200">
+                    <img src="https://picsum.photos/id/241/400/300" alt="Featured Post 3" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Web Design Accessibility: Best Practices</h3>
+                        <p class="blog-card-text">Ensure your website is inclusive and accessible to everyone by following these essential web design accessibility guidelines.</p>
+                        <a href="/post/web-accessibility" class="blog-card-button">Read More <i class="fa fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-posts py-16">
+        <div class="container-main">
+            <h2 class="section-title text-center">Latest Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="blog-card animate-slide-up">
+                    <img src="https://picsum.photos/id/250/400/300" alt="Blog Post 1" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Color Psychology in UI Design</h3>
+                        <p class="blog-card-text">Understand how colors impact user emotions and learn to strategically use color psychology in your UI designs.</p>
+                        <a href="/post/color-psychology" class="blog-card-button">Read More <i class="fa fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card animate-slide-up delay-100">
+                    <img src="https://picsum.photos/id/260/400/300" alt="Blog Post 2" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">Typography Pairing Guide for Designers</h3>
+                        <p class="blog-card-text">Master the art of typography pairing with our comprehensive guide to create visually harmonious designs.</p>
+                        <a href="/post/typography-pairing" class="blog-card-button">Read More <i class="fa fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card animate-slide-up delay-200">
+                    <img src="https://picsum.photos/id/270/400/300" alt="Blog Post 3" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3 class="blog-card-title">The Future of UX: Immersive Experiences</h3>
+                        <p class="blog-card-text">Explore the emerging trends in UX design and how immersive technologies are shaping the future of user experiences.</p>
+                        <a href="/post/future-of-ux" class="blog-card-button">Read More <i class="fa fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <aside class="sidebar py-16 bg-gray-100">
+        <div class="container-main grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="md:col-span-1">
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-widget-title">Categories</h3>
+                    <ul>
+                        <li><a href="/category/web-design" class="sidebar-link"><i class="fa fa-folder mr-2"></i> Web Design</a></li>
+                        <li><a href="/category/ui-ux" class="sidebar-link"><i class="fa fa-folder mr-2"></i> UI/UX Design</a></li>
+                        <li><a href="/category/graphic-design" class="sidebar-link"><i class="fa fa-folder mr-2"></i> Graphic Design</a></li>
+                        <li><a href="/category/illustration" class="sidebar-link"><i class="fa fa-folder mr-2"></i> Illustration</a></li>
+                        <li><a href="/category/branding" class="sidebar-link"><i class="fa fa-folder mr-2"></i> Branding</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar-widget">
+                    <h3 class="sidebar-widget-title">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-accent hover:text-highlight"><i class="fa-brands fa-facebook-square fa-2x"></i></a>
+                        <a href="#" class="text-accent hover:text-highlight"><i class="fa-brands fa-twitter-square fa-2x"></i></a>
+                        <a href="#" class="text-accent hover:text-highlight"><i class="fa-brands fa-instagram-square fa-2x"></i></a>
+                        <a href="#" class="text-accent hover:text-highlight"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-3">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="blog-card animate-slide-up">
+                        <img src="https://picsum.photos/id/280/400/300" alt="Blog Post 4" class="blog-card-image">
+                        <div class="blog-card-content">
+                            <h3 class="blog-card-title">Motion Design Pri
+content_copy
+download
+Use code with caution.
+Html
