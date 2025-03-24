@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menubar {
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: #ff5252;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .content-section {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            margin: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .categories-section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #800080;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .categories-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .categories-list li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .categories-list li::before {
+            content: '🏷️';
+            margin-right: 5px;
+            color: #666;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .social-icons {
+            font-size: 20px;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .block {
+            flex: 1;
+        }
+
+        .block1 { background-color: #aaff00; }
+        .block2 { background-color: #ff4400; }
+        .block3 { background-color: #551a8b; }
+        .block4 { background-color: #000080; }
+        .block5 { background-color: #00ff00; }
+        .block6 { background-color: #808000; }
+        .block7 { background-color: #ffb6c1; }
+        .block8 { background-color: #800080; }
+    </style>
+    <title>Website Wireframe</title>
+</head>
+<body>
+    <div class="container">
+        <div class="menubar">
+            <div class="logo">FlavorVerse</div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Recipes</a></li>
+                <li><a href="#">Cooking Tips</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="content-section categories-section">
+            <div class="section-title">Categories</div>
+            <ul class="categories-list">
+                <li>Baking</li>
+                <li>Desserts</li>
+                <li>Main Courses</li>
+                <li>Vegetarian</li>
+                <li>Quick Meals</li>
+            </ul>
+        </div>
+
+        <div class="block block8"></div>
+
+        <div class="footer">
+            &copy; 2024 FlavorVerse. All rights reserved.
+            <div class="social-icons">
+                📸 📘 🐦 📌
+            </div>
+        </div>
+    </div>
+</body>
+</html>

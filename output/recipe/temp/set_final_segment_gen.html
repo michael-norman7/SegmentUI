@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .menubar {
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            color: #ff5252;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .hero-section {
+            position: relative;
+            background-image: url('https://via.placeholder.com/1280x400');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .hero-meta {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .recipe-overview, .tips-section, .author-section, .popular-recipes, .categories-section {
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: #800080;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            margin-right: 8px;
+        }
+
+        .ingredients-list, .instructions-list, .categories-list {
+            padding-left: 20px;
+            list-style: none;
+        }
+
+        .ingredients-list li, .instructions-list li {
+            margin-bottom: 10px;
+        }
+
+        .instructions-list {
+            list-style-type: decimal;
+        }
+
+        .tips-list li {
+            margin-bottom: 5px;
+        }
+
+        .social-icons, .recipe-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .recipe-item img {
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .recipe-item .recipe-title {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .btn-print {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: #ff5252;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+    <title>Website Wireframe</title>
+</head>
+<body>
+<div class="container">
+
+    <div class="menubar">
+        <div class="logo">FlavorVerse</div>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Recipes</a></li>
+            <li><a href="#">Cooking Tips</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="hero-section">
+        <h1 class="hero-title">Ultimate Chocolate Chip Cookies</h1>
+        <div class="hero-meta">Published on November 15, 2024 | By Jane Doe</div>
+    </div>
+
+    <div class="recipe-overview">
+        <div class="section-title"><span class="icon">🗒️</span> Recipe Overview</div>
+        <p>These aren't just any chocolate chip cookies; they're the ultimate indulgence. Crispy edges, chewy centers, and pools of melted chocolate in every bite. Perfect for satisfying your sweet tooth or impressing guests. Get ready to bake up a batch of pure happiness!</p>
+        <div class="section-title"><span class="icon">🗒️</span> Ingredients</div>
+        <ul class="ingredients-list">
+            <li>2 1/4 cups all-purpose flour</li>
+            <li>1 tsp baking soda</li>
+            <li>1 tsp salt</li>
+            <li>1 cup (2 sticks) unsalted butter, softened</li>
+            <li>3/4 cup granulated sugar</li>
+            <li>3/4 cup packed brown sugar</li>
+            <li>1 tsp vanilla extract</li>
+            <li>2 large eggs</li>
+            <li>2 cups chocolate chips</li>
+        </ul>
+        <div class="section-title"><span class="icon">⏱️</span> Instructions</div>
+        <ul class="instructions-list">
+            <li>Preheat oven to 375°F (190°C).</li>
+            <li>In a small bowl, whisk together flour, baking soda, and salt. Set aside.</li>
+            <li>In a large bowl, cream together the butter, granulated sugar, and brown sugar until smooth. Beat in vanilla extract and then eggs, one at a time.</li>
+            <li>Gradually add the dry ingredients to the wet ingredients, mixing until just combined. Stir in the chocolate chips.</li>
+            <li>Drop by rounded tablespoons onto ungreased baking sheets.</li>
+            <li>Bake for 9-11 minutes, or until golden brown. Let cool on baking sheets for a few minutes before transferring to wire racks to cool completely.</li>
+        </ul>
+    </div>
+
+    <div class="tips-section">
+        <div class="section-title"><span class="icon">💡</span> Cooking Tips & Tricks</div>
+        <ul class="tips-list">
+            <li><strong>Use Room Temperature Butter:</strong> Softened butter creams better with sugar, leading to a smoother dough and chewier cookies.</li>
+            <li><strong>Don't Overmix:</strong> Overmixing develops gluten, which can make cookies tough. Mix until just combined.</li>
+            <li><strong>Chill the Dough (Optional):</strong> For thicker cookies, chill the dough for 30 minutes before baking.</li>
+            <li><strong>Underbake Slightly:</strong> Cookies continue to bake as they cool. Take them out when the edges are golden but the centers are still slightly soft.</li>
+            <li><strong>High-Quality Chocolate:</strong> Use good quality chocolate chips or chunks for the best flavor.</li>
+        </ul>
+        <div class="social-icons">📘 📗 📕 📧</div>
+        <a href="#" class="btn-print">🖨️ Print Recipe</a>
+    </div>
+
+    <div class="author-section">
+        <div class="section-title"><span class="icon">📘</span> About the Author</div>
+        <div class="author-info">
+            <img src="https://via.placeholder.com/50" alt="Author Image">
+            <div>
+                <p class="author-name">Jane Doe</p>
+                <p>Food Blogger & Enthusiast</p>
+            </div>
+        </div>
+        <p>Jane is a passionate home cook who loves to share her favorite recipes and cooking tips. With years of experience in the kitchen, she aims to make cooking accessible and enjoyable for everyone.</p>
+        <a class="read-more" href="#">Read More →</a>
+    </div>
+
+    <div class="popular-recipes">
+        <div class="section-title">Popular Recipes</div>
+        <div class="recipe-item">
+            <img src="https://via.placeholder.com/50" alt="Recipe Image">
+            <div>
+                <p class="recipe-title">Delicious Pasta Primavera</p>
+                <p>Easy & flavorful</p>
+            </div>
+        </div>
+        <div class="recipe-item">
+            <img src="https://via.placeholder.com/50" alt="Recipe Image">
+            <div>
+                <p class="recipe-title">Spicy Chicken Stir-Fry</p>
+                <p>Quick weeknight meal</p>
+            </div>
+        </div>
+        <div class="recipe-item">
+            <img src="https://via.placeholder.com/50" alt="Recipe Image">
+            <div>
+                <p class="recipe-title">Homemade Apple Pie</p>
+                <p>Classic comfort dessert</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="categories-section">
+        <div class="section-title">Categories</div>
+        <ul class="categories-list">
+            <li>Baking</li>
+            <li>Desserts</li>
+            <li>Main Courses</li>
+            <li>Vegetarian</li>
+            <li>Quick Meals</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 FlavorVerse. All rights reserved.
+        <div class="social-icons">
+            📸 📘 🐦 📌
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

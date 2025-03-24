@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF6B6B;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-image: url('https://via.placeholder.com/1280x400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+        .hero-content h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .hero-content p {
+            margin: 5px 0 0;
+        }
+        .overview {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .overview h2 {
+            color: #9C27B0;
+            margin-bottom: 10px;
+        }
+        .overview p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .columns {
+            display: flex;
+            gap: 20px;
+        }
+        .column {
+            flex: 1;
+        }
+        .column h3 {
+            color: #9C27B0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .ingredients ul, .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .ingredients ul li, .instructions ol li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .ingredients ul li::before {
+            content: "⚪";
+            font-size: 12px;
+            color: #9C27B0;
+            position: absolute;
+            left: -20px;
+        }
+        .tips-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .tips-section h2 {
+            color: #9C27B0;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .tips-section ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .tips-section ul li {
+            margin-bottom: 10px;
+            position: relative;
+            color: #666;
+        }
+        .tips-section ul li::before {
+            content: "💡";
+            position: absolute;
+            left: -20px;
+            color: #9C27B0;
+        }
+        .tips-section ul li b {
+            color: black;
+        }
+        .author-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .author-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-image: url('https://via.placeholder.com/80');
+            background-size: cover;
+            background-position: center;
+        }
+        .author-info {
+            flex: 1;
+        }
+        .author-info h3 {
+            color: #9C27B0;
+            margin: 0 0 5px;
+        }
+        .author-info p {
+            margin: 0;
+            color: #666;
+            font-size: 16px;
+        }
+        .popular-recipes {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .popular-recipes h2 {
+            color: #9C27B0;
+            margin-bottom: 20px;
+        }
+        .recipe-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .recipe-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            background-image: url('https://via.placeholder.com/60');
+            background-size: cover;
+            background-position: center;
+            margin-right: 10px;
+        }
+        .recipe-info {
+            flex: 1;
+        }
+        .recipe-info h3 {
+            margin: 0;
+            font-size: 18px;
+            color: black;
+        }
+        .recipe-info p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .categories-section {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .categories-section h2 {
+            color: #9C27B0;
+            margin-bottom: 20px;
+        }
+        .category-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .category-photo {
+            width: 60px;
+            height: 60px;
+            border-radius: 5px;
+            background-image: url('https://via.placeholder.com/60');
+            background-size: cover;
+            background-position: center;
+            margin-right: 10px;
+        }
+        .category-info {
+            flex: 1;
+        }
+        .category-info h3 {
+            margin: 0;
+            font-size: 18px;
+            color: black;
+        }
+        .category-info p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+        .footer {
+            padding: 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+            color: #666;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 5px;
+            color: #9C27B0;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">FlavorVerse</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Recipes</a>
+                <a href="#">Cooking Tips</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1>Ultimate Chocolate Chip Cookies</h1>
+                <p>Published on November 15, 2024 | By Jane Doe</p>
+            </div>
+        </div>
+        <div class="overview">
+            <h2>Recipe Overview</h2>
+            <p>These aren't just any chocolate chip cookies; they're the ultimate indulgence. Crispy edges, chewy centers, and pools of melted chocolate in every bite. Perfect for satisfying your sweet tooth or impressing guests. Get ready to bake up a batch of pure happiness!</p>
+            <div class="columns">
+                <div class="column ingredients">
+                    <h3>🧾 Ingredients</h3>
+                    <ul>
+                        <li>2 1/4 cups all-purpose flour</li>
+                        <li>1 tsp baking soda</li>
+                        <li>1 tsp salt</li>
+                        <li>1 cup (2 sticks) unsalted butter, softened</li>
+                        <li>3/4 cup granulated sugar</li>
+                        <li>3/4 cup packed brown sugar</li>
+                        <li>1 tsp vanilla extract</li>
+                        <li>2 large eggs</li>
+                        <li>2 cups chocolate chips</li>
+                    </ul>
+                </div>
+                <div class="column instructions">
+                    <h3>⏰ Instructions</h3>
+                    <ol>
+                        <li>Preheat oven to 375°F (190°C).</li>
+                        <li>In a small bowl, whisk together flour, baking soda, and salt. Set aside.</li>
+                        <li>In a large bowl, cream together the butter, granulated sugar, and brown sugar until smooth. Beat in vanilla extract and then eggs, one at a time.</li>
+                        <li>Gradually add the dry ingredients to the wet ingredients, mixing until just combined. Stir in the chocolate chips.</li>
+                        <li>Drop by rounded tablespoons onto ungreased baking sheets.</li>
+                        <li>Bake for 9-11 minutes, or until golden brown. Let cool on baking sheets for a few minutes before transferring to wire racks to cool completely.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="tips-section">
+            <h2>💡 Cooking Tips & Tricks</h2>
+            <ul>
+                <li><b>Use Room Temperature Butter:</b> Softened butter creams better with sugar, leading to a smoother dough and chewier cookies.</li>
+                <li><b>Don't Overmix:</b> Overmixing develops gluten, which can make cookies tough. Mix until just combined.</li>
+                <li><b>Chill the Dough (Optional):</b> For thicker cookies, chill the dough for 30 minutes before baking.</li>
+                <li><b>Underbake Slightly:</b> Cookies continue to bake as they cool. Take them out when the edges are golden but the centers are still slightly soft.</li>
+                <li><b>High-Quality Chocolate:</b> Use good quality chocolate chips or chunks for the best flavor.</li>
+            </ul>
+        </div>
+        <div class="author-section">
+            <div class="author-photo"></div>
+            <div class="author-info">
+                <h3>Jane Doe</h3>
+                <p>Food Blogger & Enthusiast</p>
+                <p>Jane is a passionate home cook who loves to share her favorite recipes and cooking tips. With years of experience in the kitchen, she aims to make cooking accessible and enjoyable for everyone.</p>
+                <p><a href="#" style="color: #FF6B6B; text-decoration: none;">Read More →</a></p>
+            </div>
+        </div>
+        <div class="popular-recipes">
+            <h2>Popular Recipes</h2>
+            <div class="recipe-item">
+                <div class="recipe-photo"></div>
+                <div class="recipe-info">
+                    <h3>Delicious Pasta Primavera</h3>
+                    <p>Easy & flavorful</p>
+                </div>
+            </div>
+            <div class="recipe-item">
+                <div class="recipe-photo"></div>
+                <div class="recipe-info">
+                    <h3>Spicy Chicken Stir-Fry</h3>
+                    <p>Quick weeknight meal</p>
+                </div>
+            </div>
+            <div class="recipe-item">
+                <div class="recipe-photo"></div>
+                <div class="recipe-info">
+                    <h3>Homemade Apple Pie</h3>
+                    <p>Classic comfort dessert</p>
+                </div>
+            </div>
+        </div>
+        <div class="categories-section">
+            <h2>Categories</h2>
+            <div class="category-item">
+                <div class="category-info">
+                    <h3>Baking</h3>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-info">
+                    <h3>Desserts</h3>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-info">
+                    <h3>Main Courses</h3>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-info">
+                    <h3>Vegetarian</h3>
+                </div>
+            </div>
+            <div class="category-item">
+                <div class="category-info">
+                    <h3>Quick Meals</h3>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>© 2024 FlavorVerse. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Pinterest</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroBlog</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4ecd8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fff8ee;
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: auto;
+        }
+        nav {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 20px;
+        }
+        nav a {
+            margin-right: 15px;
+            color: #6c6c6c;
+            text-decoration: none;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .post-title {
+            font-family: 'Cursive', sans-serif;
+            font-size: 36px;
+            text-align: center;
+        }
+        .post-meta {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .image-caption {
+            font-size: 12px;
+            color: #777;
+            margin-top: 5px;
+        }
+        .post-content {
+            line-height: 1.6;
+        }
+        h2 {
+            font-family: 'Cursive', sans-serif;
+            font-size: 24px;
+            margin: 20px 0 10px;
+        }
+        .tags {
+            background-color: #fafafa;
+            padding: 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .comments {
+            margin-top: 30px;
+        }
+        .comment {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+        .comment-header {
+            font-weight: bold;
+        }
+        .comment-date {
+            color: #888;
+            font-size: 12px;
+        }
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+          box-sizing: border-box;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #fff8ee;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">RetroBlog</div>
+        <nav>
+            <a href="#">Archive</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="content">
+        <div class="post-title">The Joys of a Rainy Day</div>
+        <div class="post-meta">Published on October 26, 1955  •  By John S.</div>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/800x400" alt="Rainy Day">
+            <div class="image-caption">A cozy rainy day scene. Illustration by Vintage Prints.</div>
+        </div>
+        <div class="post-content">
+            <p>Oh, the pitter-patter of rain against the windowpane! Is there a sound more soothing, more conducive to quiet contemplation? Today, as the skies opened up and the world outside turned a soft, misty grey, I found myself drawn to the simple pleasures of a rainy day. The air is cooler, cleaner somehow, and the frantic pace of life seems to slow to a gentle amble.</p>
+            <h2>A Cup of Warmth</h2>
+            <p>First things first, a steaming cup of tea. Earl Grey, with a slice of lemon. The aroma alone is enough to chase away any lingering gloom. Wrapped in a soft blanket, with the rain as my soundtrack, each sip is a moment of pure bliss.</p>
+            <h2>Lost in Pages</h2>
+            <p>Rainy days are made for reading. I pulled out my old, leather-bound copy of "Moby Dick." The yellowed pages, the scent of aged paper, it all adds to the atmosphere. To be transported to another world, another time, while the storm rages gently outside - it's a magic unlike any other.</p>
+            <h2>Creative Sparks</h2>
+            <p>There's something about the quiet solitude of a rainy day that ignites creativity. Perhaps it's the lack of distractions, or maybe it's the introspective mood the weather inspires. Whatever it is, ideas seem to flow more freely. I spent the afternoon sketching in my notebook, letting the rain wash away the usual creative blocks.</p>
+            <p>So, the next time the clouds gather and the rain begins to fall, don't despair. Embrace it! Find joy in the simple moments, the quiet corners of a rainy day. You might just discover a little magic of your own.</p>
+        </div>
+        <div class="tags">Tags: RainyDays, Cozy, Reading, Vintage</div>
+        <div class="comments">
+            <h2>Comments</h2>
+            <div class="comment">
+                <div class="comment-header">Jane Doe <span class="comment-date">October 27, 1955</span></div>
+                <p>Lovely post! Rainy days are indeed the best for introspection and creativity. I especially agree about the tea!</p>
+            </div>
+            <div class="comment">
+                <div class="comment-header">Peter Smith <span class="comment-date">October 28, 1955</span></div>
+                <p>Moby Dick and rain, a perfect combination. Your blog always brings a touch of warmth and nostalgia!</p>
+            </div>
+            <div class="comment-form">
+                <label for="comment">Leave a Comment:</label>
+                <textarea id="comment" placeholder="Your thoughts..."></textarea>
+                <button type="button">Post Comment</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        © 1955 RetroBlog. All rights reserved. Privacy Policy | Terms of Service
+    </footer>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorVerse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #f04f4f;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .hero {
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-image: url('https://via.placeholder.com/1000x400');
+        }
+        h1, h2, h3 {
+            margin: 10px 0;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+        }
+        .column {
+            flex: 50%;
+            padding: 10px;
+        }
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        ul li {
+            position: relative;
+            margin-bottom: 10px;
+        }
+        ul li:before {
+            content: '✓';
+            position: absolute;
+            left: -20px;
+            color: #f04f4f;
+        }
+        .tips ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #f04f4f;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 10px;
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    FlavorVerse
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Recipes</a>
+    <a href="#">Cooking Tips</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="hero">
+        <h1>Ultimate Chocolate Chip Cookies</h1>
+        <p>Published on November 15, 2024 | By Jane Doe</p>
+    </div>
+
+    <h2>Recipe Overview</h2>
+    <p>
+        These aren't just any chocolate chip cookies; they're the ultimate indulgence. Crispy edges, chewy centers, 
+        and pools of melted chocolate in every bite. Perfect for satisfying your sweet tooth or impressing guests. 
+        Get ready to bake up a batch of pure happiness!
+    </p>
+
+    <div class="row">
+        <div class="column">
+            <h3>Ingredients</h3>
+            <ul>
+                <li>2 1/4 cups all-purpose flour</li>
+                <li>1 tsp baking soda</li>
+                <li>1 tsp salt</li>
+                <li>1 cup (2 sticks) unsalted butter, softened</li>
+                <li>3/4 cup granulated sugar</li>
+                <li>3/4 cup packed brown sugar</li>
+                <li>1 tsp vanilla extract</li>
+                <li>2 large eggs</li>
+                <li>2 cups chocolate chips</li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Instructions</h3>
+            <ol>
+                <li>Preheat oven to 375°F (190°C).</li>
+                <li>In a small bowl, whisk together flour, baking soda, and salt. Set aside.</li>
+                <li>In a large bowl, cream together the butter, granulated sugar, and brown sugar until smooth. Beat in vanilla extract and then eggs, one at a time.</li>
+                <li>Gradually add the dry ingredients to the wet ingredients, mixing until just combined. Stir in the chocolate chips.</li>
+                <li>Drop by rounded tablespoons onto ungreased baking sheets.</li>
+                <li>Bake for 9-11 minutes, or until golden brown. Let cool on baking sheets for a few minutes before transferring to wire racks to cool completely.</li>
+            </ol>
+            <a href="#" class="button">Print Recipe</a>
+        </div>
+    </div>
+
+    <h3>Cooking Tips & Tricks</h3>
+    <div class="tips">
+        <ul>
+            <li><strong>Use Room Temperature Butter:</strong> Softened butter creams better with sugar, leading to a smoother dough and chewier cookies.</li>
+            <li><strong>Don’t Overmix:</strong> Overmixing develops gluten, which can make cookies tough. Mix until just combined.</li>
+            <li><strong>Chill the Dough (Optional):</strong> For thicker cookies, chill the dough for 30 minutes before baking.</li>
+            <li><strong>Underbake Slightly:</strong> Cookies continue to bake as they cool. Take them out when the edges are golden but the centers are still slightly soft.</li>
+            <li><strong>High-Quality Chocolate:</strong> Use good quality chocolate chips or chunks for the best flavor.</li>
+        </ul>
+    </div>
+
+    <div class="author">
+        <h3>About the Author</h3>
+        <p><strong>Jane Doe</strong> <br>
+        Food Blogger &amp; Enthusiast</p>
+        <p>Jane is a passionate home cook who loves to share her favorite recipes and cooking tips. With years of experience in the kitchen, she aims to make cooking accessible and enjoyable for everyone.</p>
+        <a href="#" class="button">Read More</a>
+    </div>
+
+    <h3>Popular Recipes</h3>
+    <div class="popular-recipes">
+        <div class="recipe">
+            <h4>Delicious Pasta Primavera</h4>
+            <p>Easy & flavorful</p>
+        </div>
+        <div class="recipe">
+            <h4>Spicy Chicken Stir-Fry</h4>
+            <p>Quick weeknight meal</p>
+        </div>
+        <div class="recipe">
+            <h4>Homemade Apple Pie</h4>
+            <p>Classic comfort dessert</p>
+        </div>
+    </div>
+
+    <h3>Categories</h3>
+    <ul>
+        <li>Baking</li>
+        <li>Desserts</li>
+        <li>Main Courses</li>
+        <li>Vegetarian</li>
+        <li>Quick Meals</li>
+    </ul>
+</div>
+
+<footer>
+    <p>&copy; 2024 FlavorVerse. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+    </div>
+</footer>
+
+</body>
+</html>

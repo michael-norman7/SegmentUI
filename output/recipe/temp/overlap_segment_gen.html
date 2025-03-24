@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlavorVerse</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .block-1, .block-2, .block-3, .block-4, .block-5, .block-6, .block-7 {
+            flex: 1;
+        }
+        .block-1 {
+            background-color: #A8FF60;
+        }
+        .block-2 {
+            background-color: #FF4D0A;
+        }
+        .block-3 {
+            background-color: #620863;
+        }
+        .block-4 {
+            background-color: #000075;
+        }
+        .block-5 {
+            background-color: #00FF00;
+        }
+        .block-6 {
+            background-color: #808025;
+        }
+        .block-7 {
+            background-color: #FFD1DC;
+        }
+        .block-8 {
+            flex: 2;
+            background-color: #900090;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .cooking-tips {
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .cooking-tips h3 {
+            color: #900090;
+            font-size: 18px;
+            margin-top: 0;
+        }
+        .cooking-tips ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .cooking-tips ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .print-button {
+            display: inline-block;
+            background-color: #FF4081;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        .social-icons {
+            margin-top: 15px;
+        }
+        .social-icons a {
+            color: #FF4081;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        .about-author {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .about-author img {
+            float: left;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .about-author h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #900090;
+        }
+        .about-author p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #666;
+        }
+        .about-author a {
+            color: #FF4081;
+            text-decoration: none;
+        }
+        .popular-recipes {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .popular-recipes h4 {
+            margin: 0;
+            font-size: 18px;
+            color: #900090;
+        }
+        .popular-recipes ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        .popular-recipes ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .popular-recipes img {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .popular-recipes .recipe-info {
+            font-size: 14px;
+            color: #333;
+        }
+        .popular-recipes .recipe-info h5 {
+            margin: 0;
+            font-size: 14px;
+        }
+        .categories {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .categories h4 {
+            margin: 0;
+            font-size: 18px;
+            color: #900090;
+        }
+        .categories ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        .categories ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #999;
+        }
+        footer .social-icons a {
+            margin: 0 10px;
+            color: #FF4081;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block-1"></div>
+        <div class="block-2"></div>
+        <div class="block-3"></div>
+        <div class="block-4"></div>
+        <div class="block-5"></div>
+        <div class="block-6"></div>
+        <div class="block-7"></div>
+        <div class="content">
+            <div class="cooking-tips">
+                <h3>💡 Cooking Tips & Tricks</h3>
+                <ul>
+                    <li><strong>Use Room Temperature Butter:</strong> Softened butter creams better with sugar, leading to a smoother dough and chewier cookies.</li>
+                    <li><strong>Don't Overmix:</strong> Overmixing develops gluten, which can make cookies tough. Mix until just combined.</li>
+                    <li><strong>Chill the Dough (Optional):</strong> For thicker cookies, chill the dough for 30 minutes before baking.</li>
+                    <li><strong>Underbake Slightly:</strong> Cookies continue to bake as they cool. Take them out when the edges are golden but the centers are still slightly soft.</li>
+                    <li><strong>High-Quality Chocolate:</strong> Use good quality chocolate chips or chunks for the best flavor.</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#">📷</a>
+                    <a href="#">📘</a>
+                    <a href="#">🐦</a>
+                    <a href="#">📌</a>
+                </div>
+                <a href="#" class="print-button">🖨 Print Recipe</a>
+            </div>
+
+            <div class="about-author">
+                <img src="https://via.placeholder.com/50" alt="Author" width="50" height="50">
+                <div>
+                    <h4>About the Author</h4>
+                    <p><strong>Jane Doe</strong><br>Food Blogger & Enthusiast</p>
+                    <p>Jane is a passionate home cook who loves to share her favorite recipes and cooking tips. With years of experience in the kitchen, she aims to make cooking accessible and enjoyable for everyone.</p>
+                    <a href="#">Read More ➔</a>
+                </div>
+            </div>
+
+            <div class="popular-recipes">
+                <h4>Popular Recipes</h4>
+                <ul>
+                    <li>
+                        <img src="https://via.placeholder.com/60" alt="Recipe">
+                        <div class="recipe-info">
+                            <h5>Delicious Pasta Primavera</h5>
+                            <p>Easy & flavorful</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://via.placeholder.com/60" alt="Recipe">
+                        <div class="recipe-info">
+                            <h5>Spicy Chicken Stir-Fry</h5>
+                            <p>Quick weeknight meal</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://via.placeholder.com/60" alt="Recipe">
+                        <div class="recipe-info">
+                            <h5>Homemade Apple Pie</h5>
+                            <p>Classic comfort dessert</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="categories">
+                <h4>Categories</h4>
+                <ul>
+                    <li>🍰 Baking</li>
+                    <li>🍮 Desserts</li>
+                    <li>🍽 Main Courses</li>
+                    <li>🥗 Vegetarian</li>
+                    <li>🍔 Quick Meals</li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <p>© 2024 FlavorVerse. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#">📷</a>
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">📌</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
