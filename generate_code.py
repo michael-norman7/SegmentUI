@@ -319,18 +319,18 @@ def process_project(project_name, tests):
             test_prefix,
         )
 
-    # Test five Segments Gen
-    if "five_segment_gen" in tests:
-        test_prefix = "five"
-        print("Generating code from five image segments...")
+    # # Test five Segments Gen
+    # if "five_segment_gen" in tests:
+    #     test_prefix = "five"
+    #     print("Generating code from five image segments...")
 
-        generate_segment_code(
-            masked_image_path,
-            original_image_path,
-            five_segments_dir,
-            output_dir,
-            test_prefix,
-        )
+    #     generate_segment_code(
+    #         masked_image_path,
+    #         original_image_path,
+    #         five_segments_dir,
+    #         output_dir,
+    #         test_prefix,
+    #     )
 
     # Test overlap Segments Gen
     if "overlap_segment_gen" in tests:
@@ -348,18 +348,16 @@ def process_project(project_name, tests):
 
 # Main function to run the code generation
 def main():
-    # tests = [
-    #     "full_image",
-    #     "llm_segment_gen",
-    #     "set_segment_gen",
-    #     "five_segment_gen",
-    #     "overlap_segment_gen",
-    # ]
+    tests = [
+        "full_image",
+        "llm_segment_gen",
+        "set_segment_gen",
+        "overlap_segment_gen",
+    ]
     # tests = ["full_image"]
     # tests = ["llm_segment_gen"]
     # tests = ["set_segment_gen"]
-    # tests = ["five_segment_gen"]
-    tests = ["overlap_segment_gen"]
+    # tests = ["overlap_segment_gen"]
 
     # List image project directories in the "img" folder
     img_dir = "img"

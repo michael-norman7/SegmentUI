@@ -580,7 +580,7 @@ if len(sys.argv) > 1 and sys.argv[1] + ".png" in image_files:
     image_path = "full_images/" + image_name
     split_image(image_path, critique=False)
     set_split_image(image_path)
-    five_split_image(image_path)
+    # five_split_image(image_path)
     overlap_split_image(image_path)
 else:
     print("Image files found:")
@@ -603,5 +603,5 @@ else:
 
     split_image(image_path, critique=False)
     set_split_image(image_path)
-    five_split_image(image_path)
+    # five_split_image(image_path)
     overlap_split_image(image_path)
