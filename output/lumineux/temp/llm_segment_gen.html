@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: #2F3A48;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2F3A48;
+        }
+
+        .navbar .menu {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .menu li {
+            display: inline;
+            font-size: 16px;
+            color: #2F3A48;
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            background-color: #F8F9FA;
+        }
+
+        .hero-section .content {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .old-price {
+            font-size: 16px;
+            text-decoration: line-through;
+            margin-right: 5px;
+        }
+
+        .sale-tag {
+            display: inline-block;
+            background-color: #FFC0CB;
+            color: white;
+            padding: 3px 7px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            background-color: #FFD700;
+        }
+
+        .learn-more {
+            background-color: transparent;
+            border: 2px solid #FFD700;
+            color: #FFD700;
+        }
+
+        .hero-section .image-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-section img {
+            width: 100%;
+            border-radius: 15px;
+            max-width: 400px;
+        }
+
+        .features-section {
+            background-color: #F8F9FA;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .features-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .feature-box {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            flex: 1;
+            max-width: 25%;
+            min-width: 150px;
+        }
+
+        .feature-icon {
+            background-color: #FFD700;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-description {
+            font-size: 14px;
+            color: #5A5A5A;
+        }
+
+        .reviews-section {
+            background-color: #F8F9FA;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .reviews-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 40px;
+        }
+
+        .reviews-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .review-box {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            flex: 1;
+            max-width: 25%;
+            min-width: 150px;
+        }
+
+        .reviewer {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .reviewer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: #5A5A5A;
+        }
+
+        .stars {
+            color: #FFD700;
+        }
+
+        .call-to-action-section {
+            background-color: #F8F9FA;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .cta-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 16px;
+            color: #5A5A5A;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #FFD700;
+            color: #2F3A48;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .footer {
+            background-color: #2F3A48;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            flex: 1;
+            margin: 10px;
+            min-width: 200px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-text, .footer-links, .footer-social {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #FFFFFF;
+            margin-bottom: 5px;
+            text-decoration: none;
+        }
+
+        .footer-social a {
+            color: #FFFFFF;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .section {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Lumineux</div>
+        <ul class="menu">
+            <li>Products</li>
+            <li>About</li>
+            <li>Learn</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    <div class="hero-section">
+        <div class="content">
+            <h1>Radiant Glow Serum</h1>
+            <p>Unlock your skin's natural radiance with our revolutionary serum. Formulated with potent botanical extracts and vitamin C, it diminishes dark spots, evens skin tone, and boosts luminosity. Experience visible results in just weeks.</p>
+            <div>
+                <span class="price">$49.99</span>
+                <span class="old-price">$59.99</span>
+                <span class="sale-tag">Sale</span>
+            </div>
+            <div class="buttons">
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="learn-more">Learn More</button>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/400x300" alt="Product Image">
+        </div>
+    </div>
+
+    <div class="features-section">
+        <h2 class="features-title">Key Features</h2>
+        <div class="features-container">
+            <div class="feature-box">
+                <div class="feature-icon">★</div>
+                <div class="feature-title">Brightening Power</div>
+                <div class="feature-description">Vitamin C and botanical extracts work synergistically to diminish dark spots and...</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">💧</div>
+                <div class="feature-title">Hydrating Formula</div>
+                <div class="feature-description">Lightweight and fast-absorbing, our serum deeply hydrates without leaving a greasy...</div>
+            </div>
+            <div class="feature-box">
+                <div class="feature-icon">🌿</div>
+                <div class="feature-title">Natural Ingredients</div>
+                <div class="feature-description">Formulated with carefully selected natural ingredients, free from parabens, sulfates, ...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="reviews-section">
+        <h2 class="reviews-title">Customer Reviews</h2>
+        <div class="reviews-container">
+            <div class="review-box">
+                <div class="reviewer">
+                    <img src="https://via.placeholder.com/40" alt="Reviewer 1"><br>
+                    Sarah J. <span class="stars">★★★★★</span>
+                </div>
+                <div class="review-text">"This serum is a game-changer! My skin feels so much brighter and smoother. I've noticed a significant reduction in my dark spots. Highly recommend!"</div>
+            </div>
+            <div class="review-box">
+                <div class="reviewer">
+                    <img src="https://via.placeholder.com/40" alt="Reviewer 2"><br>
+                    Michael B. <span class="stars">★★★★★</span>
+                </div>
+                <div class="review-text">"I was skeptical at first, but this serum truly delivers. It's lightweight, absorbs quickly, and has improved my skin tone. Great product!"</div>
+            </div>
+            <div class="review-box">
+                <div class="reviewer">
+                    <img src="https://via.placeholder.com/40" alt="Reviewer 3"><br>
+                    Emily L. <span class="stars">★★★★★</span>
+                </div>
+                <div class="review-text">"Love this serum! It's gentle yet effective. My skin feels hydrated and looks more radiant. Will definitely repurchase."</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="call-to-action-section">
+        <h2 class="cta-title">Ready to Glow?</h2>
+        <p class="cta-description">Experience the Lumineux difference and unlock your skin's radiant potential.</p>
+        <a href="#" class="cta-button">Read All Reviews</a>
+    </div>
+
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-title">Lumineux Cosmetics</div>
+                <div class="footer-text">Your destination for radiant and healthy skin. Discover our curated collection of skincare essentials.</div>
+            </div>
+            <div class="footer-column">
+                <div class="footer-title">Quick Links</div>
+                <div class="footer-links">
+                    <a href="#">Products</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Customer Support</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <div class="footer-title">Connect With Us</div>
+                <div class="footer-social">
+                    <a href="#">f</a>
+                    <a href="#">i</a>
+                    <a href="#">t</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 Lumineux Cosmetics. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

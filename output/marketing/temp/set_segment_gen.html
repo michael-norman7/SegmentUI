@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: 100vh;
+        }
+        .block {
+            flex-grow: 1;
+            width: 100%;
+        }
+        .block1 { background-color: #DC481F; }
+        .block2 { 
+            background-color: #0A197D; 
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .logo {
+            color: #007373;
+            font-weight: bold;
+        }
+        .nav {
+            font-size: 14px;
+        }
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .block3 {
+            background-color: #edf1f5;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .contact-header {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .contact-form textarea {
+            height: 100px;
+            resize: none;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007373;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .block4 {
+            background-color: #edf1f5;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .insights-header {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .insights {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .insight-card {
+            background-color: white;
+            border-radius: 10px;
+            width: 240px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+        }
+        .insight-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        .insight-content {
+            padding: 20px;
+        }
+        .insight-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .insight-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .insight-link {
+            color: #007373;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .footer {
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block block1"></div>
+        <div class="block block2">
+            <div class="logo">[Agency Logo/Name]</div>
+            <div class="nav">
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Insights</a>
+            </div>
+        </div>
+        <div class="block block3">
+            <div class="contact-header">Ready to Elevate Your B2B Marketing?</div>
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message &#9993;</button>
+            </div>
+        </div>
+        <div class="block block4">
+            <div class="insights-header">Latest B2B Marketing Insights</div>
+            <div class="insights">
+                <div class="insight-card">
+                    <img src="https://via.placeholder.com/240x120" alt="Insight Image">
+                    <div class="insight-content">
+                        <div class="insight-title">The Future of B2B Content Marketing</div>
+                        <div class="insight-description">Explore the evolving landscape of B2B content marketing and strategies for success.</div>
+                        <a href="#" class="insight-link">Read More &#8594;</a>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <img src="https://via.placeholder.com/240x120" alt="Insight Image">
+                    <div class="insight-content">
+                        <div class="insight-title">Maximizing ROI with B2B PPC Campaigns</div>
+                        <div class="insight-description">Learn how to optimize your B2B PPC campaigns for maximum return on investment.</div>
+                        <a href="#" class="insight-link">Read More &#8594;</a>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <img src="https://via.placeholder.com/240x120" alt="Insight Image">
+                    <div class="insight-content">
+                        <div class="insight-title">Data-Driven B2B Marketing Strategies</div>
+                        <div class="insight-description">Discover the power of data analytics in shaping effective B2B marketing strategies.</div>
+                        <a href="#" class="insight-link">Read More &#8594;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            &copy; 2024 [Your Agency Name]. All rights reserved.<br>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</body>
+</html>

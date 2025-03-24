@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudLens Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f8fa;
+            color: #333;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: #007bff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #666;
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: #007bff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .overview {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        .card {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .section-title {
+            margin: 40px 0 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+        table, th, td {
+            border: 1px solid #eee;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+        }
+        .badge {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #fff;
+        }
+        .badge.high {
+            background-color: #dc3545;
+        }
+        .badge.medium {
+            background-color: #ffc107;
+            color: #fff;
+        }
+        .badge.low {
+            background-color: #28a745;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .status.pending {
+            background-color: #ffc107;
+        }
+        .status.cleared {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .status.investigation {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .actions a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">FraudLens</div>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Transactions</a>
+            <a href="#">Investigations</a>
+            <a href="#">Reports</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h2>Overview</h2>
+        <div class="overview">
+            <div class="card">
+                <h3>Anomalies Detected</h3>
+                <p class="number">32</p>
+                <p>New anomalies in the last 24 hours</p>
+            </div>
+            <div class="card">
+                <h3>Average Risk Score</h3>
+                <p class="number">4.7</p>
+                <p>Average risk score of recent transactions</p>
+            </div>
+            <div class="card">
+                <h3>Investigations Open</h3>
+                <p class="number">15</p>
+                <p>Active fraud investigations currently open</p>
+            </div>
+        </div>
+        <h2>Transaction Anomalies</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>TRANSACTION ID</th>
+                    <th>DATE</th>
+                    <th>AMOUNT</th>
+                    <th>RISK SCORE</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#TRANS001</td>
+                    <td>2024-03-15 10:30</td>
+                    <td>$1,250.00</td>
+                    <td><span class="badge high">High (8.9)</span></td>
+                    <td><span class="status pending">Pending Review</span></td>
+                    <td class="actions"><a href="#">View Details</a></td>
+                </tr>
+                <tr>
+                    <td>#TRANS002</td>
+                    <td>2024-03-15 09:15</td>
+                    <td>$580.00</td>
+                    <td><span class="badge medium">Medium (6.2)</span></td>
+                    <td><span class="status cleared">Cleared</span></td>
+                    <td class="actions"><a href="#">View Details</a></td>
+                </tr>
+                <tr>
+                    <td>#TRANS003</td>
+                    <td>2024-03-14 18:40</td>
+                    <td>$2,100.00</td>
+                    <td><span class="badge high">High (9.5)</span></td>
+                    <td><span class="status investigation">Under Investigation</span></td>
+                    <td class="actions"><a href="#">View Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Investigation Workflows</h2>
+        <div class="overview">
+            <div class="card">
+                <h3>Recent Investigations</h3>
+                <p><b>Investigation #INV001</b></p>
+                <p>Assigned to John Doe</p>
+                <span class="badge medium">In Progress</span>
+            </div>
+            <div class="card">
+                <h3>Investigation Status</h3>
+                <img src="https://via.placeholder.com/150" alt="Investigation Status Chart">
+            </div>
+        </div>
+        <h2>Risk Score Distribution</h2>
+        <div class="overview">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Risk Score Distribution Chart">
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 FraudLens. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisan Gallery</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #f0e6da;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .highlight-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        .text-content {
+            max-width: 50%;
+        }
+
+        .text-content h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .text-content h1 span {
+            color: #d4af37;
+        }
+
+        .text-content p {
+            margin: 20px 0;
+            color: #555;
+        }
+
+        .button {
+            background-color: #d4af37;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .image-content {
+            position: relative;
+            max-width: 40%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .image-content img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .tag {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: right;
+        }
+
+        .tag p {
+            margin: 0;
+            font-size: 0.8em;
+        }
+
+        .tag p:first-child {
+            color: #888;
+        }
+
+        .tag p:last-child {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .gallery-section {
+            padding: 40px;
+            background-color: #f8f4f0;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .gallery-item {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-section {
+            padding: 40px 20px;
+            background-color: #e8dcd1;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .about-text {
+            max-width: 50%;
+        }
+
+        .about-text h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 10px;
+        }
+
+        .about-image {
+            max-width: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .contact-section {
+            padding: 40px 20px;
+            background-color: #f8f4f0;
+            text-align: center;
+        }
+
+        .contact-info {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #d4af37;
+        }
+
+        .social-media {
+            margin: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #555;
+            font-size: 1.5em;
+        }
+
+        .website-footer {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div>Artisan Gallery</div>
+        <div>
+            <a href="#">Gallery</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="highlight-section">
+        <div class="text-content">
+            <h1>Explore the World Through <span>Brushstrokes</span></h1>
+            <p>Welcome to the online gallery of a passionate painter. Discover a curated collection of original artworks, each telling a unique story.</p>
+            <button class="button">View Gallery</button>
+        </div>
+        <div class="image-content">
+            <img src="https://via.placeholder.com/450" alt="Featured Artwork">
+            <div class="tag">
+                <p>Featured Piece</p>
+                <p>Serene Landscape</p>
+            </div>
+        </div>
+    </div>
+    <div class="gallery-section">
+        <h2>Art Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300" alt="Artwork 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300" alt="Artwork 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300" alt="Artwork 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300" alt="Artwork 4">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300" alt="Artwork 5">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/300" alt="Artwork 6">
+            </div>
+        </div>
+    </div>
+    <div class="about-section">
+        <div class="about-text">
+            <h3>About the Artist</h3>
+            <p>[Painter's Name] is a contemporary painter known for their evocative landscapes and abstract compositions. With a career spanning over [Number] years, [he/she] has developed a distinctive style characterized by [mention key style elements, e.g., bold brushstrokes, vibrant color palettes, subtle textures].</p>
+            <p>Driven by a passion for capturing the essence of nature and emotion, [Painter's Name]'s work invites viewers to contemplate the beauty and complexity of the world around us. [He/She] has exhibited in galleries across [Regions/Countries] and is collected both privately and publicly.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://via.placeholder.com/300" alt="Artist Image">
+        </div>
+    </div>
+    <div class="contact-section">
+        <div class="contact-info">
+            <p><i class="far fa-envelope"></i> info@artisangallery.com</p>
+            <p><i class="fas fa-phone"></i> +1 555-123-4567</p>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    <div class="website-footer">
+        © 2024 Artisan Gallery. All Rights Reserved.
+    </div>
+</body>
+
+</html>

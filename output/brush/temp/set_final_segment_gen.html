@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #f0f4f8;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .menubar {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .menu-left {
+            font-weight: bold;
+            color: #6b6e74;
+        }
+        .menu-right a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #000;
+        }
+        .content {
+            background-color: #f0f4f8;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #6b6e74;
+            margin-bottom: 20px;
+        }
+        .section-content {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            color: #6b6e74;
+        }
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 30%;
+            margin: 10px;
+            overflow: hidden;
+        }
+        .product-card img {
+            max-width: 100%;
+        }
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product-price {
+            color: #007bfc;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product-button {
+            background-color: #007bfc;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .product-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .contact {
+            background-color: #f0f4f8;
+            padding: 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .message-box {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bfc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer {
+            background-color: #e7ebf0;
+            text-align: center;
+            padding: 15px 0;
+            box-shadow: 0 -1px 5px rgba(0,0,0,0.1);
+            color: #6b6e74;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menubar">
+            <div class="menu-left">Brush Catalog</div>
+            <div class="menu-right">
+                <a href="#">Brushes</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="section">
+            <div class="section-title">Featured Brushes</div>
+            <div class="product-section">
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image">
+                    <div class="product-info">
+                        <div class="product-title">Brush Set - Painterly Pack</div>
+                        <p>A versatile set for creating painterly digital artworks.</p>
+                        <div class="product-price">$19.99</div>
+                        <a href="#" class="product-button">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image">
+                    <div class="product-info">
+                        <div class="product-title">Brush Set - Ink Wash Wonders</div>
+                        <p>Emulate traditional ink wash techniques with these brushes.</p>
+                        <div class="product-price">$24.99</div>
+                        <a href="#" class="product-button">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image">
+                    <div class="product-info">
+                        <div class="product-title">Brush Set - Texture Masters</div>
+                        <p>Add depth and tactile feel to your digital art with texture brushes.</p>
+                        <div class="product-price">$29.99</div>
+                        <a href="#" class="product-button">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image">
+                    <div class="product-info">
+                        <div class="product-title">Brush Set - Line Art Essentials</div>
+                        <p>Perfect for crisp, clean lines and detailed illustrations.</p>
+                        <div class="product-price">$15.99</div>
+                        <a href="#" class="product-button">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image">
+                    <div class="product-info">
+                        <div class="product-title">Brush Set - Watercolor Dreams</div>
+                        <p>Achieve beautiful watercolor effects in your digital paintings.</p>
+                        <div class="product-price">$22.99</div>
+                        <a href="#" class="product-button">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Product Image">
+                    <div class="product-info">
+                        <div class="product-title">Brush Set - Concept Art Toolkit</div>
+                        <p>Essential brushes for concept artists and visual development.</p>
+                        <div class="product-price">$34.99</div>
+                        <a href="#" class="product-button">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">About Our Brushes</div>
+            <div class="section-content">
+                <p>Our digital art brushes are meticulously crafted to provide artists with the most natural and intuitive painting experience. Each brush set is designed to emulate traditional art mediums while leveraging the power of digital technology.</p>
+                <p>We focus on creating brushes that are not only visually stunning but also highly performant and versatile, suitable for a wide range of artistic styles and software.</p>
+                <p>Explore our catalog and discover the perfect brushes to elevate your digital artwork to the next level.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">Contact Us</div>
+            <div class="section-content">
+                <p>Have questions or need support? Reach out to our team. We're here to help you with any inquiries regarding our brushes or your digital art journey.</p>
+                <p>Email us at <a href="mailto:support@example.com">support@example.com</a> or use the form below.</p>
+                <div class="message-box">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea rows="4" placeholder="Your Message"></textarea>
+                    <button>Send Message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2024 Digital Art Brushes. All rights reserved.
+    </div>
+</body>
+</html>

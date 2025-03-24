@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        .header {
+            background-color: #fff;
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            color: blue;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero-text h1 {
+            font-size: 36px;
+            color: #333;
+            margin: 0 0 20px;
+        }
+        .hero-text p {
+            font-size: 18px;
+            color: #666;
+            margin: 0 0 30px;
+        }
+        .hero-text .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .hero-image {
+            width: 40%;
+            border-radius: 10px;
+        }
+        .main {
+            display: flex;
+            padding: 20px;
+        }
+        .main-content {
+            background-color: #fff;
+            flex: 3;
+            padding: 20px;
+            margin-right: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .article {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .article img {
+            border-radius: 10px;
+            max-width: 100%;
+            margin-bottom: 15px;
+        }
+        .article h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .article p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .author, .date {
+            font-size: 14px;
+            color: #999;
+        }
+        .sidebar {
+            background-color: #fff;
+            flex: 1;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .widget {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .widget h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+        .widget ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .widget ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+        .widget .email-input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .widget .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        .widget img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex-basis: 30%;
+            margin-bottom: 20px;
+        }
+        .footer-section h4 {
+            margin-top: 0;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .footer-section p {
+            margin-bottom: 15px;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .social-media a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .footer-bottom {
+            text-align: center;
+            width: 100%;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+        }
+        .footer-bottom p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">HR Blog</div>
+        <div class="nav">
+            <a href="#">Articles</a>
+            <a href="#">Categories</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="hero-section">
+        <div class="hero-text">
+            <h1>The Future of Talent Management is Here</h1>
+            <p>Explore the latest trends, strategies, and insights in Human Resources and Talent Management. Stay ahead in the evolving world of work.</p>
+            <a href="#" class="btn">Read More →</a>
+        </div>
+        <img src="https://via.placeholder.com/300" alt="Ocean view" class="hero-image">
+    </div>
+    <div class="main">
+        <div class="main-content">
+            <h2>Recent Articles</h2>
+            <div class="article">
+                <img src="https://via.placeholder.com/800x400" alt="Article image">
+                <h2>Top 5 HR Trends in 2024 You Need to Know</h2>
+                <p>Discover the most impactful HR trends shaping the workplace this year. From AI in recruitment to remote work policies, stay informed and adapt your strategies.</p>
+                <div class="article-footer">
+                    <div class="author">By John Smith</div>
+                    <div class="date">Nov 15, 2024</div>
+                </div>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/800x400" alt="Article image">
+                <h2>Building a Resilient Workforce: Strategies for Employee Wellbeing</h2>
+                <p>Learn how to prioritize employee wellbeing and build a resilient workforce. Explore practical strategies to support mental health, reduce burnout, and foster a positive work environment.</p>
+                <div class="article-footer">
+                    <div class="author">By Jane Doe</div>
+                    <div class="date">Nov 10, 2024</div>
+                </div>
+            </div>
+            <div class="article">
+                <img src="https://via.placeholder.com/800x400" alt="Article image">
+                <h2>The Art of Effective Remote Team Management</h2>
+                <p>Master the skills needed to manage remote teams effectively. From communication tools to performance management, discover best practices for leading distributed teams to success.</p>
+                <div class="article-footer">
+                    <div class="author">By Peter Jones</div>
+                    <div class="date">Nov 5, 2024</div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="widget">
+                <h3>Categories</h3>
+                <ul>
+                    <li>📁 Recruitment</li>
+                    <li>📁 Employee Wellbeing</li>
+                    <li>📁 Remote Work</li>
+                    <li>📁 Leadership</li>
+                    <li>📁 HR Tech</li>
+                </ul>
+            </div>
+            <div class="widget">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter to receive the latest articles and HR insights directly in your inbox.</p>
+                <input type="email" class="email-input" placeholder="Your Email Address">
+                <a href="#" class="btn">Subscribe</a>
+            </div>
+            <div class="widget">
+                <h3>About Us</h3>
+                <img src="https://via.placeholder.com/150" alt="About Us Image">
+                <p>We are a team of HR professionals and talent management experts dedicated to sharing knowledge and best practices to help organizations thrive.</p>
+                <a href="#" class="btn">Learn More →</a>
+            </div>
+            <div class="widget">
+                <h3>Popular Posts</h3>
+                <ul>
+                    <li>
+                        <img src="https://via.placeholder.com/150" alt="Post Image">
+                        <div>
+                            <p><strong>The Importance of Diversity and Inclusion in the Workplace</strong></p>
+                            <p>Nov 1, 2024</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="https://via.placeholder.com/150" alt="Post Image">
+                        <div>
+                            <p><strong>Mastering the Art of Employee Feedback</strong></p>
+                            <p>Oct 25, 2024</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-section">
+            <h4>About HR Blog</h4>
+            <p>Your go-to resource for the latest trends and insights in Human Resources and Talent Management. We empower HR professionals and business leaders with knowledge to build successful organizations.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#">Articles</a>
+            <a href="#">Categories</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-section">
+            <h4>Connect With Us</h4>
+            <div class="social-media">
+                <a href="#">🔗 FB</a>
+                <a href="#">🔗 TW</a>
+                <a href="#">🔗 LI</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 HR Blog. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </div>
+</body>
+</html>

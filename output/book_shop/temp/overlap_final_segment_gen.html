@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+        .navbar a.logo {
+            font-weight: bold;
+            color: #00008B;
+            font-size: 24px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .book-info {
+            display: flex;
+            gap: 20px;
+        }
+        .image-section {
+            flex: 1;
+        }
+        .image-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .details-section {
+            flex: 2;
+            padding: 20px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .author {
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .rating {
+            margin-bottom: 10px;
+        }
+        .rating span {
+            color: gold;
+        }
+        .description {
+            margin-bottom: 20px;
+            color: #777;
+        }
+        .pricing {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .pricing-item {
+            margin-bottom: 5px;
+        }
+        .read-sample-button {
+            background-color: #FF00FF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        .synopsis, .author-info, .reviews, .also-like-section {
+            margin-bottom: 40px;
+        }
+        .synopsis h4, .author-info h4, .reviews h4, .also-like-section h4 {
+            margin-bottom: 10px;
+        }
+        .synopsis p, .author-info p, .reviews p {
+            line-height: 1.6;
+            color: #444;
+        }
+        .author-info .author-details {
+            display: flex;
+            align-items: center;
+        }
+        .author-info img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .reviews .review {
+            margin-bottom: 10px;
+        }
+        .reviews .review span {
+            color: gold;
+        }
+        .also-like-section {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .book-cards {
+            display: flex;
+            gap: 10px;
+        }
+        .book-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        .book-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .book-card-title {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .book-card-author {
+            color: #888;
+            font-size: 14px;
+        }
+        footer {
+            background-color: #2B2B3E;
+            color: white;
+            padding: 20px 0;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer div {
+            flex: 1;
+            margin: 0 20px;
+        }
+        footer h4 {
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+        footer a:hover {
+            color: white;
+        }
+        footer p {
+            color: #ccc;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+    <title>Combined Website</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">BookStore</a>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="book-info">
+            <div class="image-section">
+                <img src="https://via.placeholder.com/300" alt="Book Image">
+            </div>
+            <div class="details-section">
+                <div class="title">The Shadowed Kingdom</div>
+                <div class="author">By <a href="#">Anya Petrova</a></div>
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9734; (4.8 / 5) | <a href="#">1,257 Reviews</a></span>
+                </div>
+                <div class="description">
+                    In a realm teetering on the brink of chaos, Elara, a reluctant sorceress, must embrace her forbidden powers to confront a 
+                    darkness that threatens to consume the Shadowed Kingdom. A tale of magic, mystery, and self-discovery.
+                </div>
+                <div class="pricing">
+                    <div class="pricing-item">Hardcover <span>$24.99</span></div>
+                    <div class="pricing-item">Paperback <span>$14.99</span></div>
+                    <div class="pricing-item">eBook (Kindle, ePub) <span>$9.99</span></div>
+                    <div class="pricing-item">Audiobook (MP3) <span>$19.99</span></div>
+                </div>
+                <button class="read-sample-button">Read Sample</button>
+            </div>
+        </div>
+        <div class="synopsis">
+            <h4>Synopsis</h4>
+            <p>For centuries, the Shadowed Kingdom has been protected by an ancient magic, wielded by a lineage of powerful sorcerers. But now, the magic is fading, and a creeping darkness threatens to engulf the land. Elara, the last of her line, wants nothing to do with her heritage. Haunted by a tragic past and fearful of her own abilities, she has lived in hiding, among ordinary villagers. However, destiny has other plans. When shadows begin to stir and whispers of a forgotten evil resurface, Elara is drawn into a perilous journey. Guided by cryptic prophecies and aided by unlikely allies — a stoic knight, a mischievous rogue, and a wise old scholar — she must confront her fate and embrace her powers, to save the kingdom she fears and loves.</p>
+        </div>
+        <div class="author-info">
+            <h4>About the Author</h4>
+            <div class="author-details">
+                <img src="https://via.placeholder.com/60" alt="Author Photo">
+                <div>
+                    <strong>Anya Petrova</strong>
+                    <p>Anya Petrova is a bestselling author of fantasy and adventure novels. Her intricate world-building and compelling characters have captivated readers worldwide. When not writing, Anya enjoys exploring ancient forests and sipping copious amounts of tea.</p>
+                </div>
+            </div>
+        </div>
+        <div class="reviews">
+            <h4>Customer Reviews</h4>
+            <div class="review">
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</span> - John D.
+                <p>Absolutely spellbinding! From the first page to the last, I was completely immersed in the Shadowed Kingdom. Anya Petrova has crafted a masterpiece of fantasy literature.</p>
+            </div>
+            <div class="review">
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</span> - Sarah L.
+                <p>A captivating read with rich world-building and characters that felt incredibly real. The plot twists kept me guessing until the very end. Highly recommend!</p>
+            </div>
+            <div class="review">
+                <span class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</span> - Michael B.
+                <p>Great book! The magic system was well-developed and the story was engaging. I especially loved the author's writing style.</p>
+            </div>
+            <div class="read-all-reviews">
+                <a href="#">Read All Reviews</a>
+            </div>
+        </div>
+        <div class="also-like-section">
+            <h4>You Might Also Like</h4>
+            <div class="book-cards">
+                <div class="book-card">
+                    <img src="https://via.placeholder.com/150" alt="Book Image">
+                    <div class="book-card-title">Echoes of the Past</div>
+                    <div class="book-card-author">By Author Name</div>
+                </div>
+                <div class="book-card">
+                    <img src="https://via.placeholder.com/150" alt="Book Image">
+                    <div class="book-card-title">The Forgotten City</div>
+                    <div class="book-card-author">By Author Name</div>
+                </div>
+                <div class="book-card">
+                    <img src="https://via.placeholder.com/150" alt="Book Image">
+                    <div class="book-card-title">Whispers in the Wind</div>
+                    <div class="book-card-author">By Author Name</div>
+                </div>
+                <div class="book-card">
+                    <img src="https://via.placeholder.com/150" alt="Book Image">
+                    <div class="book-card-title">The Last Guardian</div>
+                    <div class="book-card-author">By Author Name</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>BookStore</h4>
+                <p>Your online destination for bestselling novels and captivating stories. Explore our vast collection and discover your next favorite book.</p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="#">&#x1F30E;</a>
+                <a href="#">&#x1F4F1;</a>
+                <a href="#">&#x1F4F3;</a>
+            </div>
+        </div>
+        <p>&copy; 2024 BookStore. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background: #f0f8f5;
+        }
+        .header {
+            background: linear-gradient(to right, #f0f8f5, #edf4f2);
+            height: 70px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .header .logo {
+            font-size: 24px;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+        .header .button {
+            background-color: #32cd32;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .header .button span {
+            margin-left: 5px;
+        }
+        .main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+        .content-section {
+            background: #eaf2f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            color: #1a1a1a;
+            flex: 1;
+        }
+        .content-section img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .content-section .header-text {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .content-section .header-text span {
+            font-size: 16px;
+            color: #666;
+        }
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .summary div {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 45%;
+        }
+        .summary-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .summary-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .focus {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .focus h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .focus ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #eaf2f0;
+            color: #666;
+            font-size: 14px;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">HabitZenith</div>
+        <button class="button">
+            <span>+</span>
+            <span>Add Habit</span>
+        </button>
+    </div>
+
+    <div class="main">
+        <div class="content-section">
+            <div class="header-text">
+                <div>Good Morning, User!</div>
+                <span>Ready for a productive day?</span>
+            </div>
+            <div class="summary">
+                <div>
+                    <div class="summary-icon">📋</div>
+                    <div class="summary-value">5</div>
+                    <div>Tasks Done</div>
+                </div>
+                <div>
+                    <div class="summary-icon">✔️</div>
+                    <div class="summary-value">100%</div>
+                    <div>Routine Met</div>
+                </div>
+            </div>
+            <div class="focus">
+                <h4>Today's Focus</h4>
+                <ul>
+                    <li>Morning Meditation</li>
+                    <li>Work on Project Alpha</li>
+                    <li>Evening Reading</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2024 HabitZenith. All rights reserved.
+    </div>
+</body>
+</html>

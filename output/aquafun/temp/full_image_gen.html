@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaFun Water Park</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+        }
+        .hero {
+            background: linear-gradient(to bottom right, #7ce8ff, #a1f9ce);
+            padding: 60px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            color: #003b6f;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            color: #003b6f;
+            margin-bottom: 20px;
+        }
+        .hero button {
+            background: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .attractions, .pricing, .contact {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .attractions img, .pricing img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+        }
+        .attraction, .pricing-card {
+            display: inline-block;
+            margin: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .attraction h3, .pricing-card h3 {
+            color: #003b6f;
+            margin: 10px 0;
+        }
+        .attraction p, .pricing-card p, .contact p {
+            color: #003b6f;
+        }
+        footer {
+            background: #7ce8ff;
+            padding: 40px 0;
+            text-align: center;
+            color: #003b6f;
+        }
+        footer a {
+            color: #003b6f;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>AquaFun</div>
+        <nav>
+            <a href="#">Attractions</a>
+            <a href="#">Family Fun</a>
+            <a href="#">Tickets & Pricing</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Dive into a World of Aquatic Adventure!</h1>
+            <p>Experience thrilling slides, relaxing pools, and unforgettable family moments at AquaFun Water Park. Get ready for a splash-tastic day!</p>
+            <button>Get Tickets Now</button>
+        </div>
+        <img src="https://via.placeholder.com/300x200" alt="Aquatic adventure">
+    </section>
+
+    <section class="attractions">
+        <h2>Our Thrilling Attractions</h2>
+        <div class="attraction">
+            <img src="https://via.placeholder.com/300x200" alt="Mega Slides">
+            <h3>Mega Slides</h3>
+            <p>Experience the adrenaline rush on our towering water slides. Twists, turns, and splashes await!</p>
+        </div>
+        <div class="attraction">
+            <img src="https://via.placeholder.com/300x200" alt="Wave Pool">
+            <h3>Wave Pool</h3>
+            <p>Dive into our massive wave pool and feel the ocean thrill. Perfect for all ages!</p>
+        </div>
+        <div class="attraction">
+            <img src="https://via.placeholder.com/300x200" alt="Kids' Zone">
+            <h3>Kids' Zone</h3>
+            <p>A safe and fun area designed for younger children with gentle slides and shallow pools.</p>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <h2>Tickets & Pricing</h2>
+        <div class="pricing-card">
+            <h3>Day Pass</h3>
+            <p>Full day access to all attractions.</p>
+            <p>$49.99</p>
+            <button>Buy Day Pass</button>
+        </div>
+        <div class="pricing-card">
+            <h3>Family Pass</h3>
+            <p>Day pass for a family of four.</p>
+            <p>$179.99</p>
+            <button>Buy Family Pass</button>
+        </div>
+        <div class="pricing-card">
+            <h3>Season Pass</h3>
+            <p>Unlimited access for the entire season.</p>
+            <p>$249.99</p>
+            <button>Buy Season Pass</button>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Contact Us</h2>
+        <p>Have questions? We’re here to help! Reach out to us for any inquiries or assistance.</p>
+        <div>
+            <a href="#"><img src="https://via.placeholder.com/24" alt="Facebook"></a>
+            <a href="#"><img src="https://via.placeholder.com/24" alt="Instagram"></a>
+            <a href="#"><img src="https://via.placeholder.com/24" alt="Twitter"></a>
+        </div>
+        <p>&copy; 2023 AquaFun Water Park. All rights reserved.</p>
+    </footer>
+</body>
+</html>

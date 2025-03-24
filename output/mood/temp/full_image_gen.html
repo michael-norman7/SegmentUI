@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fb;
+            padding: 20px;
+            margin: 0;
+        }
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            border: none;
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .cards-container {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card h2, .log h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .card p, .log p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        .log {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .positive {
+            color: green;
+        }
+        .neutral {
+            color: orange;
+        }
+        .negative {
+            color: red;
+        }
+        .cta-button {
+            background-color: #6a69f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: #5a59d4;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>Mood Dashboard</h1>
+            <div class="buttons">
+                <button class="button">Today</button>
+                <button class="button">Week</button>
+                <button class="button">Month</button>
+            </div>
+        </div>
+        <div class="cards-container">
+            <div class="card">
+                <h2>Mood Trend</h2>
+                <img src="https://via.placeholder.com/300x150" alt="Mood Trend Graph">
+                <p>Visual representation of your mood fluctuations over time. Track patterns to understand your emotional journey.</p>
+                <button class="cta-button">View Full Trend</button>
+            </div>
+            <div class="card">
+                <h2>Emotion Triggers</h2>
+                <ul>
+                    <li><span>🌞 Sunshine</span><span class="positive">+2 Positive</span></li>
+                    <li><span>☕ Morning Coffee</span><span class="positive">+1 Positive</span></li>
+                    <li><span>🚗 Traffic Jam</span><span class="negative">-3 Negative</span></li>
+                </ul>
+                <p>Identify key factors influencing your emotions. Understand what uplifts or downflifts your mood.</p>
+                <button class="cta-button">See All Triggers</button>
+            </div>
+            <div class="card">
+                <h2>Well-being Score</h2>
+                <img src="https://via.placeholder.com/300x150" alt="Well-being Score">
+                <p>Overall well-being score based on your mood entries. Aim for a balanced and positive emotional state.</p>
+                <button class="cta-button">Detailed Breakdown</button>
+            </div>
+        </div>
+        <div class="log">
+            <h2>Daily Mood Log</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Mood</th>
+                        <th>Emotions</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-03-15</td>
+                        <td><span class="positive">😊 Happy</span></td>
+                        <td>Joyful, Content</td>
+                        <td>Productive day at work.</td>
+                    </tr>
+                    <tr>
+                        <td>2024-03-14</td>
+                        <td><span class="neutral">😐 Neutral</span></td>
+                        <td>Calm, Indifferent</td>
+                        <td>Regular day. Nothing much happened.</td>
+                    </tr>
+                    <tr>
+                        <td>2024-03-13</td>
+                        <td><span class="negative">😞 Sad</span></td>
+                        <td>Anxious, Down</td>
+                        <td>Felt a bit under the weather.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Your recent mood entries. Review your daily logs to reflect on your emotional patterns.</p>
+            <button class="cta-button">View Full Calendar</button>
+        </div>
+    </div>
+</body>
+</html>

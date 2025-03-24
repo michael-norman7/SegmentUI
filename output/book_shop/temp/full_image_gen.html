@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: #007bff;
+            margin: 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .image {
+            flex: 1;
+            padding: 20px;
+        }
+        .image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .content {
+            flex: 2;
+            padding: 20px;
+        }
+        .content h2 {
+            margin-top: 0;
+        }
+        .content p {
+            line-height: 1.6em;
+        }
+        .price {
+            color: #888;
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .reviews {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>BookStore</h1>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Shop</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="image">
+        <img src="tiger.jpg" alt="Tiger Image">
+    </div>
+    <div class="content">
+        <h2>The Shadowed Kingdom</h2>
+        <p>By <a href="#">Anya Petrova</a></p>
+        <p>⭐⭐⭐⭐☆ (4.8 / 5) | 1,257 Reviews</p>
+        <p>In a realm teetering on the brink of chaos, Elara, a reluctant sorceress...</p>
+        <p class="price">
+            <strong>Hardcover:</strong> $24.99<br>
+            <strong>Paperback:</strong> $14.99<br>
+            <strong>eBook (Kindle, ePub):</strong> $9.99<br>
+            <strong>Audiobook (MP3):</strong> $19.99
+        </p>
+        <a href="#" class="button">Add to Cart</a>
+        <a href="#" class="button">Read Sample</a>
+        <div class="reviews">
+            <h3>Customer Reviews</h3>
+            <p>⭐⭐⭐⭐⭐ - John D.</p>
+            <p>Absolutely spellbinding! From the first page to the last...</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    © 2024 BookStore. All rights reserved.
+</div>
+
+</body>
+</html>

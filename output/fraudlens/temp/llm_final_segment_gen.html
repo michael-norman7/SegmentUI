@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef1f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .logo {
+            font-weight: bold;
+            color: #0000EE;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #000;
+        }
+        .section {
+            padding: 20px;
+            background-color: #f7f9fc;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .overview-cards {
+            display: flex;
+            gap: 20px;
+        }
+        .overview-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-left: 4px solid #0000EE;
+            flex: 1;
+        }
+        .card-title {
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        .card-title img {
+            width: 16px;
+            height: 16px;
+        }
+        .card-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .card-description {
+            color: #777;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f1f3f5;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        .risk-high {
+            color: #d9534f;
+            background-color: #f8d7da;
+            border-radius: 4px;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+        .risk-medium {
+            color: #f0ad4e;
+            background-color: #fcf8e3;
+            border-radius: 4px;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+        .status-pending {
+            color: #ff9800;
+            background-color: #fff3e0;
+            border-radius: 4px;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+        .status-cleared {
+            color: #5cb85c;
+            background-color: #dff0d8;
+            border-radius: 4px;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+        .status-under-investigation {
+            color: #d9534f;
+            background-color: #f8d7da;
+            border-radius: 4px;
+            padding: 2px 8px;
+            display: inline-block;
+        }
+        .action-link {
+            color: #0000EE;
+            text-decoration: none;
+        }
+        .workflow-container {
+            display: flex;
+            gap: 20px;
+        }
+        .recent-investigations, .investigation-status {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .investigation-item {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .investigation-item:last-child {
+            margin-bottom: 0;
+        }
+        .status-tag {
+            border-radius: 4px;
+            padding: 2px 8px;
+            color: #fff;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .status-in-progress {
+            background-color: #ff9800;
+        }
+        .status-resolved {
+            background-color: #5cb85c;
+        }
+        .investigation-status img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+        .footer {
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            color: #666;
+        }
+    </style>
+    <title>Complete Website</title>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">FraudLens</a>
+        <div class="nav-links">
+            <a href="#">Dashboard</a>
+            <a href="#">Transactions</a>
+            <a href="#">Investigations</a>
+            <a href="#">Reports</a>
+        </div>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">Overview</div>
+        <div class="overview-cards">
+            <div class="overview-card">
+                <div class="card-title">
+                    <img src="anomalies-icon-placeholder.png" alt="Anomaly Icon">
+                    Anomalies Detected
+                </div>
+                <div class="card-value">32</div>
+                <div class="card-description">New anomalies in the last 24 hours</div>
+            </div>
+            <div class="overview-card">
+                <div class="card-title">
+                    <img src="risk-score-icon-placeholder.png" alt="Risk Score Icon">
+                    Average Risk Score
+                </div>
+                <div class="card-value">4.7</div>
+                <div class="card-description">Average risk score of recent transactions</div>
+            </div>
+            <div class="overview-card">
+                <div class="card-title">
+                    <img src="investigations-icon-placeholder.png" alt="Investigations Icon">
+                    Investigations Open
+                </div>
+                <div class="card-value">15</div>
+                <div class="card-description">Active fraud investigations currently open</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="transaction-anomalies-section section">
+        <div class="section-title">Transaction Anomalies</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>TRANSACTION ID</th>
+                    <th>DATE</th>
+                    <th>AMOUNT</th>
+                    <th>RISK SCORE</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#TRANS001</td>
+                    <td>2024-03-15 10:30</td>
+                    <td>$1,250.00</td>
+                    <td><span class="risk-high">High (8.9)</span></td>
+                    <td><span class="status-pending">Pending Review</span></td>
+                    <td><a href="#" class="action-link">View Details</a></td>
+                </tr>
+                <tr>
+                    <td>#TRANS002</td>
+                    <td>2024-03-15 09:15</td>
+                    <td>$580.00</td>
+                    <td><span class="risk-medium">Medium (6.2)</span></td>
+                    <td><span class="status-cleared">Cleared</span></td>
+                    <td><a href="#" class="action-link">View Details</a></td>
+                </tr>
+                <tr>
+                    <td>#TRANS003</td>
+                    <td>2024-03-14 18:40</td>
+                    <td>$2,100.00</td>
+                    <td><span class="risk-high">High (9.5)</span></td>
+                    <td><span class="status-under-investigation">Under Investigation</span></td>
+                    <td><a href="#" class="action-link">View Details</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="investigation-workflows-section section">
+        <div class="section-title">Investigation Workflows</div>
+        <div class="workflow-container">
+            <div class="recent-investigations">
+                <div class="section-title">Recent Investigations</div>
+                <div class="investigation-item">
+                    <span>Investigation #INV001</span> - Assigned to John Doe
+                    <span class="status-tag status-in-progress">In Progress</span>
+                </div>
+                <div class="investigation-item">
+                    <span>Investigation #INV002</span> - Assigned to Jane Smith
+                    <span class="status-tag status-resolved">Resolved</span>
+                </div>
+            </div>
+            <div class="investigation-status">
+                <div class="section-title">Investigation Status</div>
+                <img src="investigation-status-placeholder.jpg" alt="Investigation Status">
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Risk Score Distribution</div>
+        <div class="investigation-status">
+            <img src="risk-score-distribution-placeholder.jpg" alt="Risk Score Distribution Chart">
+            <div style="text-align: center; margin-top: 10px;">Risk Score Distribution Chart</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 FraudLens. All rights reserved.
+    </div>
+</body>
+</html>

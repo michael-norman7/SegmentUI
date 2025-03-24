@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+        .header {
+            background-color: red;
+            height: 100px;
+            position: relative;
+        }
+        .header .nav {
+            background-color: navy;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .main-content {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f0f0f0;
+            padding: 20px;
+            height: 400px;
+        }
+        .content-box {
+            background-color: purple;
+            width: 30%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content-box:nth-child(2) {
+            background-color: magenta;
+        }
+        .content-box:nth-child(3) {
+            background-color: pink;
+        }
+        .large-box {
+            background-color: teal;
+            height: 200px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .small-box {
+            background-color: cyan;
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .milestones {
+            margin-bottom: 40px;
+        }
+        table {
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        th {
+            background-color: #f8f8f8;
+        }
+        .status {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        .completed {
+            background-color: #28a745;
+            color: white;
+        }
+        .in-progress {
+            background-color: #ffc107;
+            color: white;
+        }
+        .pending {
+            background-color: #17a2b8;
+            color: white;
+        }
+        .quote-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+        .quote-section p {
+            margin-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: grey;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav"></div>
+    </div>
+    <div class="main-content">
+        <div class="content-box"></div>
+        <div class="content-box"></div>
+        <div class="content-box"></div>
+    </div>
+    <div class="large-box">
+        <div class="small-box"></div>
+    </div>
+    <div class="milestones">
+        <table>
+            <thead>
+                <tr>
+                    <th>Goal</th>
+                    <th>Milestone</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Read 50 Books</td>
+                    <td>Complete first 10 books</td>
+                    <td>2024-03-15</td>
+                    <td><span class="status completed">Completed</span></td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Run a Marathon</td>
+                    <td>Run 20km training run</td>
+                    <td>2024-04-01</td>
+                    <td><span class="status in-progress">In Progress</span></td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Learn a New Language</td>
+                    <td>Complete Grammar Unit 3</td>
+                    <td>2024-03-10</td>
+                    <td><span class="status pending">Pending</span></td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="quote-section">
+        <p>"The journey of a thousand miles begins with a single step."</p>
+        <p>– Lao Tzu</p>
+    </div>
+    <div class="footer">© 2024 Goal Dashboard. Crafted with ❤️</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Nunito', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            height: 100vh;
+        }
+        .sidebar {
+            background-color: #e9edf5;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        .content {
+            padding: 30px;
+            overflow-y: auto;
+        }
+        .header {
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #333;
+        }
+        .header p {
+            color: #666;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .card p {
+            margin: 10px 0;
+        }
+        .card small {
+            color: #666;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin: 10px 0 20px;
+            font-family: 'Nunito', sans-serif;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4f78e0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <title>Gratitude App</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <h2>Gratitude App</h2>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Journal</a></li>
+                <li><a href="#">Metrics</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </div>
+        <a href="#">Logout</a>
+    </div>
+    <div class="content">
+        <div class="header">
+            <h1>Dashboard</h1>
+            <p>Welcome back, User!</p>
+        </div>
+        <div class="card">
+            <h3>Gratitude Entries</h3>
+            <p><strong>7</strong> Entries this week</p>
+        </div>
+        <div class="card">
+            <h3>Reflection Prompts</h3>
+            <p><strong>3</strong> Prompts completed</p>
+        </div>
+        <div class="card">
+            <h3>Positive Mindset Score</h3>
+            <p><strong>85%</strong> Overall positivity</p>
+        </div>
+        <div class="card">
+            <h3>Recent Gratitude Entries</h3>
+            <p>Today, I am grateful for the warm sunshine and a productive morning. <br><small>Yesterday</small></p>
+            <p>I appreciate the support from my friends and family this week. <br><small>2 days ago</small></p>
+            <p>Feeling thankful for a good night's sleep and a fresh start. <br><small>3 days ago</small></p>
+        </div>
+        <div class="card">
+            <h3>Reflection Prompt</h3>
+            <p>What is a small act of kindness you received recently that made a big impact on your day?</p>
+            <textarea placeholder="Your reflection here..."></textarea><br>
+            <button>Save Reflection</button>
+        </div>
+        <div class="card">
+            <h3>Mindset Metrics Overview</h3>
+            <p><strong>92%</strong> Positive Thoughts</p>
+            <p><strong>8/10</strong> Daily Happiness Score</p>
+        </div>
+    </div>
+</body>
+</html>

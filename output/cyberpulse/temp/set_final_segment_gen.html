@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #f4f4f9;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .logo {
+            color: #6666ff;
+            font-size: 24px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 0 20px;
+        }
+        .menu {
+            list-style: none;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            display: inline;
+            margin: 0 15px;
+            color: #333;
+            font-size: 16px;
+        }
+        .search-box {
+            display: inline-block;
+            float: right;
+        }
+        .search-input {
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .feature-article {
+            background-image: url('https://via.placeholder.com/800x400');
+            background-size: cover;
+            color: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            flex: 1 1 60%;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+        .feature-content {
+            background: rgba(0, 0, 0, .6);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .feature-content h1 {
+            font-size: 28px;
+            margin: 0;
+        }
+        .feature-content p {
+            margin: 10px 0;
+        }
+        .feature-content button {
+            background-color: #6666ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .sidebar {
+            flex: 1 1 30%;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: #fff;
+        }
+        .articles {
+            background-color: #fff;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+        .article-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 47%;
+        }
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .article-card-content {
+            padding: 15px;
+        }
+        .article-card-content h3 {
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+        .article-card-content p {
+            font-size: 14px;
+            color: #555;
+        }
+        .article-card-content a {
+            color: #6666ff;
+            text-decoration: none;
+        }
+        .recent-articles {
+            margin-bottom: 20px;
+        }
+        .social-icons, .categories {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .footer {
+            background-color: #2c2c54;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .footer-content div {
+            max-width: 33%;
+        }
+        .bottom {
+            background-color: #1e1e3f;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        @media (max-width: 768px) {
+            .main, .footer {
+                flex-direction: column;
+            }
+            .feature-article {
+                flex: 1 1 100%;
+                margin-right: 0;
+            }
+            .sidebar {
+                flex: 1 1 100%;
+                margin-top: 20px;
+            }
+            .article-card {
+                max-width: 100%;
+            }
+            .footer-content div {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">CyberPulse</div>
+            <ul class="menu">
+                <li>Home</li>
+                <li>Categories</li>
+                <li>Privacy Guides</li>
+                <li>News</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search...">
+            </div>
+        </div>
+        <div class="main">
+            <div class="feature-article">
+                <div class="feature-content">
+                    <h1>The Evolving Landscape of Cyber Threats in 2024</h1>
+                    <p>Published on January 25, 2024 by John Doe</p>
+                    <p>Explore the latest cybersecurity threats and vulnerabilities that businesses and individuals need to be aware of in 2024. From ransomware attacks to AI-driven phishing, understand how to protect your digital assets.</p>
+                    <button>Read More</button>
+                </div>
+            </div>
+            <div class="sidebar">
+                <h3>About CyberPulse</h3>
+                <img src="https://via.placeholder.com/150" alt="About Image" style="width:100px; height:100px; border-radius:50%;">
+                <p>CyberPulse is your premier source for in-depth analysis, news, and guides on cybersecurity and data privacy. Our mission is to empower individuals and businesses with the knowledge to navigate the digital world safely and securely.</p>
+                <a href="#" style="color: #6666ff; text-decoration: none;">Learn More About Us</a>
+                <hr>
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter to receive the latest cybersecurity news, insights, and tips directly in your inbox.</p>
+                <input type="email" placeholder="Your email address" style="width: calc(100% - 20px); padding: 10px; margin-top: 10px;">
+                <button style="background-color: #6666ff; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; display: block; margin-top: 10px;">Subscribe</button>
+                <hr>
+                <h3>Categories</h3>
+                <ul class="categories">
+                    <li>📂 Data Privacy</li>
+                    <li>📂 Cybersecurity News</li>
+                    <li>📂 Threat Intelligence</li>
+                    <li>📂 Privacy Guides</li>
+                    <li>📂 Security Tools</li>
+                </ul>
+                <hr>
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <span>📘</span>
+                    <span>🐦</span>
+                    <span>🔗</span>
+                    <span>📸</span>
+                </div>
+            </div>
+        </div>
+        <div class="articles">
+            <div class="article-card">
+                <img src="https://via.placeholder.com/300x200" alt="Article Image">
+                <div class="article-card-content">
+                    <h3>Data Privacy in the Age of AI: Navigating Ethical Dilemmas</h3>
+                    <p>Published on January 20, 2024</p>
+                    <p>Discussing the critical data privacy concerns arising from the rapid advancement of artificial intelligence and machine learning technologies.</p>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://via.placeholder.com/300x200" alt="Article Image">
+                <div class="article-card-content">
+                    <h3>Securing Your Remote Workforce: Best Practices for 2024</h3>
+                    <p>Published on January 15, 2024</p>
+                    <p>Essential cybersecurity strategies and tools for organizations managing a remote workforce in an increasingly digital world.</p>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+        </div>
+        <div class="recent-articles">
+            <h2>Recent Articles</h2>
+            <div class="article-card">
+                <img src="https://via.placeholder.com/150" alt="Article Image">
+                <div class="article-card-content">
+                    <h3>Understanding Zero-Day Exploits and How to Prepare</h3>
+                    <p>Published on January 10, 2024</p>
+                    <p>A detailed look into zero-day exploits, their impact, and proactive measures to minimize risks and vulnerabilities in your systems.</p>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://via.placeholder.com/150" alt="Article Image">
+                <div class="article-card-content">
+                    <h3>The Role of VPNs in Enhancing Your Online Privacy</h3>
+                    <p>Published on January 5, 2024</p>
+                    <p>Exploring the benefits of using Virtual Private Networks (VPNs) to protect your online privacy and secure your internet connection from prying eyes.</p>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+            <div class="article-card">
+                <img src="https://via.placeholder.com/150" alt="Article Image">
+                <div class="article-card-content">
+                    <h3>Cybersecurity for Small Businesses: Essential Tips and Tools</h3>
+                    <p>Published on December 28, 2023</p>
+                    <p>Practical cybersecurity advice and tools tailored for small businesses to safeguard their operations and customer data from cyber threats.</p>
+                    <a href="#">Read More →</a>
+                </div>
+            </div>
+        </div>
+        <div class="load-more">
+            <button>Load More Articles</button>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <div>
+                    <h3>About CyberPulse</h3>
+                    <p>CyberPulse is dedicated to providing reliable and insightful information on cybersecurity and data privacy. We strive to be your trusted resource in the digital age.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                        <li>Contact Us</li>
+                        <li>Sitemap</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Connect With Us</h3>
+                    <p>Stay connected through our social media channels for the latest updates.</p>
+                    <div class="social-icons">
+                        <span>📘</span>
+                        <span>🐦</span>
+                        <span>🔗</span>
+                        <span>📸</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            &copy; 2024 CyberPulse. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

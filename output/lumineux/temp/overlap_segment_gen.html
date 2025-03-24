@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f7f8fc;
+        }
+        .container {
+            display: grid;
+            grid-template-rows: 100px 200px 150px 100px 200px;
+        }
+        .header {
+            background-color: #ffa500;
+        }
+        .section1 {
+            background-color: #800080;
+        }
+        .section2 {
+            background-color: #00ff00;
+        }
+        .section3 {
+            background-color: #008080;
+        }
+        .section4 {
+            background-color: #ff4500;
+        }
+        .footer {
+            background-color: #293241;
+        }
+        .block {
+            height: 100%;
+        }
+        /* Additional components styling */
+        .cta-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+        }
+        .cta-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .cta-button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f6b644;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+        .footer-content {
+            color: #f7f8fc;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        .footer-column {
+            width: 30%;
+            min-width: 200px;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        .footer h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .footer p, .footer a {
+            margin: 0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #f7f8fc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header block"></div>
+        <div class="section1 block"></div>
+        <div class="section2 block"></div>
+        <div class="section3 block">
+            <div class="cta-section">
+                <div class="cta-title">Ready to Glow?</div>
+                <p>Experience the Lumineux difference and unlock your skin's radiant potential.</p>
+                <button class="cta-button">Shop Now & Get 15% Off</button>
+            </div>
+        </div>
+        <div class="section4 block"></div>
+        <div class="footer block">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Lumineux Cosmetics</h4>
+                    <p>Your destination for radiant and healthy skin. Discover our curated collection of skincare essentials.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <a href="#">Products</a><br>
+                    <a href="#">About Us</a><br>
+                    <a href="#">Customer Support</a><br>
+                    <a href="#">Privacy Policy</a><br>
+                    <a href="#">Terms of Service</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><span>📘</span></a>
+                        <a href="#"><span>📸</span></a>
+                        <a href="#"><span>🐦</span></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    © 2024 Lumineux Cosmetics. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

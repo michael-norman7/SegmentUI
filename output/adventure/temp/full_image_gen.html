@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Camp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #fff;
+            padding: 10px 0;
+        }
+        .header nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .header nav a {
+            color: #2eb82e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://via.placeholder.com/800x400') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .hero p {
+            margin: 20px 0;
+        }
+        .btn {
+            background-color: #ffcc00;
+            color: #333;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section h2 {
+            color: #2eb82e;
+        }
+        .activities, .testimonials {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 0;
+        }
+        .card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            width: 45%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <a href="#">Adventure Camp</a>
+            <a href="#">About</a>
+            <a href="#">Activities</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Register</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Unleash Your Summer Adventure</h1>
+        <p>Create unforgettable memories at Adventure Camp! Explore nature, make new friends, and discover your potential.</p>
+        <a href="#" class="btn">Register Now</a>
+    </section>
+
+    <section class="section">
+        <h2>About Adventure Camp</h2>
+        <p>Adventure Camp is more than just a summer camp – it’s an experience that shapes lives.</p>
+    </section>
+
+    <section class="section activities">
+        <h2>Our Activities</h2>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Activity Image">
+            <h3>Kayaking Adventures</h3>
+            <p>Explore the serene lake and enjoy the beauty of nature from the water.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Activity Image">
+            <h3>Scenic Hiking Trails</h3>
+            <p>Discover breathtaking views and challenge yourself on our guided hiking trails.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Activity Image">
+            <h3>Campfire Stories & Songs</h3>
+            <p>Gather around the campfire for stories, songs, and s’mores under the stars.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300" alt="Activity Image">
+            <h3>Creative Arts & Crafts</h3>
+            <p>Unleash your creativity with fun and engaging arts and crafts projects.</p>
+        </div>
+    </section>
+
+    <section class="section testimonials">
+        <h2>What Our Campers Say</h2>
+        <div class="card">
+            <p>"Adventure Camp was the best summer of my life! I made so many new friends and tried things I never thought I could do. The counselors were amazing!"</p>
+            <p><strong>— Sarah M.</strong></p>
+        </div>
+        <div class="card">
+            <p>"My child came back from camp more confident and independent. The activities were well-organized and the staff was caring and professional. Highly recommend!"</p>
+            <p><strong>— John D.</strong></p>
+        </div>
+        <div class="card">
+            <p>"I loved every minute of Adventure Camp! The kayaking and rock climbing were my favorite. I can't wait to go back next year!"</p>
+            <p><strong>— Emily L.</strong></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+        <p>© 2024 Adventure Camp. All rights reserved.</p>
+        <p>Contact us: info@adventurecamp.com</p>
+    </footer>
+</body>
+</html>

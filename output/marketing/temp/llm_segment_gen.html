@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .navbar a.logo {
+            font-weight: bold;
+            color: #00796B;
+        }
+        .hero-section {
+            display: flex;
+            padding: 50px;
+            background-color: #f6f6f6;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero-text {
+            max-width: 500px;
+            margin-right: 30px;
+        }
+        .hero-text h1 {
+            font-size: 36px;
+            color: #333;
+        }
+        .hero-text h1 span {
+            color: #00796B;
+        }
+        .hero-text p {
+            color: #777;
+            line-height: 1.6;
+        }
+        .hero-buttons {
+            margin-top: 20px;
+        }
+        .hero-buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            color: white;
+        }
+        .btn-get-started {
+            background-color: #00796B;
+        }
+        .btn-learn-more {
+            background-color: #333;
+        }
+        .hero-image {
+            width: 350px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .services-section {
+            background-color: #f1f5f8;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .services-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .service-card img {
+            width: 40px;
+            margin-bottom: 10px;
+        }
+        .service-card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .service-card p {
+            color: #555;
+            line-height: 1.5;
+        }
+        .testimonials-section {
+            background-color: #f1f5f8;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .testimonials-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        .testimonials-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .testimonials-content:before {
+            content: '“';
+            font-size: 30px;
+            color: #bebebe;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+        .about-section {
+            background-color: #f1f5f8;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-content {
+            display: flex;
+            max-width: 1000px;
+            gap: 20px;
+            align-items: center;
+        }
+        .about-image {
+            width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .about-text {
+            width: 55%;
+            text-align: left;
+        }
+        .about-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .about-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        .contact-section {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .contact-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .contact-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #00796B;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .blog-section {
+            background-color: #f1f5f8;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .blog-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: left;
+        }
+        .blog-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .blog-card h3 {
+            margin: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+        .footer {
+            background-color: #24303F;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .block {
+            flex: 1;
+        }
+        .block1 { background-color: #DD2C00; }
+        .block2 { background-color: #000080; }
+        .block3 { background-color: #00FFFF; }
+        .block4 { background-color: #800080; }
+        .block5 { background-color: #FFA500; }
+        .block6 { background-color: #808000; }
+        .block7 { background-color: #0000FF; }
+        .block8 { background-color: #FFC0CB; }
+    </style>
+    <title>Wireframe Layout</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#" class="logo">[Agency Logo/Name]</a>
+            <div>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Insights</a>
+            </div>
+        </div>
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1>Driving B2B Growth Through <span>Strategic Marketing Solutions.</span></h1>
+                <p>We partner with ambitious B2B companies to craft and execute data-driven marketing strategies that deliver measurable results and lasting impact.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-get-started">Get Started</a>
+                    <a href="#" class="btn-learn-more">Learn More</a>
+                </div>
+            </div>
+            <img class="hero-image" src="https://via.placeholder.com/350" alt="Placeholder Image">
+        </div>
+        <div class="services-section">
+            <h2 class="services-title">Our B2B Marketing Services</h2>
+            <div class="services-container">
+                <div class="service-card">
+                    <img src="https://via.placeholder.com/40" alt="Icon">
+                    <h3>SEO & Content Marketing</h3>
+                    <p>Drive organic growth and establish thought leadership with strategic SEO and compelling content.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://via.placeholder.com/40" alt="Icon">
+                    <h3>Paid Advertising (PPC)</h3>
+                    <p>Reach your ideal B2B audience with targeted and ROI-focused paid advertising campaigns.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://via.placeholder.com/40" alt="Icon">
+                    <h3>Email Marketing & Automation</h3>
+                    <p>Nurture leads and build lasting relationships with effective email marketing and automation workflows.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://via.placeholder.com/40" alt="Icon">
+                    <h3>Social Media Marketing</h3>
+                    <p>Engage your professional audience and build brand awareness on relevant social media platforms.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://via.placeholder.com/40" alt="Icon">
+                    <h3>Marketing Strategy & Consulting</h3>
+                    <p>Develop a comprehensive marketing strategy tailored to your B2B goals and market landscape.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://via.placeholder.com/40" alt="Icon">
+                    <h3>Marketing Analytics & Reporting</h3>
+                    <p>Track performance, analyze data, and optimize your marketing efforts for maximum ROI.</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonials-section">
+            <h2 class="testimonials-title">Trusted by Leading B2B Brands</h2>
+            <div class="logos-container">
+                <img src="https://via.placeholder.com/80" alt="Logo 1">
+                <img src="https://via.placeholder.com/80" alt="Logo 2">
+                <img src="https://via.placeholder.com/80" alt="Logo 3">
+                <img src="https://via.placeholder.com/80" alt="Logo 4">
+                <img src="https://via.placeholder.com/80" alt="Logo 5">
+            </div>
+            <h2 class="testimonials-title">See What Our Clients Say</h2>
+            <div class="testimonials-content">
+                <p>"[Agency Name] has been instrumental in transforming our B2B marketing strategy. Their expertise and data-driven approach have significantly boosted our lead generation and brand visibility."</p>
+                <p>- John Smith, CEO, Example Corp</p>
+            </div>
+        </div>
+        <div class="about-section">
+            <div class="about-content">
+                <img class="about-image" src="https://via.placeholder.com/400" alt="About Image">
+                <div class="about-text">
+                    <h2 class="about-title">About Our Agency</h2>
+                    <p class="about-description">We are a team of passionate marketing experts dedicated to helping B2B businesses thrive in the digital landscape. With years of experience and a client-centric approach, we deliver tailored solutions that drive sustainable growth.</p>
+                    <p class="about-description">Our mission is to empower B2B companies with innovative and effective marketing strategies, enabling them to reach their full potential and achieve their business objectives.</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h2 class="contact-title">Ready to Elevate Your B2B Marketing?</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message <span>&rarr;</span></button>
+            </form>
+        </div>
+        <div class="blog-section">
+            <h2 class="blog-title">Latest B2B Marketing Insights</h2>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <img src="https://via.placeholder.com/300" alt="Blog 1">
+                    <h3>The Future of B2B Content Marketing</h3>
+                    <p>Explore the evolving landscape of B2B content marketing and strategies for success.</p>
+                    <a href="#">Read More <span>&rarr;</span></a>
+                </div>
+                <div class="blog-card">
+                    <img src="https://via.placeholder.com/300" alt="Blog 2">
+                    <h3>Maximizing ROI with B2B PPC Campaigns</h3>
+                    <p>Learn how to optimize your B2B PPC campaigns for maximum return on investment.</p>
+                    <a href="#">Read More <span>&rarr;</span></a>
+                </div>
+                <div class="blog-card">
+                    <img src="https://via.placeholder.com/300" alt="Blog 3">
+                    <h3>Data-Driven B2B Marketing Strategies</h3>
+                    <p>Discover the power of data analytics in shaping effective B2B marketing strategies.</p>
+                    <a href="#">Read More <span>&rarr;</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2024 [Your Agency Name]. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </div>
+</body>
+</html>

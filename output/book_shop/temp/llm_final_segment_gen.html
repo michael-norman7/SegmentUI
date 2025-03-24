@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 15px;
+            font-family: Arial, sans-serif;
+        }
+        .navbar a.logo {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .navbar-icons {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-icons i {
+            margin: 0 8px;
+            cursor: pointer;
+        }
+        .header {
+            display: flex;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+        .image {
+            width: 250px;
+            height: 350px;
+            border-radius: 8px;
+            background-color: #ccc;
+            background-image: url('https://source.unsplash.com/250x350/?tiger');
+            background-position: center;
+            background-size: cover;
+        }
+        .content {
+            margin-left: 20px;
+        }
+        .content h1 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+        }
+        .author {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            color: #f0c330;
+        }
+        .rating-details {
+            margin-left: 5px;
+            color: #999;
+        }
+        .description {
+            margin-top: 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .purchase-options {
+            margin-top: 20px;
+            color: #333;
+        }
+        .purchase-options div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .sample-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f5daf8;
+            color: #333;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .synopsis {
+            margin-bottom: 20px;
+        }
+        .author-section {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .author-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ddd;
+            background-image: url('https://source.unsplash.com/60x60/?person');
+            background-position: center;
+            background-size: cover;
+            margin-right: 10px;
+        }
+        .author-details {
+            color: #333;
+        }
+        .author-name {
+            font-weight: bold;
+        }
+        .customer-reviews {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .reviews-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .review {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .stars {
+            color: #f0c330;
+            margin-right: 10px;
+        }
+        .review-text {
+            color: #333;
+        }
+        .read-all {
+            text-align: right;
+            margin-top: 10px;
+        }
+        .read-all a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .recommendations {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .recommendations-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .recommendation-list {
+            display: flex;
+            justify-content: space-between;
+        }
+        .recommendation-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 23%;
+            overflow: hidden;
+        }
+        .recommendation-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .recommendation-content {
+            padding: 10px;
+        }
+        .recommendation-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #333;
+        }
+        .recommendation-author {
+            font-size: 14px;
+            color: #666;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #1c2938;
+            color: #ccc;
+            font-size: 14px;
+        }
+        .footer-column {
+            max-width: 250px;
+        }
+        .footer-column h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .footer-column p, .footer-column a {
+            margin: 5px 0;
+            text-decoration: none;
+            color: #ccc;
+        }
+        .footer-column a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 10px;
+            background-color: #16202e;
+            color: #888;
+        }
+        .social-icons i {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #ccc;
+            cursor: pointer;
+        }
+        .social-icons i:hover {
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="#" class="logo">BookStore</a>
+            <div>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="navbar-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-cart"></i>
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        
+        <div class="header">
+            <div class="image"></div>
+            <div class="content">
+                <h1>The Shadowed Kingdom</h1>
+                <p>By <a href="#" class="author">Anya Petrova</a></p>
+                <div class="rating">
+                    <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span class="rating-details">(4.8 / 5) | <a href="#" class="author">1,257 Reviews</a></span>
+                </div>
+                <div class="description">
+                    In a realm teetering on the brink of chaos, Elara, a reluctant sorceress, must embrace her forbidden powers to confront a darkness that threatens to consume the Shadowed Kingdom. A tale of magic, mystery, and self-discovery.
+                </div>
+                <div class="purchase-options">
+                    <div><span>Hardcover</span><span>$24.99</span></div>
+                    <div><a href="#" class="author">Add to Cart - Hardcover</a></div>
+                    <div><span>Paperback</span><span>$14.99</span></div>
+                    <div><a href="#" class="author">Add to Cart - Paperback</a></div>
+                    <div><span>eBook (Kindle, ePub)</span><span>$9.99</span></div>
+                    <div><a href="#" class="author">Add to Cart - eBook</a></div>
+                    <div><span>Audiobook (MP3)</span><span>$19.99</span></div>
+                    <div><a href="#" class="author">Add to Cart - Audiobook</a></div>
+                </div>
+                <a href="#" class="sample-btn">Read Sample</a>
+            </div>
+        </div>
+
+        <div class="customer-reviews">
+            <div class="reviews-header">Customer Reviews</div>
+            <div class="review">
+                <div class="review-header">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span>- John D.</span>
+                </div>
+                <p class="review-text">Absolutely spellbinding! From the first page to the last, I was completely immersed in the Shadowed Kingdom. Anya Petrova has crafted a masterpiece of fantasy literature.</p>
+            </div>
+            <div class="review">
+                <div class="review-header">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span>- Sarah L.</span>
+                </div>
+                <p class="review-text">A captivating read with rich world-building and characters that felt incredibly real. The plot twists kept me guessing until the very end. Highly recommend!</p>
+            </div>
+            <div class="review">
+                <div class="review-header">
+                    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+                    <span>- Michael B.</span>
+                </div>
+                <p class="review-text">Great book! The magic system was well-developed and the story was engaging. I especially loved the author's writing style.</p>
+            </div>
+            <div class="read-all">
+                <a href="#">Read All Reviews</a>
+            </div>
+        </div>
+
+        <div class="recommendations">
+            <div class="recommendations-header">You Might Also Like</div>
+            <div class="recommendation-list">
+                <div class="recommendation-card">
+                    <div class="recommendation-image" style="background-image: url('https://source.unsplash.com/250x200/?sunshine');"></div>
+                    <div class="recommendation-content">
+                        <div class="recommendation-title">Echoes of the Past</div>
+                        <div class="recommendation-author">By Author Name</div>
+                    </div>
+                </div>
+                <div class="recommendation-card">
+                    <div class="recommendation-image" style="background-image: url('https://source.unsplash.com/250x200/?mountain');"></div>
+                    <div class="recommendation-content">
+                        <div class="recommendation-title">The Forgotten City</div>
+                        <div class="recommendation-author">By Author Name</div>
+                    </div>
+                </div>
+                <div class="recommendation-card">
+                    <div class="recommendation-image" style="background-image: url('https://source.unsplash.com/250x200/?blackhole');"></div>
+                    <div class="recommendation-content">
+                        <div class="recommendation-title">Whispers in the Wind</div>
+                        <div class="recommendation-author">By Author Name</div>
+                    </div>
+                </div>
+                <div class="recommendation-card">
+                    <div class="recommendation-image" style="background-image: url('https://source.unsplash.com/250x200/?camera');"></div>
+                    <div class="recommendation-content">
+                        <div class="recommendation-title">The Last Guardian</div>
+                        <div class="recommendation-author">By Author Name</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-column">
+                <h4>BookStore</h4>
+                <p>Your online destination for bestselling novels and captivating stories. Explore our vast collection and discover your next favorite book.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Navigation</h4>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 BookStore. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

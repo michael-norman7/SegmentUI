@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            background-color: #ffff00;
+            height: 10%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .navbar {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .navbar .logo {
+            color: #007bff;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #000;
+            font-size: 18px;
+        }
+        .main {
+            flex: 1;
+            background-color: #f7f7f7;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .footer div {
+            max-width: 30%;
+        }
+        .footer h4 {
+            margin-top: 0;
+        }
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+        .social-icons a {
+            font-size: 20px;
+            margin-right: 10px;
+            color: #ccc;
+            text-decoration: none;
+        }
+        .social-icons a:hover {
+            color: #fff;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <a href="#" class="logo">HR Blog</a>
+            <ul class="nav-links">
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main">
+        <!-- Main content here -->
+    </div>
+    <div class="footer">
+        <div>
+            <h4>About HR Blog</h4>
+            <p>Your go-to resource for the latest trends and insights in Human Resources and Talent Management. We empower HR professionals and business leaders with knowledge to build successful organizations.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <a href="#">Articles</a>
+            <a href="#">Categories</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+        <div>
+            <h4>Connect With Us</h4>
+            <div class="social-icons">
+                <a href="#">&#xf09a;</a>
+                <a href="#">&#xf099;</a>
+                <a href="#">&#xf0e1;</a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2024 HR Blog. All rights reserved. <br>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+</body>
+</html>

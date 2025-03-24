@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .block {
+            width: 100%;
+            height: 16.67vh;
+        }
+        .block1 {
+            background-color: #00008B;
+        }
+        .block2 {
+            background-color: #008080;
+        }
+        .block3 {
+            background-color: #FF00FF;
+        }
+        .block4 {
+            background-color: #00FF00;
+        }
+        .block5 {
+            background-color: #FF4500;
+        }
+        .block6 {
+            background-color: #808000;
+        }
+        .block7 {
+            background-color: #0000FF;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .also-like-section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .book-cards {
+            display: flex;
+            gap: 10px;
+        }
+        .book-card {
+            flex: 1;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        .book-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .book-card-title {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .book-card-author {
+            color: #888;
+            font-size: 14px;
+        }
+        footer {
+            background-color: #2B2B3E;
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer div {
+            flex: 1;
+            margin: 0 20px;
+        }
+        footer h4 {
+            margin-bottom: 10px;
+        }
+        footer a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+        footer a:hover {
+            color: white;
+        }
+        footer p {
+            color: #ccc;
+            font-size: 14px;
+        }
+    </style>
+    <title>Combined Website</title>
+</head>
+<body>
+    <div class="block block1"></div>
+    <div class="block block2"></div>
+    <div class="block block3"></div>
+    <div class="block block4"></div>
+    <div class="block block5"></div>
+    <div class="block block6"></div>
+    <div class="block block7"></div>
+    <div class="container">
+        <div class="also-like-section">
+            <div class="book-cards">
+                <div class="book-card">
+                    <img src="https://via.placeholder.com/150" alt="Book Image">
+                    <div class="book-card-title">Echoes of the Past</div>
+                    <div class="book-card-author">By Author Name</div>
+                </div>
+                <div class="book-card">
+                    <img src="https://via.placeholder.com/150" alt="Book Image">
+                    <div class="book-card-title">The Forgotten City</div>
+                    <div class="book-card-author">By Author Name</div>
+                </div>
+                <div class="book-card">
+                    <img src="https://via.placeholder.com/150" alt="Book Image">
+                    <div class="book-card-title">Whispers in the Wind</div>
+                    <div class="book-card-author">By Author Name</div>
+                </div>
+                <div class="book-card">
+                    <img src="https://via.placeholder.com/150" alt="Book Image">
+                    <div class="book-card-title">The Last Guardian</div>
+                    <div class="book-card-author">By Author Name</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>BookStore</h4>
+                <p>Your online destination for bestselling novels and captivating stories. Explore our vast collection and discover your next favorite book.</p>
+            </div>
+            <div>
+                <h4>Navigation</h4>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="#">&#x1F30E;</a>
+                <a href="#">&#x1F4F1;</a>
+                <a href="#">&#x1F4F3;</a>
+            </div>
+        </div>
+        <p style="text-align: center;">&copy; 2024 BookStore. All rights reserved.</p>
+    </footer>
+</body>
+</html>

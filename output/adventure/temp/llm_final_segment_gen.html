@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Camp</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #ccc;
+        }
+        .navbar .logo {
+            font-size: 20px;
+            color: #47d147;
+            font-weight: bold;
+        }
+        .navbar .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .navbar .menu a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        .hero-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: url('https://via.placeholder.com/1600') center center / cover no-repeat;
+            padding: 50px;
+            color: white;
+            height: 70vh;
+        }
+        .hero-section .content {
+            max-width: 50%;
+        }
+        .hero-section h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .hero-section h1 span {
+            color: #ffc107;
+        }
+        .hero-section p {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .hero-section .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffc107;
+            color: black;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+        .about-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f7f8fa;
+        }
+        .about-section h2 {
+            font-size: 2em;
+            color: #47d147;
+            margin-bottom: 10px;
+        }
+        .about-section p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.6;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .feature-box {
+            background-color: #eef0f3;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 260px;
+        }
+        .feature-box h3 {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #333;
+        }
+        .feature-box p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        .activity-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: left;
+            margin: 20px;
+        }
+        .activity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .activity-card-content {
+            padding: 15px;
+        }
+        .activity-card h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .activity-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .testimonials-section,
+        .footer {
+            background-color: #f7f8fa;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .testimonials-section h2 {
+            font-size: 2em;
+            color: #47d147;
+            margin-bottom: 30px;
+        }
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: center;
+            padding: 20px;
+        }
+        .testimonial-card p {
+            font-size: 0.95em;
+            color: #666;
+        }
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .testimonial-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .testimonial-card q {
+            color: #47d147;
+            font-size: 1.5em;
+        }
+        .call-to-action-section {
+            padding: 50px 20px;
+            background-color: #9eca56;
+            text-align: center;
+        }
+        .call-to-action-section h2 {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 30px;
+        }
+        .call-to-action-section .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1em;
+            color: white;
+            background-color: #ffc107;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Adventure Camp</div>
+        <div class="menu">
+            <a href="#">About</a>
+            <a href="#">Activities</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Register</a>
+        </div>
+    </div>
+    <div class="hero-section">
+        <div class="content">
+            <h1>Unleash Your <span>Summer Adventure</span></h1>
+            <p>Create unforgettable memories at Adventure Camp! Explore nature, make new friends, and discover your potential.</p>
+            <a href="#" class="btn">Register Now →</a>
+        </div>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/500x300" alt="Adventure">
+        </div>
+    </div>
+    <div class="about-section">
+        <h2>About Adventure Camp</h2>
+        <p>Adventure Camp is more than just a summer camp – it's an experience that shapes lives. We offer a wide range of exciting activities designed to challenge and inspire campers of all ages. From outdoor adventures to creative workshops, we foster a supportive environment where kids can grow, learn, and have fun.</p>
+        <div class="features">
+            <div class="feature-box">
+                <i class="fas fa-compass"></i>
+                <h3>Exploration & Discovery</h3>
+                <p>Explore nature trails, learn survival skills, and discover the wonders of the outdoors.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-users"></i>
+                <h3>Friendship & Teamwork</h3>
+                <p>Build lasting friendships through team activities and collaborative challenges.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-fire"></i>
+                <h3>Adventure & Excitement</h3>
+                <p>Experience thrilling activities like rock climbing, kayaking, and zip-lining.</p>
+            </div>
+        </div>
+    </div>
+    <div class="activities-section">
+        <h2>Our Activities</h2>
+        <div class="activities">
+            <div class="activity-card">
+                <img src="https://via.placeholder.com/300x200" alt="Kayaking Adventures">
+                <div class="activity-card-content">
+                    <h3>Kayaking Adventures</h3>
+                    <p>Explore the serene lake and enjoy the beauty of nature from the water.</p>
+                </div>
+            </div>
+            <div class="activity-card">
+                <img src="https://via.placeholder.com/300x200" alt="Scenic Hiking Trails">
+                <div class="activity-card-content">
+                    <h3>Scenic Hiking Trails</h3>
+                    <p>Discover breathtaking views and challenge yourself on our guided hiking trails.</p>
+                </div>
+            </div>
+            <div class="activity-card">
+                <img src="https://via.placeholder.com/300x200" alt="Rock Climbing Fun">
+                <div class="activity-card-content">
+                    <h3>Rock Climbing Fun</h3>
+                    <p>Test your limits and reach new heights with our safe and exciting rock climbing sessions.</p>
+                </div>
+            </div>
+            <div class="activity-card">
+                <img src="https://via.placeholder.com/300x200" alt="Campfire Stories & Songs">
+                <div class="activity-card-content">
+                    <h3>Campfire Stories & Songs</h3>
+                    <p>Gather around the campfire for stories, songs, and s'mores under the stars.</p>
+                </div>
+            </div>
+            <div class="activity-card">
+                <img src="https://via.placeholder.com/300x200" alt="Creative Arts & Crafts">
+                <div class="activity-card-content">
+                    <h3>Creative Arts & Crafts</h3>
+                    <p>Unleash your creativity with fun and engaging arts and crafts projects.</p>
+                </div>
+            </div>
+            <div class="activity-card">
+                <img src="https://via.placeholder.com/300x200" alt="Exciting Team Games">
+                <div class="activity-card-content">
+                    <h3>Exciting Team Games</h3>
+                    <p>Participate in team-building games and competitions that promote fun and collaboration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials-section">
+        <h2>What Our Campers Say</h2>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <q>“</q>
+                <p>"Adventure Camp was the best summer of my life! I made so many new friends and tried things I never thought I could do. The counselors were amazing!"</p>
+                <div class="author">
+                    <img src="https://via.placeholder.com/50" alt="Sarah M.">
+                    <strong>Sarah M.</strong>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <q>“</q>
+                <p>"My child came back from camp more confident and independent. The activities were well-organized and the staff was caring and professional. Highly recommend!"</p>
+                <div class="author">
+                    <img src="https://via.placeholder.com/50" alt="John D.">
+                    <strong>John D.</strong>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <q>“</q>
+                <p>"I loved every minute of Adventure Camp! The kayaking and rock climbing were my favorite. I can't wait to go back next year!"</p>
+                <div class="author">
+                    <img src="https://via.placeholder.com/50" alt="Emily L.">
+                    <strong>Emily L.</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="call-to-action-section">
+        <h2>Ready for Adventure?</h2>
+        <p>Don't miss out on the summer of a lifetime! Register your child for Adventure Camp today and let the adventures begin.</p>
+        <a href="#" class="cta-button">Register Now</a>
+    </div>
+    <div class="footer">
+        <div class="social-media">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p>© 2024 Adventure Camp. All rights reserved.</p>
+        <p>Contact us: info@adventurecamp.com</p>
+    </div>
+</body>
+</html>

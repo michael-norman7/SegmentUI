@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberPulse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #4A4A4A;
+            background-color: #F5F5F5;
+        }
+        .header {
+            background-color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            color: #3b5bdb;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+        }
+        .search {
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .banner {
+            background-image: url('https://via.placeholder.com/1500x300');
+            background-size: cover;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .card-container {
+            max-width: 60%;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #fff;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            flex: 1;
+            min-width: 45%;
+            margin-bottom: 20px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .sidebar {
+            max-width: 30%;
+        }
+        .sidebar .card {
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>CyberPulse</h1>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">Privacy Guides</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <input type="text" class="search" placeholder="Search...">
+    </header>
+
+    <div class="banner">
+        <h2>The Evolving Landscape of Cyber Threats in 2024</h2>
+        <p>Explore the latest cybersecurity threats and vulnerabilities...</p>
+        <button style="background-color: #3b5bdb; color: #fff; padding: 10px; border: none; border-radius: 5px;">Read More</button>
+    </div>
+
+    <div class="section">
+        <div class="card-container">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Article">
+                <h3>Data Privacy in the Age of AI: Navigating Ethical Dilemmas</h3>
+                <p>Published on January 20, 2024</p>
+                <p>Discussing the critical data privacy concerns...</p>
+                <a href="#">Read More →</a>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Article">
+                <h3>Securing Your Remote Workforce: Best Practices for 2024</h3>
+                <p>Published on January 15, 2024</p>
+                <p>Essential cybersecurity strategies...</p>
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="card">
+                <h3>About CyberPulse</h3>
+                <p>CyberPulse is your premier source for in-depth analysis...</p>
+                <a href="#">Learn More About Us</a>
+            </div>
+            <div class="card">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter...</p>
+                <div>
+                    <input type="email" placeholder="Your email address">
+                    <button style="background-color: #3b5bdb; color: #fff; padding: 5px; border: none; border-radius: 5px;">Subscribe</button>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Categories</h3>
+                <ul>
+                    <li>Data Privacy</li>
+                    <li>Cybersecurity News</li>
+                    <li>Threat Intelligence</li>
+                    <li>Privacy Guides</li>
+                    <li>Security Tools</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="flex-direction: column;">
+        <h2>Recent Articles</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Article">
+                <h3>Understanding Zero-Day Exploits and How to Prepare</h3>
+                <p>Published on January 10, 2024</p>
+                <p>A detailed look into zero-day exploits, their impact...</p>
+                <a href="#">Read More →</a>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Article">
+                <h3>The Role of VPNs in Enhancing Your Online Privacy</h3>
+                <p>Published on January 5, 2024</p>
+                <p>Exploring the benefits of using Virtual Private Networks...</p>
+                <a href="#">Read More →</a>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Article">
+                <h3>Cybersecurity for Small Businesses: Essential Tips and Tools</h3>
+                <p>Published on December 28, 2023</p>
+                <p>Practical cybersecurity advice and tools tailored for small businesses...</p>
+                <a href="#">Read More →</a>
+            </div>
+        </div>
+        <button style="background-color: #3b5bdb; color: #fff; padding: 10px; border: none; border-radius: 5px; margin: 20px auto;">Load More Articles</button>
+    </div>
+
+    <footer class="footer">
+        <div>
+            <h3>About CyberPulse</h3>
+            <p>CyberPulse is dedicated to providing reliable...</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Connect With Us</h3>
+            <p>Stay connected through our social media channels...</p>
+        </div>
+    </footer>
+
+    <div style="background-color: #3b5bdb; color: #fff; text-align: center; padding: 10px 0;">
+        © 2024 CyberPulse. All rights reserved.
+    </div>
+
+</body>
+</html>

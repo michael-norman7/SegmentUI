@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+        }
+        .main {
+            display: flex;
+            flex: 1;
+            width: 100%;
+        }
+        .sidebar {
+            background-color: #e9ecf3;
+            width: 20%;
+            height: 100%;
+            padding: 20px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar li:before {
+            content: '\1F4DD ';
+            font-size: 14px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .logout {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .content-area {
+            padding: 20px;
+            width: 80%;
+            height: 100%;
+        }
+        .statistics {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .stats-box {
+            background-color: #fff;
+            flex: 1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .recent-entries, .metrics-overview {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .entry, .metric {
+            background-color: #f5f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        /* Menubar */
+        .menubar {
+            width: 100%;
+            background-color: #f5f7fa;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .menubar .logo {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-right: 20px;
+        }
+        .menubar .title {
+            font-weight: bold;
+            color: #2c3e50;
+            flex-grow: 1;
+        }
+        .menubar .profile {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="menubar">
+        <div class="logo">Gratitude App</div>
+        <div class="title">Dashboard</div>
+        <div class="profile"></div>
+    </div>
+    <div class="main">
+        <div class="sidebar">
+            <ul>
+                <li>Dashboard</li>
+                <li>Journal</li>
+                <li>Metrics</li>
+                <li>Settings</li>
+            </ul>
+            <div class="logout">Logout</div>
+        </div>
+        <div class="content-area">
+            <h1 class="menu-title">Dashboard</h1>
+            <p>Welcome back, User!</p>
+            <div class="statistics">
+                <div class="stats-box">
+                    <h3>Gratitude Entries</h3>
+                    <h1>7</h1>
+                    <p>Entries this week</p>
+                </div>
+                <div class="stats-box">
+                    <h3>Reflection Prompts</h3>
+                    <h1>3</h1>
+                    <p>Prompts completed</p>
+                </div>
+                <div class="stats-box">
+                    <h3>Positive Mindset Score</h3>
+                    <h1>85%</h1>
+                    <p>Overall positivity</p>
+                </div>
+            </div>
+            <div class="recent-entries">
+                <h3>Recent Gratitude Entries</h3>
+                <div class="entry">
+                    <p>Today, I am grateful for the warm sunshine and a productive morning.</p>
+                    <small>Yesterday</small>
+                </div>
+                <div class="entry">
+                    <p>I appreciate the support from my friends and family this week.</p>
+                    <small>2 days ago</small>
+                </div>
+                <div class="entry">
+                    <p>Feeling thankful for a good night's sleep and a fresh start.</p>
+                    <small>3 days ago</small>
+                </div>
+            </div>
+            <div class="reflection-prompts">
+                <h3>Reflection Prompt</h3>
+                <div class="metric">
+                    <p>What is a small act of kindness you received recently that made a big impact on your day?</p>
+                    <textarea placeholder="Your reflection here..."></textarea>
+                </div>
+                <button>Save Reflection</button>
+            </div>
+            <div class="metrics-overview">
+                <h3>Mindset Metrics Overview</h3>
+                <div class="metric">
+                    <h1>92%</h1>
+                    <p>Positive Thoughts</p>
+                </div>
+                <div class="metric">
+                    <h1>8/10</h1>
+                    <p>Daily Happiness Score</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

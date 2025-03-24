@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            background-color: #ccff33;
+            height: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        .logo {
+            color: #6666ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            margin: 0 10px;
+            color: #000;
+            font-size: 16px;
+        }
+        .search-box {
+            position: relative;
+        }
+        .search-input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+        }
+        .main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        .main-left {
+            background-color: #fff;
+            flex: 2;
+            margin-right: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .article-list {
+            list-style: none;
+            padding: 0;
+        }
+        .article-list-item {
+            display: flex;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .article-list-item img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+        }
+        .article-content {
+            padding: 15px;
+            flex: 1;
+        }
+        .article-content h3 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .article-content p {
+            font-size: 14px;
+            color: #555;
+        }
+        .article-content a {
+            color: #6666ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .load-more {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .load-more button {
+            background-color: #6666ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .footer {
+            background-color: #2c2c54;
+            padding: 20px;
+            color: #fff;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-content div {
+            flex: 1;
+            padding: 10px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: start;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .bottom {
+            background-color: #1e1e3f;
+            text-align: center;
+            color: #fff;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">CyberPulse</div>
+            <ul class="menu">
+                <li>Home</li>
+                <li>Categories</li>
+                <li>Privacy Guides</li>
+                <li>News</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-left">
+                <ul class="article-list">
+                    <li class="article-list-item">
+                        <img src="https://via.placeholder.com/150" alt="Article Image">
+                        <div class="article-content">
+                            <h3>Cybersecurity for Small Businesses</h3>
+                            <p>Published on December 28, 2023</p>
+                            <p>Practical cybersecurity advice and tools tailored for small businesses to safeguard their operations and customer data from cyber threats.</p>
+                            <a href="#">Read More →</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="load-more">
+                    <button>Load More Articles</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <div>
+                    <h3>About CyberPulse</h3>
+                    <p>CyberPulse is dedicated to providing reliable and insightful information on cybersecurity and data privacy. We strive to be your trusted resource in the digital age.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                        <li>Contact Us</li>
+                        <li>Sitemap</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Connect With Us</h3>
+                    <p>Stay connected through our social media channels for the latest updates.</p>
+                    <div class="social-icons">
+                        <span>📘</span>
+                        <span>🐦</span>
+                        <span>🔗</span>
+                        <span>📸</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            &copy; 2024 CyberPulse. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

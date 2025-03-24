@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+        /* Base Structure Styles */
+        .header {
+            background-color: #B7E842;
+            height: 10vh;
+        }
+        .section1 {
+            background-color: #F2B5B5;
+            height: 25vh;
+        }
+        .section2-container {
+            display: flex;
+            height: 20vh;
+        }
+        .section2.left {
+            background-color: #2D9696;
+            flex: 2;
+        }
+        .section2.right {
+            background-color: #0019FF;
+            flex: 1;
+        }
+        .main {
+            background-color: #811177;
+            height: 35vh;
+        }
+        .footer {
+            background-color: #2c2f3f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #444;
+            margin-top: 10px;
+        }
+        /* Components Styles */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .article-list {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .article {
+            width: 48%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .article img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+        .article-content {
+            padding: 15px;
+        }
+        .article-content h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+        .article-content .read-more {
+            color: #3d4dab;
+            text-decoration: none;
+        }
+        .recent-article {
+            display: flex;
+            margin-bottom: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .recent-article img {
+            width: 120px;
+            border-radius: 8px 0 0 8px;
+        }
+        .recent-article-content {
+            padding: 10px;
+            flex-grow: 1;
+        }
+        .load-more {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #3d4dab;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="section1"></div>
+    <div class="section2-container">
+        <div class="section2 left"></div>
+        <div class="section2 right"></div>
+    </div>
+    <div class="main container">
+        <h3 class="recent-articles">Recent Articles</h3>
+        <div class="recent-article">
+            <img src="recent1.jpg" alt="Recent Article Image">
+            <div class="recent-article-content">
+                <h3>Understanding Zero-Day Exploits and How to Prepare</h3>
+                <p>Published on January 10, 2024</p>
+                <p>A detailed look into zero-day exploits, their impact, and proactive measures to minimize risks and vulnerabilities in your systems.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="recent-article">
+            <img src="recent2.jpg" alt="Recent Article Image">
+            <div class="recent-article-content">
+                <h3>The Role of VPNs in Enhancing Your Online Privacy</h3>
+                <p>Published on January 5, 2024</p>
+                <p>Exploring the benefits of using Virtual Private Networks (VPNs) to protect your online privacy and secure your internet connection from prying eyes.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="recent-article">
+            <img src="recent3.jpg" alt="Recent Article Image">
+            <div class="recent-article-content">
+                <h3>Cybersecurity for Small Businesses: Essential Tips and Tools</h3>
+                <p>Published on December 28, 2023</p>
+                <p>Practical cybersecurity advice and tools tailored for small businesses to safeguard their operations and customer data from cyber threats.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <a href="#" class="load-more">Load More Articles</a>
+    </div>
+    <div class="footer">
+        <div class="footer-bottom">
+            <p>© 2024 CyberPulse. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

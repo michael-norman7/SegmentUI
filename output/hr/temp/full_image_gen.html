@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #fff;
+            padding: 10px 20px;
+        }
+        .navbar a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .hero img {
+            max-width: 40%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .hero .content h1 {
+            margin-bottom: 20px;
+        }
+        .hero .content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .hero .content a {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .articles {
+            display: flex;
+            flex-direction: column;
+            margin: 0 20px;
+        }
+        .article {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+        }
+        .article img {
+            max-width: 50%;
+            border-radius: 8px;
+        }
+        .article-content {
+            margin-left: 20px;
+        }
+        .article-content h3 {
+            margin-bottom: 10px;
+        }
+        .article-content p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 0.8em;
+        }
+        .sidebar {
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .sidebar-section h3 {
+            margin-bottom: 10px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .footer-links div {
+            margin: 0 20px;
+        }
+        .footer-links a {
+            color: #999;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .footer a {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="#">HR Blog</a>
+        <a href="#">Articles</a>
+        <a href="#">Categories</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="hero">
+        <div class="content">
+            <h1>The Future of Talent Management is Here</h1>
+            <p>Explore the latest trends, strategies, and insights in Human Resources and Talent Management. Stay ahead in the evolving world of work.</p>
+            <a href="#">Read More</a>
+        </div>
+        <img src="https://via.placeholder.com/500" alt="Hero Image">
+    </div>
+
+    <div class="articles">
+        <h2>Recent Articles</h2>
+        <div class="article">
+            <img src="https://via.placeholder.com/400" alt="Article Image">
+            <div class="article-content">
+                <h3>Top 5 HR Trends in 2024 You Need to Know</h3>
+                <p>Discover the most impactful HR trends shaping the workplace this year. From AI in recruitment to remote work policies, stay informed and adapt your strategies.</p>
+                <div class="article-footer">
+                    <span>By John Smith</span>
+                    <span>Nov 15, 2024</span>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <img src="https://via.placeholder.com/400" alt="Article Image">
+            <div class="article-content">
+                <h3>Building a Resilient Workforce: Strategies for Employee Wellbeing</h3>
+                <p>Learn how to prioritize employee wellbeing and build a resilient workforce. Explore practical strategies to support mental health, reduce burnout, and foster a positive work environment.</p>
+                <div class="article-footer">
+                    <span>By Jane Doe</span>
+                    <span>Nov 10, 2024</span>
+                </div>
+            </div>
+        </div>
+        <div class="article">
+            <img src="https://via.placeholder.com/400" alt="Article Image">
+            <div class="article-content">
+                <h3>The Art of Effective Remote Team Management</h3>
+                <p>Master the skills needed to manage remote teams effectively. From communication tools to performance management, discover best practices for leading distributed teams to success.</p>
+                <div class="article-footer">
+                    <span>By Peter Jones</span>
+                    <span>Nov 5, 2024</span>
+                </div>
+            </div>
+        </div>
+        <a href="#">View All Articles</a>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-section">
+            <h3>Categories</h3>
+            <ul>
+                <li>Recruitment</li>
+                <li>Employee Wellbeing</li>
+                <li>Remote Work</li>
+                <li>Leadership</li>
+                <li>HR Tech</li>
+            </ul>
+        </div>
+        <div class="sidebar-section">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter to receive the latest articles and HR insights directly in your inbox.</p>
+            <input type="email" placeholder="Your Email Address">
+            <button type="button">Subscribe</button>
+        </div>
+        <div class="sidebar-section">
+            <h3>About Us</h3>
+            <p>We are a team of HR professionals and talent management experts dedicated to sharing knowledge and best practices to help organizations thrive.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="sidebar-section">
+            <h3>Popular Posts</h3>
+            <ul>
+                <li>The Importance of Diversity and Inclusion in the Workplace</li>
+                <li>Mastering the Art of Employee Feedback</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>About HR Blog</div>
+        <div>Your go-to resource for the latest trends and insights in Human Resources and Talent Management. We empower HR professionals and business leaders with knowledge to build successful organizations.</div>
+        <div class="footer-links">
+            <div>
+                <div>Quick Links</div>
+                <a href="#">Articles</a>
+                <a href="#">Categories</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+            <div>
+                <div>Connect With Us</div>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div>© 2024 HR Blog. All rights reserved. | Privacy Policy | Terms of Service</div>
+    </div>
+
+</body>
+</html>

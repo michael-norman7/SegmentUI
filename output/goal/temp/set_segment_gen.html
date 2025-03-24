@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: red;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .header .right-box {
+            background-color: navy;
+            width: 80px;
+            height: 50px;
+        }
+        .menubar {
+            background-color: #f0f0f0;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .menubar .title {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+        }
+        .menubar .add-goal {
+            color: blue;
+            font-size: 1em;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            background-color: white;
+            transition: background-color 0.3s;
+        }
+        .menubar .add-goal:hover {
+            background-color: #f8f8f8;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background-color: white;
+            width: 30%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .icon {
+            background-color: #e0e0e0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .card-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .progress {
+            background-color: blue;
+            height: 10px;
+            width: 50%;
+        }
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .section {
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .milestone-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .milestone-table th, .milestone-table td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .status {
+            font-weight: bold;
+            padding: 2px 5px;
+            border-radius: 5px;
+            font-size: 0.8em;
+        }
+        .in-progress {
+            background-color: gold;
+            color: #333;
+        }
+        .pending {
+            background-color: teal;
+            color: white;
+        }
+        .actions {
+            display: flex;
+            gap: 5px;
+        }
+        .action-icon {
+            background-color: #333;
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #555;
+        }
+        .quote-section {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left-box"></div>
+        <div class="right-box"></div>
+    </div>
+    <div class="menubar">
+        <div class="title">My Goals Dashboard</div>
+        <a href="#" class="add-goal">+ Add Goal</a>
+    </div>
+    <div class="content">
+        <div class="cards">
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background-color: #c0c0ff;"></div>
+                    <div class="card-title">Read 50 Books</div>
+                </div>
+                <p>Expand knowledge and perspective through reading.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;"></div>
+                </div>
+                <div class="progress-info">
+                    <span>Progress: <strong>30/50</strong></span>
+                    <span>60% Complete</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background-color: #c0ffc0;"></div>
+                    <div class="card-title">Run a Marathon</div>
+                </div>
+                <p>Challenge physical limits and achieve a long-distance running goal.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 35%;"></div>
+                </div>
+                <div class="progress-info">
+                    <span>Progress: <strong>Training Phase 3</strong></span>
+                    <span>35% Complete</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="icon" style="background-color: #fff0c0;"></div>
+                    <div class="card-title">Learn a New Language</div>
+                </div>
+                <p>Expand communication skills and cultural understanding.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+                <div class="progress-info">
+                    <span>Progress: <strong>Level B1</strong></span>
+                    <span>80% Complete</span>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <table class="milestone-table">
+                <tbody>
+                    <tr>
+                        <th>Goal</th>
+                        <th>Milestone</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr>
+                        <td>Run a Marathon</td>
+                        <td>Run 20km training run</td>
+                        <td>2024-04-01</td>
+                        <td class="status in-progress">In Progress</td>
+                        <td class="actions">
+                            <div class="action-icon"></div>
+                            <div class="action-icon"></div>
+                            <div class="action-icon"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Learn a New Language</td>
+                        <td>Complete Grammar Unit 3</td>
+                        <td>2024-03-10</td>
+                        <td class="status pending">Pending</td>
+                        <td class="actions">
+                            <div class="action-icon"></div>
+                            <div class="action-icon"></div>
+                            <div class="action-icon"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="quote-section">
+            <p>"The journey of a thousand miles begins with a single step."</p>
+            <p>- Lao Tzu</p>
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 Goal Dashboard. Crafted with ❤
+    </div>
+</body>
+</html>

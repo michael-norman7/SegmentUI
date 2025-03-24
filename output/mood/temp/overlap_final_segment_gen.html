@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #444;
+        }
+        .container {
+            width: 100%;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .header .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        .header .button-group .button {
+            background-color: #eeeeee;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cards {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .card {
+            width: 32%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+        .card-content p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .card-content .button {
+            display: block;
+            background-color: #7c4dff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .mood-log {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .mood-log-header {
+            padding: 15px;
+            background-color: #e0f7fa;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .mood-log-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .mood-log-table th, .mood-log-table td {
+            padding: 10px;
+            text-align: left;
+        }
+        .mood-log-table th {
+            background-color: #f5f5f5;
+        }
+        .mood-log-table tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+        .log-footer {
+            padding: 20px;
+            text-align: center;
+        }
+        .log-footer .button {
+            background-color: #7c4dff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+    <title>Mood Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mood Dashboard</h1>
+            <div class="button-group">
+                <button class="button">Today</button>
+                <button class="button">Week</button>
+                <button class="button">Month</button>
+            </div>
+        </div>
+        
+        <div class="cards">
+            <div class="card">
+                <div class="card-content">
+                    <h3>📈 Mood Trend</h3>
+                    <img src="mood-trend.jpg" alt="Mood Trend" style="width: 100%; border-radius: 5px;">
+                    <p>Visual representation of your mood fluctuations over time. Track patterns to understand your emotional journey.</p>
+                    <a href="#" class="button">🔎 View Full Trend</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>🌼 Emotion Triggers</h3>
+                    <ul>
+                        <li>Sunshine <span>+2 Positive</span></li>
+                        <li>Morning Coffee <span>+1 Positive</span></li>
+                        <li>Traffic Jam <span>-3 Negative</span></li>
+                    </ul>
+                    <p>Identify key factors influencing your emotions. Understand what uplifts or downlifts your mood.</p>
+                    <a href="#" class="button">📋 See All Triggers</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3>🔍 Well-being Score</h3>
+                    <img src="wellbeing-score.jpg" alt="Well-being Score" style="width: 100%; border-radius: 5px;">
+                    <p>Overall well-being score based on your mood entries. Aim for a balanced and positive emotional state.</p>
+                    <a href="#" class="button">🔍 Detailed Breakdown</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mood-log">
+            <div class="mood-log-header">
+                📅 Daily Mood Log
+            </div>
+            <table class="mood-log-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Mood</th>
+                        <th>Emotions</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-03-15</td>
+                        <td>😊 Happy</td>
+                        <td>Joyful, Content</td>
+                        <td>Productive day at work.</td>
+                    </tr>
+                    <tr>
+                        <td>2024-03-14</td>
+                        <td>😐 Neutral</td>
+                        <td>Calm, Indifferent</td>
+                        <td>Regular day. Nothing much happened.</td>
+                    </tr>
+                    <tr>
+                        <td>2024-03-13</td>
+                        <td>😢 Sad</td>
+                        <td>Anxious, Down</td>
+                        <td>Felt a bit under the weather.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="log-footer">
+                <p>Your recent mood entries. Review your daily logs to reflect on your emotional patterns.</p>
+                <a href="#" class="button">📅 View Full Calendar</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumineux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .hero-img {
+            flex: 0 0 45%;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .hero-img img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .hero-content {
+            flex: 0 0 50%;
+            padding: 20px;
+        }
+        .hero-content h2 {
+            margin: 0 0 20px;
+        }
+        .hero-content p {
+            margin: 0 0 20px;
+            color: #555;
+        }
+        .price {
+            margin: 0;
+            font-size: 24px;
+            color: #e63946;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            color: #333;
+        }
+        .btn-yellow {
+            background-color: #f1c40f;
+        }
+        .btn-outline {
+            border: 2px solid #dcdcdc;
+        }
+        .features {
+            padding: 40px;
+            text-align: center;
+        }
+        .features h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .features .feature-item {
+            display: inline-block;
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            vertical-align: top;
+        }
+        .feature-item h4 {
+            margin-top: 0;
+        }
+        .reviews {
+            padding: 40px;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+        .review-item {
+            display: inline-block;
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            vertical-align: top;
+        }
+        .cta {
+            padding: 40px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .footer {
+            background-color: #343a40;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lumineux</h1>
+        <nav>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Learn</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Radiant Glow Serum</h2>
+                <p>Unlock your skin's natural radiance with our revolutionary serum. Formulated with potent botanical extracts and vitamin C, it diminishes dark spots, evens skin tone, and boosts luminosity. Experience visible results in just weeks.</p>
+                <p class="price">$49.99 <del>$59.99</del> <span style="color: #e63946;">Sale</span></p>
+                <a href="#" class="btn btn-yellow">Add to Cart</a>
+                <a href="#" class="btn btn-outline">Learn More</a>
+                <p><small>Secure Checkout | Free Shipping on Orders Over $50</small></p>
+            </div>
+            <div class="hero-img">
+                <img src="https://via.placeholder.com/400x300" alt="Product Image">
+                <div style="position: absolute; bottom: 10px; left: 10px; background-color: rgba(255,255,255,0.8); padding: 10px; border-radius: 5px;">
+                    <h4>Discover the Glow</h4>
+                    <p style="margin: 0; font-size: 12px;">See real results from our community.</p>
+                    <a href="#" style="color: #007bff; text-decoration: none;">View Results →</a>
+                </div>
+            </div>
+        </section>
+        <section class="features">
+            <h3>Key Features</h3>
+            <div class="feature-item">
+                <h4>Brightening Power</h4>
+                <p>Vitamin C and botanical extracts work synergistically to diminish dark spots and enhance skin's natural radiance.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Hydrating Formula</h4>
+                <p>Lightweight and fast-absorbing, our serum deeply hydrates without leaving a greasy residue, perfect for all skin types.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Natural Ingredients</h4>
+                <p>Formulated with carefully selected natural ingredients, free from parabens, sulfates, and phthalates. Cruelty-free and vegan.</p>
+            </div>
+        </section>
+        <section class="reviews">
+            <h3>Customer Reviews</h3>
+            <div class="review-item">
+                <p><strong>Sarah J.</strong></p>
+                <p>★★★★★</p>
+                <p>"This serum is a game-changer! My skin feels so much brighter and smoother. I've noticed a significant reduction in my dark spots. Highly recommend!"</p>
+            </div>
+            <div class="review-item">
+                <p><strong>Michael B.</strong></p>
+                <p>★★★★★</p>
+                <p>"I was skeptical at first, but this serum truly delivers. It's lightweight, absorbs quickly, and has improved my skin tone. Great product!"</p>
+            </div>
+            <div class="review-item">
+                <p><strong>Emily L.</strong></p>
+                <p>★★★★★</p>
+                <p>"Love this serum! It's gentle yet effective. My skin feels hydrated and looks more radiant. Will definitely repurchase."</p>
+            </div>
+            <a href="#" class="btn btn-yellow">Read All Reviews</a>
+        </section>
+        <section class="cta">
+            <h3>Ready to Glow?</h3>
+            <p>Experience the Lumineux difference and unlock your skin's radiant potential.</p>
+            <a href="#" class="btn btn-yellow">Shop Now & Get 15% Off</a>
+        </section>
+    </main>
+    <footer class="footer">
+        <div>
+            <h4>Lumineux Cosmetics</h4>
+            <p>Your destination for radiant and healthy skin. Discover our curated collection of skincare essentials.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <p>Products | About Us | Customer Support | Privacy Policy | Terms of Service</p>
+        </div>
+        <div>
+            <h4>Connect With Us</h4>
+            <p>Facebook | Instagram | Twitter</p>
+        </div>
+        <p>&copy; 2024 Lumineux Cosmetics. All rights reserved.</p>
+    </footer>
+</body>
+</html>

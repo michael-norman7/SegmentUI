@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 40px;
+            background-color: #fff;
+        }
+        .text-section {
+            max-width: 50%;
+        }
+        .text-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .text-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .text-section a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #00704a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 1em;
+        }
+        .text-section a.secondary {
+            background-color: transparent;
+            color: #00704a;
+            border: 1px solid #00704a;
+        }
+        .image-section img {
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        .services-section {
+            padding: 60px 40px;
+            text-align: center;
+            background-color: #e8ecf3;
+        }
+        .services-section h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: left;
+        }
+        .service-card h3 {
+            font-size: 1.25em;
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 1em;
+            color: #555;
+        }
+        .icon {
+            background-color: #00aaff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .testimonial-section {
+            padding: 60px 40px;
+            text-align: center;
+            background-color: #fff;
+        }
+        .testimonial-section h2 {
+            font-size: 1.75em;
+            margin-bottom: 30px;
+        }
+        .brands {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .brand img {
+            width: 100px;
+            height: auto;
+            filter: grayscale(100%);
+        }
+        .testimonial {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f0f3f7;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            text-align: left;
+        }
+        .testimonial::before {
+            content: '“';
+            font-size: 3em;
+            color: #00704a;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+        .testimonial p {
+            font-size: 1em;
+            color: #555;
+        }
+        .testimonial-footer {
+            margin-top: 20px;
+            text-align: right;
+            font-weight: bold;
+        }
+        .about-section {
+            display: flex;
+            align-items: center;
+            padding: 60px 40px;
+            background-color: #e8ecf3;
+        }
+        .about-section img {
+            border-radius: 10px;
+            max-width: 400px;
+            margin-right: 40px;
+        }
+        .about-text {
+            max-width: 600px;
+        }
+        .about-text h3 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            font-size: 1em;
+            color: #555;
+        }
+        .contact-section {
+            padding: 60px 40px;
+            background-color: #fff;
+            text-align: center;
+        }
+        .contact-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .contact-form button {
+            background-color: #00704a;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .insights-section {
+            padding: 60px 40px;
+            background-color: #e8ecf3;
+            text-align: center;
+        }
+        .insights-section h4 {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .insights-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .insight {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .insight img {
+            width: 100%;
+            height: auto;
+        }
+        .insight-content {
+            padding: 20px;
+        }
+        .insight h5 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .insight p {
+            font-size: 0.9em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .insight a {
+            color: #00704a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #f7f9fc;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #f7f9fc;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div>[Agency Logo/Name]</div>
+        <nav class="nav-links">
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Insights</a>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <div class="text-section">
+            <h1>Driving B2B Growth Through <strong>Strategic Marketing</strong> Solutions.</h1>
+            <p>We partner with ambitious B2B companies to craft and execute data-driven marketing strategies that deliver measurable results and lasting impact.</p>
+            <a href="#" class="primary">Get Started</a>
+            <a href="#" class="secondary">Learn More</a>
+        </div>
+        <div class="image-section">
+            <img src="https://via.placeholder.com/500" alt="Placeholder image">
+        </div>
+    </section>
+
+    <section class="services-section">
+        <h2>Our B2B Marketing Services</h2>
+        <div class="card-container">
+            <div class="service-card">
+                <div class="icon"></div>
+                <h3>SEO & Content Marketing</h3>
+                <p>Drive organic growth and establish thought leadership with strategic SEO and compelling content.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"></div>
+                <h3>Paid Advertising (PPC)</h3>
+                <p>Reach your ideal B2B audience with targeted and ROI-focused paid advertising campaigns.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"></div>
+                <h3>Email Marketing & Automation</h3>
+                <p>Nurture leads and build lasting relationships with effective email marketing and automation workflows.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"></div>
+                <h3>Social Media Marketing</h3>
+                <p>Engage your professional audience and build brand awareness on relevant social media platforms.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"></div>
+                <h3>Marketing Strategy & Consulting</h3>
+                <p>Develop a comprehensive marketing strategy tailored to your B2B goals and market landscape.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon"></div>
+                <h3>Marketing Analytics & Reporting</h3>
+                <p>Track performance, analyze data, and optimize your marketing efforts for maximum ROI.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial-section">
+        <h2>Trusted by Leading B2B Brands</h2>
+        <div class="brands">
+            <div class="brand"><img src="https://via.placeholder.com/100" alt="Brand 1"></div>
+            <div class="brand"><img src="https://via.placeholder.com/100" alt="Brand 2"></div>
+            <div class="brand"><img src="https://via.placeholder.com/100" alt="Brand 3"></div>
+            <div class="brand"><img src="https://via.placeholder.com/100" alt="Brand 4"></div>
+            <div class="brand"><img src="https://via.placeholder.com/100" alt="Brand 5"></div>
+        </div>
+        <h3>See What Our Clients Say</h3>
+        <div class="testimonial">
+            <p>"[Agency Name] has been instrumental in transforming our B2B marketing strategy. Their expertise and data-driven approach have significantly boosted our lead generation and brand visibility."</p>
+            <div class="testimonial-footer">
+                - John Smith, CEO, Example Corp
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <img src="https://via.placeholder.com/400" alt="About Image">
+        <div class="about-text">
+            <h3>About Our Agency</h3>
+            <p>We are a team of passionate marketing experts dedicated to helping B2B businesses thrive in the digital landscape. With years of experience and a client-centric approach, we deliver tailored solutions that drive sustainable growth.</p>
+            <p>Our mission is to empower B2B companies with innovative and effective marketing strategies, enabling them to reach their full potential and achieve their business objectives.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h3>Ready to Elevate Your B2B Marketing?</h3>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <section class="insights-section">
+        <h4>Latest B2B Marketing Insights</h4>
+        <div class="insights-container">
+            <div class="insight">
+                <img src="https://via.placeholder.com/300x200" alt="Insight 1">
+                <div class="insight-content">
+                    <h5>The Future of B2B Content Marketing</h5>
+                    <p>Explore the evolving landscape of B2B content marketing and strategies for success.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="insight">
+                <img src="https://via.placeholder.com/300x200" alt="Insight 2">
+                <div class="insight-content">
+                    <h5>Maximizing ROI with B2B PPC Campaigns</h5>
+                    <p>Learn how to optimize your B2B PPC campaigns for maximum return on investment.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="insight">
+                <img src="https://via.placeholder.com/300x200" alt="Insight 3">
+                <div class="insight-content">
+                    <h5>Data-Driven B2B Marketing Strategies</h5>
+                    <p>Discover the power of data analytics in shaping effective B2B marketing strategies.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2024 [Your Agency Name]. All rights reserved.
+        <br>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+            background-color: #000;
+            color: #fff;
+        }
+        .menu-bar {
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            width: 24px;
+            height: 24px;
+            background-color: #3D6EF7;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .logo-text {
+            color: #3D6EF7;
+            font-weight: bold;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            background-color: #111;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .section-content {
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+        .section-content strong {
+            display: block;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        form {
+            background-color: #111;
+            color: #fff;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+        }
+        button {
+            background-color: #3D6EF7;
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button:hover {
+            background-color: #2b4c94;
+        }
+        .footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <title>Wireframe Website</title>
+</head>
+<body>
+    <div class="menu-bar">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <a href="#" class="logo-text">Pixel Post</a>
+        </div>
+        <div class="nav-links">
+            <a href="#">Articles</a>
+            <a href="#">Reviews</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="section-content">
+            "The Legend of Pixelia" is more than just a retro throwback; it's a genuinely great game in its own right. It's a must-play for anyone who loves classic games or is looking for a charming and engaging adventure. With its tight gameplay, beautiful pixel art, and captivating soundtrack, "Pixelia" earns a solid 9/10.
+        </div>
+        <form>
+            <label>What do you think?</label>
+            <textarea rows="4" placeholder="Share your pixel thoughts!"></textarea>
+            <button type="submit">Submit Comment</button>
+        </form>
+    </div>
+    <div class="footer">
+        © 2024 Pixel Post. All rights reserved.<br>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+</body>
+</html>

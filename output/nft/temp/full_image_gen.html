@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a0f1f;
+            color: #ffffff;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #10172a;
+        }
+        nav a {
+            color: #f0c348;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .hero {
+            padding: 100px 20px;
+            background: linear-gradient(to right, #2ec5ce, #1b83a3);
+            color: #fff;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .btn-yellow, .btn-outline {
+            font-size: 16px;
+            padding: 12px 24px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-yellow {
+            background-color: #f0c348;
+            color: #10172a;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .nft-collection {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .nft-collection h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background-color: #17223b;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            display: inline-block;
+            text-align: left;
+            width: 210px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 14px;
+        }
+        .card .btn-blue {
+            background-color: #3f88c5;
+            color: #fff;
+            margin-top: 10px;
+        }
+        .about {
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-text, .about-image {
+            width: 45%;
+            margin: 10px;
+        }
+        .contact {
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .contact input, .contact textarea {
+            width: 300px;
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact .btn-send {
+            background-color: #f0c348;
+            color: #10172a;
+        }
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div><a href="#">Digital Canvas</a></div>
+    <div>
+        <a href="#">Collection</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Explore Unique Digital Art NFTs</h1>
+    <p>Discover a curated collection of exceptional digital artworks. Own a piece of the future.</p>
+    <button class="btn-yellow">View Collection</button>
+    <button class="btn-outline">Learn More</button>
+</div>
+
+<div class="nft-collection">
+    <h2>NFT Collection</h2>
+    <div class="card">
+        <img src="image1.jpg" alt="Abstract Dream #1">
+        <h3>Abstract Dream #1</h3>
+        <p>Artist Name</p>
+        <p>1.5 ETH</p>
+        <button class="btn-blue">Buy Now</button>
+    </div>
+    <div class="card">
+        <img src="image2.jpg" alt="Cyberpunk Cityscape">
+        <h3>Cyberpunk Cityscape</h3>
+        <p>Artist Name</p>
+        <p>2.2 ETH</p>
+        <button class="btn-blue">Buy Now</button>
+    </div>
+    <!-- Add more card elements as needed -->
+    <button class="btn-outline" style="margin-top: 20px;">Load More NFTs</button>
+</div>
+
+<div class="about">
+    <div class="about-text">
+        <h2>About the Artist</h2>
+        <p>Hello, I'm [Artist Name], a digital artist passionate about creating unique and immersive visual experiences. My work explores themes of [Themes] and aims to push the boundaries of digital art.</p>
+    </div>
+    <div class="about-image">
+        <img src="about-image.jpg" alt="About Image">
+    </div>
+</div>
+
+<div class="contact">
+    <h2>Contact Me</h2>
+    <p>Have questions or want to connect? Reach out to me through the form below or on social media.</p>
+    <input type="text" placeholder="Your Name"><br>
+    <input type="email" placeholder="Your Email"><br>
+    <textarea placeholder="Your Message"></textarea><br>
+    <button class="btn-send">Send Message</button>
+</div>
+
+<footer>
+    &copy; 2024 Digital Canvas. All rights reserved.<br>
+    Powered by Creativity & NFTs
+</footer>
+
+</body>
+</html>

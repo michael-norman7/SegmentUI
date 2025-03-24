@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .section {
+            flex: 1;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .brand {
+            font-weight: bold;
+            color: #ff6b00;
+            font-size: 1.2em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5em;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: 500;
+            font-size: 0.9em;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3em 5%;
+            background: linear-gradient(to right, #fffff0, #f7f7f7);
+        }
+        .header-text {
+            max-width: 50%;
+        }
+        .header-text h1 {
+            font-size: 3em;
+            color: #333333;
+            margin: 0;
+        }
+        .header-text p {
+            margin-top: 0.5em;
+            font-size: 1em;
+            color: #777777;
+        }
+        .header-text .button {
+            margin-top: 1em;
+            padding: 0.8em 1.5em;
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .image-container {
+            position: relative;
+            max-width: 40%;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #ffd700;
+            color: #333333;
+            padding: 0.5em;
+            border-radius: 10px;
+            font-size: 0.8em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            text-align: center;
+            background-color: #192a56;
+            color: #f5f5f5;
+            padding: 2em 0;
+        }
+        .footer p {
+            margin: 0.5em 0;
+        }
+        .social-icons {
+            margin-top: 1em;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #f5f5f5;
+            margin: 0 0.5em;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="brand">Ignite Fitness</div>
+            <div class="nav-links">
+                <a href="#">Classes</a>
+                <a href="#">Trainers</a>
+                <a href="#">Schedule</a>
+                <a href="#">Testimonials</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="header section">
+            <div class="header-text">
+                <h1>Unleash Your Inner Athlete</h1>
+                <p>High-energy fitness classes designed for teenagers. Build strength, boost confidence, and have fun!</p>
+                <button class="button">Explore Classes</button>
+            </div>
+            <div class="image-container">
+                <img src="https://via.placeholder.com/400" alt="Fitness">
+                <div class="badge">Summer Sale: Join now & get 20% off!</div>
+            </div>
+        </div>
+        <div class="footer section">
+            <p>&copy; 2024 Ignite Fitness. All Rights Reserved.</p>
+            <div class="social-icons">
+                <a href="#">&#xf09a;</a>
+                <a href="#">&#xf16d;</a>
+                <a href="#">&#xf099;</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

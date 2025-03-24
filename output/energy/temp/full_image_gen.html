@@ -4,32 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GridWise</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; }
-        header { background-color: #f8f9fa; padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        header a { text-decoration: none; color: black; margin-right: 20px; }
-        header a.logo { font-weight: bold; color: #4a90e2; display: flex; align-items: center; }
-        header a.logo i { margin-right: 10px; }
-        section { padding: 40px; }
-        .hero { display: flex; justify-content: space-between; align-items: center; }
-        .hero-text { max-width: 50%; }
-        .hero img { max-width: 40%; border-radius: 10px; }
-        .buttons { margin-top: 20px; }
-        .buttons a { margin-right: 10px; padding: 10px 20px; border-radius: 5px; text-decoration: none; }
-        .primary { background-color: #4a90e2; color: white; }
-        .secondary { background-color: #e0e0e0; color: black; }
-        .dashboard, .metrics, .analysis, .features { margin-top: 60px; }
-        .cards { display: flex; justify-content: space-between; }
-        .card { background-color: #f1f1f1; padding: 20px; border-radius: 10px; width: 100%; margin-right: 20px; }
-        .card:last-child { margin-right: 0; }
-        .footer { background-color: #4a90e2; color: white; padding: 40px; text-align: center; }
-        .footer a { color: white; text-decoration: none; margin: 0 10px; }
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8fafb;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+        header a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+        #hero img {
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .hero-text {
+            max-width: 500px;
+        }
+        .hero-text h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .hero-text p {
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #1d72f3;
+        }
+        .btn.secondary {
+            background-color: #ccc;
+            color: #333;
+        }
+        section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        section h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        section p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: left;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #1d72f3;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="#" class="logo"><i class="fas fa-bolt"></i>GridWise</a>
+        <div>
+            <a href="#">GridWise</a>
+        </div>
         <nav>
             <a href="#">Production</a>
             <a href="#">Stability</a>
@@ -38,98 +114,90 @@
             <a href="#">Contact</a>
         </nav>
     </header>
-
-    <section class="hero">
+    <div id="hero">
         <div class="hero-text">
             <h1>Harnessing Renewable Energy for a Sustainable Future</h1>
             <p>Optimize your renewable energy grid with real-time insights and intelligent management. Ensure stability, maximize production, and understand consumption patterns like never before.</p>
-            <div class="buttons">
-                <a href="#" class="primary">Get Started</a>
-                <a href="#" class="secondary">Learn More</a>
-            </div>
+            <a href="#" class="btn">Get Started</a>
+            <a href="#" class="btn secondary">Learn More</a>
         </div>
         <img src="https://via.placeholder.com/350" alt="Renewable Energy">
-    </section>
-
-    <section class="dashboard">
+    </div>
+    <section>
         <h2>Energy Production Dashboard</h2>
         <p>Real-time monitoring of your renewable energy sources.</p>
         <div class="cards">
             <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Solar Production">
+                <img src="https://via.placeholder.com/300" alt="Solar Production">
                 <h3>Solar Production</h3>
-                <p>75 MW</p>
+                <p>75 MW Current Output</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Wind Production">
+                <img src="https://via.placeholder.com/300" alt="Wind Production">
                 <h3>Wind Production</h3>
-                <p>42 MW</p>
+                <p>42 MW Current Output</p>
             </div>
             <div class="card">
-                <img src="https://via.placeholder.com/150" alt="Hydro Production">
+                <img src="https://via.placeholder.com/300" alt="Hydro Production">
                 <h3>Hydro Production</h3>
-                <p>28 MW</p>
+                <p>28 MW Current Output</p>
             </div>
         </div>
     </section>
-
-    <section class="metrics">
+    <section>
         <h2>Grid Stability Metrics</h2>
         <p>Ensure a stable and reliable energy grid with advanced monitoring.</p>
         <div class="cards">
             <div class="card">
-                <h3><i class="fas fa-bolt"></i> Frequency</h3>
+                <h3>Frequency</h3>
                 <p>59.98 Hz</p>
             </div>
             <div class="card">
-                <h3><i class="fas fa-bolt"></i> Voltage</h3>
+                <h3>Voltage</h3>
                 <p>235 kV</p>
             </div>
             <div class="card">
-                <h3><i class="fas fa-thermometer-half"></i> Temperature</h3>
+                <h3>Temperature</h3>
                 <p>28°C</p>
             </div>
         </div>
     </section>
-
-    <section class="analysis">
+    <section>
         <h2>Consumption Patterns Analysis</h2>
         <p>Understand energy consumption trends and optimize distribution.</p>
         <div class="cards">
-            <img src="https://via.placeholder.com/200" alt="Energy Consumption">
+            <div class="card">
+                <img src="https://via.placeholder.com/300" alt="Consumption Image">
+            </div>
             <div class="card">
                 <h3>Daily Consumption Breakdown</h3>
-                <p>Analyze consumption by sector to identify areas for efficiency improvements.</p>
+                <p>Residential: 45%<br>Commercial: 35%<br>Industrial: 20%</p>
             </div>
         </div>
     </section>
-
-    <section class="features">
+    <section>
         <h2>Key Features</h2>
         <div class="cards">
             <div class="card">
-                <h3><i class="fas fa-chart-line"></i> Real-time Monitoring</h3>
+                <h3>Real-time Monitoring</h3>
                 <p>Instantaneous data visualization for production, stability, and consumption.</p>
             </div>
             <div class="card">
-                <h3><i class="fas fa-chart-pie"></i> Predictive Analytics</h3>
+                <h3>Predictive Analytics</h3>
                 <p>AI-powered forecasting to anticipate grid issues and optimize performance.</p>
             </div>
             <div class="card">
-                <h3><i class="fas fa-cogs"></i> Automated Controls</h3>
+                <h3>Automated Controls</h3>
                 <p>Intelligent system adjustments to maintain grid stability and efficiency.</p>
             </div>
         </div>
     </section>
-
-    <section class="footer">
+    <footer>
         <h2>Ready to Optimize Your Grid?</h2>
         <p>Contact us today to learn more about GridWise and how we can help you achieve a sustainable energy future.</p>
-        <a href="#">Contact Us</a>
-        <footer>
-            <p>© 2024 GridWise. All rights reserved.</p>
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-        </footer>
-    </section>
+        <a href="#" class="btn">Contact Us</a>
+        <p>© 2024 GridWise. All rights reserved.</p>
+        <p><a href="#" style="color: #fff;">Privacy Policy</a> | <a href="#" style="color: #fff;">Terms of Service</a></p>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStore Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            background-color: #fff;
+            height: 60px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-logo {
+            font-size: 1.5rem;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-menu li {
+            font-size: 1rem;
+            color: #000;
+        }
+        .navbar-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 1.2rem;
+            color: #000;
+        }
+        .section {
+            display: flex;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .section img {
+            border-radius: 8px;
+            max-width: 250px;
+        }
+        .section-content {
+            margin-left: 20px;
+            color: #333;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #202020;
+        }
+        .section-author a {
+            color: #007bff;
+            font-size: 1rem;
+        }
+        .section-rating {
+            color: #ffcc00;
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+        .section-description {
+            margin: 10px 0;
+            line-height: 1.4;
+        }
+        .section-price-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .section-price-list li {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px 0;
+        }
+        .read-sample {
+            display: inline-block;
+            background-color: #ffccff;
+            color: #202020;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+        .section-synopsis {
+            margin-top: 20px;
+        }
+        .section-synopsis-title {
+            font-weight: bold;
+        }
+        .about-author, .customer-reviews, .recommendations {
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px;
+            border-radius: 8px;
+        }
+        .about-author-title, .customer-reviews-title, .recommendations-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+        }
+        .author-info img {
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+        .author-info div {
+            color: #333;
+        }
+        .review {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-top: 10px;
+        }
+        .review-author {
+            color: #57a957;
+            font-weight: bold;
+        }
+        .review-content {
+            color: #555;
+            margin-top: 5px;
+        }
+        .read-all-reviews {
+            margin-top: 10px;
+            text-align: right;
+        }
+        .read-all-reviews a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .recommendation-list {
+            display: flex;
+            gap: 20px;
+        }
+        .recommendation-item {
+            background-color: #fff;
+            width: 150px;
+            height: 250px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .recommendation-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        .recommendation-info {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .footer {
+            background-color: #232a3b;
+            color: #aaa;
+            padding: 20px;
+            margin-top: auto;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-section {
+            max-width: 300px;
+        }
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.9rem;
+            color: #aaa;
+            text-decoration: none;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .footer-connect i {
+            font-size: 1.2rem;
+            margin-right: 10px;
+            color: #aaa;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-logo">BookStore</div>
+        <ul class="navbar-menu">
+            <li>Home</li>
+            <li>Shop</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        <div class="navbar-icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
+    <div class="section">
+        <img src="https://via.placeholder.com/250" alt="The Shadowed Kingdom">
+        <div class="section-content">
+            <div class="section-title">The Shadowed Kingdom</div>
+            <div class="section-author">By <a href="#">Anya Petrova</a></div>
+            <div class="section-rating"><i class="fas fa-star"></i> (4.8 / 5) | <a href="#">1,257 Reviews</a></div>
+            <div class="section-description">
+                In a realm teetering on the brink of chaos, Elara, a reluctant sorceress, must embrace her forbidden powers to confront a darkness that threatens to consume the Shadowed Kingdom. A tale of magic, mystery, and self-discovery.
+            </div>
+            <ul class="section-price-list">
+                <li><strong>Hardcover</strong> <span>$24.99</span> <a href="#">Add to Cart - Hardcover</a></li>
+                <li><strong>Paperback</strong> <span>$14.99</span> <a href="#">Add to Cart - Paperback</a></li>
+                <li><strong>eBook (Kindle, ePub)</strong> <span>$9.99</span> <a href="#">Add to Cart - eBook</a></li>
+                <li><strong>Audiobook (MP3)</strong> <span>$19.99</span> <a href="#">Add to Cart - Audiobook</a></li>
+            </ul>
+            <a href="#" class="read-sample">Read Sample</a>
+            <div class="section-synopsis">
+                <div class="section-synopsis-title">Synopsis</div>
+                For centuries, the Shadowed Kingdom has been protected by an ancient magic, wielded by a lineage of powerful sorcerers. But now, the magic is fading, and a creeping darkness threatens to engulf the land. Elara, the last of her line, wants nothing to do with her heritage. Haunted by a tragic ...
+            </div>
+        </div>
+    </div>
+    <div class="about-author">
+        <div class="about-author-title">About the Author</div>
+        <div class="author-info">
+            <img src="https://via.placeholder.com/60" alt="Author Image">
+            <div>
+                <div><strong>Anya Petrova</strong></div>
+                Anya Petrova is a bestselling author of fantasy and adventure novels. Her intricate world-building and compelling characters have captivated readers worldwide. When not writing, Anya enjoys exploring ancient forests and sipping copious amounts of tea.
+            </div>
+        </div>
+    </div>
+    <div class="customer-reviews">
+        <div class="customer-reviews-title">Customer Reviews</div>
+        <div class="review">
+            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> - <span class="review-author">John D.</span></div>
+            <div class="review-content">
+                Absolutely spellbinding! From the first page to the last, I was completely immersed in the Shadowed Kingdom. Anya Petrova has crafted a masterpiece of fantasy literature.
+            </div>
+        </div>
+        <div class="review">
+            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> - <span class="review-author">Sarah L.</span></div>
+            <div class="review-content">
+                A captivating read with rich world-building and characters that felt incredibly real. The plot twists kept me guessing until the very end. Highly recommend!
+            </div>
+        </div>
+        <div class="review">
+            <div><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> - <span class="review-author">Michael B.</span></div>
+            <div class="review-content">
+                Great book! The magic system was well-developed and the story was engaging. I especially loved the author's writing style.
+            </div>
+        </div>
+        <div class="read-all-reviews">
+            <a href="#">Read All Reviews</a>
+        </div>
+    </div>
+    <div class="recommendations">
+        <div class="recommendations-title">You Might Also Like</div>
+        <div class="recommendation-list">
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/150" alt="Echoes of the Past">
+                <div class="recommendation-info">
+                    <div class="recommendation-title">Echoes of the Past</div>
+                    <div class="recommendation-author">By Author Name</div>
+                </div>
+            </div>
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/150" alt="The Forgotten City">
+                <div class="recommendation-info">
+                    <div class="recommendation-title">The Forgotten City</div>
+                    <div class="recommendation-author">By Author Name</div>
+                </div>
+            </div>
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/150" alt="Whispers in the Wind">
+                <div class="recommendation-info">
+                    <div class="recommendation-title">Whispers in the Wind</div>
+                    <div class="recommendation-author">By Author Name</div>
+                </div>
+            </div>
+            <div class="recommendation-item">
+                <img src="https://via.placeholder.com/150" alt="The Last Guardian">
+                <div class="recommendation-info">
+                    <div class="recommendation-title">The Last Guardian</div>
+                    <div class="recommendation-author">By Author Name</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>BookStore</h3>
+                <p>Your online destination for bestselling novels and captivating stories. Explore our vast collection and discover your next favorite book.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <a href="#">Home</a>
+                <a href="#">Shop</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-section footer-connect">
+                <h3>Connect</h3>
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 BookStore. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Website Layout</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        /* Base styles */
+        body {
+            background-color: #1f263e;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .section {
+            padding: 40px;
+            margin-bottom: 20px;
+        }
+        /* Menu bar styles */
+        .menu-bar {
+            background-color: #0f142a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            font-weight: bold;
+            color: #fdd835;
+        }
+        .menu-links {
+            display: flex;
+            gap: 20px;
+        }
+        /* Hero section styles */
+        .hero-section {
+            background-color: #34b39d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            padding: 50px;
+        }
+        .hero-content {
+            max-width: 50%;
+        }
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 1.2em;
+            color: #d1d8e0;
+            margin-bottom: 30px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            outline: none;
+        }
+        .button-primary {
+            background-color: #fdd835;
+            color: #333;
+        }
+        .button-primary:hover {
+            background-color: #e1c529;
+        }
+        .button-secondary {
+            background-color: transparent;
+            border: 2px solid #fdd835;
+            color: #fdd835;
+        }
+        .button-secondary:hover {
+            background-color: rgba(253, 216, 53, 0.1);
+        }
+        .hero-image {
+            width: 40%;
+            height: 250px;
+            background-image: url('https://via.placeholder.com/400');
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+        }
+
+        /* NFT Collection styles */
+        .nft-collection-section {
+            background-color: #0f142a;
+            text-align: center;
+        }
+        .nft-collection-section h2 {
+            margin-bottom: 30px;
+        }
+        .nft-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .nft-card {
+            background-color: #1e253a;
+            border-radius: 10px;
+            width: 200px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .nft-card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        .nft-card-content {
+            padding: 10px;
+            color: #c4c4c4;
+        }
+        .nft-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #2a324d;
+            color: #fdd835;
+        }
+        .nft-card-footer button {
+            background-color: #017bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* About section styles */
+        .about-section {
+            background-color: #273048;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin: 20px;
+        }
+        .about-content {
+            max-width: 600px;
+            margin-right: 40px;
+        }
+        .about-image {
+            width: 400px;
+            height: 250px;
+            background-image: url('https://via.placeholder.com/400x250');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Contact section styles */
+        .contact-section {
+            background-color: #1f263e;
+            text-align: center;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        }
+        .contact-form button {
+            margin-top: 20px;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fdd835;
+            color: #333;
+            cursor: pointer;
+            outline: none;
+        }
+        .contact-form button:hover {
+            background-color: #e1c529;
+        }
+        /* Footer styles */
+        .footer {
+            background-color: #1f263e;
+            color: #c4c4c4;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-bar">
+            <div class="logo">Digital Canvas</div>
+            <div class="menu-links">
+                <div>Collection</div>
+                <div>About</div>
+                <div>Contact</div>
+            </div>
+        </div>
+
+        <div class="hero-section section">
+            <div class="hero-content">
+                <h1>Explore Unique Digital Art NFTs</h1>
+                <p>Discover a curated collection of exceptional digital artworks. Own a piece of the future.</p>
+                <div class="hero-buttons">
+                    <button class="button button-primary">View Collection</button>
+                    <button class="button button-secondary">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </div>
+
+        <div class="nft-collection-section section">
+            <h2>NFT Collection</h2>
+            <div class="nft-gallery">
+                <div class="nft-card">
+                    <img src="https://via.placeholder.com/200x120" alt="NFT Image">
+                    <div class="nft-card-content">
+                        <h3>Abstract Dream #1</h3>
+                        <p>Artist Name</p>
+                    </div>
+                    <div class="nft-card-footer">
+                        <span>1.5 ETH</span>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="nft-card">
+                    <img src="https://via.placeholder.com/200x120" alt="NFT Image">
+                    <div class="nft-card-content">
+                        <h3>Cyberpunk Cityscape</h3>
+                        <p>Artist Name</p>
+                    </div>
+                    <div class="nft-card-footer">
+                        <span>2.2 ETH</span>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="nft-card">
+                    <img src="https://via.placeholder.com/200x120" alt="NFT Image">
+                    <div class="nft-card-content">
+                        <h3>Neon Dystopia</h3>
+                        <p>Artist Name</p>
+                    </div>
+                    <div class="nft-card-footer">
+                        <span>1.8 ETH</span>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+                <div class="nft-card">
+                    <img src="https://via.placeholder.com/200x120" alt="NFT Image">
+                    <div class="nft-card-content">
+                        <h3>Glitch in the Matrix</h3>
+                        <p>Artist Name</p>
+                    </div>
+                    <div class="nft-card-footer">
+                        <span>2.5 ETH</span>
+                        <button>Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <button class="button button-primary" style="margin-top: 20px;">Load More NFTs</button>
+        </div>
+
+        <div class="about-section section">
+            <div class="about-content">
+                <h2>About the Artist</h2>
+                <p>
+                    Hello, I'm [Artist Name], a digital artist passionate about creating unique and immersive visual experiences.
+                    My work explores themes of [Themes] and aims to push the boundaries of digital art.
+                    Each NFT in this collection is a carefully crafted piece, designed to be both visually stunning and conceptually rich.
+                </p>
+                <p>
+                    I believe in the power of NFTs to empower artists and collectors alike, fostering a new era of digital ownership and creativity.
+                    Explore the collection and find a piece that resonates with you.
+                </p>
+            </div>
+            <div class="about-image"></div>
+        </div>
+
+        <div class="contact-section section">
+            <h3>Contact Me</h3>
+            <p>Have questions or want to connect? Reach out to me through the form below or on social media.</p>
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message" rows="4"></textarea>
+                <button>Send Message</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy; 2024 Digital Canvas. All rights reserved.<br>
+            Powered by Creativity & NFTs
+        </div>
+    </div>
+</body>
+</html>

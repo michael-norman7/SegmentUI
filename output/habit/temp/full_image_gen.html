@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HabitZenith</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7f8, #fde4f7);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 300px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .header button {
+            background-color: #32cd32;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .habit-streaks, .routine-adherence, .daily-progress {
+            margin-bottom: 20px;
+        }
+        .habit-streaks h2, .routine-adherence h2, .daily-progress h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .habit-streaks .habit, .routine-adherence .day {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            width: 70%;
+            background-color: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-left: 10px;
+            flex: 1;
+        }
+        .progress-bar-inner {
+            height: 10px;
+            background-color: #32cd32;
+            width: 50%;
+            border-radius: 10px;
+        }
+        .day span {
+            font-size: 16px;
+            color: #32cd32;
+        }
+        .focus {
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .focus ul {
+            padding-left: 20px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>HabitZenith</h1>
+        <button>+ Add Habit</button>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="habit-streaks">
+                <h2>🔥 Habit Streaks</h2>
+                <div class="habit">
+                    <span>Morning Exercise</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-inner" style="width: 70%;"></div>
+                    </div>
+                    <span>7 Days</span>
+                </div>
+                <div class="habit">
+                    <span>Read 30 Pages</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-inner" style="width: 60%; background-color: #ff69b4;"></div>
+                    </div>
+                    <span>12 Days</span>
+                </div>
+                <div class="habit">
+                    <span>Meditate 15 Min</span>
+                    <div class="progress-bar">
+                        <div class="progress-bar-inner" style="width: 30%;"></div>
+                    </div>
+                    <span>3 Days</span>
+                </div>
+            </div>
+            <p style="text-align: center; color: #32cd32;">View All Streaks</p>
+        </div>
+        
+        <div class="card">
+            <div class="routine-adherence">
+                <h2>📅 Routine Adherence</h2>
+                <div class="day">
+                    <span>Mon</span>
+                    <span>✔</span>
+                </div>
+                <div class="day">
+                    <span>Tue</span>
+                    <span>✔</span>
+                </div>
+                <div class="day">
+                    <span>Wed</span>
+                    <span>✔</span>
+                </div>
+                <div class="day">
+                    <span>Thu</span>
+                    <span>✖</span>
+                </div>
+                <div class="day">
+                    <span>Fri</span>
+                    <span>✔</span>
+                </div>
+                <div class="day">
+                    <span>Sat</span>
+                    <span>✖</span>
+                </div>
+                <div class="day">
+                    <span>Sun</span>
+                    <span>✔</span>
+                </div>
+            </div>
+            <p style="text-align: center; color: #32cd32;">View Full Calendar</p>
+        </div>
+        
+        <div class="card">
+            <div class="daily-progress">
+                <h2>📈 Daily Progress Summary</h2>
+                <p>Good Morning, User!<br>Ready for a productive day?</p>
+                <div style="display: flex; justify-content: space-between;">
+                    <div class="focus" style="text-align: center;">
+                        <div>📋</div>
+                        <div>5</div>
+                        <div>Tasks Done</div>
+                    </div>
+                    <div class="focus" style="text-align: center;">
+                        <div>✔</div>
+                        <div>100%</div>
+                        <div>Routine Met</div>
+                    </div>
+                </div>
+                <div class="focus" style="margin-top: 20px;">
+                    <h4>Today's Focus</h4>
+                    <ul>
+                        <li>Morning Meditation</li>
+                        <li>Work on Project Alpha</li>
+                        <li>Evening Reading</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 HabitZenith. All rights reserved.
+    </div>
+</body>
+</html>

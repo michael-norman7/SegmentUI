@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+        }
+        .header {
+            background-color: #FFA500;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1em;
+        }
+        .main {
+            background-color: #800080;
+            height: 30vh;
+        }
+        .section {
+            background-color: #FFFFFF;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 10px;
+        }
+        .section h3 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .section p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #FFFACD;
+            color: #333;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .article {
+            background-color: #008080;
+            height: 30vh;
+        }
+        .aside {
+            background-color: #FF4500;
+            height: 5vh;
+        }
+        .footer {
+            background-color: #2F3A4A;
+            color: #FFF;
+            padding: 40px;
+            text-align: left;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer div {
+            flex: 1;
+        }
+        .footer h4 {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .footer p,
+        .footer a {
+            color: #CCCCCC;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #FFFFFF;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            color: #CCCCCC;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Lumineux</div>
+        <div class="nav">
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Learn</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="main"></div>
+    <div class="section">
+        <h3>Ready to Glow?</h3>
+        <p>Experience the Lumineux difference and unlock your skin's radiant potential.</p>
+        <a href="#" class="cta-button">Shop Now & Get 15% Off</a>
+    </div>
+    <div class="article"></div>
+    <div class="aside"></div>
+    <div class="footer">
+        <div>
+            <h4>Lumineux Cosmetics</h4>
+            <p>Your destination for radiant and healthy skin. Discover our curated collection of skincare essentials.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <a href="#">Products</a><br>
+            <a href="#">About Us</a><br>
+            <a href="#">Customer Support</a><br>
+            <a href="#">Privacy Policy</a><br>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div>
+            <h4>Connect With Us</h4>
+            <a href="#">&#xf082;</a>
+            <a href="#">&#xf16d;</a>
+            <a href="#">&#xf099;</a>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2024 Lumineux Cosmetics. All rights reserved.
+    </div>
+</body>
+</html>

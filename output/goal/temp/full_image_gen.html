@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Goals Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f3f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .add-goal {
+            background-color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-goal:hover {
+            background-color: #e0e5e9;
+        }
+        .card-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1;
+            min-width: 250px;
+        }
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .progress {
+            position: relative;
+            background-color: #e0e5e9;
+            border-radius: 4px;
+            height: 10px;
+            margin-top: 10px;
+        }
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            background-color: #3b82f6;
+            border-radius: 4px;
+            width: 60%; /* Example width */
+        }
+        .milestones {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .milestones h2 {
+            margin: 0 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+        }
+        th {
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f0f3f5;
+        }
+        .quote {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-style: italic;
+        }
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 12px;
+            color: white;
+            font-weight: bold;
+            background-color: gray;
+        }
+        .completed { background-color: #10b981; }
+        .in-progress { background-color: #f59e0b; }
+        .pending { background-color: #3b82f6; }
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+        .action-btn {
+            background-color: #1e293b;
+            padding: 8px;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>My Goals Dashboard</h1>
+            <div class="add-goal">+ Add Goal</div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <h3>Read 50 Books</h3>
+                <p>Expand knowledge and perspective through reading.</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <p>Progress: 30/50 <span style="float: right;">60% Complete</span></p>
+            </div>
+            
+            <div class="card">
+                <h3>Run a Marathon</h3>
+                <p>Challenge physical limits and achieve a long-distance running goal.</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 35%;"></div>
+                </div>
+                <p>Progress: Training Phase 3 <span style="float: right;">35% Complete</span></p>
+            </div>
+            
+            <div class="card">
+                <h3>Learn a New Language</h3>
+                <p>Expand communication skills and cultural understanding.</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <p>Progress: Level B1 <span style="float: right;">80% Complete</span></p>
+            </div>
+        </div>
+
+        <div class="milestones">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2>Milestones</h2>
+                <div class="add-goal">Filter Milestones</div>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Goal</th>
+                        <th>Milestone</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Read 50 Books</td>
+                        <td>Complete first 10 books</td>
+                        <td>2024-03-15</td>
+                        <td><span class="status completed">Completed</span></td>
+                        <td class="actions">
+                            <div class="action-btn">✏️</div>
+                            <div class="action-btn">🗑️</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Run a Marathon</td>
+                        <td>Run 20km training run</td>
+                        <td>2024-04-01</td>
+                        <td><span class="status in-progress">In Progress</span></td>
+                        <td class="actions">
+                            <div class="action-btn">✏️</div>
+                            <div class="action-btn">🗑️</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Learn a New Language</td>
+                        <td>Complete Grammar Unit 3</td>
+                        <td>2024-03-10</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td class="actions">
+                            <div class="action-btn">✏️</div>
+                            <div class="action-btn">🗑️</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="quote">
+            “The journey of a thousand miles begins with a single step.”
+            <br>– Lao Tzu
+        </div>
+    </div>
+
+    <footer>
+        © 2024 Goal Dashboard. Crafted with ❤️
+    </footer>
+</body>
+</html>

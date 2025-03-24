@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaFun Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+        }
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: #000;
+        }
+        .header nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000;
+        }
+        .hero {
+            background: linear-gradient(135deg, #00bfff, #a3ffe2);
+            padding: 50px;
+            text-align: left;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80vh;
+        }
+        .hero .content {
+            max-width: 50%;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .hero button {
+            background-color: #00aaff;
+            border: none;
+            padding: 15px 30px;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .hero button:hover {
+            background-color: #008fcc;
+        }
+        .hero img {
+            width: 40%;
+            border-radius: 10px;
+        }
+        .sections {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .sections h2 {
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+        .section-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .section-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            overflow: hidden;
+        }
+        .section-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .section-card p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .section-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .family-section {
+            background-color: #a3ffe2;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .family-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .family-text {
+            max-width: 50%;
+            text-align: left;
+            color: #333;
+        }
+        .family-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .family-text p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        .family-text ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        .family-text ul li {
+            font-size: 1rem;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+        .family-text ul li:before {
+            content: "•";
+            color: #00aaff;
+            padding-right: 10px;
+        }
+        .family-text button {
+            background-color: #00aaff;
+            border: none;
+            padding: 15px 30px;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .pricing-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .pricing-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+        }
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        .pricing-card .price {
+            font-size: 1.8rem;
+            color: #00aaff;
+            margin-bottom: 15px;
+        }
+        .pricing-card button {
+            background-color: #a3ffe2;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .pricing-card button:hover {
+            background-color: #8fe0c5;
+        }
+        .contact-section {
+            background-color: #00aaff;
+            padding: 30px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .contact-section p {
+            margin-bottom: 20px;
+        }
+        .contact-section .social-icons {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .contact-section .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">AquaFun</div>
+        <nav>
+            <a href="#">Attractions</a>
+            <a href="#">Family Fun</a>
+            <a href="#">Tickets & Pricing</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </div>
+
+    <div class="hero">
+        <div class="content">
+            <h1>Dive into a World of Aquatic Adventure!</h1>
+            <p>Experience thrilling slides, relaxing pools, and unforgettable family moments at AquaFun Water Park. Get ready for a splash-tastic day!</p>
+            <button>Get Tickets Now</button>
+        </div>
+        <img src="https://via.placeholder.com/600x400" alt="Aquatic Adventure Image">
+    </div>
+
+    <div class="sections">
+        <h2>Our Thrilling Attractions</h2>
+        <div class="section-cards">
+            <div class="section-card">
+                <h3>Mega Slides</h3>
+                <p>Experience the adrenaline rush on our towering water slides. Twists, turns, and splashes await!</p>
+                <img src="https://via.placeholder.com/250x150.jpg?text=Mega+Slides" alt="Mega Slides">
+            </div>
+            <div class="section-card">
+                <h3>Wave Pool</h3>
+                <p>Dive into our massive wave pool and feel the ocean thrill. Perfect for all ages!</p>
+                <img src="https://via.placeholder.com/250x150.jpg?text=Wave+Pool" alt="Wave Pool">
+            </div>
+            <div class="section-card">
+                <h3>Kids' Zone</h3>
+                <p>A safe and fun area designed for younger children with gentle slides and shallow pools.</p>
+                <img src="https://via.placeholder.com/250x150.jpg?text=Kids'+Zone" alt="Kids' Zone">
+            </div>
+        </div>
+    </div>
+
+    <div class="family-section">
+        <h2>Fun for the Whole Family</h2>
+        <div class="family-content">
+            <img src="https://via.placeholder.com/600x400" alt="Family Fun Image" class="family-img">
+            <div class="family-text">
+                <h3>Create Lasting Memories</h3>
+                <p>AquaFun is the perfect destination for families to bond and create unforgettable memories. With attractions for all ages, everyone will find something to love.</p>
+                <ul>
+                    <li>Relaxing lazy river for a calm float.</li>
+                    <li>Picnic areas and family-friendly dining options.</li>
+                    <li>Spacious sun loungers and shaded areas for relaxation.</li>
+                </ul>
+                <button>Plan Your Family Trip</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-section">
+        <h2>Tickets & Pricing</h2>
+        <div class="pricing-cards">
+            <div class="pricing-card">
+                <h3>Day Pass</h3>
+                <p>Full day access to all attractions.</p>
+                <div class="price">$49.99</div>
+                <button>Buy Day Pass</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Family Pass</h3>
+                <p>Day pass for a family of four.</p>
+                <div class="price">$179.99</div>
+                <button>Buy Family Pass</button>
+            </div>
+            <div class="pricing-card">
+                <h3>Season Pass</h3>
+                <p>Unlimited access for the entire season.</p>
+                <div class="price">$249.99</div>
+                <button>Buy Season Pass</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Have questions? We're here to help! Reach out to us for any inquiries or assistance.</p>
+        <div class="social-icons">
+            <a href="#">&#xf09a;</a> <!-- Facebook icon -->
+            <a href="#">&#xf16d;</a> <!-- Instagram icon -->
+            <a href="#">&#xf099;</a> <!-- Twitter icon -->
+        </div>
+        <div>
+            © 2023 AquaFun Water Park. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>

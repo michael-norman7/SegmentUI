@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: white;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #70c9e3;
+        }
+        .navbar .brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #1d1d1b;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        .navbar ul li {
+            display: inline;
+            color: #1d1d1b;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .hero {
+            background: linear-gradient(to right, #00aaff, #a0d9e7);
+            padding: 4em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1d1d1b;
+        }
+        .hero-content {
+            max-width: 50%;
+        }
+        .hero h1 {
+            font-size: 2.5em;
+            margin: 0 0 0.5em 0;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 1em;
+        }
+        .hero button {
+            background-color: #60c1e0;
+            color: white;
+            border: none;
+            padding: 0.7em 1.5em;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+        .hero img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .pricing {
+            background-color: #f4fafe;
+            padding: 3em 1em;
+            text-align: center;
+        }
+        .pricing h2 {
+            font-size: 2em;
+            color: #1d1d1b;
+            margin-bottom: 1em;
+        }
+        .pricing-cards {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+        }
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 1.5em;
+            border-radius: 10px;
+            width: 280px;
+            text-align: center;
+        }
+        .card h3 {
+            font-size: 1.2em;
+            color: #1d1d1b;
+            margin-bottom: 0.5em;
+        }
+        .card p {
+            font-size: 1em;
+            color: #1d1d1b;
+            margin-bottom: 1em;
+        }
+        .card .price {
+            font-size: 1.5em;
+            color: #00aaff;
+            margin-bottom: 1em;
+        }
+        .card button {
+            background-color: #98c637;
+            color: white;
+            border: none;
+            padding: 0.7em 1em;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+        .contact {
+            background-color: #3fb5fc;
+            padding: 3em 1em;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 1em;
+        }
+        .contact p {
+            font-size: 1em;
+            color: white;
+            margin-bottom: 1em;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1em;
+            margin-bottom: 1em;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+        .footer {
+            font-size: 0.8em;
+            color: white;
+        }
+        .section {
+            height: 20vh;
+            width: 100%;
+        }
+        .section1 { background-color: #e3a103; }
+        .section2 { background-color: #227674; }
+        .section3 { background-color: #7d7104; }
+        .section4 { background-color: #0fe4ea; }
+        .section5 { background-color: #e9acb0; }
+        .section6 { background-color: #98c637; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">AquaFun</div>
+        <ul>
+            <li>Attractions</li>
+            <li>Family Fun</li>
+            <li>Tickets & Pricing</li>
+            <li>Contact Us</li>
+        </ul>
+    </div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Dive into a World of Aquatic Adventure!</h1>
+            <p>Experience thrilling slides, relaxing pools, and unforgettable family moments at AquaFun Water Park. Get ready for a splash-tastic day!</p>
+            <button>
+                Get Tickets Now
+                <img src="ticket-icon.png" alt="Ticket Icon" width="20">
+            </button>
+        </div>
+        <img src="landscape.jpg" alt="Aquatic Adventure">
+    </div>
+    <div class="pricing">
+        <h2>Tickets & Pricing</h2>
+        <div class="pricing-cards">
+            <div class="card">
+                <h3>Day Pass</h3>
+                <p>Full day access to all attractions.</p>
+                <div class="price">$49.99</div>
+                <button>Buy Day Pass</button>
+            </div>
+            <div class="card">
+                <h3>Family Pass</h3>
+                <p>Day pass for a family of four.</p>
+                <div class="price">$179.99</div>
+                <button>Buy Family Pass</button>
+            </div>
+            <div class="card">
+                <h3>Season Pass</h3>
+                <p>Unlimited access for the entire season.</p>
+                <div class="price">$249.99</div>
+                <button>Buy Season Pass</button>
+            </div>
+        </div>
+    </div>
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions? We're here to help! Reach out to us for any inquiries or assistance.</p>
+        <div class="social-icons">
+            <img src="facebook-icon.png" alt="Facebook">
+            <img src="instagram-icon.png" alt="Instagram">
+            <img src="twitter-icon.png" alt="Twitter">
+        </div>
+        <div class="footer">
+            © 2023 AquaFun Water Park. All rights reserved.
+        </div>
+    </div>
+    <div class="section section1"></div>
+    <div class="section section2"></div>
+    <div class="section section3"></div>
+    <div class="section section4"></div>
+    <div class="section section5"></div>
+    <div class="section section6"></div>
+</body>
+</html>

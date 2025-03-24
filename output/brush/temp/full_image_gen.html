@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brush Catalog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5fc;
+            margin: 0;
+        }
+        header {
+            background-color: #d3d9e9;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        nav h1 {
+            margin: 0;
+            color: #555;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+        nav ul li {
+            margin-left: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+        }
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .featured-brushes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .brush-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: calc(33% - 20px);
+            margin-bottom: 20px;
+        }
+        .brush-card img {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            width: 100%;
+        }
+        .brush-card-content {
+            padding: 20px;
+        }
+        .brush-card h3 {
+            margin-top: 0;
+            color: #555;
+        }
+        button {
+            background-color: #d3d9e9;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b9c0d4;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        footer {
+            background-color: #d3d9e9;
+            padding: 10px 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+            color: #555;
+        }
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form textarea {
+            resize: none;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <h1>Brush Catalog</h1>
+            <ul>
+                <li><a href="#">Brushes</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Featured Brushes</h2>
+            <div class="featured-brushes">
+                <div class="brush-card">
+                    <img src="image1.jpg" alt="Painterly Pack">
+                    <div class="brush-card-content">
+                        <h3>Brush Set - Painterly Pack</h3>
+                        <p>A versatile set for creating painterly digital artworks.</p>
+                        <p><strong>$19.99</strong></p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="brush-card">
+                    <img src="image2.jpg" alt="Ink Wash Wonders">
+                    <div class="brush-card-content">
+                        <h3>Brush Set - Ink Wash Wonders</h3>
+                        <p>Emulate traditional ink wash techniques with these brushes.</p>
+                        <p><strong>$24.99</strong></p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="brush-card">
+                    <img src="image3.jpg" alt="Texture Masters">
+                    <div class="brush-card-content">
+                        <h3>Brush Set - Texture Masters</h3>
+                        <p>Add depth and tactile feel to your digital art with texture brushes.</p>
+                        <p><strong>$29.99</strong></p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="brush-card">
+                    <img src="image4.jpg" alt="Line Art Essentials">
+                    <div class="brush-card-content">
+                        <h3>Brush Set - Line Art Essentials</h3>
+                        <p>Perfect for crisp, clean lines and detailed illustrations.</p>
+                        <p><strong>$15.99</strong></p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="brush-card">
+                    <img src="image5.jpg" alt="Watercolor Dreams">
+                    <div class="brush-card-content">
+                        <h3>Brush Set - Watercolor Dreams</h3>
+                        <p>Achieve beautiful watercolor effects in your digital paintings.</p>
+                        <p><strong>$22.99</strong></p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+                <div class="brush-card">
+                    <img src="image6.jpg" alt="Concept Art Toolkit">
+                    <div class="brush-card-content">
+                        <h3>Brush Set - Concept Art Toolkit</h3>
+                        <p>Essential brushes for concept artists and visual development.</p>
+                        <p><strong>$34.99</strong></p>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>About Our Brushes</h2>
+            <p>
+                Our digital art brushes are meticulously crafted to provide artists with the most natural and intuitive painting experience. Each brush set is designed to emulate traditional art mediums while leveraging the power of digital technology.
+            </p>
+            <p>
+                We focus on creating brushes that are not only visually stunning but also highly performant and versatile, suitable for a wide range of artistic styles and software.
+            </p>
+            <p>
+                Explore our catalog and discover the perfect brushes to elevate your digital artwork to the next level.
+            </p>
+        </section>
+
+        <section>
+            <h2>Contact Us</h2>
+            <p>Have questions or need support? Reach out to our team. We're here to help you with any inquiries regarding our brushes or your digital art journey.</p>
+            <p>Email us at <a href="mailto:support@example.com">support@example.com</a> or use the form below.</p>
+
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button>Send Message</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Digital Art Brushes. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

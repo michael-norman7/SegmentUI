@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background: #f0f8f5;
+        }
+        .header {
+            background: linear-gradient(to right, #f0f8f5, #edf4f2);
+            height: 70px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .header .logo {
+            font-size: 24px;
+            color: #1a1a1a;
+            font-weight: bold;
+        }
+        .header .button {
+            background-color: #32cd32;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .header .button span {
+            margin-left: 5px;
+        }
+        .main {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+        .content-section {
+            background: #eaf2f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            color: #1a1a1a;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-text {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .header-text span {
+            font-size: 16px;
+            color: #666;
+        }
+        .summary {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .summary div {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 45%;
+        }
+        .summary-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+        .summary-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .focus {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .focus h4 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .focus ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .sidebar {
+            background: #eaf2f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 200px;
+            margin: 20px;
+            font-family: Arial, sans-serif;
+            color: #1a1a1a;
+        }
+        .sidebar h2 {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            margin: 0 0 20px 0;
+        }
+        .sidebar h2::before {
+            content: '🔥';
+            margin-right: 10px;
+            color: #ff69b4;
+        }
+        .progress {
+            margin: 10px 0;
+        }
+        .progress span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .progress .bar {
+            height: 5px;
+            border-radius: 5px;
+            background: #32cd32;
+        }
+        .progress.read .bar {
+            background: #ff69b4;
+        }
+        .view-all {
+            color: #32cd32;
+            text-align: right;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .routine-adherence {
+            flex: 1;
+            text-align: left;
+        }
+        .routine-adherence h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .routine-adherence h3::before {
+            content: '📅';
+            margin-right: 5px;
+            color: #32cd32;
+        }
+        .week {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .day, .check {
+            font-size: 16px;
+            color: #333;
+            text-align: center;
+            flex: 1;
+        }
+        .check {
+            color: #32cd32;
+        }
+        .inactive {
+            color: #ccc;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #eaf2f0;
+            color: #666;
+            font-size: 14px;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .progress-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .progress-content span {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">HabitZenith</div>
+        <button class="button">
+            <span>+</span>
+            <span>Add Habit</span>
+        </button>
+    </div>
+
+    <div class="main">
+        <div class="content-section sidebar">
+            <h2>Habit Streaks</h2>
+            <div class="progress-content">
+                <span>Morning Exercise<div class="days">7 Days</div></span>
+                <div class="progress">
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="progress-content">
+                <span>Read 30 Pages<div class="days">12 Days</div></span>
+                <div class="progress read">
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="progress-content">
+                <span>Meditate 15 Min<div class="days">3 Days</div></span>
+                <div class="progress">
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="view-all">View All Streaks</div>
+        </div>
+        
+        <div class="content-section routine-adherence">
+            <h3>Routine Adherence</h3>
+            <div class="week">
+                <span class="day">Mon</span>
+                <span class="day">Tue</span>
+                <span class="day">Wed</span>
+                <span class="day">Thu</span>
+                <span class="day">Fri</span>
+                <span class="day">Sat</span>
+                <span class="day">Sun</span>
+            </div>
+            <div class="week">
+                <span class="check">✔</span>
+                <span class="check">✔</span>
+                <span class="inactive check">✔</span>
+                <span class="inactive check">✔</span>
+                <span class="inactive check">✔</span>
+                <span class="inactive check">✔</span>
+                <span class="check">✔</span>
+            </div>
+            <div class="week">
+                <span class="check">✔</span>
+                <span class="check">✔</span>
+                <span class="inactive check">✔</span>
+                <span class="inactive check">✔</span>
+                <span class="check">✔</span>
+                <span class="inactive check">✔</span>
+                <span class="inactive check">✔</span>
+            </div>
+            <div class="view-all">View Full Calendar</div>
+        </div>
+
+        <div class="content-section">
+            <div class="header-text">
+                <div>Daily Progress Summary</div>
+                <span>Good Morning, User!<br>Ready for a productive day?</span>
+            </div>
+            <div class="summary">
+                <div>
+                    <div class="summary-icon">📋</div>
+                    <div class="summary-value">5</div>
+                    <div>Tasks Done</div>
+                </div>
+                <div>
+                    <div class="summary-icon">✔️</div>
+                    <div class="summary-value">100%</div>
+                    <div>Routine Met</div>
+                </div>
+            </div>
+            <div class="focus">
+                <h4>Today's Focus</h4>
+                <ul>
+                    <li>Morning Meditation</li>
+                    <li>Work on Project Alpha</li>
+                    <li>Evening Reading</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2024 HabitZenith. All rights reserved.
+    </div>
+</body>
+</html>

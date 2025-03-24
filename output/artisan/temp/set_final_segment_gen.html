@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refined Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #faf7f5;
+        }
+        .section {
+            width: 100%;
+        }
+        .header {
+            background-color: #f4f0eb;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar-menu {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-menu li {
+            font-size: 18px;
+            color: #333;
+        }
+        .main {
+            padding: 100px 40px 40px 40px;
+            background-color: #f8f5f2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .main-text {
+            max-width: 600px;
+        }
+        .main-text h1 {
+            font-size: 36px;
+            margin: 0 0 20px 0;
+            color: #333;
+        }
+        .main-text p {
+            font-size: 18px;
+            margin: 0 0 20px 0;
+            color: #666;
+        }
+        .main-text .highlight {
+            color: #d4af37;
+        }
+        .main-text .button {
+            background-color: #d4af37;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .main-image {
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-section {
+            background-color: #fff;
+            padding: 40px 20px;
+        }
+        .gallery-header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gallery-image {
+            width: 100%;
+            height: auto;
+        }
+        .about-section {
+            background-color: #e8ded1;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-content {
+            max-width: 1000px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .about-text {
+            flex: 1;
+            padding-right: 20px;
+            color: #555;
+        }
+        .about-text h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .about-image {
+            width: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .about-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .contact-section {
+            background-color: #f4ede7;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .contact-section h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .contact-section p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        .social-icons i {
+            font-size: 24px;
+            color: #333;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="section header">
+        <div class="navbar">
+            <div class="navbar-brand">Artisan Gallery</div>
+            <ul class="navbar-menu">
+                <li>Gallery</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+    <div class="section main">
+        <div class="main-text">
+            <h1>Explore the World Through <span class="highlight">Brushstrokes</span></h1>
+            <p>Welcome to the online gallery of a passionate painter. Discover a curated collection of original artworks, each telling a unique story.</p>
+            <a href="#" class="button">View Gallery</a>
+        </div>
+        <img src="laptop.jpg" alt="Laptop on a table" class="main-image">
+    </div>
+    <div class="section gallery-section">
+        <div class="gallery-header">Art Gallery</div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="art1.jpg" alt="Art 1" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="art2.jpg" alt="Art 2" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="art3.jpg" alt="Art 3" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="art4.jpg" alt="Art 4" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="art5.jpg" alt="Art 5" class="gallery-image">
+            </div>
+            <div class="gallery-item">
+                <img src="art6.jpg" alt="Art 6" class="gallery-image">
+            </div>
+        </div>
+    </div>
+    <div class="section about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About the Artist</h2>
+                <p>[Painter's Name] is a contemporary painter known for their evocative landscapes and abstract compositions. With a career spanning over [Number] years, [he/she] has developed a distinctive style characterized by [mention key style elements, e.g., bold brushstrokes, vibrant color palettes, subtle textures].</p>
+                <p>Driven by a passion for capturing the essence of nature and emotion, [Painter's Name]'s work invites viewers to contemplate the beauty and complexity of the world around them.</p>
+            </div>
+            <div class="about-image">
+                <img src="dandelion.jpg" alt="Dandelion">
+            </div>
+        </div>
+    </div>
+    <div class="section contact-section">
+        <h2>Contact Me</h2>
+        <p>For inquiries about purchasing artwork, commissions, or collaborations, please feel free to reach out.</p>
+        <p>info@artisangallery.com</p>
+        <p>+1 555-123-4567</p>
+        <div class="social-icons">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 Artisan Gallery. All Rights Reserved.
+    </div>
+</body>
+</html>

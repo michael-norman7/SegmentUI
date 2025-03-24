@@ -7,18 +7,24 @@ def display_images(project_name):
     output_dir = f"output/{project_name}"
     image1_path = os.path.join(output_dir, f"{project_name}.png")
     image2_path = os.path.join(output_dir, "full_image_gen.png")
-    image3_path = os.path.join(output_dir, "final_segment_gen.png")
+    image3_path = os.path.join(output_dir, "llm_final_segment_gen.png")
+    image4_path = os.path.join(output_dir, "set_final_segment_gen.png")
+    image5_path = os.path.join(output_dir, "overlap_final_segment_gen.png")
 
     if (
         os.path.exists(image1_path)
         and os.path.exists(image2_path)
         and os.path.exists(image3_path)
+        and os.path.exists(image4_path)
+        and os.path.exists(image5_path)
     ):
         img1 = mpimg.imread(image1_path)
         img2 = mpimg.imread(image2_path)
         img3 = mpimg.imread(image3_path)
+        img4 = mpimg.imread(image4_path)
+        img5 = mpimg.imread(image5_path)
 
-        fig, axs = plt.subplots(1, 3, figsize=(15, 5))
+        fig, axs = plt.subplots(1, 5, figsize=(15, 5))
         axs[0].imshow(img1)
         axs[0].axis("off")
         axs[0].set_title(f"{project_name}.png")
@@ -27,7 +33,13 @@ def display_images(project_name):
         axs[1].set_title("full_image_gen.png")
         axs[2].imshow(img3)
         axs[2].axis("off")
-        axs[2].set_title("final_segment_gen.png")
+        axs[2].set_title("llm_segment_gen.png")
+        axs[2].imshow(img4)
+        axs[2].axis("off")
+        axs[2].set_title("set_segment_gen.png")
+        axs[2].imshow(img5)
+        axs[2].axis("off")
+        axs[2].set_title("overlap_segment_gen.png")
         plt.tight_layout()
         plt.show()
     else:

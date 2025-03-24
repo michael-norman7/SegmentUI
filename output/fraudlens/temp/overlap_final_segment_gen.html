@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudLens Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f6fa;
+        }
+        .header {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 10px 20px;
+            border-bottom: 1px solid #dcdde1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header a {
+            color: #487eb0;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .nav-links a {
+            margin: 0 15px;
+            color: #2f3640;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .container {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .overview-section, .workflow-section, .risk-section {
+            background-color: #ffffff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .overview-section h2, .workflow-section h2, .risk-section h2 {
+            margin-bottom: 20px;
+            font-size: 22px;
+            color: #333;
+        }
+        .overview-cards {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .overview-card {
+            background-color: #f5f6fa;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            text-align: center;
+        }
+        .overview-card p {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #dcdde1;
+        }
+        th {
+            background-color: #f5f6fa;
+            color: #333;
+        }
+        .risk-high {
+            color: #e84118;
+            font-weight: bold;
+        }
+        .risk-medium {
+            color: #fbc531;
+            font-weight: bold;
+        }
+        .status-label, .status-review, .status-cleared, .status-investigation {
+            background-color: #e1b12c;
+            color: #ffffff;
+            padding: 5px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        .status-review {
+            background-color: #fbc531;
+        }
+        .status-cleared {
+            background-color: #4cd137;
+        }
+        .status-investigation {
+            background-color: #e84118;
+        }
+        .workflow-section {
+            display: flex;
+            justify-content: space-between;
+        }
+        .investigation {
+            width: 48%;
+        }
+        .recent-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .recent-item img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .risk-section img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 8px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #dcdde1;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="#">FraudLens</a>
+        <div class="nav-links">
+            <a href="#">Dashboard</a>
+            <a href="#">Transactions</a>
+            <a href="#">Investigations</a>
+            <a href="#">Reports</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="overview-section">
+            <h2>Overview</h2>
+            <div class="overview-cards">
+                <div class="overview-card">
+                    <h3>Anomalies Detected</h3>
+                    <p>32</p>
+                    <p>New anomalies in the last 24 hours</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Average Risk Score</h3>
+                    <p>4.7</p>
+                    <p>Average risk score of recent transactions</p>
+                </div>
+                <div class="overview-card">
+                    <h3>Investigations Open</h3>
+                    <p>15</p>
+                    <p>Active fraud investigations currently open</p>
+                </div>
+            </div>
+        </div>
+        <div class="overview-section">
+            <h2>Transaction Anomalies</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TRANSACTION ID</th>
+                        <th>DATE</th>
+                        <th>AMOUNT</th>
+                        <th>RISK SCORE</th>
+                        <th>STATUS</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#TRANS001</td>
+                        <td>2024-03-15 10:30</td>
+                        <td>$1,250.00</td>
+                        <td class="risk-high">High (8.9)</td>
+                        <td><span class="status-review">Pending Review</span></td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>#TRANS002</td>
+                        <td>2024-03-15 09:15</td>
+                        <td>$580.00</td>
+                        <td class="risk-medium">Medium (6.2)</td>
+                        <td><span class="status-cleared">Cleared</span></td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>#TRANS003</td>
+                        <td>2024-03-14 18:40</td>
+                        <td>$2,100.00</td>
+                        <td class="risk-high">High (9.5)</td>
+                        <td><span class="status-investigation">Under Investigation</span></td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="workflow-section">
+            <div class="investigation">
+                <h2>Investigation Workflows</h2>
+                <div class="recent-item">
+                    <img src="image1.jpg" alt="Investigation #INV001">
+                    <div>
+                        <p>Investigation #INV001</p>
+                        <p>Assigned to John Doe <span class="status-label">In Progress</span></p>
+                    </div>
+                </div>
+                <div class="recent-item">
+                    <img src="image2.jpg" alt="Investigation #INV002">
+                    <div>
+                        <p>Investigation #INV002</p>
+                        <p>Assigned to Jane Smith <span class="status-label">Resolved</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="investigation">
+                <h2>Investigation Status</h2>
+                <img src="image3.jpg" alt="Investigation Status Image">
+                <p>Investigation Status Chart</p>
+            </div>
+        </div>
+        <div class="risk-section">
+            <h2>Risk Score Distribution</h2>
+            <img src="image4.jpg" alt="Risk Score Distribution Image">
+            <p>Risk Score Distribution Chart</p>
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 FraudLens. All rights reserved.
+    </div>
+</body>
+</html>

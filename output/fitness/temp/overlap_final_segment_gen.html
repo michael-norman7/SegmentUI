@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 1em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .brand {
+            font-weight: bold;
+            color: #ff6b00;
+            font-size: 1.2em;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5em;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333333;
+            font-weight: 500;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3em 5%;
+            background: linear-gradient(to right, #fffff0, #f7f7f7);
+        }
+        .header-text {
+            max-width: 50%;
+        }
+        .header-text h1 {
+            font-size: 3em;
+            color: #333333;
+            margin: 0;
+        }
+        .header-text p {
+            margin-top: 0.5em;
+            font-size: 1em;
+            color: #777777;
+        }
+        .header-text .button {
+            margin-top: 1em;
+            padding: 0.8em 1.5em;
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .image-container {
+            position: relative;
+            max-width: 40%;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #ffd700;
+            color: #333333;
+            padding: 0.5em;
+            border-radius: 10px;
+            font-size: 0.8em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .classes-section, .trainers-section, .schedule-section, .testimonials-section, .cta-section {
+            text-align: center;
+            margin: 2em 0;
+            padding: 0 5%;
+        }
+        .classes-section h2, .trainers-section h2, .schedule-section h2, .testimonials-section h2, .cta-section h2 {
+            font-size: 2em;
+            color: #333333;
+            margin-bottom: 1em;
+        }
+        .card-container, .trainer-card-container, .testimonials-container {
+            display: flex;
+            justify-content: center;
+            gap: 2em;
+        }
+        .card, .trainer-card, .testimonial {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 30%;
+            text-align: left;
+            padding: 1em;
+        }
+        .card img, .trainer-card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-content, .trainer-card-content, .testimonial p {
+            color: #777777;
+        }
+        .card-content h3, .trainer-card-content h3 {
+            font-size: 1.25em;
+            color: #333333;
+            margin-top: 0;
+        }
+        .card-content .button {
+            display: block;
+            text-align: center;
+            margin-top: 1em;
+            padding: 0.8em;
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1em;
+        }
+        th, td {
+            padding: 1em;
+            text-align: left;
+            border-bottom: 1px solid #dddddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .testimonial:before {
+            content: '“';
+            font-size: 3em;
+            color: #ff6b00;
+            position: relative;
+            top: 10px;
+        }
+        .cta-button {
+            padding: 1em 2em;
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            background-color: #192a56;
+            color: #f5f5f5;
+            padding: 2em 0;
+        }
+        .footer p {
+            margin: 0.5em 0;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #f5f5f5;
+            margin: 0 0.5em;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="brand">Ignite Fitness</div>
+        <div class="nav-links">
+            <a href="#">Classes</a>
+            <a href="#">Trainers</a>
+            <a href="#">Schedule</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div class="header">
+        <div class="header-text">
+            <h1>Unleash Your Inner Athlete</h1>
+            <p>High-energy fitness classes designed for teenagers. Build strength, boost confidence, and have fun!</p>
+            <button class="button">Explore Classes</button>
+        </div>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/400" alt="Fitness">
+            <div class="badge">Summer Sale: Join now & get 20% off!</div>
+        </div>
+    </div>
+    <div class="classes-section">
+        <h2>Our Awesome Classes</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Class Image 1">
+                <div class="card-content">
+                    <h3>High Intensity Training (HIT)</h3>
+                    <p>Push your limits with our HIT classes. Burn calories and build endurance in a fun, fast-paced environment.</p>
+                    <a class="button" href="#">Join Class</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Class Image 2">
+                <div class="card-content">
+                    <h3>Strength & Conditioning</h3>
+                    <p>Develop strength and improve your overall athletic performance. Perfect for all fitness levels.</p>
+                    <a class="button" href="#">Join Class</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Class Image 3">
+                <div class="card-content">
+                    <h3>Dance Fitness</h3>
+                    <p>Get your groove on and burn calories with our energetic dance fitness classes. No experience needed!</p>
+                    <a class="button" href="#">Join Class</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="trainers-section">
+        <h2>Meet Our Expert Trainers</h2>
+        <div class="trainer-card-container">
+            <div class="trainer-card">
+                <img src="https://via.placeholder.com/300x200" alt="Trainer Image 1">
+                <div class="trainer-card-content">
+                    <h3>Alex Johnson</h3>
+                    <strong>HIT & Strength Coach</strong>
+                    <p>Alex is passionate about helping teens reach their fitness goals through challenging and fun workouts.</p>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <img src="https://via.placeholder.com/300x200" alt="Trainer Image 2">
+                <div class="trainer-card-content">
+                    <h3>Sarah Williams</h3>
+                    <strong>Dance Fitness Instructor</strong>
+                    <p>Sarah's energy and enthusiasm make every dance fitness class an unforgettable experience.</p>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <img src="https://via.placeholder.com/300x200" alt="Trainer Image 3">
+                <div class="trainer-card-content">
+                    <h3>Michael Brown</h3>
+                    <strong>Youth Fitness Specialist</strong>
+                    <p>Michael specializes in creating fitness programs that are tailored to the unique needs of teenagers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="schedule-section">
+        <h2>Class Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>DAY</th>
+                    <th>TIME</th>
+                    <th>CLASS</th>
+                    <th>TRAINER</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>4:00 PM - 5:00 PM</td>
+                    <td>HIT</td>
+                    <td>Alex</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>4:00 PM - 5:00 PM</td>
+                    <td>Dance Fitness</td>
+                    <td>Sarah</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>4:00 PM - 5:00 PM</td>
+                    <td>Strength & Conditioning</td>
+                    <td>Michael</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>4:00 PM - 5:00 PM</td>
+                    <td>HIT</td>
+                    <td>Alex</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>4:00 PM - 5:00 PM</td>
+                    <td>Dance Fitness</td>
+                    <td>Sarah</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="testimonials-section">
+        <h2>What Teens Are Saying</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <p>"Ignite Fitness classes are the best! I've never felt so energized and motivated to work out. The trainers are awesome and make every class super fun."
+                    <br><br><strong>- Jessica M.</strong></p>
+            </div>
+            <div class="testimonial">
+                <p>"I used to hate exercise, but now I look forward to going to Ignite Fitness. It's a great way to relieve stress and hang out with friends while getting fit."
+                    <br><br><strong>- Kevin L.</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="cta-section">
+        <h2>Ready to Get Started?</h2>
+        <p>Join Ignite Fitness today and start your journey to a healthier, happier you!</p>
+        <a class="cta-button" href="#">Sign Up Now</a>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Ignite Fitness. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#">&#xf09a;</a>
+            <a href="#">&#xf16d;</a>
+            <a href="#">&#xf099;</a>
+        </div>
+    </div>
+</body>
+</html>

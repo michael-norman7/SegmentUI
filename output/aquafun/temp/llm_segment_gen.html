@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .block {
+            flex-grow: 1;
+        }
+        .block1 {
+            background-color: #db9400;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+        }
+        .logo {
+            font-weight: bold;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-item {
+            text-decoration: none;
+            color: black;
+        }
+        .gradient-bar {
+            height: 10px;
+            background: linear-gradient(to right, #28a5da, #b8e4e1);
+        }
+        .hero_section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            background: linear-gradient(to right, #28a5da, #b8e4e1);
+            color: #062330;
+        }
+        .hero_text {
+            max-width: 50%;
+        }
+        .hero_text h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .hero_text p {
+            margin: 20px 0;
+            font-size: 1.2em;
+        }
+        .hero_button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #46b6e6;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .hero_image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .attractions_section {
+            padding: 40px;
+            text-align: center;
+            background-color: #e6f3fc;
+        }
+        .attractions_section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #062330;
+        }
+        .attractions_container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .attraction_card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: left;
+        }
+        .attraction_card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .attraction_card h3 {
+            margin: 15px 0;
+            font-size: 1.5em;
+            color: #062330;
+        }
+        .attraction_card p {
+            margin: 0;
+            color: #555;
+        }
+        .family_fun_section {
+            padding: 40px;
+            background-color: #b8e4e1;
+            color: #062330;
+        }
+        .family_fun_container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .family_fun_text {
+            max-width: 600px;
+        }
+        .family_fun_text h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .family_fun_text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .family_fun_text ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .family_fun_image img {
+            width: 400px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .pricing_section {
+            padding: 40px;
+            text-align: center;
+            background-color: #e6f3fc;
+        }
+        .pricing_section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            color: #062330;
+        }
+        .pricing_container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .pricing_card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        .pricing_card h3 {
+            margin: 15px 0;
+            font-size: 1.5em;
+            color: #062330;
+        }
+        .pricing_card p {
+            margin: 0;
+            color: #555;
+        }
+        .price {
+            font-size: 2em;
+            color: #28a5da;
+            margin: 20px 0;
+        }
+        .buy_button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #46b6e6;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer {
+            padding: 40px;
+            text-align: center;
+            background-color: #28a5da;
+            color: white;
+        }
+        .footer h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .footer p {
+            margin-bottom: 20px;
+            color: white;
+        }
+        .social_icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .social_icon {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+        .copyright {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block block1">
+            <div class="header">
+                <div class="logo">AquaFun</div>
+                <div class="nav-menu">
+                    <a href="#" class="nav-item">Attractions</a>
+                    <a href="#" class="nav-item">Family Fun</a>
+                    <a href="#" class="nav-item">Tickets & Pricing</a>
+                    <a href="#" class="nav-item">Contact Us</a>
+                </div>
+            </div>
+            <div class="gradient-bar"></div>
+        </div>
+        <div class="block block2 hero_section">
+            <div class="hero_text">
+                <h1>Dive into a World of Aquatic Adventure!</h1>
+                <p>Experience thrilling slides, relaxing pools, and unforgettable family moments at AquaFun Water Park. Get ready for a splash-tastic day!</p>
+                <a href="#" class="hero_button">Get Tickets Now</a>
+            </div>
+            <div class="hero_image">
+                <img src="https://source.unsplash.com/random/800x400" alt="Aquatic Adventure">
+            </div>
+        </div>
+        <div class="block block3 attractions_section">
+            <h2>Our Thrilling Attractions</h2>
+            <div class="attractions_container">
+                <div class="attraction_card">
+                    <h3>Mega Slides</h3>
+                    <p>Experience the adrenaline rush on our towering water slides. Twists, turns, and splashes await!</p>
+                    <img src="https://source.unsplash.com/random/300x200" alt="Mega Slides">
+                </div>
+                <div class="attraction_card">
+                    <h3>Wave Pool</h3>
+                    <p>Dive into our massive wave pool and feel the ocean thrill. Perfect for all ages!</p>
+                    <img src="https://source.unsplash.com/random/300x200?nature" alt="Wave Pool">
+                </div>
+                <div class="attraction_card">
+                    <h3>Kids' Zone</h3>
+                    <p>A safe and fun area designed for younger children with gentle slides and shallow pools.</p>
+                    <img src="https://source.unsplash.com/random/300x200?kids" alt="Kids' Zone">
+                </div>
+            </div>
+        </div>
+        <div class="block block4 family_fun_section">
+            <h2>Fun for the Whole Family</h2>
+            <div class="family_fun_container">
+                <div class="family_fun_image">
+                    <img src="https://source.unsplash.com/random/400x300" alt="Family Fun">
+                </div>
+                <div class="family_fun_text">
+                    <h3>Create Lasting Memories</h3>
+                    <p>AquaFun is the perfect destination for families to bond and create unforgettable memories. With attractions for all ages, everyone will find something to love.</p>
+                    <ul>
+                        <li>Relaxing lazy river for a calm float.</li>
+                        <li>Picnic areas and family-friendly dining options.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="block block5 pricing_section">
+            <h2>Tickets & Pricing</h2>
+            <div class="pricing_container">
+                <div class="pricing_card">
+                    <h3>Day Pass</h3>
+                    <p>Full day access to all attractions.</p>
+                    <div class="price">$49.99</div>
+                    <a href="#" class="buy_button">Buy Day Pass</a>
+                </div>
+                <div class="pricing_card">
+                    <h3>Family Pass</h3>
+                    <p>Day pass for a family of four.</p>
+                    <div class="price">$179.99</div>
+                    <a href="#" class="buy_button">Buy Family Pass</a>
+                </div>
+                <div class="pricing_card">
+                    <h3>Season Pass</h3>
+                    <p>Unlimited access for the entire season.</p>
+                    <div class="price">$249.99</div>
+                    <a href="#" class="buy_button">Buy Season Pass</a>
+                </div>
+            </div>
+        </div>
+        <div class="block block6 footer">
+            <h2>Contact Us</h2>
+            <p>Have questions? We're here to help! Reach out to us for any inquiries or assistance.</p>
+            <div class="social_icons">
+                <a href="#" class="social_icon">🔵</a>
+                <a href="#" class="social_icon">📷</a>
+                <a href="#" class="social_icon">🐦</a>
+            </div>
+            <div class="copyright">
+                © 2023 AquaFun Water Park. All rights reserved.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
