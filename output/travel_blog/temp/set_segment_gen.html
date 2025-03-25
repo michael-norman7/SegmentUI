@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .menubar {
+            background-color: #fdf2e3;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e6dbc9;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #b47852;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-link {
+            font-size: 16px;
+            color: #b47852;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #8b5e3c;
+        }
+        .section {
+            background-color: #f5f1ea;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .section h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #8b5e3c;
+            margin: 0;
+        }
+        .section p {
+            font-size: 18px;
+            color: #b47852;
+            margin: 20px 0 40px;
+        }
+        .button {
+            background-color: #d4a546;
+            color: #fff;
+            padding: 14px 28px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #b28938;
+        }
+        .featured-section {
+            background-color: #fdf2e3;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .featured-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8b5e3c;
+            margin: 0;
+        }
+        .featured-section p {
+            font-size: 18px;
+            color: #b47852;
+            margin: 10px 0 40px;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: 300px;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+        .card-text {
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #8b5e3c;
+        }
+        .traveler-section {
+            background-color: #fbf2e9;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .traveler-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8b5e3c;
+            margin: 0;
+        }
+        .traveler-section p {
+            font-size: 18px;
+            color: #b47852;
+            margin: 10px 0 40px;
+        }
+        .story-card {
+            background-color: #fdf2e3;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: calc(33% - 40px);
+            margin: 20px;
+            text-align: left;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .story-card h3 {
+            font-size: 24px;
+            color: #8b5e3c;
+            margin-bottom: 10px;
+        }
+        .story-card p {
+            font-size: 16px;
+            color: #b47852;
+            margin: 0 0 20px;
+        }
+        .story-card .explore-button {
+            background-color: #4e84d5;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        .story-card .explore-button:hover {
+            background-color: #3a67aa;
+        }
+        .story-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .tips-section {
+            background-color: #fbf2e9;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .tips-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #8b5e3c;
+            margin: 0;
+        }
+        .tips-section p {
+            font-size: 18px;
+            color: #b47852;
+            margin: 10px 0 40px;
+        }
+        .tips-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .tip-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: calc(33% - 40px);
+            margin: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        .tip-card h3 {
+            font-size: 24px;
+            color: #8b5e3c;
+            margin-bottom: 10px;
+        }
+        .tip-card p {
+            font-size: 16px;
+            color: #b47852;
+            margin-bottom: 20px;
+        }
+        .tip-card .icon {
+            font-size: 40px;
+            color: #8b5e3c;
+            margin-bottom: 15px;
+        }
+        .gallery-section {
+            background-color: #fdf2e3;
+            padding: 60px 20px;
+        }
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .gallery-card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            width: calc(33% - 40px);
+            margin: 20px;
+            box-sizing: border-box;
+        }
+        .gallery-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .footer-section {
+            background-color: #fdf2e3;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #b47852;
+        }
+    </style>
+</head>
+<body>
+    <div class="menubar">
+        <div class="logo">Wanderlust Tales</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Destinations</a>
+            <a href="#" class="nav-link">Stories</a>
+            <a href="#" class="nav-link">Travel Tips</a>
+            <a href="#" class="nav-link">Gallery</a>
+        </div>
+    </div>
+    <div class="section">
+        <h1>Explore the Charm of Yesteryear</h1>
+        <p>Uncover hidden gems and timeless adventures.</p>
+        <a href="#" class="button">Start Your Journey →</a>
+    </div>
+    <div class="featured-section">
+        <h2>Featured Destinations</h2>
+        <p>Step back in time with these classic locales.</p>
+        <div class="cards-container">
+            <div class="card">
+                <img src="image1.jpg" alt="Paris">
+                <div class="card-text">Paris, 1920s</div>
+            </div>
+            <div class="card">
+                <img src="image2.jpg" alt="Rome">
+                <div class="card-text">Rome, 1950s</div>
+            </div>
+            <div class="card">
+                <img src="image3.jpg" alt="Kyoto">
+                <div class="card-text">Kyoto, 1960s</div>
+            </div>
+        </div>
+    </div>
+    <div class="traveler-section">
+        <h2>Traveler's Tales</h2>
+        <p>Personal stories from journeys past.</p>
+        <div class="story-container">
+            <div class="story-card">
+                <h3>A Bicycle Ride Through Tuscany</h3>
+                <p>Experience the beauty of the rolling hills and vineyards.</p>
+                <a href="#" class="explore-button">Explore &rarr;</a>
+            </div>
+            <div class="story-card">
+                <h3>Lost in the Souks of Marrakech</h3>
+                <p>Uncover the vibrant culture and hidden treasures.</p>
+                <a href="#" class="explore-button">Explore &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <div class="tips-section">
+        <h2>Vintage Travel Tips</h2>
+        <p>Advice for the modern traveler with a classic soul.</p>
+        <div class="tips-container">
+            <div class="tip-card">
+                <div class="icon">🗺️</div>
+                <h3>Plan with Paper Maps</h3>
+                <p>Embrace the charm of paper maps. They can lead to unexpected discoveries and adventures.</p>
+            </div>
+            <div class="tip-card">
+                <div class="icon">📷</div>
+                <h3>Capture Moments on Film</h3>
+                <p>Consider bringing a film camera. The deliberate process and the unique results bring joy in the simplicity of each shot.</p>
+            </div>
+            <div class="tip-card">
+                <div class="icon">📖</div>
+                <h3>Journal Your Adventures</h3>
+                <p>Keep a travel journal. Writing down your experiences by hand helps you connect deeply with your journey.</p>
+            </div>
+        </div>
+    </div>
+    <div class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-card">
+                <img src="image1.jpg" alt="Postcard 1">
+            </div>
+            <div class="gallery-card">
+                <img src="image2.jpg" alt="Postcard 2">
+            </div>
+            <div class="gallery-card">
+                <img src="image3.jpg" alt="Postcard 3">
+            </div>
+            <div class="gallery-card">
+                <img src="image4.jpg" alt="Postcard 4">
+            </div>
+            <div class="gallery-card">
+                <img src="image5.jpg" alt="Postcard 5">
+            </div>
+            <div class="gallery-card">
+                <img src="image6.jpg" alt="Postcard 6">
+            </div>
+        </div>
+    </div>
+    <div class="footer-section">
+        © 2024 Wanderlust Tales. Crafted with vintage charm.
+    </div>
+</body>
+</html>

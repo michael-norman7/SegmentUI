@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f8fc;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #6b51f1;
+        }
+        .container {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .steps, .level {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .progress {
+            height: 8px;
+            width: 100%;
+            background-color: #eee;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #6b51f1;
+        }
+        .progress-bar.yellow {
+            background-color: #f7c948;
+        }
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #6b51f1;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6b51f1;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .button.gray {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Dashboard</h1>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Daily Steps</h2>
+            <div class="steps">
+                <span>8,542</span>
+                <span>Steps</span>
+            </div>
+            <div class="progress">
+                <div class="progress-bar" style="width: 85%;"></div>
+            </div>
+            <p>Goal: 10,000</p>
+        </div>
+
+        <div class="card">
+            <h2>Activity Level</h2>
+            <p>🔵 Sedentary: 10%</p>
+            <p>🟢 Light: 60%</p>
+            <p>🟡 Moderate: 25%</p>
+            <p>🔴 Vigorous: 5%</p>
+            <div class="level">
+                <span>Level: Light</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Fitness Goal</h2>
+            <p>Weight Loss</p>
+            <div class="progress">
+                <div class="progress-bar yellow" style="width: 40%;"></div>
+            </div>
+            <p>Progress: 2kg / 5kg</p>
+            <p>Daily Exercise</p>
+            <div class="progress">
+                <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+            <p>Progress: 35 min / 50 min</p>
+            <a href="#" class="button">View Goals</a>
+        </div>
+
+        <div class="card">
+            <h2>Weekly Activity Trend</h2>
+            <img src="https://via.placeholder.com/300x150" alt="Activity Trend">
+        </div>
+
+        <div class="card">
+            <h2>Achievements</h2>
+            <p>🏅 10,000 Steps Badge</p>
+            <p>🏆 7-Day Streak</p>
+            <p>🔓 Unlock New Goal</p>
+            <a href="#" class="button gray">View All</a>
+        </div>
+
+        <div class="card">
+            <h2>Settings</h2>
+            <label class="toggle">
+                Notifications
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+            <br>
+            <label class="toggle">
+                Dark Mode
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+</body>
+</html>

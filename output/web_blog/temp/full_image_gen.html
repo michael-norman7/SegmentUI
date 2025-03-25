@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto Slab', serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            margin: 0;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+        }
+        .author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .author img {
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .date {
+            color: #888;
+            margin-left: 5px;
+        }
+        .image-container {
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        .code-example {
+            background-color: #2E2E2E;
+            color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+            color: #aaa;
+            border-top: 1px solid #ccc;
+        }
+        .comments {
+            margin-top: 30px;
+        }
+        .comment {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .comment-author {
+            font-weight: 700;
+        }
+        .comment-text {
+            margin: 10px 0;
+        }
+        .comment-time {
+            color: #888;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Artistic Blog</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h2>The Beauty of Typography in Web Design</h2>
+        <div class="author">
+            <img src="author.jpg" alt="Author" width="40" height="40">
+            <strong>Jane Doe</strong>
+            <span class="date">• August 14, 2024</span>
+        </div>
+        <div class="image-container">
+            <img src="scenery.jpg" alt="Scenic View">
+        </div>
+        <div class="content">
+            <p>
+                In the realm of web design, typography is more than just choosing fonts; it's about crafting a visual voice that resonates with your audience. The fonts we select, the spacing we apply, and the hierarchy we establish—all contribute to the user's experience and perception of our content.
+            </p>
+            <h3>The Art of Font Pairing</h3>
+            <p>
+                Pairing fonts effectively is crucial for creating visual harmony and readability. Consider combining a <em>Playfair Display</em> for headings with a robust and legible serif like <em>Roboto Slab</em> for body text. This contrast creates visual interest while maintaining clarity.
+            </p>
+            <h3>Embracing Handwritten Styles</h3>
+            <p>
+                Handwritten fonts, like Shadows Into Light, can inject personality and warmth into a design. Use them sparingly for accents, quotes, or headings to emphasize a personal touch. However, ensure readability is not compromised.
+            </p>
+            <h3>Interactive Typography</h3>
+            <p>
+                Animations and interactive elements can elevate typography from static text to dynamic experiences. Subtle hover effects on headings or text reveals can engage users and add a layer of sophistication.
+            </p>
+        </div>
+        <div class="code-example">
+            <pre>
+.animated-heading {
+    font-family: 'Playfair Display', serif;
+    transition: color 0.3s ease-in-out;
+}
+
+.animated-heading:hover {
+    color: #fc6a71; /* Accent color on hover */
+    /* Highlight effect on hover */
+}
+            </pre>
+        </div>
+        <p>Conclusion</p>
+        <p>
+            Mastering typography in web design is a journey of continuous learning and experimentation. By thoughtfully selecting and combining fonts, embracing whitespace, and incorporating interactive elements, we can create websites that are not only visually stunning but also deeply engaging and user-friendly. Let your typography speak volumes.
+        </p>
+        <div class="comments">
+            <h3>Comments</h3>
+            <div class="comment">
+                <p class="comment-author">Alex Johnson</p>
+                <p class="comment-text">Great article! The typography examples are really inspiring. I'm going to try using Playfair Display on my next project.</p>
+                <p class="comment-time">Reply • 2 hours ago</p>
+            </div>
+            <div class="comment">
+                <p class="comment-author">Samantha Lee</p>
+                <p class="comment-text">I love the handwritten font accent! It adds such a unique touch. Thanks for sharing!</p>
+                <p class="comment-time">Reply • 1 day ago</p>
+            </div>
+        </div>
+        <div>
+            <input type="text" placeholder="Leave a comment" style="width: 100%; padding: 10px; margin-top: 10px;">
+            <button style="margin-top: 10px; padding: 10px 20px;">Post Comment</button>
+        </div>
+    </main>
+    <footer>
+        © 2024 Artistic Blog. All rights reserved.
+        <br>
+        <a href="#" style="color: #aaa; text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+        <a href="#" style="color: #aaa; text-decoration: none; margin: 0 10px;">Terms of Service</a>
+        <a href="#" style="color: #aaa; text-decoration: none; margin: 0 10px;">Contact</a>
+    </footer>
+</body>
+</html>

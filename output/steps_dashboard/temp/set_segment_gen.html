@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #ff4500;
+            height: 100px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .menu-bar {
+            height: 50px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .menu-bar h1 {
+            font-size: 24px;
+            color: #6a5acd;
+            margin: 0;
+        }
+        .dashboard-section, .content-main {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+        .box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: 30%;
+        }
+        .box h2 {
+            margin-top: 0;
+        }
+        .steps {
+            font-size: 48px;
+            color: #000;
+        }
+        .progress-bar {
+            background-color: #d3d3d3;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 10px;
+            margin-top: 10px;
+        }
+        .progress {
+            background-color: #6a5acd;
+            height: 100%;
+        }
+        .activity-level ul, .achievements ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .activity-level ul li, .achievements ul li {
+            margin: 5px 0;
+        }
+        .activity-level .light-level {
+            text-align: right;
+        }
+        .fitness-goal .button, .achievements .view-button {
+            background-color: #d3d3d3;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .image-trend {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 10px;
+            width: 60%;
+        }
+        .image-trend img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .settings {
+            background-color: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu-bar">
+            <h1>My Dashboard</h1>
+        </div>
+    </div>
+    <div class="dashboard-section">
+        <div class="box">
+            <h2>Daily Steps</h2>
+            <div class="steps">8,542</div>
+            <div>Steps</div>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%;"></div>
+            </div>
+            <div>Goal: 10,000 &nbsp;&nbsp; 85%</div>
+        </div>
+        <div class="box activity-level">
+            <h2>Activity Level</h2>
+            <ul>
+                <li>💤 Sedentary: 10%</li>
+                <li>💡 Light: 60%</li>
+                <li>📈 Moderate: 25%</li>
+                <li>💪 Vigorous: 5%</li>
+            </ul>
+            <div class="light-level">Level: Light</div>
+        </div>
+        <div class="box fitness-goal">
+            <h2>Fitness Goal</h2>
+            <p>Weight Loss</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 40%; background-color: #d3b23f;"></div>
+            </div>
+            <p>Progress: 2kg / 5kg &nbsp;&nbsp; 40%</p>
+            <p>Daily Exercise</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%;"></div>
+            </div>
+            <p>Progress: 35 min / 50 min &nbsp;&nbsp; 70%</p>
+            <div class="button">View Goals</div>
+        </div>
+    </div>
+    <div class="content-main">
+        <div class="image-trend">
+            <img src="https://via.placeholder.com/600x300" alt="Activity Trend">
+        </div>
+        <div class="achievements">
+            <h3>Achievements</h3>
+            <ul>
+                <li>🏆 10,000 Steps Badge</li>
+                <li>🥇 7-Day Streak</li>
+                <li>🔓 Unlock New Goal</li>
+            </ul>
+            <div class="view-button">View All</div>
+        </div>
+    </div>
+    <div class="settings">
+        <h3>Settings</h3>
+        <div>
+            <label>Notifications</label>
+            <input type="checkbox" checked>
+        </div>
+        <div>
+            <label>Dark Mode</label>
+            <input type="checkbox">
+        </div>
+    </div>
+</body>
+</html>

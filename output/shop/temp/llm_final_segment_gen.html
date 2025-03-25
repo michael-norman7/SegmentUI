@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Website Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #343a40;
+        }
+        .header {
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .brand {
+            font-weight: bold;
+            color: #343a40;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            color: #343a40;
+        }
+        .icons {
+            display: flex;
+            gap: 15px;
+            color: #343a40;
+        }
+        .content {
+            display: flex;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .image-gallery {
+            position: relative;
+            width: 50%;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .gallery-image {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        .gallery-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .gallery-control.left {
+            left: 10px;
+        }
+        .gallery-control.right {
+            right: 10px;
+        }
+        .product-details {
+            width: 50%;
+        }
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .product-rating {
+            margin-top: 5px;
+        }
+        .product-rating i {
+            color: gold;
+            margin-right: 5px;
+        }
+        .product-price {
+            font-size: 20px;
+            color: #28a745;
+            margin-top: 10px;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #6c757d;
+            margin-left: 10px;
+        }
+        .discount {
+            color: #28a745;
+            margin-left: 5px;
+        }
+        .product-description {
+            margin-top: 10px;
+        }
+        .product-section {
+            margin-top: 20px;
+        }
+        .color-options,
+        .size-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .color-options span {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .size-options button {
+            border-radius: 5px;
+            padding: 5px 10px;
+            background: none;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6f42c1;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid #dee2e6;
+            flex-direction: column;
+        }
+        .footer-section {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 10px;
+        }
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+        }
+        .footer-column h3 {
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+        .footer-column ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-column ul li {
+            margin: 5px 0;
+            color: #6c757d;
+        }
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        .social-icons i {
+            color: #343a40;
+            cursor: pointer;
+        }
+        .footer-bottom {
+            font-size: 12px;
+            color: #6c757d;
+            text-align: center;
+            padding-top: 10px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="brand">Brand</div>
+        <ul class="nav-links">
+            <li>Home</li>
+            <li>Shop</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+        <div class="icons">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-shopping-bag"></i>
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
+    <div class="content">
+        <div class="image-gallery">
+            <img src="https://via.placeholder.com/400x400" alt="Gallery Image" class="gallery-image">
+            <button class="gallery-control left"><i class="fas fa-chevron-left"></i></button>
+            <button class="gallery-control right"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="product-details">
+            <div class="product-title">Elegant Silk Scarf - Limited Edition</div>
+            <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <span>4.8 (256 Reviews)</span>
+            </div>
+            <div class="product-description">
+                Indulge in the exquisite softness of our limited edition silk scarf, handcrafted from the finest mulberry silk. Its delicate weave and subtle sheen make it a perfect accessory for any occasion.
+            </div>
+            <div class="product-price">
+                $125.00
+                <span class="original-price">$150.00</span>
+                <span class="discount">(15% Off)</span>
+            </div>
+            <div class="product-section">
+                <div>Color</div>
+                <div class="color-options">
+                    <span style="background-color: pink;"></span>
+                    <span style="background-color: purple;"></span>
+                    <span style="background-color: blue;"></span>
+                    <span style="background-color: green;"></span>
+                </div>
+            </div>
+            <div class="product-section">
+                <div>Size</div>
+                <div class="size-options">
+                    <button>Small</button>
+                    <button>Medium</button>
+                    <button>Large</button>
+                </div>
+            </div>
+            <a href="#" class="btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+            <div class="product-section">
+                <div>Product Details</div>
+                <ul>
+                    <li>100% Mulberry Silk</li>
+                    <li>Dimensions: 70cm x 200cm</li>
+                    <li>Hand-rolled edges</li>
+                    <li>Dry clean only</li>
+                    <li>Made in Italy</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-section">
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li>Contact Us</li>
+                    <li>Shipping & Delivery</li>
+                    <li>Returns & Exchanges</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Our Story</li>
+                    <li>Careers</li>
+                    <li>Press</li>
+                    <li>Sustainability</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 Brand, Inc. All rights reserved.
+            <br>
+            Privacy Policy | Terms of Service
+        </div>
+    </div>
+</body>
+</html>

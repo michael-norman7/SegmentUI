@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8fc;
+            margin: 0;
+        }
+
+        .header {
+            background-color: #ff66cc;
+            height: 150px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-gap: 20px;
+            margin: 20px;
+        }
+
+        .green-box {
+            background-color: #00ff00;
+        }
+
+        .brown-box {
+            background-color: #666600;
+        }
+
+        .lightgreen-box {
+            background-color: #99cc33;
+        }
+
+        .purple-box {
+            background-color: #9933cc;
+            grid-column: span 2;
+            height: 400px;
+        }
+
+        .teal-box {
+            background-color: #008080;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .card-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .activity-log {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .activity-log th, .activity-log td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .activity-log th {
+            color: #999;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .view-all {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 5px 10px;
+            color: #666;
+            text-decoration: none;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s ease;
+        }
+
+        .view-all:hover {
+            background-color: #e0e0e0;
+        }
+
+        .progress-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="container">
+        <div class="green-box"></div>
+        <div class="brown-box"></div>
+        <div class="lightgreen-box"></div>
+    </div>
+    <div class="content">
+        <div class="card">
+            <div class="card-title">Activity Log</div>
+            <table class="activity-log">
+                <thead>
+                    <tr>
+                        <th>Activity</th>
+                        <th>Type</th>
+                        <th>Duration</th>
+                        <th>Calories</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Morning Run</td>
+                        <td>Workout</td>
+                        <td>35 min</td>
+                        <td>420 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Mindfulness Session</td>
+                        <td>Mindfulness</td>
+                        <td>15 min</td>
+                        <td>30 kcal</td>
+                    </tr>
+                    <tr>
+                        <td>Lunch</td>
+                        <td>Nutrition</td>
+                        <td>-</td>
+                        <td>680 kcal</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class="view-all">View All</a>
+        </div>
+        <div class="card">
+            <div class="card-title">Weekly Progress</div>
+            <img src="https://via.placeholder.com/150" alt="Weekly Progress" class="progress-image">
+            <p>Workouts</p>
+            <div class="card-content">5 times</div>
+            <p>Avg. Sleep</p>
+            <div class="card-content">7h 15m</div>
+        </div>
+    </div>
+</body>
+</html>

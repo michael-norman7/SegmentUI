@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5efe0;
+            color: #3b3028;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            height: 60px;
+            background-color: #fdf6e3;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .logo span {
+            font-weight: bold;
+            color: #3b3028;
+            font-size: 18px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #3b3028;
+            font-size: 14px;
+        }
+        .title-section {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3b3028;
+            width: 100%;
+        }
+        .title-section h1 {
+            font-family: 'Cursive', sans-serif;
+            font-size: 36px;
+            margin: 0;
+        }
+        .title-section .info {
+            font-size: 14px;
+            color: #877c70;
+        }
+        .title-section .info span {
+            margin-right: 10px;
+        }
+        .image-section {
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .image-section img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+        .content-section {
+            margin-top: 20px;
+            background-color: #fffaf0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            line-height: 1.6;
+            width: 100%;
+        }
+        .content-section p {
+            margin: 0 0 15px;
+        }
+        .content-section .emphasis {
+            font-weight: bold;
+            font-style: italic;
+        }
+        .comments-section {
+            width: 100%;
+            background-color: #fdf6e3;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .comments-section h2 {
+            font-family: 'Cursive', sans-serif;
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+        .comment {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #fffaf0;
+            border-radius: 10px;
+        }
+        .comment img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .comment-content {
+            flex: 1;
+        }
+        .comment-author {
+            font-weight: bold;
+        }
+        .comment-date {
+            font-size: 12px;
+            color: #877c70;
+            margin-left: 5px;
+        }
+        .comment-text {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #3b3028;
+        }
+        .leave-comment {
+            margin-top: 20px;
+        }
+        .leave-comment textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            resize: none;
+            font-size: 14px;
+        }
+        .leave-comment button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #d4c19c;
+            color: #3b3028;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .footer {
+            width: 100%;
+            background-color: #fdf6e3;
+            padding: 10px;
+            text-align: center;
+            font-size: 13px;
+            color: #877c70;
+            border-top: 1px solid #ded9c4;
+        }
+        .footer a {
+            text-decoration: none;
+            color: #877c70;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+                <span>RetroBlog</span>
+            </div>
+            <div class="nav-links">
+                <a href="#">Archive</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="title-section">
+            <h1>The Joys of a Rainy Day</h1>
+            <div class="info">
+                <span>📅 Published on October 26, 1955</span>
+                <span>👤 By John S.</span>
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="image.jpg" alt="Main view">
+        </div>
+        <div class="content-section">
+            <p><em>A cozy rainy day scene. Illustration by Vintage Prints.</em></p>
+            <p>Oh, the pitter-patter of rain against the windowpane! Is there a sound more soothing, more conducive to quiet contemplation?</p>
+            <p>Today, as the skies opened up and the world outside turned a soft, misty grey, I found myself drawn to the simple pleasures of a rainy day. The air is cooler, cleaner somehow, and the frantic pace of life seems to slow to a gentle amble.</p>
+            <p class="emphasis">A Cup of Warmth</p>
+            <p>First things first, a steaming cup of tea. Earl Grey, with a slice of lemon. The aroma alone is enough to chase away any lingering gloom. Wrapped in a soft blanket, with the rain as my soundtrack, each sip is a moment of pure bliss.</p>
+            <p class="emphasis">Lost in Pages</p>
+            <p>Rainy days are made for reading. I pulled out my old, leather-bound copy of "Moby Dick." The yellowed pages, the scent of aged paper, it all adds to the atmosphere. To be transported to another world, another time, while the storm rages gently outside - it's a magic unlike any other.</p>
+            <p class="emphasis">Creative Sparks</p>
+            <p>There's something about the quiet solitude of a rainy day that ignites creativity. Perhaps it's the lack of distractions, or maybe it's the introspective mood the weather inspires. Whatever it is, ideas seem to flow more freely. I spent the afternoon sketching in my notebook, letting the rain wash away the usual creative blocks.</p>
+            <p>So, the next time the clouds gather and the rain begins to fall, don't despair. Embrace it! Find joy in the simple moments, the quiet corners of a rainy day. You might just discover a little magic of your own.</p>
+            <div class="tags">
+                🏷 Tags: RainyDays, Cozy, Reading, Vintage
+            </div>
+        </div>
+        <div class="comments-section">
+            <h2>Comments</h2>
+            <div class="comment">
+                <img src="avatar1.jpg" alt="Jane Doe">
+                <div class="comment-content">
+                    <div>
+                        <span class="comment-author">Jane Doe</span>
+                        <span class="comment-date">October 27, 1955</span>
+                    </div>
+                    <div class="comment-text">
+                        Lovely post! Rainy days are indeed the best for introspection and creativity. I especially agree about the tea!
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="avatar2.jpg" alt="Peter Smith">
+                <div class="comment-content">
+                    <div>
+                        <span class="comment-author">Peter Smith</span>
+                        <span class="comment-date">October 28, 1955</span>
+                    </div>
+                    <div class="comment-text">
+                        Moby Dick and rain, a perfect combination. Your blog always brings a touch of warmth and nostalgia!
+                    </div>
+                </div>
+            </div>
+            <div class="leave-comment">
+                <label for="comment">Leave a Comment:</label>
+                <textarea id="comment" placeholder="Your thoughts..."></textarea>
+                <button>Post Comment</button>
+            </div>
+        </div>
+        <div class="footer">
+            © 1955 RetroBlog. All rights reserved. 
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</body>
+</html>

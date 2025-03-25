@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroBlog</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Georgia", serif;
+            background-color: #fdf5e6;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        .post-title {
+            font-size: 36px;
+            font-family: 'Cursive', serif;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .meta {
+            font-size: 14px;
+            color: #777;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .post-image {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .caption {
+            font-size: 12px;
+            color: #777;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .content strong {
+            display: block;
+            margin-top: 20px;
+            font-family: 'Cursive', serif;
+        }
+        .tags {
+            font-size: 14px;
+            color: #555;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tags span {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin: 0 5px;
+            font-size: 12px;
+        }
+        .comments-section {
+            background-color: #fdf0da;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .comments-title {
+            font-family: 'Cursive', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .comment {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background-color: #fffaf0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .comment img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .comment-content {
+            flex-grow: 1;
+        }
+        .comment-header {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        .comment-body {
+            font-size: 16px;
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form textarea {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #f7f2ea;
+            resize: none;
+        }
+        .comment-form button {
+            background-color: #b49272;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            float: right;
+        }
+        .footer {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #faf0e6;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
+        }
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="logo.png" alt="Logo"> RetroBlog
+            </div>
+            <nav class="nav">
+                <a href="#">Archive</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </nav>
+        </header>
+        <h1 class="post-title">The Joys of a Rainy Day</h1>
+        <div class="meta">
+            <span>📆 Published on October 26, 1955</span> • <span>👤 By John S.</span>
+        </div>
+        <img class="post-image" src="rainy-day.jpg" alt="A cozy rainy day scene.">
+        <div class="caption">A cozy rainy day scene. Illustration by Vintage Prints.</div>
+        <div class="content">
+            <p>Oh, the pitter-patter of rain against the windowpane! Is there a sound more soothing, more conducive to quiet contemplation? Today, as the skies opened up and the world outside turned a soft, misty grey, I found myself drawn to the simple pleasures of a rainy day. The air is cooler, cleaner somehow, and the frantic pace of life seems to slow to a gentle amble.</p>
+            <strong>A Cup of Warmth</strong>
+            <p>First things first, a steaming cup of tea. Earl Grey, with a slice of lemon. The aroma alone is enough to chase away any lingering gloom. Wrapped in a soft blanket, with the rain as my soundtrack, each sip is a moment of pure bliss.</p>
+            <strong>Lost in Pages</strong>
+            <p>Rainy days are made for reading. I pulled out my old, leather-bound copy of "Moby Dick." The yellowed pages, the scent of aged paper, it all adds to the atmosphere. To be transported to another world, another time, while the storm rages gently outside – it's a magic unlike any other.</p>
+            <strong>Creative Sparks</strong>
+            <p>There's something about the quiet solitude of a rainy day that ignites creativity. Perhaps it's the lack of distractions, or maybe it's the introspective mood the weather inspires. Whatever it is, ideas seem to flow more freely. I spent the afternoon sketching in my notebook, letting the rain wash away the usual creative blocks. So, the next time the clouds gather and the rain begins to fall, don’t despair. Embrace it! Find joy in the simple moments, the quiet corners of a rainy day. You might just discover a little magic of your own.</p>
+        </div>
+        <div class="tags">
+            <span>#RainyDays</span>
+            <span>#Cozy</span>
+            <span>#Reading</span>
+            <span>#Vintage</span>
+        </div>
+        <div class="comments-section">
+            <div class="comments-title">Comments</div>
+            <div class="comment">
+                <img src="avatar1.png" alt="Jane Doe">
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <strong>Jane Doe</strong> — October 27, 1955
+                    </div>
+                    <div class="comment-body">
+                        Lovely post! Rainy days are indeed the best for introspection and creativity. I especially agree about the tea!
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="avatar2.png" alt="Peter Smith">
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <strong>Peter Smith</strong> — October 28, 1955
+                    </div>
+                    <div class="comment-body">
+                        Moby Dick and rain, a perfect combination. Your blog always brings a touch of warmth and nostalgia!
+                    </div>
+                </div>
+            </div>
+            <div class="comment-form">
+                <label for="comment">Leave a Comment:</label>
+                <textarea id="comment" placeholder="Your thoughts..."></textarea>
+                <button type="button">Post Comment</button>
+            </div>
+        </div>
+        <div class="footer">
+            © 1955 RetroBlog. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</body>
+</html>

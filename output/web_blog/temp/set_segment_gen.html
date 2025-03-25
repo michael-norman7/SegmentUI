@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artistic Blog Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #ffb6c1;
+            height: 50px;
+        }
+        .menubar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            gap: 30px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+        .section {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            flex: 1;
+        }
+        .article-image {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .article-text, .conclusion-text, .author-info, .footer-text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .code-example {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background-color: #262626;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .author-section {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .author-details {
+            display: flex;
+            flex-direction: column;
+        }
+        .comments {
+            margin-top: 30px;
+        }
+        .comment {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .comment-content {
+            display: flex;
+            flex-direction: column;
+        }
+        .comment-header {
+            font-weight: bold;
+        }
+        .comment-reply {
+            margin-top: 5px;
+            color: gray;
+        }
+        .comment-box {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .comment-input {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 10px;
+            resize: none;
+            height: 60px;
+        }
+        .post-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            width: 120px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            background-color: #f9f9f9;
+            font-size: 14px;
+            color: #555;
+        }
+        .footer-links {
+            margin-top: 10px;
+        }
+        .footer-links a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="menubar">
+                <div class="logo">Artistic Blog</div>
+                <div class="menu">
+                    <a href="#">Home</a>
+                    <a href="#">Categories</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <p class="article-text">
+                The Art of Font Pairing<br><br>
+                Pairing fonts effectively is crucial for creating visual harmony and readability. Consider combining a <i>Playfair Display</i> for headings with a robust and legible serif like <i>Roboto Slab</i> for body text. This contrast creates visual interest while maintaining clarity.<br><br>
+                Embracing Handwritten Styles<br><br>
+                Handwritten fonts, like <i>Shadows Into Light</i>, can inject personality and warmth into a design. Use them sparingly for accents, quotes, or headings to emphasize a personal touch. However, ensure readability is not compromised.<br><br>
+                <q>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.</q><br><br>
+                Whitespace and Readability<br><br>
+                Whitespace, or negative space, is as important as the content itself. Generous spacing between lines, paragraphs, and around elements improves readability and allows the design to breathe. It guides the reader's eye and enhances comprehension.<br><br>
+                Interactive Typography<br><br>
+                Animations and interactive elements can elevate typography from static text to dynamic experiences. Subtle hover effects on headings or text reveals can engage users and add a layer of sophistication.<br>
+            </p>
+            <div class="code-example">
+                <div class="code-block">
+                    .animated-heading {<br>
+                    &emsp;font-family: 'Playfair Display', serif;<br>
+                    &emsp;transition: color 0.3s ease-in-out;<br>
+                    }<br><br>
+                    .animated-heading:hover {<br>
+                    &emsp;color: #cfa671; /* Accent color on hover */<br>
+                    }
+                </div>
+            </div>
+            <p class="conclusion-text">
+                Conclusion<br><br>
+                Mastering typography in web design is a journey of continuous learning and experimentation. By thoughtfully selecting and combining fonts, embracing whitespace, and incorporating interactive elements, we can create websites that are not only visually stunning but also deeply engaging and user-friendly. Let your typography speak volumes.
+            </p>
+            <div class="author-section">
+                <img src="author-image.jpg" alt="Author" class="author-avatar">
+                <div class="author-details">
+                    <span class="author-info">About Jane Doe</span>
+                    <span>Web Design Enthusiast & Typography Lover</span>
+                </div>
+            </div>
+            <div class="comments">
+                <h2>Comments</h2>
+                <div class="comment">
+                    <img src="commenter1-image.jpg" alt="Commenter" class="comment-avatar">
+                    <div class="comment-content">
+                        <span class="comment-header">Alex Johnson</span>
+                        <span>Great article! The typography examples are really inspiring. I'm going to try using Playfair Display on my next project.</span>
+                        <span class="comment-reply">Reply • 2 hours ago</span>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="commenter2-image.jpg" alt="Commenter" class="comment-avatar">
+                    <div class="comment-content">
+                        <span class="comment-header">Samantha Lee</span>
+                        <span>I love the handwritten font accent! It adds such a unique touch. Thanks for sharing!</span>
+                        <span class="comment-reply">Reply • 1 day ago</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-box">
+                <textarea class="comment-input" placeholder="Leave a comment"></textarea>
+                <button class="post-button">Post Comment</button>
+            </div>
+        </div>
+        <div class="footer">
+            © 2024 Artistic Blog. All rights reserved.
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

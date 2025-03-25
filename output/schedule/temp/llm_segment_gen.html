@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #edf0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 20px;
+            align-items: start;
+        }
+        .block {
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .block-olive { background-color: #808000; }
+        .block-red { background-color: #ff4500; }
+        .block-teal { background-color: #008080; }
+        .block-purple { background-color: #800080; grid-column: 2 / span 1; }
+        .block-lime { background-color: #32cd32; grid-row: span 2; }
+        .block-pink { background-color: #ff69b4; }
+
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #edf0f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .header-text h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #273a4d;
+        }
+        .header-text p {
+            margin: 0;
+            color: #6c757d;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ececec;
+        }
+        .button img {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+
+        .section {
+            width: 90%;
+            max-width: 600px;
+            background-color: #edf0f5;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .reminder-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .reminder-item h3 {
+            margin: 0;
+            font-size: 1rem;
+            color: #273a4d;
+            margin-bottom: 5px;
+        }
+        .details {
+            display: flex;
+            align-items: center;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        .details img {
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block block-olive">
+            <div class="header">
+                <div class="avatar">
+                    <img src="https://via.placeholder.com/50" alt="User Avatar">
+                </div>
+                <div class="header-text">
+                    <h1>Welcome back, User</h1>
+                    <p>Ready for the day?</p>
+                </div>
+            </div>
+            <div class="button-group">
+                <div class="button">
+                    <img src="https://via.placeholder.com/16" alt="Calendar Icon">
+                    <span>Today</span>
+                </div>
+                <div class="button">
+                    <img src="https://via.placeholder.com/16" alt="Calendar Icon">
+                    <span>Week</span>
+                </div>
+                <div class="button">
+                    <img src="https://via.placeholder.com/16" alt="Calendar Icon">
+                    <span>Month</span>
+                </div>
+            </div>
+        </div>
+        <div class="block block-purple">
+            <div class="section">
+                <div class="reminder-item">
+                    <h3>Dentist Appointment</h3>
+                    <div class="details">
+                        <img src="https://via.placeholder.com/14" alt="Calendar Icon">
+                        <span>Friday, 3:00 PM</span>
+                    </div>
+                    <div class="details">
+                        <img src="https://via.placeholder.com/14" alt="Location Icon">
+                        <span>Dental Clinic</span>
+                    </div>
+                </div>
+                <div class="reminder-item">
+                    <h3>Haircut</h3>
+                    <div class="details">
+                        <img src="https://via.placeholder.com/14" alt="Calendar Icon">
+                        <span>Saturday, 2:00 PM</span>
+                    </div>
+                    <div class="details">
+                        <img src="https://via.placeholder.com/14" alt="Location Icon">
+                        <span>Salon XYZ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="block block-red"></div>
+        <div class="block block-lime"></div>
+        <div class="block block-teal"></div>
+        <div class="block block-pink"></div>
+    </div>
+</body>
+</html>

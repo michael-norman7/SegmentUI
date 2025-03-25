@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header img {
+            width: 50px;
+            border-radius: 50%;
+        }
+
+        .header div {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .schedule, .reminders, .tasks, .productivity {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 10px;
+            background-color: #f0f4f8;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .priority {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .high {
+            background-color: #f44336;
+        }
+
+        .medium {
+            background-color: #ff9800;
+        }
+
+        .low {
+            background-color: #4caf50;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #e0e3e7;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <img src="https://via.placeholder.com/50" alt="Profile Picture">
+                <span>Welcome back, User</span>
+            </div>
+            <div class="buttons">
+                <button class="button">Today</button>
+                <button class="button">Week</button>
+                <button class="button">Month</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="schedule">
+                <div class="title">Daily Schedule</div>
+                <div class="item">
+                    <span>9:00 AM – 10:00 AM: Meeting with Team</span>
+                    <span class="badge high"></span>
+                </div>
+                <div class="item">
+                    <span>10:30 AM – 11:30 AM: Client Call</span>
+                    <span class="badge medium"></span>
+                </div>
+                <div class="item">
+                    <span>2:00 PM – 3:00 PM: Work on Project</span>
+                    <span class="badge low"></span>
+                </div>
+                <div class="item">
+                    <span>4:00 PM – 5:00 PM: Review Tasks</span>
+                </div>
+            </div>
+
+            <div class="reminders">
+                <div class="title">Appointment Reminders</div>
+                <div class="item">
+                    <span>Doctor Appointment</span>
+                    <div>
+                        <div>Tomorrow, 11:00 AM</div>
+                        <div>City Hospital</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span>Dentist Appointment</span>
+                    <div>
+                        <div>Friday, 3:00 PM</div>
+                        <div>Dental Clinic</div>
+                    </div>
+                </div>
+                <div class="item">
+                    <span>Haircut</span>
+                    <div>
+                        <div>Saturday, 2:00 PM</div>
+                        <div>Salon XYZ</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tasks">
+                <div class="title">Task Priorities</div>
+                <div class="item">
+                    <div>Finalize Presentation</div>
+                    <div class="priority">
+                        <span class="badge high"></span> High
+                    </div>
+                </div>
+                <div class="item">
+                    <div>Send Meeting Minutes</div>
+                    <div class="priority">
+                        <span class="badge medium"></span> Medium
+                    </div>
+                </div>
+                <div class="item">
+                    <div>Schedule Team Lunch</div>
+                    <div class="priority">
+                        <span class="badge low"></span> Low
+                    </div>
+                </div>
+            </div>
+
+            <div class="productivity">
+                <div class="title">Productivity Overview</div>
+                <img src="https://via.placeholder.com/100" alt="Productivity Image">
+                <div>Weekly Task Completion Rate</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

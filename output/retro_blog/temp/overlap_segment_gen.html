@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Georgia", serif;
+            background-color: #fdf5e6;
+            color: #333;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #faf0e6;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer a {
+            color: #555;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        /* Additional Styles for Blog Post and Comments */
+        .post {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .post img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .caption {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .content {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .content strong {
+            display: block;
+            margin-top: 20px;
+            font-family: 'Cursive', serif;
+        }
+        .tags {
+            font-size: 14px;
+            color: #555;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .tags span {
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin-right: 10px;
+            font-size: 12px;
+        }
+        .comments-section {
+            background-color: #fdf0da;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+        }
+        .comments-title {
+            font-family: 'Cursive', serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .comment {
+            background-color: #fffaf0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 15px;
+        }
+        .comment img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .comment-content {
+            flex-grow: 1;
+        }
+        .comment-header {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 5px;
+        }
+        .comment-body {
+            font-size: 16px;
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form textarea {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #f7f2ea;
+        }
+        .comment-form button {
+            background-color: #b49272;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section post">
+            <img src="rainy-day.jpg" alt="A cozy rainy day scene.">
+            <div class="caption">A cozy rainy day scene. Illustration by Vintage Prints.</div>
+            <div class="content">
+                <p>First things first, a steaming cup of tea. Earl Grey, with a slice of lemon. The aroma alone is enough to chase away any lingering gloom...</p>
+                <strong>Lost in Pages</strong>
+                <p>Rainy days are made for reading...</p>
+                <strong>Creative Sparks</strong>
+                <p>There's something about the quiet solitude of a rainy day that ignites creativity...</p>
+            </div>
+            <div class="tags">
+                <span>#RainyDays</span>
+                <span>#Cozy</span>
+                <span>#Reading</span>
+                <span>#Vintage</span>
+            </div>
+        </div>
+        <div class="section comments-section">
+            <div class="comments-title">Comments</div>
+            <div class="comment">
+                <img src="avatar1.png" alt="Jane Doe">
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <strong>Jane Doe</strong> — October 27, 1955
+                    </div>
+                    <div class="comment-body">
+                        Lovely post! Rainy days are indeed the best for introspection and creativity.
+                    </div>
+                </div>
+            </div>
+            <div class="comment">
+                <img src="avatar2.png" alt="Peter Smith">
+                <div class="comment-content">
+                    <div class="comment-header">
+                        <strong>Peter Smith</strong> — October 28, 1955
+                    </div>
+                    <div class="comment-body">
+                        Moby Dick and rain, a perfect combination. Your blog always brings a touch of warmth and nostalgia!
+                    </div>
+                </div>
+            </div>
+            <div class="comment-form">
+                <label for="comment">Leave a Comment:</label>
+                <textarea id="comment" placeholder="Your thoughts..."></textarea>
+                <button type="button">Post Comment</button>
+            </div>
+        </div>
+        <div class="footer">
+            © 1955 RetroBlog. All rights reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </div>
+</body>
+</html>

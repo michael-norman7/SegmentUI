@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .section {
+            flex: 1;
+        }
+        .navbar {
+            background-color: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .main-content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .article-header {
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .author-info img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .article-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .code-block {
+            background-color: #2e3a44;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            margin-bottom: 20px;
+        }
+        .code-block pre {
+            margin: 0;
+        }
+        .comments {
+            margin-top: 20px;
+        }
+        .comment {
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-top: 10px;
+            display: flex;
+        }
+        .comment img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .comment-form {
+            margin-top: 20px;
+        }
+        .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: #666;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .social-icons {
+            margin-left: auto;
+        }
+        .social-icons a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section navbar">
+            <div class="logo">Artistic Blog</div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        
+        <div class="section main-content">
+            <h1 class="article-header">The Beauty of Typography in Web Design</h1>
+            <div class="author-info">
+                <img src="author.jpg" alt="Author Photo">
+                <div>
+                    By <strong>Jane Doe</strong> • August 14, 2024
+                </div>
+            </div>
+            <img src="landscape.jpg" alt="Landscape" class="article-image">
+            <p>In the realm of web design, typography is more than just choosing fonts; it's about crafting a visual voice that resonates with your audience. The fonts we select, the spacing we apply, and the hierarchy we establish—all contribute to the user's experience and perception of our content.</p>
+            <h3>The Art of Font Pairing</h3>
+            <p>Pairing fonts effectively is crucial for creating visual harmony and readability. Consider combining a <em>Playfair Display</em> for headings with a robust and legible serif like <em>Roboto Slab</em> for body text. This contrast creates visual interest while maintaining clarity.</p>
+            <h3>Embracing Handwritten Styles</h3>
+            <p>Handwritten fonts, like <em>Shadows Into Light</em>, can inject personality and warmth into a design. Use them sparingly for accents, quotes, or headings to emphasize a personal touch. However, ensure readability is not compromised.</p>
+            <blockquote>“Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed.”</blockquote>
+            <h3>Whitespace and Readability</h3>
+            <p>Whitespace, or negative space, is as important as the content itself. Generous spacing between lines, paragraphs, and around elements improves readability and allows the design to breathe. It guides the reader's eye and enhances comprehension.</p>
+            <h3>Interactive Typography</h3>
+            <p>Animations and interactive elements can elevate typography from static text to dynamic experiences. Subtle hover effects on headings or text reveals can engage users and add a layer of sophistication.</p>
+            
+            <h3>Code Example: CSS Animation</h3>
+            <div class="code-block">
+                <pre>
+.animated-heading {
+    font-family: 'Playfair Display', serif;
+    transition: color 0.3s ease-in-out;
+}
+.animated-heading:hover {
+    color: #cfa671; /* Accent color on hover */
+    /* Highlight effect on hover */
+}
+                </pre>
+            </div>
+
+            <h3>Conclusion</h3>
+            <p>Mastering typography in web design is a journey of continuous learning and experimentation. By thoughtfully selecting and combining fonts, embracing whitespace, and incorporating interactive elements, we can create websites that are not only visually stunning but also deeply engaging and user-friendly. Let your typography speak volumes.</p>
+            
+            <div class="author-info">
+                <img src="author.jpg" alt="Author">
+                <div>
+                    <strong>About Jane Doe</strong><br>
+                    Web Design Enthusiast & Typography Lover
+                </div>
+                <div class="social-icons">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+
+            <div class="comments">
+                <h3>Comments</h3>
+                <div class="comment">
+                    <img src="alex.jpg" alt="Alex Johnson">
+                    <div>
+                        <strong>Alex Johnson</strong><br>
+                        Great article! The typography examples are really inspiring. I'm going to try using Playfair Display on my next project.<br>
+                        <small>Reply • 2 hours ago</small>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="samantha.jpg" alt="Samantha Lee">
+                    <div>
+                        <strong>Samantha Lee</strong><br>
+                        I love the handwritten font accent! It adds such a unique touch. Thanks for sharing!<br>
+                        <small>Reply • 1 day ago</small>
+                    </div>
+                </div>
+                <div class="comment-form">
+                    <textarea placeholder="Leave a comment"></textarea>
+                    <button type="button">Post Comment</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            © 2024 Artistic Blog. All rights reserved.<br>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a>
+        </div>
+    </div>
+</body>
+</html>

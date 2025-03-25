@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+        nav {
+            background-color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product-image {
+            flex: 1;
+            padding: 20px;
+        }
+        .product-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-info {
+            flex: 1;
+            padding: 20px;
+        }
+        .product-info h2 {
+            margin: 0;
+        }
+        .price {
+            color: #e40046;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-left: 10px;
+        }
+        .colors, .sizes {
+            margin: 20px 0;
+        }
+        .colors span, .sizes span {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart {
+            background-color: #6A0DAD;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .product-details, .reviews {
+            margin: 20px 0;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+        .footer div {
+            flex: 1;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>Brand</div>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="product-image">
+            <img src="https://via.placeholder.com/500" alt="Product">
+        </div>
+        <div class="product-info">
+            <h2>Elegant Silk Scarf - Limited Edition</h2>
+            <p>Indulge in the exquisite softness of our limited edition silk scarf, handcrafted from the finest mulberry silk. Its delicate weave and subtle sheen make it a perfect accessory for any occasion.</p>
+            <div>
+                <span class="price">$125.00</span>
+                <span class="old-price">$150.00 (15% Off)</span>
+            </div>
+            <div class="colors">
+                <p>Color</p>
+                <span style="background-color: pink;"></span>
+                <span style="background-color: blue;"></span>
+                <span style="background-color: green;"></span>
+                <span style="background-color: cyan;"></span>
+            </div>
+            <div class="sizes">
+                <p>Size</p>
+                <span>Small</span>
+                <span>Medium</span>
+                <span>Large</span>
+            </div>
+            <div class="add-to-cart">
+                Add to Cart
+            </div>
+            <div class="product-details">
+                <h4>Product Details</h4>
+                <ul>
+                    <li>100% Mulberry Silk</li>
+                    <li>Dimensions: 70cm x 200cm</li>
+                    <li>Hand-rolled edges</li>
+                    <li>Dry clean only</li>
+                    <li>Made in Italy</li>
+                </ul>
+            </div>
+            <div class="reviews">
+                <h4>Customer Reviews</h4>
+                <p>★★★★★ 5 days ago <br> Absolutely stunning scarf! The silk is so luxurious and the color is even more beautiful in person. Highly recommend!</p>
+                <p>★★★★★ 1 week ago <br> Beautiful scarf, very soft and elegant. It's a bit pricey but definitely worth the investment for a timeless piece.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div>
+            <h4>Customer Service</h4>
+            <p>Contact Us</p>
+            <p>Shipping & Delivery</p>
+            <p>Returns & Exchanges</p>
+            <p>FAQs</p>
+        </div>
+        <div>
+            <h4>About Us</h4>
+            <p>Our Story</p>
+            <p>Careers</p>
+            <p>Press</p>
+            <p>Sustainability</p>
+        </div>
+        <div>
+            <h4>Connect With Us</h4>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Twitter</p>
+        </div>
+    </div>
+    
+    <footer style="text-align: center; padding: 10px; background-color: #222; color: #ccc;">
+        © 2024 Brand, Inc. All rights reserved. Privacy Policy | Terms of Service
+    </footer>
+</body>
+</html>

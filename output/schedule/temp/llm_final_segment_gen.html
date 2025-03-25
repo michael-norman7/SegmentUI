@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #edf0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto;
+            gap: 20px;
+            align-items: start;
+        }
+        .header {
+            grid-column: 1 / span 2;
+            display: flex;
+            align-items: center;
+            background-color: #edf0f5;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .header-text h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #273a4d;
+        }
+        .header-text p {
+            margin: 0;
+            color: #6c757d;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #ececec;
+        }
+        .button img {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+        }
+        .section {
+            background-color: #edf0f5;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .section-header img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .section-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #273a4d;
+        }
+        .schedule-item, .reminder-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .schedule-item .checkbox, .reminder-item .checkbox {
+            width: 16px;
+            height: 16px;
+            background-color: #ebeef1;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+        .schedule-item span, .reminder-item span {
+            color: #6c757d;
+        }
+        .reminder-item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            color: #273a4d;
+        }
+        .details {
+            display: flex;
+            align-items: center;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+        .details img {
+            width: 14px;
+            height: 14px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="avatar">
+                <img src="https://via.placeholder.com/50" alt="User Avatar">
+            </div>
+            <div class="header-text">
+                <h1>Welcome back, User</h1>
+                <p>Ready for the day?</p>
+            </div>
+            <div class="button-group">
+                <div class="button">
+                    <img src="https://via.placeholder.com/16" alt="Calendar Icon">
+                    <span>Today</span>
+                </div>
+                <div class="button">
+                    <img src="https://via.placeholder.com/16" alt="Calendar Icon">
+                    <span>Week</span>
+                </div>
+                <div class="button">
+                    <img src="https://via.placeholder.com/16" alt="Calendar Icon">
+                    <span>Month</span>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="https://via.placeholder.com/20" alt="Schedule Icon">
+                <h2>Daily Schedule</h2>
+            </div>
+            <div class="schedule-item">
+                <div class="checkbox"></div>
+                <span>9:00 AM – 10:00 AM: Meeting with Team</span>
+            </div>
+            <div class="schedule-item">
+                <div class="checkbox"></div>
+                <span>10:30 AM – 11:30 AM: Client Call</span>
+            </div>
+            <div class="schedule-item">
+                <div class="checkbox"></div>
+                <span>2:00 PM – 3:00 PM: Work on Project</span>
+            </div>
+            <div class="schedule-item">
+                <div class="checkbox"></div>
+                <span>4:00 PM – 5:00 PM: Review Tasks</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="https://via.placeholder.com/20" alt="Reminder Icon">
+                <h2>Appointment Reminders</h2>
+            </div>
+            <div class="reminder-item">
+                <h3>Doctor Appointment</h3>
+                <div class="details">
+                    <img src="https://via.placeholder.com/14" alt="Calendar Icon">
+                    <span>Tomorrow, 11:00 AM</span>
+                </div>
+                <div class="details">
+                    <img src="https://via.placeholder.com/14" alt="Location Icon">
+                    <span>City Hospital</span>
+                </div>
+            </div>
+            <div class="reminder-item">
+                <h3>Dentist Appointment</h3>
+                <div class="details">
+                    <img src="https://via.placeholder.com/14" alt="Calendar Icon">
+                    <span>Friday, 3:00 PM</span>
+                </div>
+                <div class="details">
+                    <img src="https://via.placeholder.com/14" alt="Location Icon">
+                    <span>Dental Clinic</span>
+                </div>
+            </div>
+            <div class="reminder-item">
+                <h3>Haircut</h3>
+                <div class="details">
+                    <img src="https://via.placeholder.com/14" alt="Calendar Icon">
+                    <span>Saturday, 2:00 PM</span>
+                </div>
+                <div class="details">
+                    <img src="https://via.placeholder.com/14" alt="Location Icon">
+                    <span>Salon XYZ</span>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="https://via.placeholder.com/20" alt="Priority Icon">
+                <h2>Task Priorities</h2>
+            </div>
+            <div class="schedule-item">
+                <div class="checkbox"></div>
+                <span>Finalize Presentation</span>
+                <span style="margin-left: auto; color: red;">High</span>
+            </div>
+            <div class="schedule-item">
+                <div class="checkbox"></div>
+                <span>Send Meeting Minutes</span>
+                <span style="margin-left: auto; color: orange;">Medium</span>
+            </div>
+            <div class="schedule-item">
+                <div class="checkbox"></div>
+                <span>Schedule Team Lunch</span>
+                <span style="margin-left: auto; color: green;">Low</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">
+                <img src="https://via.placeholder.com/20" alt="Overview Icon">
+                <h2>Productivity Overview</h2>
+            </div>
+            <img src="https://via.placeholder.com/300x150" alt="Productivity Image" style="width: 100%; height: auto; border-radius: 8px;">
+            <p style="text-align: center; color: #6c757d; margin: 10px 0 0 0;">Weekly Task Completion Rate</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Tales</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8e3c1;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .header {
+            background-color: #f8e3c1;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #9c6128;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #9c6128;
+            font-size: 16px;
+        }
+        .hero {
+            background-color: #e9e4db;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero h2 {
+            margin: 0;
+            font-size: 36px;
+            color: #9c6128;
+        }
+        .hero p {
+            margin: 10px 0;
+            color: #7d6a53;
+            font-size: 18px;
+        }
+        .hero .btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #da8e3b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .section h3 {
+            margin: 0;
+            font-size: 28px;
+            color: #9c6128;
+        }
+        .section p {
+            margin: 10px 0;
+            color: #7d6a53;
+            font-size: 16px;
+        }
+        .card-container, .tips-container, .story-container, .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .card, .tip-card, .story-card, .gallery-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            text-align: left;
+        }
+        .card img, .story-card img, .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-content, .tip-content, .story-content {
+            padding: 16px;
+        }
+        .card-content h4, .tip-content h4, .story-content h4 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            color: #9c6128;
+        }
+        .card-content p, .tip-content p, .story-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #7d6a53;
+        }
+        .card-content .btn, .story-content a {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: #0048cd;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .tip-icon {
+            font-size: 30px;
+            color: #6d9d5a;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #f8e3c1;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #9c6128;
+            border-top: 1px solid #9c6128;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Wanderlust Tales</h1>
+            <div class="nav">
+                <a href="#">Destinations</a>
+                <a href="#">Stories</a>
+                <a href="#">Travel Tips</a>
+                <a href="#">Gallery</a>
+            </div>
+        </div>
+        <div class="hero">
+            <h2>Explore the Charm of Yesteryear</h2>
+            <p>Uncover hidden gems and timeless adventures.</p>
+            <a href="#" class="btn">Start Your Journey &rarr;</a>
+        </div>
+        <div class="section">
+            <h3>Featured Destinations</h3>
+            <p>Step back in time with these classic locales.</p>
+            <div class="card-container">
+                <div class="card">
+                    <img src="img1.jpg" alt="Paris, 1920s">
+                    <div class="card-content">
+                        <h4>Paris, 1920s</h4>
+                        <p>Experience the Jazz Age in the City of Lights.</p>
+                        <a href="#" class="btn">Explore &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img2.jpg" alt="Rome, 1950s">
+                    <div class="card-content">
+                        <h4>Rome, 1950s</h4>
+                        <p>La Dolce Vita awaits in the Eternal City.</p>
+                        <a href="#" class="btn">Explore &rarr;</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img3.jpg" alt="Kyoto, 1960s">
+                    <div class="card-content">
+                        <h4>Kyoto, 1960s</h4>
+                        <p>Discover tranquility in ancient Japanese gardens.</p>
+                        <a href="#" class="btn">Explore &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Traveler's Tales</h3>
+            <p>Personal stories from journeys past.</p>
+            <div class="story-container">
+                <div class="story-card">
+                    <img src="img4.jpg" alt="Tuscany">
+                    <div class="story-content">
+                        <h4>A Bicycle Ride Through Tuscany</h4>
+                        <p>The rolling hills of Tuscany, the scent of cypress trees, and the taste of Chianti... My solo bicycle trip was an immersion into the heart of Italy. Each day brought new vistas, charming villages, and the warmth of the Tuscan sun.</p>
+                        <a href="#">Read More &rarr;</a>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <img src="img5.jpg" alt="Marrakech">
+                    <div class="story-content">
+                        <h4>Lost in the Souks of Marrakech</h4>
+                        <p>The vibrant chaos of Marrakech's souks was overwhelming at first, but soon I found myself captivated by the maze of stalls, the aroma of spices, and the calls of vendors. Getting lost was the best way to discover the true soul of this Moroccan city.</p>
+                        <a href="#">Read More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Vintage Travel Tips</h3>
+            <p>Advice for the modern traveler with a classic soul.</p>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <div class="tip-icon">📍</div>
+                    <div class="tip-content">
+                        <h4>Plan with Paper Maps</h4>
+                        <p>Embrace the charm of paper maps. They can lead to unexpected discoveries and are a beautiful keepsake of your journey.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📷</div>
+                    <div class="tip-content">
+                        <h4>Capture Moments on Film</h4>
+                        <p>Consider bringing a film camera. The deliberate process and the unique aesthetic add a nostalgic touch to your travel memories.</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📖</div>
+                    <div class="tip-content">
+                        <h4>Journal Your Adventures</h4>
+                        <p>Keep a travel journal. Writing down your experiences by hand helps you connect more deeply with your journey and creates a treasured record.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h3>Postcard Gallery</h3>
+            <p>A collection of vintage-inspired postcards.</p>
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="img6.jpg" alt="Postcard 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="img7.jpg" alt="Postcard 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="img8.jpg" alt="Postcard 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="img9.jpg" alt="Postcard 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="img10.jpg" alt="Postcard 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="img11.jpg" alt="Postcard 6">
+                </div>
+            </div>
+        </div>
+        <footer>
+            &copy; 2024 Wanderlust Tales. Crafted with vintage charm.
+        </footer>
+    </div>
+</body>
+</html>

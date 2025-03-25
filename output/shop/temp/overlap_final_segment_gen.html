@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f3f3f5;
+        }
+        header {
+            background-color: white;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header .brand {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+        }
+        .image-section {
+            flex: 2;
+        }
+        .image-section img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .product-section {
+            flex: 3;
+        }
+        .product-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .rating {
+            color: #f7ba00;
+            margin-bottom: 15px;
+        }
+        .description {
+            margin-bottom: 15px;
+        }
+        .price {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: gray;
+            font-size: 16px;
+        }
+        .discount {
+            color: purple;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+        .colors, .sizes {
+            margin-bottom: 15px;
+        }
+        .color-circle {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+        }
+        .sizes button {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-right: 5px;
+            background-color: white;
+            cursor: pointer;
+        }
+        .sizes button:hover {
+            background-color: #eee;
+        }
+        .add-to-cart {
+            background-color: purple;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .product-description, .customer-reviews {
+            margin-top: 20px;
+        }
+        .product-description p, .customer-reviews p {
+            font-size: 14px;
+        }
+        .customer-reviews .review {
+            display: flex;
+            align-items: center;
+        }
+        footer {
+            background-color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        .footer-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer-column {
+            flex: 1;
+            text-align: left;
+        }
+        .footer-column h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 5px;
+        }
+    </style>
+    <title>Product Page</title>
+</head>
+<body>
+    <header>
+        <div class="brand">Brand</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="image-section">
+            <img src="image1.jpg" alt="Main Product Image">
+        </div>
+        <div class="product-section">
+            <div class="product-title">Elegant Silk Scarf - Limited Edition</div>
+            <div class="rating">★★★★☆ 4.8 (256 Reviews)</div>
+            <div class="description">
+                Indulge in the exquisite softness of our limited edition silk scarf, handcrafted from the finest mulberry silk. Its delicate weave and subtle sheen make it a perfect accessory for any occasion.
+            </div>
+            <div class="price">
+                $125.00 <span class="old-price">$150.00</span>
+                <span class="discount">(15% Off)</span>
+            </div>
+            <div class="colors">
+                <div>Color</div>
+                <div>
+                    <div class="color-circle" style="background-color: pink;"></div>
+                    <div class="color-circle" style="background-color: blue;"></div>
+                    <div class="color-circle" style="background-color: purple;"></div>
+                    <div class="color-circle" style="background-color: green;"></div>
+                </div>
+            </div>
+            <div class="sizes">
+                <div>Size</div>
+                <button>Small</button>
+                <button>Medium</button>
+                <button>Large</button>
+            </div>
+            <div class="add-to-cart">Add to Cart</div>
+            <div class="product-description">
+                <h3>Product Details</h3>
+                <p>100% Mulberry Silk</p>
+                <p>Dimensions: 70cm x 200cm</p>
+                <p>Hand-rolled edges</p>
+                <p>Dry clean only</p>
+                <p>Made in Italy</p>
+            </div>
+            <div class="customer-reviews">
+                <h3>Customer Reviews</h3>
+                <div class="review">
+                    <p>★★★★★ 5 days ago - Absolutely stunning scarf! The silk is so luxurious and the color is even more beautiful in person. Highly recommend!</p>
+                </div>
+                <div class="review">
+                    <p>★★★★☆ 1 week ago - Beautiful scarf, very soft and elegant. It's a bit pricey but definitely worth the investment for a timeless piece.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li>Contact Us</li>
+                    <li>Shipping & Delivery</li>
+                    <li>Returns & Exchanges</li>
+                    <li>FAQs</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li>Our Story</li>
+                    <li>Careers</li>
+                    <li>Press</li>
+                    <li>Sustainability</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+        </div>
+        <p>© 2024 Brand, Inc. All rights reserved. Privacy Policy | Terms of Service</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #ffffff;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            color: #6c63ff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .card-icon {
+            font-size: 18px;
+            margin-right: 10px;
+            color: #6c63ff;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .steps-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .steps-label {
+            color: #1f2937;
+            font-size: 14px;
+        }
+
+        .progress-bar-container {
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            height: 8px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        .progress-bar.steps {
+            width: 85%;
+            background-color: #6c63ff;
+        }
+
+        .progress-bar.weight {
+            width: 40%;
+            background-color: #ffd700;
+        }
+
+        .progress-bar.exercise {
+            width: 70%;
+            background-color: #6c63ff;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .activity-icon {
+            margin-right: 10px;
+            font-size: 8px;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+        }
+
+        .activity-icon.sedentary {
+            background-color: #32cd32;
+        }
+
+        .activity-icon.light {
+            background-color: #6c63ff;
+        }
+
+        .activity-icon.moderate {
+            background-color: #ffa500;
+        }
+
+        .activity-icon.vigorous {
+            background-color: #ff0000;
+        }
+
+        .trend-image {
+            background-image: url('https://via.placeholder.com/600x200');
+            background-size: cover;
+            background-position: center;
+            height: 180px;
+            border-radius: 8px;
+        }
+
+        .button {
+            background-color: #6c63ff;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .settings {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .settings-item {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+        }
+
+        .settings-item input {
+            margin-right: 10px;
+        }
+        
+        .achievements-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+            color: #1f2937;
+        }
+
+        .achievements-icon {
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>My Dashboard</h1>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🚶‍♂️</div>
+                <div class="card-title">Daily Steps</div>
+            </div>
+            <div class="steps-value">8,542</div>
+            <div class="steps-label">Steps</div>
+            <div class="progress-bar-container">
+                <div class="progress-bar steps"></div>
+            </div>
+            <div class="flex">
+                <div class="steps-label">Goal: 10,000</div>
+                <div class="steps-label">85%</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">💛</div>
+                <div class="card-title">Activity Level</div>
+            </div>
+            <div class="activity-item">
+                <span class="activity-icon sedentary"></span> Sedentary: 10%
+            </div>
+            <div class="activity-item">
+                <span class="activity-icon light"></span> Light: 60%
+            </div>
+            <div class="activity-item">
+                <span class="activity-icon moderate"></span> Moderate: 25%
+            </div>
+            <div class="activity-item">
+                <span class="activity-icon vigorous"></span> Vigorous: 5%
+            </div>
+            <div class="flex">
+                <div class="steps-label">Level: Light</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🏁</div>
+                <div class="card-title">Fitness Goal</div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-title">Weight Loss</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar weight"></div>
+                </div>
+                <div class="flex">
+                    <div class="progress-info">Progress: 2kg / 5kg</div>
+                    <div class="steps-label">40%</div>
+                </div>
+            </div>
+            <div class="progress-item">
+                <div class="progress-title">Daily Exercise</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar exercise"></div>
+                </div>
+                <div class="flex">
+                    <div class="progress-info">Progress: 35 min / 50 min</div>
+                    <div class="steps-label">70%</div>
+                </div>
+            </div>
+            <button class="button">View Goals</button>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">📈</div>
+                <div class="card-title">Weekly Activity Trend</div>
+            </div>
+            <div class="trend-image"></div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">🏆</div>
+                <div class="card-title">Achievements</div>
+            </div>
+            <div class="achievements-item">
+                <div class="achievements-icon">🥇</div>10,000 Steps Badge
+            </div>
+            <div class="achievements-item">
+                <div class="achievements-icon">🥈</div>7-Day Streak
+            </div>
+            <div class="achievements-item">
+                <div class="achievements-icon">🔓</div>Unlock New Goal
+            </div>
+            <button class="button">View All</button>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-icon">⚙️</div>
+                <div class="card-title">Settings</div>
+            </div>
+            <div class="settings">
+                <label class="settings-item">
+                    <input type="checkbox" checked> Notifications
+                </label>
+                <label class="settings-item">
+                    <input type="checkbox"> Dark Mode
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

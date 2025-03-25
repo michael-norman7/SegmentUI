@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Template</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 80px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header-title {
+            font-size: 18px;
+            color: #4a4a4a;
+            font-weight: bold;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            margin: 20px;
+        }
+        .card-title {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #6a6a6a;
+            margin-bottom: 10px;
+        }
+        .card-title i {
+            color: #7b68ee;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .card-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: #7b68ee;
+            margin: 0;
+        }
+        .card-subtext {
+            font-size: 14px;
+            color: #999999;
+        }
+        .card-image {
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 100%;
+            height: auto;
+        }
+        .progress {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            height: 8px;
+            width: 100%;
+            position: relative;
+        }
+        .progress-bar {
+            background-color: #d291ff;
+            height: 8px;
+            border-radius: 5px;
+            width: 85%;
+        }
+        .activity-section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+        }
+        .activity-title {
+            font-weight: bold;
+            color: #6a6a6a;
+            margin-bottom: 10px;
+        }
+        .activity-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .activity-table th, .activity-table td {
+            text-align: left;
+            padding: 10px;
+        }
+        .activity-table th {
+            background-color: #f0f0f0;
+            color: #999999;
+        }
+        .activity-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .weekly-section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+        }
+        .weekly-title {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            color: #6a6a6a;
+            margin-bottom: 10px;
+        }
+        .weekly-title i {
+            color: #8a2be2;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .section-image {
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 100%;
+            height: auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+        .box {
+            height: 150px;
+        }
+        .box1 { 
+            background-color: #00ff00; 
+            flex: 1 1 calc(33.33% - 20px); 
+        }
+        .box2 { 
+            background-color: #8b7d26; 
+            flex: 1 1 calc(33.33% - 20px); 
+        }
+        .box3 { 
+            background-color: #bfd833; 
+            flex: 1 1 calc(33.33% - 20px); 
+        }
+        .box4 { 
+            background-color: #800080; 
+            height: 230px; 
+            flex: 1 1 calc(66.66% - 10px); 
+        }
+        .box5 { 
+            background-color: #008080; 
+            flex: 1 1 calc(33.33% - 10px); 
+            height: 230px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">My Wellness Dashboard</div>
+        <div class="icon"></div>
+    </div>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+    </div>
+    <div class="card">
+        <div class="card-title">
+            <i>❤️</i> Daily Heart Rate
+        </div>
+        <p class="card-text">78 BPM</p>
+        <p class="card-subtext">Resting: 65 BPM | Avg: 72 BPM</p>
+        <img src="your-image-url.jpg" alt="Heart Rate Image" class="card-image"/>
+    </div>
+    <div class="card">
+        <div class="card-title">
+            <i>💟</i> Steps Today
+        </div>
+        <p class="card-text">8,542</p>
+        <p class="card-subtext">Goal: 10,000 steps</p>
+        <div class="progress">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-title">
+            <i>🌙</i> Sleep Analysis
+        </div>
+        <p class="card-text">7h 32m</p>
+        <p class="card-subtext">Last Night</p>
+        <img src="your-image-url.jpg" alt="Sleep Image" class="card-image"/>
+    </div>
+    <div class="activity-section">
+        <div class="activity-title">Activity Log</div>
+        <table class="activity-table">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Type</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Morning Run</td>
+                    <td>Workout</td>
+                    <td>35 min</td>
+                </tr>
+                <tr>
+                    <td>Mindfulness Session</td>
+                    <td>Mindfulness</td>
+                    <td>15 min</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="weekly-section">
+        <div class="weekly-title">
+            <i>📈</i> Weekly Progress
+        </div>
+        <img src="your-image-url.jpg" alt="Weekly Progress Image" class="section-image"/>
+    </div>
+</body>
+</html>

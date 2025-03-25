@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combined Website</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #fff8f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .header {
+            display: flex;
+            background-color: #fff8ed;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            flex-shrink: 0;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #3a3a3a;
+        }
+
+        .header .logo img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .header .menu {
+            display: flex;
+            gap: 20px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .header .menu a {
+            text-decoration: none;
+            color: #3a3a3a;
+            transition: color 0.3s;
+        }
+
+        .header .menu a:hover {
+            color: #0073e6;
+        }
+
+        .content-section {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #fffaf0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .content-title {
+            font-size: 2em;
+            font-family: 'Brush Script MT', cursive;
+            text-align: center;
+            color: #3a3a3a;
+            margin-bottom: 10px;
+        }
+
+        .content-meta {
+            text-align: center;
+            font-size: 0.9em;
+            color: #8c8c8c;
+            margin-bottom: 20px;
+        }
+
+        .content-img {
+            max-width: 100%;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .content-text {
+            margin-top: 20px;
+            line-height: 1.6;
+            color: #3a3a3a;
+        }
+
+        .content-text .section-title {
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .tags {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #8c8c8c;
+        }
+
+        .comments-section {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .comments-section h3 {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 1.5em;
+            color: #3a3a3a;
+        }
+
+        .comment {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .comment img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .comment-content {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #3a3a3a;
+        }
+
+        .comment-date {
+            font-size: 0.8em;
+            color: #8c8c8c;
+        }
+
+        .comment-form {
+            padding-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            resize: none;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #a67953;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #875c3c;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #fffaf0;
+            font-size: 0.8em;
+            color: #8c8c8c;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #8c8c8c;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: #a67953;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://via.placeholder.com/20" alt="Logo">
+                RetroBlog
+            </div>
+            <div class="menu">
+                <a href="#">Archive</a>
+                <a href="#">Categories</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h1 class="content-title">The Joys of a Rainy Day</h1>
+            <div class="content-meta">
+                <span>📅 Published on October 26, 1955</span> • 
+                <span>👤 By John S.</span>
+            </div>
+            <img src="https://via.placeholder.com/800x400" class="content-img" alt="Rainy Day">
+            <div class="content-text">
+                <h2 class="section-title">Lost in Pages</h2>
+                <p>Rainy days are made for reading. I pulled out my old, leather-bound copy of "Moby Dick." The yellowed pages, the scent of aged paper, it all adds to the atmosphere. To be transported to another world, another time, while the storm rages gently outside – it's a magic unlike any other.</p>
+                <h2 class="section-title">Creative Sparks</h2>
+                <p>There's something about the quiet solitude of a rainy day that ignites creativity. Perhaps it's the lack of distractions, or maybe it's the introspective mood the weather inspires. Whatever it is, ideas seem to flow more freely. I spent the afternoon sketching in my notebook, letting the rain wash away the usual creative blocks.</p>
+                <p>So, the next time the clouds gather and the rain begins to fall, don't despair. Embrace it! Find joy in the simple moments, the quiet corners of a rainy day. You might just discover a little magic of your own.</p>
+                <hr>
+                <p class="tags">🏷️ Tags: RainyDays, Cozy, Reading, Vintage</p>
+            </div>
+
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div class="comment">
+                    <img src="https://via.placeholder.com/40" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-author">Jane Doe</div>
+                        <div class="comment-date">October 27, 1955</div>
+                        <div class="comment-text">Lovely post! Rainy days are indeed the best for introspection and creativity. I especially agree about the tea!</div>
+                    </div>
+                </div>
+                <div class="comment">
+                    <img src="https://via.placeholder.com/40" alt="Avatar">
+                    <div class="comment-content">
+                        <div class="comment-author">Peter Smith</div>
+                        <div class="comment-date">October 28, 1955</div>
+                        <div class="comment-text">Moby Dick and rain, a perfect combination. Your blog always brings a touch of warmth and nostalgia!</div>
+                    </div>
+                </div>
+
+                <div class="comment-form">
+                    <label for="comment">Leave a Comment:</label>
+                    <textarea id="comment" placeholder="Your thoughts..."></textarea>
+                    <button>Post Comment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        © 1955 RetroBlog. All rights reserved. 
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Service</a>
+    </div>
+</body>
+</html>

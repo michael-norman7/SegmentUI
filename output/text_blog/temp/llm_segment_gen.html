@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Layout</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #fff;
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d8d84;
+        }
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .main-content {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            gap: 20px;
+        }
+        .main-left {
+            flex: 2;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .image-section {
+            position: relative;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .image-section img {
+            width: 100%;
+            display: block;
+        }
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #347a87;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .article-section {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .article-section h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .meta {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .content {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .main-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .sidebar-section {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .related-articles, .categories {
+            list-style: none;
+            padding: 0;
+        }
+        .related-articles li, .categories li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .related-articles img {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .article-info, .category-name {
+            font-size: 14px;
+            color: #333;
+        }
+        .category-name::before {
+            content: "\1F5C4";
+            margin-right: 8px;
+        }
+        .comments-section {
+            margin: 40px auto;
+            max-width: 800px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .comment {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .comment img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+        .comment-content {
+            background-color: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .comment-content p {
+            margin: 0;
+        }
+        .footer {
+            background-color: #242b3d;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 14px;
+        }
+        .footer .social-icons {
+            margin-bottom: 10px;
+        }
+        .footer .social-icons a {
+            text-decoration: none;
+            color: white;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">AwesomeBlog</div>
+        <nav class="nav">
+            <a href="#">Home</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+    <div class="main-content">
+        <div class="main-left">
+            <div class="image-section">
+                <img src="image.jpg" alt="Beach">
+                <div class="tag">Technology</div>
+            </div>
+            <div class="article-section">
+                <h1>The Ultimate Guide to Modern Web Design</h1>
+                <div class="meta">Published on January 1, 2024  •  By John Doe</div>
+                <div class="content">
+                    <p>Welcome to the definitive guide on modern web design! In today's digital landscape...</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-right">
+            <div class="sidebar-section">
+                <h3>Related Articles</h3>
+                <ul class="related-articles">
+                    <li>
+                        <img src="article1.jpg" alt="Article Image">
+                        <div class="article-info">
+                            <strong>5 Web Design Trends for 2024</strong><br>
+                            January 5, 2024
+                        </div>
+                    </li>
+                    <li>
+                        <img src="article2.jpg" alt="Article Image">
+                        <div class="article-info">
+                            <strong>Improving Website Accessibility</strong><br>
+                            December 28, 2023
+                        </div>
+                    </li>
+                    <li>
+                        <img src="article3.jpg" alt="Article Image">
+                        <div class="article-info">
+                            <strong>The Power of Typography in UI</strong><br>
+                            December 15, 2023
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <h3>Categories</h3>
+                <ul class="categories">
+                    <li><div class="category-name">Technology</div></li>
+                    <li><div class="category-name">Web Design</div></li>
+                    <li><div class="category-name">UI/UX Design</div></li>
+                    <li><div class="category-name">Development</div></li>
+                    <li><div class="category-name">Marketing</div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="comments-section">
+        <div class="comment">
+            <img src="user1.jpg" alt="User">
+            <div class="comment-content">
+                <p><strong>User One</strong></p>
+                <p>This is a great article. Thanks for sharing!</p>
+            </div>
+        </div>
+        <div class="comment">
+            <img src="user2.jpg" alt="User">
+            <div class="comment-content">
+                <p><strong>User Two</strong></p>
+                <p>Very informative and useful tips.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="social-icons">
+            <a href="#">&#xf09a;</a>
+            <a href="#">&#xf099;</a>
+            <a href="#">&#xf16d;</a>
+            <a href="#">&#xf0e1;</a>
+        </div>
+        <div>&copy; 2024 AwesomeBlog. All rights reserved.</div>
+    </div>
+</body>
+</html>
