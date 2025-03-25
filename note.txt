@@ -15,6 +15,7 @@ python3 generate_code.py lumineux
 python3 generate_code.py marketing
 python3 generate_code.py mood
 python3 generate_code.py nft
+
 python3 generate_code.py pixel
 python3 generate_code.py recipe
 python3 generate_code.py retro_blog
@@ -25,3 +26,38 @@ python3 generate_code.py text_blog
 python3 generate_code.py travel_blog
 python3 generate_code.py web_blog
 python3 generate_code.py wellness
+
+
+
+
+
+
+
+python3 view_images.py -p adventure
+python3 view_images.py -p aquafun
+python3 view_images.py -p artisan
+python3 view_images.py -p book_shop
+python3 view_images.py -p brush
+python3 view_images.py -p cyberpulse
+python3 view_images.py -p energy
+python3 view_images.py -p fitness
+python3 view_images.py -p fraudlens
+python3 view_images.py -p goal
+python3 view_images.py -p gratitude
+python3 view_images.py -p habit
+python3 view_images.py -p hr
+python3 view_images.py -p lumineux
+python3 view_images.py -p marketing
+python3 view_images.py -p mood
+python3 view_images.py -p nft
+
+python3 view_images.py -p pixel
+python3 view_images.py -p recipe
+python3 view_images.py -p retro_blog
+python3 view_images.py -p schedule
+python3 view_images.py -p shop
+python3 view_images.py -p steps_dashboard
+python3 view_images.py -p text_blog
+python3 view_images.py -p travel_blog
+python3 view_images.py -p web_blog
+python3 view_images.py -p wellness

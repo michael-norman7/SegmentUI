@@ -1,6 +1,7 @@
 import os
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import argparse
 
 
 def display_images(project_name):
@@ -10,6 +11,13 @@ def display_images(project_name):
     image3_path = os.path.join(output_dir, "llm_final_segment_gen.png")
     image4_path = os.path.join(output_dir, "set_final_segment_gen.png")
     image5_path = os.path.join(output_dir, "overlap_final_segment_gen.png")
+
+    # output_dir = f"img/{project_name}"
+    # image1_path = os.path.join(output_dir, f"{project_name}.png")
+    # image2_path = os.path.join(output_dir, f"{project_name}_bounding_boxes.png")
+    # image3_path = os.path.join(output_dir, f"{project_name}_bounding_boxes.png")
+    # image4_path = os.path.join(output_dir, f"{project_name}_set_bounding_boxes.png")
+    # image5_path = os.path.join(output_dir, f"{project_name}_overlap_bounding_boxes.png")
 
     if (
         os.path.exists(image1_path)
@@ -24,7 +32,7 @@ def display_images(project_name):
         img4 = mpimg.imread(image4_path)
         img5 = mpimg.imread(image5_path)
 
-        fig, axs = plt.subplots(1, 5, figsize=(15, 5))
+        fig, axs = plt.subplots(1, 5, figsize=(15, 10))
         axs[0].imshow(img1)
         axs[0].axis("off")
         axs[0].set_title(f"{project_name}.png")
@@ -34,19 +42,41 @@ def display_images(project_name):
         axs[2].imshow(img3)
         axs[2].axis("off")
         axs[2].set_title("llm_segment_gen.png")
-        axs[2].imshow(img4)
-        axs[2].axis("off")
-        axs[2].set_title("set_segment_gen.png")
-        axs[2].imshow(img5)
-        axs[2].axis("off")
-        axs[2].set_title("overlap_segment_gen.png")
+        axs[3].imshow(img4)
+        axs[3].axis("off")
+        axs[3].set_title("set_segment_gen.png")
+        axs[4].imshow(img5)
+        axs[4].axis("off")
+        axs[4].set_title("overlap_segment_gen.png")
         plt.tight_layout()
+
+        # Create comparisons directory if it doesn't exist
+        comparisons_dir = "comparisons"
+        os.makedirs(comparisons_dir, exist_ok=True)
+
+        # Save the comparison plot
+        save_path = os.path.join(comparisons_dir, f"{project_name}_comparison.png")
+        plt.savefig(save_path, bbox_inches="tight", dpi=300)
+        print(f"Comparison image saved to: {save_path}")
+
         plt.show()
     else:
         print(f"Images for project '{project_name}' not found.")
 
 
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Display project image comparisons.")
+    parser.add_argument(
+        "--project",
+        "-p",
+        type=str,
+        help="Specify the project name to display images for",
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_arguments()
     img_dir = "img"
     image_projects = [
         d for d in os.listdir(img_dir) if os.path.isdir(os.path.join(img_dir, d))
@@ -56,6 +86,18 @@ def main():
         print("No image projects found in the 'img' directory.")
         quit()
 
+    # If project name is provided via command line
+    if args.project:
+        if args.project in image_projects:
+            display_images(args.project)
+        else:
+            print(f"Project '{args.project}' not found. Available projects:")
+            for project in image_projects:
+                print(f"  - {project}")
+            quit()
+        return
+
+    # If no project name provided, prompt user to select one
     print("Image projects found:")
     for idx, project in enumerate(image_projects):
         print(f"{idx}: {project}")
