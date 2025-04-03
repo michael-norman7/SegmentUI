@@ -1,7 +1,7 @@
 import os
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-import argparse
+import sys
 
 
 def display_images(project_name):
@@ -63,20 +63,7 @@ def display_images(project_name):
     else:
         print(f"Images for project '{project_name}' not found.")
 
-
-def parse_arguments():
-    parser = argparse.ArgumentParser(description="Display project image comparisons.")
-    parser.add_argument(
-        "--project",
-        "-p",
-        type=str,
-        help="Specify the project name to display images for",
-    )
-    return parser.parse_args()
-
-
 def main():
-    args = parse_arguments()
     img_dir = "img"
     image_projects = [
         d for d in os.listdir(img_dir) if os.path.isdir(os.path.join(img_dir, d))
@@ -87,14 +74,14 @@ def main():
         quit()
 
     # If project name is provided via command line
-    if args.project:
-        if args.project in image_projects:
-            display_images(args.project)
+    if len(sys.argv) > 1:
+        project_name = sys.argv[1]
+        if project_name in image_projects:
+            display_images(project_name)
         else:
-            print(f"Project '{args.project}' not found. Available projects:")
+            print(f"Project '{project_name}' not found. Available projects:")
             for project in image_projects:
                 print(f"  - {project}")
-            quit()
         return
 
     # If no project name provided, prompt user to select one

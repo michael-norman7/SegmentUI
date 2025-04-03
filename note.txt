@@ -1,63 +1,29 @@
 python3 generate_code.py adventure
-python3 generate_code.py aquafun
-python3 generate_code.py artisan
 python3 generate_code.py book_shop
 python3 generate_code.py brush
+python3 generate_code.py cloud_solutions
 python3 generate_code.py cyberpulse
 python3 generate_code.py energy
-python3 generate_code.py fitness
 python3 generate_code.py fraudlens
 python3 generate_code.py goal
-python3 generate_code.py gratitude
-python3 generate_code.py habit
 python3 generate_code.py hr
-python3 generate_code.py lumineux
-python3 generate_code.py marketing
-python3 generate_code.py mood
-python3 generate_code.py nft
-
-python3 generate_code.py pixel
 python3 generate_code.py recipe
-python3 generate_code.py retro_blog
 python3 generate_code.py schedule
 python3 generate_code.py shop
-python3 generate_code.py steps_dashboard
-python3 generate_code.py text_blog
-python3 generate_code.py travel_blog
-python3 generate_code.py web_blog
-python3 generate_code.py wellness
 
 
 
+python3 view_images.py adventure
+python3 view_images.py book_shop
+python3 view_images.py brush
+python3 view_images.py cloud_solutions
+python3 view_images.py cyberpulse
+python3 view_images.py energy
+python3 view_images.py fraudlens
+python3 view_images.py goal
+python3 view_images.py hr
+python3 view_images.py recipe
+python3 view_images.py schedule
+python3 view_images.py shop
 
 
-
-
-python3 view_images.py -p adventure
-python3 view_images.py -p aquafun
-python3 view_images.py -p artisan
-python3 view_images.py -p book_shop
-python3 view_images.py -p brush
-python3 view_images.py -p cyberpulse
-python3 view_images.py -p energy
-python3 view_images.py -p fitness
-python3 view_images.py -p fraudlens
-python3 view_images.py -p goal
-python3 view_images.py -p gratitude
-python3 view_images.py -p habit
-python3 view_images.py -p hr
-python3 view_images.py -p lumineux
-python3 view_images.py -p marketing
-python3 view_images.py -p mood
-python3 view_images.py -p nft
-
-python3 view_images.py -p pixel
-python3 view_images.py -p recipe
-python3 view_images.py -p retro_blog
-python3 view_images.py -p schedule
-python3 view_images.py -p shop
-python3 view_images.py -p steps_dashboard
-python3 view_images.py -p text_blog
-python3 view_images.py -p travel_blog
-python3 view_images.py -p web_blog
-python3 view_images.py -p wellness
