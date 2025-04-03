@@ -35,9 +35,6 @@ async def main():
                 await capture_screenshot(html_path, output_image_path)
 
 
-# if __name__ == "__main__":
-#     asyncio.run(main())
-
 
 def download_ui_reasoning_dataset():
 
@@ -158,8 +155,13 @@ def rename_html_files():
             print(f"Error processing {file}: {e}")
 
 if __name__ == "__main__":
-    # download_ui_reasoning_dataset()
-    # rename_html_files()  # Add this line to rename files after downloading
-    asyncio.run(main())  # Uncomment to also run screenshot capture
+    # Uncomment to download the dataset
+    # download_ui_reasoning_dataset() 
+    
+    # Uncomment to rename files after downloading
+    # rename_html_files()
+    
+    # Uncomment to capture screenshots
+    asyncio.run(main())
 
 

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite Fitness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            color: #ff6600;
+        }
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .hero {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            margin: 0.5em 0;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
+        .hero button {
+            padding: 10px 20px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .section h3 {
+            margin-bottom: 30px;
+        }
+        .card {
+            display: inline-block;
+            width: 300px;
+            margin: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card h4 {
+            margin: 15px;
+        }
+        .card p {
+            margin: 15px;
+            color: #555;
+        }
+        .card button {
+            margin: 15px;
+            padding: 10px 15px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .schedule-table {
+            width: 80%;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            border-collapse: collapse;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .testimonial {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px;
+            display: inline-block;
+            width: 45%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .socials img {
+            width: 25px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ignite Fitness</h1>
+        <nav>
+            <a href="#">Classes</a>
+            <a href="#">Trainers</a>
+            <a href="#">Schedule</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h2>Unleash Your Inner Athlete</h2>
+        <p>High-energy fitness classes designed for teenagers. Build strength, boost confidence, and have fun!</p>
+        <button>Explore Classes</button>
+    </div>
+
+    <div class="section">
+        <h3>Our Awesome Classes</h3>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Class 1">
+            <h4>High Intensity Training (HIT)</h4>
+            <p>Push your limits with our HIT classes. Burn calories and build endurance in a fun, fast-paced environment.</p>
+            <button>Join Class</button>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Class 2">
+            <h4>Strength & Conditioning</h4>
+            <p>Develop strength and improve your overall athletic performance. Perfect for all fitness levels.</p>
+            <button>Join Class</button>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Class 3">
+            <h4>Dance Fitness</h4>
+            <p>Get your groove on and burn calories with our energetic dance fitness classes. No experience needed!</p>
+            <button>Join Class</button>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Meet Our Expert Trainers</h3>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Alex Johnson">
+            <h4>Alex Johnson</h4>
+            <p>HIT & Strength Coach - Alex is passionate about helping teens reach their fitness goals through challenging and fun workouts.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Sarah Williams">
+            <h4>Sarah Williams</h4>
+            <p>Dance Fitness Instructor - Sarah’s energy and enthusiasm make every dance fitness class an unforgettable experience.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/300x150" alt="Michael Brown">
+            <h4>Michael Brown</h4>
+            <p>Youth Fitness Specialist - Michael specializes in creating fitness programs that are tailored to the unique needs of teenagers.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Class Schedule</h3>
+        <table class="schedule-table">
+            <tr>
+                <th>DAY</th>
+                <th>TIME</th>
+                <th>CLASS</th>
+                <th>TRAINER</th>
+            </tr>
+            <tr>
+                <td>Monday</td>
+                <td>4:00 PM - 5:00 PM</td>
+                <td>HIT</td>
+                <td>Alex</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>4:00 PM - 5:00 PM</td>
+                <td>Dance Fitness</td>
+                <td>Sarah</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>4:00 PM - 5:00 PM</td>
+                <td>Strength & Conditioning</td>
+                <td>Michael</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>4:00 PM - 5:00 PM</td>
+                <td>HIT</td>
+                <td>Alex</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>4:00 PM - 5:00 PM</td>
+                <td>Dance Fitness</td>
+                <td>Sarah</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h3>What Teens Are Saying</h3>
+        <div class="testimonial">
+            <p>“Ignite Fitness classes are the best! I've never felt so energized and motivated to work out. The trainers are awesome and make every class super fun.”</p>
+            <p>- Jessica M.</p>
+        </div>
+        <div class="testimonial">
+            <p>“I used to hate exercise, but now I look forward to going to Ignite Fitness. It's a great way to relieve stress and hang out with friends while getting fit.”</p>
+            <p>- Kevin L.</p>
+        </div>
+    </div>
+
+    <div class="section" style="background-color: #f9f9f9;">
+        <h3>Ready to Get Started?</h3>
+        <p>Join Ignite Fitness today and start your journey to a healthier, happier you!</p>
+        <button>Sign Up Now</button>
+    </div>
+
+    <footer>
+        <p>© 2024 Ignite Fitness. All Rights Reserved.</p>
+        <div class="socials">
+            <img src="https://via.placeholder.com/25" alt="Facebook">
+            <img src="https://via.placeholder.com/25" alt="Instagram">
+            <img src="https://via.placeholder.com/25" alt="Twitter">
+        </div>
+    </footer>
+
+</body>
+</html>
