@@ -27,3 +27,16 @@ python3 view_images.py schedule
 python3 view_images.py shop
 
 
+
+python3 rate_accuracy.py adventure
+python3 rate_accuracy.py book_shop
+python3 rate_accuracy.py brush
+python3 rate_accuracy.py cloud_solutions
+python3 rate_accuracy.py cyberpulse
+python3 rate_accuracy.py energy
+python3 rate_accuracy.py fraudlens
+python3 rate_accuracy.py goal
+python3 rate_accuracy.py hr
+python3 rate_accuracy.py recipe
+python3 rate_accuracy.py schedule
+python3 rate_accuracy.py shop

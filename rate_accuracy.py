@@ -4,17 +4,11 @@ import base64
 from dotenv import load_dotenv
 import pandas as pd
 import glob
+from utils import encode_image
 
-# import sys
-# import argparse
 
 load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-
-def encode_image(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode("utf-8")
 
 
 def get_accuracy_score(original_image_path, generated_image_path):
@@ -131,8 +125,12 @@ def update_excel_with_scores(folder_path, excel_path, tests):
             print(f"Getting scores for {image_name} on test {test}...")
             if test == "Full Image Gen":
                 generated_image_path = f"output/{image_name}/full_image_gen.png"
-            elif test == "Segment Gen":
-                generated_image_path = f"output/{image_name}/final_segment_gen.png"
+            elif test == "LLM Segment Gen":
+                generated_image_path = f"output/{image_name}/llm_final_segment_gen.png"
+            elif test == "Set Gen":
+                generated_image_path = f"output/{image_name}/set_final_segment_gen.png"
+            elif test == "Overlap Gen":
+                generated_image_path = f"output/{image_name}/overlap_final_segment_gen.png"
             else:
                 continue
 
@@ -186,64 +184,9 @@ def update_excel_with_scores(folder_path, excel_path, tests):
         functional_df.to_excel(writer, sheet_name="Functional Scores", index=False)
 
 
-# def add_single_image_scores_to_excel(
-#     image_name, original_image_path, excel_path, tests
-# ):
-#     try:
-#         new_rows = {
-#             "Overall Scores": {"": image_name},
-#             "Visual Scores": {"": image_name},
-#             "Content Scores": {"": image_name},
-#             "Functional Scores": {"": image_name},
-#         }
-
-#         for test in tests:
-#             if test == "Full Image Gen":
-#                 generated_image_path = f"output/{image_name}/full_image_gen.png"
-#             elif test == "Segment Gen":
-#                 generated_image_path = f"output/{image_name}/final_segment_gen.png"
-#             else:
-#                 continue
-
-#             accuracy_score = get_accuracy_score(
-#                 original_image_path, generated_image_path
-#             )
-#             scores = accuracy_score.split(", ")
-#             visual_score = int(scores[0].split(": ")[1])
-#             content_score = int(scores[1].split(": ")[1])
-#             functional_score = int(scores[2].split(": ")[1])
-#             overall_score = int(scores[3].split(": ")[1])
-
-#             new_rows["Overall Scores"][test] = overall_score
-#             new_rows["Visual Scores"][test] = visual_score
-#             new_rows["Content Scores"][test] = content_score
-#             new_rows["Functional Scores"][test] = functional_score
-
-#         # Load existing Excel file and append new rows
-#         # Read existing sheets
-#         existing_dfs = {
-#             sheet_name: pd.read_excel(excel_path, sheet_name=sheet_name)
-#             for sheet_name in new_rows.keys()
-#         }
-
-#         # Append new rows to existing dataframes
-#         for sheet_name, new_row in new_rows.items():
-#             existing_dfs[sheet_name] = pd.concat(
-#                 [existing_dfs[sheet_name], pd.DataFrame([new_row])], ignore_index=True
-#             )
-
-#         # Write updated dataframes back to the Excel file
-#         with pd.ExcelWriter(excel_path, mode="w") as writer:
-#             for sheet_name, df in existing_dfs.items():
-#                 df.to_excel(writer, sheet_name=sheet_name, index=False)
-#     except Exception as e:
-#         print(f"Error: {e}")
-#         print(f"Failed to add scores for {image_name}")
-
-
 def main():
     excel_path = "accuracy_scores.xlsx"
-    tests = ["Full Image Gen", "Segment Gen"]
+    tests = ["Full Image Gen", "LLM Segment Gen", "Set Gen", "Overlap Gen"]
 
     folder_path = "full_images"
     update_excel_with_scores(folder_path, excel_path, tests)
