@@ -38,7 +38,7 @@ def display_images(project_name):
             ax.set_anchor('N')
         axs[0].imshow(img1)
         axs[0].axis("off")
-        axs[0].set_title(f"{project_name}.png")
+        axs[0].set_title("Original Image")
         axs[1].imshow(img2)
         axs[1].axis("off")
         axs[1].set_title("A")
