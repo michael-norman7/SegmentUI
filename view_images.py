@@ -33,21 +33,24 @@ def display_images(project_name):
         img5 = mpimg.imread(image5_path)
 
         fig, axs = plt.subplots(1, 5, figsize=(15, 10))
+        # align all axes to the top of their subplot cell
+        for ax in axs:
+            ax.set_anchor('N')
         axs[0].imshow(img1)
         axs[0].axis("off")
         axs[0].set_title(f"{project_name}.png")
         axs[1].imshow(img2)
         axs[1].axis("off")
-        axs[1].set_title("full_image_gen.png")
+        axs[1].set_title("A")
         axs[2].imshow(img3)
         axs[2].axis("off")
-        axs[2].set_title("llm_segment_gen.png")
+        axs[2].set_title("B")
         axs[3].imshow(img4)
         axs[3].axis("off")
-        axs[3].set_title("set_segment_gen.png")
+        axs[3].set_title("C")
         axs[4].imshow(img5)
         axs[4].axis("off")
-        axs[4].set_title("overlap_segment_gen.png")
+        axs[4].set_title("D")
         plt.tight_layout()
 
         # Create comparisons directory if it doesn't exist
